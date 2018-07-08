@@ -1,0 +1,76 @@
+displaycode off
+integer i k
+string dataset resultdir st type
+= type error
+= resultdir ../results/softtree
+output multi-table-%type%.txt
+setprecision 1
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|rrr|}
+write \hline
+write Dataset_&_Hard_&_LDT_&_Soft_\\
+write \hline
+for i 1 23
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset car
+    case 3
+      = dataset cmc
+    case 4
+      = dataset dermatology
+    case 5
+      = dataset ecoli
+    case 6
+      = dataset flare
+    case 7
+      = dataset glass
+    case 8
+      = dataset hayesroth
+    case 9
+      = dataset iris
+    case 10
+      = dataset nursery
+    case 11
+      = dataset ocr
+    case 12
+      = dataset optdigits
+    case 13
+      = dataset pageblock
+    case 14
+      = dataset pendigits
+    case 15
+      = dataset segment
+    case 16
+      = dataset splice
+    case 17
+      = dataset tae
+    case 18
+      = dataset vehicle
+    case 19
+      = dataset wave
+    case 20
+      = dataset wine
+    case 21
+      = dataset winequality
+    case 22
+      = dataset yeast
+    case 23
+      = dataset zoo
+  endswitch
+  = st %dataset%
+  meanvariance %resultdir%/%dataset%-c45.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/%dataset%-multildt.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/%dataset%-softtree.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%\\
+  write %st%
+endfor i
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout

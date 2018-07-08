@@ -1,0 +1,36 @@
+displaycode off
+displayresult off
+string dataset resultdir
+integer p
+displayequalloss on
+= resultdir ../results/tests
+= dataset tictactoe
+= p 1
+errorhistogram %resultdir%/error/%dataset%-%p%-c45.error %resultdir%/error/%dataset%-%p%-randomforest.error %resultdir%/error/%dataset%-%p%-naivebayes.error %resultdir%/error/%dataset%-%p%-ripper.error %resultdir%/error/%dataset%-%p%-lda.error %resultdir%/error/%dataset%-%p%-qda.error %resultdir%/error/%dataset%-%p%-svm.error
+hold on
+xlabel Classifier
+xaxisnames C4.5 RF NB Ripper Lda Qda Svm
+yaxisnames Error
+fontsize label 30
+fontsize axis 16
+exportimage %resultdir%/%dataset%-%p%-histogram-error.eps
+hold off
+errorhistogram %resultdir%/roc/%dataset%-%p%-c45.roc %resultdir%/roc/%dataset%-%p%-randomforest.roc %resultdir%/roc/%dataset%-%p%-naivebayes.roc %resultdir%/roc/%dataset%-%p%-ripper.roc %resultdir%/roc/%dataset%-%p%-lda.roc %resultdir%/roc/%dataset%-%p%-qda.roc %resultdir%/roc/%dataset%-%p%-svm.roc
+hold on
+xlabel Classifier
+xaxisnames C4.5 RF NB Ripper Lda Qda Svm
+yaxisnames AucROC
+fontsize label 30
+fontsize axis 16
+exportimage %resultdir%/%dataset%-%p%-histogram-roc.eps
+hold off
+errorhistogram %resultdir%/pr/%dataset%-%p%-c45.pr %resultdir%/pr/%dataset%-%p%-randomforest.pr %resultdir%/pr/%dataset%-%p%-naivebayes.pr %resultdir%/pr/%dataset%-%p%-ripper.pr %resultdir%/pr/%dataset%-%p%-lda.pr %resultdir%/pr/%dataset%-%p%-qda.pr %resultdir%/pr/%dataset%-%p%-svm.pr
+hold on
+xlabel Classifier
+xaxisnames C4.5 RF NB Ripper Lda Qda Svm
+yaxisnames AucPR
+fontsize label 30
+fontsize axis 16
+exportimage %resultdir%/%dataset%-%p%-histogram-pr.eps
+hold off
+

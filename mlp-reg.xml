@@ -1,0 +1,692 @@
+<datasets>
+	<dataset name="puma8fh" task="regression" size="8192" directory="puma8fh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="0.300000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="0.300000"/>
+			<attribute type="Output" available="True" min="-10.850000" max="11.580000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma8nh" task="regression" size="8192" directory="puma8nh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-0.600000" max="0.600000"/>
+			<attribute type="Real" available="True" min="-0.600000" max="0.600000"/>
+			<attribute type="Output" available="True" min="-12.420000" max="11.880000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma8nm" task="regression" size="8192" directory="puma8nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-0.600000" max="0.600000"/>
+			<attribute type="Real" available="True" min="-0.600000" max="0.600000"/>
+			<attribute type="Output" available="True" min="-10.730000" max="10.440000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma8fm" task="regression" size="8192" directory="puma8fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="0.300000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="0.300000"/>
+			<attribute type="Output" available="True" min="-7.000000" max="10.300000"/>
+		</attributes>
+	</dataset>
+	<dataset name="abalone" task="regression" size="4177" directory="abalone" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="0.080000" max="0.810000"/>
+			<attribute type="Real" available="True" min="0.050000" max="0.650000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.130000"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.830000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.490000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.760000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Output" available="True" min="1.000000" max="29.000000"/>
+		</attributes>
+	</dataset>
+	<dataset name="add10" task="regression" size="9792" directory="add10" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Output" available="True" min="-1.020000" max="28.870000"/>
+		</attributes>
+	</dataset>
+	<dataset name="boston" task="regression" size="506" directory="boston" filetype="text" separator=" " filename="boston.dat">
+		<attributes>
+			<attribute type="Real" available="True" min="0.010000" max="88.980000"/>
+			<attribute type="Real" available="True" min="0.000000" max="100.000000"/>
+			<attribute type="Real" available="True" min="0.460000" max="27.740000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.380000" max="0.870000"/>
+			<attribute type="Real" available="True" min="3.560000" max="8.780000"/>
+			<attribute type="Real" available="True" min="2.900000" max="100.000000"/>
+			<attribute type="Real" available="True" min="1.130000" max="12.130000"/>
+			<attribute type="Real" available="True" min="1.000000" max="24.000000"/>
+			<attribute type="Real" available="True" min="187.000000" max="711.000000"/>
+			<attribute type="Real" available="True" min="12.600000" max="22.000000"/>
+			<attribute type="Real" available="True" min="0.320000" max="396.900000"/>
+			<attribute type="Real" available="True" min="1.730000" max="37.970000"/>
+			<attribute type="Output" available="True" min="5.000000" max="50.000000"/>
+		</attributes>
+	</dataset>
+	<dataset name="california" task="regression" size="20640" directory="california" filetype="text" separator=" " filename="cal_housing.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-124.350000" max="-114.310000"/>
+			<attribute type="Real" available="True" min="32.540000" max="41.950000"/>
+			<attribute type="Real" available="True" min="1.000000" max="52.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="39320.000000"/>
+			<attribute type="Real" available="True" min="1.000000" max="6445.000000"/>
+			<attribute type="Real" available="True" min="3.000000" max="35682.000000"/>
+			<attribute type="Real" available="True" min="1.000000" max="6082.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="15.000000"/>
+			<attribute type="Output" available="True" min="14999.000000" max="500001.000000"/>
+		</attributes>
+	</dataset>
+	<dataset name="comp" task="regression" size="8192" directory="comp" filetype="text" separator=" " filename="comp_activ1.dat">
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="1845.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="575.000000"/>
+			<attribute type="Real" available="True" min="109.000000" max="12493.000000"/>
+			<attribute type="Real" available="True" min="6.000000" max="5318.000000"/>
+			<attribute type="Real" available="True" min="7.000000" max="5456.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.120000"/>
+			<attribute type="Real" available="True" min="0.000000" max="59.560000"/>
+			<attribute type="Real" available="True" min="278.000000" max="2526649.000000"/>
+			<attribute type="Real" available="True" min="1498.000000" max="1801623.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="81.440000"/>
+			<attribute type="Real" available="True" min="0.000000" max="184.200000"/>
+			<attribute type="Real" available="True" min="0.000000" max="523.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1237.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="211.580000"/>
+			<attribute type="Real" available="True" min="0.000000" max="141.200000"/>
+			<attribute type="Real" available="True" min="0.000000" max="292.610000"/>
+			<attribute type="Real" available="True" min="0.000000" max="899.800000"/>
+			<attribute type="Real" available="True" min="0.200000" max="1365.000000"/>
+			<attribute type="Real" available="True" min="1.000000" max="2823.000000"/>
+			<attribute type="Real" available="True" min="55.000000" max="12027.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="2243187.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="99.000000"/>
+		</attributes>
+	</dataset>
+	<dataset name="sinus" task="regression" size="8000" directory="sinus" filetype="text" separator=" " filename="sin.dat">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.730000" max="1.740000"/>
+			<attribute type="Output" available="True" min="-1.410000" max="1.370000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank32fh" task="regression" size="8192" directory="bank32fh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="0.500000" max="0.700000"/>
+			<attribute type="Real" available="True" min="0.700000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.690000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.390000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="41.870000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="-0.200000"/>
+			<attribute type="Real" available="True" min="0.800000" max="0.900000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.810000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.380000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="32.210000"/>
+			<attribute type="Real" available="True" min="-0.060000" max="-0.000000"/>
+			<attribute type="Real" available="True" min="-0.040000" max="-0.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.170000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.420000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="33.300000"/>
+			<attribute type="Real" available="True" min="0.320000" max="0.660000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.200000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.300000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-0.200000" max="0.100000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="-0.100000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-0.700000" max="-0.600000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.200000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.690000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank32fm" task="regression" size="8192" directory="bank32fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="0.500000" max="0.700000"/>
+			<attribute type="Real" available="True" min="0.700000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.690000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.390000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="41.870000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="-0.200000"/>
+			<attribute type="Real" available="True" min="0.800000" max="0.900000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.810000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.380000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="32.210000"/>
+			<attribute type="Real" available="True" min="-0.060000" max="-0.000000"/>
+			<attribute type="Real" available="True" min="-0.040000" max="-0.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.170000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.420000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="33.300000"/>
+			<attribute type="Real" available="True" min="0.320000" max="0.660000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.200000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.300000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-0.200000" max="0.100000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="-0.100000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-0.700000" max="-0.600000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.200000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.780000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank32nh" task="regression" size="8192" directory="bank32nh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.300000"/>
+			<attribute type="Real" available="True" min="0.000000" max="8.860000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="27.020000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.930000"/>
+			<attribute type="Real" available="True" min="0.000000" max="13.510000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="27.390000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.740000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.210000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="33.300000"/>
+			<attribute type="Real" available="True" min="0.020000" max="0.970000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="5.000000" max="9.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.820000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank32nm" task="regression" size="8192" directory="bank32nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.300000"/>
+			<attribute type="Real" available="True" min="0.000000" max="8.860000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="27.020000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.930000"/>
+			<attribute type="Real" available="True" min="0.000000" max="13.510000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="27.390000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.740000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.210000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="33.300000"/>
+			<attribute type="Real" available="True" min="0.020000" max="0.970000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="5.000000" max="9.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.850000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank8fh" task="regression" size="8192" directory="bank8fh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="29.710000"/>
+			<attribute type="Real" available="True" min="0.000000" max="29.680000"/>
+			<attribute type="Real" available="True" min="0.040000" max="0.980000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.790000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank8fm" task="regression" size="8192" directory="bank8fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="29.710000"/>
+			<attribute type="Real" available="True" min="0.000000" max="29.680000"/>
+			<attribute type="Real" available="True" min="0.040000" max="0.980000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.800000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank8nh" task="regression" size="8192" directory="bank8nh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.530000"/>
+			<attribute type="Real" available="True" min="0.040000" max="0.980000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.520000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank8nm" task="regression" size="8192" directory="bank8nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.530000"/>
+			<attribute type="Real" available="True" min="0.040000" max="0.980000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.480000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin32fh" task="regression" size="8192" directory="kin32fh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.340000"/>
+			<attribute type="Output" available="True" min="0.250000" max="3.380000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin32fm" task="regression" size="8192" directory="kin32fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.340000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Output" available="True" min="0.370000" max="3.080000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin32nh" task="regression" size="8192" directory="kin32nh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.580000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.550000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.590000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.580000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.580000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.530000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.600000"/>
+			<attribute type="Output" available="True" min="0.070000" max="3.290000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin32nm" task="regression" size="8192" directory="kin32nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.590000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.550000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.550000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.520000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Output" available="True" min="0.050000" max="3.040000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin8fh" task="regression" size="8192" directory="kin8fh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Output" available="True" min="0.530000" max="1.150000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin8fm" task="regression" size="8192" directory="kin8fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Output" available="True" min="0.600000" max="1.110000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin8nh" task="regression" size="8192" directory="kin8nh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Output" available="True" min="0.030000" max="1.520000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin8nm" task="regression" size="8192" directory="kin8nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Output" available="True" min="0.040000" max="1.460000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma32fh" task="regression" size="8192" directory="puma32fh" filetype="text" separator=" " filename="pumadyn32fh.dat">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-34.990000" max="34.970000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="34.960000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="34.990000"/>
+			<attribute type="Real" available="True" min="-34.990000" max="35.000000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="35.000000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Output" available="True" min="-0.100000" max="0.090000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma32nh" task="regression" size="8192" directory="puma32nh" filetype="text" separator=" " filename="pumadyn32nh.dat">
+		<attributes>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-74.990000" max="74.980000"/>
+			<attribute type="Real" available="True" min="-74.990000" max="74.980000"/>
+			<attribute type="Real" available="True" min="-74.990000" max="74.960000"/>
+			<attribute type="Real" available="True" min="-75.000000" max="74.970000"/>
+			<attribute type="Real" available="True" min="-74.990000" max="74.960000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Output" available="True" min="-0.110000" max="0.130000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma32nm" task="regression" size="8192" directory="puma32nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.350000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.350000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.350000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-74.990000" max="74.990000"/>
+			<attribute type="Real" available="True" min="-74.940000" max="74.970000"/>
+			<attribute type="Real" available="True" min="-74.980000" max="74.990000"/>
+			<attribute type="Real" available="True" min="-75.000000" max="75.000000"/>
+			<attribute type="Real" available="True" min="-74.980000" max="75.000000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Output" available="True" min="-0.090000" max="0.090000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma32fm" task="regression" size="8192" directory="puma32fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-34.990000" max="34.990000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="35.000000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="34.980000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="34.980000"/>
+			<attribute type="Real" available="True" min="-34.990000" max="35.000000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Output" available="True" min="-0.040000" max="0.040000"/>
+		</attributes>
+	</dataset>
+</datasets>

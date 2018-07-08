@@ -1,0 +1,10 @@
+runcount 1
+foldcount 1
+rocplot ../results/mitosis/knn10-2.posterior 
+exportimage ../results/mitosis/knn10.eps
+rocplot ../results/mitosis/knn30-2.posterior 
+exportimage ../results/mitosis/knn30.eps
+rocplot ../results/mitosis/linearperceptron-2.posterior
+exportimage ../results/mitosis/linearperceptron.eps
+rocplot ../results/mitosis/mlp4-2.posterior
+exportimage ../results/mitosis/mlp4.eps

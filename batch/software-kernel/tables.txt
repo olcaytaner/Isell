@@ -1,0 +1,74 @@
+displaycode off
+string resultdir dataset type algorithm1 algorithm2 algorithm3 algorithm4 st
+integer i j k
+= resultdir ../results/moss
+for i 2 4
+  switch i
+    case 1
+      = type fmeasure      
+    case 2
+      = type error      
+    case 3
+      = type precision      
+    case 4
+      = type recall      
+    case 5
+      = type auc      
+  endswitch
+  for j 1 3
+    switch j
+      case 1
+        = algorithm1 svm-kernel-0
+        = algorithm2 svm-kernel-1
+        = algorithm3 svm-kernel-2
+        = algorithm4 svm-metric
+      case 2
+        = algorithm1 knn-kernel-0
+        = algorithm2 knn-kernel-1
+        = algorithm3 knn-kernel-2
+        = algorithm4 knn-metric
+      case 3
+        = algorithm1 svm-kernel-2
+        = algorithm2 knn-kernel-0
+        = algorithm3 knn-kernel-1
+        = algorithm4 naivebayes-metric
+    endswitch 
+    output %type%_%algorithm1%_%algorithm2%_%algorithm3%_%algorithm4%.txt
+    write Dataset_&&_%algorithm1%_&&_%algorithm2%_&&_%algorithm3%_&&_%algorithm4%_\\
+    for k 1 10
+      switch k
+        case 1
+          = dataset ant
+        case 2
+          = dataset camel
+        case 3
+          = dataset ivy
+        case 4
+          = dataset jedit
+        case 5
+          = dataset lucene
+        case 6
+          = dataset poi
+        case 7
+          = dataset synapse
+        case 8
+          = dataset tomcat
+        case 9
+          = dataset velocity
+        case 10
+          = dataset xalan
+      endswitch
+      = st %dataset%
+      meanvariance %resultdir%/%dataset%-%algorithm1%.%type%
+      = st %st%_&&_%out1%_$\pm$_%out2%
+      meanvariance %resultdir%/%dataset%-%algorithm2%.%type%
+      = st %st%_&&_%out1%_$\pm$_%out2%
+      meanvariance %resultdir%/%dataset%-%algorithm3%.%type%
+      = st %st%_&&_%out1%_$\pm$_%out2%
+      meanvariance %resultdir%/%dataset%-%algorithm4%.%type%
+      = st %st%_&&_%out1%_$\pm$_%out2%\\
+      write %st%
+    endfor k 
+  endfor j
+endfor i
+output stdout

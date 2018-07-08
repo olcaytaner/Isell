@@ -1,0 +1,40 @@
+displaycode off
+displayresult off
+string resultdir dataset test comptype val
+integer i j k numberofruns
+file file1 file2
+real mean variance sum l q diff[10]
+integer count
+setprecision 15
+= numberofruns 100
+= resultdir ../results/multivariatetest/skewed/0.006
+= comptype error
+for j 1 9
+  = dataset data%j%
+  output %resultdir%/%comptype%-%j%.f
+  for k 1 %numberofruns%
+    = file1 %resultdir%/%dataset%/%k%-%comptype%.lda
+    = file2 %resultdir%/%dataset%/%k%-%comptype%.qda
+    openfile file1 r
+    openfile file2 r
+    = sum 0.0
+    for i 1 10
+      readfile file1 l
+      readfile file2 q
+      = diff[%i%] %l-q%
+      += sum %diff[i]%
+    endfor i
+    closefile file1
+    closefile file2
+    = mean %sum/10%
+    = sum 0.0
+    for i 1 10
+      += sum %(diff[i]-mean)*(diff[i]-mean)%
+    endfor i
+    = variance %sum/9%
+    write %((10*mean)*mean)/variance%
+  endfor k
+  writescreen %j%
+endfor j
+output stdout
+

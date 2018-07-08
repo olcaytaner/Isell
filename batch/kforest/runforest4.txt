@@ -1,0 +1,114 @@
+displaycode off
+setdatadir ../data
+loaddatasets rule.xml
+integer i fold j k t fsize[3]
+string resultdir dataset algorithm
+file outfile
+setprecision 6
+runcount 1
+foldcount 10
+= resultdir ../results/forest
+for j 1 17
+  switch j
+    case 1
+      = dataset flags
+      = fsize[1] 2
+      = fsize[2] 5
+      = fsize[3] 7
+    case 2
+      = dataset postoperative
+      = fsize[1] 1
+      = fsize[2] 3
+      = fsize[3] 4
+    case 3
+      = dataset spect
+      = fsize[1] 2
+      = fsize[2] 4
+      = fsize[3] 6
+    case 4
+      = dataset splice
+      = fsize[1] 3
+      = fsize[2] 7
+      = fsize[3] 10
+    case 5
+      = dataset promoters
+      = fsize[1] 3
+      = fsize[2] 7
+      = fsize[3] 10
+    case 6
+      = dataset hayesroth
+      = fsize[1] 1
+      = fsize[2] 2
+      = fsize[3] 3
+    case 7
+      = dataset krvskp
+      = fsize[1] 3
+      = fsize[2] 6
+      = fsize[3] 9
+    case 8
+      = dataset donors
+      = fsize[1] 1
+      = fsize[2] 3
+      = fsize[3] 4
+    case 9
+      = dataset acceptors
+      = fsize[1] 3
+      = fsize[2] 6
+      = fsize[3] 9
+    case 10
+      = dataset car
+      = fsize[1] 1
+      = fsize[2] 2
+      = fsize[3] 3
+    case 11
+      = dataset vote
+      = fsize[1] 2
+      = fsize[2] 4
+      = fsize[3] 6
+    case 12
+      = dataset balance
+      = fsize[1] 1
+      = fsize[2] 2
+      = fsize[3] 3
+    case 13
+      = dataset nursery
+      = fsize[1] 1
+      = fsize[2] 3
+      = fsize[3] 4
+    case 14
+      = dataset tictactoe
+      = fsize[1] 1
+      = fsize[2] 3
+      = fsize[3] 4
+    case 15
+      = dataset monks
+      = fsize[1] 1
+      = fsize[2] 2
+      = fsize[3] 3
+    case 16
+      = dataset artificial
+      = fsize[1] 1
+      = fsize[2] 2
+      = fsize[3] 3
+    case 17
+      = dataset mushroom
+      = fsize[1] 2
+      = fsize[2] 4
+      = fsize[3] 6
+  endswitch
+  for i 1 3
+    fileexists %resultdir%/%dataset%-randomforest-%i%.error
+    if = out1 0
+      featuresize %fsize[i]%
+      output %resultdir%/%dataset%-randomforest-%i%.error
+      randomforest %dataset% cv 1
+      = outfile %resultdir%/%dataset%-randomforest-%i%.time
+      openfile outfile w
+      for t 1 10
+        writefile outfile %aout1[t]%
+      endfor t
+      closefile outfile
+    endif
+  endfor i
+endfor j
+output stdout

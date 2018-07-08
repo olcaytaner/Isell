@@ -1,0 +1,65 @@
+displaycode off
+integer i j k l
+string dir alg dataset results
+= dir /home/olcay/results/multivariatetest
+for i 2 5
+  switch i
+    case 1
+      = alg c45
+    case 2
+      = alg ripper
+    case 3
+      = alg naivebayes
+    case 4
+      = alg knn
+    case 5
+      = alg mlpgeneric
+  endswitch
+      for k 1 15
+        switch k
+          case 1
+            = dataset ada
+          case 2
+            = dataset aibocolor2
+          case 3
+            = dataset caravan
+          case 4
+            = dataset chess
+          case 5
+            = dataset connect4
+          case 6
+            = dataset gina
+          case 7
+            = dataset mushroom
+          case 8
+            = dataset nursery
+          case 9
+            = dataset pageblock
+          case 10
+            = dataset report
+          case 11
+            = dataset shuttle
+          case 12
+            = dataset spambase
+          case 13
+            = dataset sylva
+          case 14
+            = dataset thyroid
+          case 15
+            = dataset wave
+        endswitch
+        output %dir%/%alg%/%dataset%posterior/confusion.txt
+        writescreen %alg%_%dataset%
+        for l 1 30
+          if < i 4
+            = results %dir%/%alg%/%dataset%posterior/p-%alg%-%dataset%-1-%l%.txt
+          else
+            = results %dir%/%alg%/%dataset%posterior/p-%alg%-%dataset%-1-%l%-1.txt
+          endif
+          confusionanalysis %results% 0.5
+          write %out1%_%out2%_%out3%_%out4%
+        endfor l
+      endfor k
+endfor i
+output stdout
+

@@ -1,0 +1,52 @@
+displaycode off
+setdatadir ../data
+loaddatasets discrete.xml
+integer i j size
+string dataset outdir
+= outdir ../results/discrete
+testpercentage 0.333333333
+runcount 2
+foldcount 5
+runtofold 5
+= size 3
+usediscrete off
+smallsetsize %size%
+for i 7 7
+  switch i
+    case 1
+      = dataset artificial
+    case 2
+      = dataset balance
+    case 3
+      = dataset car
+    case 4
+      = dataset discretemonks
+    case 5
+      = dataset titanic
+    case 6
+      = dataset tictactoe
+    case 7
+      = dataset vote
+    case 8
+      = dataset nursery
+    case 9
+      = dataset spect
+    case 10
+      = dataset splice
+    case 11
+      = dataset promoters
+    case 12
+      = dataset hayesroth
+    case 13
+      = dataset krvskp
+    case 14
+      = dataset donors
+    case 15
+      = dataset acceptors
+    case 16
+      = dataset connect4
+  endswitch
+  output %outdir%/%dataset%-discrete-%size%.error
+  c45 %dataset% cv 1
+endfor i
+output stdout

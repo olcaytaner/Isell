@@ -1,0 +1,3853 @@
+<datasets>
+	<dataset name="breast" task="classification" size="699" directory="breast" filetype="text" separator="," filename="breast-cancer-wisconsin.data">
+		<classes>
+			<class value="2" size="458"/>
+			<class value="4" size="241"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="False"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Output" available="True">
+				<value>2</value>
+				<value>4</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="bupa" task="classification" size="345" directory="bupa" filetype="text" separator="," filename="bupa.data">
+		<classes>
+			<class value="1" size="145"/>
+			<class value="2" size="200"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="65" max="103"/>
+			<attribute type="Integer" available="True" min="23" max="138"/>
+			<attribute type="Integer" available="True" min="4" max="155"/>
+			<attribute type="Integer" available="True" min="5" max="82"/>
+			<attribute type="Integer" available="True" min="5" max="297"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.000000"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="car" task="classification" size="1728" directory="car" filetype="text" separator="," filename="car.data">
+		<classes>
+			<class value="unacc" size="1210"/>
+			<class value="acc" size="384"/>
+			<class value="vgood" size="65"/>
+			<class value="good" size="69"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>vhigh</value>
+				<value>high</value>
+				<value>med</value>
+				<value>low</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>vhigh</value>
+				<value>high</value>
+				<value>med</value>
+				<value>low</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5more</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>2</value>
+				<value>4</value>
+				<value>more</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>small</value>
+				<value>med</value>
+				<value>big</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>low</value>
+				<value>med</value>
+				<value>high</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>unacc</value>
+				<value>acc</value>
+				<value>vgood</value>
+				<value>good</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="optdigits" task="classification" size="3823" directory="optdigits" filetype="text" separator="," filename="optdigits.tra">
+		<classes>
+			<class value="0" size="376"/>
+			<class value="7" size="387"/>
+			<class value="4" size="387"/>
+			<class value="6" size="377"/>
+			<class value="2" size="380"/>
+			<class value="5" size="376"/>
+			<class value="8" size="380"/>
+			<class value="1" size="389"/>
+			<class value="9" size="382"/>
+			<class value="3" size="389"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="0"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="5"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="5"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="2"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="14"/>
+			<attribute type="Integer" available="True" min="0" max="0"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="12"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>7</value>
+				<value>4</value>
+				<value>6</value>
+				<value>2</value>
+				<value>5</value>
+				<value>8</value>
+				<value>1</value>
+				<value>9</value>
+				<value>3</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="cylinder" task="classification" size="540" directory="cylinder" filetype="text" separator="," filename="bands.data">
+		<classes>
+			<class value="band" size="228"/>
+			<class value="noband" size="312"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="False"/>
+			<attribute type="String" available="False"/>
+			<attribute type="String" available="False"/>
+			<attribute type="String" available="False"/>
+			<attribute type="String" available="True">
+				<value>yes</value>
+				<value>no</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>key</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>yes</value>
+				<value>no</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>benton</value>
+				<value>uddeholm</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>gallatin</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>uncoated</value>
+				<value>coated</value>
+				<value>super</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>uncoated</value>
+				<value>coated</value>
+				<value>cover</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>no</value>
+				<value>yes</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>line</value>
+				<value>xylol</value>
+				<value>naptha</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>yes</value>
+				<value>no</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>motter94</value>
+				<value>woodhoe70</value>
+				<value>albert70</value>
+				<value>motter70</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>821</value>
+				<value>815</value>
+				<value>816</value>
+				<value>827</value>
+				<value>802</value>
+				<value>813</value>
+				<value>824</value>
+				<value>828</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>2</value>
+				<value>9</value>
+				<value>7</value>
+				<value>5</value>
+				<value>1</value>
+				<value>10</value>
+				<value>6</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>tabloid</value>
+				<value>catalog</value>
+				<value>spiegel</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>northus</value>
+				<value>canadian</value>
+				<value>scandanavian</value>
+				<value>southus</value>
+				<value>mideuropean</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1911</value>
+				<value>1910</value>
+			</attribute>
+			<attribute type="Real" available="True" min="25.000000" max="72.500000"/>
+			<attribute type="Real" available="True" min="35.000000" max="72.000000"/>
+			<attribute type="Real" available="True" min="0.133000" max="0.533000"/>
+			<attribute type="Real" available="True" min="11.200000" max="24.500000"/>
+			<attribute type="Real" available="True" min="57.000000" max="105.000000"/>
+			<attribute type="Real" available="True" min="0.056250" max="1.250000"/>
+			<attribute type="Real" available="True" min="16.000000" max="70.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="35.800000"/>
+			<attribute type="Real" available="True" min="0.000000" max="2600.000000"/>
+			<attribute type="Real" available="True" min="41.000000" max="76.900000"/>
+			<attribute type="Real" available="True" min="22.000000" max="53.400000"/>
+			<attribute type="Real" available="True" min="0.000000" max="16.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="3.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="3.000000"/>
+			<attribute type="Real" available="True" min="28.000000" max="60.000000"/>
+			<attribute type="Real" available="True" min="30.000000" max="45.000000"/>
+			<attribute type="Real" available="True" min="83.330000" max="117.860000"/>
+			<attribute type="Real" available="True" min="90.000000" max="100.000000"/>
+			<attribute type="Output" available="True">
+				<value>band</value>
+				<value>noband</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="dermatology" task="classification" size="366" directory="dermatology" filetype="text" separator="," filename="dermatology.data">
+		<classes>
+			<class value="2" size="61"/>
+			<class value="1" size="112"/>
+			<class value="3" size="72"/>
+			<class value="5" size="52"/>
+			<class value="4" size="49"/>
+			<class value="6" size="20"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="2"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="75"/>
+			<attribute type="Output" available="True">
+				<value>2</value>
+				<value>1</value>
+				<value>3</value>
+				<value>5</value>
+				<value>4</value>
+				<value>6</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="flare" task="classification" size="323" directory="flare" filetype="text" separator=" " filename="flare.data1">
+		<classes>
+			<class value="0" size="287"/>
+			<class value="1" size="29"/>
+			<class value="2" size="7"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>d</value>
+				<value>b</value>
+				<value>f</value>
+				<value>h</value>
+				<value>e</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>s</value>
+				<value>a</value>
+				<value>k</value>
+				<value>r</value>
+				<value>x</value>
+				<value>h</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>i</value>
+				<value>x</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="3"/>
+			<attribute type="Integer" available="True" min="1" max="3"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+			<attribute type="String" available="False"/>
+			<attribute type="String" available="False"/>
+		</attributes>
+	</dataset>
+	<dataset name="ecoli" task="classification" size="336" directory="ecoli" filetype="text" separator=" " filename="ecoli.data">
+		<classes>
+			<class value="cp" size="143"/>
+			<class value="im" size="77"/>
+			<class value="ims" size="2"/>
+			<class value="iml" size="2"/>
+			<class value="imu" size="35"/>
+			<class value="om" size="20"/>
+			<class value="oml" size="5"/>
+			<class value="pp" size="52"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="False"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.890000"/>
+			<attribute type="Real" available="True" min="0.160000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.480000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.880000"/>
+			<attribute type="Real" available="True" min="0.030000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.990000"/>
+			<attribute type="Output" available="True">
+				<value>cp</value>
+				<value>im</value>
+				<value>ims</value>
+				<value>iml</value>
+				<value>imu</value>
+				<value>om</value>
+				<value>oml</value>
+				<value>pp</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="glass" task="classification" size="214" directory="glass" filetype="text" separator="," filename="glass.data">
+		<classes>
+			<class value="1" size="70"/>
+			<class value="2" size="76"/>
+			<class value="3" size="17"/>
+			<class value="5" size="13"/>
+			<class value="6" size="9"/>
+			<class value="7" size="29"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="False"/>
+			<attribute type="Real" available="True" min="1.511150" max="1.533930"/>
+			<attribute type="Real" available="True" min="10.730000" max="17.380000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.490000"/>
+			<attribute type="Real" available="True" min="0.290000" max="3.500000"/>
+			<attribute type="Real" available="True" min="69.810000" max="75.410000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.210000"/>
+			<attribute type="Real" available="True" min="5.430000" max="16.190000"/>
+			<attribute type="Real" available="True" min="0.000000" max="3.150000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.510000"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>5</value>
+				<value>6</value>
+				<value>7</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="hepatitis" task="classification" size="155" directory="hepatitis" filetype="text" separator="," filename="hepatitis.data">
+		<classes>
+			<class value="2" size="123"/>
+			<class value="1" size="32"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>2</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="7" max="78"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Real" available="True" min="0.300000" max="8.000000"/>
+			<attribute type="Integer" available="True" min="26" max="295"/>
+			<attribute type="Integer" available="True" min="14" max="648"/>
+			<attribute type="Real" available="True" min="2.100000" max="6.400000"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+		</attributes>
+	</dataset>
+	<dataset name="horse" task="classification" size="368" directory="horse" filetype="text" separator=" " filename="horse-colic.data">
+		<classes>
+			<class value="2" size="136"/>
+			<class value="1" size="232"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="9"/>
+			<attribute type="String" available="False"/>
+			<attribute type="Real" available="True" min="30.984239" max="40.800000"/>
+			<attribute type="Integer" available="True" min="30" max="184"/>
+			<attribute type="Integer" available="True" min="8" max="96"/>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="Integer" available="True" min="1" max="6"/>
+			<attribute type="Integer" available="True" min="1" max="3"/>
+			<attribute type="Integer" available="True" min="1" max="5"/>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="Integer" available="True" min="1" max="3"/>
+			<attribute type="Integer" available="True" min="1" max="3"/>
+			<attribute type="Real" available="True" min="0.930435" max="8.500000"/>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="Integer" available="True" min="1" max="5"/>
+			<attribute type="Real" available="True" min="4.000000" max="75.000000"/>
+			<attribute type="Real" available="True" min="3.300000" max="89.000000"/>
+			<attribute type="Integer" available="True" min="1" max="3"/>
+			<attribute type="Real" available="True" min="0.100000" max="10.100000"/>
+			<attribute type="Integer" available="True" min="1" max="3"/>
+			<attribute type="Output" available="True">
+				<value>2</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>11300</value>
+				<value>02208</value>
+				<value>00000</value>
+				<value>04300</value>
+				<value>03124</value>
+				<value>03205</value>
+				<value>02124</value>
+				<value>02111</value>
+				<value>04124</value>
+				<value>02112</value>
+				<value>03207</value>
+				<value>01400</value>
+				<value>04205</value>
+				<value>03111</value>
+				<value>04122</value>
+				<value>02207</value>
+				<value>02209</value>
+				<value>01124</value>
+				<value>07111</value>
+				<value>05205</value>
+				<value>02113</value>
+				<value>09400</value>
+				<value>02305</value>
+				<value>07209</value>
+				<value>07400</value>
+				<value>03112</value>
+				<value>03209</value>
+				<value>02322</value>
+				<value>11124</value>
+				<value>03025</value>
+				<value>02205</value>
+				<value>05206</value>
+				<value>00400</value>
+				<value>05000</value>
+				<value>05400</value>
+				<value>31110</value>
+				<value>02206</value>
+				<value>05124</value>
+				<value>07113</value>
+				<value>06209</value>
+				<value>03400</value>
+				<value>06112</value>
+				<value>06111</value>
+				<value>01111</value>
+				<value>02300</value>
+				<value>21110</value>
+				<value>04111</value>
+				<value>03133</value>
+				<value>05111</value>
+				<value>00300</value>
+				<value>03115</value>
+				<value>09000</value>
+				<value>03300</value>
+				<value>03113</value>
+				<value>41110</value>
+				<value>11400</value>
+				<value>12208</value>
+				<value>04206</value>
+				<value>04207</value>
+				<value>08300</value>
+				<value>08400</value>
+				<value>05110</value>
+				<value>08405</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>00000</value>
+				<value>01400</value>
+				<value>07111</value>
+				<value>03111</value>
+				<value>06112</value>
+				<value>03112</value>
+				<value>02208</value>
+				<value>03205</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>00000</value>
+				<value>000000</value>
+				<value>02209</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+		</attributes>
+	</dataset>
+	<dataset name="iris" task="classification" size="150" directory="iris" filetype="text" separator="," filename="iris.data">
+		<classes>
+			<class value="iris-setosa" size="50"/>
+			<class value="iris-versicolor" size="50"/>
+			<class value="iris-virginica" size="50"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="4.300000" max="7.900000"/>
+			<attribute type="Real" available="True" min="2.000000" max="4.400000"/>
+			<attribute type="Real" available="True" min="1.000000" max="6.900000"/>
+			<attribute type="Real" available="True" min="0.100000" max="2.500000"/>
+			<attribute type="Output" available="True">
+				<value>iris-setosa</value>
+				<value>iris-versicolor</value>
+				<value>iris-virginica</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="ironosphere" task="classification" size="351" directory="ironosphere" filetype="text" separator="," filename="ionosphere.data">
+		<classes>
+			<class value="g" size="225"/>
+			<class value="b" size="126"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Output" available="True">
+				<value>g</value>
+				<value>b</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="monks" task="classification" size="432" directory="monks" filetype="text" separator=" " filename="monks-1.train">
+		<classes>
+			<class value="1" size="216"/>
+			<class value="0" size="216"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="1" max="3"/>
+			<attribute type="Integer" available="True" min="1" max="3"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="3"/>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="String" available="False"/>
+		</attributes>
+	</dataset>
+	<dataset name="mushroom" task="classification" size="8124" directory="mushroom" filetype="text" separator="," filename="agaricus-lepiota.data">
+		<classes>
+			<class value="p" size="3916"/>
+			<class value="e" size="4208"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>p</value>
+				<value>e</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>b</value>
+				<value>s</value>
+				<value>f</value>
+				<value>k</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>s</value>
+				<value>y</value>
+				<value>f</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+				<value>w</value>
+				<value>g</value>
+				<value>e</value>
+				<value>p</value>
+				<value>b</value>
+				<value>u</value>
+				<value>c</value>
+				<value>r</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>p</value>
+				<value>a</value>
+				<value>l</value>
+				<value>n</value>
+				<value>f</value>
+				<value>c</value>
+				<value>y</value>
+				<value>s</value>
+				<value>m</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>w</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>k</value>
+				<value>n</value>
+				<value>g</value>
+				<value>p</value>
+				<value>w</value>
+				<value>h</value>
+				<value>u</value>
+				<value>e</value>
+				<value>b</value>
+				<value>r</value>
+				<value>y</value>
+				<value>o</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>e</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>e</value>
+				<value>c</value>
+				<value>b</value>
+				<value>r</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>s</value>
+				<value>f</value>
+				<value>k</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>s</value>
+				<value>f</value>
+				<value>y</value>
+				<value>k</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>w</value>
+				<value>g</value>
+				<value>p</value>
+				<value>n</value>
+				<value>b</value>
+				<value>e</value>
+				<value>o</value>
+				<value>c</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>w</value>
+				<value>p</value>
+				<value>g</value>
+				<value>b</value>
+				<value>n</value>
+				<value>e</value>
+				<value>y</value>
+				<value>o</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>p</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>w</value>
+				<value>n</value>
+				<value>o</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>t</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>p</value>
+				<value>e</value>
+				<value>l</value>
+				<value>f</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>k</value>
+				<value>n</value>
+				<value>u</value>
+				<value>h</value>
+				<value>w</value>
+				<value>r</value>
+				<value>o</value>
+				<value>y</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>s</value>
+				<value>n</value>
+				<value>a</value>
+				<value>v</value>
+				<value>y</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>u</value>
+				<value>g</value>
+				<value>m</value>
+				<value>d</value>
+				<value>p</value>
+				<value>w</value>
+				<value>l</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="segment" task="classification" size="2310" directory="segment" filetype="text" separator="," filename="segmentation.data">
+		<classes>
+			<class value="grass" size="330"/>
+			<class value="path" size="330"/>
+			<class value="window" size="330"/>
+			<class value="cement" size="330"/>
+			<class value="foliage" size="330"/>
+			<class value="sky" size="330"/>
+			<class value="brickface" size="330"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>grass</value>
+				<value>path</value>
+				<value>window</value>
+				<value>cement</value>
+				<value>foliage</value>
+				<value>sky</value>
+				<value>brickface</value>
+			</attribute>
+			<attribute type="Real" available="True" min="1.000000" max="254.000000"/>
+			<attribute type="Real" available="True" min="11.000000" max="251.000000"/>
+			<attribute type="Real" available="True" min="9.000000" max="9.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.333333"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.222222"/>
+			<attribute type="Real" available="True" min="0.000000" max="29.222221"/>
+			<attribute type="Real" available="True" min="0.000000" max="991.718400"/>
+			<attribute type="Real" available="True" min="0.000000" max="44.722225"/>
+			<attribute type="Real" available="True" min="-0.000000" max="1386.329200"/>
+			<attribute type="Real" available="True" min="0.000000" max="143.444440"/>
+			<attribute type="Real" available="True" min="0.000000" max="137.111110"/>
+			<attribute type="Real" available="True" min="0.000000" max="150.888890"/>
+			<attribute type="Real" available="True" min="0.000000" max="142.555560"/>
+			<attribute type="Real" available="True" min="-49.666668" max="9.888889"/>
+			<attribute type="Real" available="True" min="-12.444445" max="82.000000"/>
+			<attribute type="Real" available="True" min="-33.888890" max="24.666666"/>
+			<attribute type="Real" available="True" min="0.000000" max="150.888890"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-3.044175" max="2.912480"/>
+		</attributes>
+	</dataset>
+	<dataset name="vote" task="classification" size="435" directory="vote" filetype="text" separator="," filename="house-votes-84.data">
+		<classes>
+			<class value="republican" size="168"/>
+			<class value="democrat" size="267"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>republican</value>
+				<value>democrat</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="wine" task="classification" size="178" directory="wine" filetype="text" separator="," filename="wine.data">
+		<classes>
+			<class value="1" size="59"/>
+			<class value="2" size="71"/>
+			<class value="3" size="48"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+			<attribute type="Real" available="True" min="11.030000" max="14.830000"/>
+			<attribute type="Real" available="True" min="0.740000" max="5.800000"/>
+			<attribute type="Real" available="True" min="1.360000" max="3.230000"/>
+			<attribute type="Real" available="True" min="10.600000" max="30.000000"/>
+			<attribute type="Real" available="True" min="70.000000" max="162.000000"/>
+			<attribute type="Real" available="True" min="0.980000" max="3.880000"/>
+			<attribute type="Real" available="True" min="0.340000" max="5.080000"/>
+			<attribute type="Real" available="True" min="0.130000" max="0.660000"/>
+			<attribute type="Real" available="True" min="0.410000" max="3.580000"/>
+			<attribute type="Real" available="True" min="1.280000" max="13.000000"/>
+			<attribute type="Real" available="True" min="0.480000" max="1.710000"/>
+			<attribute type="Real" available="True" min="1.270000" max="4.000000"/>
+			<attribute type="Integer" available="True" min="278" max="1680"/>
+		</attributes>
+	</dataset>
+	<dataset name="zoo" task="classification" size="101" directory="zoo" filetype="text" separator="," filename="zoo.data">
+		<classes>
+			<class value="1" size="41"/>
+			<class value="4" size="13"/>
+			<class value="2" size="20"/>
+			<class value="7" size="10"/>
+			<class value="6" size="8"/>
+			<class value="5" size="4"/>
+			<class value="3" size="5"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="False"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>4</value>
+				<value>2</value>
+				<value>7</value>
+				<value>6</value>
+				<value>5</value>
+				<value>3</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="pendigits" task="classification" size="7494" directory="pendigits" filetype="text" separator="," filename="pendigits.tra">
+		<classes>
+			<class value="8" size="719"/>
+			<class value="2" size="780"/>
+			<class value="1" size="779"/>
+			<class value="4" size="780"/>
+			<class value="6" size="720"/>
+			<class value="0" size="780"/>
+			<class value="5" size="720"/>
+			<class value="9" size="719"/>
+			<class value="7" size="778"/>
+			<class value="3" size="719"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Integer" available="True" min="0" max="100"/>
+			<attribute type="Output" available="True">
+				<value>8</value>
+				<value>2</value>
+				<value>1</value>
+				<value>4</value>
+				<value>6</value>
+				<value>0</value>
+				<value>5</value>
+				<value>9</value>
+				<value>7</value>
+				<value>3</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="balance" task="classification" size="625" directory="balance" filetype="text" separator="," filename="balance-scale.data">
+		<classes>
+			<class value="b" size="49"/>
+			<class value="r" size="288"/>
+			<class value="l" size="288"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>b</value>
+				<value>r</value>
+				<value>l</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="nursery" task="classification" size="12960" directory="nursery" filetype="text" separator="," filename="nursery.data">
+		<classes>
+			<class value="recommend" size="2"/>
+			<class value="priority" size="4266"/>
+			<class value="not_recom" size="4320"/>
+			<class value="very_recom" size="328"/>
+			<class value="spec_prior" size="4044"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>usual</value>
+				<value>pretentious</value>
+				<value>great_pret</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>proper</value>
+				<value>less_proper</value>
+				<value>improper</value>
+				<value>critical</value>
+				<value>very_crit</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>complete</value>
+				<value>completed</value>
+				<value>incomplete</value>
+				<value>foster</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>more</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>convenient</value>
+				<value>less_conv</value>
+				<value>critical</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>convenient</value>
+				<value>inconv</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>nonprob</value>
+				<value>slightly_prob</value>
+				<value>problematic</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>recommended</value>
+				<value>priority</value>
+				<value>not_recom</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>recommend</value>
+				<value>priority</value>
+				<value>not_recom</value>
+				<value>very_recom</value>
+				<value>spec_prior</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="postoperative" task="classification" size="90" directory="postoperative" filetype="text" separator="," filename="post-operative.data">
+		<classes>
+			<class value="a" size="2"/>
+			<class value="s" size="24"/>
+			<class value="i" size="64"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>mid</value>
+				<value>high</value>
+				<value>low</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>low</value>
+				<value>high</value>
+				<value>mid</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>excellent</value>
+				<value>good</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>mid</value>
+				<value>high</value>
+				<value>low</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>stable</value>
+				<value>unstable</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>stable</value>
+				<value>unstable</value>
+				<value>mod-stable</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>stable</value>
+				<value>mod-stable</value>
+				<value>unstable</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>15</value>
+				<value>10</value>
+				<value>05</value>
+				<value>07</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>a</value>
+				<value>s</value>
+				<value>i</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="tictactoe" task="classification" size="958" directory="tictactoe" filetype="text" separator="," filename="tic-tac-toe.data">
+		<classes>
+			<class value="positive" size="626"/>
+			<class value="negative" size="332"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>b</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>b</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>x</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>x</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>positive</value>
+				<value>negative</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="flags" task="classification" size="194" directory="flags" filetype="text" separator="," filename="flag1.data">
+		<classes>
+			<class value="2" size="40"/>
+			<class value="6" size="60"/>
+			<class value="1" size="36"/>
+			<class value="0" size="8"/>
+			<class value="5" size="4"/>
+			<class value="3" size="27"/>
+			<class value="4" size="15"/>
+			<class value="7" size="4"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>5</value>
+				<value>3</value>
+				<value>4</value>
+				<value>6</value>
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>3</value>
+				<value>2</value>
+				<value>4</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>10</value>
+				<value>6</value>
+				<value>8</value>
+				<value>1</value>
+				<value>2</value>
+				<value>4</value>
+				<value>3</value>
+				<value>5</value>
+				<value>7</value>
+				<value>9</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>2</value>
+				<value>6</value>
+				<value>1</value>
+				<value>0</value>
+				<value>5</value>
+				<value>3</value>
+				<value>4</value>
+				<value>7</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>2</value>
+				<value>3</value>
+				<value>1</value>
+				<value>5</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>3</value>
+				<value>0</value>
+				<value>2</value>
+				<value>1</value>
+				<value>5</value>
+				<value>9</value>
+				<value>11</value>
+				<value>14</value>
+				<value>4</value>
+				<value>6</value>
+				<value>13</value>
+				<value>7</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>5</value>
+				<value>3</value>
+				<value>2</value>
+				<value>8</value>
+				<value>6</value>
+				<value>4</value>
+				<value>7</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>green</value>
+				<value>red</value>
+				<value>blue</value>
+				<value>gold</value>
+				<value>white</value>
+				<value>orange</value>
+				<value>black</value>
+				<value>brown</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+				<value>4</value>
+				<value>2</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+				<value>4</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+				<value>6</value>
+				<value>22</value>
+				<value>14</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+				<value>15</value>
+				<value>10</value>
+				<value>7</value>
+				<value>2</value>
+				<value>9</value>
+				<value>50</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>black</value>
+				<value>red</value>
+				<value>green</value>
+				<value>blue</value>
+				<value>white</value>
+				<value>orange</value>
+				<value>gold</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>green</value>
+				<value>red</value>
+				<value>white</value>
+				<value>black</value>
+				<value>blue</value>
+				<value>gold</value>
+				<value>orange</value>
+				<value>brown</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="cmc" task="classification" size="1473" directory="cmc" filetype="text" separator="," filename="cmc.data">
+		<classes>
+			<class value="1" size="629"/>
+			<class value="2" size="333"/>
+			<class value="3" size="511"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="16" max="49"/>
+			<attribute type="String" available="True">
+				<value>2</value>
+				<value>1</value>
+				<value>3</value>
+				<value>4</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>3</value>
+				<value>2</value>
+				<value>4</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>2</value>
+				<value>3</value>
+				<value>1</value>
+				<value>4</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>3</value>
+				<value>4</value>
+				<value>2</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="credit" task="classification" size="690" directory="credit" filetype="text" separator="," filename="crx.data">
+		<classes>
+			<class value="+" size="307"/>
+			<class value="-" size="383"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="Real" available="True" min="13.750000" max="80.250000"/>
+			<attribute type="Real" available="True" min="0.000000" max="28.000000"/>
+			<attribute type="String" available="True">
+				<value>u</value>
+				<value>y</value>
+				<value>l</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>p</value>
+				<value>gg</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>w</value>
+				<value>q</value>
+				<value>m</value>
+				<value>r</value>
+				<value>cc</value>
+				<value>k</value>
+				<value>c</value>
+				<value>d</value>
+				<value>x</value>
+				<value>i</value>
+				<value>e</value>
+				<value>aa</value>
+				<value>ff</value>
+				<value>j</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>v</value>
+				<value>h</value>
+				<value>bb</value>
+				<value>ff</value>
+				<value>j</value>
+				<value>z</value>
+				<value>o</value>
+				<value>dd</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="Real" available="True" min="0.000000" max="28.500000"/>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="Real" available="True" min="0.000000" max="67.000000"/>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>s</value>
+				<value>p</value>
+			</attribute>
+			<attribute type="Real" available="True" min="0.000000" max="2000.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="100000.000000"/>
+			<attribute type="Output" available="True">
+				<value>+</value>
+				<value>-</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="haberman" task="classification" size="306" directory="haberman" filetype="text" separator="," filename="haberman.data">
+		<classes>
+			<class value="1" size="225"/>
+			<class value="2" size="81"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="30" max="83"/>
+			<attribute type="Integer" available="True" min="58" max="69"/>
+			<attribute type="Integer" available="True" min="0" max="52"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="pima" task="classification" size="768" directory="pima" filetype="text" separator="," filename="pima-indians-diabetes.data">
+		<classes>
+			<class value="1" size="268"/>
+			<class value="0" size="500"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="17.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="199.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="122.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="99.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="846.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="67.100000"/>
+			<attribute type="Real" available="True" min="0.078000" max="2.420000"/>
+			<attribute type="Real" available="True" min="21.000000" max="81.000000"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="yeast" task="classification" size="1484" directory="yeast" filetype="text" separator=" " filename="yeast.data">
+		<classes>
+			<class value="mit" size="244"/>
+			<class value="nuc" size="429"/>
+			<class value="cyt" size="463"/>
+			<class value="me1" size="44"/>
+			<class value="exc" size="35"/>
+			<class value="me2" size="51"/>
+			<class value="me3" size="163"/>
+			<class value="vac" size="30"/>
+			<class value="pox" size="20"/>
+			<class value="erl" size="5"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.110000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.130000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.210000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.830000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.730000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Output" available="True">
+				<value>mit</value>
+				<value>nuc</value>
+				<value>cyt</value>
+				<value>me1</value>
+				<value>exc</value>
+				<value>me2</value>
+				<value>me3</value>
+				<value>vac</value>
+				<value>pox</value>
+				<value>erl</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="spambase" task="classification" size="4601" directory="spambase" filetype="text" separator="," filename="spambase.data">
+		<classes>
+			<class value="1" size="1813"/>
+			<class value="0" size="2788"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="4.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="14.280000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="42.810000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.880000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.270000"/>
+			<attribute type="Real" available="True" min="0.000000" max="11.110000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.260000"/>
+			<attribute type="Real" available="True" min="0.000000" max="18.180000"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.610000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.670000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.550000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.410000"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.140000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.090000"/>
+			<attribute type="Real" available="True" min="0.000000" max="18.750000"/>
+			<attribute type="Real" available="True" min="0.000000" max="18.180000"/>
+			<attribute type="Real" available="True" min="0.000000" max="11.110000"/>
+			<attribute type="Real" available="True" min="0.000000" max="17.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.450000"/>
+			<attribute type="Real" available="True" min="0.000000" max="12.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.830000"/>
+			<attribute type="Real" available="True" min="0.000000" max="16.660000"/>
+			<attribute type="Real" available="True" min="0.000000" max="33.330000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.090000"/>
+			<attribute type="Real" available="True" min="0.000000" max="14.280000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.880000"/>
+			<attribute type="Real" available="True" min="0.000000" max="12.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.760000"/>
+			<attribute type="Real" available="True" min="0.000000" max="18.180000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.760000"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.690000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.890000"/>
+			<attribute type="Real" available="True" min="0.000000" max="8.330000"/>
+			<attribute type="Real" available="True" min="0.000000" max="11.110000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.760000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.140000"/>
+			<attribute type="Real" available="True" min="0.000000" max="14.280000"/>
+			<attribute type="Real" available="True" min="0.000000" max="3.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="21.420000"/>
+			<attribute type="Real" available="True" min="0.000000" max="22.050000"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.170000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.385000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.752000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.081000"/>
+			<attribute type="Real" available="True" min="0.000000" max="32.478000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.003000"/>
+			<attribute type="Real" available="True" min="0.000000" max="19.829000"/>
+			<attribute type="Real" available="True" min="1.000000" max="1102.500000"/>
+			<attribute type="Integer" available="True" min="1" max="9989"/>
+			<attribute type="Integer" available="True" min="1" max="15841"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="wave" task="classification" size="5000" directory="wave" filetype="text" separator="," filename="waveform.data">
+		<classes>
+			<class value="2" size="1696"/>
+			<class value="1" size="1647"/>
+			<class value="0" size="1657"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="-3.340000" max="3.940000"/>
+			<attribute type="Real" available="True" min="-3.250000" max="3.880000"/>
+			<attribute type="Real" available="True" min="-4.200000" max="4.720000"/>
+			<attribute type="Real" available="True" min="-3.840000" max="5.750000"/>
+			<attribute type="Real" available="True" min="-3.480000" max="6.500000"/>
+			<attribute type="Real" available="True" min="-2.760000" max="7.620000"/>
+			<attribute type="Real" available="True" min="-3.320000" max="8.760000"/>
+			<attribute type="Real" available="True" min="-3.520000" max="7.840000"/>
+			<attribute type="Real" available="True" min="-3.380000" max="7.900000"/>
+			<attribute type="Real" available="True" min="-1.790000" max="7.630000"/>
+			<attribute type="Real" available="True" min="-1.480000" max="9.060000"/>
+			<attribute type="Real" available="True" min="-1.690000" max="7.400000"/>
+			<attribute type="Real" available="True" min="-2.610000" max="7.500000"/>
+			<attribute type="Real" available="True" min="-2.820000" max="7.750000"/>
+			<attribute type="Real" available="True" min="-2.560000" max="8.720000"/>
+			<attribute type="Real" available="True" min="-2.990000" max="7.860000"/>
+			<attribute type="Real" available="True" min="-3.560000" max="6.740000"/>
+			<attribute type="Real" available="True" min="-4.080000" max="6.200000"/>
+			<attribute type="Real" available="True" min="-3.500000" max="5.280000"/>
+			<attribute type="Real" available="True" min="-3.570000" max="4.650000"/>
+			<attribute type="Real" available="True" min="-3.880000" max="4.010000"/>
+			<attribute type="Output" available="True">
+				<value>2</value>
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="letter" task="classification" size="20000" directory="letter" filetype="text" separator="," filename="letter-recognition.data">
+		<classes>
+			<class value="a" size="789"/>
+			<class value="b" size="766"/>
+			<class value="c" size="736"/>
+			<class value="d" size="805"/>
+			<class value="e" size="768"/>
+			<class value="f" size="775"/>
+			<class value="g" size="773"/>
+			<class value="h" size="734"/>
+			<class value="i" size="755"/>
+			<class value="j" size="747"/>
+			<class value="k" size="739"/>
+			<class value="l" size="761"/>
+			<class value="m" size="792"/>
+			<class value="n" size="783"/>
+			<class value="o" size="753"/>
+			<class value="p" size="803"/>
+			<class value="q" size="783"/>
+			<class value="r" size="758"/>
+			<class value="s" size="748"/>
+			<class value="t" size="796"/>
+			<class value="u" size="813"/>
+			<class value="v" size="764"/>
+			<class value="w" size="752"/>
+			<class value="x" size="787"/>
+			<class value="y" size="786"/>
+			<class value="z" size="734"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>a</value>
+				<value>b</value>
+				<value>c</value>
+				<value>d</value>
+				<value>e</value>
+				<value>f</value>
+				<value>g</value>
+				<value>h</value>
+				<value>i</value>
+				<value>j</value>
+				<value>k</value>
+				<value>l</value>
+				<value>m</value>
+				<value>n</value>
+				<value>o</value>
+				<value>p</value>
+				<value>q</value>
+				<value>r</value>
+				<value>s</value>
+				<value>t</value>
+				<value>u</value>
+				<value>v</value>
+				<value>w</value>
+				<value>x</value>
+				<value>y</value>
+				<value>z</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+		</attributes>
+	</dataset>
+	<dataset name="artificial" task="classification" size="320" directory="artificial" filetype="text" separator=";" filename="concept.txt">
+		<classes>
+			<class value="f" size="190"/>
+			<class value="t" size="130"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="thyroid" task="classification" size="2800" directory="thyroid" filetype="text" separator=";" filename="allhyper.data">
+		<classes>
+			<class value="negative" size="2723"/>
+			<class value="hyperthyroid" size="62"/>
+			<class value="goitre" size="7"/>
+			<class value="toxic" size="8"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="1" max="455"/>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>m</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="Real" available="True" min="0.005000" max="478.000000"/>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="Real" available="True" min="0.050000" max="10.600000"/>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="Real" available="True" min="2.000000" max="430.000000"/>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="Real" available="True" min="0.310000" max="2.120000"/>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="Real" available="True" min="2.000000" max="395.000000"/>
+			<attribute type="String" available="True">
+				<value>f</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>negative</value>
+				<value>hyperthyroid</value>
+				<value>goitre</value>
+				<value>toxic</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="australian" task="classification" size="690" directory="australian" filetype="text" separator=" " filename="australian.dat">
+		<classes>
+			<class value="0" size="383"/>
+			<class value="1" size="307"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="Real" available="True" min="13.750000" max="80.250000"/>
+			<attribute type="Real" available="True" min="0.000000" max="28.000000"/>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>10</value>
+				<value>11</value>
+				<value>12</value>
+				<value>13</value>
+				<value>14</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+				<value>6</value>
+				<value>7</value>
+				<value>8</value>
+				<value>9</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+				<value>7</value>
+				<value>8</value>
+				<value>9</value>
+			</attribute>
+			<attribute type="Real" available="True" min="0.000000" max="28.500000"/>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="0" max="67"/>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="0" max="2000"/>
+			<attribute type="Integer" available="True" min="1" max="100001"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="tae" task="classification" size="151" directory="tae" filetype="text" separator="," filename="tae.data">
+		<classes>
+			<class value="1" size="49"/>
+			<class value="2" size="50"/>
+			<class value="3" size="52"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>10</value>
+				<value>11</value>
+				<value>12</value>
+				<value>13</value>
+				<value>14</value>
+				<value>15</value>
+				<value>16</value>
+				<value>17</value>
+				<value>18</value>
+				<value>19</value>
+				<value>2</value>
+				<value>20</value>
+				<value>21</value>
+				<value>22</value>
+				<value>23</value>
+				<value>24</value>
+				<value>25</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+				<value>6</value>
+				<value>7</value>
+				<value>8</value>
+				<value>9</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>10</value>
+				<value>11</value>
+				<value>12</value>
+				<value>13</value>
+				<value>14</value>
+				<value>15</value>
+				<value>16</value>
+				<value>17</value>
+				<value>18</value>
+				<value>19</value>
+				<value>2</value>
+				<value>20</value>
+				<value>21</value>
+				<value>22</value>
+				<value>23</value>
+				<value>24</value>
+				<value>25</value>
+				<value>26</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+				<value>6</value>
+				<value>7</value>
+				<value>8</value>
+				<value>9</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="3" max="66"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="heart" task="classification" size="270" directory="heart" filetype="text" separator=" " filename="heart.dat">
+		<classes>
+			<class value="1" size="150"/>
+			<class value="2" size="120"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="29.000000" max="77.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="1.000000" max="4.000000"/>
+			<attribute type="Real" available="True" min="94.000000" max="200.000000"/>
+			<attribute type="Real" available="True" min="126.000000" max="564.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.000000"/>
+			<attribute type="Real" available="True" min="71.000000" max="202.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.200000"/>
+			<attribute type="Real" available="True" min="1.000000" max="3.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="3.000000"/>
+			<attribute type="Real" available="True" min="3.000000" max="7.000000"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="pageblock" task="classification" size="5473" directory="pageblock" filetype="text" separator=" " filename="page-blocks.data">
+		<classes>
+			<class value="1" size="4913"/>
+			<class value="2" size="329"/>
+			<class value="3" size="28"/>
+			<class value="4" size="88"/>
+			<class value="5" size="115"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="1.000000" max="804.000000"/>
+			<attribute type="Real" available="True" min="1.000000" max="553.000000"/>
+			<attribute type="Real" available="True" min="7.000000" max="143993.000000"/>
+			<attribute type="Real" available="True" min="0.007000" max="537.000000"/>
+			<attribute type="Real" available="True" min="0.052000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.062000" max="1.000000"/>
+			<attribute type="Real" available="True" min="1.000000" max="4955.000000"/>
+			<attribute type="Real" available="True" min="7.000000" max="33017.000000"/>
+			<attribute type="Real" available="True" min="7.000000" max="46133.000000"/>
+			<attribute type="Real" available="True" min="1.000000" max="3212.000000"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="ocr" task="classification" size="600" directory="ocr" filetype="text" separator=" " filename="train16c.dat">
+		<classes>
+			<class value="0" size="60"/>
+			<class value="1" size="60"/>
+			<class value="2" size="60"/>
+			<class value="3" size="60"/>
+			<class value="4" size="60"/>
+			<class value="5" size="60"/>
+			<class value="6" size="60"/>
+			<class value="7" size="60"/>
+			<class value="8" size="60"/>
+			<class value="9" size="60"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+				<value>6</value>
+				<value>7</value>
+				<value>8</value>
+				<value>9</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="zipcodes" task="classification" size="7291" directory="zipcodes" filetype="text" separator=" " filename="zip.train">
+		<classes>
+			<class value="0" size="1194"/>
+			<class value="1" size="1005"/>
+			<class value="2" size="731"/>
+			<class value="3" size="658"/>
+			<class value="4" size="652"/>
+			<class value="5" size="556"/>
+			<class value="6" size="664"/>
+			<class value="7" size="645"/>
+			<class value="8" size="542"/>
+			<class value="9" size="644"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+				<value>6</value>
+				<value>7</value>
+				<value>8</value>
+				<value>9</value>
+			</attribute>
+			<attribute type="Real" available="True" min="-1.000000" max="0.638000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.752000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.776000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.997000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.938000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.937000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.862000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.908000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.901000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.997000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.993000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.998000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.997000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.994000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.977000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.991000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.999000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.988000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.997000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.990000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.969000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.966000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.965000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.975000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.987000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.979000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.948000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.946000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.853000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.376000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="0.592000"/>
+		</attributes>
+	</dataset>
+	<dataset name="titanic" task="classification" size="2201" directory="titanic" filetype="text" separator=" " filename="titanic.dat">
+		<classes>
+			<class value="0" size="1490"/>
+			<class value="1" size="711"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="ringnorm" task="classification" size="7400" directory="ringnorm" filetype="text" separator=" " filename="Dataset.data">
+		<classes>
+			<class value="0" size="3664"/>
+			<class value="1" size="3736"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="-6.880000" max="6.280000"/>
+			<attribute type="Real" available="True" min="-7.140000" max="6.920000"/>
+			<attribute type="Real" available="True" min="-7.730000" max="7.610000"/>
+			<attribute type="Real" available="True" min="-6.630000" max="7.150000"/>
+			<attribute type="Real" available="True" min="-7.180000" max="6.570000"/>
+			<attribute type="Real" available="True" min="-6.950000" max="6.740000"/>
+			<attribute type="Real" available="True" min="-7.780000" max="6.580000"/>
+			<attribute type="Real" available="True" min="-6.880000" max="6.360000"/>
+			<attribute type="Real" available="True" min="-7.180000" max="7.490000"/>
+			<attribute type="Real" available="True" min="-7.230000" max="7.270000"/>
+			<attribute type="Real" available="True" min="-7.800000" max="7.210000"/>
+			<attribute type="Real" available="True" min="-7.400000" max="6.790000"/>
+			<attribute type="Real" available="True" min="-7.100000" max="6.400000"/>
+			<attribute type="Real" available="True" min="-7.470000" max="7.260000"/>
+			<attribute type="Real" available="True" min="-7.340000" max="7.370000"/>
+			<attribute type="Real" available="True" min="-7.120000" max="6.910000"/>
+			<attribute type="Real" available="True" min="-7.640000" max="7.180000"/>
+			<attribute type="Real" available="True" min="-8.780000" max="6.900000"/>
+			<attribute type="Real" available="True" min="-7.550000" max="5.730000"/>
+			<attribute type="Real" available="True" min="-6.720000" max="7.630000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="twonorm" task="classification" size="7400" directory="twonorm" filetype="text" separator=" " filename="Dataset.data">
+		<classes>
+			<class value="0" size="3703"/>
+			<class value="1" size="3697"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="-4.250000" max="3.580000"/>
+			<attribute type="Real" available="True" min="-3.960000" max="4.350000"/>
+			<attribute type="Real" available="True" min="-4.480000" max="4.400000"/>
+			<attribute type="Real" available="True" min="-3.890000" max="4.260000"/>
+			<attribute type="Real" available="True" min="-3.910000" max="5.640000"/>
+			<attribute type="Real" available="True" min="-4.010000" max="3.990000"/>
+			<attribute type="Real" available="True" min="-3.730000" max="4.450000"/>
+			<attribute type="Real" available="True" min="-4.570000" max="3.860000"/>
+			<attribute type="Real" available="True" min="-3.810000" max="4.250000"/>
+			<attribute type="Real" available="True" min="-4.200000" max="4.080000"/>
+			<attribute type="Real" available="True" min="-3.920000" max="4.100000"/>
+			<attribute type="Real" available="True" min="-3.830000" max="4.300000"/>
+			<attribute type="Real" available="True" min="-3.950000" max="3.780000"/>
+			<attribute type="Real" available="True" min="-3.850000" max="4.120000"/>
+			<attribute type="Real" available="True" min="-3.700000" max="3.550000"/>
+			<attribute type="Real" available="True" min="-3.700000" max="4.240000"/>
+			<attribute type="Real" available="True" min="-3.940000" max="3.720000"/>
+			<attribute type="Real" available="True" min="-4.070000" max="4.060000"/>
+			<attribute type="Real" available="True" min="-4.120000" max="4.320000"/>
+			<attribute type="Real" available="True" min="-3.780000" max="4.280000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="puma8fh" task="regression" size="8192" directory="puma8fh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="0.300000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="0.300000"/>
+			<attribute type="Output" available="True" min="-10.850000" max="11.580000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma8nh" task="regression" size="8192" directory="puma8nh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-0.600000" max="0.600000"/>
+			<attribute type="Real" available="True" min="-0.600000" max="0.600000"/>
+			<attribute type="Output" available="True" min="-12.420000" max="11.880000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma8nm" task="regression" size="8192" directory="puma8nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-1.880000" max="1.880000"/>
+			<attribute type="Real" available="True" min="-0.600000" max="0.600000"/>
+			<attribute type="Real" available="True" min="-0.600000" max="0.600000"/>
+			<attribute type="Output" available="True" min="-10.730000" max="10.440000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma8fm" task="regression" size="8192" directory="puma8fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.940000" max="0.940000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="0.300000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="0.300000"/>
+			<attribute type="Output" available="True" min="-7.000000" max="10.300000"/>
+		</attributes>
+	</dataset>
+	<dataset name="abalone" task="regression" size="4177" directory="abalone" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="0.080000" max="0.810000"/>
+			<attribute type="Real" available="True" min="0.050000" max="0.650000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.130000"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.830000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.490000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.760000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Output" available="True" min="1.000000" max="29.000000"/>
+		</attributes>
+	</dataset>
+	<dataset name="add10" task="regression" size="9792" directory="add10" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Output" available="True" min="-1.020000" max="28.870000"/>
+		</attributes>
+	</dataset>
+	<dataset name="boston" task="regression" size="506" directory="boston" filetype="text" separator=" " filename="boston.dat">
+		<attributes>
+			<attribute type="Real" available="True" min="0.010000" max="88.980000"/>
+			<attribute type="Real" available="True" min="0.000000" max="100.000000"/>
+			<attribute type="Real" available="True" min="0.460000" max="27.740000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.380000" max="0.870000"/>
+			<attribute type="Real" available="True" min="3.560000" max="8.780000"/>
+			<attribute type="Real" available="True" min="2.900000" max="100.000000"/>
+			<attribute type="Real" available="True" min="1.130000" max="12.130000"/>
+			<attribute type="Real" available="True" min="1.000000" max="24.000000"/>
+			<attribute type="Real" available="True" min="187.000000" max="711.000000"/>
+			<attribute type="Real" available="True" min="12.600000" max="22.000000"/>
+			<attribute type="Real" available="True" min="0.320000" max="396.900000"/>
+			<attribute type="Real" available="True" min="1.730000" max="37.970000"/>
+			<attribute type="Output" available="True" min="5.000000" max="50.000000"/>
+		</attributes>
+	</dataset>
+	<dataset name="california" task="regression" size="20640" directory="california" filetype="text" separator=" " filename="cal_housing.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-124.350000" max="-114.310000"/>
+			<attribute type="Real" available="True" min="32.540000" max="41.950000"/>
+			<attribute type="Real" available="True" min="1.000000" max="52.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="39320.000000"/>
+			<attribute type="Real" available="True" min="1.000000" max="6445.000000"/>
+			<attribute type="Real" available="True" min="3.000000" max="35682.000000"/>
+			<attribute type="Real" available="True" min="1.000000" max="6082.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="15.000000"/>
+			<attribute type="Output" available="True" min="14999.000000" max="500001.000000"/>
+		</attributes>
+	</dataset>
+	<dataset name="comp" task="regression" size="8192" directory="comp" filetype="text" separator=" " filename="comp_activ1.dat">
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="1845.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="575.000000"/>
+			<attribute type="Real" available="True" min="109.000000" max="12493.000000"/>
+			<attribute type="Real" available="True" min="6.000000" max="5318.000000"/>
+			<attribute type="Real" available="True" min="7.000000" max="5456.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.120000"/>
+			<attribute type="Real" available="True" min="0.000000" max="59.560000"/>
+			<attribute type="Real" available="True" min="278.000000" max="2526649.000000"/>
+			<attribute type="Real" available="True" min="1498.000000" max="1801623.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="81.440000"/>
+			<attribute type="Real" available="True" min="0.000000" max="184.200000"/>
+			<attribute type="Real" available="True" min="0.000000" max="523.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1237.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="211.580000"/>
+			<attribute type="Real" available="True" min="0.000000" max="141.200000"/>
+			<attribute type="Real" available="True" min="0.000000" max="292.610000"/>
+			<attribute type="Real" available="True" min="0.000000" max="899.800000"/>
+			<attribute type="Real" available="True" min="0.200000" max="1365.000000"/>
+			<attribute type="Real" available="True" min="1.000000" max="2823.000000"/>
+			<attribute type="Real" available="True" min="55.000000" max="12027.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="2243187.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="99.000000"/>
+		</attributes>
+	</dataset>
+	<dataset name="sinus" task="regression" size="8000" directory="sinus" filetype="text" separator=" " filename="sin.dat">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.730000" max="1.740000"/>
+			<attribute type="Output" available="True" min="-1.410000" max="1.370000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank32fh" task="regression" size="8192" directory="bank32fh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="0.500000" max="0.700000"/>
+			<attribute type="Real" available="True" min="0.700000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.690000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.390000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="41.870000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="-0.200000"/>
+			<attribute type="Real" available="True" min="0.800000" max="0.900000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.810000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.380000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="32.210000"/>
+			<attribute type="Real" available="True" min="-0.060000" max="-0.000000"/>
+			<attribute type="Real" available="True" min="-0.040000" max="-0.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.170000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.420000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="33.300000"/>
+			<attribute type="Real" available="True" min="0.320000" max="0.660000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.200000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.300000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-0.200000" max="0.100000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="-0.100000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-0.700000" max="-0.600000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.200000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.690000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank32fm" task="regression" size="8192" directory="bank32fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="0.500000" max="0.700000"/>
+			<attribute type="Real" available="True" min="0.700000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.690000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.390000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="41.870000"/>
+			<attribute type="Real" available="True" min="-0.300000" max="-0.200000"/>
+			<attribute type="Real" available="True" min="0.800000" max="0.900000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.810000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.380000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="32.210000"/>
+			<attribute type="Real" available="True" min="-0.060000" max="-0.000000"/>
+			<attribute type="Real" available="True" min="-0.040000" max="-0.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.170000"/>
+			<attribute type="Real" available="True" min="0.500000" max="1.420000"/>
+			<attribute type="Real" available="True" min="-0.100000" max="0.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="33.300000"/>
+			<attribute type="Real" available="True" min="0.320000" max="0.660000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.200000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.300000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-0.200000" max="0.100000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="-0.100000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-0.700000" max="-0.600000"/>
+			<attribute type="Real" available="True" min="0.100000" max="0.200000"/>
+			<attribute type="Real" available="True" min="2.000000" max="7.000000"/>
+			<attribute type="Real" available="True" min="0.900000" max="1.100000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.780000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank32nh" task="regression" size="8192" directory="bank32nh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.300000"/>
+			<attribute type="Real" available="True" min="0.000000" max="8.860000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="27.020000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.930000"/>
+			<attribute type="Real" available="True" min="0.000000" max="13.510000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="27.390000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.740000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.210000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="33.300000"/>
+			<attribute type="Real" available="True" min="0.020000" max="0.970000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="5.000000" max="9.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.820000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank32nm" task="regression" size="8192" directory="bank32nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.300000"/>
+			<attribute type="Real" available="True" min="0.000000" max="8.860000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="27.020000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.930000"/>
+			<attribute type="Real" available="True" min="0.000000" max="13.510000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="27.390000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.740000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.210000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="33.300000"/>
+			<attribute type="Real" available="True" min="0.020000" max="0.970000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="2.000000" max="8.000000"/>
+			<attribute type="Real" available="True" min="0.500000" max="2.000000"/>
+			<attribute type="Real" available="True" min="5.000000" max="9.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.850000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank8fh" task="regression" size="8192" directory="bank8fh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="29.710000"/>
+			<attribute type="Real" available="True" min="0.000000" max="29.680000"/>
+			<attribute type="Real" available="True" min="0.040000" max="0.980000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.790000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank8fm" task="regression" size="8192" directory="bank8fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="-0.500000" max="0.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="29.710000"/>
+			<attribute type="Real" available="True" min="0.000000" max="29.680000"/>
+			<attribute type="Real" available="True" min="0.040000" max="0.980000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.800000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank8nh" task="regression" size="8192" directory="bank8nh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.530000"/>
+			<attribute type="Real" available="True" min="0.040000" max="0.980000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.520000"/>
+		</attributes>
+	</dataset>
+	<dataset name="bank8nm" task="regression" size="8192" directory="bank8nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="-1.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.530000"/>
+			<attribute type="Real" available="True" min="0.040000" max="0.980000"/>
+			<attribute type="Real" available="True" min="5.000000" max="8.000000"/>
+			<attribute type="Output" available="True" min="0.000000" max="0.480000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin32fh" task="regression" size="8192" directory="kin32fh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.340000"/>
+			<attribute type="Output" available="True" min="0.250000" max="3.380000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin32fm" task="regression" size="8192" directory="kin32fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="-0.390000" max="0.390000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.340000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.360000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.350000"/>
+			<attribute type="Output" available="True" min="0.370000" max="3.080000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin32nh" task="regression" size="8192" directory="kin32nh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.580000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.550000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.590000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.580000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.580000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.530000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.600000"/>
+			<attribute type="Output" available="True" min="0.070000" max="3.290000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin32nm" task="regression" size="8192" directory="kin32nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.590000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.550000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.550000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.520000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.560000"/>
+			<attribute type="Output" available="True" min="0.050000" max="3.040000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin8fh" task="regression" size="8192" directory="kin8fh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Output" available="True" min="0.530000" max="1.150000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin8fm" task="regression" size="8192" directory="kin8fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Real" available="True" min="-0.310000" max="0.310000"/>
+			<attribute type="Output" available="True" min="0.600000" max="1.110000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin8nh" task="regression" size="8192" directory="kin8nh" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Output" available="True" min="0.030000" max="1.520000"/>
+		</attributes>
+	</dataset>
+	<dataset name="kin8nm" task="regression" size="8192" directory="kin8nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Real" available="True" min="-1.570000" max="1.570000"/>
+			<attribute type="Output" available="True" min="0.040000" max="1.460000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma32fh" task="regression" size="8192" directory="puma32fh" filetype="text" separator=" " filename="pumadyn32fh.dat">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-34.990000" max="34.970000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="34.960000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="34.990000"/>
+			<attribute type="Real" available="True" min="-34.990000" max="35.000000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="35.000000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Output" available="True" min="-0.100000" max="0.090000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma32nh" task="regression" size="8192" directory="puma32nh" filetype="text" separator=" " filename="pumadyn32nh.dat">
+		<attributes>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-74.990000" max="74.980000"/>
+			<attribute type="Real" available="True" min="-74.990000" max="74.980000"/>
+			<attribute type="Real" available="True" min="-74.990000" max="74.960000"/>
+			<attribute type="Real" available="True" min="-75.000000" max="74.970000"/>
+			<attribute type="Real" available="True" min="-74.990000" max="74.960000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Output" available="True" min="-0.110000" max="0.130000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma32nm" task="regression" size="8192" directory="puma32nm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.350000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.350000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.350000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-2.360000" max="2.360000"/>
+			<attribute type="Real" available="True" min="-74.990000" max="74.990000"/>
+			<attribute type="Real" available="True" min="-74.940000" max="74.970000"/>
+			<attribute type="Real" available="True" min="-74.980000" max="74.990000"/>
+			<attribute type="Real" available="True" min="-75.000000" max="75.000000"/>
+			<attribute type="Real" available="True" min="-74.980000" max="75.000000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Real" available="True" min="0.250000" max="2.500000"/>
+			<attribute type="Output" available="True" min="-0.090000" max="0.090000"/>
+		</attributes>
+	</dataset>
+	<dataset name="puma32fm" task="regression" size="8192" directory="puma32fm" filetype="text" separator=" " filename="Dataset.data">
+		<attributes>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-1.100000" max="1.100000"/>
+			<attribute type="Real" available="True" min="-34.990000" max="34.990000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="35.000000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="34.980000"/>
+			<attribute type="Real" available="True" min="-35.000000" max="34.980000"/>
+			<attribute type="Real" available="True" min="-34.990000" max="35.000000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Real" available="True" min="0.650000" max="1.700000"/>
+			<attribute type="Output" available="True" min="-0.040000" max="0.040000"/>
+		</attributes>
+	</dataset>
+	<dataset name="transfusion" task="classification" size="748" directory="transfusion" filetype="text" separator="," filename="transfusion.data">
+		<classes>
+			<class value="0" size="570"/>
+			<class value="1" size="178"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="74"/>
+			<attribute type="Integer" available="True" min="1" max="46"/>
+			<attribute type="Integer" available="True" min="250" max="11500"/>
+			<attribute type="Integer" available="True" min="2" max="98"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="mammographic" task="classification" size="961" directory="mammographic" filetype="text" separator="," filename="mammographic.data">
+		<classes>
+			<class value="0" size="516"/>
+			<class value="1" size="445"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Integer" available="True" min="28" max="76"/>
+			<attribute type="String" available="True">
+				<value>3</value>
+				<value>1</value>
+				<value>4</value>
+				<value>2</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>5</value>
+				<value>1</value>
+				<value>4</value>
+				<value>3</value>
+				<value>2</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>3</value>
+				<value>1</value>
+				<value>2</value>
+				<value>4</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="parkinsons" task="classification" size="195" directory="parkinsons" filetype="text" separator="," filename="parkinsons.data">
+		<classes>
+			<class value="0" size="48"/>
+			<class value="1" size="147"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="88.330000" max="260.110000"/>
+			<attribute type="Real" available="True" min="102.140000" max="592.030000"/>
+			<attribute type="Real" available="True" min="65.480000" max="239.170000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.030000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.020000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.020000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.060000"/>
+			<attribute type="Real" available="True" min="0.010000" max="0.120000"/>
+			<attribute type="Real" available="True" min="0.090000" max="1.300000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.060000"/>
+			<attribute type="Real" available="True" min="0.010000" max="0.080000"/>
+			<attribute type="Real" available="True" min="0.010000" max="0.140000"/>
+			<attribute type="Real" available="True" min="0.010000" max="0.170000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.310000"/>
+			<attribute type="Real" available="True" min="8.440000" max="33.050000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="Real" available="True" min="0.260000" max="0.690000"/>
+			<attribute type="Real" available="True" min="0.570000" max="0.830000"/>
+			<attribute type="Real" available="True" min="-7.960000" max="-2.430000"/>
+			<attribute type="Real" available="True" min="0.010000" max="0.450000"/>
+			<attribute type="Real" available="True" min="1.420000" max="3.670000"/>
+			<attribute type="Real" available="True" min="0.040000" max="0.530000"/>
+		</attributes>
+	</dataset>
+	<dataset name="chess" task="classification" size="28056" directory="chess" filetype="text" separator="," filename="chess.data">
+		<classes>
+			<class value="draw" size="2796"/>
+			<class value="one" size="78"/>
+			<class value="two" size="246"/>
+			<class value="three" size="81"/>
+			<class value="four" size="198"/>
+			<class value="five" size="471"/>
+			<class value="six" size="592"/>
+			<class value="seven" size="683"/>
+			<class value="eight" size="1433"/>
+			<class value="nine" size="1712"/>
+			<class value="ten" size="1985"/>
+			<class value="eleven" size="2854"/>
+			<class value="twelve" size="3597"/>
+			<class value="thirteen" size="4194"/>
+			<class value="fourteen" size="4553"/>
+			<class value="fifteen" size="2166"/>
+			<class value="sixteen" size="390"/>
+			<class value="zero" size="27"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>b</value>
+				<value>c</value>
+				<value>d</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>c</value>
+				<value>d</value>
+				<value>e</value>
+				<value>f</value>
+				<value>g</value>
+				<value>h</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="1" max="8"/>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>d</value>
+				<value>e</value>
+				<value>f</value>
+				<value>g</value>
+				<value>h</value>
+				<value>a</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="Integer" available="True" min="1" max="8"/>
+			<attribute type="Output" available="True">
+				<value>draw</value>
+				<value>one</value>
+				<value>two</value>
+				<value>three</value>
+				<value>four</value>
+				<value>five</value>
+				<value>six</value>
+				<value>seven</value>
+				<value>eight</value>
+				<value>nine</value>
+				<value>ten</value>
+				<value>eleven</value>
+				<value>twelve</value>
+				<value>thirteen</value>
+				<value>fourteen</value>
+				<value>fifteen</value>
+				<value>sixteen</value>
+				<value>zero</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="vehicle" task="classification" size="846" directory="vehicle" filetype="text" separator=" " filename="vehicle.data">
+		<classes>
+			<class value="van" size="199"/>
+			<class value="saab" size="217"/>
+			<class value="bus" size="218"/>
+			<class value="opel" size="212"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="73" max="119"/>
+			<attribute type="Integer" available="True" min="33" max="59"/>
+			<attribute type="Integer" available="True" min="40" max="112"/>
+			<attribute type="Integer" available="True" min="104" max="333"/>
+			<attribute type="Integer" available="True" min="47" max="138"/>
+			<attribute type="Integer" available="True" min="2" max="55"/>
+			<attribute type="Integer" available="True" min="112" max="265"/>
+			<attribute type="Integer" available="True" min="26" max="61"/>
+			<attribute type="Integer" available="True" min="17" max="29"/>
+			<attribute type="Integer" available="True" min="118" max="188"/>
+			<attribute type="Integer" available="True" min="130" max="320"/>
+			<attribute type="Integer" available="True" min="184" max="1018"/>
+			<attribute type="Integer" available="True" min="109" max="268"/>
+			<attribute type="Integer" available="True" min="59" max="135"/>
+			<attribute type="Integer" available="True" min="0" max="22"/>
+			<attribute type="Integer" available="True" min="0" max="41"/>
+			<attribute type="Integer" available="True" min="176" max="206"/>
+			<attribute type="Integer" available="True" min="181" max="211"/>
+			<attribute type="Output" available="True">
+				<value>van</value>
+				<value>saab</value>
+				<value>bus</value>
+				<value>opel</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="german" task="classification" size="1000" directory="german" filetype="text" separator=" " filename="german.data">
+		<classes>
+			<class value="1" size="700"/>
+			<class value="2" size="300"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="Integer" available="True" min="4" max="72"/>
+			<attribute type="Integer" available="True" min="0" max="4"/>
+			<attribute type="Integer" available="True" min="2" max="184"/>
+			<attribute type="Integer" available="True" min="1" max="5"/>
+			<attribute type="Integer" available="True" min="1" max="5"/>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="Integer" available="True" min="19" max="75"/>
+			<attribute type="Integer" available="True" min="1" max="3"/>
+			<attribute type="Integer" available="True" min="1" max="4"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="1" max="2"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="shuttle" task="classification" size="58000" directory="shuttle" filetype="text" separator=" " filename="shuttle.txt" sigma="0.000000">
+		<classes>
+			<class value="1" size="45586"/>
+			<class value="2" size="50"/>
+			<class value="3" size="171"/>
+			<class value="4" size="8903"/>
+			<class value="5" size="3267"/>
+			<class value="6" size="10"/>
+			<class value="7" size="13"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="27" max="126"/>
+			<attribute type="Integer" available="True" min="-4821" max="5075"/>
+			<attribute type="Integer" available="True" min="21" max="149"/>
+			<attribute type="Integer" available="True" min="-3939" max="3830"/>
+			<attribute type="Integer" available="True" min="-188" max="436"/>
+			<attribute type="Integer" available="True" min="-26739" max="15164"/>
+			<attribute type="Integer" available="True" min="-48" max="105"/>
+			<attribute type="Integer" available="True" min="-353" max="270"/>
+			<attribute type="Integer" available="True" min="-356" max="266"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+				<value>6</value>
+				<value>7</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="vehicle" task="classification" size="846" directory="vehicle" filetype="text" separator=" " filename="vehicle.data" sigma="0.000000">
+		<classes>
+			<class value="van" size="199"/>
+			<class value="saab" size="217"/>
+			<class value="bus" size="218"/>
+			<class value="opel" size="212"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="73" max="119"/>
+			<attribute type="Integer" available="True" min="33" max="59"/>
+			<attribute type="Integer" available="True" min="40" max="112"/>
+			<attribute type="Integer" available="True" min="104" max="333"/>
+			<attribute type="Integer" available="True" min="47" max="138"/>
+			<attribute type="Integer" available="True" min="2" max="55"/>
+			<attribute type="Integer" available="True" min="112" max="265"/>
+			<attribute type="Integer" available="True" min="26" max="61"/>
+			<attribute type="Integer" available="True" min="17" max="29"/>
+			<attribute type="Integer" available="True" min="118" max="188"/>
+			<attribute type="Integer" available="True" min="130" max="320"/>
+			<attribute type="Integer" available="True" min="184" max="1018"/>
+			<attribute type="Integer" available="True" min="109" max="268"/>
+			<attribute type="Integer" available="True" min="59" max="135"/>
+			<attribute type="Integer" available="True" min="0" max="22"/>
+			<attribute type="Integer" available="True" min="0" max="41"/>
+			<attribute type="Integer" available="True" min="176" max="206"/>
+			<attribute type="Integer" available="True" min="181" max="211"/>
+			<attribute type="Output" available="True">
+				<value>van</value>
+				<value>saab</value>
+				<value>bus</value>
+				<value>opel</value>
+			</attribute>
+		</attributes>
+	</dataset>
+</datasets>

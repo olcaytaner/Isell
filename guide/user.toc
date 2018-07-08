@@ -1,0 +1,119 @@
+\contentsline {chapter}{\numberline {1}How to Compile \& Execute}{7}
+\contentsline {chapter}{\numberline {2}External Files}{9}
+\contentsline {section}{\numberline {2.1}dictionary.txt}{9}
+\contentsline {section}{\numberline {2.2}command.txt}{11}
+\contentsline {subsection}{\numberline {2.2.1}To add a new command?}{12}
+\contentsline {section}{\numberline {2.3}hyperparameters.xml}{13}
+\contentsline {subsection}{\numberline {2.3.1}To add a new hyperparameter?}{14}
+\contentsline {section}{\numberline {2.4}parameters.xml}{14}
+\contentsline {subsection}{\numberline {2.4.1}To add a new parameter?}{17}
+\contentsline {chapter}{\numberline {3}Dataset Definition}{19}
+\contentsline {chapter}{\numberline {4}ISELL Script Language}{21}
+\contentsline {section}{\numberline {4.1}Introduction}{21}
+\contentsline {subsection}{\numberline {4.1.1}Data Types and Variables}{22}
+\contentsline {subsubsection}{Variable Names}{22}
+\contentsline {subsubsection}{Data types}{22}
+\contentsline {subsubsection}{Declarations}{23}
+\contentsline {subsection}{\numberline {4.1.2}Operators}{23}
+\contentsline {subsubsection}{Arithmetic Operators}{24}
+\contentsline {subsubsection}{Equality and Relational Operators}{24}
+\contentsline {subsubsection}{Assignment Operators}{24}
+\contentsline {subsubsection}{Increment and Decrement Operators}{26}
+\contentsline {section}{\numberline {4.2}If-switch}{27}
+\contentsline {subsection}{\numberline {4.2.1}If-else Structure}{27}
+\contentsline {subsection}{\numberline {4.2.2}Switch}{28}
+\contentsline {section}{\numberline {4.3}Loops}{30}
+\contentsline {subsection}{\numberline {4.3.1}Repetition Structures}{30}
+\contentsline {subsection}{\numberline {4.3.2}While statement}{31}
+\contentsline {subsection}{\numberline {4.3.3}For statement}{32}
+\contentsline {subsection}{\numberline {4.3.4}Nested loops}{32}
+\contentsline {section}{\numberline {4.4}Arrays}{33}
+\contentsline {subsection}{\numberline {4.4.1}Arrays}{33}
+\contentsline {subsection}{\numberline {4.4.2}Declaring Arrays}{34}
+\contentsline {subsection}{\numberline {4.4.3}Multidimensional Arrays}{35}
+\contentsline {chapter}{\numberline {5}Operating System Commands}{39}
+\contentsline {chapter}{\numberline {6}Distributions \& Statistical Tests}{41}
+\contentsline {section}{\numberline {6.1}Probability Distributions}{41}
+\contentsline {subsection}{\numberline {6.1.1}Normal Distribution}{41}
+\contentsline {subsection}{\numberline {6.1.2}Chi Square Distribution}{42}
+\contentsline {subsection}{\numberline {6.1.3}F Distribution}{43}
+\contentsline {subsection}{\numberline {6.1.4}t Distribution}{44}
+\contentsline {section}{\numberline {6.2}Statistical Tests}{44}
+\contentsline {subsection}{\numberline {6.2.1}One-Way Anova Test}{45}
+\contentsline {subsubsection}{Hypothesis}{45}
+\contentsline {subsubsection}{Method}{46}
+\contentsline {subsubsection}{Assumptions}{46}
+\contentsline {subsection}{\numberline {6.2.2}K-Fold Paired t Test}{46}
+\contentsline {subsubsection}{Hypothesis}{46}
+\contentsline {subsubsection}{Method}{47}
+\contentsline {subsubsection}{Assumptions}{47}
+\contentsline {subsubsection}{Sample Script}{47}
+\contentsline {subsection}{\numberline {6.2.3}5$\times $2 cv t Test}{47}
+\contentsline {subsubsection}{Hypothesis}{47}
+\contentsline {subsubsection}{Method}{48}
+\contentsline {subsubsection}{Assumptions}{48}
+\contentsline {subsubsection}{Sample Script}{48}
+\contentsline {subsection}{\numberline {6.2.4}5$\times $2 cv F Test}{48}
+\contentsline {subsubsection}{Hypothesis}{48}
+\contentsline {subsubsection}{Method}{49}
+\contentsline {subsubsection}{Assumptions}{49}
+\contentsline {subsubsection}{Sample Script}{49}
+\contentsline {subsection}{\numberline {6.2.5}Newman-Keuls Test}{49}
+\contentsline {subsubsection}{Hypothesis}{50}
+\contentsline {subsubsection}{Method}{50}
+\contentsline {subsubsection}{Assumptions}{50}
+\contentsline {subsubsection}{Sample Script}{51}
+\contentsline {subsection}{\numberline {6.2.6}Sign Test}{51}
+\contentsline {subsubsection}{Hypothesis}{51}
+\contentsline {subsubsection}{Method}{51}
+\contentsline {subsubsection}{Assumptions}{51}
+\contentsline {subsubsection}{Sample Script}{52}
+\contentsline {subsection}{\numberline {6.2.7}Wilcoxon Rank Test}{52}
+\contentsline {subsubsection}{Hypothesis}{52}
+\contentsline {subsubsection}{Method}{52}
+\contentsline {subsubsection}{Assumptions}{53}
+\contentsline {subsubsection}{Sample Script}{53}
+\contentsline {subsection}{\numberline {6.2.8}Kruskal-Wallis Test}{53}
+\contentsline {subsubsection}{Hypothesis}{53}
+\contentsline {subsubsection}{Method}{53}
+\contentsline {subsubsection}{Assumptions}{54}
+\contentsline {subsubsection}{Sample Script}{54}
+\contentsline {subsection}{\numberline {6.2.9}Van Der Waerden Test}{54}
+\contentsline {subsubsection}{Hypothesis}{54}
+\contentsline {subsubsection}{Method}{54}
+\contentsline {subsubsection}{Assumptions}{55}
+\contentsline {subsubsection}{Sample Script}{55}
+\contentsline {chapter}{\numberline {7}Supervised Learning}{57}
+\contentsline {section}{\numberline {7.1}Experimental Setup}{57}
+\contentsline {section}{\numberline {7.2}Classification Algorithms}{60}
+\contentsline {subsection}{\numberline {7.2.1}SELECTMAX}{60}
+\contentsline {subsection}{\numberline {7.2.2}NEARESTMEAN}{60}
+\contentsline {subsection}{\numberline {7.2.3}GAUSSIAN}{60}
+\contentsline {subsection}{\numberline {7.2.4}NAIVEBAYES}{60}
+\contentsline {subsection}{\numberline {7.2.5}QDACLASS}{61}
+\contentsline {subsection}{\numberline {7.2.6}C4.5RULES}{61}
+\contentsline {subsection}{\numberline {7.2.7}KNN}{61}
+\contentsline {subsection}{\numberline {7.2.8}C45}{61}
+\contentsline {subsection}{\numberline {7.2.9}LDT}{62}
+\contentsline {subsection}{\numberline {7.2.10}LDACLASS}{62}
+\contentsline {subsection}{\numberline {7.2.11}LOGISTIC}{62}
+\contentsline {subsection}{\numberline {7.2.12}IREP, IREP2, RIPPER}{62}
+\contentsline {subsection}{\numberline {7.2.13}RBF}{63}
+\contentsline {subsection}{\numberline {7.2.14}MLPGENERIC}{63}
+\contentsline {subsection}{\numberline {7.2.15}DNC}{64}
+\contentsline {subsection}{\numberline {7.2.16}MULTILDT}{64}
+\contentsline {subsection}{\numberline {7.2.17}OMNILDT}{65}
+\contentsline {subsection}{\numberline {7.2.18}SVM, NUSVM}{65}
+\contentsline {section}{\numberline {7.3}Regression Algorithms}{65}
+\contentsline {subsection}{\numberline {7.3.1}ONEFEATURE}{65}
+\contentsline {subsection}{\numberline {7.3.2}SELECTAVERAGE}{65}
+\contentsline {subsection}{\numberline {7.3.3}LINEARREG}{66}
+\contentsline {subsection}{\numberline {7.3.4}QUANTIZEREG}{66}
+\contentsline {subsection}{\numberline {7.3.5}KNNREG}{66}
+\contentsline {subsection}{\numberline {7.3.6}GPROCESSREG}{66}
+\contentsline {subsection}{\numberline {7.3.7}RBFREG}{66}
+\contentsline {subsection}{\numberline {7.3.8}MLPGENERICREG}{66}
+\contentsline {subsection}{\numberline {7.3.9}DNCREG}{67}
+\contentsline {subsection}{\numberline {7.3.10}SVMREG, NUSVMREG}{67}
+\contentsline {chapter}{\numberline {8}Graphics Environment}{69}
+\contentsline {section}{\numberline {8.1}Plot Commands}{69}

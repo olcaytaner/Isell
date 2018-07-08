@@ -1,0 +1,60 @@
+displaycode off
+displayresult off
+integer i k kernel1 kernel2 kernelcount res1 res2
+real count aa ar ra rr
+file infile1 infile2
+string dataset method1 method2 resultdir unifile1 unifile2 multifile1 multifile2
+matrix m1 m2
+setprecision 3
+= resultdir ../results/mvartest2
+twotailed
+= count 0
+= aa 0
+= ar 0
+= ra 0
+= rr 0
+for i 1 2
+  switch i
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for kernel1 0 %kernelcount-1%
+    for kernel2 %kernel1+1% %kernelcount-1%
+      for k 1 10
+        = unifile1 %resultdir%/measure/error/%dataset%-%kernel1%-%k%.error
+        = unifile2 %resultdir%/measure/error/%dataset%-%kernel2%-%k%.error
+        = multifile1 %resultdir%/measure/roc/%dataset%-%kernel1%-%k%.roc
+        = multifile2 %resultdir%/measure/roc/%dataset%-%kernel2%-%k%.roc
+        fileexists %resultdir%/measure/confusion/%dataset%-%kernel1%-%k%.confusion        
+        if = out1 1
+          fileexists %resultdir%/measure/confusion/%dataset%-%kernel2%-%k%.confusion        
+          if = out1 1      
+             pairedttest %unifile1% %unifile2%
+             = res1 %out1%
+             hotellingt %multifile1% %multifile2%
+             = res2 %out1%   
+             ++ count
+             if = res1 0
+               if = res2 0
+                 ++ aa
+               else
+                 ++ ar
+               endif
+             else
+               if = res2 0
+                 ++ ra
+               else
+                 ++ rr
+               endif
+             endif          
+          endif
+        endif
+      endfor k
+    endfor kernel2
+  endfor kernel1  
+endfor i  
+writescreen %100*aa/count%_%100*ar/count%_%100*ra/count%_%100*rr/count%

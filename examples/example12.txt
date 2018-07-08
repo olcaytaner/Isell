@@ -1,0 +1,78 @@
+displaycode off
+displayresult off
+os Windows
+string datadir dataset algorithm param
+integer i j k
+= datadir c:\users\olcay\thesis\data
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+runcount 5
+foldcount 2
+testpercentage 0.33333333333333
+setprecision 3
+printposterior on
+for i 1 1
+  switch i
+    case 1
+      = dataset iris
+    case 2
+      = dataset haberman
+    case 3
+      = dataset bupa
+    case 4
+      = dataset monks
+    case 5
+      = dataset pima
+    case 6
+      = dataset titanic
+  endswitch   
+  for j 1 12
+    switch j
+      case 1
+        = algorithm c45
+        = param 0
+      case 2
+        = algorithm knn
+        nearcount 1
+        = param 1
+      case 3
+        = algorithm knn
+        nearcount 3
+        = param 3
+      case 4
+        = algorithm knn
+        nearcount 5
+        = param 5
+      case 5
+        = algorithm nearestmean
+        = param 0
+      case 6
+        = algorithm mlpgeneric
+        hiddenlayers 0
+        = param 0
+      case 7
+        = algorithm mlpgeneric
+        hiddenlayers 2
+        = param 2
+      case 8
+        = algorithm mlpgeneric
+        hiddenlayers 4
+        = param 4
+      case 9
+        = algorithm mlpgeneric
+        hiddenlayers 6
+        = param 6
+      case 10
+        = algorithm ldt
+        = param 0
+      case 11
+        = algorithm multildt      
+        = param 0
+      case 12
+        = algorithm logistic  
+        = param 0
+    endswitch
+    posteriorfile %datadir%\%dataset%\%algorithm%\%dataset%-%algorithm%-%param%.txt
+    %algorithm% %dataset% random 1
+  endfor j
+endfor i

@@ -1,0 +1,18 @@
+string dir
+'Sets the operating system to Linux
+os Linux
+= dir /home/isell/datasets
+'Sets the data directory to /home/isell/datasets directory
+setdatadir %dir%
+'View the data directory. The program will write to screen /home/isell/datasets
+datadir
+'Read the datasets defined in the mydatasets.ini file to the memory of the program
+loaddatasets example.xml
+'Sets the sampling type to 10 fold cross validation
+runcount 1
+foldcount 10
+'Runs selectmax classification algorithm on iris dataset using 10 fold cross validation. The starting seed is 7
+selectmax iris random 7
+'Runs selectmax classification algorithm on iris dataset using iris-train1.txt as training set and iris-test1.txt as the test set.
+selectmax iris %dir%/iris/train1.txt %dir%/iris/test1.txt
+

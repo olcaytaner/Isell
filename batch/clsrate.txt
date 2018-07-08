@@ -1,0 +1,31 @@
+displaycode off
+displayresult off
+integer i p
+string subdir datadir resultdir model st
+file degfile errfile
+= datadir ../data/polycls
+setprecision 4
+perceptronrun 50
+for p 1 10
+  modelselection aic
+  = st %p%
+  for i 1 5
+    switch i
+      case 1
+        learningrate 1
+      case 2
+        learningrate 0.1
+      case 3
+        learningrate 0.01
+      case 4
+        learningrate 0.001
+      case 5
+        learningrate 0.0001
+    endswitch
+    = subdir large
+    polylearncls %datadir%/%p%/%subdir%/1.tra 15 %datadir%/%p%/%subdir%/1.tes
+    = st %st%_%out3%
+  endfor i
+  writescreen %st%
+endfor p
+

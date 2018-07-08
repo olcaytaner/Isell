@@ -1,0 +1,14 @@
+displaycode off
+displayresult off
+string method1 dataset resultdir
+integer p i
+= resultdir ../results/tests
+= method1 svm
+= dataset tictactoe
+= p 1
+output %method1%-%dataset%-%p%.txt
+confusionanalysis %resultdir%/posterior/%dataset%-%p%-%method1%.posterior 0.5
+for i 1 10
+  write %aout1[i]%_%aout2[i]%_%aout3[i]%_%aout4[i]%
+endfor i
+output stdout

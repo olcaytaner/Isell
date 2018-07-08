@@ -1,0 +1,67 @@
+displaycode off
+displayresult off
+integer i j k res1 res2 s res[4]
+string resultdir dataset
+= resultdir ../results/metrics
+twotailed
+output pca.tex
+write \documentstyle{article}
+write \begin{document}
+for i 1 5
+  switch i
+    case 1
+      = dataset optdigits
+      = s 64
+    case 2
+      = dataset pendigits
+      = s 16
+    case 3
+      = dataset segment
+      = s 19
+    case 4
+      = dataset spambase
+      = s 57
+    case 5
+      = dataset zipcodes
+      = s 256
+  endswitch
+  write \begin{table}
+  write \begin{center}
+  write \caption{%dataset%}
+  write \begin{tabular}{|l|r|r|r|r|}
+  write \hline
+  write Dataset_Size&_\multicolumn{4}{c}{Error/KnnLoss}\\
+  write \hline
+  write _&_Accept/Accept_&_Accept/Reject_&_Reject/Accept_&_Reject/Reject_\\
+  write \hline
+    for k 1 4
+      = res[%k%] 0
+    endfor k
+    for k 1 100
+      pairedttest %resultdir%/%dataset%%s%-%k%.error %resultdir%/%dataset%pca-%k%.error
+      = res1 %out1%
+      pairedttest %resultdir%/%dataset%%s%-%k%.knnloss %resultdir%/%dataset%pca-%k%.knnloss
+      = res2 %out1%
+      if = res1 0
+        if = res2 0
+          ++ res[1]
+        else
+          ++ res[2]
+        endif
+      else
+        if = res2 0
+          ++ res[3]
+        else
+          ++ res[4]
+        endif
+      endif
+    endfor k    
+    write PCA_&_%res[1]%_&_%res[2]%_&_%res[3]%_&_%res[4]%_\\
+  write \hline
+  write \end{tabular}
+  write \end{center}
+  write \end{table}
+endfor i
+write \end{document}
+output stdout
+

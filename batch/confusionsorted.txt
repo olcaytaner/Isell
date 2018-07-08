@@ -1,0 +1,27 @@
+displaycode off
+displayresult off
+string resultdir dataset method
+integer j i k
+matrix m1
+= resultdir ../results/multivariatetest/dt
+= dataset breast
+= j 2
+writescreen TP_FP_TN_FN
+for i 1 5
+  switch i
+    case 1
+      = method c45
+    case 2
+      = method lda
+    case 3
+      = method qda
+    case 4
+      = method knn
+    case 5
+      = method svm
+  endswitch
+  loadmatrix %resultdir%/dt/%dataset%-%j%-%method%-0.500.confusion m1
+  maverage m1
+  writescreen %method%_%aout1[1]%_%aout1[2]%_%aout1[3]%_%aout1[4]%
+endfor i
+

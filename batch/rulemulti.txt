@@ -1,0 +1,53 @@
+displaycode off
+displayresult off
+file outfile infile
+string resultdir dataset method C
+integer j k count
+setdatadir ../data
+loaddatasets rule.xml
+testpercentage 0.33333333333
+runcount 2
+foldcount 5
+runtofold 5
+= resultdir ../results/rule
+multivariatealgorithm svm
+= method multiripper
+= C 100
+svmC %C%
+kerneltype linear
+= infile 100c.txt
+openfile infile r
+readfile infile count
+for j 1 %count%
+  readfile infile dataset
+  writescreen %dataset%
+  output %resultdir%/%dataset%-%method%.error
+  %method% %dataset% cv 1    
+  = outfile %resultdir%/%dataset%-%method%.time
+  openfile outfile w
+  for k 1 10
+    writefile outfile %aout1[k]%
+  endfor k
+  closefile outfile
+  = outfile %resultdir%/%dataset%-%method%.complexity
+  openfile outfile w
+  for k 1 10
+    writefile outfile %aout2[k]%
+  endfor k
+  closefile outfile
+  = outfile %resultdir%/%dataset%-%method%.rulecount
+  openfile outfile w
+  for k 1 10
+    writefile outfile %aout3[k]%
+  endfor k
+  closefile outfile
+  = outfile %resultdir%/%dataset%-%method%.conditioncount
+  openfile outfile w
+  for k 1 10
+    writefile outfile %aout4[k]%
+  endfor k
+  closefile outfile
+endfor j  
+closefile infile
+output stdout
+

@@ -1,0 +1,47 @@
+displaycode off
+integer j i k m p datacount
+string dir file1 extension file2 dataset endj endi endk algorithm infile outfile1 outfile2
+= dir c:\users\olcay\isell\results
+= endj 11
+= endk 5
+= endi 1000
+for j 1 %endj%
+  switch j
+    case 1
+      = dataset abalone
+    case 2
+      = dataset add10
+    case 3
+      = dataset sinus
+    case 4
+      = dataset boston
+    case 5
+      = dataset comp
+  endswitch
+  for k 1 %endk%
+    switch k
+      case 1
+        = extension average
+        = algorithm selectaverage
+      case 2
+        = extension onefeature
+        = algorithm onefeature
+      case 3
+        = extension linear
+        = algorithm linearregression
+      case 4
+        = extension regtree
+        = algorithm regtree
+      case 5
+        = extension quantizereg
+        = algorithm quantizereg
+    endswitch
+    for i 1 %endi%
+      = infile %dir%\%dataset%\%i%.%extension%
+      = outfile1 %dir%\%dataset%\%i%-mse.%extension%
+      = outfile2 %dir%\%dataset%\%i%-sse.%extension%      
+      findmsesse %infile% %outfile1% %outfile2%
+    endfor i
+  endfor k
+endfor j
+

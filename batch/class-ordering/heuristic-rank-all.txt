@@ -1,0 +1,90 @@
+displaycode off
+setdatadir ../data
+integer cno i s j counts[5] indexes[5] tmp fact
+real heuristicerror count
+string dataset heuristic b[120] permutation
+loaddatasets rule.xml
+setprecision 6
+file outfile
+output heuristic-rank-average-all.txt
+for i 1 14
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset car
+    case 3
+      = dataset cmc
+    case 4
+      = dataset hayesroth
+    case 5
+      = dataset iris
+    case 6
+      = dataset leukemia1
+    case 7
+      = dataset leukemia2
+    case 8
+      = dataset nursery
+    case 9
+      = dataset splice
+    case 10
+      = dataset srbct
+    case 11
+      = dataset tae
+    case 12
+      = dataset vehicle
+    case 13
+      = dataset wave
+    case 14
+      = dataset wine
+  endswitch
+  = outfile %dataset%.rank
+  openfile outfile w
+  classcount %dataset%
+  = cno %out1%
+  classcounts %dataset%
+  for s 1 %cno%
+    = counts[s] %aout1[s]%
+    = indexes[s] %s-1%
+  endfor s
+  for s 1 %cno-1%
+    for j %s+1% %cno%
+      if > counts[s] %counts[j]%
+        = tmp %counts[s]%
+        = counts[s] %counts[j]%
+        = counts[j] %tmp%
+        = tmp %indexes[s]%
+        = indexes[s] %indexes[j]%
+        = indexes[j] %tmp%
+      endif
+    endfor j
+  endfor s
+  = heuristic %indexes[1]%
+  for s 2 %cno%
+    = heuristic %heuristic%%indexes[s]%
+  endfor s
+  = fact 1
+  for s 2 %cno%
+    *= fact %s%
+  endfor s
+  for s 1 10
+    = count 1.0
+    meanvariance ../results/perm/%dataset%-%heuristic%-%s%-ripper.error
+    = heuristicerror %out1%
+    stringpermutation %cno% b
+    for j 1 %fact%
+      = permutation %b[j]%
+      if != permutation %heuristic%
+        meanvariance ../results/perm/%dataset%-%permutation%-%s%-ripper.error
+        if < out1 %heuristicerror%
+          ++ count
+        endif
+      endif
+    endfor j
+    writefile outfile %count%
+  endfor s
+  closefile outfile
+  meanvariance %dataset%.rank
+  write %dataset%_%heuristic%_%out1%_%out2%
+endfor i
+output stdout

@@ -1,0 +1,4 @@
+string dir
+= dir c:\users\olcay\isell\poly
+mixturedata c:\mixed3.txt 25 %dir%\data.txt
+plotxclass %dir%\data.txt

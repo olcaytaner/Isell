@@ -1,0 +1,111 @@
+displaycode off
+integer i fold j k t
+real normalcount[5,8] total[5,8]
+setprecision 4
+string resultdir dataset algorithm st
+for i 1 5
+  for j 1 8
+    = normalcount[%i%,%j%] 0
+    = total[%i%,%j%] 0
+  endfor j
+endfor i
+for j 1 20
+  switch j
+    case 1
+      = dataset breast
+    case 2
+      = dataset tictactoe
+    case 3
+      = dataset pima
+    case 4
+      = dataset australian
+    case 5
+      = dataset mammographic
+    case 6
+      = dataset german
+    case 7
+      = dataset vehicle
+    case 8
+      = dataset ocr
+    case 9
+      = dataset balance
+    case 10
+      = dataset zipcodes
+    case 11
+      = dataset car
+    case 12
+      = dataset satellite47
+    case 13
+      = dataset segment
+    case 14
+      = dataset splice
+    case 15
+      = dataset optdigits
+    case 16
+      = dataset acceptors
+    case 17
+      = dataset spambase
+    case 18
+      = dataset pageblock
+    case 19
+      = dataset ringnorm
+    case 20
+      = dataset pendigits
+  endswitch
+  for i 1 5
+    switch i
+      case 1
+        = fold 5
+      case 2
+        = fold 10
+      case 3
+        = fold 20
+      case 4
+        = fold 30
+      case 5
+        = fold 50
+    endswitch
+    = resultdir ../results/nonparametric/%fold%
+    for k 1 8
+      switch k
+        case 1
+          = algorithm knn
+        case 2
+          = algorithm mlpgeneric
+        case 3
+          = algorithm c45
+        case 4
+          = algorithm nearestmean
+        case 5
+          = algorithm ldaclass
+        case 6
+          = algorithm qdaclass
+        case 7
+          = algorithm naivebayes
+        case 8
+          = algorithm ripper
+      endswitch
+      fileexists %resultdir%/%dataset%-%algorithm%-1000.error
+      if = out1 1
+        writescreen %dataset%_%fold%_%algorithm%
+        for t 1 1000
+          multinormalitytest %resultdir%/%dataset%-%algorithm%-%t%.error
+          if = out1 1
+            ++ normalcount[%i%,%k%]
+          endif
+        endfor t
+        += total[%i%,%k%] 1000
+      endif
+    endfor k
+  endfor i
+endfor j
+output normalityresult.txt
+for j 1 8
+  = st %normalcount[1,j]/total[1,j]%
+  for i 2 5
+    = st %st%_%normalcount[i,j]/total[i,j]%
+  endfor i
+  write %st%
+endfor j
+output stdout
+

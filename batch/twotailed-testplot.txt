@@ -1,0 +1,15 @@
+hold off
+axislimits y 0 1 10 1
+hold on
+axislimits x 0 3 10 1
+fontsize legend 20
+fontsize label 20
+fontsize axis 20
+plotsigmoid combined5x2t.txt
+plotsigmoid tpaired5x2.txt
+plotsigmoid ftest5x2.txt
+legendposition upleft
+legendnames Combined_5x2_cv_t_test 5x2_cv_t_test Combined_5x2_cv_F_test 
+xlabel z
+ylabel Probability_of_rejecting_null_hypothesis
+exportimage twosided.eps

@@ -1,0 +1,161 @@
+displaycode off
+integer i j search startj
+string dataset dir
+real rate
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+perceptronrun 50
+setprecision 3
+runcount 1
+foldcount 10
+= search 50
+= dir c:\users\olcay\isell\neuralnetwork\1x10
+for i 43 44
+  switch i
+    case 1
+      = dataset haberman
+      = rate 1.0
+    case 2
+      = dataset iris
+      = rate 0.1
+    case 3
+      = dataset bupa
+      = rate 0.1
+    case 4
+      = dataset monks
+      = rate 0.5
+    case 5
+      = dataset pima
+      = rate 0.005
+    case 6
+      = dataset titanic
+      = rate 0.1
+    case 7
+      = dataset breast
+      = rate 0.5
+    case 8
+      = dataset artificial
+      = rate 0.01
+    case 9
+      = dataset ecoli
+      = rate 0.1
+    case 10
+      = dataset glass
+      = rate 0.5
+    case 11
+      = dataset heart
+      = rate 0.01
+    case 12
+      = dataset pageblock
+      = rate 0.05
+    case 13
+      = dataset wine
+      = rate 0.5
+    case 14
+      = dataset yeast
+      = rate 0.05
+    case 15
+      = dataset hepatitis
+      = rate 0.05
+    case 16
+      = dataset ringnorm
+      = rate 0.05
+    case 17
+      = dataset twonorm
+      = rate 0.005
+    case 18
+      = dataset zoo
+      = rate 0.5
+    case 19
+      = dataset balance
+      = rate 0.05
+    case 20
+      = dataset wave
+      = rate 0.005
+    case 21
+      = dataset postoperative
+      = rate 0.01
+    case 22
+      = dataset flare
+      = rate 0.01
+    case 23
+      = dataset tae
+      = rate 0.1
+    case 24
+      = dataset ironosphere
+      = rate 0.5
+    case 25
+      = dataset dermatology
+      = rate 0.5
+    case 26
+      = dataset vote
+      = rate 1.0
+    case 27
+      = dataset flags
+      = rate 0.1
+    case 28
+      = dataset tictactoe
+      = rate 0.05
+    case 29
+      = dataset australian
+      = rate 0.01
+    case 30
+      = dataset credit
+      = rate 0.01
+    case 31
+      = dataset horse
+      = rate 0.01
+    case 32
+      = dataset cylinder
+      = rate 0.1
+    case 33
+      = dataset cmc
+      = rate 0.05
+    case 34
+      = dataset car
+      = rate 0.1
+    case 35
+      = dataset segment
+      = rate 0.1
+    case 36
+      = dataset thyroid
+      = rate 0.1
+    case 37
+      = dataset ocr
+      = rate 0.05
+    case 38
+      = dataset fevzi
+      = rate 0.05
+    case 39
+      = dataset spambase
+      = rate 0.1
+    case 40
+      = dataset cenk
+      = rate 0.05
+    case 41
+      = dataset nursery
+      = rate 0.1
+    case 42
+      = dataset letter
+      = rate 0.05
+    case 43
+      = dataset mushroom
+      = rate 0.05
+    case 44
+      = dataset zipcodes
+      = rate 0.005
+   endswitch   
+   learningrate 0.1
+   output %dir%\%dataset%-0.txt
+   hiddenlayers 0
+   mlpgeneric %dataset% random 1
+   learningrate %rate%
+   for j 1 %search%     
+     output %dir%\%dataset%-%j%.txt
+     hiddenlayers %j%
+     mlpgeneric %dataset% random 1
+     writescreen %i%_%j%
+   endfor j
+endfor i
+output stdout
+exit

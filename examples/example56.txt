@@ -1,0 +1,15 @@
+displaycode off
+integer i j
+string fname
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+for i 1 10
+  for j 1 10
+    if < i %j%
+      = fname c:\a%i%-%j%.eps
+      plotclasses + %i% %j%
+      plotdata2d deneme3 1 2 %fname%
+      plotclasses - %i% %j%
+    endif
+  endfor j
+endfor i

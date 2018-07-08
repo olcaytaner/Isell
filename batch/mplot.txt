@@ -1,0 +1,31 @@
+displaycode off
+displayresult off
+string resultdir comptype color
+integer i
+= resultdir ../results/multivariatetest
+for i 1 4
+  switch i
+    case 1
+      = comptype error
+      = color black
+    case 2
+      = comptype confusion
+      = color red
+    case 3
+      = comptype roc
+      = color green
+    case 4
+      = comptype pr
+      = color blue
+  endswitch
+  hold on
+  plotxyline %resultdir%/%comptype%.txt %color% 1
+endfor i
+legendnames k-fold_paired_t_test Confusion_test Roc_test Precision_recall_test
+axislimits x 0 10 10 0
+axislimits y 0 1 10 1
+legendposition downleft
+xlabel variance
+ylabel Probability_of_accepting_null_hypothesis
+exportimage %resultdir%/tests.eps
+

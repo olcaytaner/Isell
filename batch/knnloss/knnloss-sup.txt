@@ -1,0 +1,73 @@
+displaycode off
+integer i j k p add s sep
+string resultdir dataset classes
+= resultdir ../results/knnloss/metrics
+setdatadir .
+namestype classatend
+runcount 1
+foldcount 10
+nearcount 10
+for i 1 5
+  switch i
+    case 1
+      = dataset optdigits
+      = add 3
+      = s 64
+      = classes 0;1;2;3;4;5;6;7;8;9
+      = sep 0
+    case 2
+      = dataset pendigits
+      = add 1
+      = s 16
+      = classes 0;1;2;3;4;5;6;7;8;9
+      = sep 0
+    case 3
+      = dataset segment
+      = add 1
+      = s 19
+      = classes grass;path;window;cement;foliage;sky;brickface
+      = sep 0
+    case 4
+      = dataset spambase
+      = add 3
+      = s 57
+      = classes 0;1
+      = sep 0
+    case 5
+      = dataset zipcodes
+      = add 12
+      = s 256
+      = classes 0;1;2;3;4;5;6;7;8;9
+      = sep 1
+  endswitch
+  for j 1 10
+    for k 1 100
+      loaddatasets knnloss.xml
+      randomize %k%
+      featuresuperset %dataset% %j*add% %dataset%.txt %dataset%%s+j*add%.txt
+      if = sep 1
+        createdataset %dataset%%s+j*add% _ %s+j*add% %classes% . %dataset%%s+j*add%.txt _
+      else
+        createdataset %dataset%%s+j*add% , %s+j*add% %classes% . %dataset%%s+j*add%.txt _
+      endif
+      savedataset %dataset%%s+j*add% %dataset%%s+j*add%.xml
+      loaddatasets %dataset%%s+j*add%.xml
+      output %resultdir%/%dataset%%s+j*add%-%k%.error
+      knn %dataset%%s+j*add% cv %k%
+      output %resultdir%/%dataset%%s+j*add%-%k%.knnloss1
+      for p 1 10
+        write %aout3[p]%
+      endfor p
+      output %resultdir%/%dataset%%s+j*add%-%k%.knnloss2
+      for p 1 10
+        write %aout4[p]%
+      endfor p
+      output %resultdir%/%dataset%%s+j*add%-%k%.knnloss3
+      for p 1 10
+        write %aout5[p]%
+      endfor p
+      output stdout
+      writescreen %i%_%j%_%k%
+    endfor k    
+  endfor j
+endfor i

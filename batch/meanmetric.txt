@@ -1,0 +1,78 @@
+displaycode off
+displayresult off
+string resultdir dataset algorithm noise
+real decisionthreshold
+integer i t j k p s 
+real fp1 fn1 tp1 tn1 fp2 fn2 tp2 tn2 tp fp tn fn pprime nprime
+file outfile infile1 infile2
+= resultdir ../results/multivariatetest/synthetic
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+hold off
+for i 1 2
+  switch i
+    case 1
+      = algorithm lda
+    case 2
+      = algorithm qda
+  endswitch
+  for k 1 3
+    switch k
+      case 1
+        = noise 0.002
+      case 2
+        = noise 0.001
+      case 3
+        = noise 0.0005
+    endswitch
+    for p 0 10
+      = dataset data%p%
+      for t 2 9
+        = outfile %resultdir%/%noise%-%dataset%-metric-%0.1*t%.%algorithm%
+        openfile outfile w
+        for j 1 100
+          = infile1 %resultdir%/%noise%/%dataset%/%j%-confusion-%0.1*t%.%algorithm%
+          openfile infile1 r
+          = infile2 %resultdir%/%noise%/%dataset%/%j%-confusion-%0.1*(t-1)%.%algorithm%
+          openfile infile2 r
+          for s 1 10
+            readfile infile1 tp1
+            readfile infile1 fp1
+            readfile infile1 tn1
+            readfile infile1 fn1
+            readfile infile2 tp2
+            readfile infile2 fp2
+            readfile infile2 tn2
+            readfile infile2 fn2
+            = tp %tp1-tp2%
+            = fp %fp1-fp2%
+            = tn %tn1-tn2%
+            = fn %fn1-fn2%
+            = pprime %tp+fp%
+            = nprime %tn+fn%
+            if = pprime 0.0 
+              if = nprime 0.0 
+                writefile outfile 0.000
+              else
+                writefile outfile %(fn/(fn+tn))%
+              endif
+            else
+              if = nprime 0.0
+                writefile outfile %(fp/(tp+fp))%
+              else
+                writefile outfile %(fp/(tp+fp))+(fn/(fn+tn))%
+              endif
+            endif
+          endfor s
+          closefile infile1
+          closefile infile2
+        endfor j
+        closefile outfile
+      endfor t
+      writescreen %i%_%k%_%p%
+    endfor p
+  endfor k
+endfor i
+output stdout

@@ -1,0 +1,326 @@
+<parameters>
+	<parameter name="perceptronrun" type="INTEGER" value="10"/>
+	<parameter name="lda_feature" type="INTEGER" value="2"/>
+	<parameter name="foldcount" type="INTEGER" value="2"/>
+	<parameter name="runcount" type="INTEGER" value="5"/>
+	<parameter name="runfromfold" type="INTEGER" value="0"/>
+	<parameter name="runtofold" type="INTEGER" value="2"/>
+	<parameter name="paralleltype" type="INTEGER" value="0"/>
+	<parameter name="kernelindex" type="INTEGER" value="0"/>
+	<parameter name="proccount" type="INTEGER" value="1"/>
+	<parameter name="optimizecount" type="INTEGER" value="2"/>
+	<parameter name="precision" type="INTEGER" value="3"/>
+	<parameter name="smallsetsize" type="INTEGER" value="20"/>
+	<parameter name="svmcache" type="INTEGER" value="40"/>
+	<parameter name="nearcount" type="INTEGER" value="1"/>
+	<parameter name="partitioncount" type="INTEGER" value="4"/>
+	<parameter name="svmdegree" type="INTEGER" value="1"/>
+	<parameter name="nodecount" type="INTEGER" value="10"/>
+	<parameter name="windowsize" type="INTEGER" value="20"/>
+	<parameter name="maxhidden" type="INTEGER" value="20"/>
+	<parameter name="populationsize" type="INTEGER" value="100"/>
+	<parameter name="restarts" type="INTEGER" value="5"/>
+	<parameter name="tailed" type="INTEGER" value="1"/>
+	<parameter name="hiddenlayers" type="INTEGER" value="0"/>
+	<parameter name="reducedfeaturecount" type="INTEGER" value="2"/>
+	<parameter name="hybridspace" type="INTEGER" value="2"/>
+ <parameter name="featuresize" type="INTEGER" value="2"/>
+ <parameter name="forestsize" type="INTEGER" value="100"/>
+ <parameter name="weaklearnercount" type="INTEGER" value="100"/>
+	<parameter name="beamsize" type="INTEGER" value="15"/>
+	<parameter name="learning_rate" type="FLOAT" value="0.10"/>
+	<parameter name="variance_explained" type="FLOAT" value="0.99"/>
+	<parameter name="alpha" type="FLOAT" value="0.60"/>
+	<parameter name="infthreshold" type="FLOAT" value="0.99"/>
+	<parameter name="variancerange" type="FLOAT" value="0.00"/>
+	<parameter name="confidencelevel" type="FLOAT" value="0.05"/>
+	<parameter name="noiselevel" type="FLOAT" value="0.00"/>
+	<parameter name="etadecrease" type="FLOAT" value="0.95"/>
+	<parameter name="sigma" type="FLOAT" value="0.00"/>
+ <parameter name="decisionthreshold" type="FLOAT" value="0.5"/>
+	<parameter name="pruningthreshold" type="FLOAT" value="0.0"/>
+	<parameter name="svmgamma" type="FLOAT" value="1.00"/>
+	<parameter name="svmcoef0" type="FLOAT" value="0.00"/>
+	<parameter name="svmC" type="FLOAT" value="1.00"/>
+	<parameter name="svmnu" type="FLOAT" value="0.50"/>
+	<parameter name="svmepsilon" type="FLOAT" value="0.10"/>
+	<parameter name="srma1" type="FLOAT" value="1.00"/>
+	<parameter name="srma2" type="FLOAT" value="1.00"/>
+	<parameter name="cvratio" type="FLOAT" value="0.20"/>
+	<parameter name="sigmaestimate" type="FLOAT" value="0.10"/>
+	<parameter name="testpercentage" type="FLOAT" value="0.00"/>
+	<parameter name="decayalpha" type="FLOAT" value="0.00"/>
+	<parameter name="errorthreshold" type="FLOAT" value="0.01"/>
+	<parameter name="errordropratio" type="FLOAT" value="0.10"/>
+	<parameter name="epsilon" type="FLOAT" value="0.10"/>
+	<parameter name="mutationprobability" type="FLOAT" value="0.35"/>
+	<parameter name="timeon" type="ONOFF" value="OFF"/>
+	<parameter name="displaycodeon" type="ONOFF" value="ON"/>
+	<parameter name="displayresulton" type="ONOFF" value="ON"/>
+	<parameter name="parallel" type="ONOFF" value="OFF"/>
+	<parameter name="printbinary" type="ONOFF" value="OFF"/>
+	<parameter name="displayruntime" type="ONOFF" value="OFF"/>
+	<parameter name="texoutput" type="ONOFF" value="OFF"/>
+	<parameter name="accuracy" type="ONOFF" value="OFF"/>
+	<parameter name="usefisher" type="ONOFF" value="OFF"/>
+	<parameter name="smallset" type="ONOFF" value="OFF"/>
+	<parameter name="withoutoutliers" type="ONOFF" value="OFF"/>
+	<parameter name="laplaceestimate" type="ONOFF" value="OFF"/>
+	<parameter name="writerules" type="ONOFF" value="OFF"/>
+	<parameter name="savetestfiles" type="ONOFF" value="OFF"/>
+	<parameter name="rulesordered" type="ONOFF" value="ON"/>
+	<parameter name="hold" type="ONOFF" value="OFF"/>
+ <parameter name="separatedataused" type="ONOFF" value="ON"/>
+	<parameter name="normalizekernel" type="ONOFF" value="OFF"/>
+	<parameter name="displayclassresulton" type="ONOFF" value="OFF"/>
+ <parameter name="hyperparametertune" type="ONOFF" value="OFF"/>
+	<parameter name="printposterior" type="ONOFF" value="OFF"/>
+ <parameter name="changedecisionthreshold" type="ONOFF" value="OFF"/>
+	<parameter name="savemodel" type="ONOFF" value="OFF"/>
+	<parameter name="normalizeoutput" type="ONOFF" value="ON"/>
+	<parameter name="weightdecay" type="ONOFF" value="OFF"/>
+	<parameter name="savetestcode" type="ONOFF" value="OFF"/>
+	<parameter name="showrundetails" type="ONOFF" value="OFF"/>
+	<parameter name="showticks" type="ONOFF" value="ON"/>
+ <parameter name="runwithclassnoise" type="ONOFF" value="OFF"/>
+	<parameter name="usediscrete" type="ONOFF" value="OFF"/>
+	<parameter name="weightfreezing" type="ONOFF" value="OFF"/>
+	<parameter name="printconfusion" type="ONOFF" value="OFF"/>
+ <parameter name="displayequalloss" type="ONOFF" value="OFF"/>
+	<parameter name="imagetype" type="LIST" value="Eps">
+		<value>Eps</value>
+		<value>Pstricks</value>
+	</parameter>
+	<parameter name="currentos" type="LIST" value="Linux">
+		<value>Windows</value>
+		<value>Solaris</value>
+		<value>Linux</value>
+	</parameter>
+	<parameter name="ordering" type="LIST" value="random">
+		<value>random</value>
+		<value>state</value>
+		<value>mintable</value>
+		<value>alarm</value>
+	</parameter>
+	<parameter name="testtype" type="LIST" value="ftest">
+		<value>bonferroni</value>
+		<value>scheffe</value>
+		<value>tukey</value>
+		<value>ftest</value>
+		<value>newmankeuls</value>
+		<value>duncan</value>
+  <value>mannwhitney</value>
+		<value>wilcoxon</value>
+		<value>ttest</value>
+		<value>vanderwaerdan</value>
+		<value>tpaired5x2</value>
+		<value>pairedttest</value>
+		<value>combined5x2t</value>
+		<value>regressionf</value>
+		<value>signtest</value>
+		<value>permutationtest</value>
+		<value>pairedpermutationtest</value>
+		<value>hotellingt</value>
+  <value>nemenyi</value>
+		<value>notest</value>
+	</parameter>
+	<parameter name="namestype" type="LIST" value="Classic">
+		<value>C5.0</value>
+		<value>Ripper</value>
+		<value>Classic</value>
+		<value>Classatend</value>
+		<value>Aysu</value>
+		<value>Cmu</value>
+	</parameter>
+	<parameter name="regularization" type="LIST" value="None">
+		<value>None</value>
+		<value>L1</value>
+		<value>L2</value>
+	</parameter>
+	<parameter name="normalization" type="LIST" value="z">
+		<value>z</value>
+		<value>standard</value>
+		<value>vector</value>
+	</parameter>
+	<parameter name="hingelosstype" type="LIST" value="regular">
+		<value>regular</value>
+		<value>hingeloss01</value>
+		<value>hingeloss02</value>
+	</parameter>
+	<parameter name="correctiontype" type="LIST" value="bonferroni">
+		<value>bonferroni</value>
+		<value>holm</value>
+		<value>nocorrection</value>
+	</parameter>
+	<parameter name="modelselectionmethod" type="LIST" value="univariate">
+		<value>crossvalidation</value>
+		<value>aic</value>
+		<value>bic</value>
+		<value>srm</value>
+		<value>mdl</value>
+		<value>univariate</value>
+		<value>linear</value>
+		<value>quadratic</value>
+		<value>level</value>
+		<value>fixed</value>
+	</parameter>
+	<parameter name="prunetype" type="LIST" value="validation">
+		<value>prepruning</value>
+		<value>validation</value>
+		<value>modelselection</value>
+		<value>nopruning</value>
+		<value>srmpruning</value>
+	</parameter>
+	<parameter name="prunemodel" type="LIST" value="local">
+		<value>local</value>
+		<value>global</value>
+	</parameter>
+	<parameter name="leaftype" type="LIST" value="constant">
+		<value>constant</value>
+		<value>linear</value>
+	</parameter>
+	<parameter name="discretization" type="LIST" value="entropy">
+		<value>equalwidth</value>
+		<value>entropy</value>
+	</parameter>
+	<parameter name="kerneltype" type="LIST" value="linear">
+		<value>linear</value>
+		<value>polynom</value>
+		<value>rbf</value>
+		<value>sigmoid</value>
+	</parameter>
+	<parameter name="combinationtype" type="LIST" value="mean">
+		<value>mean</value>
+		<value>max</value>
+		<value>min</value>
+		<value>median</value>
+		<value>product</value>
+		<value>vote</value>
+	</parameter>
+	<parameter name="experimentdesign" type="LIST" value="uniform">
+		<value>uniform</value>
+		<value>optimized</value>
+	</parameter>
+	<parameter name="language" type="LIST" value="c">
+		<value>c</value>
+		<value>cpp</value>
+		<value>pascal</value>
+		<value>java</value>
+		<value>matlab</value>
+		<value>fortran</value>
+	</parameter>
+	<parameter name="vccalculationtype" type="LIST" value="general">
+		<value>general</value>
+		<value>indepth</value>
+	</parameter>
+	<parameter name="hmmtype" type="LIST" value="full">
+		<value>full</value>
+		<value>leftright</value>
+		<value>leftrightloop</value>
+	</parameter>
+	<parameter name="hmmstatetype" type="LIST" value="gaussian">
+		<value>discrete</value>
+		<value>gaussian</value>
+		<value>gaussianmixture</value>
+		<value>dirichlet</value>
+		<value>dirichletmixture</value>
+	</parameter>
+	<parameter name="hmmlearningtype" type="LIST" value="fixed">
+		<value>separate</value>
+		<value>together</value>
+		<value>fixed</value>
+	</parameter>
+	<parameter name="dimensionreducetype" type="LIST" value="feature">
+		<value>feature</value>
+		<value>variance</value>
+	</parameter>
+	<parameter name="multivariatealgorithm" type="LIST" value="lda">
+		<value>lda</value>
+		<value>lp</value>
+		<value>svm</value>
+	</parameter>
+	<parameter name="neighborhoodtype" type="LIST" value="k">
+		<value>epsilon</value>
+		<value>k</value>
+	</parameter>
+	<parameter name="baseclassificationalgorithm" type="LIST" value="knn">
+		<value>selectmax</value>
+		<value>knn</value>
+		<value>c45</value>
+		<value>nearestmean</value>
+		<value>ldaclass</value>
+		<value>ldt</value>
+		<value>irep</value>
+		<value>irep2</value>
+		<value>ripper</value>
+		<value>c45rules</value>
+		<value>multiripper</value>
+		<value>hybridripper</value>
+		<value>mlpgeneric</value>
+		<value>rexripper</value>
+		<value>multildt</value>
+		<value>omnildt</value>
+		<value>logistic</value>
+		<value>svm</value>
+		<value>nusvm</value>
+		<value>svmtree</value>
+		<value>gaussian</value>
+		<value>nbtree</value>
+		<value>hmm</value>
+		<value>dnc</value>
+		<value>qdaclass</value>
+		<value>naivebayes</value>
+		<value>rbf</value>
+		<value>randomforest</value>
+		<value>rise</value>
+		<value>divs</value>
+		<value>cn2</value>
+		<value>lerils</value>
+		<value>part</value>
+		<value>softtree</value>
+		<value>cart</value>
+		<value>ktree</value>
+		<value>kforest</value>
+		<value>c45stump</value>
+		<value>ldtstump</value>
+		<value>multildtstump</value>
+		<value>softstump</value>
+	</parameter>
+	<parameter name="baseregressionalgorithm" type="LIST" value="knnreg">
+		<value>onefeature</value>
+		<value>knnreg</value>
+		<value>regtree</value>
+		<value>mlpgenericreg</value>
+		<value>selectaverage</value>
+		<value>linearreg</value>
+		<value>quantizereg</value>
+		<value>regrule</value>
+		<value>svmreg</value>
+		<value>nusvmreg</value>
+		<value>dncreg</value>
+		<value>rbfreg</value>
+		<value>gprocessreg</value>
+		<value>svmregtree</value>
+		<value>softregtree</value>
+		<value>regstump</value>
+		<value>softregstump</value>
+	</parameter>
+ <parameter name="multiclasstype" type="LIST" value="onevsone">
+  <value>onevsone</value>
+  <value>onevsrest</value>
+ </parameter>
+	<parameter name="classpermutation" type="STRING" value=""/>
+ <parameter name="tempdirectory" type="STRING" value="."/>
+	<parameter name="model_per_level" type="STRING" value=""/>
+	<parameter name="modelfilename" type="STRING" value=""/>
+	<parameter name="testcodefilename" type="STRING" value=""/>
+	<parameter name="posteriorfilename" type="STRING" value=""/>
+	<parameter name="confusionfilename" type="STRING" value=""/>
+	<parameter name="inifile" type="STRING" value=""/>
+	<parameter name="hiddennodes" type="ARRAY" subtype="INTEGER" size="3" value="1"/>
+	<parameter name="svmcweights" type="ARRAY" subtype="FLOAT" size="50" value="1.0"/>
+	<parameter name="is_class_plotted" type="ARRAY" subtype="INTEGER" size="50" value="1"/>
+	<parameter name="is_class_exported" type="ARRAY" subtype="INTEGER" size="50" value="1"/>
+	<parameter name="statecounts" type="ARRAY" subtype="INTEGER" size="50" value="2"/>
+	<parameter name="componentcounts" type="ARRAY" subtype="INTEGER" size="50" value="1"/>
+</parameters>

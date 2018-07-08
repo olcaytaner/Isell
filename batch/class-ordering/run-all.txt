@@ -1,0 +1,60 @@
+displaycode off
+integer i j s cno fact 
+string dataset b[120] permutation
+printconfusion on
+setdatadir ../data
+loaddatasets rule.xml
+runcount 1
+foldcount 10
+for i 1 14
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset car
+    case 3
+      = dataset cmc
+    case 4
+      = dataset hayesroth
+    case 5
+      = dataset iris
+    case 6
+      = dataset leukemia1
+    case 7
+      = dataset leukemia2
+    case 8
+      = dataset nursery
+    case 9
+      = dataset splice
+    case 10
+      = dataset srbct
+    case 11
+      = dataset tae
+    case 12
+      = dataset vehicle
+    case 13
+      = dataset wave
+    case 14
+      = dataset wine
+  endswitch
+  for s 1 10
+    classcount %dataset%
+    = cno %out1%
+    = fact 1
+    for j 2 %cno%
+      *= fact %j%
+    endfor j
+    stringpermutation %cno% b
+    for j 1 %fact%
+      = permutation %b[j]%
+      fileexists ../results/perm/%dataset%-%permutation%-%s%-ripper.error
+      if = out1 0
+        output ../results/perm/%dataset%-%permutation%-%s%-ripper.error
+        confusionfile ../results/perm/%dataset%-%permutation%-%s%-ripper.confusion
+        classpermutation %permutation%
+        ripper %dataset% cv %s%
+      endif
+    endfor j
+  endfor s
+endfor i
+output stdout

@@ -1,0 +1,55 @@
+displaycode off
+string resultdir dataset algorithm
+= resultdir ../results/moss
+setdatadir ../data
+loaddatasets software.xml
+printposterior on
+integer i j
+= algorithm svm
+runcount 10
+foldcount 10
+for j 1 5
+  switch j
+    case 1
+      = algorithm knn
+    case 2
+      = algorithm naivebayes
+    case 3
+      = algorithm c45
+    case 4
+      = algorithm randomforest
+    case 5
+      = algorithm svm
+  endswitch
+  for i 1 10
+    switch i
+       case 1
+         = dataset ant
+       case 2
+         = dataset camel
+       case 3
+         = dataset ivy
+       case 4
+         = dataset jedit
+       case 5
+         = dataset lucene
+       case 6
+         = dataset poi
+       case 7
+         = dataset synapse
+       case 8
+         = dataset tomcat
+       case 9
+         = dataset velocity
+       case 10
+         = dataset xalan
+    endswitch
+    fileexists %resultdir%/%dataset%-%algorithm%-metric.posterior
+    if = out1 0
+      posteriorfile %resultdir%/%dataset%-%algorithm%-metric.posterior
+      output %resultdir%/%dataset%-%algorithm%-metric.error
+      %algorithm% %dataset% cv 1
+    endif
+  endfor i
+endfor j
+output stdout

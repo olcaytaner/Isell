@@ -1,0 +1,13 @@
+displaycode off
+string function dir
+integer i howmany trainsize testsize
+= dir c:\users\olcay\isell\poly\datacls\large
+= function c:\mixed3.txt
+= howmany 1000
+= trainsize 1000
+= testsize 1000
+noiselevel 0.5
+for i 1 %howmany%
+  mixturedata %function% %trainsize% %dir%\%i%.tra
+  mixturedata %function% %testsize% %dir%\%i%.tes
+endfor i

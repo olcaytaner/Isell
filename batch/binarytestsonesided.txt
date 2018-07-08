@@ -1,0 +1,122 @@
+onetailed
+displaycode off
+displayresult off
+string dir dataset file1 file2 method algorithm1 algorithm2 algs[5]
+integer i j k l m n count1 count2 count3 endi endj
+= dir c:\users\olcay\isell\results
+= endj 30
+= endi 10
+= algs[1] max
+= algs[2] mean
+= algs[3] lda
+= algs[4] c45
+= algs[5] knn
+for n 1 1
+  switch n
+    case 1
+      = method wilcoxon
+    case 2
+      = method cvttest 
+    case 3
+      = method ttest 
+    case 4
+      = method wilcoxon
+    case 5
+      = method tukey
+    case 6
+      = method scheffe
+    case 7
+      = method bonferroni
+  endswitch
+  for k 1 4
+    = m %k%
+    ++ m
+    for l %m% 5
+      = algorithm1 %algs[k]%
+      = algorithm2 %algs[l]%
+      output %dir%\%method%-%algorithm1%-%algorithm2%.txt
+      for j 1 %endj%
+        = count1 0
+        = count2 0
+        = count3 0
+        switch j
+          case 1
+            = dataset breast
+          case 2
+            = dataset bupa
+          case 3
+            = dataset car
+          case 4
+            = dataset cylinder
+          case 5
+            = dataset dermatology
+          case 6
+            = dataset ecoli
+          case 7
+            = dataset flare
+          case 8
+            = dataset glass
+          case 9
+            = dataset hepatitis
+          case 10
+            = dataset horse
+          case 11
+            = dataset iris
+          case 12
+            = dataset ironosphere
+          case 13
+            = dataset monks
+          case 14
+            = dataset segment
+          case 15
+            = dataset vote
+          case 16
+            = dataset wine
+          case 17
+            = dataset zoo
+          case 18
+            = dataset balance
+          case 19
+            = dataset cmc
+          case 20
+            = dataset credit
+          case 21
+            = dataset haberman
+          case 22
+            = dataset pima
+          case 23
+            = dataset tictactoe
+          case 24
+            = dataset yeast
+          case 25
+            = dataset spambase
+          case 26
+            = dataset wave
+          case 27
+            = dataset mushroom
+          case 28
+            = dataset fevzi
+          case 29
+            = dataset cenk
+          case 30
+            = dataset nursery
+        endswitch
+        for i 1 %endi%
+          = file1 %dir%\%dataset%\%i%.%algorithm1%
+          = file2 %dir%\%dataset%\%i%.%algorithm2%
+          %method% %file1% %file2%
+          switch out1
+            case 0
+              ++ count1
+            case 1
+              ++ count2
+            case 2
+              ++ count3
+          endswitch
+        endfor i
+        write %count1%...%count2%...%count3%...%dataset%
+      endfor j
+    endfor l
+  endfor k
+endfor n
+output stdout

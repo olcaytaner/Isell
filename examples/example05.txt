@@ -1,0 +1,18 @@
+'Sets the operating system to Linux
+os Linux
+'Sets the data directory to /datasets directory
+setdatadir /datasets
+'View the data directory. The program will write to screen /datasets
+datadir
+'Read the datasets defined in the mydatasets.ini file to the memory of the program
+loaddatasets example.xml
+'Sets the validation set percentage to 20 percent. 20 percent of the training set will be set aside for validation purposes
+cvratio 0.2
+'Sets the sampling type to 5 times 2 fold cross validation
+runcount 5
+foldcount 2
+'Sets the filename of the exported validation sets. D stands for dataset, R stands for run index, F stands for fold index. 
+exportfilename validation /home/isell/export/D-R-F.txt
+'Exports the validation set of the iris dataset (for the run that starts with the seed 13). The separator character is ; that separates the features of the output dataset. If iris dataset contains discrete features, those features will not be converted to continuous features (realization done is off) The exported validation file names will be /home/isell/export/iris-1-1.txt, /home/isell/export/iris-1-2.txt, /home/isell/export/iris-2-1.txt, /home/isell/export/iris-2-2.txt, ..., /home/isell/export/iris-5-1.txt, /home/isell/export/iris-5-2.txt
+exportvaldata iris ; 13 off
+

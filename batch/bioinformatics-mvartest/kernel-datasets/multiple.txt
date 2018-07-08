@@ -1,0 +1,329 @@
+displaycode off
+displayresult off
+integer i p j
+file infile
+real minx miny maxx maxy x y
+string resultdir method
+setprecision 3
+= resultdir ../results/mvartest2
+for i 1 5
+  hold off
+  errorhistogram %resultdir%/measure/error/ec-kernel-0-%i%.error %resultdir%/measure/error/ec-kernel-1-%i%.error %resultdir%/measure/error/ec-kernel-2-%i%.error %resultdir%/measure/error/ec-kernel-3-%i%.error %resultdir%/measure/error/ec-kernel-4-%i%.error %resultdir%/measure/error/ec-kernel-5-%i%.error
+  exportimage %resultdir%/image/multiple/ec-kernel-%i%-hist.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/roc/ec-kernel-0-%i%.roc %resultdir%/measure/roc/ec-kernel-1-%i%.roc %resultdir%/measure/roc/ec-kernel-2-%i%.roc %resultdir%/measure/roc/ec-kernel-3-%i%.roc %resultdir%/measure/roc/ec-kernel-4-%i%.roc %resultdir%/measure/roc/ec-kernel-5-%i%.roc
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output 6.txt
+  for p 1 10
+    write %aout10[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt 6.txt
+  exportimage %resultdir%/image/multiple/ec-kernel-%i%-rank-roc.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/pr/ec-kernel-0-%i%.pr %resultdir%/measure/pr/ec-kernel-1-%i%.pr %resultdir%/measure/pr/ec-kernel-2-%i%.pr %resultdir%/measure/pr/ec-kernel-3-%i%.pr %resultdir%/measure/pr/ec-kernel-4-%i%.pr %resultdir%/measure/pr/ec-kernel-5-%i%.pr
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output 6.txt
+  for p 1 10
+    write %aout10[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt 6.txt
+  exportimage %resultdir%/image/multiple/ec-kernel-%i%-rank-pr.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 0 5
+    = infile %resultdir%/measure/roc/ec-kernel-%j%-%i%.roc
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/roc/ec-kernel-0-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/ec-kernel-1-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/ec-kernel-2-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/ec-kernel-3-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/ec-kernel-4-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/ec-kernel-5-%i%.roc 4
+  xlabel tpr
+  ylabel fpr
+  legendnames 0 1 2 3 4 5
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/ec-kernel-%i%-roc.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 0 5
+    = infile %resultdir%/measure/pr/ec-kernel-%j%-%i%.pr
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/pr/ec-kernel-0-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/ec-kernel-1-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/ec-kernel-2-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/ec-kernel-3-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/ec-kernel-4-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/ec-kernel-5-%i%.pr 4
+  xlabel precision
+  ylabel recall
+  legendnames 0 1 2 3 4 5
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/ec-kernel-%i%-pr.eps
+  hold off
+  errorhistogram %resultdir%/measure/error/yeast-kernel-0-%i%.error %resultdir%/measure/error/yeast-kernel-1-%i%.error %resultdir%/measure/error/yeast-kernel-2-%i%.error %resultdir%/measure/error/yeast-kernel-3-%i%.error %resultdir%/measure/error/yeast-kernel-4-%i%.error %resultdir%/measure/error/yeast-kernel-5-%i%.error %resultdir%/measure/error/yeast-kernel-6-%i%.error %resultdir%/measure/error/yeast-kernel-7-%i%.error
+  exportimage %resultdir%/image/multiple/yeast-kernel-%i%-hist.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/roc/yeast-kernel-0-%i%.roc %resultdir%/measure/roc/yeast-kernel-1-%i%.roc %resultdir%/measure/roc/yeast-kernel-2-%i%.roc %resultdir%/measure/roc/yeast-kernel-3-%i%.roc %resultdir%/measure/roc/yeast-kernel-4-%i%.roc %resultdir%/measure/roc/yeast-kernel-5-%i%.roc %resultdir%/measure/roc/yeast-kernel-6-%i%.roc %resultdir%/measure/roc/yeast-kernel-7-%i%.roc
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output 6.txt
+  for p 1 10
+    write %aout10[p]%
+  endfor p
+  output 7.txt
+  for p 1 10
+    write %aout11[p]%
+  endfor p
+  output 8.txt
+  for p 1 10
+    write %aout12[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt 6.txt 7.txt 8.txt
+  exportimage %resultdir%/image/multiple/yeast-kernel-%i%-rank-roc.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/pr/yeast-kernel-0-%i%.pr %resultdir%/measure/pr/yeast-kernel-1-%i%.pr %resultdir%/measure/pr/yeast-kernel-2-%i%.pr %resultdir%/measure/pr/yeast-kernel-3-%i%.pr %resultdir%/measure/pr/yeast-kernel-4-%i%.pr %resultdir%/measure/pr/yeast-kernel-5-%i%.pr %resultdir%/measure/pr/yeast-kernel-6-%i%.pr %resultdir%/measure/pr/yeast-kernel-7-%i%.pr
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output 6.txt
+  for p 1 10
+    write %aout10[p]%
+  endfor p
+  output 7.txt
+  for p 1 10
+    write %aout11[p]%
+  endfor p
+  output 8.txt
+  for p 1 10
+    write %aout12[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt 6.txt 7.txt 8.txt
+  exportimage %resultdir%/image/multiple/yeast-kernel-%i%-rank-pr.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 0 7
+    = infile %resultdir%/measure/roc/yeast-kernel-%j%-%i%.roc
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/roc/yeast-kernel-0-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/yeast-kernel-1-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/yeast-kernel-2-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/yeast-kernel-3-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/yeast-kernel-4-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/yeast-kernel-5-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/yeast-kernel-6-%i%.roc 4
+  plotgauss2d %resultdir%/measure/roc/yeast-kernel-7-%i%.roc 4
+  xlabel tpr
+  ylabel fpr
+  legendnames 0 1 2 3 4 5 6 7
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/yeast-kernel-%i%-roc.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 0 7
+    = infile %resultdir%/measure/pr/yeast-kernel-%j%-%i%.pr
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/pr/yeast-kernel-0-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/yeast-kernel-1-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/yeast-kernel-2-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/yeast-kernel-3-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/yeast-kernel-4-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/yeast-kernel-5-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/yeast-kernel-6-%i%.pr 4
+  plotgauss2d %resultdir%/measure/pr/yeast-kernel-7-%i%.pr 4
+  xlabel precision
+  ylabel recall
+  legendnames 0 1 2 3 4 5 6 7
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/yeast-kernel-%i%-pr.eps
+  hold off
+endfor i  

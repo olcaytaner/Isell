@@ -1,0 +1,134 @@
+displaycode off
+displayresult off
+string resultdir dataset method modelselection
+integer i j k starti endi startj endj
+file outfile
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+runcount 1
+foldcount 10
+= resultdir c:\users\olcay\isell\trees
+= starti 1
+= endi 8
+= startj 11
+= endj 11
+= method omnildt
+for i %starti% %endi%
+  switch i
+    case 1
+      modelselection aic
+      = modelselection aic
+    case 2
+      modelselection bic
+      = modelselection bic      
+    case 3
+      modelselection crossvalidation
+      = modelselection crossvalidation
+    case 4
+      modelselection srm
+      = modelselection srm
+    case 5
+      modelselection mdl1
+      = modelselection mdl1
+    case 6
+      modelselection mdl2
+      = modelselection mdl2
+    case 7
+      modelselection pureuni
+      = modelselection pureuni
+    case 8
+      modelselection puremulti
+      = modelselection puremulti
+  endswitch
+  for j %startj% %endj%
+    switch j
+      case 1
+        = dataset breast
+      case 2
+        = dataset bupa
+      case 3
+        = dataset car
+      case 4
+        = dataset cylinder
+      case 5
+        = dataset dermatology
+      case 6
+        = dataset ecoli
+      case 7
+        = dataset flare
+      case 8
+        = dataset glass
+      case 9
+        = dataset hepatitis
+      case 10
+        = dataset horse
+      case 11
+        = dataset iris
+      case 12
+        = dataset ironosphere
+      case 13
+        = dataset monks
+      case 14
+        = dataset segment
+      case 15
+        = dataset vote
+      case 16
+        = dataset wine
+      case 17
+        = dataset zoo
+      case 18
+        = dataset balance
+      case 19
+        = dataset cmc
+      case 20
+        = dataset credit
+      case 21
+        = dataset haberman
+      case 22
+        = dataset pima
+      case 23
+        = dataset tictactoe
+      case 24
+        = dataset yeast
+      case 25
+        = dataset spambase
+      case 26
+        = dataset wave
+      case 27
+        = dataset mushroom
+      case 28
+        = dataset fevzi
+      case 29
+        = dataset cenk
+      case 30
+        = dataset nursery
+    endswitch
+    output %resultdir%\%dataset%-%modelselection%.ldt
+    %method% %dataset% random 1    
+    = outfile %resultdir%\%dataset%-%modelselection%.time
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout1[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%\%dataset%-%modelselection%.univariate
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout4[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%\%dataset%-%modelselection%.multivariate
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout5[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%\%dataset%-%modelselection%.node
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout6[k]%
+    endfor k
+    closefile outfile
+  endfor j  
+endfor i  
+output stdout

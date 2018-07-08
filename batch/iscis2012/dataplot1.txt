@@ -1,0 +1,28 @@
+displaycode off
+axislimits x 0 10 10 0
+axislimits y 0 10 10 0
+putline 2 0 8 10
+putline 1 0 7 10
+putline 3 0 9 10
+putstring 1.1 6.8 x black 36
+putstring 1.3 7.9 x black 36
+putstring 2.2 8.2 x black 36
+putstring 1.8 7.7 x black 36
+putstring 1.6 6.9 x black 36
+putstring 1.7 7.8 x black 36
+putstring 2.3 6.9 x black 36
+putstring 2.6 8.8 x black 36
+putstring 0.8 8.7 x black 36
+putstring 1.4 6.8 x black 36
+putstring 8.1 3.6 o red 36
+putstring 8.6 4.2 o red 36
+putstring 7.4 3.9 o red 36
+putstring 8.9 4.5 o red 36
+putstring 8.1 4.4 o red 36
+putstring 7.1 3.5 o red 36
+putstring 6.6 3.8 o red 36
+putstring 7.8 2.8 o red 36
+putstring 8.8 4.3 o red 36
+putstring 9.1 2.2 o red 36
+fontsize axis 36
+exportimage plot1.eps

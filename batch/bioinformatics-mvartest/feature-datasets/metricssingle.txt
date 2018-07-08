@@ -1,0 +1,58 @@
+displaycode off
+displayresult off
+integer i j k p
+real tpr fpr denom fmeasure
+file infile outfile1 outfile2
+string dataset methodname resultdir
+setprecision 3
+= resultdir ../results/mvartest2
+for i 1 7
+  switch i
+    case 1
+      = methodname c45
+    case 2
+      = methodname knn
+    case 3
+      = methodname lda
+    case 4
+      = methodname qda
+    case 5
+      = methodname svm1
+    case 6
+      = methodname svm2
+    case 7
+      = methodname randomforest
+  endswitch
+  for j 1 4
+    switch j
+      case 1
+        = dataset acceptors
+      case 2
+        = dataset donors
+      case 3
+        = dataset ads
+      case 4
+        = dataset polyadenylation
+    endswitch
+    for k 1 10
+      fileexists %resultdir%/measure/roc/%dataset%-%k%-%methodname%.roc
+      if = out1 1
+        = infile %resultdir%/measure/roc/%dataset%-%k%-%methodname%.roc
+        openfile infile r
+        = outfile1 %resultdir%/measure/tpr/%dataset%-%k%-%methodname%.tpr
+        openfile outfile1 w
+        = outfile2 %resultdir%/measure/fpr/%dataset%-%k%-%methodname%.fpr
+        openfile outfile2 w
+        for p 1 10                    
+          readfile infile tpr
+          readfile infile fpr
+          writefile outfile1 %tpr%
+          writefile outfile2 %fpr%
+        endfor p
+        closefile infile
+        closefile outfile1
+        closefile outfile2
+      endif
+    endfor k
+  endfor j  
+endfor i  

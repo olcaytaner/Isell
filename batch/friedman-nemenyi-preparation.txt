@@ -1,0 +1,30 @@
+displaycode off
+integer i j count
+file infile outfile[4]
+string bestalgorithm algorithms[4] dataset comptype st resultdir
+real best sum[4]
+= infile optimal.txt
+= comptype conditioncount
+= resultdir ../results/rule
+openfile infile r
+readfile infile count
+setprecision 2
+= algorithms[1] ripper
+= algorithms[2] multiripper
+= algorithms[3] hybridripper-ftest
+= algorithms[4] hybridripper-combined5x2t
+for i 1 4
+  = outfile[%i%] results-%algorithms[i]%.%comptype%
+  openfile outfile[%i%] w
+endfor i
+for i 1 %count%
+  readfile infile dataset
+  for j 1 4
+    meanvariance %resultdir%/%dataset%-%algorithms[j]%.%comptype%
+    writefile outfile[%j%] %out1%
+  endfor j
+endfor i
+for i 1 4
+  closefile outfile[%i%]
+endfor i
+closefile infile

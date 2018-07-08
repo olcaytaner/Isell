@@ -1,0 +1,472 @@
+displaycode off
+displayresult off
+string resultdir dataset method1 method2 file1 file2 file3 file4 test comptype
+integer i j k t p s numberofruns count equal res1 res2
+file infile aa ar ra rr
+setprecision 3
+twotailed
+= numberofruns 10
+= resultdir ../results/multivariatetest/dt
+= infile twoclasstime.txt
+openfile infile r
+readfile infile count
+= aa ../results/multivariatetest/univsmulticonf-aa.txt
+openfile aa w
+= ar ../results/multivariatetest/univsmulticonf-ar.txt
+openfile ar w
+= ra ../results/multivariatetest/univsmulticonf-ra.txt
+openfile ra w
+= rr ../results/multivariatetest/univsmulticonf-rr.txt
+openfile rr w
+setprecision 3
+for i 1 %count%
+  readfile infile dataset
+  for j 1 4
+    switch j
+      case 1
+        = method1 c45
+      case 2
+        = method1 knn
+      case 3
+        = method1 svm
+      case 4
+        = method1 lda
+    endswitch
+    for k %j+1% 5
+      switch k
+        case 2
+          = method2 knn
+        case 3
+          = method2 svm
+        case 4
+          = method2 lda
+        case 5
+          = method2 qda
+      endswitch
+      for t 5 5
+        = file1 %resultdir%/%dataset%-1-%method1%.posterior
+        fileexists %file1%
+        if = out1 1
+          = file2 %resultdir%/%dataset%-1-%method2%.posterior
+          fileexists %file2%
+          if = out1 1
+            for s 1 %numberofruns%
+              = file1 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.error
+              = file2 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.error
+              pairedttest %file1% %file2%
+              = res1 %out1%
+              = file3 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.confusion
+              = file4 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.confusion
+              hotellingt %file3% %file4%
+              = res2 %out1%
+              if = res1 0
+                if = res2 0
+                  writefile aa %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile ar %dataset%_%method1%_%method2%_%s%
+                endif
+              else
+                if = res2 0
+                  writefile ra %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile rr %dataset%_%method1%_%method2%_%s%
+                endif
+              endif
+            endfor s
+          endif
+        endif
+      endfor t
+      writescreen %i%_%j%_%k%
+    endfor k
+  endfor j
+endfor i
+closefile infile
+closefile aa
+closefile ar
+closefile ra
+closefile rr
+openfile infile r
+readfile infile count
+= aa ../results/multivariatetest/univsmultiroc-aa.txt
+openfile aa w
+= ar ../results/multivariatetest/univsmultiroc-ar.txt
+openfile ar w
+= ra ../results/multivariatetest/univsmultiroc-ra.txt
+openfile ra w
+= rr ../results/multivariatetest/univsmultiroc-rr.txt
+openfile rr w
+setprecision 3
+for i 1 %count%
+  readfile infile dataset
+  for j 1 4
+    switch j
+      case 1
+        = method1 c45
+      case 2
+        = method1 knn
+      case 3
+        = method1 svm
+      case 4
+        = method1 lda
+    endswitch
+    for k %j+1% 5
+      switch k
+        case 2
+          = method2 knn
+        case 3
+          = method2 svm
+        case 4
+          = method2 lda
+        case 5
+          = method2 qda
+      endswitch
+      for t 5 5
+        = file1 %resultdir%/%dataset%-1-%method1%.posterior
+        fileexists %file1%
+        if = out1 1
+          = file2 %resultdir%/%dataset%-1-%method2%.posterior
+          fileexists %file2%
+          if = out1 1
+            for s 1 %numberofruns%
+              = file1 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.error
+              = file2 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.error
+              pairedttest %file1% %file2%
+              = res1 %out1%
+              = file3 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.roc
+              = file4 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.roc
+              hotellingt %file3% %file4%
+              = res2 %out1%
+              if = res1 0
+                if = res2 0
+                  writefile aa %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile ar %dataset%_%method1%_%method2%_%s%
+                endif
+              else
+                if = res2 0
+                  writefile ra %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile rr %dataset%_%method1%_%method2%_%s%
+                endif
+              endif
+            endfor s
+          endif
+        endif
+      endfor t
+      writescreen %i%_%j%_%k%
+    endfor k
+  endfor j
+endfor i
+closefile infile
+closefile aa
+closefile ar
+closefile ra
+closefile rr
+openfile infile r
+readfile infile count
+= aa ../results/multivariatetest/univsmultifpfn-aa.txt
+openfile aa w
+= ar ../results/multivariatetest/univsmultifpfn-ar.txt
+openfile ar w
+= ra ../results/multivariatetest/univsmultifpfn-ra.txt
+openfile ra w
+= rr ../results/multivariatetest/univsmultifpfn-rr.txt
+openfile rr w
+setprecision 3
+for i 1 %count%
+  readfile infile dataset
+  for j 1 4
+    switch j
+      case 1
+        = method1 c45
+      case 2
+        = method1 knn
+      case 3
+        = method1 svm
+      case 4
+        = method1 lda
+    endswitch
+    for k %j+1% 5
+      switch k
+        case 2
+          = method2 knn
+        case 3
+          = method2 svm
+        case 4
+          = method2 lda
+        case 5
+          = method2 qda
+      endswitch
+      for t 5 5
+        = file1 %resultdir%/%dataset%-1-%method1%.posterior
+        fileexists %file1%
+        if = out1 1
+          = file2 %resultdir%/%dataset%-1-%method2%.posterior
+          fileexists %file2%
+          if = out1 1
+            for s 1 %numberofruns%
+              = file1 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.error
+              = file2 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.error
+              pairedttest %file1% %file2%
+              = res1 %out1%
+              = file3 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.fpfn
+              = file4 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.fpfn
+              hotellingt %file3% %file4%
+              = res2 %out1%
+              if = res1 0
+                if = res2 0
+                  writefile aa %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile ar %dataset%_%method1%_%method2%_%s%
+                endif
+              else
+                if = res2 0
+                  writefile ra %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile rr %dataset%_%method1%_%method2%_%s%
+                endif
+              endif
+            endfor s
+          endif
+        endif
+      endfor t
+      writescreen %i%_%j%_%k%
+    endfor k
+  endfor j
+endfor i
+closefile infile
+closefile aa
+closefile ar
+closefile ra
+closefile rr
+openfile infile r
+readfile infile count
+= aa ../results/multivariatetest/confvsroc-aa.txt
+openfile aa w
+= ar ../results/multivariatetest/confvsroc-ar.txt
+openfile ar w
+= ra ../results/multivariatetest/confvsroc-ra.txt
+openfile ra w
+= rr ../results/multivariatetest/confvsroc-rr.txt
+openfile rr w
+setprecision 3
+for i 1 %count%
+  readfile infile dataset
+  for j 1 4
+    switch j
+      case 1
+        = method1 c45
+      case 2
+        = method1 knn
+      case 3
+        = method1 svm
+      case 4
+        = method1 lda
+    endswitch
+    for k %j+1% 5
+      switch k
+        case 2
+          = method2 knn
+        case 3
+          = method2 svm
+        case 4
+          = method2 lda
+        case 5
+          = method2 qda
+      endswitch
+      for t 5 5
+        = file1 %resultdir%/%dataset%-1-%method1%.posterior
+        fileexists %file1%
+        if = out1 1
+          = file2 %resultdir%/%dataset%-1-%method2%.posterior
+          fileexists %file2%
+          if = out1 1
+            for s 1 %numberofruns%
+              = file1 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.confusion
+              = file2 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.confusion
+              hotellingt %file1% %file2%
+              = res1 %out1%
+              = file3 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.roc
+              = file4 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.roc
+              hotellingt %file3% %file4%
+              = res2 %out1%
+              if = res1 0
+                if = res2 0
+                  writefile aa %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile ar %dataset%_%method1%_%method2%_%s%
+                endif
+              else
+                if = res2 0
+                  writefile ra %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile rr %dataset%_%method1%_%method2%_%s%
+                endif
+              endif
+            endfor s
+          endif
+        endif
+      endfor t
+      writescreen %i%_%j%_%k%
+    endfor k
+  endfor j
+endfor i
+closefile infile
+closefile aa
+closefile ar
+closefile ra
+closefile rr
+openfile infile r
+readfile infile count
+= aa ../results/multivariatetest/confvsfpfn-aa.txt
+openfile aa w
+= ar ../results/multivariatetest/confvsfpfn-ar.txt
+openfile ar w
+= ra ../results/multivariatetest/confvsfpfn-ra.txt
+openfile ra w
+= rr ../results/multivariatetest/confvsfpfn-rr.txt
+openfile rr w
+setprecision 3
+for i 1 %count%
+  readfile infile dataset
+  for j 1 4
+    switch j
+      case 1
+        = method1 c45
+      case 2
+        = method1 knn
+      case 3
+        = method1 svm
+      case 4
+        = method1 lda
+    endswitch
+    for k %j+1% 5
+      switch k
+        case 2
+          = method2 knn
+        case 3
+          = method2 svm
+        case 4
+          = method2 lda
+        case 5
+          = method2 qda
+      endswitch
+      for t 5 5
+        = file1 %resultdir%/%dataset%-1-%method1%.posterior
+        fileexists %file1%
+        if = out1 1
+          = file2 %resultdir%/%dataset%-1-%method2%.posterior
+          fileexists %file2%
+          if = out1 1
+            for s 1 %numberofruns%
+              = file1 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.confusion
+              = file2 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.confusion
+              hotellingt %file1% %file2%
+              = res1 %out1%
+              = file3 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.fpfn
+              = file4 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.fpfn
+              hotellingt %file3% %file4%
+              = res2 %out1%
+              if = res1 0
+                if = res2 0
+                  writefile aa %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile ar %dataset%_%method1%_%method2%_%s%
+                endif
+              else
+                if = res2 0
+                  writefile ra %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile rr %dataset%_%method1%_%method2%_%s%
+                endif
+              endif
+            endfor s
+          endif
+        endif
+      endfor t
+      writescreen %i%_%j%_%k%
+    endfor k
+  endfor j
+endfor i
+closefile infile
+closefile aa
+closefile ar
+closefile ra
+closefile rr
+openfile infile r
+readfile infile count
+= aa ../results/multivariatetest/rocvsfpfn-aa.txt
+openfile aa w
+= ar ../results/multivariatetest/rocvsfpfn-ar.txt
+openfile ar w
+= ra ../results/multivariatetest/rocvsfpfn-ra.txt
+openfile ra w
+= rr ../results/multivariatetest/rocvsfpfn-rr.txt
+openfile rr w
+setprecision 3
+for i 1 %count%
+  readfile infile dataset
+  for j 1 4
+    switch j
+      case 1
+        = method1 c45
+      case 2
+        = method1 knn
+      case 3
+        = method1 svm
+      case 4
+        = method1 lda
+    endswitch
+    for k %j+1% 5
+      switch k
+        case 2
+          = method2 knn
+        case 3
+          = method2 svm
+        case 4
+          = method2 lda
+        case 5
+          = method2 qda
+      endswitch
+      for t 5 5
+        = file1 %resultdir%/%dataset%-1-%method1%.posterior
+        fileexists %file1%
+        if = out1 1
+          = file2 %resultdir%/%dataset%-1-%method2%.posterior
+          fileexists %file2%
+          if = out1 1
+            for s 1 %numberofruns%
+              = file1 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.roc
+              = file2 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.roc
+              hotellingt %file1% %file2%
+              = res1 %out1%
+              = file3 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.fpfn
+              = file4 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.fpfn
+              hotellingt %file3% %file4%
+              = res2 %out1%
+              if = res1 0
+                if = res2 0
+                  writefile aa %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile ar %dataset%_%method1%_%method2%_%s%
+                endif
+              else
+                if = res2 0
+                  writefile ra %dataset%_%method1%_%method2%_%s%
+                else
+                  writefile rr %dataset%_%method1%_%method2%_%s%
+                endif
+              endif
+            endfor s
+          endif
+        endif
+      endfor t
+      writescreen %i%_%j%_%k%
+    endfor k
+  endfor j
+endfor i
+closefile infile
+closefile aa
+closefile ar
+closefile ra
+closefile rr

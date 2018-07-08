@@ -1,0 +1,113 @@
+displaycode off
+string dataset resultdir
+integer i count j values[10,4] k
+real total normalized[10,4]
+matrix f1 f2 f3 f4 f5 eigenvec
+string file1 file2 file3 file4 file5
+file infile infile2 outfile
+= resultdir ../results/multivariatetest/confusion
+= infile manova.txt
+openfile infile r
+readfile infile count
+for i 1 %count%
+  readfile infile dataset
+  for j 1 10
+    = infile2 %resultdir%/%dataset%-%j%-c45.confusion
+    openfile infile2 r
+    for k 1 10
+      readfile infile2 values[%k%,1]
+      readfile infile2 values[%k%,2]
+      readfile infile2 values[%k%,3]
+      readfile infile2 values[%k%,4]
+      = total %values[k,1]+values[k,2]+values[k,3]+values[k,4]%
+      = normalized[k,1] %values[k,1]/total%
+      = normalized[k,2] %values[k,2]/total%
+      = normalized[k,3] %values[k,3]/total%
+      = normalized[k,4] %values[k,4]/total%
+    endfor k
+    closefile infile2
+    openfile infile2 w
+    for k 1 10
+      writefile infile2 %normalized[k,1]%_%normalized[k,2]%_%normalized[k,3]%_%normalized[k,4]%
+    endfor k
+    closefile infile2
+    = infile2 %resultdir%/%dataset%-%j%-knn.confusion
+    openfile infile2 r
+    for k 1 10
+      readfile infile2 values[%k%,1]
+      readfile infile2 values[%k%,2]
+      readfile infile2 values[%k%,3]
+      readfile infile2 values[%k%,4]
+      = total %values[k,1]+values[k,2]+values[k,3]+values[k,4]%
+      = normalized[k,1] %values[k,1]/total%
+      = normalized[k,2] %values[k,2]/total%
+      = normalized[k,3] %values[k,3]/total%
+      = normalized[k,4] %values[k,4]/total%
+    endfor k
+    closefile infile2
+    openfile infile2 w
+    for k 1 10
+      writefile infile2 %normalized[k,1]%_%normalized[k,2]%_%normalized[k,3]%_%normalized[k,4]%
+    endfor k
+    closefile infile2
+    = infile2 %resultdir%/%dataset%-%j%-lda.confusion
+    openfile infile2 r
+    for k 1 10
+      readfile infile2 values[%k%,1]
+      readfile infile2 values[%k%,2]
+      readfile infile2 values[%k%,3]
+      readfile infile2 values[%k%,4]
+      = total %values[k,1]+values[k,2]+values[k,3]+values[k,4]%
+      = normalized[k,1] %values[k,1]/total%
+      = normalized[k,2] %values[k,2]/total%
+      = normalized[k,3] %values[k,3]/total%
+      = normalized[k,4] %values[k,4]/total%
+    endfor k
+    closefile infile2
+    openfile infile2 w
+    for k 1 10
+      writefile infile2 %normalized[k,1]%_%normalized[k,2]%_%normalized[k,3]%_%normalized[k,4]%
+    endfor k
+    closefile infile2
+    = infile2 %resultdir%/%dataset%-%j%-qda.confusion
+    openfile infile2 r
+    for k 1 10
+      readfile infile2 values[%k%,1]
+      readfile infile2 values[%k%,2]
+      readfile infile2 values[%k%,3]
+      readfile infile2 values[%k%,4]
+      = total %values[k,1]+values[k,2]+values[k,3]+values[k,4]%
+      = normalized[k,1] %values[k,1]/total%
+      = normalized[k,2] %values[k,2]/total%
+      = normalized[k,3] %values[k,3]/total%
+      = normalized[k,4] %values[k,4]/total%
+    endfor k
+    closefile infile2
+    openfile infile2 w
+    for k 1 10
+      writefile infile2 %normalized[k,1]%_%normalized[k,2]%_%normalized[k,3]%_%normalized[k,4]%
+    endfor k
+    closefile infile2
+    = infile2 %resultdir%/%dataset%-%j%-svm.confusion
+    openfile infile2 r
+    for k 1 10
+      readfile infile2 values[%k%,1]
+      readfile infile2 values[%k%,2]
+      readfile infile2 values[%k%,3]
+      readfile infile2 values[%k%,4]
+      = total %values[k,1]+values[k,2]+values[k,3]+values[k,4]%
+      = normalized[k,1] %values[k,1]/total%
+      = normalized[k,2] %values[k,2]/total%
+      = normalized[k,3] %values[k,3]/total%
+      = normalized[k,4] %values[k,4]/total%
+    endfor k
+    closefile infile2
+    openfile infile2 w
+    for k 1 10
+      writefile infile2 %normalized[k,1]%_%normalized[k,2]%_%normalized[k,3]%_%normalized[k,4]%
+    endfor k
+    closefile infile2
+    writescreen %i%_%j%
+  endfor j
+endfor i
+closefile infile

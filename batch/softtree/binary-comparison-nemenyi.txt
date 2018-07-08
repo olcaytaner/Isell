@@ -1,0 +1,83 @@
+displaycode off
+integer i k
+string dataset resultdir st type alg
+= type error
+= resultdir ../results/softtree
+for k 1 5
+  switch k
+    case 1
+      = alg c45
+    case 2
+      = alg multildt
+    case 3
+      = alg softtree
+    case 4
+      = alg softtree-l1
+    case 5
+      = alg softtree-l2
+  endswitch
+  output %alg%-%type%.txt
+for i 1 27
+  switch i
+    case 1
+      = dataset acceptors
+    case 2
+      = dataset artificial
+    case 3
+      = dataset breast
+    case 4
+      = dataset bupa
+    case 5
+      = dataset donors
+    case 6
+      = dataset german
+    case 7
+      = dataset haberman
+    case 8
+      = dataset heart
+    case 9
+      = dataset hepatitis
+    case 10
+      = dataset ironosphere
+    case 11
+      = dataset krvskp
+    case 12
+      = dataset magic
+    case 13
+      = dataset monks
+    case 14
+      = dataset mushroom
+    case 15
+      = dataset musk2
+    case 16
+      = dataset parkinsons
+    case 17
+      = dataset polyadenylation
+    case 18
+      = dataset pima
+    case 19
+      = dataset promoters
+    case 20
+      = dataset ringnorm
+    case 21
+      = dataset satellite47
+    case 22
+      = dataset spambase
+    case 23
+      = dataset spect
+    case 24
+      = dataset tictactoe
+    case 25
+      = dataset titanic
+    case 26
+      = dataset twonorm
+    case 27
+      = dataset vote
+  endswitch
+  meanvariance %resultdir%/%dataset%-%alg%.%type%
+  write %out1%
+endfor i
+endfor k
+output stdout
+comparealgorithms c45-%type%.txt multildt-%type%.txt softtree-%type%.txt softtree-l1-%type%.txt softtree-l2-%type%.txt
+exportimage binary-%type%.eps

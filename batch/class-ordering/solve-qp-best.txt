@@ -1,0 +1,81 @@
+displaycode off
+integer i j k t s cno fact pos1 pos2
+string dataset st b[4000000] permutation bestpermutation
+real error[10,10] sum minsum
+setdatadir ../data
+loaddatasets rule.xml
+for i 1 13
+  switch i
+    case 1
+      = dataset winequality
+    case 2
+      = dataset zipcodes
+    case 3
+      = dataset yeast
+    case 4
+      = dataset segment
+    case 5
+      = dataset pendigits
+    case 6
+      = dataset optdigits
+    case 7
+      = dataset ocr
+    case 8
+      = dataset glass
+    case 9
+      = dataset ecoli
+    case 10
+      = dataset dermatology
+    case 11
+      = dataset shuttle
+    case 12
+      = dataset flags
+    case 13
+      = dataset zoo
+  endswitch
+  for s 1 10
+    fileexists %dataset%-%s%-qp.best
+    if = out1 0
+      output %dataset%-%s%-qp.best
+      classcount %dataset%
+      = cno %out1%
+      solveqp %dataset%-%s%.qp
+      = t 1
+      for j 1 %cno%
+        for k 1 %cno%
+          if != j %k%
+            = error[%j%,%k%] %aout1[t]%
+            ++ t
+          endif
+        endfor k
+      endfor j    
+      = fact 1
+      for j 2 %cno%
+        *= fact %j%
+      endfor j
+      stringpermutation %cno% b
+      = minsum 1000
+      for j 1 %fact%
+        = permutation %b[j]%
+        = sum 0.0
+        for k 1 %cno-1%
+          charatindex permutation %k%
+          = pos1 %sout1%
+          ++ pos1
+          for t %k+1% %cno%
+            charatindex permutation %t%
+            = pos2 %sout1%
+            ++ pos2
+            += sum %error[pos1,pos2]%
+          endfor t
+        endfor k
+        if < sum %minsum%
+          = minsum %sum%
+          = bestpermutation %permutation%
+        endif
+      endfor j
+      write %bestpermutation%
+    endif
+  endfor s
+endfor i
+output stdout

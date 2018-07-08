@@ -1,0 +1,52 @@
+displaycode off
+integer i j
+string dataset permutation resultdir
+file infile
+= resultdir ../results/perm
+setdatadir ../data
+loaddatasets rule.xml
+runcount 1
+foldcount 10
+for i 1 13
+  switch i
+    case 1
+      = dataset winequality
+    case 2
+      = dataset zipcodes
+    case 3
+      = dataset yeast
+    case 4
+      = dataset segment
+    case 5
+      = dataset pendigits
+    case 6
+      = dataset optdigits
+    case 7
+      = dataset ocr
+    case 8
+      = dataset glass
+    case 9
+      = dataset ecoli
+    case 10
+      = dataset dermatology
+    case 11
+      = dataset shuttle
+    case 12
+      = dataset flags
+    case 13
+      = dataset zoo
+  endswitch
+  for j 1 10
+    = infile %dataset%-%j%-qp.best
+    openfile infile r
+    readfile infile permutation
+    closefile infile
+    fileexists %resultdir%/%dataset%-%permutation%-%j%-ripper.error
+    if = out1 0
+      classpermutation %permutation%
+      output %resultdir%/%dataset%-%permutation%-%j%-ripper.error
+      ripper %dataset% cv %j%
+    endif
+  endfor j
+endfor i
+output stdout

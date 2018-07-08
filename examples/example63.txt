@@ -1,0 +1,79 @@
+displaycode off
+file outfile1 outfile2 outfile3 outfile4
+integer i samplesize maxdegree samplecount j index added
+string dir functionfile
+real e
+= functionfile c:\mixed3.txt
+= dir c:\users\olcay\isell\poly
+= samplesize 50
+= maxdegree 10
+= samplecount 5
+learningrate 10
+perceptronrun 500
+etadecrease 0.999
+= outfile1 %dir%\bias.txt
+= outfile2 %dir%\variance.txt
+= outfile3 %dir%\error.txt
+= outfile4 %dir%\polynoms.txt
+openfile outfile1 w
+openfile outfile2 w
+openfile outfile3 w
+openfile outfile4 w
+mixturedata %functionfile% 50 %dir%\data.txt
+biasvariancecls %functionfile% %maxdegree% %samplecount% %samplesize%
+for i 1 %maxdegree%
+  writefile outfile1 %i%_%aout1[i]%
+  writefile outfile2 %i%_%aout2[i]%
+  = e %aout1[i]%
+  += e %aout2[i]%
+  writefile outfile3 %i%_%e%
+endfor i
+closefile outfile1
+closefile outfile2
+closefile outfile3
+for i 1 255
+  writefile outfile4 %aout3[i]%
+endfor i
+closefile outfile4
+plotxyline %dir%\bias.txt black 1
+hold on
+plotxyline %dir%\variance.txt black 1
+plotxyline %dir%\error.txt black 1
+axislimits x 1 10 10
+axislimits y 0 1 10
+exportimage %dir%\bias-variance.eps
+hold off
+for i 1 %maxdegree%
+  plotxclass %dir%\data.txt
+  hold on
+  polyplot -1 1 %aout3[i]% blue
+  axislimits y 0 1 10
+  for j 1 %samplecount%
+    = index %maxdegree%
+    = added %i%
+    -= added 1
+    *= added %samplecount%
+    += added %j%
+    += index %added%
+    polyplot -1 1 %aout3[index]% black
+  endfor j
+  exportimage %dir%\%i%.eps
+  hold off
+endfor i
+for i 1 %maxdegree%
+  plotx %dir%\data.txt
+  hold on
+  polysigmoidplot -1 1 %aout3[i]% blue  
+  axislimits y 0 1 10
+  for j 1 %samplecount%
+    = index %maxdegree%
+    = added %i%
+    -= added 1
+    *= added %samplecount%
+    += added %j%
+    += index %added%
+    polysigmoidplot -1 1 %aout3[index]% black
+  endfor j
+  exportimage %dir%\%i%-sigmoid.eps
+  hold off
+endfor i

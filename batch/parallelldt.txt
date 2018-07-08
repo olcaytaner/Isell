@@ -1,0 +1,10 @@
+parallel on
+paralleltype 0
+os Linux
+setdatadir ../data
+loaddatasets deneme.xml
+output result.txt
+foldcount 10
+runcount 1
+selectmax iris cv 1
+output stdout

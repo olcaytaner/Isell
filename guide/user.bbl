@@ -1,0 +1,90 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{dietterich98}
+T.~G. Dietterich, ``Approximate statistical tests for comparing supervised
+  classification learning classifiers,'' \emph{Neural Computation}, vol.~10,
+  pp. 1895--1923, 1998.
+
+\bibitem{alpaydin99}
+E.~Alpayd{\i}n, ``Combined 5$\times$2 cv $f$ test for comparing supervised
+  classification learning classifiers,'' \emph{Neural Computation}, vol.~11,
+  pp. 1975--1982, 1999.
+
+\bibitem{efron79}
+B.~Efron, ``Computers and the theory of statistics,'' \emph{SIAM Review},
+  vol.~21, pp. 460--480, 1979.
+
+\bibitem{alpaydin04}
+E.~Alpayd{\i}n, \emph{Introduction to Machine Learning}.\hskip 1em plus 0.5em
+  minus 0.4em\relax The MIT Press, 2004.
+
+\bibitem{quinlan93}
+J.~R. Quinlan, \emph{C4.5: Programs for Machine Learning}.\hskip 1em plus 0.5em
+  minus 0.4em\relax San Meteo, CA: Morgan Kaufmann, 1993.
+
+\bibitem{quinlan89}
+J.~R. Quinlan and R.~L. Rivest, ``Inferring decision trees using the minimum
+  description length principle,'' \emph{Information and Computation}, vol.~80,
+  pp. 227--248, 1989.
+
+\bibitem{duda73}
+R.~O. Duda and P.~E. Hart, \emph{Pattern Classification and Scene
+  Analysis}.\hskip 1em plus 0.5em minus 0.4em\relax John Wiley and Sons, 1973.
+
+\bibitem{yildiz04}
+O.~T. Y{\i}ld{\i}z and E.~Alpayd{\i}n, ``Linear discriminant trees,''
+  \emph{International Journal of Pattern Recognition and Artificial
+  Intelligence}, vol.~19, no.~3, 2005.
+
+\bibitem{cohen95}
+W.~W. Cohen, ``Fast effective rule induction,'' in \emph{The Twelfth
+  International Conference on Machine Learning}, 1995, pp. 115--123.
+
+\bibitem{ash89dynamic}
+T.~Ash, ``Dynamic node creation in backpropogation networks,'' \emph{Connection
+  Science}, vol.~1, no.~4, pp. 365--375, 1989.
+
+\bibitem{yildiz00}
+O.~T. Y{\i}ld{\i}z and E.~Alpayd{\i}n, ``Linear discriminant trees,'' in
+  \emph{17th International Conference on Machine Learning}.\hskip 1em plus
+  0.5em minus 0.4em\relax Morgan Kaufmann, 2000, pp. 1175--1182.
+
+\bibitem{yildiz01}
+------, ``Omnivariate decision trees,'' \emph{IEEE Transactions on Neural
+  Networks}, vol.~12, no.~6, pp. 1539--1546, 2001.
+
+\bibitem{guo92}
+H.~Guo and S.~B. Gelfand, ``Classification trees with neural network feature
+  extraction,'' \emph{IEEE Transactions on Neural Networks}, vol.~3, pp.
+  923--933, 1992.
+
+\bibitem{libsvm}
+\BIBentryALTinterwordspacing
+C.~C. Chang and C.~J. Lin, \emph{{LIBSVM}: a library for support vector
+  machines}, 2001. [Online]. Available:
+  \url{http://www.csie.ntu.edu.tw/$\sim$cjlin/libsvm}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bishop95}
+C.~M. Bishop, \emph{Neural Networks for Pattern Recognition}.\hskip 1em plus
+  0.5em minus 0.4em\relax Oxford University Press, 1995.
+
+\end{thebibliography}

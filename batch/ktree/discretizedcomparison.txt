@@ -1,0 +1,63 @@
+displaycode off
+displayresult off
+integer i j size
+string dataset outdir type
+= outdir ../results/discrete
+= type error
+onetailed
+for i 1 21
+  switch i
+    case 1
+      = dataset letter2
+    case 2
+      = dataset letter3
+    case 3
+      = dataset letter4
+    case 4
+      = dataset pageblock2
+    case 5
+      = dataset pageblock3
+    case 6
+      = dataset pageblock4
+    case 7
+      = dataset pendigits2
+    case 8
+      = dataset pendigits3
+    case 9
+      = dataset pendigits4
+    case 10
+      = dataset segment2
+    case 11
+      = dataset segment3
+    case 12
+      = dataset segment4
+    case 13
+      = dataset shuttle2
+    case 14
+      = dataset shuttle3
+    case 15
+      = dataset shuttle4
+    case 16
+      = dataset wave2
+    case 17
+      = dataset wave3
+    case 18
+      = dataset wave4
+    case 19
+      = dataset winequality2
+    case 20
+      = dataset winequality3
+    case 21
+      = dataset winequality4
+  endswitch
+  for j 1 4
+    fileexists %outdir%/%dataset%-discrete-%j%.%type%
+    if = out1 1
+      pairedttest %outdir%/%dataset%-c45.%type% %outdir%/%dataset%-discrete-%j%.%type%
+      if != out1 0
+        writescreen %dataset%_%j%
+      endif
+    endif
+  endfor j
+endfor i
+output stdout

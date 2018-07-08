@@ -1,0 +1,55 @@
+displaycode off
+displayresult off
+integer i kernel k p kernelcount
+real tp fp tn fn tpr fpr pprime precision recall
+file infile outfile1 outfile2 outfile3
+string dataset resultdir
+setprecision 3
+= resultdir ../results/mvartest2
+for i 1 2
+  switch i
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for kernel 0 %kernelcount-1%
+    for k 1 10
+      fileexists %resultdir%/measure/confusion1/%dataset%-%kernel%-%k%.confusion
+      if = out1 1
+          = infile %resultdir%/measure/confusion1/%dataset%-%kernel%-%k%.confusion
+          openfile infile r
+          = outfile1 %resultdir%/measure/confusion/%dataset%-%kernel%-%k%.confusion
+          openfile outfile1 w
+          = outfile2 %resultdir%/measure/roc/%dataset%-%kernel%-%k%.roc
+          openfile outfile2 w
+          = outfile3 %resultdir%/measure/pr/%dataset%-%kernel%-%k%.pr
+          openfile outfile3 w
+          for p 1 10                    
+            readfile infile tp
+            readfile infile fn
+            readfile infile tn
+            readfile infile fp
+            = tpr %tp/(tp+fn)%
+            = fpr %fp/(fp+tn)%
+            = pprime %tp+fp%
+            if = pprime 0
+              = precision 0
+            else
+              = precision %tp/(tp+fp)%
+            endif
+            = recall %tp/(tp+fn)%
+            writefile outfile1 %tp%_%fp%_%tn%_%fn%
+            writefile outfile2 %tpr%_%fpr%
+            writefile outfile3 %precision%_%recall%
+          endfor p
+          closefile infile
+          closefile outfile1
+          closefile outfile2
+          closefile outfile3
+      endif
+    endfor k
+  endfor kernel  
+endfor i  

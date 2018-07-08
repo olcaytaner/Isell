@@ -1,0 +1,65 @@
+displaycode off
+setdatadir ../data
+loaddatasets discretized.xml
+integer i j
+string dataset outdir
+= outdir ../results/discrete
+testpercentage 0.333333333
+runcount 2
+foldcount 5
+runtofold 5
+usediscrete off
+for i 1 21
+  switch i
+    case 1
+      = dataset shuttle2
+    case 2
+      = dataset shuttle3
+    case 3
+      = dataset shuttle4
+    case 4
+      = dataset letter2
+    case 5
+      = dataset letter3
+    case 6
+      = dataset letter4
+    case 7
+      = dataset pageblock2
+    case 8
+      = dataset pageblock3
+    case 9
+      = dataset pageblock4
+    case 10
+      = dataset pendigits2
+    case 11
+      = dataset pendigits3
+    case 12
+      = dataset pendigits4
+    case 13
+      = dataset segment2
+    case 14
+      = dataset segment3
+    case 15
+      = dataset segment4
+    case 16
+      = dataset wave2
+    case 17
+      = dataset wave3
+    case 18
+      = dataset wave4
+    case 19
+      = dataset winequality2
+    case 20
+      = dataset winequality3
+    case 21
+      = dataset winequality4
+  endswitch
+  output %outdir%/%dataset%-c45.error
+  c45 %dataset% cv 1
+  output %outdir%/%dataset%-c45.node
+  for j 1 10
+    write %aout3[j]%
+  endfor j
+  writescreen %j%_of_21
+endfor i
+output stdout

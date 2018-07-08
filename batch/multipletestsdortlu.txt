@@ -1,0 +1,124 @@
+displayresult off
+displaycode off
+string dir dataset file1 file2 file3 file4 method ext1 ext2 ext3 ext4
+integer i j count endi endj k l endk endl
+= dir d:\users\olcay\isell\results
+= endj 30
+= endi 1000
+= endk 3
+= endl 5
+for k 1 %endk%
+  switch k
+    case 1
+      = method anova
+    case 2
+      = method kruskalwallis
+    case 3
+      = method vanderwaerdan
+  endswitch
+  for l 1 %endl%
+    switch l
+      case 1
+        = ext1 max 
+        = ext2 mean
+        = ext3 lda
+        = ext4 c45
+      case 2
+        = ext1 max 
+        = ext2 mean
+        = ext3 lda
+        = ext4 knn
+      case 3
+        = ext1 max 
+        = ext2 mean
+        = ext3 c45
+        = ext4 knn
+      case 4
+        = ext1 max 
+        = ext2 lda
+        = ext3 c45
+        = ext4 knn
+      case 5
+        = ext1 mean
+        = ext2 lda
+        = ext3 c45
+        = ext4 knn 
+    endswitch
+    output %dir%\%method%-%ext1%-%ext2%-%ext3%-%ext4%.txt
+    for j 1 %endj%
+      switch j
+        case 1
+          = dataset breast
+        case 2
+          = dataset bupa
+        case 3
+          = dataset car
+        case 4
+          = dataset cylinder
+        case 5
+          = dataset dermatology
+        case 6
+          = dataset ecoli
+        case 7
+          = dataset flare
+        case 8
+          = dataset glass
+        case 9
+          = dataset hepatitis
+        case 10
+          = dataset horse
+        case 11
+          = dataset iris
+        case 12
+          = dataset ironosphere
+        case 13
+          = dataset monks
+        case 14
+          = dataset segment
+        case 15
+          = dataset vote
+        case 16
+          = dataset wine
+        case 17
+          = dataset zoo
+        case 18
+          = dataset balance
+        case 19
+          = dataset cmc
+        case 20
+          = dataset credit
+        case 21
+          = dataset haberman
+        case 22
+          = dataset pima
+        case 23
+          = dataset tictactoe
+        case 24
+          = dataset yeast
+        case 25
+          = dataset spambase
+        case 26
+          = dataset wave
+        case 27
+          = dataset mushroom
+        case 28
+          = dataset fevzi
+        case 29
+          = dataset cenk
+        case 30
+          = dataset nursery
+      endswitch
+      = count 0
+      for i 1 %endi%
+        = file1 %dir%\%dataset%\%i%.%ext1%
+        = file2 %dir%\%dataset%\%i%.%ext2%
+        = file3 %dir%\%dataset%\%i%.%ext3%
+        = file4 %dir%\%dataset%\%i%.%ext4%
+        %method% %file1% %file2% %file3% %file4%
+        += count %out1%
+      endfor i
+      write %count%...%dataset%
+    endfor j
+  endfor l
+endfor k
+output stdout

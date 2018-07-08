@@ -1,0 +1,50 @@
+displaycode off
+file infile outfile1
+string read dataset result rules[200]
+integer i j k m rulecount conditioncount tmp
+= outfile1 c:\users\olcay\isell\ruleinduction\datasizes.txt
+openfile outfile1 w
+for j 1 5
+  = countm 0
+  = countu 0
+  switch j
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+  endswitch
+  = infile c:\users\olcay\isell\ruleinduction\%dataset%-datasizes.hybridripper  
+  openfile infile r
+  write %dataset%
+  for i 1 10
+    readfile infile read
+    tokenize read ;
+    = rulecount %out1%
+    if > rulecount 0
+      for k 1 %rulecount%
+        = rules[k] %aout1[k]%
+      endfor k
+      for k 1 %rulecount%
+        tokenize rules[k] -,
+        = conditioncount %out1%
+        for m 1 %conditioncount%
+          = tmp %m%
+          @= tmp 2
+          if = tmp 0
+            = tmp %m%
+            -= tmp 1
+            writefile outfile1 %aout1[tmp]%;%aout1[m]% 
+          endif
+        endfor m
+      endfor k
+    endif
+  endfor i
+  closefile infile
+endfor j
+closefile outfile1

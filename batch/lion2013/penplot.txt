@@ -1,0 +1,32 @@
+displaycode off
+displayresult off
+integer j t
+string testtype type
+for t 1 2
+  switch t
+    case 1
+      = testtype waldwolfowitz
+    case 2
+      = testtype smirnov
+  endswitch
+  for j 1 3
+    switch j
+      case 1
+        = type all
+      case 2
+        = type roc
+      case 3
+        = type pr
+    endswitch
+    plotxyline %testtype%-%type%.txt black 1
+    axislimits x 1 10 9 0
+    axislimits y 0 1 10 1
+    fontsize axis 18
+    legendposition none
+    fontsize label 18
+    xlabel p
+    ylabel Probability_of_Accept
+    exportimage %testtype%-%type%.eps
+  endfor j
+endfor t
+output stdout

@@ -1,0 +1,83 @@
+displaycode off
+setdatadir ../data
+integer cno i s j fact
+real qperror besterror count error1 error2
+string dataset qppermutation permutation
+file infile outfile
+loaddatasets rule.xml
+setprecision 6
+output qp-rank-average-all.txt
+for i 1 14
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset car
+    case 3
+      = dataset cmc
+    case 4
+      = dataset hayesroth
+    case 5
+      = dataset iris
+    case 6
+      = dataset leukemia1
+    case 7
+      = dataset leukemia2
+    case 8
+      = dataset nursery
+    case 9
+      = dataset splice
+    case 10
+      = dataset srbct
+    case 11
+      = dataset tae
+    case 12
+      = dataset vehicle
+    case 13
+      = dataset wave
+    case 14
+      = dataset wine
+  endswitch
+  classcount %dataset%
+  = cno %out1%
+  = fact 1
+  for s 2 %cno%
+    *= fact %s%
+  endfor s
+  = outfile %dataset%.rank
+  openfile outfile w
+  for s 1 10
+    = count 1.0
+    = infile %dataset%-%s%-qp.error
+    openfile infile r
+    = besterror 1000
+    for j 1 %fact%
+      readfile infile permutation
+      readfile infile error1
+      readfile infile error2
+      if < error1 %besterror%
+        = besterror %error1%
+        = qperror %error2%
+        = qppermutation permutation
+      endif
+    endfor j
+    closefile infile
+    openfile infile r
+    for j 1 %fact%
+      readfile infile permutation
+      readfile infile error1
+      readfile infile error2
+      if != permutation %qppermutation%
+        if < error2 %qperror%
+          ++ count
+        endif
+      endif
+    endfor j
+    closefile infile
+    writefile outfile %count%
+  endfor s
+  closefile outfile
+  meanvariance %dataset%.rank
+  write %dataset%_%out1%_%out2%
+endfor i
+output stdout

@@ -1,0 +1,100 @@
+displaycode off
+integer i s j k t p pos1 pos2 dummy
+real table[6,9] index[3,3] counts[3,3] count
+file infile
+string dataset resultdir b[6] permutation st
+= resultdir ../results/perm
+setprecision 2
+stringpermutation 3 b
+output tablepairs3.txt
+for i 1 10
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset cmc
+    case 3
+      = dataset hayesroth
+    case 4
+      = dataset iris
+    case 5
+      = dataset leukemia1
+    case 6
+      = dataset leukemia2
+    case 7
+      = dataset splice
+    case 8
+      = dataset tae
+    case 9
+      = dataset wave
+    case 10
+      = dataset wine
+  endswitch
+  = table 0
+  for s 1 10
+    for j 1 6
+      = permutation %b[j]%
+      = infile %resultdir%/%dataset%-%permutation%-%s%-ripper.confusion
+      openfile infile r
+      = index 0
+      for k 1 2
+        charatindex permutation %k%
+        = pos1 %sout1%
+        ++ pos1
+        for t %k+1% 3
+          charatindex permutation %t%
+          = pos2 %sout1%
+          ++ pos2
+          = index[%pos1%,%pos2%] 1
+        endfor t
+      endfor k
+      for p 1 10
+        readfile infile dummy
+        readfile infile dummy
+        = count 0
+        for k 1 3
+          for t 1 3
+            readfile infile counts[%k%,%t%]
+            += count %counts[k,t]%            
+          endfor t
+        endfor k
+        for k 1 3
+          for t 1 3
+            += table[%j%,%3*(k-1)+t%] %(index[k,t]*(counts[k,t]+counts[t,k]))/count%
+          endfor t
+        endfor k        
+      endfor p
+      closefile infile
+    endfor j
+  endfor s
+  for j 1 6
+    = permutation _
+    for t 1 3
+      charatindex b[j] %t%
+      = pos1 %sout1%
+      ++ pos1
+      = permutation %permutation%%pos1%
+    endfor t
+    if = j 1
+      = st \multirow{6}{*}{%dataset%}_&_%permutation%
+    else
+      = st _&_%permutation%
+    endif
+    for t 1 9
+      if != t 1
+        if != t 5
+          if != t 9
+            if > table[j,t] 0.0
+              = st %st%_&_%table[j,t]%_
+            else
+              = st %st%_&_
+            endif
+          endif
+        endif
+      endif
+    endfor t
+    write %st%\\
+  endfor j
+  write \hline
+endfor i
+output stdout

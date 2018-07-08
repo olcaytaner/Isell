@@ -1,0 +1,14 @@
+displaycode off
+string function dir
+integer i howmany trainsize testsize
+= dir c:\users\olcay\isell\poly\data
+= function c:\1.txt
+= howmany 10
+= trainsize 25
+= testsize 1000
+noiselevel 0.5
+for i 1 %howmany%
+  functiondatanoisy %function% %trainsize% %dir%\%i%.tra
+  functiondataplot %function% %dir%\%i%.tra %dir%\%i%.eps
+  functiondatanoisy %function% %testsize% %dir%\%i%.tes
+endfor i

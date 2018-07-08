@@ -1,0 +1,41 @@
+displaycode off
+changedecisionthreshold on
+integer i j k count
+string dataset outdir method
+setdatadir ../data
+loaddatasets rule.xml
+= outdir ../results/multivariatetest
+file infile
+= infile twoclass.txt
+openfile infile r
+readfile infile count
+setprecision 3
+runcount 5
+foldcount 2
+for i 1 %count%
+  readfile infile dataset
+  for k 1 2
+    switch k
+      case 1
+        = method ldaclass
+      case 2
+        = method qdaclass
+    endswitch
+    setprecision 10
+    savemodel on
+    modelfile %outdir%/%dataset%-%method%.model
+    %method% %dataset% cv 1
+    savemodel off
+    setprecision 3
+    for j 1 5
+      decisionthreshold %0.2*j-0.1%
+      output %outdir%/%dataset%-%0.2*j-0.1%-%method%.error
+      testmodel %outdir%/%dataset%-%method%.model 1
+      writescreen %dataset%_%0.2*j-0.1%_%method%     
+    endfor j
+    output stdout
+  endfor k
+endfor i
+closefile infile
+output stdout
+

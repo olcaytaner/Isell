@@ -1,0 +1,36 @@
+displaycode off
+displayresult off
+string dataset resultdir overalldir best
+real bestperformance
+= resultdir ../results/ensemble
+= overalldir ../results/ensembleresults
+integer i j n nfact
+= n 6
+= nfact 1
+for i 2 %n%
+  = nfact %nfact*i%
+endfor i
+string c[1]
+string b[%nfact%]
+stringpermutation %n% b
+for i 1 2
+  randomize 1
+  switch i
+    case 1
+      = dataset dermatology
+    case 2
+      = dataset glass
+  endswitch
+  = bestperformance 100.0
+  for j 1 %nfact%
+    = c[1] %resultdir%/%dataset%-%b[j]%.posterior
+    ensemble c 1
+    if < out1 %bestperformance%
+      = bestperformance %out1%
+      = best %b[j]%
+    endif
+  endfor j
+  output %overalldir%/%dataset%-s.error
+  write %bestperformance%
+endfor i
+output stdout

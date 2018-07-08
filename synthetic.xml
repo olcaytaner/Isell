@@ -1,0 +1,32 @@
+<datasets>
+	<dataset name="gauss4" task="classification" size="1200" directory="gauss4" filetype="text" separator=" " filename="gauss4.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="587"/>
+			<class value="1" size="613"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="-4.956000" max="5.318000"/>
+			<attribute type="Real" available="True" min="-9.078000" max="5.961000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="gauss4c" task="classification" size="1200" directory="gauss4c" filetype="text" separator=" " filename="gauss4c.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="579"/>
+			<class value="1" size="621"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="-5.228000" max="5.205000"/>
+			<attribute type="Real" available="True" min="-7.021000" max="4.581000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+		</attributes>
+	</dataset>
+</datasets>

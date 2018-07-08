@@ -1,0 +1,129 @@
+displaycode off
+displayresult off
+string datadir realized ntype rtype dataset
+integer i j k
+= datadir c:\users\olcay\thesis\data
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+runcount 5
+foldcount 2
+testpercentage 0.33333333333333
+setprecision 1
+for i 1 1
+  switch i
+    case 1
+      = dataset iris
+    case 2
+      = dataset haberman
+    case 3
+      = dataset bupa
+    case 4
+      = dataset monks
+    case 5
+      = dataset pima
+    case 6
+      = dataset titanic
+    case 7
+      = dataset breast
+    case 8
+      = dataset artificial
+    case 9
+      = dataset ecoli
+    case 10
+      = dataset glass
+    case 11
+      = dataset heart
+    case 12
+      = dataset pageblock
+    case 13
+      = dataset wine
+    case 14
+      = dataset yeast
+    case 15
+      = dataset hepatitis
+    case 16
+      = dataset ringnorm
+    case 17
+      = dataset twonorm
+    case 18
+      = dataset zoo
+    case 19
+      = dataset balance
+    case 20
+      = dataset wave
+    case 21
+      = dataset postoperative
+    case 22
+      = dataset flare
+    case 23
+      = dataset tae
+    case 24
+      = dataset ironosphere
+    case 25
+      = dataset dermatology
+    case 26
+      = dataset vote
+    case 27
+      = dataset flags
+    case 28
+      = dataset tictactoe
+    case 29
+      = dataset australian
+    case 30
+      = dataset credit
+    case 31
+      = dataset horse
+    case 32
+      = dataset cylinder
+    case 33
+      = dataset cmc
+    case 34
+      = dataset car
+    case 35
+      = dataset segment
+    case 36
+      = dataset thyroid
+    case 37
+      = dataset ocr
+    case 38
+      = dataset fevzi
+    case 39
+      = dataset spambase
+    case 40
+      = dataset cenk
+    case 41
+      = dataset nursery
+    case 42
+      = dataset mushroom
+    case 43 
+      = dataset letter
+    case 44
+      = dataset zipcodes
+  endswitch   
+  for j 1 2
+    switch j
+      case 1
+        namestype Classatend
+        = ntype normal
+      case 2
+        namestype Aydin
+        = ntype aydin
+    endswitch
+    for k 1 2
+      switch k
+        case 1
+          = realized on
+          = rtype realized
+        case 2
+          = realized off
+          = rtype discrete
+      endswitch
+      exportfilename validation %datadir%\%dataset%\%rtype%-%ntype%\D#validation.txt
+      exportfilename whole %datadir%\%dataset%\%rtype%-%ntype%\D#whole.txt
+      exportfilename train %datadir%\%dataset%\%rtype%-%ntype%\D#R#F#train.txt
+      exportfilename test %datadir%\%dataset%\%rtype%-%ntype%\D#R#F#test.txt        
+      exportdatafolds %dataset% _ 1 %realized%
+      exportvaldata %dataset% _ 1 %realized%
+    endfor k
+  endfor j
+endfor i

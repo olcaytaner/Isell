@@ -1,0 +1,24 @@
+displaycode off
+file infile outfile
+integer i d N
+real vc logd Nlogd logN dlogN logdlogN
+= infile vcunivariate.txt
+openfile infile r
+= outfile vcunivariate2.txt
+openfile outfile w
+for i 1 7100
+  readfile infile d
+  readfile infile N
+  readfile infile vc
+  = logd %d%
+  = logd %2$logd%
+  = logN %N%
+  = logN %2$logN%
+  = Nlogd %N*logd%
+  = dlogN %d*logN%
+  = logdlogN %logd*logN%
+  writefile outfile %d%_%N%_%logd%_%logN%_%Nlogd%_%dlogN%_%logdlogN%_%vc%
+endfor i
+closefile infile
+closefile outfile
+

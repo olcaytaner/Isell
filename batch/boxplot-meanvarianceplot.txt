@@ -1,0 +1,11 @@
+displaycode off
+integer i
+string dir dataset plottype
+= dir c:\users\olcay\isell\neuralnetwork\1x10
+= dataset dermatology
+= plottype boxplot
+%plottype% %dir%\%dataset%-0.txt
+hold on
+for i 1 10
+  %plottype% %dir%\%dataset%-%i%.txt
+endfor i

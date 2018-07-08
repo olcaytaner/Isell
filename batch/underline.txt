@@ -1,0 +1,54 @@
+displaycode off
+displayresult off
+string dataset resultdir comptype algorithms[5]
+integer j
+= resultdir ../results/multivariatetest/dt
+= dataset spect
+= comptype precision
+= j 4
+twotailed
+= algorithms[1] qda
+= algorithms[2] svm
+= algorithms[3] knn
+= algorithms[4] lda
+= algorithms[5] c45
+pairedttest %resultdir%/%dataset%-%j%-%algorithms[1]%-0.500.%comptype% %resultdir%/%dataset%-%j%-%algorithms[5]%-0.500.%comptype%
+if = out1 0
+  writescreen %algorithms[1]%_%algorithms[5]%
+endif
+pairedttest %resultdir%/%dataset%-%j%-%algorithms[1]%-0.500.%comptype% %resultdir%/%dataset%-%j%-%algorithms[4]%-0.500.%comptype%
+if = out1 0
+  writescreen %algorithms[1]%_%algorithms[4]%
+endif
+pairedttest %resultdir%/%dataset%-%j%-%algorithms[2]%-0.500.%comptype% %resultdir%/%dataset%-%j%-%algorithms[5]%-0.500.%comptype%
+if = out1 0
+  writescreen %algorithms[2]%_%algorithms[5]%
+endif
+pairedttest %resultdir%/%dataset%-%j%-%algorithms[1]%-0.500.%comptype% %resultdir%/%dataset%-%j%-%algorithms[3]%-0.500.%comptype%
+if = out1 0
+  writescreen %algorithms[1]%_%algorithms[3]%
+endif
+pairedttest %resultdir%/%dataset%-%j%-%algorithms[2]%-0.500.%comptype% %resultdir%/%dataset%-%j%-%algorithms[4]%-0.500.%comptype%
+if = out1 0
+  writescreen %algorithms[2]%_%algorithms[4]%
+endif
+pairedttest %resultdir%/%dataset%-%j%-%algorithms[3]%-0.500.%comptype% %resultdir%/%dataset%-%j%-%algorithms[5]%-0.500.%comptype%
+if = out1 0
+  writescreen %algorithms[3]%_%algorithms[5]%
+endif
+pairedttest %resultdir%/%dataset%-%j%-%algorithms[1]%-0.500.%comptype% %resultdir%/%dataset%-%j%-%algorithms[2]%-0.500.%comptype%
+if = out1 0
+  writescreen %algorithms[1]%_%algorithms[2]%
+endif
+pairedttest %resultdir%/%dataset%-%j%-%algorithms[2]%-0.500.%comptype% %resultdir%/%dataset%-%j%-%algorithms[3]%-0.500.%comptype%
+if = out1 0
+  writescreen %algorithms[2]%_%algorithms[3]%
+endif
+pairedttest %resultdir%/%dataset%-%j%-%algorithms[3]%-0.500.%comptype% %resultdir%/%dataset%-%j%-%algorithms[4]%-0.500.%comptype%
+if = out1 0
+  writescreen %algorithms[3]%_%algorithms[4]%
+endif
+pairedttest %resultdir%/%dataset%-%j%-%algorithms[4]%-0.500.%comptype% %resultdir%/%dataset%-%j%-%algorithms[5]%-0.500.%comptype%
+if = out1 0
+  writescreen %algorithms[4]%_%algorithms[5]%
+endif

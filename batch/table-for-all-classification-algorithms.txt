@@ -1,0 +1,101 @@
+displaycode off
+displayresult off
+integer i j
+string dir method fname st filename
+= dir d:\data\results
+setprecision 2
+output %dir%\output.tex
+write \documentstyle{article}
+write \begin{document}
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|r|r|r|}
+write \hline
+write {\bf_Algorithm}_&_{\bf_Overall_Error}_&_{\bf_Nonfraud_Error}_&_{\bf_Fraud_Error}_\\
+write \hline
+for i 1 17
+  switch i
+    case 1
+      = method selectmax
+      = fname %method%
+    case 2
+      = method c45
+      = fname %method%
+    case 3
+      = method nearestmean
+      = fname %method%
+    case 4
+      = method ldaclass
+      = fname %method%
+    case 5
+      = method ldt
+      = fname %method%
+    case 6
+      = method irep
+      = fname %method%
+    case 7
+      = method irep2
+      = fname %method%
+    case 8
+      = method mlpgeneric
+      = fname %method%-linear
+    case 9
+      = method mlpgeneric
+      = fname %method%-nonlinear5
+    case 10
+      = method mlpgeneric
+      = fname %method%-nonlinear10
+    case 11
+      = method mlpgeneric
+      = fname %method%-nonlinear15
+    case 12
+      = method mlpgeneric
+      = fname %method%-nonlinear20
+    case 13
+      = method multildt
+      = fname %method%
+    case 14
+      = method logistic
+      = fname %method%
+    case 15
+      = method knn
+      = fname %method%1
+    case 16
+      = method multiripperlda
+      = fname %method%
+    case 17
+      = method ripper
+      = fname %method%
+    case 18
+      = method knn
+      = fname %method%3
+    case 19
+      = method knn
+      = fname %method%5
+    case 20
+      = method knn
+      = fname %method%7
+    case 21
+      = method knn
+      = fname %method%9
+  endswitch
+  = st %fname%_
+  for j 1 3
+    switch j
+      case 1
+        = filename %dir%\%fname%-all.txt
+      case 2
+        = filename %dir%\%fname%-1.txt
+      case 3
+        = filename %dir%\%fname%-2.txt
+    endswitch
+    meanvariance %filename%
+    = st %st%&_%out1%$\pm$%out2%_
+  endfor j
+  write %st%\\
+  write \hline
+endfor i
+write \end{tabular}
+write \end{center}
+write \end{table}
+write \end{document}

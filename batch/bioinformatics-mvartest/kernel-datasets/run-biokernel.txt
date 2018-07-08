@@ -1,0 +1,70 @@
+displaycode off
+displayresult off
+integer j k p kernelcount numberofruns
+string dataset resultdir
+= resultdir ../results/mvartest2
+= numberofruns 10
+printposterior on
+runcount 1
+foldcount 10
+setprecision 3
+setdatadir ../data
+normalizekernel on
+loaddatasets biokernel.xml
+for j 1 2
+  switch j
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for p 0 %kernelcount-1%
+    kernelindex %p%
+    switch p
+      case 0
+        if = kernelcount 6
+          svmC 0.1
+        else
+          svmC 1
+        endif
+      case 1
+          svmC 1
+      case 2
+        if = kernelcount 6
+          svmC 10
+        else
+          svmC 5
+        endif
+      case 3
+        if = kernelcount 6
+          svmC 0.05
+        else
+          svmC 1
+        endif
+      case 4
+          svmC 1
+      case 5
+        if = kernelcount 6
+          svmC 0.5
+        else
+          svmC 5
+        endif
+      case 6
+        svmC 5
+      case 7
+        svmC 1
+    endswitch
+    for k 1 %numberofruns%
+      fileexists %resultdir%/measure/error/%dataset%-%p%-%k%.error
+      if = out1 0
+        output %resultdir%/measure/error/%dataset%-%p%-%k%.error
+        posteriorfile %resultdir%/posterior/%dataset%-%p%-%k%.posterior
+        svm %dataset% cv %k%
+      endif
+      writescreen %dataset%_%p%_%k%
+    endfor k
+  endfor p
+endfor j  
+output stdout

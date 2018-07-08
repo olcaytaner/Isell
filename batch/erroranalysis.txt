@@ -1,0 +1,79 @@
+displaycode off
+integer i j k l
+file infile
+real tp fp tn fn total error
+string dir alg dataset results
+= dir /home/olcay/results/multivariatetest
+setprecision 6
+for i 1 5
+  switch i
+    case 1
+      = alg c45
+    case 2
+      = alg ripper
+    case 3
+      = alg naivebayes
+    case 4
+      = alg knn
+    case 5
+      = alg mlpgeneric
+  endswitch
+      for k 1 15
+        switch k
+          case 1
+            = dataset ada
+          case 2
+            = dataset aibocolor2
+          case 3
+            = dataset caravan
+          case 4
+            = dataset chess
+          case 5
+            = dataset connect4
+          case 6
+            = dataset gina
+          case 7
+            = dataset mushroom
+          case 8
+            = dataset nursery
+          case 9
+            = dataset pageblock
+          case 10
+            = dataset report
+          case 11
+            = dataset shuttle
+          case 12
+            = dataset spambase
+          case 13
+            = dataset sylva
+          case 14
+            = dataset thyroid
+          case 15
+            = dataset wave
+        endswitch
+        output %dir%/%alg%/%dataset%posterior/error.txt
+        = infile %dir%/%alg%/%dataset%posterior/confusion.txt
+        writescreen %alg%_%dataset%
+        openfile infile r
+        for l 1 30
+          = error 0.0
+          = total 0.0
+          readfile infile tp
+          += total %tp%
+          readfile infile fp
+          += total %fp%
+          += error %fp%
+          readfile infile tn
+          += total %tn%
+          readfile infile fn
+          += total %fn%
+          += error %fn%
+          /= error %total%
+          *= error 100.0
+          write %error%
+        endfor l
+        closefile infile
+      endfor k
+endfor i
+output stdout
+

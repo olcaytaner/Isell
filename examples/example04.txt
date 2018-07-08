@@ -1,0 +1,13 @@
+'Sets the operating system to Linux
+os Linux
+'Sets the data directory to /home/isell/mydatasets directory
+setdatadir /home/isell/mydatasets
+'View the data directory. The program will write to screen /home/isell/mydatasets
+datadir
+'Read the datasets defined in the mydatasets.ini file to the memory of the program
+loaddatasets example.xml
+'Sets the test percentage to 30 percent. 30 percent of the original dataset will be set aside for testing purposes
+testpercentage 0.3
+'Sets the validation set percentage to 15 percent. 15 percent of the training set will be set aside for validation purposes
+cvratio 0.15
+

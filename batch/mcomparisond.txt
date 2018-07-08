@@ -1,0 +1,47 @@
+displaycode off
+displayresult off
+string resultdir dataset file1 file2 test comptype
+integer i j k t numberofruns
+real count
+setprecision 3
+twotailed
+= numberofruns 100
+= resultdir ../results/multivariatetest/synthetic/0.002
+for i 1 5
+  switch i
+    case 1
+      = comptype error
+      = test pairedttest
+    case 2
+      = comptype confusion
+      = test hotellingt
+    case 3
+      = comptype roc
+      = test hotellingt
+    case 4
+      = comptype pr
+      = test hotellingt
+    case 5
+      = comptype fpfn
+      = test hotellingt
+  endswitch
+  for j 0 10
+    output %resultdir%/%comptype%-%j%.txt
+    = dataset data%j%
+    for t 1 9
+      = count 0
+      for k 1 %numberofruns%
+        = file1 %resultdir%/%dataset%/%k%-%comptype%-%0.1*t%.lda
+        = file2 %resultdir%/%dataset%/%k%-%comptype%-%0.1*t%.qda
+        %test% %file1% %file2%
+        if = out1 0
+          ++ count
+        endif
+      endfor k
+      write %t%_%count/numberofruns%
+      writescreen %i%_%j%
+    endfor t
+  endfor j
+endfor i
+output stdout
+

@@ -1,0 +1,70 @@
+displaycode off
+displayresult off
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+integer i j ccount fact
+string dataset resultdir b[6000]
+= resultdir c:\users\olcay\isell\ruleinduction\permutation
+for i 8 8
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+    case 6
+      = dataset flare
+    case 7
+      = dataset glass
+    case 8
+      = dataset zoo
+    case 9
+      = dataset horse
+    case 10
+      = dataset iris
+    case 11
+      = dataset ironosphere
+    case 12
+      = dataset monks
+    case 13
+      = dataset vote
+    case 14
+      = dataset wine
+    case 15
+      = dataset hepatitis
+    case 16
+      = dataset balance
+    case 17
+      = dataset cmc
+    case 18
+      = dataset credit
+    case 19
+      = dataset haberman
+    case 20
+      = dataset pima
+    case 21
+      = dataset tictactoe
+    case 22
+      = dataset wave
+    case 23
+      = dataset mushroom
+  endswitch  
+  classcount %dataset%
+  = ccount %out1%
+  = fact 1
+  for j 2 %ccount%
+    *= fact %j%
+  endfor j
+  stringpermutation %ccount% b
+  for j 1 %fact%
+    output %resultdir%\%dataset%-%b[j]%.txt
+    classpermutation %b[j]%
+    ripper %dataset% random 1
+  endfor j
+endfor i 
+output stdout

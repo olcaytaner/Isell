@@ -1,0 +1,705 @@
+displaycode off
+displayresult off
+integer i p j
+file infile
+real minx miny maxx maxy x y
+string resultdir method
+setprecision 3
+= resultdir ../results/mvartest2
+for i 1 5
+  hold off
+  errorhistogram %resultdir%/measure/error/acceptors-%i%-c45.error %resultdir%/measure/error/acceptors-%i%-knn.error %resultdir%/measure/error/acceptors-%i%-lda.error %resultdir%/measure/error/acceptors-%i%-randomforest.error %resultdir%/measure/error/acceptors-%i%-svm1.error %resultdir%/measure/error/acceptors-%i%-svm2.error
+  exportimage %resultdir%/image/multiple/acceptors-%i%-hist.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/roc/acceptors-%i%-c45.roc %resultdir%/measure/roc/acceptors-%i%-knn.roc %resultdir%/measure/roc/acceptors-%i%-lda.roc %resultdir%/measure/roc/acceptors-%i%-randomforest.roc %resultdir%/measure/roc/acceptors-%i%-svm1.roc %resultdir%/measure/roc/acceptors-%i%-svm2.roc
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output 6.txt
+  for p 1 10
+    write %aout10[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt 6.txt
+  exportimage %resultdir%/image/multiple/acceptors-%i%-rank-roc.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/pr/acceptors-%i%-c45.pr %resultdir%/measure/pr/acceptors-%i%-knn.pr %resultdir%/measure/pr/acceptors-%i%-lda.pr %resultdir%/measure/pr/acceptors-%i%-randomforest.pr %resultdir%/measure/pr/acceptors-%i%-svm1.pr %resultdir%/measure/pr/acceptors-%i%-svm2.pr
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output 6.txt
+  for p 1 10
+    write %aout10[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt 6.txt
+  exportimage %resultdir%/image/multiple/acceptors-%i%-rank-pr.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 1 6
+    switch j
+      case 1
+        = method c45
+      case 2
+        = method knn
+      case 3
+        = method lda
+      case 4
+        = method randomforest
+      case 5
+        = method svm1
+      case 6
+        = method svm2
+    endswitch
+    = infile %resultdir%/measure/roc/acceptors-%i%-%method%.roc
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/roc/acceptors-%i%-c45.roc 4
+  plotgauss2d %resultdir%/measure/roc/acceptors-%i%-knn.roc 4
+  plotgauss2d %resultdir%/measure/roc/acceptors-%i%-lda.roc 4
+  plotgauss2d %resultdir%/measure/roc/acceptors-%i%-randomforest.roc 4
+  plotgauss2d %resultdir%/measure/roc/acceptors-%i%-svm1.roc 4
+  plotgauss2d %resultdir%/measure/roc/acceptors-%i%-svm2.roc 4
+  xlabel tpr
+  ylabel fpr
+  legendnames c45 knn lda rf svm1 svm2
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/acceptors-%i%-roc.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 1 6
+    switch j
+      case 1
+        = method c45
+      case 2
+        = method knn
+      case 3
+        = method lda
+      case 4
+        = method randomforest
+      case 5
+        = method svm1
+      case 6
+        = method svm2
+    endswitch
+    = infile %resultdir%/measure/pr/acceptors-%i%-%method%.pr
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/pr/acceptors-%i%-c45.pr 4
+  plotgauss2d %resultdir%/measure/pr/acceptors-%i%-knn.pr 4
+  plotgauss2d %resultdir%/measure/pr/acceptors-%i%-lda.pr 4
+  plotgauss2d %resultdir%/measure/pr/acceptors-%i%-randomforest.pr 4
+  plotgauss2d %resultdir%/measure/pr/acceptors-%i%-svm1.pr 4
+  plotgauss2d %resultdir%/measure/pr/acceptors-%i%-svm2.pr 4
+  xlabel precision
+  ylabel recall
+  legendnames c45 knn lda rf svm1 svm2
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/acceptors-%i%-pr.eps
+  hold off
+  errorhistogram %resultdir%/measure/error/ads-%i%-c45.error %resultdir%/measure/error/ads-%i%-knn.error %resultdir%/measure/error/ads-%i%-lda.error %resultdir%/measure/error/ads-%i%-randomforest.error %resultdir%/measure/error/ads-%i%-svm1.error %resultdir%/measure/error/ads-%i%-svm2.error
+  exportimage %resultdir%/image/multiple/ads-%i%-hist.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/roc/ads-%i%-c45.roc %resultdir%/measure/roc/ads-%i%-knn.roc %resultdir%/measure/roc/ads-%i%-lda.roc %resultdir%/measure/roc/ads-%i%-randomforest.roc %resultdir%/measure/roc/ads-%i%-svm1.roc %resultdir%/measure/roc/ads-%i%-svm2.roc
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output 6.txt
+  for p 1 10
+    write %aout10[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt 6.txt
+  exportimage %resultdir%/image/multiple/ads-%i%-rank-roc.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/pr/ads-%i%-c45.pr %resultdir%/measure/pr/ads-%i%-knn.pr %resultdir%/measure/pr/ads-%i%-lda.pr %resultdir%/measure/pr/ads-%i%-randomforest.pr %resultdir%/measure/pr/ads-%i%-svm1.pr %resultdir%/measure/pr/ads-%i%-svm2.pr
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output 6.txt
+  for p 1 10
+    write %aout10[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt 6.txt
+  exportimage %resultdir%/image/multiple/ads-%i%-rank-pr.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 1 6
+    switch j
+      case 1
+        = method c45
+      case 2
+        = method knn
+      case 3
+        = method lda
+      case 4
+        = method randomforest
+      case 5
+        = method svm1
+      case 6
+        = method svm2
+    endswitch
+    = infile %resultdir%/measure/roc/ads-%i%-%method%.roc
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/roc/ads-%i%-c45.roc 4
+  plotgauss2d %resultdir%/measure/roc/ads-%i%-knn.roc 4
+  plotgauss2d %resultdir%/measure/roc/ads-%i%-lda.roc 4
+  plotgauss2d %resultdir%/measure/roc/ads-%i%-randomforest.roc 4
+  plotgauss2d %resultdir%/measure/roc/ads-%i%-svm1.roc 4
+  plotgauss2d %resultdir%/measure/roc/ads-%i%-svm2.roc 4
+  xlabel tpr
+  ylabel fpr
+  legendnames c45 knn lda rf svm1 svm2
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/ads-%i%-roc.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 1 6
+    switch j
+      case 1
+        = method c45
+      case 2
+        = method knn
+      case 3
+        = method lda
+      case 4
+        = method randomforest
+      case 5
+        = method svm1
+      case 6
+        = method svm2
+    endswitch
+    = infile %resultdir%/measure/pr/ads-%i%-%method%.pr
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/pr/ads-%i%-c45.pr 4
+  plotgauss2d %resultdir%/measure/pr/ads-%i%-knn.pr 4
+  plotgauss2d %resultdir%/measure/pr/ads-%i%-lda.pr 4
+  plotgauss2d %resultdir%/measure/pr/ads-%i%-randomforest.pr 4
+  plotgauss2d %resultdir%/measure/pr/ads-%i%-svm1.pr 4
+  plotgauss2d %resultdir%/measure/pr/ads-%i%-svm2.pr 4
+  xlabel precision
+  ylabel recall
+  legendnames c45 knn lda rf svm1 svm2
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/ads-%i%-pr.eps
+  hold off
+  errorhistogram %resultdir%/measure/error/donors-%i%-c45.error %resultdir%/measure/error/donors-%i%-knn.error %resultdir%/measure/error/donors-%i%-lda.error %resultdir%/measure/error/donors-%i%-qda.error %resultdir%/measure/error/donors-%i%-randomforest.error %resultdir%/measure/error/donors-%i%-svm2.error
+  exportimage %resultdir%/image/multiple/donors-%i%-hist.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/roc/donors-%i%-c45.roc %resultdir%/measure/roc/donors-%i%-knn.roc %resultdir%/measure/roc/donors-%i%-lda.roc %resultdir%/measure/roc/donors-%i%-qda.roc %resultdir%/measure/roc/donors-%i%-randomforest.roc %resultdir%/measure/roc/donors-%i%-svm2.roc
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output 6.txt
+  for p 1 10
+    write %aout10[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt 6.txt
+  exportimage %resultdir%/image/multiple/donors-%i%-rank-roc.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/pr/donors-%i%-c45.pr %resultdir%/measure/pr/donors-%i%-knn.pr %resultdir%/measure/pr/donors-%i%-lda.pr %resultdir%/measure/pr/donors-%i%-qda.pr %resultdir%/measure/pr/donors-%i%-randomforest.pr %resultdir%/measure/pr/donors-%i%-svm2.pr
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output 6.txt
+  for p 1 10
+    write %aout10[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt 6.txt
+  exportimage %resultdir%/image/multiple/donors-%i%-rank-pr.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 1 6
+    switch j
+      case 1
+        = method c45
+      case 2
+        = method knn
+      case 3
+        = method lda
+      case 4
+        = method randomforest
+      case 5
+        = method svm2
+      case 6
+        = method qda
+    endswitch
+    = infile %resultdir%/measure/roc/donors-%i%-%method%.roc
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/roc/donors-%i%-c45.roc 4
+  plotgauss2d %resultdir%/measure/roc/donors-%i%-knn.roc 4
+  plotgauss2d %resultdir%/measure/roc/donors-%i%-lda.roc 4
+  plotgauss2d %resultdir%/measure/roc/donors-%i%-qda.roc 4
+  plotgauss2d %resultdir%/measure/roc/donors-%i%-randomforest.roc 4
+  plotgauss2d %resultdir%/measure/roc/donors-%i%-svm2.roc 4
+  xlabel tpr
+  ylabel fpr
+  legendnames c45 knn lda qda rf svm2
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/donors-%i%-roc.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 1 6
+    switch j
+      case 1
+        = method c45
+      case 2
+        = method knn
+      case 3
+        = method lda
+      case 4
+        = method randomforest
+      case 5
+        = method svm2
+      case 6
+        = method qda
+    endswitch
+    = infile %resultdir%/measure/pr/donors-%i%-%method%.pr
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/pr/donors-%i%-c45.pr 4
+  plotgauss2d %resultdir%/measure/pr/donors-%i%-knn.pr 4
+  plotgauss2d %resultdir%/measure/pr/donors-%i%-lda.pr 4
+  plotgauss2d %resultdir%/measure/pr/donors-%i%-qda.pr 4
+  plotgauss2d %resultdir%/measure/pr/donors-%i%-randomforest.pr 4
+  plotgauss2d %resultdir%/measure/pr/donors-%i%-svm2.pr 4
+  xlabel precision
+  ylabel recall
+  legendnames c45 knn lda qda rf svm2
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/donors-%i%-pr.eps
+  hold off
+  errorhistogram %resultdir%/measure/error/polyadenylation-%i%-c45.error %resultdir%/measure/error/polyadenylation-%i%-knn.error %resultdir%/measure/error/polyadenylation-%i%-lda.error %resultdir%/measure/error/polyadenylation-%i%-qda.error %resultdir%/measure/error/polyadenylation-%i%-randomforest.error
+  exportimage %resultdir%/image/multiple/polyadenylation-%i%-hist.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/roc/polyadenylation-%i%-c45.roc %resultdir%/measure/roc/polyadenylation-%i%-knn.roc %resultdir%/measure/roc/polyadenylation-%i%-lda.roc %resultdir%/measure/roc/polyadenylation-%i%-qda.roc %resultdir%/measure/roc/polyadenylation-%i%-randomforest.roc
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt
+  exportimage %resultdir%/image/multiple/polyadenylation-%i%-rank-roc.eps
+  hold off
+  kruskalwallismulti %resultdir%/measure/pr/polyadenylation-%i%-c45.pr %resultdir%/measure/pr/polyadenylation-%i%-knn.pr %resultdir%/measure/pr/polyadenylation-%i%-lda.pr %resultdir%/measure/pr/polyadenylation-%i%-qda.pr %resultdir%/measure/pr/polyadenylation-%i%-randomforest.pr
+  output 1.txt
+  for p 1 10
+    write %aout5[p]%
+  endfor p
+  output 2.txt
+  for p 1 10
+    write %aout6[p]%
+  endfor p
+  output 3.txt
+  for p 1 10
+    write %aout7[p]%
+  endfor p
+  output 4.txt
+  for p 1 10
+    write %aout8[p]%
+  endfor p
+  output 5.txt
+  for p 1 10
+    write %aout9[p]%
+  endfor p
+  output stdout
+  rankplot 1.txt 2.txt 3.txt 4.txt 5.txt
+  exportimage %resultdir%/image/multiple/polyadenylation-%i%-rank-pr.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 1 5
+    switch j
+      case 1
+        = method c45
+      case 2
+        = method knn
+      case 3
+        = method lda
+      case 4
+        = method randomforest
+      case 5
+        = method qda
+    endswitch
+    = infile %resultdir%/measure/roc/polyadenylation-%i%-%method%.roc
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/roc/polyadenylation-%i%-c45.roc 4
+  plotgauss2d %resultdir%/measure/roc/polyadenylation-%i%-knn.roc 4
+  plotgauss2d %resultdir%/measure/roc/polyadenylation-%i%-lda.roc 4
+  plotgauss2d %resultdir%/measure/roc/polyadenylation-%i%-qda.roc 4
+  plotgauss2d %resultdir%/measure/roc/polyadenylation-%i%-randomforest.roc 4
+  xlabel tpr
+  ylabel fpr
+  legendnames c45 knn lda qda rf
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/polyadenylation-%i%-roc.eps
+  hold off
+  = minx 1
+  = miny 1
+  = maxx 0
+  = maxy 0
+  for j 1 5
+    switch j
+      case 1
+        = method c45
+      case 2
+        = method knn
+      case 3
+        = method lda
+      case 4
+        = method randomforest
+      case 5
+        = method qda
+    endswitch
+    = infile %resultdir%/measure/pr/polyadenylation-%i%-%method%.pr
+    openfile infile r
+    for p 1 10
+      readfile infile x
+      readfile infile y
+      if < x %minx%
+        = minx %x%
+      endif
+      if < y %miny%
+        = miny %y%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor p    
+    closefile infile
+  endfor j
+  axislimits x %minx% %maxx% 1 1
+  axislimits y %miny% %maxy% 1 1
+  hold on
+  plotgauss2d %resultdir%/measure/pr/polyadenylation-%i%-c45.pr 4
+  plotgauss2d %resultdir%/measure/pr/polyadenylation-%i%-knn.pr 4
+  plotgauss2d %resultdir%/measure/pr/polyadenylation-%i%-lda.pr 4
+  plotgauss2d %resultdir%/measure/pr/polyadenylation-%i%-qda.pr 4
+  plotgauss2d %resultdir%/measure/pr/polyadenylation-%i%-randomforest.pr 4
+  xlabel precision
+  ylabel recall
+  legendnames c45 knn lda qda rf
+  legendposition downright
+  fontsize data 18
+  fontsize legend 24
+  fontsize axis 24
+  fontsize label 24
+  exportimage %resultdir%/image/multiple/polyadenylation-%i%-pr.eps
+  hold off
+endfor i  

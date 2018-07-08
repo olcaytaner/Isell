@@ -1,0 +1,25 @@
+displaycode off
+displayresult off
+string resultdir dataset plotdir noise
+integer j k t
+matrix avg cov
+= resultdir ../results/multivariatetest/synthetic
+= plotdir ../results/multivariatetest
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+hold off
+= noise 0.0005
+for t 0 5
+  = dataset data%2*t%
+  axislimits x 0 30 10 0
+  axislimits y 0 30 10 0
+  hold on
+  loadmatrix %resultdir%/%noise%-%dataset%-fpfn-0.500-qda.mean avg
+  loadmatrix %resultdir%/%noise%-%dataset%-fpfn-0.500-qda.cov cov
+  plotcovariance avg cov 2
+  writescreen %t%
+endfor t
+exportimage %plotdir%/data0-10-qda-covariance.eps
+

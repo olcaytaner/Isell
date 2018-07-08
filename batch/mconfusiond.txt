@@ -1,0 +1,63 @@
+displaycode off
+displayresult off
+string resultdir dataset extension file1
+file outfile1 outfile2 outfile3 outfile4 outfile5
+integer i j k numberofruns p fold t
+real tp fp tn fn tpr fpr precision recall error
+setprecision 3
+= numberofruns 100
+= fold 10
+= resultdir ../results/multivariatetest/synthetic/0.002
+runcount 1
+foldcount 1
+setprecision 3
+for i 1 2
+  switch i
+    case 1
+      = extension lda
+    case 2
+      = extension qda
+  endswitch
+  for j 0 10
+    = dataset data%j%
+    for k 1 %numberofruns%
+      for t 1 9
+        = outfile1 %resultdir%/%dataset%/%k%-confusion-%0.1*t%.%extension%
+        openfile outfile1 w
+        = outfile2 %resultdir%/%dataset%/%k%-roc-%0.1*t%.%extension%
+        openfile outfile2 w
+        = outfile3 %resultdir%/%dataset%/%k%-pr-%0.1*t%.%extension%
+        openfile outfile3 w
+        = outfile4 %resultdir%/%dataset%/%k%-error-%0.1*t%.%extension%
+        openfile outfile4 w
+        = outfile5 %resultdir%/%dataset%/%k%-fpfn-%0.1*t%.%extension%
+        openfile outfile5 w
+        for p 1 %fold%          
+          = file1 %resultdir%/%dataset%/%k%-%p%-posterior.%extension%
+          confusionanalysis %file1% %0.1*t%
+          writefile outfile1 %aout1[1]%_%aout2[1]%_%aout3[1]%_%aout4[1]%
+          = tp %aout1[1]%
+          = fp %aout2[1]%
+          = tn %aout3[1]%
+          = fn %aout4[1]%
+          = recall %tp/(tp+fn)%
+          = precision %tp/(tp+fp)%
+          = tpr %tp/(tp+fn)%
+          = fpr %fp/(fp+tn)%
+          = error %(fp+fn)/(tp+tn+fp+fn)%
+          writefile outfile2 %tpr%_%fpr%
+          writefile outfile3 %precision%_%recall%
+          writefile outfile4 %error%
+          writefile outfile5 %fp%_%fn%
+        endfor p
+        closefile outfile1
+        closefile outfile2
+        closefile outfile3
+        closefile outfile4
+        closefile outfile5
+      endfor t
+      writescreen %i%_%j%_%k%
+    endfor k
+  endfor j  
+endfor i  
+

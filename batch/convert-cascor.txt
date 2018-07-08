@@ -1,0 +1,38 @@
+displaycode off
+string st dir dataset type comparison subdir corr clevel
+file infile infile2 outfile outfile2
+real error
+integer i j endj k complexity
+= dir c:\users\olcay\isell\most\cascor
+setprecision 6
+for i 1 2
+  switch i
+    case 1
+      = type cls
+      = endj 44
+    case 2
+      = type reg
+      = endj 30
+  endswitch
+  = infile c:\users\olcay\isell\code\%type%.txt
+  openfile infile r
+  for j 1 %endj%
+    readfile infile dataset
+    = outfile %dir%\results%type%1x10\%dataset%.txt
+    openfile outfile w
+    = outfile2 %dir%\results%type%1x10\%dataset%-complexity.txt
+    openfile outfile2 w
+    for k 1 10
+      = infile2 %dir%\results%type%1x10\%dataset%-1-%k%.dat
+      openfile infile2 r
+      readfile infile2 error
+      readfile infile2 complexity
+      closefile infile2
+      writefile outfile %error%
+      writefile outfile2 %complexity%
+    endfor k
+    closefile outfile
+    closefile outfile2
+  endfor j
+  closefile infile
+endfor i

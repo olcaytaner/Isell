@@ -1,0 +1,74 @@
+displaycode off
+setdatadir ../data
+loaddatasets svmtree.xml
+integer i j
+string dataset outdir
+file complexity
+= outdir ../results/svmtree
+testpercentage 0.333333333
+runcount 2
+foldcount 5
+runtofold 5
+for i 14 21
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset haberman
+    case 4
+      = dataset heart
+    case 5
+      = dataset ironosphere
+    case 6
+      = dataset monks
+    case 7
+      = dataset pima
+    case 8
+      = dataset ringnorm
+    case 9
+      = dataset spambase
+    case 10
+      = dataset twonorm
+    case 11
+      = dataset german
+    case 12
+      = dataset hepatitis
+    case 13
+      = dataset parkinsons
+    case 14
+      = dataset acceptors
+    case 15
+      = dataset ads
+    case 16
+      = dataset arabidopsis
+    case 17
+      = dataset donors
+    case 18
+      = dataset musk2
+    case 19
+      = dataset polyadenylation
+    case 20
+      = dataset satellite47
+    case 21
+      = dataset vertebrates
+  endswitch
+  output %outdir%/%dataset%-c45.error
+  c45 %dataset% cv 1
+  = complexity %outdir%/%dataset%-c45.complexity
+  openfile complexity w
+  for j 1 10
+    writefile complexity %aout2[j]%
+  endfor j
+  closefile complexity
+  output %outdir%/%dataset%-svmtree.error
+  svmtree %dataset% cv 1
+  = complexity %outdir%/%dataset%-svmtree.complexity
+  openfile complexity w
+  for j 1 10
+    writefile complexity %aout2[j]%
+  endfor j
+  closefile complexity
+endfor i
+output stdout

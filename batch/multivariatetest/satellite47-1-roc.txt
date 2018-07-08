@@ -1,0 +1,14 @@
+displaycode off
+string dataset alg1 alg2 resultdir
+integer j
+= resultdir ../results/multivariatetest/10fold/measure
+= dataset satellite47
+= alg1 svm
+= alg2 lda
+= j 4
+hotellingt %resultdir%/roc/%dataset%-%j%-%alg1%.roc %resultdir%/roc/%dataset%-%j%-%alg2%.roc
+writescreen %aout1[1]%_%aout1[2]%
+pairedttest %resultdir%/fpr/%dataset%-%j%-%alg1%.fpr %resultdir%/fpr/%dataset%-%j%-%alg2%.fpr
+writescreen %out1%_%out2% 
+pairedttest %resultdir%/tpr/%dataset%-%j%-%alg1%.tpr %resultdir%/tpr/%dataset%-%j%-%alg2%.tpr 
+writescreen %out1%_%out2%

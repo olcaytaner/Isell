@@ -1,0 +1,84 @@
+displaycode off
+integer i count
+matrix m1 m2
+string dataset tmpfile alg1 alg2 index comptype test1 test2 file1 file2 resultdir
+file infile
+= resultdir ../results/multivariatetest
+= comptype ar
+= test1 roc
+= tmpfile tmp5.txt
+= test2 pr
+= infile %resultdir%/%test1%vs%test2%-%comptype%.txt
+fontsize legend 24
+fontsize label 24
+fontsize axis 24
+mkdir %resultdir%/%test1%vs%test2%-%comptype%
+openfile infile r
+readfile infile count
+for i 1 %count%
+  readfile infile dataset
+  readfile infile alg1
+  readfile infile alg2
+  readfile infile index
+  = file1 %resultdir%/dt/%dataset%-%index%-%alg1%-0.500
+  = file2 %resultdir%/dt/%dataset%-%index%-%alg2%-0.500
+  hold off
+  axislimits x 1.0 1.0 1 1
+  axislimits y 0.0 0.0 1 1
+  hold on
+  plotgauss2d %file1%.roc 4
+  hold on
+  plotgauss2d %file2%.roc 4
+  xlabel TPR
+  ylabel FPR
+  fontsize data 18
+  legendnames %alg1% %alg2%
+  legendposition downright
+  exportimage %resultdir%/%test1%vs%test2%-%comptype%/%dataset%-%alg1%-%alg2%-%index%-roccov.eps
+  hold off
+  axislimits x 0.0 0.0 1 1
+  axislimits y 0.0 0.0 1 1
+  hold on
+  loadmatrix %file1%.roc m1
+  loadmatrix %file2%.roc m2
+  -= m1 m2
+  mprint m1 %tmpfile%
+  hold off
+  plotgauss2d %tmpfile% 4
+  xlabel TPR
+  ylabel FPR
+  fontsize data 18
+  legendposition none
+  exportimage %resultdir%/%test1%vs%test2%-%comptype%/%dataset%-%alg1%-%alg2%-%index%-roccovdiff.eps
+  hold off
+  axislimits x 1.0 1.0 1 1
+  axislimits y 1.0 1.0 1 1
+  hold on
+  plotgauss2d %file1%.pr 4
+  hold on
+  plotgauss2d %file2%.pr 4
+  xlabel Precision
+  ylabel Recall
+  fontsize data 18
+  legendnames %alg1% %alg2%
+  legendposition downright
+  exportimage %resultdir%/%test1%vs%test2%-%comptype%/%dataset%-%alg1%-%alg2%-%index%-prcov.eps
+  hold off
+  axislimits x 0.0 0.0 1 1
+  axislimits y 0.0 0.0 1 1
+  hold on
+  loadmatrix %file1%.pr m1
+  loadmatrix %file2%.pr m2
+  -= m1 m2
+  mprint m1 %tmpfile%
+  hold off
+  plotgauss2d %tmpfile% 4
+  xlabel Precision
+  ylabel Recall
+  fontsize data 18
+  legendposition none
+  exportimage %resultdir%/%test1%vs%test2%-%comptype%/%dataset%-%alg1%-%alg2%-%index%-prcovdiff.eps
+  writescreen %i%_of_%count%
+endfor i
+closefile infile
+

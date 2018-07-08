@@ -1,0 +1,48 @@
+displaycode off
+displayresult off
+setdatadir ../data
+loaddatasets rule.xml
+runcount 1
+foldcount 10
+string method dataset resultdir b[1000]
+integer i j k t count classcount fact
+= resultdir ../results/permutation
+file infile outfile
+= method ripper
+= infile sortedclass.txt
+for t 99 100
+  writescreen %t%
+  openfile infile r
+  readfile infile count
+  for i 1 %count%
+    readfile infile dataset
+    classcount %dataset%
+    = classcount %out1%
+    = fact 1
+    for j 2 %classcount%
+      *= fact %j%
+    endfor j
+    stringpermutation %ccount% b
+    for j 1 %fact%
+       writescreen %dataset%_%b[j]%
+       output %resultdir%/%dataset%-%b[j]%-%t%-%method%.error
+       classpermutation %b[j]%
+       %method% %dataset% cv %t%
+       = outfile %resultdir%/%dataset%-%b[j]%-%t%-%method%.rulecount
+       openfile outfile w
+       for k 1 10
+         writefile outfile %aout3[k]%
+       endfor k
+       closefile outfile
+       = outfile %resultdir%/%dataset%-%b[j]%-%t%-%method%.conditioncount
+       openfile outfile w
+       for k 1 10
+         writefile outfile %aout4[k]%
+       endfor k
+       closefile outfile
+    endfor j
+    output stdout
+  endfor i
+  closefile infile
+endfor t
+

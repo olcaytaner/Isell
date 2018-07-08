@@ -1,0 +1,29 @@
+displaycode off
+integer i j k
+string dataset permutation resultdir
+file infile
+printconfusion on
+= resultdir ../results/perm
+setdatadir ../data
+loaddatasets rule.xml
+= infile random.txt
+openfile infile r
+runcount 1
+foldcount 10
+for i 1 13
+  readfile infile dataset
+  for j 1 50
+    readfile infile permutation
+    for k 1 10
+      fileexists %resultdir%/%dataset%-%permutation%-%k%-ripper.error
+      if = out1 0
+        classpermutation %permutation%
+        output %resultdir%/%dataset%-%permutation%-%k%-ripper.error
+        confusionfile %resultdir%/%dataset%-%permutation%-%k%-ripper.confusion
+        ripper %dataset% cv %k%
+      endif
+    endfor k
+  endfor j
+endfor i
+closefile infile
+output stdout

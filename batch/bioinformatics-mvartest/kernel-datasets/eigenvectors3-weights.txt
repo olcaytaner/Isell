@@ -1,0 +1,25 @@
+displaycode off
+displayresult off
+integer case
+= case 1
+integer i run[%case%] t
+string resultdir method[%case%,3] dataset[%case%] file[3]
+setprecision 3
+= resultdir ../results/mvartest2
+= dataset[1] ec-kernel
+= method[1,1] 0
+= method[1,2] 2
+= method[1,3] 3
+= run[1] 9
+for t 1 %case%
+  for i 1 3
+    = file[%i%] %resultdir%/measure/confusion/%dataset[t]%-%method[t,i]%-%run[t]%.confusion
+  endfor i
+  manova %file[1]% %file[2]% %file[3]%
+  output eigenvectors-%t%.txt
+  write %aout2[1]%
+  write %aout2[2]%
+  write %aout2[3]%
+  write %aout2[4]%
+  output stdout
+endfor t

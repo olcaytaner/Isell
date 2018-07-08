@@ -1,0 +1,73 @@
+displaycode off
+displayresult off
+integer numberofruns fold i j k p roc pr error count
+string resultdir method1 method2 file1 file2 dataset
+file infile outfile[8]
+real rocp prp errorp
+= numberofruns 100
+= fold 10
+= resultdir ../results/tests
+= infile twoclass-large.txt
+openfile infile r
+readfile infile count
+twotailed
+= outfile[1] %resultdir%/multiple-roc(accept)-pr(accept)-error(accept).txt
+= outfile[2] %resultdir%/multiple-roc(accept)-pr(accept)-error(reject).txt
+= outfile[3] %resultdir%/multiple-roc(accept)-pr(reject)-error(accept).txt
+= outfile[4] %resultdir%/multiple-roc(accept)-pr(reject)-error(reject).txt
+= outfile[5] %resultdir%/multiple-roc(reject)-pr(accept)-error(accept).txt
+= outfile[6] %resultdir%/multiple-roc(reject)-pr(accept)-error(reject).txt
+= outfile[7] %resultdir%/multiple-roc(reject)-pr(reject)-error(accept).txt
+= outfile[8] %resultdir%/multiple-roc(reject)-pr(reject)-error(reject).txt
+for i 1 8
+  openfile outfile[%i%] w
+endfor i
+for i 1 %count%
+  readfile infile dataset
+    for p 1 %numberofruns%
+      anova %resultdir%/roc/%dataset%-%p%-c45.roc %resultdir%/roc/%dataset%-%p%-knn.roc %resultdir%/roc/%dataset%-%p%-randomforest.roc %resultdir%/roc/%dataset%-%p%-logistic.roc %resultdir%/roc/%dataset%-%p%-naivebayes.roc %resultdir%/roc/%dataset%-%p%-ripper.roc
+      = roc %out1%
+      = rocp %out2%
+      anova %resultdir%/pr/%dataset%-%p%-c45.pr %resultdir%/pr/%dataset%-%p%-knn.pr %resultdir%/pr/%dataset%-%p%-randomforest.pr %resultdir%/pr/%dataset%-%p%-logistic.pr %resultdir%/pr/%dataset%-%p%-naivebayes.pr %resultdir%/pr/%dataset%-%p%-ripper.pr
+      = pr %out1%
+      = prp %out2%
+      anova %resultdir%/error/%dataset%-%p%-c45.error %resultdir%/error/%dataset%-%p%-knn.error %resultdir%/error/%dataset%-%p%-randomforest.error %resultdir%/error/%dataset%-%p%-logistic.error %resultdir%/error/%dataset%-%p%-naivebayes.error %resultdir%/error/%dataset%-%p%-ripper.error
+      = error %out1%
+      = errorp %out2%
+            if = roc 0
+              if = pr 0
+                if = error 0
+                  writefile outfile[1] %dataset%_%p%_%rocp%_%prp%_%errorp%
+                else
+                  writefile outfile[2] %dataset%_p%_%rocp%_%prp%_%errorp%
+                endif
+              else
+                if = error 0
+                  writefile outfile[3] %dataset%_%p%_%rocp%_%prp%_%errorp%
+                else
+                  writefile outfile[4] %dataset%_%p%_%rocp%_%prp%_%errorp%
+                endif
+              endif
+            else
+              if = pr 0
+                if = error 0
+                  writefile outfile[5] %dataset%_%p%_%rocp%_%prp%_%errorp%
+                else
+                  writefile outfile[6] %dataset%_%p%_%rocp%_%prp%_%errorp%
+                endif
+              else
+                if = error 0
+                  writefile outfile[7] %dataset%_%p%_%rocp%_%prp%_%errorp%
+                else
+                  writefile outfile[8] %dataset%_%p%_%rocp%_%prp%_%errorp%
+                endif
+              endif
+            endif
+      endfor p
+      writescreen %i%
+endfor i  
+closefile infile
+for i 1 8
+  closefile outfile[%i%]
+endfor i
+

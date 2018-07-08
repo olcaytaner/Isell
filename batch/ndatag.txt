@@ -1,0 +1,30 @@
+displaycode off
+integer i
+string datasetdir dataset
+= datasetdir ../data
+= dataset spambase
+setdatadir %datasetdir%
+loaddatasets %dataset%0.xml
+for i 1 10
+  rmdir -r ../results/multivariatetest/real/%dataset%%i%
+  rmdir -r %datasetdir%/%dataset%%i%
+endfor i
+for i 1 10
+  noisydata %dataset% %dataset%%i%.txt %0.05*i% 1.0
+endfor i
+for i 1 10
+  mkdir %datasetdir%/%dataset%%i%
+  mv %dataset%%i%.txt %datasetdir%/%dataset%%i%
+endfor i
+for i 1 10
+  createdataset %dataset%%i% _ 57 0;1 %dataset%%i% %dataset%%i%.txt _
+  savedataset %dataset%%i% %dataset%%i%.xml
+endfor i
+mergedefinitions %dataset%.xml %dataset%1.xml %dataset%2.xml %dataset%3.xml %dataset%4.xml %dataset%5.xml %dataset%6.xml %dataset%7.xml %dataset%8.xml %dataset%9.xml %dataset%10.xml
+for i 1 10
+  rm %dataset%%i%.xml
+endfor i
+for i 1 10
+  mkdir ../results/multivariatetest/real/%dataset%%i%
+endfor i
+

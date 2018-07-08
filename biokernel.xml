@@ -1,0 +1,46 @@
+<datasets>
+	<dataset name="ec-kernel" task="classification" size="996" directory="ec-kernel" filetype="kernel" separator=" " filename="class.txt" kernelcount="6" sigma="0.000000">
+		<kernels>
+			<kernel value="doig.txt"/>
+			<kernel value="mammoth.txt"/>
+			<kernel value="mismatch.txt"/>
+			<kernel value="sphere.txt"/>
+			<kernel value="tops.txt"/>
+			<kernel value="torsion.txt"/>
+		</kernels>
+		<classes>
+			<class value="1" size="498"/>
+			<class value="-1" size="498"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="995.000000"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>-1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="yeast-kernel" task="classification" size="3588" directory="yeast-kernel" filetype="kernel" separator=" " filename="class.txt" kernelcount="8" sigma="0.000000">
+		<kernels>
+			<kernel value="exp-diff.txt"/>
+			<kernel value="exp-gauss.txt"/>
+			<kernel value="mgi.txt"/>
+			<kernel value="mpi.txt"/>
+			<kernel value="pfamdom-cn.txt"/>
+			<kernel value="pfamdom-exp.txt"/>
+			<kernel value="sw.txt"/>
+			<kernel value="tap.txt"/>
+		</kernels>
+		<classes>
+			<class value="1" size="1048"/>
+			<class value="-1" size="2540"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="3587.000000"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>-1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+</datasets>

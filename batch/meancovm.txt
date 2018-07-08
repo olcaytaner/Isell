@@ -1,0 +1,98 @@
+displaycode off
+displayresult off
+string resultdir dataset algorithm noise
+real decisionthreshold mfp mfn
+integer i t j k p
+matrix m c sumc m1 m2
+= resultdir ../results/multivariatetest/synthetic
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+hold off
+for i 1 2
+  switch i
+    case 1
+      = algorithm lda
+    case 2
+      = algorithm qda
+  endswitch
+  for k 1 3
+    switch k
+      case 1
+        = noise 0.002
+      case 2
+        = noise 0.001
+      case 3
+        = noise 0.0005
+    endswitch
+    for p 0 10
+      = dataset data%p%
+      for t 1 9
+        = decisionthreshold %0.1*t%
+        = mfp 0
+        = mfn 0
+        for j 1 100
+          loadmatrix %resultdir%/%noise%/%dataset%/%j%-metric-%decisionthreshold%.%algorithm% m
+          maverage m
+          += mfp %aout1[1]%
+          += mfn %aout1[2]%
+          if = j 1
+            mcovariance m sumc
+          else
+            mcovariance m c
+            += sumc c
+          endif
+        endfor j
+        /= mfp 100.0
+        /= mfn 100.0
+        output %resultdir%/%noise%-%dataset%-metric-%decisionthreshold%-%algorithm%.mean
+        write %mfp%_%mfn%
+        /= sumc 100.0
+        mprint sumc %resultdir%/%noise%-%dataset%-metric-%decisionthreshold%-%algorithm%.cov
+      endfor t
+      writescreen %i%_%k%_%p%
+    endfor p
+  endfor k
+endfor i
+for k 1 3
+  switch k
+    case 1
+      = noise 0.002
+    case 2
+      = noise 0.001
+    case 3
+      = noise 0.0005
+  endswitch
+  for p 0 10
+    = dataset data%p%
+    for t 1 9
+      = decisionthreshold %0.1*t%
+      = mfp 0
+      = mfn 0
+      for j 1 100
+        loadmatrix %resultdir%/%noise%/%dataset%/%j%-metric-%decisionthreshold%.lda m1
+        loadmatrix %resultdir%/%noise%/%dataset%/%j%-metric-%decisionthreshold%.qda m2
+        -= m1 m2
+        maverage m1
+        += mfp %aout1[1]%
+        += mfn %aout1[2]%
+        if = j 1
+          mcovariance m1 sumc
+        else
+          mcovariance m1 c
+          += sumc c
+        endif
+      endfor j
+      /= mfp 100.0
+      /= mfn 100.0
+      output %resultdir%/%noise%-%dataset%-metric-%decisionthreshold%-diff.mean
+      write %mfp%_%mfn%
+      /= sumc 100.0
+      mprint sumc %resultdir%/%noise%-%dataset%-metric-%decisionthreshold%-diff.cov
+    endfor t
+    writescreen %i%_%k%_%p%
+  endfor p
+endfor k
+output stdout
+

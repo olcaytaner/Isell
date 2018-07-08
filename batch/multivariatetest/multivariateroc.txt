@@ -1,0 +1,62 @@
+displaycode off
+displayresult off
+string resultdir comptype algorithm1 algorithm2 dataset
+file infile outfile1 outfile2 outfile3
+integer i j k count s runindex
+real pvalue1 pvalue2 pvalue3
+setprecision 3
+= runindex 1
+= resultdir ../results/multivariatetest/dt
+= infile manova.txt
+= comptype roc 
+twotailed
+openfile infile r
+readfile infile count
+= outfile1 wald-smirnov-%comptype%.txt
+openfile outfile1 w
+= outfile2 wald-hotellingt-%comptype%.txt
+openfile outfile2 w
+= outfile3 smirnov-hotellingt-%comptype%.txt
+openfile outfile3 w
+setprecision 4
+for i 1 %count%
+  readfile infile dataset
+  = s %runindex%
+  for j 1 4
+    switch j
+      case 1
+        = algorithm1 c45
+      case 2
+        = algorithm1 lda
+      case 3
+        = algorithm1 qda
+      case 4
+        = algorithm1 svm
+    endswitch
+    for k %j+1% 5
+      switch k
+        case 2
+          = algorithm2 lda
+        case 3
+          = algorithm2 qda
+        case 4
+          = algorithm2 svm
+        case 5
+          = algorithm2 knn
+      endswitch
+      waldwolfowitz %resultdir%/%dataset%-%s%-%algorithm1%-0.500.%comptype% %resultdir%/%dataset%-%s%-%algorithm2%-0.500.%comptype%
+      = pvalue1 %out2%
+      smirnov %resultdir%/%dataset%-%s%-%algorithm1%-0.500.%comptype% %resultdir%/%dataset%-%s%-%algorithm2%-0.500.%comptype%
+      = pvalue2 %out2%
+      hotellingt %resultdir%/%dataset%-%s%-%algorithm1%-0.500.%comptype% %resultdir%/%dataset%-%s%-%algorithm2%-0.500.%comptype%
+      = pvalue3 %out2%
+      writefile outfile1 %pvalue1%_%pvalue2%
+      writefile outfile2 %pvalue1%_%pvalue3%
+      writefile outfile3 %pvalue2%_%pvalue3%
+    endfor k
+  endfor j
+endfor i      
+closefile outfile1
+closefile outfile2
+closefile outfile3
+closefile infile

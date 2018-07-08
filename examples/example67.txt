@@ -1,0 +1,83 @@
+displaycode off
+displayresult off
+file outfile
+string dir extension algorithm resultdir dataset method modelselection result
+integer i j k starti endi startj endj
+real rate
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+= dir c:\users\olcay\isell\svm
+runcount 5
+foldcount 2
+= dataset wine
+kerneltype rbf
+for i 1 10
+  switch i
+    case 1
+      svmC 0.0001
+    case 2
+      svmC 0.001
+    case 3
+      svmC 0.01
+    case 4
+      svmC 0.1
+    case 5
+      svmC 1
+    case 6
+      svmC 10
+    case 7
+      svmC 100
+    case 8
+      svmC 1000
+    case 9
+      svmC 10000
+    case 10
+      svmC 100000
+  endswitch
+  for j 1 10
+    switch j
+      case 1
+        svmgamma 0.00001 
+      case 2
+        svmgamma 0.0001 
+      case 3
+        svmgamma 0.001 
+      case 4
+        svmgamma 0.01 
+      case 5
+        svmgamma 0.1 
+      case 6
+        svmgamma 1 
+      case 7
+        svmgamma 10
+      case 8
+        svmgamma 100
+      case 9
+        svmgamma 1000
+      case 10
+        svmgamma 10000
+    endswitch
+    output %dir%\%dataset%\%i%-%j%.txt
+    svm %dataset% random 1 
+  endfor j
+endfor i
+setprecision 1
+output c:\1.tex
+write \documentclass[8pt]{article}
+write \setlength{\hoffset}{-45pt}
+write \setlength{\oddsidemargin}{-30pt}
+write \begin{document}
+write \begin{tabular}{lllllllllll}
+write &_1_&_2_&_3_&_4_&_5_&_6_&_7_&_8_&_9_&_10_\\
+for i 1 10
+  = result %i%_
+  for j 1 10
+    meanvariance %dir%\%dataset%\%i%-%j%.txt
+    = result %result%&_%out1%$\pm$%out2%_
+  endfor j
+  = result %result%\\
+  write %result%
+endfor i
+write \end{tabular}
+write \end{document}
+output stdout

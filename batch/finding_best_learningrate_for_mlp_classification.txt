@@ -1,0 +1,126 @@
+displaycode off
+integer i j
+string dataset dir
+real rate
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+runcount 1
+foldcount 10
+perceptronrun 50
+hiddenlayers 10
+= dir c:\users\olcay\isell\mlp\cls\learningrate
+for i 1 44
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+    case 6
+      = dataset ecoli
+    case 7
+      = dataset flare
+    case 8
+      = dataset glass
+    case 9
+      = dataset hepatitis
+    case 10
+      = dataset horse
+    case 11
+      = dataset iris
+    case 12
+      = dataset ironosphere
+    case 13
+      = dataset monks
+    case 14
+      = dataset segment
+    case 15
+      = dataset vote
+    case 16
+      = dataset wine
+    case 17
+      = dataset zoo
+    case 18
+      = dataset balance
+    case 19
+      = dataset cmc
+    case 20
+      = dataset credit
+    case 21
+      = dataset haberman
+    case 22
+      = dataset pima
+    case 23
+      = dataset tictactoe
+    case 24
+      = dataset yeast
+    case 25
+      = dataset spambase
+    case 26
+      = dataset wave
+    case 27
+      = dataset mushroom
+    case 28
+      = dataset fevzi
+    case 29
+      = dataset cenk
+    case 30
+      = dataset nursery
+    case 31
+      = dataset australian
+    case 32
+      = dataset tae
+    case 33
+      = dataset heart
+    case 34
+      = dataset pageblock
+    case 35
+      = dataset thyroid
+    case 36
+      = dataset letter
+    case 37
+      = dataset zipcodes
+    case 38
+      = dataset ocr
+    case 39
+      = dataset postoperative
+    case 40
+      = dataset flags
+    case 41
+      = dataset artificial
+    case 42
+      = dataset titanic
+    case 43
+      = dataset ringnorm
+    case 44
+      = dataset twonorm
+   endswitch
+   for j 1 7
+     switch j
+       case 1
+         = rate 0.001
+       case 2
+         = rate 0.005
+       case 3
+         = rate 0.01
+       case 4
+         = rate 0.05
+       case 5
+         = rate 0.1
+       case 6
+         = rate 0.5
+       case 7
+         = rate 1
+     endswitch
+     learningrate %rate%
+     output %dir%\%dataset%-%j%.txt
+     mlpgeneric %dataset% random 1
+     writescreen %i%_%j%
+   endfor j
+endfor i
+output stdout

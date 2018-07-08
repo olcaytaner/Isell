@@ -1,0 +1,10 @@
+'Finds the root of a second order equation
+real a b c delta x1 x2
+= a 1.0
+= b -5.0
+= c -6.0
+= delta %(b*b)-(4.0*a*c)%
+^= delta 0.5
+= x1 %(-b+delta)/(2*a)%
+= x2 %(-b-delta)/(2*a)%
+

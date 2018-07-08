@@ -1,0 +1,134 @@
+displaycode off
+displayresult off
+onetailed
+integer endi
+= endi 1000
+integer i j k m ordercount l found counts[%endi%] tmpi n p monotone
+string dir dataset file[5] method algorithm[5] orders[%endi%] order tmps test fold
+= algorithm[1] max
+= algorithm[2] mean
+= algorithm[3] lda
+= algorithm[4] c45
+= algorithm[5] knn
+= method multitest
+testtype cvttest
+= test cvttest
+= dir c:\users\olcay\isell\resultscv10
+output %dir%\%method%-%test%-monotone.txt
+for k 1 30
+  switch k
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+    case 6
+      = dataset ecoli
+    case 7
+      = dataset flare
+    case 8
+      = dataset glass
+    case 9
+      = dataset hepatitis
+    case 10
+      = dataset horse
+    case 11
+      = dataset iris
+    case 12
+      = dataset ironosphere
+    case 13
+      = dataset monks
+    case 14
+      = dataset segment
+    case 15
+      = dataset vote
+    case 16
+      = dataset wine
+    case 17
+      = dataset zoo
+    case 18
+      = dataset balance
+    case 19
+      = dataset cmc
+    case 20
+      = dataset credit
+    case 21
+      = dataset haberman
+    case 22
+      = dataset pima
+    case 23
+      = dataset tictactoe
+    case 24
+      = dataset yeast
+    case 25
+      = dataset spambase
+    case 26
+      = dataset wave
+    case 27
+      = dataset mushroom
+    case 28
+      = dataset fevzi
+    case 29
+      = dataset cenk
+    case 30
+      = dataset nursery
+  endswitch
+  = ordercount 0
+  for i 1 %endi%
+    = counts[i] 0
+  endfor i
+  for i 1 %endi%
+    for j 1 5
+      = file[j] %dir%\%dataset%\%i%.%algorithm[j]%
+    endfor j
+    %method% %file[1]% %file[2]% %file[3]% %file[4]% %file[5]%
+    = monotone %out2%
+    = order %sout2%
+    if = monotone 0
+      if = ordercount 0
+        ++ ordercount
+        = orders[ordercount] %order%
+        = counts[1] 1
+      else
+        = found 0
+        for l 1 %ordercount%
+          if = orders[l] %order%
+            = found %l%
+            ++ counts[l]
+          endif
+        endfor l
+        if = found 0
+          ++ ordercount
+          = orders[ordercount] %order%
+          = counts[ordercount] 1
+        endif
+      endif
+    endif
+  endfor i
+  = m %ordercount%
+  -- m
+  for i 1 %m%
+    = l %i%
+    ++ l
+    for j %l% %ordercount%
+      if < counts[i] %counts[j]%
+        = tmpi %counts[i]%
+        = counts[i] %counts[j]%
+        = counts[j] %tmpi%
+        = tmps %orders[i]%
+        = orders[i] %orders[j]%
+        = orders[j] %tmps%
+      endif
+    endfor j
+  endfor i
+  write %dataset%
+  for i 1 %ordercount%
+    write %orders[i]%:::%counts[i]%
+  endfor i
+endfor k
+output stdout

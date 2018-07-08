@@ -1,0 +1,33 @@
+displaycode off
+string file1 file2 resultdir outdir
+string dataset algorithm1 algorithm2 comptype
+integer index p
+= outdir ../results
+= resultdir ../results/multivariatetest/10fold/measure/roc
+= dataset spect
+= algorithm1 c45
+= algorithm2 svm
+= index 4
+= comptype roc
+= file1 %resultdir%/%dataset%-%index%-%algorithm1%.%comptype%
+= file2 %resultdir%/%dataset%-%index%-%algorithm2%.%comptype%
+smirnov %file1% %file2%
+output %outdir%/%dataset%-%index%-%algorithm1%.txt
+for p 1 10
+  write %aout5[p]%
+endfor p
+output %outdir%/%dataset%-%index%-%algorithm2%.txt
+for p 1 10
+  write %aout6[p]%
+endfor p
+output stdout
+hold off
+plotx %outdir%/%dataset%-%index%-%algorithm1%.txt
+hold on
+plotx %outdir%/%dataset%-%index%-%algorithm2%.txt
+legendposition none
+axislimits x 1 20 19 0
+showticks off
+fontsize data 20
+fontsize axis 20
+exportimage %dataset%-%algorithm1%-%algorithm2%-%index%-rank.eps

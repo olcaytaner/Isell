@@ -1,0 +1,120 @@
+displaycode off
+displayresult off
+setdatadir ../data
+loaddatasets rule.xml
+integer d i N K
+file results
+string dataset 
+real min
+setprecision 1
+runcount 1
+foldcount 1
+= results properties.txt
+openfile results w
+for i 1 47
+  switch i
+    case 1
+      = dataset ads
+    case 2
+      = dataset breast
+    case 3
+      = dataset bupa
+    case 4
+      = dataset dlbcl
+    case 5
+      = dataset german
+    case 6
+      = dataset haberman
+    case 7
+      = dataset heart
+    case 8
+      = dataset hepatitis
+    case 9
+      = dataset ironosphere
+    case 10
+      = dataset magic
+    case 11
+      = dataset musk2
+    case 12
+      = dataset parkinsons
+    case 13
+      = dataset pima
+    case 14
+      = dataset polyadenylation
+    case 15
+      = dataset prostatetumor
+    case 16
+      = dataset ringnorm
+    case 17
+      = dataset satellite47
+    case 18
+      = dataset spambase
+    case 19
+      = dataset transfusion
+    case 20
+      = dataset twonorm
+    case 21
+      = dataset 9tumors
+    case 22
+      = dataset 11tumors
+    case 23
+      = dataset 14tumors
+    case 24
+      = dataset braintumor1
+    case 25
+      = dataset braintumor2
+    case 26
+      = dataset dermatology
+    case 27
+      = dataset ecoli
+    case 28
+      = dataset glass
+    case 29
+      = dataset iris
+    case 30
+      = dataset letter
+    case 31
+      = dataset leukemia1
+    case 32
+      = dataset leukemia2
+    case 33
+      = dataset lungtumor
+    case 34
+      = dataset ocr
+    case 35
+      = dataset optdigits
+    case 36
+      = dataset pageblock
+    case 37
+      = dataset pendigits
+    case 38
+      = dataset segment
+    case 39
+      = dataset shuttle
+    case 40
+      = dataset srbct
+    case 41
+      = dataset vehicle
+    case 42
+      = dataset wave
+    case 43
+      = dataset winequality
+    case 44
+      = dataset wine
+    case 45
+      = dataset yeast
+    case 46
+      = dataset zipcodes
+    case 47
+      = dataset zoo
+  endswitch
+  featurecount %dataset%
+  = d %out1%
+  samplecount %dataset%
+  = N %out1%
+  classcount %dataset%
+  = K %out1%
+  writefile results %dataset%_%d%_%K%_%N%
+endfor i
+closefile results
+

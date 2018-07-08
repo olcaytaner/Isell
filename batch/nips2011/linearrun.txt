@@ -1,0 +1,61 @@
+displaycode off
+savemodel on
+integer i j k
+string dataset resultdir modeldir
+setprecision 3
+setdatadir ../data
+= resultdir ../results/svmtest/hinge02/real
+= modeldir ../results/svmtest/model
+hingelosstype hingeloss02
+loaddatasets rule.xml
+runcount 1
+foldcount 10
+kerneltype linear
+for i 1 11
+  switch i
+    case 1
+      = dataset transfusion
+      svmC 0.015625
+    case 2
+      = dataset credit
+      svmC 0.015625
+    case 3
+      = dataset australian
+      svmC 0.03125
+    case 4
+      = dataset cylinder
+      svmC 0.015625
+    case 5
+      = dataset breast
+      svmC 0.125
+    case 6
+      = dataset pima
+      svmC 0.03125
+    case 7
+      = dataset mammographic
+      svmC 0.03125
+    case 8
+      = dataset tictactoe
+      svmC 0.0625
+    case 9
+      = dataset german
+      svmC 0.015625
+    case 10
+      = dataset satellite47
+      svmC 0.015625
+    case 11
+      = dataset titanic
+      svmC 1
+  endswitch
+  for j 1 10
+    output %resultdir%/%dataset%-%j%-linear.error
+    modelfile %modeldir%/%dataset%-%j%-linear.txt
+    svm %dataset% cv %j%
+    output %resultdir%/%dataset%-%j%-linear.hinge
+    for k 1 10
+      write %aout3[k]%
+    endfor k
+    writescreen %j%
+  endfor j
+endfor i
+

@@ -1,0 +1,161 @@
+displaycode off
+integer i j k c complexity
+string dataset dir model st
+file infile
+real error
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+perceptronrun 50
+setprecision 4
+= dir c:\users\olcay\isell\mlp\cls\modelselection
+output %dir%\output.tex
+write \documentstyle{article}
+write \begin{document}
+write \setlength{\hoffset}{-1.5in}
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|r|r|r|r|r|r|}
+write \hline
+write {\bf_Dataset}_&_\multicolumn{3}{|c|}{{\bf_Error}}_&_\multicolumn{3}{|c|}{{\bf_Complexity}}_\\
+write \hline
+write &_{\bf_AIC}_&_{\bf_BIC}_&_{\bf_CV}_&_{\bf_AIC}_&_{\bf_BIC}_&_{\bf_CV}_\\
+write \hline
+for i 1 44
+  switch i
+    case 1
+      = dataset haberman
+    case 2
+      = dataset iris
+    case 3
+      = dataset bupa
+    case 4
+      = dataset monks
+    case 5
+      = dataset pima
+    case 6
+      = dataset titanic
+    case 7
+      = dataset breast
+    case 8
+      = dataset artificial
+    case 9
+      = dataset ecoli
+    case 10
+      = dataset glass
+    case 11
+      = dataset heart
+    case 12
+      = dataset pageblock
+    case 13
+      = dataset wine
+    case 14
+      = dataset yeast
+    case 15
+      = dataset hepatitis
+    case 16
+      = dataset ringnorm
+    case 17
+      = dataset twonorm
+    case 18
+      = dataset zoo
+    case 19
+      = dataset balance
+    case 20
+      = dataset wave
+    case 21
+      = dataset car
+    case 22
+      = dataset flare
+    case 23
+      = dataset segment
+    case 24
+      = dataset fevzi
+    case 25
+      = dataset postoperative
+    case 26
+      = dataset cmc
+    case 27
+      = dataset tictactoe
+    case 28
+      = dataset nursery
+    case 29
+      = dataset vote
+    case 30
+      = dataset ironosphere
+    case 31
+      = dataset dermatology
+    case 32
+      = dataset letter
+    case 33
+      = dataset australian
+    case 34
+      = dataset credit
+    case 35
+      = dataset thyroid
+    case 36
+      = dataset spambase
+    case 37
+      = dataset tae
+    case 38
+      = dataset cylinder
+    case 39
+      = dataset cenk
+    case 40
+      = dataset horse
+    case 41
+      = dataset mushroom
+    case 42
+      = dataset flags
+    case 43
+      = dataset zipcodes
+    case 44
+      = dataset ocr
+   endswitch   
+   = st %dataset%_
+   for j 1 3
+     switch j
+       case 1
+         = model aic         
+       case 2
+         = model bic         
+       case 3
+         = model crossvalidation       
+     endswitch
+     = infile %dir%\%dataset%-error.%model%
+     fileexists %infile%
+     if = out1 1
+       openfile infile r
+       readfile infile error
+       = st %st%&_%error%_
+       closefile infile
+     else
+       = st %st%&_N/A_
+     endif
+   endfor j
+   for j 1 3
+     switch j
+       case 1
+         = model aic         
+       case 2
+         = model bic         
+       case 3
+         = model crossvalidation       
+     endswitch
+     = infile %dir%\%dataset%-complexity.%model%
+     fileexists %infile%
+     if = out1 1
+       openfile infile r
+       readfile infile complexity
+       = st %st%&_%complexity%_
+       closefile infile
+     else
+       = st %st%&_N/A_
+     endif
+   endfor j
+  write %st%\\
+  write \hline
+endfor i
+write \end{tabular}
+write \end{center}
+write \end{table}
+write \end{document}

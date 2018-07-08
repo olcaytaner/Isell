@@ -1,0 +1,22 @@
+displaycode off
+displayresult off
+string resultdir dataset
+integer k j numberofruns
+= resultdir ../results/multivariatetest/skewed/0.004
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+= numberofruns 3
+for k 1 %numberofruns%
+  for j 1 9
+    = dataset data%j%
+    axislimits x 0 30 10 0
+    axislimits y 0 30 10 0
+    hold on
+    plotgauss2d %resultdir%/%dataset%/%k%-fpfn.qda 4
+    exportimage %resultdir%/%dataset%-%k%-fpfn.eps
+    hold off
+    writescreen %k%_%j%
+  endfor j
+endfor k
+

@@ -1,0 +1,21 @@
+displaycode off
+string dir test
+integer i
+= dir c:\users\olcay\isell\comparetestsregression\onetailedall
+axislimits x -3 3
+plotsigmoid %dir%\allregression.eps %dir%\wilcoxon-new.txt %dir%\tpaired5x2-new.txt %dir%\regressionf-new.txt %dir%\cvttest-new.txt %dir%\combined5x2t-new.txt
+for i 1 5
+  switch i
+    case 1
+      = test wilcoxon
+    case 2
+      = test tpaired5x2
+    case 3
+      = test regressionf
+    case 4
+      = test cvttest
+    case 5
+      = test combined5x2t
+  endswitch
+  write %test%:%aout1[i]%:%aout2[i]%
+endfor i

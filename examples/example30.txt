@@ -1,0 +1,44 @@
+displaycode off
+displayresult off
+integer i j
+string dir method fname st filename subdir dataset
+= dir c:\users\olcay\isell\mlp\cls\learningrate
+setprecision 2
+output %dir%\output.tex
+write \documentstyle{article}
+write \begin{document}
+write \setlength{\hoffset}{-1.5in}
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|r|r|r|r|r|r|r|}
+write \hline
+write {\bf_Dataset}_&__\multicolumn{7}{|c|}{{\bf_Learning_Rate}}_\\
+write \hline
+write &_{\bf_0.001}_&_{\bf_0.005}_&_{\bf_0.01}_&_{\bf_0.05}_&_{\bf_0.1}_&_{\bf_0.5}_&_{\bf_1}_\\
+write \hline
+for i 1 5
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+  endswitch
+  = st %dataset%_
+  for j 1 7
+    = filename %dir%\%dataset%-%j%.txt
+    meanvariance %filename%
+    = st %st%&_%out1%$\pm$%out2%_
+  endfor j
+  write %st%\\
+  write \hline
+endfor i
+write \end{tabular}
+write \end{center}
+write \end{table}
+write \end{document}

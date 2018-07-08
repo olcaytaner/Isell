@@ -1,0 +1,152 @@
+displaycode off
+displayresult off
+integer i fold j k t p res1 res2 s
+real normalcount[5,2,2] total[5] count[2,2]
+setprecision 4
+twotailed
+string resultdir dataset algorithm1 algorithm2 st
+for i 1 5
+  for j 1 2
+    for k 1 2
+      = normalcount[%i%,%j%,%k%] 0
+    endfor k
+  endfor j
+  = total[%i%] 0
+endfor i
+output testoverallresult.txt
+for j 1 20
+  switch j
+    case 1
+      = dataset breast
+    case 2
+      = dataset tictactoe
+    case 3
+      = dataset pima
+    case 4
+      = dataset australian
+    case 5
+      = dataset mammographic
+    case 6
+      = dataset german
+    case 7
+      = dataset vehicle
+    case 8
+      = dataset ocr
+    case 9
+      = dataset balance
+    case 10
+      = dataset zipcodes
+    case 11
+      = dataset car
+    case 12
+      = dataset satellite47
+    case 13
+      = dataset segment
+    case 14
+      = dataset splice
+    case 15
+      = dataset optdigits
+    case 16
+      = dataset acceptors
+    case 17
+      = dataset spambase
+    case 18
+      = dataset pageblock
+    case 19
+      = dataset ringnorm
+    case 20
+      = dataset pendigits
+  endswitch
+  for i 1 5
+    switch i
+      case 1
+        = fold 5
+      case 2
+        = fold 10
+      case 3
+        = fold 20
+      case 4
+        = fold 30
+      case 5
+        = fold 50
+    endswitch
+    writescreen %dataset%_%fold%
+    = resultdir ../results/nonparametric/%fold%
+    for k 1 8
+      switch k
+        case 1
+          = algorithm1 knn
+        case 2
+          = algorithm1 mlpgeneric
+        case 3
+          = algorithm1 c45
+        case 4
+          = algorithm1 nearestmean
+        case 5
+          = algorithm1 ldaclass
+        case 6
+          = algorithm1 qdaclass
+        case 7
+          = algorithm1 naivebayes
+        case 8
+          = algorithm1 ripper
+      endswitch
+      for p 1 8
+        switch p
+          case 1
+            = algorithm2 knn
+          case 2
+            = algorithm2 mlpgeneric
+          case 3
+            = algorithm2 c45
+          case 4
+            = algorithm2 nearestmean
+          case 5
+            = algorithm2 ldaclass
+          case 6
+            = algorithm2 qdaclass
+          case 7
+            = algorithm2 naivebayes
+          case 8
+            = algorithm2 ripper
+        endswitch
+        if < k %p%
+          fileexists %resultdir%/%dataset%-%algorithm1%-1000.error
+          if = out1 1
+            fileexists %resultdir%/%dataset%-%algorithm2%-1000.error
+            if = out1 1
+              for s 1 2
+                for t 1 2
+                  = count[%s%,%t%] 0
+                endfor t
+              endfor s
+              for t 1 1000
+                pairedttest %resultdir%/%dataset%-%algorithm1%-%t%.error %resultdir%/%dataset%-%algorithm2%-%t%.error
+                if = out1 0
+                  = res1 1
+                else
+                  = res1 2
+                endif
+                signedranktest %resultdir%/%dataset%-%algorithm1%-%t%.error %resultdir%/%dataset%-%algorithm2%-%t%.error
+                if = out1 0
+                  = res2 1
+                else
+                  = res2 2
+                endif
+                ++ count[%res1%,%res2%]
+                ++ normalcount[%i%,%res1%,%res2%]
+              endfor t
+              write %dataset%_%algorithm1%_%algorithm2%_%fold%_%count[1,1]/1000.0%_%count[1,2]/1000.0%_%count[2,1]/1000.0%_%count[2,2]/1000.0%
+              += total[%i%] 1000
+            endif
+          endif
+        endif
+      endfor p
+    endfor k
+  endfor i
+endfor j
+output testresult.txt
+for i 1 5
+  write %normalcount[i,1,1]/total[i]%_%normalcount[i,1,2]/total[i]%_%normalcount[i,2,1]/total[i]%_%normalcount[i,2,2]/total[i]%
+endfor i
+output stdout

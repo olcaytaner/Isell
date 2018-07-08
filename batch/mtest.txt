@@ -1,0 +1,77 @@
+displaycode off
+displayresult off
+integer i j datacount fp tp fn tn
+file file1 file2 file3
+real split tpr fpr error
+= datacount 1000
+real positives[%datacount%] negatives[%datacount%]
+randomize 1
+for i 1 %datacount%
+  random 1 6
+  = positives[%i%] %out1%
+  random 3 8
+  = negatives[%i%] %out1%
+endfor i
+= file1 multiresult.fpfn
+openfile file1 w
+= file2 multiresult.tprfpr
+openfile file2 w
+= file3 multiresult.error
+openfile file3 w
+for i 0 10
+  = fp 0
+  = fn 0
+  = tp 0
+  = tn 0
+  = split %4+(0.1*i)%
+  for j 1 %datacount%
+    if < positives[%j%] %split% 
+      ++ tp
+    else
+      ++ fn
+    endif
+    if > negatives[%j%] %split% 
+      ++ tn
+    else
+      ++ fp
+    endif
+  endfor j
+  = tpr %(tp+0.0)/(tp+fn)%
+  = fpr %(fp+0.0)/(fp+tn)%
+  = error %(fp+fn+0.0)/(fp+fn+tp+tn)%
+  writefile file1 %fp%_%fn%
+  writefile file2 %tpr%_%fpr%
+  writefile file3 %split%_%error%
+endfor i
+closefile file1
+closefile file2
+closefile file3
+fontsize axis 20
+fontsize label 20
+hold off
+axislimits x 150 450 6 0
+axislimits y 150 450 6 0
+hold on
+plotxyline %file1% black 1
+xlabel False_Positives
+ylabel False_Negatives
+legendposition none
+exportimage fpfn.eps
+hold off
+axislimits x 0.55 0.85 6 2
+axislimits y 0.15 0.45 6 2
+hold on
+plotxyline %file2% black 1
+xlabel TPR
+ylabel FPR
+legendposition none
+exportimage tprfpr.eps
+hold off
+axislimits x 4 5 10 1
+axislimits y 0.25 0.35 10 2
+hold on
+plotxyline %file3% black 1
+xlabel Split
+ylabel Error
+legendposition none
+exportimage error.eps

@@ -1,0 +1,48 @@
+displaycode off
+displayresult off
+string resultdir dataset data extension file1
+file outfile1 outfile2 outfile3
+integer i j k numberofruns p fold
+real tp fp tn fn tpr fpr precision recall
+setprecision 3
+= numberofruns 100
+= fold 10
+= resultdir ../results/multivariatetest/real
+runcount 1
+foldcount 10
+= dataset spambase
+  for j 0 10
+    if = j 0
+      = data %dataset%
+    else
+      = data %dataset%%j%
+    endif
+    for k 1 %numberofruns%
+      = outfile1 %resultdir%/%data%/%k%-confusion.txt
+      openfile outfile1 w
+      = outfile2 %resultdir%/%data%/%k%-roc.txt
+      openfile outfile2 w
+      = outfile3 %resultdir%/%data%/%k%-pr.txt
+      openfile outfile3 w
+      = file1 %resultdir%/%data%/%k%-posterior.txt
+      confusionanalysis %file1%
+      for p 1 %fold%          
+        writefile outfile1 %aout1[p]%_%aout2[p]%_%aout3[p]%_%aout4[p]%
+        = tp %aout1[p]%
+        = fp %aout2[p]%
+        = tn %aout3[p]%
+        = fn %aout4[p]%
+        = recall %tp/(tp+fn)%
+        = precision %tp/(tp+fp)%
+        = tpr %tp/(tp+fn)%
+        = fpr %fp/(fp+tn)%
+        writefile outfile2 %tpr%_%fpr%
+        writefile outfile3 %precision%_%recall%
+      endfor p
+      closefile outfile1
+      closefile outfile2
+      closefile outfile3
+    endfor k
+    writescreen %j%
+  endfor j  
+

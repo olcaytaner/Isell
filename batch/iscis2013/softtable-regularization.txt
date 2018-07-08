@@ -1,0 +1,89 @@
+displaycode off
+integer i k
+string dataset resultdir st type reg
+= type nodecount
+= reg l2
+= resultdir ../results
+setprecision 2
+output table-%reg%-%type%.txt
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{rrrrrr}
+write \hline
+write Dataset_&_Softtree_&_Soft(%reg%)_(1)&_Soft(%reg%)_(10)_&_Soft(%reg%)_(100)_&_Soft(%reg%)_(1000)_\\
+write \hline
+for i 1 27
+  switch i
+    case 1
+      = dataset ringnorm
+    case 2
+      = dataset spambase
+    case 3
+      = dataset twonorm
+    case 4
+      = dataset german
+    case 5
+      = dataset magic
+    case 6
+      = dataset musk2
+    case 7
+      = dataset satellite47
+    case 8
+      = dataset polyadenylation
+    case 9
+      = dataset pima
+    case 10
+      = dataset breast
+    case 11
+      = dataset acceptors
+    case 12
+      = dataset artificial
+    case 13
+      = dataset donors
+    case 14
+      = dataset krvskp
+    case 15
+      = dataset monks
+    case 16
+      = dataset mushroom
+    case 17
+      = dataset promoters
+    case 18
+      = dataset spect
+    case 19
+      = dataset tictactoe
+    case 20
+      = dataset titanic
+    case 21
+      = dataset vote
+    case 22
+      = dataset bupa
+    case 23
+      = dataset hepatitis
+    case 24
+      = dataset haberman
+    case 25
+      = dataset heart
+    case 26
+      = dataset ironosphere
+    case 27
+      = dataset parkinsons
+  endswitch
+  = st %dataset%
+  meanvariance %resultdir%/softtree/%dataset%-softtree.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/softtree-1/%dataset%-softtree-%reg%.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/softtree-10/%dataset%-softtree-%reg%.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/softtree-100/%dataset%-softtree-%reg%.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/softtree-1000/%dataset%-softtree-%reg%.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%\\
+  write %st%
+endfor i
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout

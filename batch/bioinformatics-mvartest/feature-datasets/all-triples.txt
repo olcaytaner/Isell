@@ -1,0 +1,142 @@
+displaycode off
+displayresult off
+integer i j k t p m n s sum[4] diff1 diff2
+string resultdir alg[3] dataset test measure
+matrix eigenvectors data[3]
+setprecision 6
+= resultdir ../results/mvartest2
+twotailed
+for p 1 4
+  switch p
+    case 1
+      = dataset acceptors
+    case 2
+      = dataset ads
+    case 3
+      = dataset donors
+    case 4
+      = dataset polyadenylation
+  endswitch
+  for i 1 10
+    for j 1 5
+      for k %j+1% 6
+        for t %k+1% 7
+          switch j
+            case 1
+              = alg[1] c45
+            case 2
+              = alg[1] knn
+            case 3
+              = alg[1] lda
+            case 4
+              = alg[1] qda
+            case 5
+              = alg[1] randomforest
+            case 6
+              = alg[1] svm1
+            case 7
+              = alg[1] svm2
+          endswitch
+          switch k
+            case 1
+              = alg[2] c45
+            case 2
+              = alg[2] knn
+            case 3
+              = alg[2] lda
+            case 4
+              = alg[2] qda
+            case 5
+              = alg[2] randomforest
+            case 6
+              = alg[2] svm1
+            case 7
+              = alg[2] svm2
+          endswitch
+          switch t
+            case 1
+              = alg[3] c45
+            case 2
+              = alg[3] knn
+            case 3
+              = alg[3] lda
+            case 4
+              = alg[3] qda
+            case 5
+              = alg[3] randomforest
+            case 6
+              = alg[3] svm1
+            case 7
+              = alg[3] svm2
+          endswitch
+          fileexists %resultdir%/measure/confusion/%dataset%-%i%-%alg[1]%.confusion
+          if = out1 1
+            fileexists %resultdir%/measure/confusion/%dataset%-%i%-%alg[2]%.confusion
+            if = out1 1
+              fileexists %resultdir%/measure/confusion/%dataset%-%i%-%alg[3]%.confusion
+              if = out1 1
+                manova %resultdir%/measure/confusion/%dataset%-%i%-%alg[1]%.confusion %resultdir%/measure/confusion/%dataset%-%i%-%alg[2]%.confusion %resultdir%/measure/confusion/%dataset%-%i%-%alg[3]%.confusion
+                output eigenvectors2.txt
+                write %aout2[1]%_%aout3[1]%
+                write %aout2[2]%_%aout3[2]%
+                write %aout2[3]%_%aout3[3]%
+                write %aout2[4]%_%aout3[4]%
+                output eigenvectors1.txt
+                write %aout2[1]%
+                write %aout2[2]%
+                write %aout2[3]%
+                write %aout2[4]%
+                output stdout
+                loadmatrix eigenvectors2.txt eigenvectors
+                for m 1 3
+                  loadmatrix %resultdir%/measure/confusion/%dataset%-%i%-%alg[m]%.confusion data[%m%]
+                  *= data[%m%] eigenvectors
+                  mprint data[%m%] %resultdir%/measure/confusion2/%dataset%-%i%-%alg[m]%.confusion2
+                endfor m
+                loadmatrix eigenvectors1.txt eigenvectors
+                for m 1 3
+                  loadmatrix %resultdir%/measure/confusion/%dataset%-%i%-%alg[m]%.confusion data[%m%]
+                  *= data[%m%] eigenvectors
+                  mprint data[%m%] %resultdir%/measure/confusion1/%dataset%-%i%-%alg[m]%.confusion1
+                endfor m
+                for s 1 4
+                  = sum[%s%] 0
+                  switch s
+                    case 1
+                      = test pairedttest
+                      = measure error
+                    case 2
+                      = test pairedttest
+                      = measure confusion1
+                    case 3
+                      = test hotellingt
+                      = measure roc
+                    case 4
+                      = test hotellingt
+                      = measure confusion2
+                  endswitch
+                  for m 1 2
+                    for n %m+1% 3
+                      %test% %resultdir%/measure/%measure%/%dataset%-%i%-%alg[m]%.%measure% %resultdir%/measure/%measure%/%dataset%-%i%-%alg[n]%.%measure%
+                      if = out1 0
+                        ++ sum[%s%]
+                      endif
+                    endfor n
+                  endfor m
+                endfor s
+                = diff1 %sum[1]-sum[2]%
+                if >= diff1 3
+                  writescreen %dataset%_%i%_%alg[1]%_%alg[2]%_%alg[3]%_%sum[1]%_%sum[2]%_%sum[3]%_%sum[4]%
+                endif
+                = diff2 %sum[3]-sum[4]%
+                if >= diff2 2
+                  writescreen %dataset%_%i%_%alg[1]%_%alg[2]%_%alg[3]%_%sum[1]%_%sum[2]%_%sum[3]%_%sum[4]%
+                endif
+              endif
+            endif
+          endif
+        endfor t
+      endfor k
+    endfor j
+  endfor i
+endfor p

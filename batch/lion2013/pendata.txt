@@ -1,0 +1,12 @@
+displaycode off
+displayresult off
+integer i
+real p
+setdatadir ../data
+loaddatasets pendigits0.xml
+for i 1 10
+  = p %0.1*i%
+  noisydata pendigits0 ../data/pendigits%i%/data.txt 6 %p%
+  createdataset pendigits%i% _ 16 1;7 pendigits%i% data.txt _
+  savedataset pendigits%i% pendigits%i%.xml
+endfor i

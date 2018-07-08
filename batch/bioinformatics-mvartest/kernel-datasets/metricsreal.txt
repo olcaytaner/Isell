@@ -1,0 +1,69 @@
+displaycode off
+displayresult off
+integer i kernel k p kernelcount
+real tp fp tn fn tpr fpr pprime precision recall
+file outfile1 outfile2 outfile3 outfile4 outfile5 outfile6 outfile7
+string dataset resultdir
+setprecision 3
+= resultdir ../results/mvartest2
+for i 1 7
+  switch i
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for kernel 0 %kernelcount-1%
+    for k 1 10
+      fileexists %resultdir%/posterior/%dataset%-%kernel%-%k%.posterior
+      if = out1 1
+          = outfile1 %resultdir%/measure/confusion/%dataset%-%kernel%-%k%.confusion
+          openfile outfile1 w
+          = outfile2 %resultdir%/measure/roc/%dataset%-%kernel%-%k%.roc
+          openfile outfile2 w
+          = outfile3 %resultdir%/measure/pr/%dataset%-%kernel%-%k%.pr
+          openfile outfile3 w
+          = outfile4 %resultdir%/measure/tpr/%dataset%-%kernel%-%k%.tpr
+          openfile outfile4 w
+          = outfile5 %resultdir%/measure/fpr/%dataset%-%kernel%-%k%.fpr
+          openfile outfile5 w
+          = outfile6 %resultdir%/measure/precision/%dataset%-%kernel%-%k%.precision
+          openfile outfile6 w
+          = outfile7 %resultdir%/measure/recall/%dataset%-%kernel%-%k%.recall
+          openfile outfile7 w
+          confusionanalysis %resultdir%/posterior/%dataset%-%kernel%-%k%.posterior 0.5
+          for p 1 10                    
+            = tp %aout1[p]%
+            = fp %aout2[p]%
+            = tn %aout3[p]%
+            = fn %aout4[p]%
+            = tpr %tp/(tp+fn)%
+            = fpr %fp/(fp+tn)%
+            = pprime %tp+fp%
+            if = pprime 0
+              = precision 0
+            else
+              = precision %tp/(tp+fp)%
+            endif
+            = recall %tp/(tp+fn)%
+            writefile outfile1 %tp%_%fp%_%tn%_%fn%
+            writefile outfile2 %tpr%_%fpr%
+            writefile outfile3 %precision%_%recall%
+            writefile outfile4 %tpr%
+            writefile outfile5 %fpr%
+            writefile outfile6 %precision%
+            writefile outfile7 %recall%
+          endfor p
+          closefile outfile1
+          closefile outfile2
+          closefile outfile3
+          closefile outfile4
+          closefile outfile5
+          closefile outfile6
+          closefile outfile7
+      endif
+    endfor k
+  endfor kernel  
+endfor i  

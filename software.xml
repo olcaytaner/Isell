@@ -1,0 +1,322 @@
+<datasets>
+	<dataset name="ant" task="classification" size="730" directory="ant" filetype="text" separator="," filename="data.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="564"/>
+			<class value="1" size="166"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="120"/>
+			<attribute type="Integer" available="True" min="1" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="102"/>
+			<attribute type="Integer" available="True" min="0" max="499"/>
+			<attribute type="Integer" available="True" min="0" max="288"/>
+			<attribute type="Integer" available="True" min="0" max="3726"/>
+			<attribute type="Integer" available="True" min="0" max="498"/>
+			<attribute type="Integer" available="True" min="0" max="37"/>
+			<attribute type="Integer" available="True" min="0" max="103"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.000000"/>
+			<attribute type="Integer" available="True" min="0" max="4541"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="5"/>
+			<attribute type="Integer" available="True" min="0" max="19"/>
+			<attribute type="Real" available="True" min="0.000000" max="2052.000000"/>
+			<attribute type="Integer" available="True" min="0" max="53"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.780000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="camel" task="classification" size="195" directory="camel" filetype="text" separator="," filename="data.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="182"/>
+			<class value="1" size="13"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="47"/>
+			<attribute type="Integer" available="True" min="1" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="25"/>
+			<attribute type="Integer" available="True" min="0" max="185"/>
+			<attribute type="Integer" available="True" min="0" max="97"/>
+			<attribute type="Integer" available="True" min="0" max="1045"/>
+			<attribute type="Integer" available="True" min="0" max="184"/>
+			<attribute type="Integer" available="True" min="0" max="32"/>
+			<attribute type="Integer" available="True" min="0" max="41"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.000000"/>
+			<attribute type="Integer" available="True" min="0" max="718"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="2"/>
+			<attribute type="Integer" available="True" min="0" max="5"/>
+			<attribute type="Real" available="True" min="0.000000" max="59.500000"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.500000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="ivy" task="classification" size="352" directory="ivy" filetype="text" separator="," filename="data.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="312"/>
+			<class value="1" size="40"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="1" max="157"/>
+			<attribute type="Integer" available="True" min="1" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="17"/>
+			<attribute type="Integer" available="True" min="1" max="150"/>
+			<attribute type="Integer" available="True" min="1" max="312"/>
+			<attribute type="Integer" available="True" min="0" max="11794"/>
+			<attribute type="Integer" available="True" min="0" max="147"/>
+			<attribute type="Integer" available="True" min="0" max="75"/>
+			<attribute type="Integer" available="True" min="0" max="142"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.000000"/>
+			<attribute type="Integer" available="True" min="1" max="2701"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="12"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.060000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="4"/>
+			<attribute type="Integer" available="True" min="0" max="18"/>
+			<attribute type="Real" available="True" min="0.000000" max="203.500000"/>
+			<attribute type="Integer" available="True" min="0" max="29"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.500000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="jedit" task="classification" size="292" directory="jedit" filetype="text" separator="," filename="data.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="217"/>
+			<class value="1" size="75"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="1" max="407"/>
+			<attribute type="Integer" available="True" min="1" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="35"/>
+			<attribute type="Integer" available="True" min="1" max="184"/>
+			<attribute type="Integer" available="True" min="1" max="494"/>
+			<attribute type="Integer" available="True" min="0" max="6075"/>
+			<attribute type="Integer" available="True" min="0" max="157"/>
+			<attribute type="Integer" available="True" min="0" max="59"/>
+			<attribute type="Integer" available="True" min="0" max="193"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.000000"/>
+			<attribute type="Integer" available="True" min="1" max="23683"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="17"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="4"/>
+			<attribute type="Integer" available="True" min="0" max="25"/>
+			<attribute type="Real" available="True" min="0.000000" max="496.000000"/>
+			<attribute type="Integer" available="True" min="0" max="84"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="lucene" task="classification" size="329" directory="lucene" filetype="text" separator="," filename="data.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="127"/>
+			<class value="1" size="202"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="1" max="166"/>
+			<attribute type="Integer" available="True" min="1" max="5"/>
+			<attribute type="Integer" available="True" min="0" max="17"/>
+			<attribute type="Integer" available="True" min="0" max="128"/>
+			<attribute type="Integer" available="True" min="1" max="185"/>
+			<attribute type="Integer" available="True" min="0" max="2812"/>
+			<attribute type="Integer" available="True" min="0" max="104"/>
+			<attribute type="Integer" available="True" min="0" max="46"/>
+			<attribute type="Integer" available="True" min="0" max="88"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.000000"/>
+			<attribute type="Integer" available="True" min="1" max="3574"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="13"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="2"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Real" available="True" min="0.000000" max="237.200000"/>
+			<attribute type="Integer" available="True" min="0" max="112"/>
+			<attribute type="Real" available="True" min="0.000000" max="16.200000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="poi" task="classification" size="437" directory="poi" filetype="text" separator="," filename="data.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="157"/>
+			<class value="1" size="280"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="134"/>
+			<attribute type="Integer" available="True" min="1" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="134"/>
+			<attribute type="Integer" available="True" min="0" max="214"/>
+			<attribute type="Integer" available="True" min="0" max="390"/>
+			<attribute type="Integer" available="True" min="0" max="7059"/>
+			<attribute type="Integer" available="True" min="0" max="212"/>
+			<attribute type="Integer" available="True" min="0" max="133"/>
+			<attribute type="Integer" available="True" min="0" max="101"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.000000"/>
+			<attribute type="Integer" available="True" min="0" max="9886"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="34"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="20"/>
+			<attribute type="Real" available="True" min="0.000000" max="616.380000"/>
+			<attribute type="Integer" available="True" min="0" max="126"/>
+			<attribute type="Real" available="True" min="0.000000" max="17.130000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="synapse" task="classification" size="255" directory="synapse" filetype="text" separator="," filename="data.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="169"/>
+			<class value="1" size="86"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="67"/>
+			<attribute type="Integer" available="True" min="1" max="5"/>
+			<attribute type="Integer" available="True" min="0" max="19"/>
+			<attribute type="Integer" available="True" min="0" max="83"/>
+			<attribute type="Integer" available="True" min="0" max="172"/>
+			<attribute type="Integer" available="True" min="0" max="1931"/>
+			<attribute type="Integer" available="True" min="0" max="83"/>
+			<attribute type="Integer" available="True" min="0" max="37"/>
+			<attribute type="Integer" available="True" min="0" max="61"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.000000"/>
+			<attribute type="Integer" available="True" min="0" max="1449"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="3"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Real" available="True" min="0.000000" max="185.500000"/>
+			<attribute type="Integer" available="True" min="0" max="50"/>
+			<attribute type="Real" available="True" min="0.000000" max="12.500000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="tomcat" task="classification" size="769" directory="tomcat" filetype="text" separator="," filename="data.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="694"/>
+			<class value="1" size="75"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="252"/>
+			<attribute type="Integer" available="True" min="1" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="31"/>
+			<attribute type="Integer" available="True" min="0" max="109"/>
+			<attribute type="Integer" available="True" min="0" max="511"/>
+			<attribute type="Integer" available="True" min="0" max="29258"/>
+			<attribute type="Integer" available="True" min="0" max="109"/>
+			<attribute type="Integer" available="True" min="0" max="0"/>
+			<attribute type="Integer" available="True" min="0" max="231"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.000000"/>
+			<attribute type="Integer" available="True" min="0" max="7956"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="20"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="4"/>
+			<attribute type="Integer" available="True" min="0" max="19"/>
+			<attribute type="Real" available="True" min="0.000000" max="894.500000"/>
+			<attribute type="Integer" available="True" min="0" max="95"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="velocity" task="classification" size="213" directory="velocity" filetype="text" separator="," filename="data.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="71"/>
+			<class value="1" size="142"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="152"/>
+			<attribute type="Integer" available="True" min="1" max="5"/>
+			<attribute type="Integer" available="True" min="0" max="43"/>
+			<attribute type="Integer" available="True" min="0" max="74"/>
+			<attribute type="Integer" available="True" min="0" max="245"/>
+			<attribute type="Integer" available="True" min="0" max="7900"/>
+			<attribute type="Integer" available="True" min="0" max="72"/>
+			<attribute type="Integer" available="True" min="0" max="60"/>
+			<attribute type="Integer" available="True" min="0" max="50"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.000000"/>
+			<attribute type="Integer" available="True" min="0" max="12396"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="2"/>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Real" available="True" min="0.000000" max="276.000000"/>
+			<attribute type="Integer" available="True" min="0" max="201"/>
+			<attribute type="Real" available="True" min="0.000000" max="12.820000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="xalan" task="classification" size="789" directory="xalan" filetype="text" separator="," filename="data.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="403"/>
+			<class value="1" size="386"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="0" max="133"/>
+			<attribute type="Integer" available="True" min="1" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="29"/>
+			<attribute type="Integer" available="True" min="0" max="168"/>
+			<attribute type="Integer" available="True" min="0" max="409"/>
+			<attribute type="Integer" available="True" min="0" max="7774"/>
+			<attribute type="Integer" available="True" min="0" max="152"/>
+			<attribute type="Integer" available="True" min="0" max="68"/>
+			<attribute type="Integer" available="True" min="0" max="125"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.000000"/>
+			<attribute type="Integer" available="True" min="0" max="4331"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="17"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Integer" available="True" min="0" max="5"/>
+			<attribute type="Integer" available="True" min="0" max="33"/>
+			<attribute type="Real" available="True" min="0.000000" max="1251.000000"/>
+			<attribute type="Integer" available="True" min="0" max="138"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.430000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+</datasets>

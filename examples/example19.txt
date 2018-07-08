@@ -1,0 +1,53 @@
+displaycode off
+displayresult off
+string resultdir dataset method extension
+integer i j k starti endi startj endj startk endk
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+foldcount 10
+runcount 1
+= resultdir c:\users\olcay\isell\resultscv10
+= starti 1
+= endi 5
+= startj 1
+= endj 5
+= startk 1
+= endk 10
+for i %starti% %endi%
+  switch i
+    case 1
+      = method selectmax
+      = extension max
+    case 2
+      = method nearestmean
+      = extension mean    
+    case 3
+      = method ldaclass
+      = extension lda
+    case 4
+      = method c45
+      = extension c45
+    case 5
+      = method knn
+      = extension knn
+  endswitch
+  for j %startj% %endj%
+    switch j
+      case 1
+        = dataset breast
+      case 2
+        = dataset bupa
+      case 3
+        = dataset car
+      case 4
+        = dataset cylinder
+      case 5
+        = dataset dermatology
+    endswitch
+    for k %startk% %endk%
+      output %resultdir%\%dataset%\%k%.%extension%
+      %method% %dataset% random %k%    
+    endfor k
+  endfor j  
+endfor i  
+output stdout

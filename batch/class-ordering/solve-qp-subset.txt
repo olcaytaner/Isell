@@ -1,0 +1,49 @@
+displaycode off
+integer i j k t s cno pos1 pos2 runcount
+string dataset st permutation 
+real error[10,10] sum
+file randomfile
+setdatadir ../data
+loaddatasets rule.xml
+= runcount 50
+= randomfile random.txt
+for s 1 10
+  openfile randomfile r
+  for i 1 13
+    readfile randomfile dataset
+    output %dataset%-%s%-qp.diff
+    classcount %dataset%
+    = cno %out1%
+    solveqp %dataset%-%s%.qp
+    = t 1
+    for j 1 %cno%
+      for k 1 %cno%
+        if != j %k%
+          write %j-1%_%k-1%_%aout1[t]%
+          = error[%j%,%k%] %aout1[t]%
+          ++ t
+        endif
+      endfor k
+    endfor j    
+    output %dataset%-%s%-qp.error
+    for j 1 %runcount%
+      readfile randomfile permutation
+      = sum 0.0
+      for k 1 %cno-1%
+        charatindex permutation %k%
+        = pos1 %sout1%
+        ++ pos1
+        for t %k+1% %cno%
+          charatindex permutation %t%
+          = pos2 %sout1%
+          ++ pos2
+          += sum %error[pos1,pos2]%
+        endfor t
+      endfor k
+      meanvariance ../results/perm/%dataset%-%permutation%-%s%-ripper.error
+      write %permutation%_%sum%_%out1%
+    endfor j
+  endfor i
+  closefile randomfile
+endfor s
+output stdout

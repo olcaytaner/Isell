@@ -1,0 +1,44 @@
+displaycode off
+integer i j k datasize numberofruns fold
+string datasetdir
+= datasetdir ../data
+= datasize 1000
+= numberofruns 100
+= fold 10
+setdatadir %datasetdir%
+for i 1 9
+  rmdir -r ../results/multivariatetest/skewed/0.006/data%i%
+  rmdir -r %datasetdir%/data%i%
+endfor i
+for i 1 9
+  gaussmixturedata %i%.txt %datasize% data%i%.txt
+endfor i
+for i 1 9
+  mkdir %datasetdir%/data%i%
+  mv data%i%.txt %datasetdir%/data%i%
+endfor i
+for i 1 9
+  createdataset data%i% _ 2 0;1 data%i% data%i%.txt _
+  savedataset data%i% data%i%.xml
+  axislimits x 0 10 10 1
+  axislimits y 0 10 10 1
+  plotdata2d data%i% 1 2
+  exportimage data%i%.eps
+endfor i
+mergedefinitions data.xml data1.xml data2.xml data3.xml data4.xml data5.xml data6.xml data7.xml data8.xml data9.xml
+for i 1 9
+  rm data%i%.xml
+endfor i
+for i 1 9
+  mkdir ../results/multivariatetest/skewed/0.006/data%i%
+endfor i
+for i 1 9
+  for j 1 %numberofruns%
+    for k 1 %fold%
+      gaussmixturedata %i%.txt %datasize% %datasetdir%/data%i%/data%i%-%j%-%k%.tra
+      gaussmixturedata %i%.txt %datasize% %datasetdir%/data%i%/data%i%-%j%-%k%.tes
+    endfor k
+  endfor j
+  writescreen %i%
+endfor i
+

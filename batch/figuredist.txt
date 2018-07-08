@@ -1,0 +1,21 @@
+displaycode off
+displayresult off
+integer t p d n
+string testtype
+for t 1 2
+  switch t
+    case 1
+      = testtype waldwolfowitz
+      setprecision 0
+    case 2
+      = testtype smirnov
+      setprecision 2
+  endswitch
+  for p 1 5
+    = n %10*p%
+    for d 1 4
+      histogram ../results/graph/distribution/%testtype%-%n%-%d%.txt 0
+      exportimage %testtype%-%n%-%d%.eps
+    endfor d
+  endfor p
+endfor t

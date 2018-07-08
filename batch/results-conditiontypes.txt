@@ -1,0 +1,61 @@
+displaycode off
+integer p i j k m countsu[15] countsm[15] countm countu countq len dcount count
+string read dataset result modelselection tmp[1000]
+file infile outfile1 outfile2 infile2
+= infile optimal.txt
+= modelselection combined5x2t
+openfile infile r
+readfile infile dcount
+= outfile1 counts1-%modelselection%.txt
+= outfile2 counts2-%modelselection%.txt
+openfile outfile1 w
+openfile outfile2 w
+for i 1 15
+  = countsu[%i%] 0
+  = countsm[%i%] 0
+endfor i
+for i 1 %dcount%
+  readfile infile dataset
+  writescreen %dataset%
+  = countm 0
+  = countu 0
+  = infile2 ../results/rule/%dataset%-hybridripper-%modelselection%.conditiontypes  
+  openfile infile2 r
+  for j 1 10
+    readfile infile2 read      
+    tokenize read ;
+    = count %out1%
+    if > count 0
+      for k 1 %count%
+        = tmp[%k%] %aout1[k]%
+      endfor k
+      for k 1 %count%
+        tokenize tmp[%k%] -
+        countchar aout1[1] U
+        += countu %out1%
+        countchar aout1[1] L
+        += countm %out1%      
+        stringlength aout1[1]
+        = len %out1%
+        for m 1 %len%
+          charatindex aout1[1] %m%
+           = result %sout1%
+           if = result U
+             += countsu[m] 1
+           else
+              += countsm[m] 1
+           endif
+        endfor m
+      endfor k
+    endif
+  endfor j
+  closefile infile2
+  writefile outfile1 %dataset%_&_%countu%_&_%countm%
+endfor i
+closefile infile
+for j 1 15
+  writefile outfile2 %j%_%countsu[j]%_%countsm[j]%
+endfor j
+closefile outfile1
+closefile outfile2
+

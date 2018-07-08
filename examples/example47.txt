@@ -1,0 +1,22 @@
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+integer j i
+string dataset
+for j 1 5
+  switch j
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+  endswitch
+  for i 1 10
+    savenamesfile %dataset% c:\users\olcay\isell\datasets\%dataset%%i%.names
+  endfor i
+endfor j  
+output stdout

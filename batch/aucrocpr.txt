@@ -1,0 +1,60 @@
+displaycode off
+displayresult off
+string resultdir dataset method file1
+file infile outfile1 outfile2 outfile3 outfile4 outfile5
+integer i j k count numberofruns p fold t pprime
+real tp fp tn fn tpr fpr precision recall error
+setprecision 3
+= numberofruns 100
+= fold 10
+= resultdir ../results/tests
+= infile twoclass-large.txt
+openfile infile r
+readfile infile count
+runcount 1
+foldcount 10
+setprecision 6
+for i 1 %count%
+  readfile infile dataset
+  for j 1 9
+    switch j
+      case 1
+        = method c45
+      case 2
+        = method knn
+      case 3
+        = method svm
+      case 4
+        = method lda
+      case 5
+        = method qda
+      case 6
+        = method randomforest
+      case 7
+        = method logistic
+      case 8
+        = method naivebayes
+      case 9
+        = method ripper
+    endswitch
+    for k 1 %numberofruns%
+      = file1 %resultdir%/posterior/%dataset%-%k%-%method%.posterior
+      fileexists %file1%
+      if = out1 1
+        = outfile1 %resultdir%/roc/%dataset%-%k%-%method%.roc
+        openfile outfile1 w
+        = outfile2 %resultdir%/pr/%dataset%-%k%-%method%.pr
+        openfile outfile2 w
+        aucposterior %file1%
+        for p 1 %fold%                    
+          writefile outfile1 %aout1[p]%
+          writefile outfile2 %aout2[p]%
+        endfor p
+        closefile outfile1
+        closefile outfile2
+      endif
+      writescreen %i%_%j%_%k%
+    endfor k
+  endfor j  
+endfor i  
+closefile infile

@@ -1,0 +1,53 @@
+displaycode off
+displayresult off
+integer i j size
+string dataset outdir type
+= outdir ../results/discrete
+= type error
+onetailed
+for i 1 16
+  switch i
+    case 1
+      = dataset artificial
+    case 2
+      = dataset balance
+    case 3
+      = dataset car
+    case 4
+      = dataset discretemonks
+    case 5
+      = dataset titanic
+    case 6
+      = dataset tictactoe
+    case 7
+      = dataset vote
+    case 8
+      = dataset nursery
+    case 9
+      = dataset spect
+    case 10
+      = dataset splice
+    case 11
+      = dataset promoters
+    case 12
+      = dataset hayesroth
+    case 13
+      = dataset krvskp
+    case 14
+      = dataset donors
+    case 15
+      = dataset acceptors
+    case 16
+      = dataset connect4
+  endswitch
+  for j 1 4
+    fileexists %outdir%/%dataset%-discrete-%j%.%type%
+    if = out1 1
+      pairedttest %outdir%/%dataset%-c45.%type% %outdir%/%dataset%-discrete-%j%.%type%
+      if != out1 0
+        writescreen %dataset%_%j%
+      endif
+    endif
+  endfor j
+endfor i
+output stdout

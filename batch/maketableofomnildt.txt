@@ -1,0 +1,146 @@
+displaycode off
+displayresult off
+integer j i k algcount count res1 count2 datasetcount
+string dir file extension dataset endj endi endk result what algname1 algname2 file1 file2 comparison test
+onetailed
+setprecision 2
+os Linux
+= dir /root/results/omnildt
+= algcount 5
+= datasetcount 17
+= comparison time
+= test tpaired5x2
+integer win[%datasetcount%]
+integer lost[%datasetcount%]
+string algorithms[%algcount%]
+for i 1 %algcount%
+  switch i
+    case 1
+      = algorithms[i] ldaclass
+    case 2
+      = algorithms[i] qdaclass
+    case 3
+      = algorithms[i] svmlinear
+    case 4
+      = algorithms[i] svmquadratic
+    case 5
+      = algorithms[i] srm
+  endswitch
+endfor i
+string datasets[%datasetcount%]
+for i 1 %datasetcount%
+  switch i
+    case 1
+      = datasets[i] artificial
+    case 2
+      = datasets[i] breast
+    case 3
+      = datasets[i] bupa
+    case 4
+      = datasets[i] german
+    case 5
+      = datasets[i] haberman
+    case 6 
+      = datasets[i] heart
+    case 7
+      = datasets[i] hepatitis
+    case 8
+      = datasets[i] mammographic
+    case 9
+      = datasets[i] monks
+    case 10
+      = datasets[i] parkinsons
+    case 11
+      = datasets[i] pima
+    case 12
+      = datasets[i] ringnorm
+    case 13
+      = datasets[i] tictactoe
+    case 14
+      = datasets[i] titanic
+    case 15
+      = datasets[i] vote
+    case 16
+      = datasets[i] transfusion
+    case 17
+      = datasets[i] twonorm
+  endswitch
+endfor i
+integer totallost[10]
+output /root/results/tablo-%comparison%.txt
+write \begin{table}[ht]
+write \caption{}
+write \label{}
+write \begin{center}
+write \begin{tabular}{|l|r|r|r|r|r|}
+write \hline
+write Dataset&LDA&QDA&SVML&SVMQ&SRM\\
+write \hline
+for j 1 %datasetcount%
+  = result %datasets[j]%
+  for k 1 %algcount%
+    = file1 %dir%/%datasets[j]%-%algorithms[k]%.%comparison%
+    meanvariance %file1%
+    = result %result%&%out1%$\pm$%out2%
+  endfor k
+  = result %result%\\
+  write %result%
+endfor j
+write \hline
+write \end{tabular}
+write \begin{tabular}{|l|r|r|r|r|r|r|}
+write \hline
+= result &LDA&QDA&SVML&SVMQ&SRM&$\Sigma$\\
+write %result%
+write \hline
+for i 1 %algcount%
+  for k 1 %datasetcount%
+    = win[k] 0
+    = lost[k] 0    
+  endfor k
+  = result %algorithms[i]%
+  for k 1 %algcount%
+    = count 0
+    for j 1 %datasetcount%
+      = file1 %dir%/%datasets[j]%-%algorithms[i]%.%comparison%
+      = file2 %dir%/%datasets[j]%-%algorithms[k]%.%comparison%
+      %test% %file2% %file1%
+      = res1 %out1%
+      if = res1 1
+        ++ count
+        = win[j] 1
+      endif
+      %test% %file1% %file2%      
+      = res1 %out1%
+      if = res1 1
+        = lost[j] 1
+      endif
+    endfor j
+    = result %result%&%count%
+  endfor k
+  = count 0
+  = count2 0
+  for k 1 %datasetcount%
+    if = win[k] 1
+      ++ count
+    endif
+    if = lost[k] 1
+      ++ count2
+    endif
+  endfor k
+  = totallost[i] %count2%
+  = result %result%&%count%\\
+  write %result%
+endfor i
+write \hline
+= result $\Sigma$
+for i 1 %algcount%
+  = result %result%&%totallost[i]%
+endfor i
+= result %result%&\\
+write %result%
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout

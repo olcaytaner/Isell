@@ -1,0 +1,139 @@
+displaycode off
+integer i k p l
+string dataset resultdir alg
+setdatadir ../data
+loaddatasets rule.xml
+runcount 5
+foldcount 2
+testpercentage 0.33333333333333
+setprecision 6
+= resultdir ../results/vc
+prunetype srmpruning
+for i 1 31
+  switch i
+    case 1
+      = dataset ringnorm
+    case 2
+      = dataset spambase
+    case 3
+      = dataset twonorm
+    case 4
+      = dataset german
+    case 5
+      = dataset magic
+    case 6
+      = dataset musk2
+    case 7
+      = dataset satellite47
+    case 8
+      = dataset polyadenylation
+    case 9
+      = dataset pima
+    case 10
+      = dataset breast
+    case 11
+      = dataset acceptors
+    case 12
+      = dataset artificial
+    case 13
+      = dataset donors
+    case 14
+      = dataset krvskp
+    case 15
+      = dataset monks
+    case 16
+      = dataset mushroom
+    case 17
+      = dataset promoters
+    case 18
+      = dataset spect
+    case 19
+      = dataset tictactoe
+    case 20
+      = dataset titanic
+    case 21
+      = dataset vote
+    case 22
+      = dataset bupa
+    case 23
+      = dataset hepatitis
+    case 24
+      = dataset haberman
+    case 25
+      = dataset heart
+    case 26
+      = dataset ironosphere
+    case 27
+      = dataset parkinsons
+    case 28
+      = dataset transfusion
+    case 29
+      = dataset ads
+    case 30
+      = dataset dlbcl
+    case 31
+      = dataset prostatetumor
+  endswitch
+  for p 1 10
+    switch p
+      case 1
+        srma1 4
+      case 2
+        srma1 2
+      case 3
+        srma1 1
+      case 4
+        srma1 0.5
+      case 5
+        srma1 0.25
+      case 6
+        srma1 0.125
+      case 7
+        srma1 0.0625
+      case 8
+        srma1 0.03125
+      case 9
+        srma1 0.015625
+      case 10
+        srma1 0.0078125
+    endswitch
+    for l 1 10
+      switch l
+        case 1
+          srma2 2
+        case 2
+          srma2 1
+        case 3
+          srma2 0.5
+        case 4
+          srma2 0.25
+        case 5
+          srma2 0.125
+        case 6
+          srma2 0.0625
+        case 7
+          srma2 0.03125
+        case 8
+          srma2 0.015625
+        case 9 
+          srma2 0.0078125
+        case 10
+          srma2 0.00390625
+      endswitch
+      fileexists %resultdir%/%dataset%-srm-%p%-%l%.error
+      if = out1 0
+        output %resultdir%/%dataset%-srm-%p%-%l%.error
+        c45 %dataset% cv 1
+        output %resultdir%/%dataset%-srm-%p%-%l%.nodecount
+        for k 1 10
+          write %aout3[k]%
+        endfor k    
+        output %resultdir%/%dataset%-srm-%p%-%l%.bound
+        for k 1 10
+          write %aout6[k]%
+        endfor k    
+      endif
+    endfor l
+  endfor p
+endfor i
+output stdout

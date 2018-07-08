@@ -1,0 +1,45 @@
+displaycode off
+displayresult off
+string dataset resultdir overalldir
+= resultdir ../results/ensemble
+= overalldir ../results/ensembleresults
+integer i j n nfact
+= n 3
+= nfact 1
+for i 2 %n%
+  = nfact %nfact*i%
+endfor i
+string b[%nfact%]
+string c[%nfact%]
+stringpermutation %n% b
+for i 1 10
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset cmc
+    case 3
+      = dataset hayesroth
+    case 4
+      = dataset iris
+    case 5
+      = dataset leukemia1
+    case 6
+      = dataset leukemia2
+    case 7
+      = dataset splice
+    case 8
+      = dataset tae
+    case 9
+      = dataset wave
+    case 10
+      = dataset wine
+  endswitch
+  output %overalldir%/%dataset%-e.error
+  for j 1 %nfact%
+    = c[j] %resultdir%/%dataset%-%b[j]%.posterior
+  endfor j
+  ensemble c %nfact%
+  write %out1%
+endfor i
+output stdout

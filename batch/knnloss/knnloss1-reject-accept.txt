@@ -1,0 +1,10 @@
+optdigits60-1-9
+optdigits60-1-10
+optdigits60-2-3
+optdigits60-2-5
+optdigits60-5-3
+optdigits60-5-5
+optdigits56-1-4
+optdigits56-5-3
+optdigits56-5-4
+optdigits52-5-3

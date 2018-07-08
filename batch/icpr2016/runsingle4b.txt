@@ -1,0 +1,30 @@
+displaycode off
+displayresult off
+string dataset resultdir
+= resultdir ../results/ensemble
+integer i j n nfact
+= n 4
+= nfact 1
+for i 2 %n%
+  = nfact %nfact*i%
+endfor i
+string c[1]
+string b[%nfact%]
+stringpermutation %n% b
+for i 1 4
+  switch i
+    case 1
+      = dataset car
+    case 2
+      = dataset srbct
+    case 3
+      = dataset vehicle
+    case 4
+      = dataset braintumor2
+  endswitch
+  for j 1 %nfact%
+    = c[1] %resultdir%/%dataset%-%b[j]%.posterior
+    ensemble c 1
+    writescreen %dataset%_%b[j]%_%out1%
+  endfor j
+endfor i

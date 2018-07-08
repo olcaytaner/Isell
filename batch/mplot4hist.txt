@@ -1,0 +1,19 @@
+displaycode off
+displayresult off
+string resultdir dataset plotdir noise
+integer j k t
+matrix avg cov
+= resultdir ../results/multivariatetest/synthetic
+= plotdir ../results/multivariatetest
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+= noise 0.0005
+hold off
+errorhistogram %resultdir%/%noise%-data10-fpfn-0.100-diff.error %resultdir%/%noise%-data10-fpfn-0.500-diff.error %resultdir%/%noise%-data10-fpfn-0.900-diff.error 
+hold on
+xaxisnames 0.1 0.5 0.9
+xlabel Decision_Threshold
+ylabel Error
+exportimage %plotdir%/data10-histogram.eps

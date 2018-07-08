@@ -1,0 +1,50 @@
+displaycode off
+displayresult off
+string resultdir dataset test comptype val
+integer i j k t numberofruns
+file file1 file2
+real mean variance sum l q diff[10]
+integer count
+= numberofruns 100
+= resultdir ../results/multivariatetest/synthetic/0.0005
+= comptype error
+for j 10 10
+  = dataset data%j%
+  for t 1 9
+    for k 1 3
+      setprecision 3
+      output %resultdir%/%comptype%-%k%-%0.1*t%.t
+      setprecision 15
+      setprecision 3
+      = file1 %resultdir%/%dataset%/%k%-%comptype%-%0.1*t%.lda
+      = file2 %resultdir%/%dataset%/%k%-%comptype%-%0.1*t%.qda
+      setprecision 15
+      openfile file1 r
+      openfile file2 r
+      = sum 0.0
+      for i 1 10
+        readfile file1 l
+        readfile file2 q
+        = diff[%i%] %l-q%
+        += sum %diff[i]%
+      endfor i
+      closefile file1
+      closefile file2
+      = mean %sum/10%
+      = sum 0.0
+      for i 1 10
+        += sum %(diff[i]-mean)*(diff[i]-mean)%
+      endfor i
+      = variance %sum/9%
+      write ----Average------
+      write %mean%
+      write ----Standard_Deviation----
+      write %variance^0.5%
+      write ----Statistic----
+      write %((10^0.5)*mean)/(variance^0.5)%
+    endfor k
+    writescreen %j%_%t%
+  endfor t
+endfor j
+output stdout
+

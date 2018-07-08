@@ -1,0 +1,127 @@
+displaycode off
+displayresult off
+integer numberofruns fold i j k p roc pr error count
+string resultdir method1 method2 file1 file2 dataset
+file infile outfile[8]
+real rocp prp errorp
+= numberofruns 100
+= fold 10
+= resultdir ../results/tests
+= infile twoclass-large.txt
+openfile infile r
+readfile infile count
+twotailed
+= outfile[1] %resultdir%/roc(accept)-pr(accept)-error(accept).txt
+= outfile[2] %resultdir%/roc(accept)-pr(accept)-error(reject).txt
+= outfile[3] %resultdir%/roc(accept)-pr(reject)-error(accept).txt
+= outfile[4] %resultdir%/roc(accept)-pr(reject)-error(reject).txt
+= outfile[5] %resultdir%/roc(reject)-pr(accept)-error(accept).txt
+= outfile[6] %resultdir%/roc(reject)-pr(accept)-error(reject).txt
+= outfile[7] %resultdir%/roc(reject)-pr(reject)-error(accept).txt
+= outfile[8] %resultdir%/roc(reject)-pr(reject)-error(reject).txt
+for i 1 8
+  openfile outfile[%i%] w
+endfor i
+for i 1 %count%
+  readfile infile dataset
+  for j 1 8
+    switch j
+      case 1
+        = method1 c45
+      case 2
+        = method1 knn
+      case 3
+        = method1 svm
+      case 4
+        = method1 lda
+      case 5
+        = method1 qda
+      case 6
+        = method1 randomforest
+      case 7
+        = method1 logistic
+      case 8
+        = method1 naivebayes
+    endswitch
+    for k %j+1% 9
+      switch k
+        case 2
+          = method2 knn
+        case 3
+          = method2 svm
+        case 4
+          = method2 lda
+        case 5
+          = method2 qda
+        case 6
+          = method2 randomforest
+        case 7
+          = method2 logistic
+        case 8
+          = method2 naivebayes
+        case 9
+          = method2 ripper
+      endswitch
+      for p 1 %numberofruns%
+        = file1 %resultdir%/posterior/%dataset%-%p%-%method1%.posterior
+        fileexists %file1%
+        if = out1 1
+          = file1 %resultdir%/posterior/%dataset%-%p%-%method2%.posterior
+          fileexists %file1%
+          if = out1 1
+            = file1 %resultdir%/roc/%dataset%-%p%-%method1%.roc
+            = file2 %resultdir%/roc/%dataset%-%p%-%method2%.roc
+            pairedttest %file1% %file2%
+            = roc %out1%
+            = rocp %out2%
+            = file1 %resultdir%/pr/%dataset%-%p%-%method1%.pr
+            = file2 %resultdir%/pr/%dataset%-%p%-%method2%.pr
+            pairedttest %file1% %file2%
+            = pr %out1%
+            = prp %out2%
+            = file1 %resultdir%/error/%dataset%-%p%-%method1%.error
+            = file2 %resultdir%/error/%dataset%-%p%-%method2%.error
+            pairedttest %file1% %file2%
+            = error %out1%
+            = errorp %out2%
+            if = roc 0
+              if = pr 0
+                if = error 0
+                  writefile outfile[1] %method1%_%method2%_%dataset%_%p%_%rocp%_%prp%_%errorp%
+                else
+                  writefile outfile[2] %method1%_%method2%_%dataset%_%p%_%rocp%_%prp%_%errorp%
+                endif
+              else
+                if = error 0
+                  writefile outfile[3] %method1%_%method2%_%dataset%_%p%_%rocp%_%prp%_%errorp%
+                else
+                  writefile outfile[4] %method1%_%method2%_%dataset%_%p%_%rocp%_%prp%_%errorp%
+                endif
+              endif
+            else
+              if = pr 0
+                if = error 0
+                  writefile outfile[5] %method1%_%method2%_%dataset%_%p%_%rocp%_%prp%_%errorp%
+                else
+                  writefile outfile[6] %method1%_%method2%_%dataset%_%p%_%rocp%_%prp%_%errorp%
+                endif
+              else
+                if = error 0
+                  writefile outfile[7] %method1%_%method2%_%dataset%_%p%_%rocp%_%prp%_%errorp%
+                else
+                  writefile outfile[8] %method1%_%method2%_%dataset%_%p%_%rocp%_%prp%_%errorp%
+                endif
+              endif
+            endif
+          endif
+        endif
+      endfor p
+      writescreen %i%_%j%_%k%
+    endfor k
+  endfor j  
+endfor i  
+closefile infile
+for i 1 8
+  closefile outfile[%i%]
+endfor i
+

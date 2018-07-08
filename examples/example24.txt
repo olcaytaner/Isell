@@ -1,0 +1,13 @@
+'Calculates n'th fibonacci number
+integer i tmp tmp1 fib n
+= tmp 1
+= tmp1 1
+= fib %tmp+tmp1%
+= n 10
+for i 3 %n%
+  = tmp %tmp1%
+  = tmp1 %fib%
+  = fib %tmp+tmp1%
+endfor i
+write %fib%
+

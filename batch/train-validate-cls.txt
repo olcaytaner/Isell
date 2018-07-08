@@ -1,0 +1,29 @@
+displaycode off
+file outfile1 outfile2 outfile3 outfile4
+integer i samplesize maxdegree
+string dir functionfile
+= functionfile c:\mixed3.txt
+= dir c:\users\olcay\isell\poly
+= maxdegree 10
+= outfile1 %dir%\trainerror.txt
+= outfile2 %dir%\validationerror.txt
+= outfile3 %dir%\polynomstrained.txt
+= outfile4 %dir%\validationstdev.txt
+learningrate 1
+perceptronrun 1000
+etadecrease 0.999
+polylearnvalcls %functionfile% %maxdegree%
+openfile outfile1 w
+openfile outfile2 w
+openfile outfile3 w
+openfile outfile4 w
+for i 1 %maxdegree%
+  writefile outfile1 %i%_%aout1[i]%
+  writefile outfile2 %i%_%aout2[i]%
+  writefile outfile3 %aout3[i]%
+  writefile outfile4 %i%_%aout4[i]%
+endfor i
+closefile outfile1
+closefile outfile2
+closefile outfile3
+closefile outfile4

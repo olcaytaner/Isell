@@ -1,0 +1,76 @@
+displaycode off
+integer i k j
+string dataset resultdir alg reg
+setdatadir ../data
+loaddatasets rule.xml
+runcount 5
+foldcount 2
+testpercentage 0.33333333333333
+setprecision 6
+= resultdir ../results/softtree
+for i 1 27
+  switch i
+    case 1
+      = dataset ringnorm
+    case 2
+      = dataset spambase
+    case 3
+      = dataset twonorm
+    case 4
+      = dataset german
+    case 5
+      = dataset magic
+    case 6
+      = dataset musk2
+    case 7
+      = dataset satellite47
+    case 8
+      = dataset polyadenylation
+    case 9
+      = dataset pima
+    case 10
+      = dataset breast
+    case 11
+      = dataset acceptors
+    case 12
+      = dataset artificial
+    case 13
+      = dataset donors
+    case 14
+      = dataset krvskp
+    case 15
+      = dataset monks
+    case 16
+      = dataset mushroom
+    case 17
+      = dataset promoters
+    case 18
+      = dataset spect
+    case 19
+      = dataset tictactoe
+    case 20
+      = dataset titanic
+    case 21
+      = dataset vote
+    case 22
+      = dataset bupa
+    case 23
+      = dataset hepatitis
+    case 24
+      = dataset haberman
+    case 25
+      = dataset heart
+    case 26
+      = dataset ironosphere
+    case 27
+      = dataset parkinsons
+  endswitch
+  regularization None
+  baseclassificationalgorithm softtree
+  fileexists %resultdir%/%dataset%-bagging-softtree.error
+  if = out1 0
+    output %resultdir%/%dataset%-bagging-softtree.error
+    baggingcls %dataset% cv 1
+  endif
+endfor i
+output stdout

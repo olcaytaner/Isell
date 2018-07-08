@@ -1,0 +1,105 @@
+displaycode off
+string file1 file2 resultdir outdir
+string dataset algorithm1 algorithm2 comptype st
+integer index p smirnov wald hotelling kfold
+real x y minx maxx miny maxy gap
+file infile1 infile2
+= outdir ../results/graph/realfigures
+= resultdir ../results/multivariatetest/dt
+= dataset spect
+= algorithm1 c45
+= algorithm2 svm
+= index 4
+= comptype roc
+= file1 %resultdir%/%dataset%-%index%-%algorithm1%-0.500.%comptype%
+= file2 %resultdir%/%dataset%-%index%-%algorithm2%-0.500.%comptype%
+= minx -0.05
+= maxx 0.90
+= miny -0.05
+= maxy 0.35
+= gap 0.005
+twotailed
+hold off
+axislimits x %minx% %maxx% 10 2
+axislimits y %miny% %maxy% 10 2
+hold on
+plotxy %file1%
+plotxy %file2%
+legendposition none
+smirnov %file1% %file2%
+= smirnov %out1%
+for p 1 19
+  putline %aout1[p]% %aout2[p]% %aout3[p]% %aout4[p]%
+endfor p
+fontsize axis 24
+fontsize data 18
+fontsize label 24
+= infile1 %file1%
+openfile infile1 r
+for p 1 10
+  readfile infile1 x
+  readfile infile1 y
+  putstring %x+gap% %y+gap% %aout5[p]% black
+endfor p
+closefile infile1
+= infile2 %file2%
+openfile infile2 r
+for p 1 10
+   readfile infile2 x
+   readfile infile2 y
+   putstring %x+gap% %y+gap% %aout6[p]% red
+endfor p
+closefile infile2
+xlabel TPR
+ylabel FPR
+exportimage %outdir%/%dataset%-%index%-%algorithm1%-%algorithm2%-%comptype%-smirnov.eps
+hold off
+fontsize axis 24
+fontsize label 24
+axislimits x %minx% %maxx% 10 2
+axislimits y %miny% %maxy% 10 2
+hold on
+plotgauss2d %file1% 4
+plotgauss2d %file2% 4
+fontsize data 18
+fontsize legend 24
+legendnames C4.5 Svm
+legendposition downright
+hotellingt %file1% %file2%
+= hotelling %out1%
+xlabel TPR
+ylabel FPR
+exportimage %outdir%/%dataset%-%index%-%algorithm1%-%algorithm2%-%comptype%-hotelling.eps
+hold off
+pairedttest %resultdir%/%dataset%-%index%-%algorithm1%-0.500.error %resultdir%/%dataset%-%index%-%algorithm2%-0.500.error
+= kfold %out1%
+fontsize label 24
+fontsize axis 24
+hold on
+errorhistogram %resultdir%/%dataset%-%index%-%algorithm1%-0.500.error %resultdir%/%dataset%-%index%-%algorithm2%-0.500.error
+fontsize data 18
+legendposition none
+exportimage %outdir%/%dataset%-%index%-%algorithm1%-%algorithm2%-%comptype%-univariate.eps
+= st %dataset%_%index%_%algorithm1%_%algorithm2%_(in_terms_of_%comptype%)
+if = hotelling 0
+  = st %st%_Hotelling_accept,
+else
+  = st %st%_Hotelling_reject,
+endif
+if = smirnov 0
+  = st %st%_Smirnov_accept,
+else
+  = st %st%_Smirnov_reject,
+endif
+if = wald 0
+  = st %st%_Wald_accept,
+else
+  = st %st%_Wald_reject,
+endif
+if = kfold 0
+  = st %st%_error_accept
+else
+  = st %st%_error_reject
+endif
+writescreen %st%
+

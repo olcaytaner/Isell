@@ -1,0 +1,77 @@
+displaycode off
+integer i j k
+string dir alg1 alg2 dataset results1 results2
+= dir /home/olcay/results/multivariatetest
+twotailed
+output %dir%/ttest.txt
+setprecision 20
+for i 1 5
+  switch i
+    case 1
+      = alg1 c45
+    case 2
+      = alg1 ripper
+    case 3
+      = alg1 naivebayes
+    case 4
+      = alg1 knn
+    case 5
+      = alg1 mlpgeneric
+  endswitch
+  for j 1 5
+    switch j
+      case 1
+        = alg2 c45
+      case 2
+        = alg2 ripper
+      case 3
+        = alg2 naivebayes
+      case 4
+        = alg2 knn
+      case 5
+        = alg2 mlpgeneric      
+    endswitch
+      for k 1 15
+        switch k
+          case 1
+            = dataset ada
+          case 2
+            = dataset aibocolor2
+          case 3
+            = dataset caravan
+          case 4
+            = dataset chess
+          case 5
+            = dataset connect4
+          case 6
+            = dataset gina
+          case 7
+            = dataset mushroom
+          case 8
+            = dataset nursery
+          case 9
+            = dataset pageblock
+          case 10
+            = dataset report
+          case 11
+            = dataset shuttle
+          case 12
+            = dataset spambase
+          case 13
+            = dataset sylva
+          case 14
+            = dataset thyroid
+          case 15
+            = dataset wave
+        endswitch
+        if < i %j%
+          = results1 %dir%/%alg1%/%dataset%posterior/error.txt
+          = results2 %dir%/%alg2%/%dataset%posterior/error.txt
+          ttest %results1% %results2%
+          write %alg1%_%alg2%_%dataset%_%out2%
+        endif
+      endfor k
+  endfor j
+endfor i
+output stdout
+

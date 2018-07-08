@@ -1,0 +1,12 @@
+parallel on
+paralleltype 0
+processorcount 16
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+output result.txt
+foldcount 10
+runcount 1
+runtofold 1
+ldt iris random 1
+output stdout
+

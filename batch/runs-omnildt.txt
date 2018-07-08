@@ -1,0 +1,143 @@
+displaycode off
+displayresult off
+file outfile
+string dir extension algorithm resultdir dataset method modelselection
+integer i j k starti endi startj endj
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+runcount 5
+foldcount 2
+= resultdir c:\users\olcay\isell\omnildt
+= starti 1
+= endi 5
+= startj 1
+= endj 1
+= method omnildt
+for i %starti% %endi%
+  switch i
+    case 1
+      = modelselection aic
+      modelselection aic
+    case 2
+      = modelselection bic
+      modelselection bic
+    case 3
+      = modelselection srm
+      modelselection srm
+    case 4
+      = modelselection mdl
+      modelselection mdl
+    case 5
+      = modelselection crossvalidation      
+      modelselection crossvalidation      
+  endswitch
+  for j %startj% %endj%
+    switch j
+      case 1
+        = dataset breast
+      case 2
+        = dataset bupa
+      case 3
+        = dataset ecoli
+      case 4
+        = dataset glass
+      case 5
+        = dataset iris
+      case 6
+        = dataset monks
+      case 7
+        = dataset haberman
+      case 8
+        = dataset pima
+      case 9
+        = dataset yeast
+      case 10
+        = dataset hepatitis
+'10lular
+      case 11
+        = dataset fevzi
+      case 12
+        = dataset segment
+      case 13
+        = dataset wine
+      case 14
+        = dataset zoo
+'20liler
+      case 15
+        = dataset car
+      case 16
+        = dataset flare
+      case 17
+        = dataset balance
+      case 18
+        = dataset cmc
+      case 19
+        = dataset tictactoe
+      case 20
+        = dataset wave
+      case 21
+        = dataset nursery
+'30lular
+      case 22
+        = dataset dermatology
+      case 23
+        = dataset ironosphere
+      case 24
+        = dataset vote
+'40lilar
+      case 25
+        = dataset credit
+'60lilar
+      case 26
+        = dataset cylinder
+      case 27
+        = dataset mushroom
+      case 28
+        = dataset cenk
+      case 29
+        = dataset spambase
+'90lilar
+      case 30
+        = dataset horse
+    endswitch
+    output %resultdir%\%dataset%-%modelselection%.error
+    %method% %dataset% random 1    
+    = outfile %resultdir%\%dataset%-%modelselection%.time
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout1[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%\%dataset%-%modelselection%.univariate
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout2[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%\%dataset%-%modelselection%.linear
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout3[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%\%dataset%-%modelselection%.quadratic
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout4[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%\%dataset%-%modelselection%.count
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout5[k]%
+    endfor k
+    closefile outfile   
+    = outfile %resultdir%\%dataset%-%modelselection%.nodetype
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout8[k]%
+    endfor k
+    closefile outfile   
+  endfor j  
+endfor i  
+output stdout

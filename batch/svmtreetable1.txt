@@ -1,0 +1,76 @@
+displaycode off
+displayresult off
+integer i j
+string dataset st algorithm
+setprecision 3
+output output.tex
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|r|r|r|}
+write \hline
+write {\bf_Dataset}_&_{\bf_C4.5}_&_{\bf_LDT}_&_{\bf_UMT}_\\
+write \hline
+for i 1 20
+  switch i
+    case 1
+      = dataset ads
+    case 2
+      = dataset breast
+    case 3
+      = dataset bupa
+    case 4
+      = dataset dlbcl
+    case 5
+      = dataset german
+    case 6
+      = dataset haberman
+    case 7
+      = dataset heart
+    case 8
+      = dataset hepatitis
+    case 9
+      = dataset ironosphere
+    case 10
+      = dataset magic
+    case 11
+      = dataset musk2
+    case 12
+      = dataset parkinsons
+    case 13
+      = dataset pima
+    case 14
+      = dataset polyadenylation
+    case 15
+      = dataset prostatetumor
+    case 16
+      = dataset ringnorm
+    case 17
+      = dataset satellite47
+    case 18
+      = dataset spambase
+    case 19
+      = dataset transfusion
+    case 20
+      = dataset twonorm
+  endswitch
+  = st %dataset%_
+  for j 1 3
+    switch j
+      case 1
+        = algorithm c45
+      case 2
+        = algorithm ldt
+      case 3
+        = algorithm svmtree
+    endswitch
+    meanvariance ../results/svmtree/%dataset%-%algorithm%.auc
+    = st %st%&_%out1%$\pm$%out2%_
+  endfor j
+  write %st%\\
+endfor i
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout
+

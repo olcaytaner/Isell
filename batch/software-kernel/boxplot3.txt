@@ -1,0 +1,67 @@
+displaycode off
+fontsize axis 12
+fontsize label 12
+string resultdir type algorithm1 algorithm2 algorithm3 algorithm4
+integer i j
+= resultdir ../results/moss
+for i 1 1
+  switch i
+    case 1
+      = type fmeasure      
+    case 2
+      = type error      
+    case 3
+      = type precision      
+    case 4
+      = type recall      
+    case 5
+      = type auc      
+  endswitch
+  for j 1 3
+    switch j
+      case 1
+        = algorithm1 svm-kernel-0
+        = algorithm2 svm-kernel-1
+        = algorithm3 svm-kernel-2
+        = algorithm4 svm-metric
+      case 2
+        = algorithm1 knn-kernel-0
+        = algorithm2 knn-kernel-1
+        = algorithm3 knn-kernel-2
+        = algorithm4 knn-metric
+      case 3
+        = algorithm1 svm-kernel-2
+        = algorithm2 knn-kernel-0
+        = algorithm3 knn-kernel-1
+        = algorithm4 naivebayes-metric
+    endswitch  
+    boxplot %resultdir%/ant-%algorithm1%.%type% %resultdir%/ant-%algorithm2%.%type% %resultdir%/ant-%algorithm3%.%type% %resultdir%/ant-%algorithm4%.%type%
+    hold on
+    boxplot %resultdir%/camel-%algorithm1%.%type% %resultdir%/camel-%algorithm2%.%type% %resultdir%/camel-%algorithm3%.%type% %resultdir%/camel-%algorithm4%.%type%
+    boxplot %resultdir%/ivy-%algorithm1%.%type% %resultdir%/ivy-%algorithm2%.%type% %resultdir%/ivy-%algorithm3%.%type% %resultdir%/ivy-%algorithm4%.%type%
+    boxplot %resultdir%/jedit-%algorithm1%.%type% %resultdir%/jedit-%algorithm2%.%type% %resultdir%/jedit-%algorithm3%.%type% %resultdir%/jedit-%algorithm4%.%type%
+    boxplot %resultdir%/lucene-%algorithm1%.%type% %resultdir%/lucene-%algorithm2%.%type% %resultdir%/lucene-%algorithm3%.%type% %resultdir%/lucene-%algorithm4%.%type%
+    boxplot %resultdir%/poi-%algorithm1%.%type% %resultdir%/poi-%algorithm2%.%type% %resultdir%/poi-%algorithm3%.%type% %resultdir%/poi-%algorithm4%.%type%
+    boxplot %resultdir%/synapse-%algorithm1%.%type% %resultdir%/synapse-%algorithm2%.%type% %resultdir%/synapse-%algorithm3%.%type% %resultdir%/synapse-%algorithm4%.%type%
+    boxplot %resultdir%/tomcat-%algorithm1%.%type% %resultdir%/tomcat-%algorithm2%.%type% %resultdir%/tomcat-%algorithm3%.%type% %resultdir%/tomcat-%algorithm4%.%type%
+    boxplot %resultdir%/velocity-%algorithm1%.%type% %resultdir%/velocity-%algorithm2%.%type% %resultdir%/velocity-%algorithm3%.%type% %resultdir%/velocity-%algorithm4%.%type%
+    boxplot %resultdir%/xalan-%algorithm1%.%type% %resultdir%/xalan-%algorithm2%.%type% %resultdir%/xalan-%algorithm3%.%type% %resultdir%/xalan-%algorithm4%.%type%
+    xaxisnames Ant Camel Ivy JEdit Lucene Poi Synapse Tomcat Velocity Xalan
+    switch i
+      case 1
+        axislimits y 0 1 10 1
+      case 2
+        axislimits y 0 50 10 1
+      case 3
+        axislimits y 0 1 10 1
+      case 4
+        axislimits y 0 1 10 1
+      case 5
+        axislimits y 0 1 10 1
+    endswitch
+    xlabel Data_Set
+    ylabel %type%
+    exportimage boxplot-%type%-%algorithm1%-%algorithm2%-%algorithm3%-%algorithm4%.eps
+    hold off
+  endfor j
+endfor i

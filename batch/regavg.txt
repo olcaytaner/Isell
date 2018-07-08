@@ -1,0 +1,46 @@
+displaycode off
+displayresult off
+integer i j k p
+string subdir resultdir model resultfile type
+= resultdir ../results/polyreg
+setprecision 3
+for k 1 2
+  switch k
+    case 1
+      = type error
+    case 2
+      = type degree
+  endswitch
+  for j 1 5
+    switch j
+      case 1
+        = model aic
+      case 2
+        = model bic
+      case 3
+        = model srm
+      case 4
+        = model mdl
+      case 5
+        = model crossvalidation
+    endswitch
+    for i 1 3
+      switch i
+        case 1
+          = subdir small 
+        case 2
+          = subdir medium
+        case 3
+          = subdir large
+      endswitch
+      output %resultdir%/%subdir%-%model%.%type%
+      for p 1 10
+        = resultfile %resultdir%/%subdir%/%model%-%p%.%type%
+        meanvariance %resultfile%
+        write %p%_%out1%
+      endfor p
+    endfor i
+  endfor j
+endfor k
+output stdout
+

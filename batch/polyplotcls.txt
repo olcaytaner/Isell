@@ -1,0 +1,83 @@
+displaycode off
+displayresult off
+string resultdir comptype color type size limitdown limitup part precision
+integer i j k
+= resultdir ../../results/polycls
+for i 1 2
+  switch i
+    case 1
+      = type error
+      = precision 2
+    case 2
+      = type degree
+      = precision 0
+  endswitch
+  for j 1 3
+    switch j
+      case 1
+        = size small
+        if = i 1
+          = limitdown 0
+          = limitup 0.5
+          = part 10
+        else
+          = limitdown 0 
+          = limitup 10
+          = part 10
+        endif
+      case 2
+        = size medium
+        if = i 1
+          = limitdown 0.0
+          = limitup 0.5
+          = part 10
+        else
+          = limitdown 0 
+          = limitup 10
+          = part 10
+        endif
+      case 3
+        = size large
+        if = i 1
+          = limitdown 0
+          = limitup 0.2
+          = part 10
+          = precision 2
+        else
+          = limitdown 0 
+          = limitup 10
+          = part 10
+        endif
+    endswitch
+    hold off
+    for k 1 5
+      switch k
+        case 1
+          = comptype aic
+          = color black
+        case 2
+          = comptype bic
+          = color red
+        case 3
+          = comptype crossvalidation
+          = color green
+        case 4
+          = comptype mdl
+          = color blue
+        case 5
+          = comptype srm
+          = color purple
+      endswitch
+      plotxyline %resultdir%/%size%-%comptype%.%type% %color% 1
+      hold on
+    endfor k
+    legendnames AIC BIC CV MDL SRM
+    axislimits x 1 5 4 0
+    axislimits y %limitdown% %limitup% %part% %precision%
+    legendposition upleft
+    xlabel Complexity
+    ylabel Average_%type%
+    exportimage %resultdir%/%size%-%type%.eps
+  endfor j
+endfor i
+

@@ -1,0 +1,123 @@
+displaycode off
+integer i j k m n p currentk count1 count2
+string test dir dir2 alg1 alg2 dataset file1 file2
+twotailed
+for i 1 4
+  switch i
+    case 1
+      = test ftest
+    case 2
+      = test tpaired5x2
+    case 3
+      = test combined5x2t
+    case 4
+      = test cvttest      
+  endswitch
+  if < i 4
+    = dir results
+  else
+    = dir resultscv10
+  endif  
+  for k 1 4
+    switch k
+      case 1
+        = alg1 max
+      case 2
+        = alg1 mean
+      case 3
+        = alg1 lda
+      case 4
+        = alg1 c45
+    endswitch
+    = currentk %k%
+    ++ currentk
+    for m %currentk% 5
+      switch m
+        case 2
+          = alg2 mean
+        case 3
+          = alg2 lda
+        case 4
+          = alg2 c45
+        case 5
+          = alg2 knn
+      endswitch 
+      output c:\users\olcay\isell\comparetests\twotailed\%alg1%-%alg2%-%test%.txt
+      for n 1 30
+        switch n
+          case 1
+            = dataset breast
+          case 2
+            = dataset bupa
+          case 3
+            = dataset car
+          case 4
+            = dataset cylinder
+          case 5
+            = dataset dermatology
+          case 6
+            = dataset ecoli
+          case 7
+            = dataset flare
+          case 8
+            = dataset glass
+          case 9
+            = dataset hepatitis
+          case 10
+            = dataset horse
+          case 11
+            = dataset iris
+          case 12
+            = dataset ironosphere
+          case 13
+            = dataset monks
+          case 14
+            = dataset segment
+          case 15
+            = dataset vote
+          case 16
+            = dataset wine
+          case 17
+            = dataset zoo
+          case 18
+            = dataset balance
+          case 19
+            = dataset cmc
+          case 20
+            = dataset credit
+          case 21
+            = dataset haberman
+          case 22
+            = dataset pima
+          case 23
+            = dataset tictactoe
+          case 24
+            = dataset yeast
+          case 25
+            = dataset spambase
+          case 26
+            = dataset wave
+          case 27
+            = dataset mushroom
+          case 28
+            = dataset fevzi
+          case 29
+            = dataset cenk
+          case 30
+            = dataset nursery          
+        endswitch
+        = count1 0
+        for p 1 1000
+          = file1 c:\users\olcay\isell\%dir%\%dataset%\%p%.%alg1%
+          = file2 c:\users\olcay\isell\%dir%\%dataset%\%p%.%alg2%            
+          %test% %file1% %file2%
+          if = out1 0
+            ++ count1
+          endif
+        endfor p
+        write %count1%
+      endfor n
+    endfor m
+  endfor k 
+endfor i
+output stdout

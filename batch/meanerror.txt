@@ -1,0 +1,88 @@
+displaycode off
+displayresult off
+string resultdir dataset algorithm noise
+real decisionthreshold
+integer i t j k p s 
+real fp1 fn1 fp2 fn2 fp fn
+file infile outfile infile1 infile2
+= resultdir ../results/multivariatetest/synthetic
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+hold off
+for i 1 2
+  switch i
+    case 1
+      = algorithm lda
+    case 2
+      = algorithm qda
+  endswitch
+  for k 1 3
+    switch k
+      case 1
+        = noise 0.002
+      case 2
+        = noise 0.001
+      case 3
+        = noise 0.0005
+    endswitch
+    for p 0 10
+      = dataset data%p%
+      for t 1 9
+        = decisionthreshold %0.1*t%
+        = outfile %resultdir%/%noise%-%dataset%-fpfn-%decisionthreshold%-%algorithm%.error
+        openfile outfile w
+        for j 1 100
+          = infile %resultdir%/%noise%/%dataset%/%j%-fpfn-%decisionthreshold%.%algorithm%
+          openfile infile r
+          for s 1 10
+            readfile infile fp
+            readfile infile fn
+            writefile outfile %fp+fn%
+          endfor s
+          closefile infile
+        endfor j
+        closefile outfile
+      endfor t
+      writescreen %i%_%k%_%p%
+    endfor p
+  endfor k
+endfor i
+for k 1 3
+  switch k
+    case 1
+      = noise 0.002
+    case 2
+      = noise 0.001
+    case 3
+      = noise 0.0005
+  endswitch
+  for p 0 10
+    = dataset data%p%
+    for t 1 9
+      = decisionthreshold %0.1*t%
+      = outfile %resultdir%/%noise%-%dataset%-fpfn-%decisionthreshold%-diff.error
+      openfile outfile w
+      for j 1 100
+        = infile1 %resultdir%/%noise%/%dataset%/%j%-fpfn-%decisionthreshold%.lda
+        openfile infile1 r
+        = infile2 %resultdir%/%noise%/%dataset%/%j%-fpfn-%decisionthreshold%.qda
+        openfile infile2 r
+        for s 1 10
+          readfile infile1 fp1
+          readfile infile1 fn1
+          readfile infile2 fp2
+          readfile infile2 fn2
+          writefile outfile %fp1+fn1-fp2-fn2%
+        endfor s
+        closefile infile1
+        closefile infile2
+      endfor j
+      closefile outfile
+    endfor t
+    writescreen %i%_%k%_%p%
+  endfor p
+endfor k
+output stdout
+

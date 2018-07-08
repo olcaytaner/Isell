@@ -1,0 +1,50 @@
+displaycode off
+displayresult off
+integer i j k t p d
+file outfile
+integer n simulationcount
+string testtype st
+= simulationcount 10000
+twotailed
+for t 1 2
+  switch t
+    case 1
+      = testtype waldwolfowitz
+    case 2
+      = testtype smirnov
+  endswitch
+  for p 1 5
+    = n %10*p%
+    for d 1 4
+      = outfile %testtype%-%n%-%d%.txt
+      openfile outfile w
+      for i 1 %simulationcount%
+        output 1.txt
+        for j 1 %n%
+          random 1 1000
+          = st %out1%
+          for k 2 %d%
+            random 1 1000
+            = st %st%_%out1%
+          endfor k
+          write %st%
+        endfor j        
+        output 2.txt
+        for j 1 %n%
+          random 1 1000
+          = st %out1%
+          for k 2 %d%
+            random 1 1000
+            = st %st%_%out1%
+          endfor k
+          write %st%
+        endfor j
+        output stdout
+        %testtype% 1.txt 2.txt
+        writefile outfile %out3%        
+      endfor i
+      closefile outfile
+      writescreen %t%_%p%_%d%
+    endfor d
+  endfor p
+endfor t

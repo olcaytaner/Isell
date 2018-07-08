@@ -1,0 +1,24 @@
+displaycode off
+displayresult off
+printposterior on
+integer i j count
+string dataset outdir method
+setdatadir ../data
+loaddatasets rule.xml
+= outdir ../results/multivariatetest/dt
+file infile
+= infile sortedlda.txt
+openfile infile r
+readfile infile count
+setprecision 3
+runcount 1
+foldcount 10
+for i 1 %count%
+  readfile infile dataset
+  for j 1 10
+    posteriorfile %outdir%/%dataset%-%j%-lda.posterior 
+    ldaclass %dataset% cv %j%
+  endfor j
+endfor i
+closefile infile
+output stdout

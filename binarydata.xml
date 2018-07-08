@@ -1,0 +1,1562 @@
+<datasets>
+	<dataset name="binarydata1" task="classification" size="256" directory="binarydata1" filetype="text" separator=" " filename="binarydata1.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="128"/>
+			<class value="F" size="128"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata2" task="classification" size="256" directory="binarydata2" filetype="text" separator=" " filename="binarydata2.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="127"/>
+			<class value="F" size="129"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata3" task="classification" size="256" directory="binarydata3" filetype="text" separator=" " filename="binarydata3.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="136"/>
+			<class value="F" size="120"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata4" task="classification" size="256" directory="binarydata4" filetype="text" separator=" " filename="binarydata4.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="130"/>
+			<class value="F" size="126"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata5" task="classification" size="256" directory="binarydata5" filetype="text" separator=" " filename="binarydata5.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="130"/>
+			<class value="F" size="126"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata6" task="classification" size="4096" directory="binarydata6" filetype="text" separator=" " filename="binarydata6.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2048"/>
+			<class value="F" size="2048"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata7" task="classification" size="4096" directory="binarydata7" filetype="text" separator=" " filename="binarydata7.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2046"/>
+			<class value="F" size="2050"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata8" task="classification" size="4096" directory="binarydata8" filetype="text" separator=" " filename="binarydata8.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2062"/>
+			<class value="F" size="2034"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata9" task="classification" size="4096" directory="binarydata9" filetype="text" separator=" " filename="binarydata9.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2060"/>
+			<class value="F" size="2036"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata10" task="classification" size="4096" directory="binarydata10" filetype="text" separator=" " filename="binarydata10.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2029"/>
+			<class value="F" size="2067"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata11" task="classification" size="256" directory="binarydata11" filetype="text" separator=" " filename="binarydata11.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="176"/>
+			<class value="F" size="80"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata12" task="classification" size="256" directory="binarydata12" filetype="text" separator=" " filename="binarydata12.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="178"/>
+			<class value="F" size="78"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata13" task="classification" size="256" directory="binarydata13" filetype="text" separator=" " filename="binarydata13.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="165"/>
+			<class value="F" size="91"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata14" task="classification" size="256" directory="binarydata14" filetype="text" separator=" " filename="binarydata14.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="164"/>
+			<class value="F" size="92"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata15" task="classification" size="256" directory="binarydata15" filetype="text" separator=" " filename="binarydata15.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="160"/>
+			<class value="F" size="96"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata16" task="classification" size="4096" directory="binarydata16" filetype="text" separator=" " filename="binarydata16.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2816"/>
+			<class value="F" size="1280"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata17" task="classification" size="4096" directory="binarydata17" filetype="text" separator=" " filename="binarydata17.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2794"/>
+			<class value="F" size="1302"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata18" task="classification" size="4096" directory="binarydata18" filetype="text" separator=" " filename="binarydata18.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2739"/>
+			<class value="F" size="1357"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata19" task="classification" size="4096" directory="binarydata19" filetype="text" separator=" " filename="binarydata19.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2653"/>
+			<class value="F" size="1443"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata20" task="classification" size="4096" directory="binarydata20" filetype="text" separator=" " filename="binarydata20.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2543"/>
+			<class value="F" size="1553"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata21" task="classification" size="256" directory="binarydata21" filetype="text" separator=" " filename="binarydata21.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="128"/>
+			<class value="F" size="128"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata22" task="classification" size="256" directory="binarydata22" filetype="text" separator=" " filename="binarydata22.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="128"/>
+			<class value="F" size="128"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata23" task="classification" size="256" directory="binarydata23" filetype="text" separator=" " filename="binarydata23.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="127"/>
+			<class value="F" size="129"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata24" task="classification" size="256" directory="binarydata24" filetype="text" separator=" " filename="binarydata24.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="137"/>
+			<class value="F" size="119"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata25" task="classification" size="256" directory="binarydata25" filetype="text" separator=" " filename="binarydata25.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="134"/>
+			<class value="F" size="122"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata26" task="classification" size="4096" directory="binarydata26" filetype="text" separator=" " filename="binarydata26.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2048"/>
+			<class value="F" size="2048"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata27" task="classification" size="4096" directory="binarydata27" filetype="text" separator=" " filename="binarydata27.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2043"/>
+			<class value="F" size="2053"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata28" task="classification" size="4096" directory="binarydata28" filetype="text" separator=" " filename="binarydata28.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2040"/>
+			<class value="F" size="2056"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata29" task="classification" size="4096" directory="binarydata29" filetype="text" separator=" " filename="binarydata29.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2064"/>
+			<class value="F" size="2032"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="binarydata30" task="classification" size="4096" directory="binarydata30" filetype="text" separator=" " filename="binarydata30.txt" sigma="0.000000">
+		<classes>
+			<class value="T" size="2057"/>
+			<class value="F" size="2039"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>F</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>T</value>
+				<value>F</value>
+			</attribute>
+		</attributes>
+	</dataset>
+</datasets>

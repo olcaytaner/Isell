@@ -1,0 +1,674 @@
+%%Written by ISELL Environment
+%%BoundingBox: 0 0 600 600
+/Times findfont 10 scalefont setfont
+%%circle
+/circle{/y0 exch def /x0 exch def /r exch def
+x0 y0 r 0 360 arc
+stroke
+}bind def
+%%cshow
+/cshow{
+currentpoint /y0 exch def /x0 exch def 
+dup true charpath flattenpath pathbbox
+/y2 exch def /x2 exch def /y1 exch def /x1 exch def
+newpath 
+x1 x2 add 2 div x0 sub neg x0 add
+y1 y2 add 2 div y0 sub neg y0 add moveto show 
+} bind def
+%%crshow
+/crshow{
+currentpoint /y0 exch def /x0 exch def 
+dup true charpath flattenpath pathbbox
+/y2 exch def /x2 exch def /y1 exch def /x1 exch def
+newpath 
+x0 x2 sub x1 add
+y1 y2 add 2 div y0 sub neg y0 add moveto show 
+} bind def
+%%clshow
+/clshow{
+currentpoint /y0 exch def /x0 exch def 
+dup true charpath flattenpath pathbbox
+/y2 exch def /x2 exch def /y1 exch def /x1 exch def
+newpath 
+x0
+y1 y2 add 2 div y0 sub neg y0 add moveto show 
+} bind def
+%%fillrect
+/fillrect{
+/upperY exch def /upperX exch def
+/lowerY exch def /lowerX exch def /gray exch def
+lowerX lowerY moveto
+lowerX upperY lineto
+upperX upperY lineto
+upperX lowerY lineto closepath
+gray setgray
+fill
+0 setgray
+} bind def
+%%drawrect
+/drawrect{
+/upperY exch def /upperX exch def
+/lowerY exch def /lowerX exch def
+lowerX lowerY moveto
+lowerX upperY lineto
+upperX upperY lineto
+upperX lowerY lineto closepath
+stroke
+} bind def
+%%xaxis
+/xaxis{
+/sameY exch def /secondX exch def
+/firstX exch def /tickwidth exch def /tickcount exch def
+firstX sameY moveto
+secondX sameY lineto
+tickcount 0 ne {
+   /division secondX firstX sub tickcount div def
+   1 1 tickcount {
+     dup division mul firstX add /posX exch def
+     posX sameY moveto
+     0 tickwidth rlineto
+   }for
+}if
+}bind def
+%%yaxis
+/yaxis{
+/sameX exch def /secondY exch def
+/firstY exch def /tickwidth exch def /tickcount exch def
+sameX firstY moveto
+sameX secondY lineto
+tickcount 0 ne {
+   /division secondY firstY sub tickcount div def
+   1 1 tickcount {
+     dup division mul firstY add /posY exch def
+     sameX posY moveto
+     tickwidth 0 rlineto
+   }for
+}if
+}bind def
+%%verticalfill
+/verticalfill{
+/upperY exch def /upperX exch def
+/lowerY exch def /lowerX exch def /tickwidth exch def
+lowerX lowerY upperX upperY drawrect
+lowerX tickwidth upperX {
+   dup lowerY moveto
+   upperY lineto
+}for
+}bind def
+%%horizontalfill
+/horizontalfill{
+/upperY exch def /upperX exch def
+/lowerY exch def /lowerX exch def /tickwidth exch def
+lowerX lowerY upperX upperY drawrect
+lowerY tickwidth upperY {
+   dup lowerX exch moveto
+   upperX exch lineto
+}for
+}bind def
+%%squarefill
+/squarefill{
+/upperY exch def /upperX exch def
+/lowerY exch def /lowerX exch def /tickwidth exch def
+lowerX lowerY upperX upperY drawrect
+lowerX tickwidth upperX {
+   dup lowerY moveto
+   upperY lineto
+}for
+lowerY tickwidth upperY {
+   dup lowerX exch moveto
+   upperX exch lineto
+}for
+}bind def
+%%dashedline
+/dashedline{
+/secondY exch def /secondX exch def 
+/firstY exch def /firstX exch def
+/dashtype exch def
+dashtype 0 eq {[] 0 setdash}
+             {dashtype 1 eq {[4] 0 setdash}
+                            {dashtype 2 eq {[1 2] 0 setdash}
+                                          {dashtype 3 eq {[1 3 6 3] 0 setdash}
+                                                        {[12] 0 setdash}ifelse}ifelse}ifelse}ifelse
+firstX firstY moveto
+secondX secondY lineto
+stroke
+[] 0 setdash
+}bind def
+%%line
+/line{
+/secondY exch def /secondX exch def 
+/firstY exch def /firstX exch def
+firstX firstY moveto
+secondX secondY lineto
+stroke
+}bind def
+1.000 1.000 1.000 0.000 setcmykcolor
+2 6 50 550 50 xaxis
+2 -6 50 550 550 xaxis
+3 6 50 550 50 yaxis
+3 -6 50 550 550 yaxis
+stroke
+/Times findfont 10.000000 scalefont setfont
+1.000 1.000 1.000 0.000 setcmykcolor
+50 40 moveto
+(-1) cshow
+300 40 moveto
+(0) cshow
+550 40 moveto
+(1) cshow
+/Times findfont 10.000000 scalefont setfont
+1.000 1.000 1.000 0.000 setcmykcolor
+45 50 moveto
+(0) crshow
+45 216 moveto
+(1) crshow
+45 383 moveto
+(2) crshow
+45 550 moveto
+(3) crshow
+1.000 1.000 1.000 0.000 setcmykcolor
+stroke
+0.000 1.000 1.000 0.000 setcmykcolor
+1.000 setlinewidth
+-1073750213 51 216 52 216 dashedline
+-1073741824 50 216 51 216 dashedline
+52 216 53 215 line
+53 215 54 214 line
+54 214 55 214 line
+55 214 56 213 line
+56 213 57 212 line
+57 212 58 212 line
+58 212 59 211 line
+59 211 60 210 line
+60 210 61 210 line
+61 210 62 209 line
+62 209 63 209 line
+63 209 64 208 line
+64 208 65 207 line
+65 207 65 207 line
+65 207 66 206 line
+66 206 67 206 line
+67 206 68 205 line
+68 205 69 204 line
+69 204 70 204 line
+70 204 71 203 line
+71 203 72 203 line
+72 203 73 202 line
+73 202 74 202 line
+74 202 75 201 line
+75 201 76 201 line
+76 201 77 200 line
+77 200 78 200 line
+78 200 79 199 line
+79 199 80 199 line
+80 199 82 198 line
+82 198 83 198 line
+83 198 84 197 line
+84 197 85 197 line
+85 197 86 196 line
+86 196 87 196 line
+87 196 88 195 line
+88 195 89 195 line
+89 195 90 194 line
+90 194 91 194 line
+91 194 92 193 line
+92 193 93 193 line
+93 193 94 192 line
+94 192 95 192 line
+95 192 96 192 line
+96 192 96 191 line
+96 191 97 191 line
+97 191 98 190 line
+98 190 99 190 line
+99 190 100 190 line
+100 190 101 189 line
+101 189 102 189 line
+102 189 103 188 line
+103 188 104 188 line
+104 188 105 188 line
+105 188 106 187 line
+106 187 107 187 line
+107 187 108 186 line
+108 186 109 186 line
+109 186 110 186 line
+110 186 111 185 line
+111 185 113 185 line
+113 185 114 185 line
+114 185 115 184 line
+115 184 116 184 line
+116 184 117 184 line
+117 184 118 183 line
+118 183 119 183 line
+119 183 120 183 line
+120 183 121 183 line
+121 183 122 182 line
+122 182 123 182 line
+123 182 124 182 line
+124 182 125 181 line
+125 181 126 181 line
+126 181 127 181 line
+127 181 128 181 line
+128 181 128 180 line
+128 180 129 180 line
+129 180 130 180 line
+130 180 131 180 line
+131 180 132 179 line
+132 179 133 179 line
+133 179 134 179 line
+134 179 135 179 line
+136 179 137 178 line
+140 178 141 178 line
+141 178 142 177 line
+142 177 144 177 line
+144 177 145 177 line
+145 177 146 177 line
+146 177 147 177 line
+147 177 148 177 line
+148 177 149 176 line
+149 176 150 176 line
+150 176 151 176 line
+151 176 152 176 line
+152 176 153 176 line
+153 176 154 176 line
+154 176 155 176 line
+155 176 156 176 line
+156 176 157 175 line
+157 175 158 175 line
+158 175 159 175 line
+159 175 159 175 line
+159 175 160 175 line
+160 175 161 175 line
+161 175 162 175 line
+162 175 163 175 line
+163 175 164 175 line
+164 175 165 175 line
+165 175 166 175 line
+166 175 167 175 line
+167 175 168 175 line
+168 175 169 175 line
+169 175 170 175 line
+170 175 171 175 line
+171 175 172 175 line
+172 175 173 175 line
+173 175 175 175 line
+175 175 176 175 line
+176 175 177 175 line
+177 175 178 175 line
+178 175 179 175 line
+179 175 180 175 line
+180 175 181 175 line
+181 175 182 175 line
+182 175 182 175 line
+182 175 183 175 line
+183 175 184 175 line
+184 175 185 175 line
+185 175 186 175 line
+186 175 187 175 line
+187 175 188 175 line
+188 175 189 175 line
+189 175 191 175 line
+191 175 192 175 line
+192 175 193 175 line
+193 175 194 175 line
+194 175 195 175 line
+195 175 196 176 line
+196 176 197 176 line
+197 176 198 176 line
+198 176 198 176 line
+198 176 199 176 line
+199 176 200 176 line
+200 176 201 176 line
+201 176 202 176 line
+202 176 203 177 line
+203 177 204 177 line
+204 177 205 177 line
+205 177 207 177 line
+207 177 208 177 line
+208 177 209 177 line
+209 177 210 178 line
+210 178 211 178 line
+211 178 212 178 line
+212 178 213 178 line
+213 178 214 178 line
+214 178 214 179 line
+214 179 215 179 line
+215 179 216 179 line
+216 179 217 179 line
+217 179 218 179 line
+218 179 219 180 line
+219 180 220 180 line
+220 180 222 180 line
+222 180 223 180 line
+223 180 224 181 line
+224 181 225 181 line
+225 181 226 181 line
+226 181 227 181 line
+227 181 228 182 line
+228 182 229 182 line
+229 182 229 182 line
+229 182 230 183 line
+230 183 231 183 line
+231 183 232 183 line
+232 183 233 183 line
+233 183 234 184 line
+234 184 235 184 line
+235 184 236 184 line
+236 184 238 185 line
+238 185 239 185 line
+239 185 240 185 line
+240 185 241 186 line
+241 186 241 186 line
+241 186 242 186 line
+242 186 243 187 line
+243 187 244 187 line
+244 187 246 188 line
+246 188 247 188 line
+247 188 248 188 line
+248 188 249 189 line
+249 189 249 189 line
+249 189 250 189 line
+250 189 251 190 line
+251 190 252 190 line
+252 190 254 191 line
+254 191 255 191 line
+255 191 256 192 line
+256 192 257 192 line
+257 192 257 192 line
+257 192 258 193 line
+258 193 259 193 line
+259 193 261 194 line
+261 194 262 194 line
+262 194 263 195 line
+263 195 264 195 line
+264 195 264 196 line
+264 196 265 196 line
+265 196 266 197 line
+266 197 267 197 line
+267 197 269 198 line
+269 198 270 198 line
+270 198 270 199 line
+270 199 271 199 line
+271 199 273 200 line
+273 200 274 200 line
+274 200 274 201 line
+274 201 275 201 line
+275 201 277 202 line
+277 202 278 202 line
+278 202 278 203 line
+278 203 279 203 line
+279 203 281 204 line
+281 204 282 204 line
+282 204 282 205 line
+282 205 283 206 line
+283 206 285 206 line
+285 206 285 207 line
+285 207 287 207 line
+287 207 287 208 line
+287 208 289 209 line
+289 209 289 209 line
+289 209 291 210 line
+291 210 291 210 line
+291 210 292 211 line
+292 211 293 212 line
+293 212 294 212 line
+294 212 295 213 line
+295 213 296 214 line
+296 214 297 214 line
+297 214 298 215 line
+298 215 299 216 line
+299 216 301 216 line
+301 216 302 217 line
+302 217 303 218 line
+303 218 304 218 line
+304 218 305 219 line
+305 219 306 220 line
+306 220 307 220 line
+307 220 308 221 line
+308 221 308 222 line
+308 222 310 222 line
+310 222 310 223 line
+310 223 312 224 line
+312 224 312 225 line
+312 225 314 225 line
+314 225 314 226 line
+314 226 316 227 line
+316 227 317 228 line
+317 228 317 228 line
+317 228 318 229 line
+318 229 320 230 line
+320 230 321 231 line
+321 231 321 231 line
+321 231 322 232 line
+322 232 324 233 line
+324 233 325 234 line
+325 234 325 235 line
+325 235 326 235 line
+326 235 328 236 line
+328 236 329 237 line
+329 237 329 238 line
+329 238 330 239 line
+330 239 332 239 line
+332 239 333 240 line
+333 240 334 241 line
+334 241 335 242 line
+335 242 335 243 line
+335 243 336 244 line
+336 244 337 244 line
+337 244 338 245 line
+338 245 340 246 line
+340 246 341 247 line
+341 247 342 248 line
+342 248 342 249 line
+342 249 343 250 line
+343 250 344 251 line
+344 251 345 252 line
+345 252 347 252 line
+347 252 348 253 line
+348 253 349 254 line
+349 254 350 255 line
+350 255 350 256 line
+350 256 351 257 line
+351 257 352 258 line
+352 258 353 259 line
+353 259 355 260 line
+355 260 356 261 line
+356 261 357 262 line
+357 262 358 263 line
+358 263 358 264 line
+358 264 359 265 line
+359 265 360 266 line
+360 266 361 267 line
+361 267 363 268 line
+363 268 364 269 line
+364 269 365 270 line
+365 270 366 271 line
+366 271 367 272 line
+367 272 368 273 line
+368 273 369 274 line
+369 274 370 275 line
+370 275 370 276 line
+370 276 371 277 line
+371 277 372 278 line
+372 278 373 279 line
+373 279 374 280 line
+374 280 375 281 line
+375 281 376 282 line
+376 282 377 283 line
+377 283 379 284 line
+379 284 380 285 line
+380 285 381 287 line
+381 287 382 288 line
+382 288 383 289 line
+383 289 384 290 line
+384 290 385 291 line
+385 291 385 292 line
+385 292 386 293 line
+386 293 387 294 line
+387 294 388 295 line
+388 295 389 297 line
+389 297 390 298 line
+390 298 391 299 line
+391 299 392 300 line
+392 300 394 301 line
+394 301 395 302 line
+395 302 396 304 line
+396 304 397 305 line
+397 305 398 306 line
+398 306 399 307 line
+399 307 400 308 line
+400 308 401 310 line
+401 310 401 311 line
+401 311 402 312 line
+402 312 403 313 line
+403 313 404 314 line
+404 314 405 316 line
+405 316 406 317 line
+406 317 407 318 line
+407 318 408 319 line
+408 319 410 321 line
+410 321 411 322 line
+411 322 412 323 line
+412 323 413 324 line
+413 324 414 326 line
+414 326 415 327 line
+415 327 416 328 line
+416 328 417 329 line
+417 329 417 331 line
+417 331 418 332 line
+418 332 419 333 line
+419 333 420 335 line
+420 335 421 336 line
+421 336 422 337 line
+422 337 423 339 line
+423 339 425 340 line
+425 340 426 341 line
+426 341 427 343 line
+427 343 428 344 line
+428 344 429 345 line
+429 345 430 347 line
+430 347 431 348 line
+431 348 432 349 line
+432 349 433 351 line
+433 351 434 352 line
+434 352 435 353 line
+435 353 436 355 line
+436 355 437 356 line
+437 356 438 358 line
+438 358 439 359 line
+439 359 440 360 line
+440 360 440 362 line
+440 362 441 363 line
+441 363 442 365 line
+442 365 443 366 line
+443 366 444 367 line
+444 367 445 369 line
+445 369 446 370 line
+446 370 447 372 line
+447 372 448 373 line
+448 373 449 375 line
+449 375 450 376 line
+450 376 451 378 line
+451 378 452 379 line
+452 379 453 381 line
+453 381 454 382 line
+454 382 455 384 line
+455 384 457 385 line
+457 385 458 387 line
+458 387 459 388 line
+459 388 460 390 line
+460 390 461 391 line
+461 391 462 393 line
+462 393 463 394 line
+463 394 464 396 line
+464 396 465 397 line
+465 397 466 399 line
+466 399 467 400 line
+467 400 468 402 line
+468 402 469 403 line
+469 403 470 405 line
+470 405 471 407 line
+471 407 471 408 line
+471 408 472 410 line
+472 410 473 411 line
+473 411 474 413 line
+474 413 475 414 line
+475 414 476 416 line
+476 416 477 418 line
+477 418 478 419 line
+478 419 479 421 line
+479 421 480 423 line
+480 423 481 424 line
+481 424 482 426 line
+482 426 483 427 line
+483 427 484 429 line
+484 429 485 431 line
+485 431 486 432 line
+486 432 488 434 line
+488 434 489 436 line
+489 436 490 437 line
+490 437 491 439 line
+491 439 492 441 line
+492 441 493 442 line
+493 442 494 444 line
+494 444 495 446 line
+495 446 496 448 line
+496 448 497 449 line
+497 449 498 451 line
+498 451 499 453 line
+499 453 500 454 line
+500 454 501 456 line
+501 456 502 458 line
+502 458 503 460 line
+503 460 503 461 line
+503 461 504 463 line
+504 463 505 465 line
+505 465 506 467 line
+506 467 507 468 line
+507 468 508 470 line
+508 470 509 472 line
+509 472 510 474 line
+510 474 511 476 line
+511 476 512 477 line
+512 477 513 479 line
+513 479 514 481 line
+514 481 515 483 line
+515 483 516 485 line
+516 485 517 486 line
+517 486 519 488 line
+519 488 520 490 line
+520 490 521 492 line
+521 492 522 494 line
+522 494 523 496 line
+523 496 524 497 line
+524 497 525 499 line
+525 499 526 501 line
+17 137 178 138 178 dashedline
+17 526 501 527 503 dashedline
+17 527 503 528 505 dashedline
+17 528 505 529 507 dashedline
+17 529 507 530 509 dashedline
+81 139 178 140 178 dashedline
+81 530 509 531 511 dashedline
+81 531 511 532 512 dashedline
+81 532 512 533 514 dashedline
+81 533 514 534 516 dashedline
+152035928 135 179 136 179 dashedline
+152035928 534 516 534 518 dashedline
+152035928 534 518 535 520 dashedline
+152035928 535 520 536 522 dashedline
+152035928 536 522 537 524 dashedline
+152036192 138 178 139 178 dashedline
+152036192 537 524 538 526 dashedline
+152036192 538 526 539 528 dashedline
+152036192 539 528 540 530 dashedline
+152036192 540 530 541 532 dashedline
+1074717523 541 532 542 534 dashedline
+1075984465 542 534 543 536 dashedline
+1075984465 543 536 544 538 dashedline
+1075984465 544 538 545 540 dashedline
+1077564014 545 540 546 542 dashedline
+1077564014 546 542 547 544 dashedline
+1077594357 547 544 548 546 dashedline
+1077594357 548 546 550 548 dashedline
+stroke
+showpage

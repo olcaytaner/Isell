@@ -1,0 +1,32 @@
+displaycode off
+displayresult off
+integer case
+= case 1
+integer i run[%case%] t
+string resultdir method[%case%,3] dataset[%case%] file[3]
+setprecision 3
+= resultdir ../results/mvartest2
+= dataset[1] donors
+= method[1,1] c45
+= method[1,2] qda
+= method[1,3] svm2
+= run[1] 7
+for t 1 %case%
+  for i 1 3
+    = file[%i%] %resultdir%/measure/confusion/%dataset[t]%-%run[t]%-%method[t,i]%.confusion
+  endfor i
+  manova %file[1]% %file[2]% %file[3]%
+  writescreen %aout1[1]%_%aout1[2]%
+  output eigenvectors-%t%-1.txt
+  write %aout2[1]%
+  write %aout2[2]%
+  write %aout2[3]%
+  write %aout2[4]%
+  output stdout
+  output eigenvectors-%t%-2.txt
+  write %aout2[1]%
+  write %aout2[2]%
+  write %aout2[3]%
+  write %aout2[4]%
+  output stdout
+endfor t

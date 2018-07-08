@@ -1,0 +1,193 @@
+displaycode off
+displayresult off
+integer i j k m p t res
+string dataset dir subdir cortype st algorithm
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree-mlp-all.ini
+= dir c:\users\olcay\isell\most
+onetailed
+setprecision 0
+testtype notest
+= t 49
+= subdir reg1x10
+output %dir%\reg-%t%.txt
+for i 1 30
+  switch i
+    case 1
+      = dataset puma8fh
+    case 2
+      = dataset puma8nh
+    case 3
+      = dataset puma8fm
+    case 4
+      = dataset puma8nm
+    case 5
+      = dataset puma32fh
+    case 6
+      = dataset puma32nh
+    case 7
+      = dataset puma32fm
+    case 8
+      = dataset puma32nm      
+    case 9
+      = dataset kin8fh
+    case 10
+      = dataset kin8nh
+    case 11
+      = dataset kin8fm
+    case 12
+      = dataset kin8nm
+    case 13
+      = dataset kin32fh
+    case 14
+      = dataset kin32nh
+    case 15
+      = dataset kin32fm
+    case 16
+      = dataset kin32nm      
+    case 17
+      = dataset bank8fh
+    case 18
+      = dataset bank8nh
+    case 19
+      = dataset bank8fm
+    case 20
+      = dataset bank8nm
+    case 21
+      = dataset bank32fh
+    case 22
+      = dataset bank32nh
+    case 23
+      = dataset bank32fm
+    case 24
+      = dataset bank32nm      
+    case 25
+      = dataset abalone
+    case 26
+      = dataset add10
+    case 27
+      = dataset boston
+    case 28
+      = dataset california
+    case 29
+      = dataset comp
+    case 30
+      = dataset sinus
+  endswitch   
+  writescreen %i%
+  mlpmscomparison %dataset% %dir%\%subdir% 50
+  = st %dataset%
+  for p 1 5
+    = st %st%_%aout1[p]%
+  endfor p
+  for p 1 5
+    = st %st%_%aout2[p]%
+  endfor p
+  write %st%
+endfor i
+= subdir cls1x10
+output %dir%\cls-%t%.txt
+for i 1 44
+  switch i
+    case 1
+      = dataset haberman
+    case 2
+      = dataset iris
+    case 3
+      = dataset bupa
+    case 4
+      = dataset monks
+    case 5
+      = dataset pima
+    case 6
+      = dataset titanic
+    case 7
+      = dataset breast
+    case 8
+      = dataset artificial
+    case 9
+      = dataset ecoli
+    case 10
+      = dataset glass
+    case 11
+      = dataset heart
+    case 12
+      = dataset pageblock
+    case 13
+      = dataset wine
+    case 14
+      = dataset yeast
+    case 15
+      = dataset hepatitis
+    case 16
+      = dataset ringnorm
+    case 17
+      = dataset twonorm
+    case 18
+      = dataset zoo
+    case 19
+      = dataset balance
+    case 20
+      = dataset wave
+    case 21
+      = dataset postoperative
+    case 22
+      = dataset flare
+    case 23
+      = dataset tae
+    case 24
+      = dataset ironosphere
+    case 25
+      = dataset dermatology
+    case 26
+      = dataset vote
+    case 27
+      = dataset flags
+    case 28
+      = dataset tictactoe
+    case 29
+      = dataset australian
+    case 30
+      = dataset credit
+    case 31
+      = dataset horse
+    case 32
+      = dataset cylinder
+    case 33
+      = dataset cmc
+    case 34
+      = dataset car
+    case 35
+      = dataset segment
+    case 36
+      = dataset thyroid
+    case 37
+      = dataset ocr
+    case 38
+      = dataset fevzi
+    case 39
+      = dataset spambase
+    case 40
+      = dataset cenk
+    case 41
+      = dataset nursery
+    case 42
+      = dataset mushroom
+    case 43 
+      = dataset letter
+    case 44
+      = dataset zipcodes
+  endswitch   
+  writescreen %i%
+  mlpmscomparison %dataset% %dir%\%subdir% 50
+  = st %dataset%
+  for p 1 5
+    = st %st%_%aout1[p]%
+  endfor p
+  for p 1 5
+    = st %st%_%aout2[p]%
+  endfor p
+  write %st%
+endfor i
+output stdout
+exit

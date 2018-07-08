@@ -1,0 +1,52 @@
+displaycode off
+string outdir st dataset
+integer i
+= outdir //home/olcay/results/svmtree
+output %outdir%/kclass.txt
+for i 1 14
+  switch i
+    case 1
+      = dataset optdigits
+    case 2
+      = dataset dermatology
+    case 3
+      = dataset pendigits
+    case 4
+      = dataset iris
+    case 5
+      = dataset letter
+    case 6
+      = dataset ocr
+    case 7
+      = dataset pageblock
+    case 8
+      = dataset segment
+    case 9
+      = dataset shuttle
+    case 10
+      = dataset vehicle
+    case 11
+      = dataset wave
+    case 12
+      = dataset wine
+    case 13
+      = dataset yeast
+    case 14
+      = dataset zipcodes
+  endswitch
+  = st %dataset%
+  meanvariance %outdir%/%dataset%-c45.error
+  = st %st%_%out1%_%out2%
+  meanvariance %outdir%/%dataset%-svmtree-onevsone.error
+  = st %st%_%out1%_%out2%
+  meanvariance %outdir%/%dataset%-svmtree-onevsrest.error
+  = st %st%_%out1%_%out2%
+  meanvariance %outdir%/%dataset%-c45.complexity
+  = st %st%_%out1%_%out2%
+  meanvariance %outdir%/%dataset%-svmtree-onevsone.complexity
+  = st %st%_%out1%_%out2%
+  meanvariance %outdir%/%dataset%-svmtree-onevsrest.complexity
+  = st %st%_%out1%_%out2%
+  write %st%
+endfor i
+output stdout

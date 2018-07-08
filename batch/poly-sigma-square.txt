@@ -1,0 +1,43 @@
+displaycode off
+displayresult off
+string function model datadir resultdir size
+integer i howmany j maxdegree k p
+= maxdegree 15
+file outfile[%maxdegree%]
+= datadir c:\users\olcay\isell\poly\datareg
+= resultdir c:\users\olcay\isell\poly\results
+= howmany 1000
+setprecision 5
+for i 1 2
+  switch i
+    case 1
+      modelselection aic
+      = model aic
+    case 2
+      modelselection bic
+      = model bic
+  endswitch
+  for k 1 3
+    switch k
+      case 1
+        = size small
+      case 2
+        = size medium
+      case 3
+        = size large
+    endswitch
+    for p 1 %maxdegree%
+      = outfile[p] c:\users\olcay\isell\poly\%model%-%size%-%p%.txt
+      openfile outfile[%p%] w
+    endfor p  
+    for j 1 %howmany%
+      polylearn %datadir%\%size%\%j%.tra %maxdegree% %datadir%\%size%\%j%.tes
+      for p 1 %maxdegree%
+        writefile outfile[%p%] %aout1[p]%
+      endfor p
+    endfor j
+    for p 1 %maxdegree%
+      closefile outfile[%p%]
+    endfor p 
+  endfor k
+endfor i

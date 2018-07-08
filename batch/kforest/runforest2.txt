@@ -1,0 +1,70 @@
+displaycode off
+setdatadir ../data
+loaddatasets rule.xml
+integer i fold j k t f
+string resultdir dataset algorithm
+runcount 1
+foldcount 10
+= resultdir ../results/forest
+for k 1 5
+  switch k
+    case 1
+      = f 5
+    case 2
+      = f 10
+    case 3
+      = f 20
+    case 4
+      = f 50
+    case 5
+      = f 100
+  endswitch
+  featuresize %f%
+  for j 1 17
+    switch j
+      case 1
+        = dataset flags
+      case 2
+        = dataset postoperative
+      case 3
+        = dataset spect
+      case 4
+        = dataset splice
+      case 5
+        = dataset promoters
+      case 6
+        = dataset hayesroth
+      case 7
+        = dataset krvskp
+      case 8
+        = dataset donors
+      case 9
+        = dataset acceptors
+      case 10
+        = dataset car
+      case 11
+        = dataset vote
+      case 12
+        = dataset balance
+      case 13
+        = dataset nursery
+      case 14
+        = dataset tictactoe
+      case 15
+        = dataset monks
+      case 16
+        = dataset artificial
+      case 17
+        = dataset mushroom
+    endswitch
+    for i 1 4
+      fileexists %resultdir%/%dataset%-kforest-%i%-%f%.error
+      if = out1 0
+        smallsetsize %i%
+        output %resultdir%/%dataset%-kforest-%i%-%f%.error
+        kforest %dataset% cv 1
+      endif
+    endfor i
+  endfor j
+endfor k
+output stdout

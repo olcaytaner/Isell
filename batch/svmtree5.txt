@@ -1,0 +1,64 @@
+displaycode off
+string outdir st dataset
+integer i k count
+= outdir //root/results/svmtree
+output produced.txt
+for i 1 14
+  switch i
+    case 1
+      = dataset optdigits
+      = count 45
+    case 2
+      = dataset dermatology
+      = count 15
+    case 3
+      = dataset pendigits
+      = count 45
+    case 4
+      = dataset iris
+      = count 3
+    case 5
+      = dataset letter
+      = count 325
+    case 6
+      = dataset ocr
+      = count 45
+    case 7
+      = dataset pageblock
+      = count 10
+    case 8
+      = dataset segment
+      = count 21
+    case 9
+      = dataset shuttle
+      = count 21
+    case 10
+      = dataset vehicle
+      = count 6
+    case 11
+      = dataset wave
+      = count 3
+    case 12
+      = dataset wine
+      = count 3
+    case 13
+      = dataset yeast
+      = count 45
+    case 14
+      = dataset zipcodes
+      = count 45
+  endswitch
+  for k 1 %count%
+    = st %dataset%%k%
+    meanvariance %outdir%/%dataset%%k%-c45.error
+    = st %st%_%out1%_%out2%
+    meanvariance %outdir%/%dataset%%k%-svmtree.error
+    = st %st%_%out1%_%out2%
+    meanvariance %outdir%/%dataset%%k%-c45.complexity
+    = st %st%_%out1%_%out2%
+    meanvariance %outdir%/%dataset%%k%-svmtree.complexity
+    = st %st%_%out1%_%out2%
+    write %st%
+  endfor k
+endfor i
+output stdout

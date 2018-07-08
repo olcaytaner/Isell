@@ -1,0 +1,51 @@
+displaycode off
+displayresult off
+string resultdir dataset plotdir noise
+integer j k t
+matrix avg cov
+= resultdir ../results/multivariatetest/synthetic
+= plotdir ../results/multivariatetest
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+= dataset data0
+= noise 0.0005
+hold off
+axislimits y 0 20 10 0
+hold on
+errorhistogram %resultdir%/%noise%-%dataset%-fpfn-0.100-lda.error %resultdir%/%noise%-%dataset%-fpfn-0.300-lda.error %resultdir%/%noise%-%dataset%-fpfn-0.500-lda.error %resultdir%/%noise%-%dataset%-fpfn-0.700-lda.error %resultdir%/%noise%-%dataset%-fpfn-0.900-lda.error
+hold on
+xaxisnames 0.1 0.3 0.5 0.7 0.9
+xlabel Decision_Threshold
+ylabel Error
+exportimage %plotdir%/data0-lda-histogram.eps
+hold off
+axislimits y 0 20 10 0
+hold on
+errorhistogram %resultdir%/%noise%-%dataset%-fpfn-0.100-qda.error %resultdir%/%noise%-%dataset%-fpfn-0.300-qda.error %resultdir%/%noise%-%dataset%-fpfn-0.500-qda.error %resultdir%/%noise%-%dataset%-fpfn-0.700-qda.error %resultdir%/%noise%-%dataset%-fpfn-0.900-qda.error
+hold on
+xaxisnames 0.1 0.3 0.5 0.7 0.9
+xlabel Decision_Threshold
+ylabel Error
+exportimage %plotdir%/data0-qda-histogram.eps
+= dataset data10
+hold off
+axislimits y 0 20 10 0
+hold on
+errorhistogram %resultdir%/%noise%-%dataset%-fpfn-0.100-lda.error %resultdir%/%noise%-%dataset%-fpfn-0.300-lda.error %resultdir%/%noise%-%dataset%-fpfn-0.500-lda.error %resultdir%/%noise%-%dataset%-fpfn-0.700-lda.error %resultdir%/%noise%-%dataset%-fpfn-0.900-lda.error
+hold on
+xaxisnames 0.1 0.3 0.5 0.7 0.9
+xlabel Decision_Threshold
+ylabel Error
+exportimage %plotdir%/data10-lda-histogram.eps
+hold off
+axislimits y 0 20 10 0
+hold on
+errorhistogram %resultdir%/%noise%-%dataset%-fpfn-0.100-qda.error %resultdir%/%noise%-%dataset%-fpfn-0.300-qda.error %resultdir%/%noise%-%dataset%-fpfn-0.500-qda.error %resultdir%/%noise%-%dataset%-fpfn-0.700-qda.error %resultdir%/%noise%-%dataset%-fpfn-0.900-qda.error
+hold on
+xaxisnames 0.1 0.3 0.5 0.7 0.9
+xlabel Decision_Threshold
+ylabel Error
+exportimage %plotdir%/data10-qda-histogram.eps
+

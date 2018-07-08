@@ -1,0 +1,50 @@
+displaycode off
+integer i j k count
+file infile outfile[9]
+string bestalgorithm algorithms[9] dataset comptype st resultdir
+real best sum[9]
+= infile finished.txt
+= comptype conditioncount
+= resultdir ../results/rule2
+setprecision 2
+= algorithms[1] ripper
+= algorithms[2] multiripper
+= algorithms[3] hybridripper-ftest
+= algorithms[4] hybridripper-combined5x2t
+= algorithms[5] cart
+= algorithms[6] cn2
+= algorithms[7] part
+= algorithms[8] multildt
+= algorithms[9] c45
+for k 1 4
+  switch k
+    case 1
+      = comptype error
+    case 2
+      = comptype conditioncount
+    case 3
+      = comptype rulecount
+    case 4
+      = comptype time
+  endswitch
+  openfile infile r
+  readfile infile count
+  for i 1 9
+    = outfile[%i%] results-%algorithms[i]%.%comptype%
+    openfile outfile[%i%] w
+  endfor i
+  for i 1 %count%
+    readfile infile dataset
+    for j 1 9
+      meanvariance %resultdir%/%dataset%-%algorithms[j]%.%comptype%
+      writefile outfile[%j%] %out1%
+    endfor j
+  endfor i
+  for i 1 9
+    closefile outfile[%i%]
+  endfor i
+  closefile infile
+  comparealgorithms results-c45.%comptype% results-cn2.%comptype% results-part.%comptype% results-cart.%comptype% results-multildt.%comptype% results-ripper.%comptype% results-multiripper.%comptype% results-hybridripper-ftest.%comptype% results-hybridripper-combined5x2t.%comptype%
+  writescreen %comptype%_%aout3[1]%_%aout3[2]%_%aout3[3]%_%aout3[4]%_%aout3[5]%_%aout3[6]%_%aout3[7]%_%aout3[8]%_%aout3[9]%
+  writescreen %comptype%_%out1%
+endfor k

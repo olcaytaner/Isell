@@ -1,0 +1,77 @@
+displaycode off
+displayresult off
+string datadir dataset
+integer i
+= datadir ../data
+setdatadir %datadir%
+loaddatasets rule.xml
+runcount 5
+foldcount 2
+testpercentage 0.33333333333333
+setprecision 1
+for i 1 27
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset car
+    case 3
+      = dataset cmc
+    case 4
+      = dataset dermatology
+    case 5
+      = dataset ecoli
+    case 6
+      = dataset flags
+    case 7
+      = dataset glass
+    case 8
+      = dataset hayesroth
+    case 9
+      = dataset iris
+    case 10
+      = dataset leukemia1
+    case 11
+      = dataset leukemia2
+    case 12
+      = dataset nursery
+    case 13
+      = dataset ocr
+    case 14
+      = dataset optdigits
+    case 15
+      = dataset pendigits
+    case 16
+      = dataset segment
+    case 17
+      = dataset shuttle
+    case 18
+      = dataset splice
+    case 19
+      = dataset srbct
+    case 20
+      = dataset tae
+    case 21
+      = dataset vehicle
+    case 22
+      = dataset wave
+    case 23
+      = dataset wine
+    case 24
+      = dataset winequality
+    case 25
+      = dataset yeast
+    case 26
+      = dataset zipcodes
+    case 27
+      = dataset zoo
+  endswitch   
+  namestype Classatend
+  exportfilename validation D#validation.txt
+  exportfilename whole D#whole.txt
+  exportfilename train D#R#F#train.txt
+  exportfilename test D#R#F#test.txt        
+  exportdatafolds %dataset% _ 1 off
+  exportvaldata %dataset% _ 1 off
+  writescreen %i%_%dataset%
+endfor i

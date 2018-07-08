@@ -1,0 +1,77 @@
+displaycode off
+setdatadir ../data
+loaddatasets rule.xml
+integer i fold j k t size
+string resultdir dataset algorithm
+file outfile
+setprecision 6
+runcount 1
+foldcount 10
+hyperparametertune on
+= size 100
+forestsize %size%
+= resultdir ../results/forest/%size%
+for j 1 17
+  switch j
+    case 1
+      = dataset flags
+    case 2
+      = dataset postoperative
+    case 3
+      = dataset spect
+    case 4
+      = dataset splice
+    case 5
+      = dataset promoters
+    case 6
+      = dataset hayesroth
+    case 7
+      = dataset krvskp
+    case 8
+      = dataset donors
+    case 9
+      = dataset acceptors
+    case 10
+      = dataset car
+    case 11
+      = dataset vote
+    case 12
+      = dataset balance
+    case 13
+      = dataset nursery
+    case 14
+      = dataset tictactoe
+    case 15
+      = dataset monks
+    case 16
+      = dataset artificial
+    case 17
+      = dataset mushroom
+  endswitch
+  fileexists %resultdir%/%dataset%-randomforest.error
+  if = out1 0
+    output %resultdir%/%dataset%-randomforest.error
+    randomforest %dataset% cv 1
+    = outfile %resultdir%/%dataset%-randomforest.time
+    openfile outfile w
+    for t 1 10
+      writefile outfile %aout1[t]%
+    endfor t
+    closefile outfile
+  endif
+  for i 1 4
+    fileexists %resultdir%/%dataset%-kforest-%i%.error
+    if = out1 0
+      smallsetsize %i%
+      output %resultdir%/%dataset%-kforest-%i%.error
+      kforest %dataset% cv 1
+      = outfile %resultdir%/%dataset%-kforest-%i%.time
+      openfile outfile w
+      for t 1 10
+        writefile outfile %aout1[t]%
+      endfor t
+      closefile outfile
+    endif
+  endfor i
+endfor j
+output stdout

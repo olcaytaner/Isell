@@ -1,0 +1,115 @@
+displaycode off
+displayresult off
+file outfile
+string dir extension algorithm resultdir dataset method modelselection
+integer i j k starti endi startj endj
+real rate
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+runcount 5
+foldcount 2
+= resultdir c:\users\olcay\isell\results
+= starti 1
+= endi 1
+= startj 1
+= endj 1
+perceptronrun 50
+for i %starti% %endi%
+  switch i
+    case 1
+      = dataset breast
+      learningrate 0.001
+    case 2
+      = dataset bupa
+      learningrate 0.1
+    case 3
+      = dataset ecoli
+      learningrate 0.01
+    case 4
+      = dataset glass
+      learningrate 0.1
+    case 5
+      = dataset iris
+      learningrate 0.1
+    case 6
+      = dataset monks
+      learningrate 0.01
+    case 7
+      = dataset haberman
+      learningrate 0.1
+    case 8
+      = dataset pima
+      learningrate 0.001
+    case 9
+      = dataset yeast
+      learningrate 0.01
+    case 10
+      = dataset hepatitis
+      learningrate 0.01
+    case 11
+      = dataset fevzi
+      learningrate 0.01
+    case 12
+      = dataset segment
+      learningrate 0.01
+    case 13
+      = dataset wine
+      learningrate 0.01
+    case 14
+      = dataset zoo
+      learningrate 0.1
+    case 15
+      = dataset car
+      learningrate 0.1
+    case 16
+      = dataset flare
+      learningrate 0.001
+    case 17
+      = dataset balance
+      learningrate 0.1
+    case 18
+      = dataset cmc
+      learningrate 0.01
+    case 19
+      = dataset tictactoe
+      learningrate 0.01
+    case 20
+      = dataset wave
+      learningrate 0.01
+    case 21
+      = dataset nursery
+      learningrate 0.01
+    case 22
+      = dataset dermatology
+      learningrate 0.001
+    case 23
+      = dataset ironosphere
+      learningrate 0.001
+    case 24
+      = dataset vote
+      learningrate 0.01
+    case 25
+      = dataset credit
+      learningrate 0.001
+    case 26
+      = dataset cylinder
+      learningrate 0.01
+    case 27
+      = dataset mushroom
+      learningrate 0.001
+    case 28
+      = dataset cenk
+      learningrate 0.001
+    case 29
+      = dataset spambase
+      learningrate 0.01
+    case 30
+      = dataset horse
+      learningrate 0.001
+  endswitch
+  for j %startj% %endj%
+    output %resultdir%\%dataset%\%j%.lgc
+    logistic %dataset% random %j%    
+  endfor j
+endfor i  
+output stdout

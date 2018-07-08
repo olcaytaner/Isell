@@ -1,0 +1,53 @@
+displaycode off
+displayresult off
+integer i j count
+file infile
+string dir alg dataset filename st
+= dir ../results/rule2
+setprecision 1
+= infile finished.txt
+openfile infile r
+readfile infile count
+output table3.txt
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|}
+write \hline
+write Dataset_&_C45_&_CN2_&_PART_&_CART_&_LDT_&_RIPPER_&_MULTIRIPPER_&_OMNI(t)_&_OMNI(F)_\\
+write \hline
+for i 1 %count%
+  readfile infile dataset
+  = st %dataset%_
+  for j 1 9
+    switch j
+      case 1
+        = alg c45
+      case 2
+        = alg cn2
+      case 3
+        = alg part
+      case 4
+        = alg cart
+      case 5
+        = alg multildt
+      case 6
+        = alg ripper
+      case 7
+        = alg multiripper
+      case 8
+        = alg hybridripper-combined5x2t
+      case 9
+        = alg hybridripper-ftest
+    endswitch
+    = filename %dir%/%dataset%-%alg%.error
+    meanvariance %filename%
+    = st %st%&_%out1%$\pm$%out2%_
+  endfor j
+  write %st%\\
+  write \hline
+endfor i
+write \end{tabular}
+write \end{center}
+write \end{table}
+closefile infile
+output stdout

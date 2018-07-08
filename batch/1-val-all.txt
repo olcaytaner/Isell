@@ -1,0 +1,199 @@
+displaycode off
+displayresult off
+os Linux
+integer i j k l parameter cno datasetcount numclass numfeature tempparam
+string dataset algorithm datadir resultdir
+matrix a b corra suma eigena
+= datadir //dataset/iselldataconverted
+setdatadir %datadir%
+loaddef %datadir%/datasets.ini
+= resultdir ./vallall
+= datasetcount 38
+for i 1 %datasetcount%
+  switch i
+    case 1
+      = dataset iris
+    case 2
+      = dataset haberman
+    case 3
+      = dataset bupa
+    case 4
+      = dataset monks
+    case 5
+      = dataset pima
+    case 6
+      = dataset titanic
+    case 7
+      = dataset breast
+    case 8
+      = dataset mushroom
+    case 9
+      = dataset ecoli
+    case 10
+      = dataset glass
+    case 11
+      = dataset heart
+    case 12
+      = dataset pageblock
+    case 13
+      = dataset wine
+    case 14
+      = dataset yeast
+    case 15
+      = dataset hepatitis
+    case 16
+      = dataset ringnorm
+    case 17
+      = dataset twonorm
+    case 18
+      = dataset zoo
+    case 19
+      = dataset balance
+    case 20
+      = dataset optdigits
+    case 21
+      = dataset spambase
+    case 22
+      = dataset flare
+    case 23
+      = dataset tae
+    case 24
+      = dataset ironosphere
+    case 25
+      = dataset dermatology
+    case 26
+      = dataset vote
+    case 27
+      = dataset flags
+    case 28
+      = dataset tictactoe
+    case 29
+      = dataset australian
+    case 30
+      = dataset credit
+    case 31
+      = dataset horse
+    case 32
+      = dataset cylinder
+    case 33
+      = dataset cmc
+    case 34
+      = dataset car
+    case 35
+      = dataset segment
+    case 36
+      = dataset thyroid
+    case 37
+      = dataset nursery
+    case 38
+      = dataset pendigits
+  endswitch
+  writescreen %dataset%
+  = suma 0
+  classcount %dataset%
+  = numclass %out1%
+  featurecount %dataset%
+  = numfeature %out2%
+  for k 1 5
+    for l 1 2
+      = a 0
+      for j 1 21
+        switch j
+          case 1
+            = algorithm c45
+            = parameter 0
+          case 2
+            = algorithm knn
+            = parameter 1
+          case 3
+            = algorithm knn
+            = parameter 3
+          case 4
+            = algorithm knn
+            = parameter 5
+          case 5
+            = algorithm knn
+            = parameter 7
+          case 6
+            = algorithm gaussian
+            = parameter 0
+          case 7
+            = algorithm mlpgeneric
+            = parameter 0
+          case 8
+            = algorithm mlpgeneric
+            = parameter %numfeature%
+          case 9
+            = algorithm mlpgeneric
+            = parameter %numclass%
+          case 10
+            = algorithm mlpgeneric
+            = tempparam %numclass%
+            += tempparam %numfeature%
+            /= tempparam 2
+            = parameter %tempparam%
+            if = dataset iris
+              = parameter 5
+            endif
+            if = dataset haberman
+              = parameter 4
+            endif
+            if = dataset ecoli
+              = parameter 12
+            endif
+          case 11
+            = algorithm mlpgeneric
+            = tempparam %numclass%
+            += tempparam %numfeature%
+            = parameter %tempparam%
+          case 12
+            = algorithm mlpgeneric
+            = tempparam %numclass%
+            += tempparam %numfeature%
+            *= tempparam 2
+            = parameter %tempparam%
+          case 13
+            = algorithm ldt
+            = parameter 0
+          case 14
+            = algorithm multildt
+            = parameter 0
+          case 15
+            = algorithm selectmax
+            = parameter 0
+          case 16
+            = algorithm logistic
+            = parameter 0 
+          case 17
+            = algorithm svm
+            = parameter 1
+          case 18
+            = algorithm svm    
+            = parameter 2
+          case 19
+            = algorithm svm
+            = parameter 3
+          case 20
+            = algorithm svm
+            = parameter 4
+          case 21
+            = algorithm svm
+            = parameter 0
+        endswitch
+        readposterior %datadir%/%dataset%/5x2/%algorithm%/posterior/%dataset%-%k%-%l%-%algorithm%-%parameter%-test.txt b
+        classcount %dataset%
+        = cno %out1%
+        -- cno
+        mresize b 0-%cno%
+        ^= a b
+        writescreen %i%:%k%:%l%:%j%
+      endfor j
+      mcorrelation a corra
+      += suma corra
+    endfor l
+  endfor k
+  /= suma 10
+  mprint suma %resultdir%/%dataset%-correlation-val-all.txt
+  meigenvectors suma eigena
+  mprint eigena %resultdir%/%dataset%-eigenvectors-val-all.txt
+endfor i

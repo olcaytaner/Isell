@@ -1,0 +1,11 @@
+balance 39.079 
+breast 6.799 
+bupa 39.214 
+car 15.389 
+cmc 52.472 
+credit 14.787 
+cylinder 33.826 
+dermatology 7.773 
+ecoli 22.074 
+flare 11.247 
+

@@ -1,0 +1,41 @@
+displaycode off
+displayresult off
+string resultdir comptype color
+integer i t
+= resultdir ../results/multivariatetest/synthetic/0.002
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+for t 0 10
+  hold off
+  for i 1 5
+    switch i
+      case 1
+        = comptype error
+        = color black
+      case 2
+        = comptype confusion
+        = color red
+      case 3
+        = comptype roc
+        = color green
+      case 4
+        = comptype pr
+        = color blue
+      case 5
+        = comptype fpfn
+        = color purple
+    endswitch
+    hold on
+    plotxyline %resultdir%/%comptype%-%t%.txt %color% 3
+  endfor i
+  legendnames Uni_Error_t Multi_Conf Multi_Tpr-Fpr Multi_Prec-Rec Multi_Fp-Fn
+  axislimits x 1 9 8 0
+  axislimits y 0 1 10 1
+  xlabel k
+  ylabel Prob._acceptance
+  legendposition upright
+  exportimage %resultdir%/noise-%t%.eps
+endfor t
+

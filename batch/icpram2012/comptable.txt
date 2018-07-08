@@ -1,0 +1,116 @@
+displaycode off
+integer i p l bestp bestl
+real minerror
+string st dataset resultdir type
+= resultdir ../results
+= type error
+output table%type%.txt
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{rrrrr}
+write \hline
+write Dataset_&_NoPrune_&_CvPrune_&_SrmPrune(Local)_&_SrmPrune(Global)_\\
+write \hline
+for i 1 31
+  switch i
+    case 1
+      = dataset acceptors
+    case 2
+      = dataset ads
+    case 3
+      = dataset artificial
+    case 4
+      = dataset breast
+    case 5
+      = dataset bupa
+    case 6
+      = dataset dlbcl
+    case 7
+      = dataset donors
+    case 8
+      = dataset german
+    case 9
+      = dataset haberman
+    case 10
+      = dataset heart
+    case 11
+      = dataset hepatitis
+    case 12
+      = dataset ironosphere
+    case 13
+      = dataset krvskp
+    case 14
+      = dataset magic
+    case 15
+      = dataset monks
+    case 16
+      = dataset mushroom
+    case 17
+      = dataset musk2
+    case 18
+      = dataset parkinsons
+    case 19
+      = dataset pima
+    case 20
+      = dataset polyadenylation
+    case 21
+      = dataset promoters
+    case 22
+      = dataset prostatetumor
+    case 23
+      = dataset ringnorm
+    case 24
+      = dataset satellite47
+    case 25
+      = dataset spambase
+    case 26
+      = dataset spect
+    case 27
+      = dataset tictactoe
+    case 28
+      = dataset titanic
+    case 29
+      = dataset transfusion
+    case 30
+      = dataset twonorm
+    case 31
+      = dataset vote
+  endswitch
+  = st %dataset%
+  meanvariance %resultdir%/vclocal/%dataset%-noprune.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/vclocal/%dataset%-cv.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  = minerror 1000
+  for p 1 10
+    for l 1 10
+      meanvariance %resultdir%/vclocal/%dataset%-srm-%p%-%l%.error
+      if < out1 %minerror%
+        = minerror %out1%
+        = bestp %p%
+        = bestl %l%
+      endif
+    endfor l
+  endfor p
+  meanvariance %resultdir%/vclocal/%dataset%-srm-%bestp%-%bestl%.%type%  
+  = st %st%_&_%out1%_$\pm$_%out2%
+  = minerror 1000
+  for p 1 10
+    for l 1 10
+      meanvariance %resultdir%/vcglobal/%dataset%-srm-%p%-%l%.error
+      if < out1 %minerror%
+        = minerror %out1%
+        = bestp %p%
+        = bestl %l%
+      endif
+    endfor l
+  endfor p
+  meanvariance %resultdir%/vcglobal/%dataset%-srm-%bestp%-%bestl%.%type%  
+  = st %st%_&_%out1%_$\pm$_%out2%\\
+  write %st%
+endfor i
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout

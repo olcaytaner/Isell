@@ -1,0 +1,87 @@
+displaycode off
+string st dir dataset type comparison subdir corr clevel
+file infile
+integer i j endj k p m res
+= dir c:\users\olcay\isell\most
+for i 1 2
+  switch i
+    case 1
+      = type cls
+      = endj 44
+      setprecision 3
+    case 2
+      = type reg
+      = endj 30
+      setprecision 9
+  endswitch
+  for k 1 2
+    switch k
+      case 1
+        = subdir %type%1x10
+        testtype cvttest
+      case 2
+        = subdir %type%5x2
+        testtype tpaired5x2
+    endswitch
+    for p 1 3
+      switch p
+        case 1
+          = corr nocorrection
+        case 2
+          = corr bonferroni
+        case 3
+          = corr holm
+      endswitch
+      correction %corr%
+      for m 1 4
+        switch m
+          case 1
+            = clevel 0.05
+          case 2
+            = clevel 0.01
+          case 3
+            = clevel 0.005
+          case 4
+            = clevel 0.001
+        endswitch
+        confidencelevel %clevel%
+        output %dir%\comparison\%type%-%subdir%-%corr%-%clevel%.txt
+        write \begin{table}
+        write \begin{center}
+        write \begin{tabular}{|l|r|r|r|r|r|}
+        write \hline
+        write {\bf_Dataset}_&_{\bf_Optimal}_&_{\bf_Dnc}_&_{\bf_Cascade}_&_{\bf_Forw1}_&_{\bf_MultiMost}_\\
+        write \hline
+        = infile .\%type%.txt
+        openfile infile r
+        for j 1 %endj%
+          readfile infile dataset
+          multitest %dir%\%subdir%\%dataset%-0.txt %dir%\%subdir%\%dataset%-1.txt %dir%\%subdir%\%dataset%-2.txt %dir%\%subdir%\%dataset%-3.txt %dir%\%subdir%\%dataset%-4.txt %dir%\%subdir%\%dataset%-5.txt %dir%\%subdir%\%dataset%-6.txt %dir%\%subdir%\%dataset%-7.txt %dir%\%subdir%\%dataset%-8.txt %dir%\%subdir%\%dataset%-9.txt %dir%\%subdir%\%dataset%-10.txt %dir%\%subdir%\%dataset%-11.txt %dir%\%subdir%\%dataset%-12.txt %dir%\%subdir%\%dataset%-13.txt %dir%\%subdir%\%dataset%-14.txt %dir%\%subdir%\%dataset%-15.txt %dir%\%subdir%\%dataset%-16.txt %dir%\%subdir%\%dataset%-17.txt %dir%\%subdir%\%dataset%-18.txt %dir%\%subdir%\%dataset%-19.txt %dir%\%subdir%\%dataset%-20.txt %dir%\%subdir%\%dataset%-21.txt %dir%\%subdir%\%dataset%-22.txt %dir%\%subdir%\%dataset%-23.txt %dir%\%subdir%\%dataset%-24.txt %dir%\%subdir%\%dataset%-25.txt %dir%\%subdir%\%dataset%-26.txt %dir%\%subdir%\%dataset%-27.txt %dir%\%subdir%\%dataset%-28.txt %dir%\%subdir%\%dataset%-29.txt %dir%\%subdir%\%dataset%-30.txt %dir%\%subdir%\%dataset%-31.txt %dir%\%subdir%\%dataset%-32.txt %dir%\%subdir%\%dataset%-33.txt %dir%\%subdir%\%dataset%-34.txt %dir%\%subdir%\%dataset%-35.txt %dir%\%subdir%\%dataset%-36.txt %dir%\%subdir%\%dataset%-37.txt %dir%\%subdir%\%dataset%-38.txt %dir%\%subdir%\%dataset%-39.txt %dir%\%subdir%\%dataset%-40.txt %dir%\%subdir%\%dataset%-41.txt %dir%\%subdir%\%dataset%-42.txt %dir%\%subdir%\%dataset%-43.txt %dir%\%subdir%\%dataset%-44.txt %dir%\%subdir%\%dataset%-45.txt %dir%\%subdir%\%dataset%-46.txt %dir%\%subdir%\%dataset%-47.txt %dir%\%subdir%\%dataset%-48.txt %dir%\%subdir%\%dataset%-49.txt %dir%\%subdir%\%dataset%-50.txt
+          = res %out1%
+          -- res
+          meanvariance %dir%\%subdir%\%dataset%-%res%.txt
+          = st %dataset%&_%out1%$\pm$%out2%_
+          meanvariance %dir%\dnc\results%subdir%\%dataset%.txt  
+          = st %st%&_%out1%$\pm$%out2%_
+          meanvariance %dir%\cascor\results%subdir%\%dataset%.txt  
+          = st %st%&_%out1%$\pm$%out2%_
+          mlpmodelsimulation forw1 %dataset% %dir%\%subdir% 50 0
+          = res %out1%
+          meanvariance %dir%\%subdir%\%dataset%-%res%.txt
+          = st %st%&_%out1%$\pm$%out2%_
+          mlpmodelsimulation multitest %dataset% %dir%\%subdir% 50 0
+          = res %out1%
+          meanvariance %dir%\%subdir%\%dataset%-%res%.txt
+          = st %st%&_%out1%$\pm$%out2%_
+          write %st%\\
+          write \hline
+        endfor j
+        closefile infile
+        write \end{tabular}
+        write \end{center}
+        write \end{table}
+      endfor m
+    endfor p
+  endfor k
+endfor i
+output stdout

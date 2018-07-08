@@ -1,0 +1,11 @@
+'Calculates sum 1 + 3 + 5 + ... using while
+integer i n sum
+= i 1
+= n 20
+= sum 0
+while < i %n%
+  += sum %i%
+  += i 2
+endwhile
+writescreen %sum%
+

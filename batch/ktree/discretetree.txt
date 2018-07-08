@@ -1,0 +1,107 @@
+displaycode off
+setdatadir ../data
+loaddatasets discrete.xml
+integer i j size hybridspace
+string dataset outdir
+= outdir ../results/discretetree
+testpercentage 0.333333333
+runcount 2
+foldcount 5
+runtofold 5
+usediscrete on
+for i 1 16
+  switch i
+    case 1
+      = dataset artificial
+      = hybridspace 4
+    case 2
+      = dataset balance
+      = hybridspace 2
+    case 3
+      = dataset car
+      = hybridspace 3
+    case 4
+      = dataset discretemonks
+      = hybridspace 4
+    case 5
+      = dataset titanic
+      = hybridspace 3
+    case 6
+      = dataset tictactoe
+      = hybridspace 4
+    case 7
+      = dataset vote
+      = hybridspace 4
+    case 8
+      = dataset nursery
+      = hybridspace 3
+    case 9
+      = dataset spect
+      = hybridspace 4
+    case 10
+      = dataset splice
+      = hybridspace 2
+    case 11
+      = dataset promoters
+      = hybridspace 2
+    case 12
+      = dataset hayesroth
+      = hybridspace 4
+    case 13
+      = dataset krvskp
+      = hybridspace 4
+    case 14
+      = dataset donors
+      = hybridspace 2
+    case 15
+      = dataset acceptors
+      = hybridspace 2
+    case 16
+      = dataset connect4
+      = hybridspace 2
+  endswitch
+  usediscrete off
+  fileexists %outdir%/%dataset%-c45.error
+  if = out1 0
+    output %outdir%/%dataset%-c45.error
+    c45 %dataset% cv 1
+    output %outdir%/%dataset%-c45.node
+    for k 1 10
+      write %aout3[k]%
+    endfor k
+  endif
+  usediscrete on
+  for j 1 %hybridspace%
+    smallsetsize %j%
+    fileexists %outdir%/%dataset%-discrete-%j%.error
+    if = out1 0
+      output %outdir%/%dataset%-discrete-%j%.error
+      c45 %dataset% cv 1
+      output %outdir%/%dataset%-discrete-%j%.rulecount
+      for k 1 10
+        write %aout3[k]%
+      endfor k
+      output %outdir%/%dataset%-discrete-%j%.conditioncount
+      for k 1 10
+        write %aout4[k]%
+      endfor k
+    endif
+  endfor j  
+  fileexists %outdir%/%dataset%-discrete-omni.error
+  if = out1 0
+    smallsetsize 0
+    hybridspace %hybridspace%
+    output %outdir%/%dataset%-discrete-omni.error
+    c45 %dataset% cv 1
+    output %outdir%/%dataset%-discrete-omni.node
+    for j 1 10
+      write %aout3[j]%
+    endfor j
+    output %outdir%/%dataset%-discrete-omni.nodetypes
+    for j 1 10
+      write %aout7[j]%
+    endfor j
+    writescreen %dataset% 
+  endif
+endfor i
+output stdout

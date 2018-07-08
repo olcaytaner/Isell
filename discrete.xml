@@ -1,0 +1,2263 @@
+<datasets>
+	<dataset name="spect" task="classification" size="267" directory="spect" filetype="text" separator="," filename="spect.data" sigma="0.000000">
+		<classes>
+			<class value="0" size="55"/>
+			<class value="1" size="212"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="splice" task="classification" size="3175" directory="splice" filetype="text" separator=" " filename="Dataset.data" sigma="0.000000">
+		<classes>
+			<class value="N" size="1648"/>
+			<class value="IE" size="765"/>
+			<class value="EI" size="762"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>N</value>
+				<value>IE</value>
+				<value>EI</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="promoters" task="classification" size="106" directory="promoters" filetype="text" separator=" " filename="promoters.data" sigma="0.000000">
+		<classes>
+			<class value="pos" size="53"/>
+			<class value="neg" size="53"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>pos</value>
+				<value>neg</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>g</value>
+				<value>a</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>g</value>
+				<value>t</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>a</value>
+				<value>t</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>c</value>
+				<value>a</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>t</value>
+				<value>g</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>t</value>
+				<value>a</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>g</value>
+				<value>a</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>c</value>
+				<value>t</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>t</value>
+				<value>g</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>g</value>
+				<value>a</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>t</value>
+				<value>c</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>g</value>
+				<value>a</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>a</value>
+				<value>t</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>g</value>
+				<value>a</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>g</value>
+				<value>c</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>c</value>
+				<value>g</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>t</value>
+				<value>c</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>t</value>
+				<value>a</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>c</value>
+				<value>a</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>a</value>
+				<value>g</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>c</value>
+				<value>a</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>g</value>
+				<value>a</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>c</value>
+				<value>t</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>t</value>
+				<value>c</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>g</value>
+				<value>c</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>a</value>
+				<value>t</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>t</value>
+				<value>a</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>c</value>
+				<value>g</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>g</value>
+				<value>a</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>g</value>
+				<value>t</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>t</value>
+				<value>g</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>t</value>
+				<value>a</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>c</value>
+				<value>g</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>c</value>
+				<value>t</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>g</value>
+				<value>a</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>t</value>
+				<value>a</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>g</value>
+				<value>c</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>g</value>
+				<value>c</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>c</value>
+				<value>g</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>c</value>
+				<value>t</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>a</value>
+				<value>c</value>
+				<value>g</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>g</value>
+				<value>c</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>c</value>
+				<value>a</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>t</value>
+				<value>a</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>a</value>
+				<value>t</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>a</value>
+				<value>g</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>c</value>
+				<value>a</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>c</value>
+				<value>t</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>c</value>
+				<value>a</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>a</value>
+				<value>g</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>c</value>
+				<value>g</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>c</value>
+				<value>a</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>c</value>
+				<value>a</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>c</value>
+				<value>g</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>g</value>
+				<value>t</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>g</value>
+				<value>a</value>
+				<value>c</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>a</value>
+				<value>g</value>
+				<value>c</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="hayesroth" task="classification" size="160" directory="hayesroth" filetype="text" separator="," filename="hayes-roth.data" sigma="0.000000">
+		<classes>
+			<class value="1" size="65"/>
+			<class value="2" size="64"/>
+			<class value="3" size="31"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>2</value>
+				<value>3</value>
+				<value>1</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>4</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>3</value>
+				<value>4</value>
+				<value>2</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>2</value>
+				<value>1</value>
+				<value>4</value>
+				<value>3</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="krvskp" task="classification" size="3196" directory="kr-vs-kp" filetype="text" separator="," filename="kr-vs-kp.data" sigma="0.000000">
+		<classes>
+			<class value="won" size="1669"/>
+			<class value="nowin" size="1527"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>l</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>w</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>won</value>
+				<value>nowin</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="donors" task="classification" size="6246" directory="donors" filetype="text" separator=" " filename="donors.txt" sigma="0.000000">
+		<classes>
+			<class value="1" size="1324"/>
+			<class value="2" size="4922"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="connect4" task="classification" size="67557" directory="connect4" filetype="text" separator="," filename="connect-4.data" sigma="0.000000">
+		<classes>
+			<class value="win" size="44473"/>
+			<class value="loss" size="16635"/>
+			<class value="draw" size="6449"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>b</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>x</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>x</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>x</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>b</value>
+				<value>o</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>win</value>
+				<value>loss</value>
+				<value>draw</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="acceptors" task="classification" size="3889" directory="acceptors" filetype="text" separator=" " filename="acceptors.txt" sigma="0.000000">
+		<classes>
+			<class value="1" size="708"/>
+			<class value="2" size="3181"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="car" task="classification" size="1728" directory="car" filetype="text" separator="," filename="car.data">
+		<classes>
+			<class value="unacc" size="1210"/>
+			<class value="acc" size="384"/>
+			<class value="vgood" size="65"/>
+			<class value="good" size="69"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>vhigh</value>
+				<value>high</value>
+				<value>med</value>
+				<value>low</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>vhigh</value>
+				<value>high</value>
+				<value>med</value>
+				<value>low</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5more</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>2</value>
+				<value>4</value>
+				<value>more</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>small</value>
+				<value>med</value>
+				<value>big</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>low</value>
+				<value>med</value>
+				<value>high</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>unacc</value>
+				<value>acc</value>
+				<value>vgood</value>
+				<value>good</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="vote" task="classification" size="435" directory="vote" filetype="text" separator="," filename="house-votes-84.data">
+		<classes>
+			<class value="republican" size="168"/>
+			<class value="democrat" size="267"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>republican</value>
+				<value>democrat</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>y</value>
+				<value>n</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="balance" task="classification" size="625" directory="balance" filetype="text" separator="," filename="balance-scale.data">
+		<classes>
+			<class value="b" size="49"/>
+			<class value="r" size="288"/>
+			<class value="l" size="288"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>b</value>
+				<value>r</value>
+				<value>l</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+				<value>5</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="nursery" task="classification" size="12960" directory="nursery" filetype="text" separator="," filename="nursery.data">
+		<classes>
+			<class value="recommend" size="2"/>
+			<class value="priority" size="4266"/>
+			<class value="not_recom" size="4320"/>
+			<class value="very_recom" size="328"/>
+			<class value="spec_prior" size="4044"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>usual</value>
+				<value>pretentious</value>
+				<value>great_pret</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>proper</value>
+				<value>less_proper</value>
+				<value>improper</value>
+				<value>critical</value>
+				<value>very_crit</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>complete</value>
+				<value>completed</value>
+				<value>incomplete</value>
+				<value>foster</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>more</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>convenient</value>
+				<value>less_conv</value>
+				<value>critical</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>convenient</value>
+				<value>inconv</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>nonprob</value>
+				<value>slightly_prob</value>
+				<value>problematic</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>recommended</value>
+				<value>priority</value>
+				<value>not_recom</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>recommend</value>
+				<value>priority</value>
+				<value>not_recom</value>
+				<value>very_recom</value>
+				<value>spec_prior</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="tictactoe" task="classification" size="958" directory="tictactoe" filetype="text" separator="," filename="tic-tac-toe.data">
+		<classes>
+			<class value="positive" size="626"/>
+			<class value="negative" size="332"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>b</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>b</value>
+				<value>x</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>o</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>x</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>x</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>positive</value>
+				<value>negative</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="discretemonks" task="classification" size="432" directory="monks" filetype="text" separator=" " filename="monks-1.train">
+		<classes>
+			<class value="1" size="216"/>
+			<class value="0" size="216"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+			<attribute type="String" available="False"/>
+		</attributes>
+	</dataset>
+	<dataset name="artificial" task="classification" size="320" directory="artificial" filetype="text" separator=";" filename="concept.txt">
+		<classes>
+			<class value="f" size="190"/>
+			<class value="t" size="130"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="titanic" task="classification" size="2201" directory="titanic" filetype="text" separator=" " filename="titanic.dat">
+		<classes>
+			<class value="0" size="1490"/>
+			<class value="1" size="711"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+</datasets>

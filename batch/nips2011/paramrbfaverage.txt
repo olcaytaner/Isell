@@ -1,0 +1,50 @@
+displaycode off
+integer i j k
+string dataset
+setprecision 3
+string resultdir
+= resultdir ../results/svmtest/parameter
+for i 1 15
+  switch i
+    case 1
+      = dataset transfusion
+    case 2
+      = dataset credit
+    case 3
+      = dataset australian
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset breast
+    case 6
+      = dataset pima
+    case 7
+      = dataset mammographic
+    case 8
+      = dataset tictactoe
+    case 9
+      = dataset german
+    case 10
+      = dataset satellite47
+    case 11
+      = dataset titanic
+    case 12
+      = dataset acceptors
+    case 13
+      = dataset donors
+    case 14
+      = dataset ringnorm
+    case 15
+      = dataset twonorm
+  endswitch
+  output %resultdir%/%dataset%-rbf.txt
+  for j 1 13
+    = st %j%
+    for k 1 13
+      meanvariance %resultdir%/%dataset%-%j%-%k%-rbf.error
+      = st %st%_%out1%
+    endfor k
+    write %st%
+  endfor j
+endfor i
+output stdout

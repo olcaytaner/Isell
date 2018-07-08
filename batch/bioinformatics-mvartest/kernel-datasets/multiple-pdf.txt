@@ -1,0 +1,40 @@
+displaycode off
+displayresult off
+integer i p j
+file infile
+real minx miny maxx maxy x y
+string resultdir method
+setprecision 3
+= resultdir ../results/mvartest2
+output multiple2.tex
+write \documentclass{article}
+write \usepackage{graphicx}
+write \begin{document}
+for i 1 5
+  write \begin{figure}[t!]
+  write \begin{tabular}{ccc}
+  write (a)_&_(b)_&_(c)\\
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/ec-kernel-%i%-hist.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/ec-kernel-%i%-roc.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/ec-kernel-%i%-pr.eps}_\\
+  write &_(d)_&_(e)_\\
+  write &_\includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/ec-kernel-%i%-rank-roc.eps} &
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/ec-kernel-%i%-rank-pr.eps} 
+  write \end{tabular}
+  write \caption{ec-kernel_%i%}
+  write \end{figure}  
+  write \begin{figure}[t!]
+  write \begin{tabular}{ccc}
+  write (a)_&_(b)_&_(c)\\
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/yeast-kernel-%i%-hist.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/yeast-kernel-%i%-roc.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/yeast-kernel-%i%-pr.eps}_\\
+  write &_(d)_&_(e)_\\
+  write &_\includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/yeast-kernel-%i%-rank-roc.eps} &
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/yeast-kernel-%i%-rank-pr.eps} 
+  write \end{tabular}
+  write \caption{yeast-kernel_%i%}
+  write \end{figure}  
+endfor i  
+write \end{document}
+output stdout

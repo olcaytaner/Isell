@@ -1,0 +1,197 @@
+displaycode off
+displayresult off
+integer numberofruns i s j k t p q count eqc[5,5] sum done[5]
+string resultdir st dataset algorithm1 algorithm2 comptype test
+file infile
+setprecision 3
+twotailed
+= numberofruns 10
+= resultdir ../results/multivariatetest/dt
+= infile manova.txt
+openfile infile r
+readfile infile count
+output resultbinarymultiple.txt
+for i 1 %count%
+  readfile infile dataset
+  for s 1 10
+    for t 1 4
+      switch t
+        case 1
+          = comptype error 
+          = test pairedttest
+        case 2
+          = comptype roc
+          = test hotellingt
+        case 3
+          = comptype pr
+          = test hotellingt
+        case 4
+          = comptype fpfn
+          = test hotellingt
+      endswitch
+      = st %dataset%_%s%_%comptype%
+      for j 1 5
+        for k 1 5
+          = eqc[%j%,%k%] 0
+        endfor k
+      endfor j
+      for j 1 4
+        switch j
+          case 1
+            = algorithm1 c45
+          case 2
+            = algorithm1 knn
+          case 3
+            = algorithm1 lda
+          case 4
+            = algorithm1 qda
+        endswitch
+        for k 2 5
+          switch k
+            case 2
+              = algorithm2 knn
+            case 3
+              = algorithm2 lda
+            case 4
+              = algorithm2 qda
+            case 5
+              = algorithm2 svm
+          endswitch
+          if < j %k%
+            %test% %resultdir%/%dataset%-%s%-%algorithm1%-0.500.%comptype% %resultdir%/%dataset%-%s%-%algorithm2%-0.500.%comptype%
+            if = out1 0
+              = eqc[%j%,%k%] 1
+              = eqc[%k%,%j%] 1
+            endif
+          endif
+        endfor k
+      endfor j      
+      for p 1 5
+        = done[%p%] 0
+      endfor p
+      for p 1 5
+        = sum 0
+        for j 1 5
+          for k 1 5
+            if != p %j%
+              if != p %k%
+                += sum %eqc[j,k]%
+              endif
+            endif
+          endfor k
+        endfor j
+        if = sum 12
+          = st %st%_(
+          for j 1 5
+            switch j
+              case 1
+                = algorithm1 c45
+              case 2
+                = algorithm1 knn
+              case 3
+                = algorithm1 lda
+              case 4
+                = algorithm1 qda
+              case 5
+                = algorithm1 svm
+            endswitch
+            if != p %j%
+              = st %st%_%algorithm1%
+              = done[%j%] 1
+            endif
+          endfor j
+          = st %st%)
+        endif
+      endfor p
+      for p 1 5
+        for q 1 5
+          if < q %p%
+            = sum 0
+            for j 1 5
+              for k 1 5
+                if != p %j%
+                  if != q %j%
+                    if = done[%j%] 0
+                      if != p %k%
+                        if != q %k%
+                          if = done[%k%] 0
+                            += sum %eqc[j,k]%
+                          endif
+                        endif
+                      endif
+                    endif
+                  endif
+                endif
+              endfor k
+            endfor j
+            if = sum 6
+              = st %st%_(
+              for j 1 5
+                switch j
+                  case 1
+                    = algorithm1 c45
+                  case 2
+                    = algorithm1 knn
+                  case 3
+                    = algorithm1 lda
+                  case 4
+                    = algorithm1 qda
+                  case 5
+                    = algorithm1 svm
+                endswitch
+                if != p %j%
+                  if != q %j%
+                    = st %st%_%algorithm1%
+                    = done[%j%] 1
+                  endif
+                endif
+              endfor j
+              = st %st%)
+            endif
+          endif
+        endfor q
+      endfor p
+      for p 1 5
+        for q 1 5
+          if < q %p%
+            if = done[%p%] 0
+              if = done[%q%] 0
+                if = eqc[%p%,%q%] 1
+                  switch p
+                    case 1
+                      = algorithm1 c45
+                    case 2
+                      = algorithm1 knn
+                    case 3
+                      = algorithm1 lda
+                    case 4
+                      = algorithm1 qda
+                    case 5
+                      = algorithm1 svm
+                  endswitch
+                  switch q
+                    case 1
+                      = algorithm2 c45
+                    case 2
+                      = algorithm2 knn
+                    case 3
+                      = algorithm2 lda
+                    case 4
+                      = algorithm2 qda
+                    case 5
+                      = algorithm2 svm
+                  endswitch
+                  = st %st%_(%algorithm1%_%algorithm2%)
+                endif
+              endif
+            endif
+          endif
+        endfor q
+      endfor p
+      write %st%
+    endfor t
+    writescreen %i%_%s%
+  endfor s
+endfor i
+output stdout
+

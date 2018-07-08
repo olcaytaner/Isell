@@ -1,0 +1,80 @@
+displaycode off
+displayresult off
+integer i j k m p res
+string dataset dir subdir cortype st algorithm
+os Linux
+= dir /root/results/hmm
+onetailed
+setprecision 0
+testtype cvttest
+for p 1 5
+  switch p
+    case 1
+      = algorithm multitest
+    case 2
+      = algorithm forw1
+    case 3
+      = algorithm backw1
+    case 4
+      = algorithm forw
+    case 5
+      = algorithm backw
+  endswitch
+  output %dir%/%algorithm%-cvttest.txt
+  for i 1 7
+    switch i
+      case 1
+        = dataset bsl
+      case 2
+        = dataset enterface
+      case 3
+        = dataset twohand
+      case 4
+        = dataset aust20
+      case 5
+        = dataset aust40
+      case 6
+        = dataset aust60
+      case 7
+        = dataset aust80
+    endswitch   
+    = st %dataset%
+    for j 1 3
+      switch j
+        case 1
+          = subdir full
+        case 2
+          = subdir lr
+        case 3
+          = subdir lrloop
+      endswitch
+      for k 1 3
+        switch k
+          case 1
+            correction nocorrection
+          case 2
+            correction bonferroni
+          case 3
+            correction holm
+        endswitch
+        for m 1 4
+          switch m
+            case 1
+              confidencelevel 0.05             
+            case 2
+              confidencelevel 0.01
+            case 3
+              confidencelevel 0.005
+            case 4
+              confidencelevel 0.001
+          endswitch
+          writescreen %p%_%i%_%j%_%k%_%m%
+          hmmmodelsimulation %algorithm% %dir%/%subdir%/%dataset% 10 5
+          = st %st%_%out1%_%out2%
+        endfor m
+      endfor k
+    endfor j
+    write %st%
+  endfor i
+endfor p
+output stdout

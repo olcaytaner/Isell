@@ -1,0 +1,109 @@
+displaycode off
+displayresult off
+file outfile
+string dir extension algorithm resultdir dataset method modelselection prunetype
+integer i j k starti endi startj endj p
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+runcount 5
+foldcount 2
+= resultdir c:\users\olcay\isell\hybridripper
+= startj 1
+= endj 1
+= method hybridripper
+for p 1 2
+  switch p
+    case 1
+      = modelselection aic
+      modelselection aic
+    case 2
+      = modelselection bic
+      modelselection bic
+    case 3
+      = modelselection crossvalidation
+      modelselection crossvalidation
+  endswitch
+  for j %startj% %endj%
+    switch j
+      case 1
+        = dataset breast
+      case 2
+        = dataset bupa
+      case 3
+        = dataset ecoli
+      case 4
+        = dataset glass
+      case 5
+        = dataset haberman
+      case 6
+        = dataset iris
+      case 7
+        = dataset monks
+      case 8 
+        = dataset pima
+      case 9 
+        = dataset wine
+      case 10
+        = dataset hepatitis
+      case 11
+        = dataset yeast
+      case 12
+        = dataset zoo
+      case 13
+        = dataset balance
+      case 14
+        = dataset flare
+      case 15
+        = dataset vote
+      case 16
+        = dataset ironosphere
+      case 17
+        = dataset wave
+      case 18
+        = dataset car
+      case 19
+        = dataset tictactoe
+      case 20
+        = dataset dermatology          
+    endswitch
+    output %resultdir%\%dataset%-%modelselection%.error
+    %method% %dataset% random 1    
+    = outfile %resultdir%\%dataset%-%modelselection%.time
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout1[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%\%dataset%-%modelselection%.rulecount
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout2[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%\%dataset%-%modelselection%.conditioncount
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout3[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%\%dataset%-%modelselection%.nodetypes
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout4[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%\%dataset%-%modelselection%.nodesizes
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout5[k]%
+    endfor k
+    closefile outfile   
+    = outfile %resultdir%\%dataset%-%modelselection%.complexity
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout6[k]%
+    endfor k
+    closefile outfile   
+  endfor j  
+endfor p  
+output stdout

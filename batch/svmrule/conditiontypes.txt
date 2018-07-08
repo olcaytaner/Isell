@@ -1,0 +1,64 @@
+displaycode off
+file infile outfile1 outfile2 infile2
+string read dataset result test
+integer depth
+= depth 15
+integer count p i j k m countsu[%depth%] countsm[%depth%] countm countu len
+= infile2 finished.txt
+for p 1 2
+  switch p
+    case 1
+      = test combined5x2t
+    case 2
+      = test ftest
+  endswitch
+  = outfile1 %test%-counts1.txt
+  = outfile2 %test%-counts2.txt
+  openfile outfile1 w
+  openfile outfile2 w
+  for j 1 %depth%
+    = countsu[j] 0
+    = countsm[j] 0  
+  endfor j
+  openfile infile2 r
+  readfile infile2 count
+  for j 1 %count%
+    readfile infile2 dataset
+    = countu 0
+    = countm 0
+    = infile ../results/rule2/%dataset%-hybridripper-%test%.conditiontypes  
+    openfile infile r
+    write %dataset%
+    for i 1 10
+      readfile infile read      
+      tokenize read ;
+      if > out1 0
+        for k 1 %out1%
+          countchar aout1[%k%] U
+          += countu %out1%
+          countchar aout1[%k%] L
+          += countm %out1%      
+          stringlength aout1[%k%]
+          = len %out1%
+          for m 1 %len%
+            charatindex aout1[%k%] %m%
+            = result %sout1%
+            if = result U
+              += countsu[%m%] 1
+            else
+              += countsm[%m%] 1
+            endif
+          endfor m
+        endfor k
+      endif
+    endfor i
+    closefile infile
+    writefile outfile1 %dataset%;%countu%;%countm%
+  endfor j
+  closefile infile2
+  for j 1 %depth%
+    writefile outfile2 %j%_%countsu[j]%_%countsm[j]%
+  endfor j
+  closefile outfile1
+  closefile outfile2
+endfor p

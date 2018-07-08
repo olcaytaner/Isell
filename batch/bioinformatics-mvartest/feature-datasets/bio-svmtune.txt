@@ -1,0 +1,70 @@
+displaycode off
+displayresult off
+integer i j k
+string dataset method methodname resultdir
+setprecision 3
+= resultdir ../results/mvartest2
+runcount 1
+foldcount 10
+runtofold 5
+setprecision 3
+setdatadir ../data
+loaddatasets rule.xml
+for i 1 2
+  switch i
+    case 1
+      = method svm
+      kerneltype linear
+      svmcoef0 0.0
+      = methodname svm1
+    case 2
+      = method svm
+      kerneltype polynom
+      svmdegree 2
+      svmcoef0 1.0
+      = methodname svm2
+  endswitch
+  for j 1 3
+    switch j
+      case 1
+        = dataset acceptors
+      case 2
+        = dataset donors
+      case 3
+        = dataset ads
+    endswitch
+    for k 1 11
+      switch k
+        case 1
+          svmC 1
+        case 2
+          svmC 2
+        case 3
+          svmC 0.5
+        case 4
+          svmC 4
+        case 5
+          svmC 0.25
+        case 6
+          svmC 8
+        case 7
+          svmC 0.125
+        case 8
+          svmC 16
+        case 9
+          svmC 0.0625
+        case 10
+          svmC 32
+        case 11
+          svmC 0.03125
+      endswitch
+      fileexists %resultdir%/measure/svmtune/%dataset%-%k%-%methodname%.error
+      if = out1 0
+        output %resultdir%/measure/svmtune/%dataset%-%k%-%methodname%.error
+        %method% %dataset% cv 11
+      endif
+      writescreen %methodname%_%dataset%_%k%
+    endfor k
+  endfor j  
+endfor i  
+output stdout

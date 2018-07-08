@@ -1,0 +1,127 @@
+displaycode off
+displayresult off
+integer numberofruns i s j k arcs[5,5] done[5] arccount count donecount point
+string resultdir st dataset algorithm1 algorithm2 comptype test
+file infile outfile
+setprecision 3
+= numberofruns 10
+= resultdir ../results/multivariatetest/dt
+= infile manova.txt
+= comptype pr
+openfile infile r
+readfile infile count
+output result-mtest-%comptype%.txt
+= outfile result-mtest-%comptype%-debug.txt
+openfile outfile w
+for i 1 %count%
+  readfile infile dataset
+  for s 1 %numberofruns%
+    writefile outfile %dataset%_%s%
+    writefile outfile ---------------------
+    for j 1 5
+      = done[%j%] 0
+      for k 1 5
+        = arcs[%j%,%k%] 0
+      endfor k
+    endfor j
+    for j 1 4
+      switch j
+        case 1
+          = algorithm1 c45
+        case 2
+          = algorithm1 lda
+        case 3
+          = algorithm1 qda
+        case 4
+          = algorithm1 svm
+        endswitch
+      for k %j+1% 5
+        switch k
+          case 2
+            = algorithm2 lda
+          case 3
+            = algorithm2 qda
+          case 4
+            = algorithm2 svm
+          case 5
+            = algorithm2 knn
+        endswitch
+        twotailed
+        hotellingt %resultdir%/%dataset%-%s%-%algorithm1%-0.500.%comptype% %resultdir%/%dataset%-%s%-%algorithm2%-0.500.%comptype%
+        if != out1 0
+          = point 0
+          onetailed
+          pairedttest %resultdir%/%dataset%-%s%-%algorithm1%-0.500.precision %resultdir%/%dataset%-%s%-%algorithm2%-0.500.precision
+          if != out1 0
+            += point 1
+            writefile outfile %algorithm1%_better_%algorithm2%_Precision
+          endif
+          pairedttest %resultdir%/%dataset%-%s%-%algorithm2%-0.500.precision %resultdir%/%dataset%-%s%-%algorithm1%-0.500.precision
+          if != out1 0
+            -= point 1
+            writefile outfile %algorithm2%_better_%algorithm1%_Precision
+          endif
+          pairedttest %resultdir%/%dataset%-%s%-%algorithm1%-0.500.recall %resultdir%/%dataset%-%s%-%algorithm2%-0.500.recall
+          if != out1 0
+            += point 1
+            writefile outfile %algorithm1%_better_%algorithm2%_Recall
+          endif
+          pairedttest %resultdir%/%dataset%-%s%-%algorithm2%-0.500.recall %resultdir%/%dataset%-%s%-%algorithm1%-0.500.recall
+          if != out1 0
+            -= point 1
+            writefile outfile %algorithm2%_better_%algorithm1%_Recall
+          endif
+          if < point 0
+            = arcs[%j%,%k%] 1
+            writefile outfile %algorithm1%_%algorithm2%_(%point%)
+          endif
+        endif
+      endfor k
+    endfor j      
+    writefile outfile ---------------------
+    = st %dataset%_%s%
+    = j 1
+    = donecount 0
+    while < donecount 5
+      if = done[%j%] 0
+        = arccount 0
+        for k %j+1% 5
+          if = arcs[%j%,%k%] 1
+            += arccount 1
+          endif
+        endfor k
+        if = arccount 0
+          for k 1 5
+            if = arcs[%k%,%j%] 1
+              = arcs[%k%,%j%] 0
+            endif
+          endfor k
+          = done[%j%] 1
+          switch j
+            case 1
+              = st %st%_c45
+            case 2
+              = st %st%_lda
+            case 3
+              = st %st%_qda
+            case 4
+              = st %st%_svm
+            case 5
+              = st %st%_knn
+          endswitch
+          = j 1
+          += donecount 1
+        else
+          += j 1
+        endif
+      else
+        += j 1
+      endif
+    endwhile
+    write %st%
+    writescreen %dataset%_%s%
+  endfor s
+endfor i
+closefile outfile
+output stdout
+

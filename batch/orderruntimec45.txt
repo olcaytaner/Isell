@@ -1,0 +1,40 @@
+displaycode off
+setdatadir ../data
+loaddatasets rule.xml
+integer i j count d N
+string dataset
+file infile outfile
+= infile twoclass.txt
+openfile infile r
+readfile infile count
+real runtime[%count%] tmp
+string datasets[%count%] tmps
+for i 1 %count%
+  readfile infile dataset
+  featurecount %dataset%
+  = d %out1%
+  samplecount %dataset%
+  = N %out1%
+  = runtime[%i%] %(d^0.5)*(N^0.5)*((2$N)^0.5)%
+  = datasets[%i%] %dataset%
+endfor i
+closefile infile
+for i 1 %count-1%
+  for j %i+1% %count%
+    if > runtime[i] %runtime[j]%
+      = tmp %runtime[i]%
+      = runtime[i] %runtime[j]%
+      = runtime[j] %tmp%
+      = tmps %datasets[i]%
+      = datasets[i] %datasets[j]%
+      = datasets[j] %tmps%
+    endif
+  endfor j
+endfor i
+= outfile sortedc45.txt
+openfile outfile w
+writefile outfile %count%
+for i 1 %count%
+  writefile outfile %datasets[i]%
+endfor i
+closefile outfile

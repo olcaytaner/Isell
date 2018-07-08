@@ -1,0 +1,46 @@
+displaycode off
+string file1 file2 file3 file4 file5 resultdir outdir
+string dataset algorithm1 algorithm2 comptype
+integer index p
+= outdir ../results
+= resultdir ../results/multivariatetest/10fold/measure/roc
+= dataset pima
+= index 1
+= comptype roc
+= file1 %resultdir%/%dataset%-%index%-c45.%comptype%
+= file2 %resultdir%/%dataset%-%index%-knn.%comptype%
+= file3 %resultdir%/%dataset%-%index%-lda.%comptype%
+= file4 %resultdir%/%dataset%-%index%-qda.%comptype%
+= file5 %resultdir%/%dataset%-%index%-svm.%comptype%
+kruskalwallismulti %file1% %file2% %file3% %file4% %file5%
+output %outdir%/%dataset%-%index%-c45.txt
+for p 1 10
+  write %aout5[p]%
+endfor p
+output %outdir%/%dataset%-%index%-knn.txt
+for p 1 10
+  write %aout6[p]%
+endfor p
+output %outdir%/%dataset%-%index%-lda.txt
+for p 1 10
+  write %aout7[p]%
+endfor p
+output %outdir%/%dataset%-%index%-qda.txt
+for p 1 10
+  write %aout8[p]%
+endfor p
+output %outdir%/%dataset%-%index%-svm.txt
+for p 1 10
+  write %aout9[p]%
+endfor p
+output stdout
+plotx %outdir%/%dataset%-%index%-c45.txt
+hold on
+plotx %outdir%/%dataset%-%index%-knn.txt
+plotx %outdir%/%dataset%-%index%-lda.txt
+plotx %outdir%/%dataset%-%index%-qda.txt
+plotx %outdir%/%dataset%-%index%-svm.txt
+showticks off
+legendposition none
+axislimits x 1 50 49 0
+exportimage %dataset%-%index%-rank.eps

@@ -1,0 +1,118 @@
+displaycode off
+integer i j k p a[11] sep
+string resultdir dataset classes
+= resultdir ../results/knnloss/metrics
+setdatadir .
+namestype classatend
+runcount 1
+foldcount 10
+nearcount 10
+for i 1 5
+  switch i
+    case 1
+      = dataset optdigits
+      = a[1] 64
+      = a[2] 63
+      = a[3] 62
+      = a[4] 61
+      = a[5] 60
+      = a[6] 59
+      = a[7] 55
+      = a[8] 51
+      = a[9] 47
+      = a[10] 43
+      = a[11] 39
+      = classes 0;1;2;3;4;5;6;7;8;9
+      = sep 0
+    case 2
+      = dataset pendigits
+      = a[1] 16
+      = a[2] 15
+      = a[3] 14
+      = a[4] 13
+      = a[5] 12
+      = a[6] 11
+      = a[7] 10
+      = a[8] 9
+      = a[9] 8
+      = a[10] 7
+      = a[11] 6
+      = classes 0;1;2;3;4;5;6;7;8;9
+      = sep 0
+    case 3
+      = dataset segment
+      = a[1] 19
+      = a[2] 18
+      = a[3] 17
+      = a[4] 16
+      = a[5] 15
+      = a[6] 14
+      = a[7] 13
+      = a[8] 12
+      = a[9] 11
+      = a[10] 10
+      = a[11] 9
+      = classes grass;path;window;cement;foliage;sky;brickface
+      = sep 0
+    case 4
+      = dataset spambase
+      = a[1] 57
+      = a[2] 56
+      = a[3] 55
+      = a[4] 54
+      = a[5] 53
+      = a[6] 52
+      = a[7] 48
+      = a[8] 44
+      = a[9] 40
+      = a[10] 36
+      = a[11] 32
+      = classes 0;1
+      = sep 0
+    case 5
+      = dataset zipcodes
+      = a[1] 256
+      = a[2] 253
+      = a[3] 250
+      = a[4] 247
+      = a[5] 244
+      = a[6] 241
+      = a[7] 221
+      = a[8] 201
+      = a[9] 181
+      = a[10] 161
+      = a[11] 141
+      = classes 0;1;2;3;4;5;6;7;8;9
+      = sep 1
+  endswitch
+  for j 1 11
+    for k 1 100
+      loaddatasets knnloss.xml
+      randomize %k%
+      featuresubset %dataset% %a[j]% %dataset%.txt %dataset%%a[j]%.txt
+      if = sep 1
+        createdataset %dataset%%a[j]% _ %a[j]% %classes% . %dataset%%a[j]%.txt _
+      else
+        createdataset %dataset%%a[j]% , %a[j]% %classes% . %dataset%%a[j]%.txt _
+      endif
+      savedataset %dataset%%a[j]% %dataset%%a[j]%.xml
+      loaddatasets %dataset%%a[j]%.xml
+      output %resultdir%/%dataset%%a[j]%-%k%.error
+      knn %dataset%%a[j]% cv 1
+      output %resultdir%/%dataset%%a[j]%-%k%.knnloss1
+      for p 1 10
+        write %aout3[p]%
+      endfor p
+      output %resultdir%/%dataset%%a[j]%-%k%.knnloss2
+      for p 1 10
+        write %aout4[p]%
+      endfor p
+      output %resultdir%/%dataset%%a[j]%-%k%.knnloss3
+      for p 1 10
+        write %aout5[p]%
+      endfor p
+      output stdout
+      writescreen %i%_%j%_%k%
+    endfor k    
+  endfor j
+endfor i

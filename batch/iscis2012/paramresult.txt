@@ -1,0 +1,54 @@
+displaycode off
+integer i j k t
+string dataset type st
+setprecision 6
+string resultdir
+= resultdir ../results/hingetest/parameter
+for i 1 9
+  switch i
+    case 1
+      = dataset abalone
+    case 2
+      = dataset add10
+    case 3
+      = dataset boston
+    case 4
+      = dataset california
+    case 5
+      = dataset concrete
+    case 6
+      = dataset puma8fh
+    case 7
+      = dataset puma8fm
+    case 8
+      = dataset puma8nh
+    case 9
+      = dataset puma8nm
+  endswitch
+  for t 1 3
+    switch t
+      case 1
+        = type linear
+      case 2
+        = type quadratic
+      case 3
+        = type cubic
+    endswitch
+    output %dataset%-%type%.txt
+    for j 1 14
+      = st _
+      for k 1 10
+        fileexists %resultdir%/%dataset%-%j%-%k%-%type%.error
+        if = out1 1
+          meanvariance %resultdir%/%dataset%-%j%-%k%-%type%.error
+          = st %st%_%out1%
+        else
+          = st %st%_N/A
+        endif
+      endfor k
+      write %st%
+    endfor j
+  endfor t
+endfor i
+output stdout
+

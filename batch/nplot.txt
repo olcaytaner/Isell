@@ -1,0 +1,36 @@
+displaycode off
+displayresult off
+string resultdir comptype color dataset
+integer i
+= resultdir ../results/multivariatetest/real
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+hold off
+= dataset twonorm
+for i 1 4
+  switch i
+    case 1
+      = comptype error
+      = color black
+    case 2
+      = comptype confusion
+      = color red
+    case 3
+      = comptype roc
+      = color green
+    case 4
+      = comptype pr
+      = color blue
+  endswitch
+  hold on
+  plotxyline %resultdir%/%comptype%-%dataset%.txt %color% 3
+endfor i
+legendnames Error_test Confusion_test Tpr-Fpr_test Pr_test
+axislimits x 1 10 9 0
+axislimits y 0 1 10 1
+legendposition upleft
+xlabel Noise_factor
+ylabel Probability_of_accepting_null_hypothesis
+exportimage %resultdir%/noise-%dataset%.eps
+

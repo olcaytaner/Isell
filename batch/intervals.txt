@@ -1,0 +1,111 @@
+displaycode off
+displayresult off
+string method1 method2 dataset resultdir
+integer nom x p i j t tp fp tn fn fold Nelow Nehigh
+real temp eprime Elow Ehigh ninv k m n N mAUC sAUC varAUC Low Upper deviation divi sum1 sum2 Z[4] T Q0 Q1 sum3 sum4 sum5 sum6
+= resultdir ../results/tests
+'= method1 c45
+'= dataset musk2
+'= p 78
+= fold 1
+setprecision 10
+meanvariance %resultdir%/error/%dataset%-%p%-%method1%.error
+writescreen Our_Error_Interval---%method1%---Lower_Bound:%out1-1.96*out2%_Upper_Bound:%out1+1.96*out2%
+meanvariance %resultdir%/roc/%dataset%-%p%-%method1%.roc
+writescreen Our_Interval---%method1%---Lower_Bound:%out1-1.96*out2%_Upper_Bound:%out1+1.96*out2%
+confusionanalysis %resultdir%/posterior/%dataset%-%p%-%method1%.posterior 0.5
+= tp %aout1[fold]%
+= fp %aout2[fold]%
+= tn %aout3[fold]%
+= fn %aout4[fold]%
+= m %tp+fn%
+= n %fp+tn%
+= deviation %((0-(2.718283$0.025))*(m+n)/(2*m*n))^0.5%
+aucposterior %resultdir%/posterior/%dataset%-%p%-%method1%.posterior
+= k %aout1[fold]%
+= Upper %k+deviation%
+= Low %k-deviation%
+writescreen Agarwal---%method1%---Lower_Bound:%Low%_Upper_Bound:%Upper%
+= k %fp+fn%
+= eprime 0.0253
+= N %tp+fp+tn+fn%
+normalinv %1-((1-((1-eprime)^0.5))/2)%
+= ninv %out1%
+= Elow %(k/N)-(ninv/(2*(N^0.5)))%
+= Ehigh %(k/N)+(ninv/(2*(N^0.5)))% 
+= Nelow %Elow*N%
+= Nehigh %Ehigh*N%
+real alpha1[%Nehigh-Nelow+1%]
+real alpha2[%Nehigh-Nelow+1%]
+= j 0
+for i %Nelow% %Nehigh%
+  = temp %((n-m)^2)*(m+n+1)/(4*m*n)%
+  = k %i%
+  if < k 4
+    = k 4
+  endif
+  = sum1 0.0
+  for x 0 %k-1%
+    = nom %m+n%
+    binomial %nom% %x%
+    += sum1 %out1%
+  endfor x
+  = sum2 0.0
+  for x 0 %k%
+    = nom %m+n+1%
+    binomial %nom% %x%
+    += sum2 %out1%
+  endfor x
+  = divi %sum1/sum2%
+  = mAUC %1-(k/(m+n))-(temp*(k/(m+n)-divi))%
+  for t 1 4
+    = sum1 0.0
+    for x 0 %k-t%
+      = nom %m+n+1-t%
+      binomial %nom% %x%
+      += sum1 %out1%
+    endfor x
+    = sum2 0.0
+    for x 0 %k%
+      = nom %m+n+1%
+      binomial %nom% %x%
+      += sum2 %out1%
+    endfor x
+    = Z[%t%] %sum1/sum2%
+  endfor t
+  = T %3*(((m-n)^2)+m+n)+2%
+  = Q0 %((m+n+1)*T*(k^2))+(((0-(3*(n^2))+(3*m*n)+(3*m)+1)*T-(12*((3*m*n)+m+n))-8)*k)+((0-(3*(m^2))+(7*m)+(10*n)+(3*n*m)+10)*T)-(4*((3*m*n)+m+n+1))%
+  = sum1 %T*(k^3)%
+  = sum2 %3*(m-1)*T*(k^2)%
+  = sum3 %(((3*m*n)-(3*(n^2))-(3*m))+8)*T%
+  = sum4 %6*((6*m*n)+m+n)%
+  = sum5 %((7*(m+n))-(3*(m^2))+(3*m*n))*T%
+  = sum6 %2*((6*m*n)+m+n)% 
+  = Q1 %sum1+sum2+((sum3-sum4)*k)+sum5-sum6%
+  = sum3 %(m+n-2)*(Z[4])%
+  = sum4 %((2*m)-n+(3*k)-10)*(Z[3])%
+  = sum1 %sum3-sum4%
+  = varAUC %((m+n+1)*(m+n)*(m+n-1)*T*sum1)/(72*(m^2)*(n^2))%
+  = sum3 %(m^2)+(3*k*m)+(2*(k^2))+12%
+  = sum4 %(n*m)+(5*m)+(n*k)+(9*k)%
+  = sum1 %sum3-sum4%
+  += varAUC %((m+n+1)*(m+n)*T*sum1*(Z[2]))/(48*(m^2)*(n^2))%
+  -= varAUC %(((m+n+1)^2)*((m-n)^4)*((Z[1])^2))/(16*(m^2)*(n^2))%
+  -= varAUC %(((m+n+1)*Q1*(Z[1]))/(72*(m^2)*(n^2)))%
+  += varAUC %(k*Q0)/(144*(m^2)*(n^2))%
+  = sAUC %varAUC^0.5%
+  ++ j
+  = alpha1[%j%] %mAUC-(sAUC/(eprime^0.5))%
+  = alpha2[%j%] %mAUC+(sAUC/(eprime^0.5))%
+endfor i
+= Low %alpha1[1]%
+= Upper %alpha2[1]%
+for i 2 %j%
+  if < alpha1[%i%] %Low%
+    = Low %alpha1[i]%
+  endif
+  if > alpha2[%i%] %Upper%
+    = Upper %alpha2[i]%
+  endif
+endfor i
+writescreen Cortes---%method1%---Lower_Bound:%Low%_Upper_Bound:%Upper%

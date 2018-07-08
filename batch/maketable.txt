@@ -1,0 +1,226 @@
+displaycode off
+displayresult off
+integer j i k algcount count res1 count2 datasetcount
+string dir file extension dataset endj endi endk result fname[10] fname2[10] what algname[10] file1 file2
+onetailed
+setprecision 2
+= dir c:\users\olcay\isell\ruleinduction
+= algcount 2
+= datasetcount 28
+integer win[%datasetcount%]
+integer lost[%datasetcount%]
+integer totallost[10]
+output %dir%\tablo.txt
+write \begin{table}[ht]
+write \caption{}
+write \label{}
+write \begin{center}
+write \begin{tabular}{|l|r|r|}
+write \hline
+write Dataset&Ordered&Unordered\\
+write \hline
+for j 1 %datasetcount%
+  switch j
+    case 1
+      = dataset balance
+    case 2
+      = dataset breast
+    case 3
+      = dataset bupa
+    case 4
+      = dataset car
+    case 5
+      = dataset cmc
+    case 6
+      = dataset credit
+    case 7
+      = dataset cylinder
+    case 8
+      = dataset dermatology
+    case 9
+      = dataset ecoli
+    case 10
+      = dataset flare
+    case 11
+      = dataset glass
+    case 12
+      = dataset haberman
+    case 13
+      = dataset hepatitis
+    case 14
+      = dataset horse
+    case 15
+      = dataset iris
+    case 16
+      = dataset ironosphere
+    case 17
+      = dataset monks
+    case 18
+      = dataset mushroom
+    case 19
+      = dataset fevzi
+    case 20
+      = dataset pima
+    case 21
+      = dataset segment
+    case 22
+      = dataset spambase
+    case 23
+      = dataset tictactoe
+    case 24
+      = dataset vote
+    case 25
+      = dataset wave
+    case 26
+      = dataset wine
+    case 27
+      = dataset yeast
+    case 28
+      = dataset zoo
+  endswitch
+  = result %dataset%
+  = what %dataset%.ripper
+  for k 1 %algcount%
+    switch k
+      case 1
+        = fname[k] %dir%\ripperpasses\2\%what%
+      case 2
+        = fname[k] %dir%\unordered\%what%
+    endswitch
+    meanvariance %fname[k]%
+    = result %result%&%out1%$\pm$%out2%
+  endfor k
+  = result %result%\\
+  write %result%
+endfor j
+write \hline
+write \end{tabular}
+write \begin{tabular}{|l|r|r|r|}
+write \hline
+= result &Ordered&Unordered&$\Sigma$\\
+write %result%
+write \hline
+for i 1 %algcount%
+  switch i
+    case 1
+      = fname[i] %dir%\ripperpasses\2
+      = algname[i] Ordered
+    case 2
+      = fname[i] %dir%\unordered
+      = algname[i] Unordered
+  endswitch
+  for k 1 %datasetcount%
+    = win[k] 0
+    = lost[k] 0    
+  endfor k
+  = result %algname[i]%
+  for k 1 %algcount%
+    switch k
+      case 1
+        = fname2[k] %dir%\ripperpasses\2
+      case 2
+        = fname2[k] %dir%\unordered
+    endswitch
+    = count 0
+    for j 1 %datasetcount%
+      switch j
+        case 1
+          = dataset balance
+        case 2
+          = dataset breast
+        case 3
+          = dataset bupa
+        case 4
+          = dataset car
+        case 5
+          = dataset cmc
+        case 6
+          = dataset credit
+        case 7
+          = dataset cylinder
+        case 8
+          = dataset dermatology
+        case 9
+          = dataset ecoli
+        case 10
+          = dataset flare
+        case 11
+          = dataset glass
+        case 12
+          = dataset haberman
+        case 13
+          = dataset hepatitis
+        case 14
+          = dataset horse
+        case 15
+          = dataset iris
+        case 16
+          = dataset ironosphere
+        case 17
+          = dataset monks
+        case 18
+          = dataset mushroom
+        case 19
+          = dataset fevzi
+        case 20
+          = dataset pima
+        case 21
+          = dataset segment
+        case 22
+          = dataset spambase
+        case 23
+          = dataset tictactoe
+        case 24
+          = dataset vote
+        case 25
+          = dataset wave
+        case 26
+          = dataset wine
+        case 27
+          = dataset yeast
+        case 28
+          = dataset zoo
+      endswitch
+      = what %dataset%.ripper
+      = file1 %fname[i]%\%what%
+      = file2 %fname2[k]%\%what%
+      cvttest %file2% %file1%
+      = res1 %out1%
+      if = res1 1
+        ++ count
+        = win[j] 1
+      endif
+      cvttest %file1% %file2%      
+      = res1 %out1%
+      if = res1 1
+        = lost[j] 1
+      endif
+    endfor j
+    = result %result%&%count%
+  endfor k
+  = count 0
+  = count2 0
+  for k 1 %datasetcount%
+    if = win[k] 1
+      ++ count
+    endif
+    if = lost[k] 1
+      ++ count2
+    endif
+  endfor k
+  = totallost[i] %count2%
+  = result %result%&%count%\\
+  write %result%
+endfor i
+write \hline
+= result $\Sigma$
+for i 1 %algcount%
+  = result %result%&%totallost[i]%
+endfor i
+= result %result%&\\
+write %result%
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout

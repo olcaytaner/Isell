@@ -1,0 +1,76 @@
+displaycode off
+displayresult off
+printposterior on
+integer i j k numberofruns start end
+string dataset method methodname resultdir
+setprecision 3
+= numberofruns 10
+= resultdir ../results/mvartest2
+runcount 1
+foldcount 10
+setprecision 3
+setdatadir ../data
+loaddatasets rule.xml
+for i 4 4
+  switch i
+    case 1
+      = method c45
+      = methodname c45
+    case 2
+      = method knn
+      = methodname knn
+      nearcount 10
+    case 3
+      = method lda
+      = methodname lda
+    case 4
+      = method qdaclass
+      = methodname qda
+      = start 4
+      = end 4
+    case 5
+      = method svm
+      kerneltype linear
+      svmcoef0 0.0
+      = methodname svm1
+      = start 4
+      = end 4
+    case 6
+      = method svm
+      kerneltype polynom
+      svmdegree 2
+      svmcoef0 1.0
+      = methodname svm2
+      = start 4
+      = end 4
+    case 7
+      = method randomforest
+      forestsize 100
+      featuresize 10
+      = methodname randomforest
+      = start 1
+      = end 4 
+  endswitch
+  for j %start% %end%
+    switch j
+      case 1
+        = dataset acceptors
+      case 2
+        = dataset donors
+      case 3
+        = dataset ads
+      case 4
+        = dataset polyadenylation
+    endswitch
+    for k 1 %numberofruns%
+      fileexists %resultdir%/measure/error/%dataset%-%k%-%methodname%.error
+      if = out1 0
+        output %resultdir%/measure/error/%dataset%-%k%-%methodname%.error
+        posteriorfile %resultdir%/posterior/%dataset%-%k%-%methodname%.posterior
+        %method% %dataset% cv %k%
+      endif
+      writescreen %methodname%_%dataset%_%k%
+    endfor k
+  endfor j  
+endfor i  
+output stdout

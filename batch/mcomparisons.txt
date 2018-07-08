@@ -1,0 +1,45 @@
+displaycode off
+displayresult off
+string resultdir dataset file1 file2 test comptype
+integer i j k numberofruns
+real count
+setprecision 3
+twotailed
+= numberofruns 100
+= resultdir ../results/multivariatetest/skewed/0.006
+for i 1 5
+  switch i
+    case 1
+      = comptype error
+      = test pairedttest
+    case 2
+      = comptype confusion
+      = test hotellingt
+    case 3
+      = comptype roc
+      = test hotellingt
+    case 4
+      = comptype pr
+      = test hotellingt
+    case 5
+      = comptype fpfn
+      = test hotellingt
+  endswitch
+  output %resultdir%/%comptype%.txt
+  for j 1 9
+    = dataset data%j%
+    = count 0
+    for k 1 %numberofruns%
+      = file1 %resultdir%/%dataset%/%k%-%comptype%.lda
+      = file2 %resultdir%/%dataset%/%k%-%comptype%.qda
+      %test% %file1% %file2%
+      if = out1 0
+        ++ count
+      endif
+    endfor k
+    write %j%_%count/numberofruns%
+    writescreen %i%_%j%
+  endfor j
+endfor i
+output stdout
+

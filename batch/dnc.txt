@@ -1,0 +1,170 @@
+os Linux
+displaycode off
+integer i j
+string dataset dir
+real mlprate 
+file outfile
+setdatadir //root/isell/data
+loaddef //root/isell/idtree-mlp-cls.ini
+= dir //root/isell/dnc
+windowsize 50
+perceptronrun 2500
+setprecision 6
+runcount 1
+foldcount 10
+errorthreshold 0.0
+maxhidden 20
+for i 6 8
+  switch i
+     case 1
+       = dataset haberman     
+       = mlprate 0.050
+     case 2
+       = dataset iris         
+       = mlprate 0.500
+     case 3
+       = dataset bupa         
+       = mlprate 0.500
+     case 4
+       = dataset monks        
+       = mlprate 0.500
+     case 5
+       = dataset pima         
+       = mlprate 0.010
+     case 19
+       = dataset titanic      
+       = mlprate 0.100
+     case 6
+       = dataset balance      
+       = mlprate 0.050
+     case 7
+       = dataset breast       
+       = mlprate 0.500
+     case 8
+       = dataset artificial   
+       = mlprate 0.005
+     case 9
+       = dataset ecoli        
+       = mlprate 0.050
+     case 10
+       = dataset glass        
+       = mlprate 0.500
+     case 11
+       = dataset heart        
+       = mlprate 0.050
+     case 12
+       = dataset pageblock    
+       = mlprate 0.050
+     case 13
+       = dataset wine         
+       = mlprate 0.100
+     case 14
+       = dataset yeast        
+       = mlprate 0.050
+     case 15
+       = dataset hepatitis    
+       = mlprate 0.100
+     case 16
+       = dataset ringnorm     
+       = mlprate 0.050
+     case 17
+       = dataset twonorm      
+       = mlprate 0.001
+     case 18
+       = dataset zoo          
+       = mlprate 0.500
+     case 20
+       = dataset wave         
+       = mlprate 0.005
+     case 21
+       = dataset postoperative
+       = mlprate 0.050
+     case 22
+       = dataset flare        
+       = mlprate 0.500
+     case 23
+       = dataset tae          
+       = mlprate 0.100
+     case 24
+       = dataset ironosphere  
+       = mlprate 0.500
+     case 25
+       = dataset dermatology  
+       = mlprate 0.050
+     case 26
+       = dataset vote         
+       = mlprate 0.050
+     case 27
+       = dataset flags        
+       = mlprate 0.100
+     case 28
+       = dataset tictactoe    
+       = mlprate 0.050
+     case 29
+       = dataset australian   
+       = mlprate 0.010
+     case 30
+       = dataset credit       
+       = mlprate 0.010
+     case 31
+       = dataset horse        
+       = mlprate 0.005
+     case 32
+       = dataset cylinder     
+       = mlprate 0.050
+     case 33
+       = dataset cmc          
+       = mlprate 0.050
+     case 34
+       = dataset car          
+       = mlprate 0.100
+     case 35
+       = dataset segment      
+       = mlprate 0.100
+     case 36
+       = dataset thyroid      
+       = mlprate 0.100
+     case 37
+       = dataset ocr          
+       = mlprate 0.100
+     case 38
+       = dataset fevzi        
+       = mlprate 0.050
+     case 39
+       = dataset spambase     
+       = mlprate 0.050
+     case 40
+       = dataset cenk         
+       = mlprate 0.010
+     case 41
+       = dataset nursery      
+       = mlprate 0.050
+     case 42
+       = dataset mushroom     
+       = mlprate 0.050
+     case 43
+       = dataset letter       
+       = mlprate 0.100
+     case 44
+       = dataset zipcodes     
+       = mlprate 0.005
+  endswitch   
+  learningrate %mlprate%
+  output %dir%/%dataset%.txt
+  dnc %dataset% random 1
+  = outfile %dir%/%dataset%-complexity.txt
+  openfile outfile w
+  for j 1 10
+    writefile outfile %aout3[j]%
+  endfor j
+  closefile outfile
+  = outfile %dir%/%dataset%-trainerror.txt
+  openfile outfile w
+  for j 1 10
+    writefile outfile %aout4[j]%
+  endfor j
+  closefile outfile
+  writescreen %i%
+endfor i
+output stdout
+exit

@@ -1,0 +1,44 @@
+os Linux
+displaycode off
+integer i j
+string dataset dir
+real mlprate 
+file outfile
+setdatadir /root/isell/data
+loaddatasets /root/isell/mlp-cls.xml
+= dir /root/isell/dnc
+windowsize 50
+perceptronrun 2500
+setprecision 6
+runcount 1
+foldcount 10
+errorthreshold 0.0
+maxhidden 20
+for i 1 2
+  switch i
+     case 1
+       = dataset haberman     
+       = mlprate 0.010
+     case 2
+       = dataset iris         
+       = mlprate 0.500
+  endswitch   
+  learningrate %mlprate%
+  output %dir%/%dataset%.txt
+  dnc %dataset% random 1
+  = outfile %dir%/%dataset%-complexity.txt
+  openfile outfile w
+  for j 1 10
+    writefile outfile %aout3[j]%
+  endfor j
+  closefile outfile
+  = outfile %dir%/%dataset%-trainerror.txt
+  openfile outfile w
+  for j 1 10
+    writefile outfile %aout4[j]%
+  endfor j
+  closefile outfile
+  writescreen %i%
+endfor i
+output stdout
+

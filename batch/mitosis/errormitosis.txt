@@ -1,0 +1,61 @@
+displaycode off
+integer i
+string alg name
+output ../results/mitosis/error.txt
+for i 1 25
+  switch i
+    case 1
+      = name c45
+    case 2
+      = name knn10
+    case 3
+      = name knn20
+    case 4
+      = name knn30
+    case 5
+      = name svmlinear
+    case 6
+      = name svmquadratic
+    case 7
+      = name svmcubic
+    case 8
+      = name ldaclass
+    case 9
+      = name randomforest
+    case 10
+      = name ripper
+    case 11
+      = name part
+    case 12
+      = name logistic
+    case 13
+      = name ldt
+    case 14
+      = name multildt
+    case 15
+      = name omnildt
+    case 16
+      = name naivebayes
+    case 17
+      = name randomsubspace
+    case 18
+      = name gaussian
+    case 19
+      = name linearperceptron
+    case 20
+      = name mlp2
+    case 21
+      = name mlp4
+    case 22
+      = name mlp6
+    case 23
+      = name nearestmean
+    case 24
+      = name c45rules
+    case 25
+      = name cart
+  endswitch
+  meanvariance ../results/mitosis/%name%.error
+  write %name%_%out1%_%out2%
+endfor i
+output stdout

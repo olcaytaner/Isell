@@ -1,0 +1,69 @@
+displaycode off
+integer i j k count win[4,4] winsig[4,4]
+file infile
+onetailed
+string bestalgorithm algorithm1 algorithm2 dataset comptype st resultdir
+real error1 error2
+= infile optimal.txt
+= comptype conditioncount
+= resultdir ../results/rule
+output table-%comptype%.txt
+openfile infile r
+readfile infile count
+for i 1 4
+  for j 1 4
+    = win[%i%,%j%] 0
+    = winsig[%i%,%j%] 0
+  endfor j
+endfor i
+for i 1 %count%
+  readfile infile dataset
+  for j 1 3
+    switch j
+      case 1
+        = algorithm1 ripper
+      case 2
+        = algorithm1 multiripper
+      case 3
+        = algorithm1 hybridripper-ftest
+    endswitch
+    for k %j+1% 4
+      switch k
+        case 2
+          = algorithm2 multiripper
+        case 3
+          = algorithm2 hybridripper-ftest
+        case 4
+          = algorithm2 hybridripper-combined5x2t
+      endswitch
+      meanvariance %resultdir%/%dataset%-%algorithm1%.%comptype%
+      = error1 %out1%
+      meanvariance %resultdir%/%dataset%-%algorithm2%.%comptype%
+      = error2 %out1%
+      if < error1 %error2%
+        ++ win[%j%,%k%]
+      else
+        if > error1 %error2%
+          ++ win[%k%,%j%]
+        endif
+      endif
+      pairedttest %resultdir%/%dataset%-%algorithm1%.%comptype% %resultdir%/%dataset%-%algorithm2%.%comptype%
+      if <> out1 0
+        ++ winsig[%k%,%j%]
+      endif
+      pairedttest %resultdir%/%dataset%-%algorithm2%.%comptype% %resultdir%/%dataset%-%algorithm1%.%comptype%
+      if <> out1 0
+        ++ winsig[%j%,%k%]
+      endif
+    endfor k
+  endfor j
+endfor i
+for i 1 4
+  write %win[i,1]%_&_%win[i,2]%_&_%win[i,3]%_&_%win[i,4]%\\
+endfor i
+for i 1 4
+  write %winsig[i,1]%_&_%winsig[i,2]%_&_%winsig[i,3]%_&_%winsig[i,4]%\\
+endfor i
+output stdout
+closefile infile
+

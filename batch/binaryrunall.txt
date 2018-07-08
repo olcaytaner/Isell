@@ -1,0 +1,98 @@
+displaycode off
+integer i j k p t u v d S x y
+file complexity
+real a1 a2
+string dataset rho ptype outdir
+= outdir ../results/binaryall
+setdatadir ../data
+loaddatasets binarydata.xml
+separatedataused off
+runcount 5
+foldcount 2
+for x 0 1
+  for y 0 20
+    = a1 %x*0.1+0.4%
+    = a2 %y*0.1+1.0%
+    mkdir %outdir%/%a1%-%a2%
+  endfor y
+endfor x
+for x 0 1
+  for y 0 20
+    = a1 %x*0.1+0.4%
+    = a2 %y*0.1+1.0%
+    srma1 %a1%
+    srma2 %a2%
+    = i 0
+    for t 1 1
+      for u 1 1
+        switch u
+          case 1
+            = d 8
+          case 2
+            = d 12
+        endswitch
+        for v 1 5
+          switch v
+            case 1
+              = rho 0.0
+            case 2
+              = rho 0.01
+            case 3
+              = rho 0.05
+            case 4
+              = rho 0.1
+            case 5
+              = rho 0.2
+          endswitch
+          ++ i
+          = dataset binarydata%i%
+          writescreen %x%_%y%_%i%_%dataset%
+          for j 3 4
+            switch j
+              case 1
+                testpercentage 0.9
+                = S 10
+              case 2
+                testpercentage 0.75
+                = S 25
+              case 3
+                testpercentage 0.5
+                = S 50
+              case 4
+                testpercentage 0.0
+                = S 100
+            endswitch
+            for k 3 4
+              switch k
+                case 1
+                  prunetype nopruning
+                  = ptype no
+                case 2
+                  prunetype validation
+                  = ptype cv
+                case 3
+                  prunetype srmpruning
+                  vcformula 0
+                  = ptype srmex
+                case 4
+                  prunetype srmpruning
+                  vcformula 1
+                  = ptype srmes
+              endswitch
+              output %outdir%/%a1%-%a2%/F%t%-%d%-%rho%-%S%-%ptype%.error
+              c45 %dataset% cv 1
+              = complexity %outdir%/%a1%-%a2%/F%t%-%d%-%rho%-%S%-%ptype%.node
+              openfile complexity w
+              for p 1 10
+                writefile complexity %aout3[p]%
+              endfor p
+              closefile complexity      
+            endfor k
+          endfor j
+        endfor v
+      endfor u
+    endfor t
+  endfor y
+endfor x
+output stdout
+

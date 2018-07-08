@@ -1,0 +1,59 @@
+integer i
+string dataset st
+output table.txt
+setprecision 1
+for i 1 22
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset cmc
+    case 3
+      = dataset hayesroth
+    case 4
+      = dataset iris
+    case 5
+      = dataset leukemia1
+    case 6
+      = dataset leukemia2
+    case 7
+      = dataset splice
+    case 8
+      = dataset tae
+    case 9
+      = dataset wave
+    case 10
+      = dataset wine
+    case 11
+      = dataset braintumor2
+    case 12
+      = dataset car
+    case 13
+      = dataset srbct
+    case 14
+      = dataset vehicle
+    case 15
+      = dataset braintumor1
+    case 16
+      = dataset pageblock
+    case 17
+      = dataset dermatology
+    case 18
+      = dataset segment
+    case 19
+      = dataset led7
+    case 20
+      = dataset mfeatmor
+    case 21
+      = dataset ocr
+    case 22
+      = dataset yeast
+  endswitch   
+  = st %dataset%
+  mean ../results/ensembleresults/%dataset%-a.ensemblesize
+  = st %st%_&_%out1%
+  mean ../results/ensembleresults/%dataset%-b.ensemblesize
+  = st %st%_&_%out1%\\
+  write %st%
+endfor i
+output stdout

@@ -1,0 +1,89 @@
+displaycode off
+integer i k
+string dataset resultdir st type
+= type error
+= resultdir ../results/softtree
+output table%type%.txt
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{rrrrr}
+write \hline
+write Dataset_&_Hard_&_Soft_&_Soft(L1)_&_Soft(L2)_\\
+write \hline
+for i 1 29
+  switch i
+    case 1
+      = dataset concrete
+    case 2
+      = dataset puma8fh
+    case 3
+      = dataset puma8nh
+    case 4
+      = dataset puma8fm
+    case 5
+      = dataset puma8nm
+    case 6
+      = dataset abalone
+    case 7
+      = dataset add10
+    case 8
+      = dataset boston
+    case 9
+      = dataset comp
+    case 10
+      = dataset bank32fh
+    case 11
+      = dataset bank32fm
+    case 12
+      = dataset bank32nh
+    case 13
+      = dataset bank32nm
+    case 14
+      = dataset bank8fh
+    case 15
+      = dataset bank8fm
+    case 16
+      = dataset bank8nh
+    case 17
+      = dataset bank8nm
+    case 18
+      = dataset kin32fh
+    case 19
+      = dataset kin32fm
+    case 20
+      = dataset kin32nh
+    case 21
+      = dataset kin32nm
+    case 22
+      = dataset kin8fh
+    case 23
+      = dataset kin8fm
+    case 24
+      = dataset kin8nh
+    case 25
+      = dataset kin8nm
+    case 26
+      = dataset puma32fh
+    case 27
+      = dataset puma32fm
+    case 28
+      = dataset puma32nh
+    case 29
+      = dataset puma32nm
+  endswitch
+  = st %dataset%
+  meanvariance %resultdir%/%dataset%-regtree.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/%dataset%-softregtree.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/%dataset%-softregtree-l1.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/%dataset%-softregtree-l2.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%\\
+  write %st%
+endfor i
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout

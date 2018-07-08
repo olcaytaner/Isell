@@ -1,0 +1,67 @@
+displaycode off
+displayresult off
+integer i j k s p t u index pos pos1 pos2
+real count
+string b[24] resultdir permutation1 permutation2 dataset
+= resultdir ../results/perm
+stringpermutation 4 b
+twotailed
+for i 1 3
+  switch i
+    case 1
+      = dataset car
+    case 2
+      = dataset srbct
+    case 3
+      = dataset vehicle
+  endswitch
+  = count 0
+  = index 0
+  for j 1 4
+    for k 1 4
+      if != j %k%
+        ++ index
+        for s 1 10
+          for p 1 23
+            = permutation1 %b[p]%
+            for u 1 4
+              charatindex permutation1 %u%
+              = pos %sout1%
+              ++ pos
+              if = pos %j%
+                = pos1 %u%
+              endif
+              if = pos %k%
+                = pos2 %u%
+              endif
+            endfor u
+            if < pos1 %pos2%
+              for t %p+1% 24
+                = permutation2 %b[t]%
+                for u 1 4
+                  charatindex permutation2 %u%
+                  = pos %sout1%
+                  ++ pos
+                  if = pos %j%
+                    = pos1 %u%
+                  endif
+                  if = pos %k%
+                    = pos2 %u%
+                  endif
+                endfor u
+                if < pos1 %pos2%
+                  pairedttest %resultdir%/%dataset%-%permutation1%-%index%-%s%-ripper.pairwise %resultdir%/%dataset%-%permutation2%-%index%-%s%-ripper.pairwise
+                  if = out1 0
+                    ++ count
+                  endif
+                endif
+              endfor t
+            endif
+          endfor p
+        endfor s
+      endif
+    endfor k
+  endfor j
+  writescreen %dataset%_%count/7920.0%
+endfor i
+output stdout

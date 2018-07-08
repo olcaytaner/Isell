@@ -1,0 +1,32 @@
+displaycode off
+string dataset alg1 alg2 resultdir
+integer i count j
+file infile
+= resultdir ../results/multivariatetest/10fold/measure/roc
+= infile manova.txt
+openfile infile r
+readfile infile count
+for i 1 %count%
+  readfile infile dataset
+  for j 1 10
+    hold off
+    fontsize legend 24
+    fontsize label 24
+    fontsize axis 24
+    axislimits x 1 1 1 1
+    axislimits y 0 0 1 1
+    hold on
+    plotgauss2d %resultdir%/%dataset%-%j%-c45.roc 4
+    plotgauss2d %resultdir%/%dataset%-%j%-knn.roc 4
+    plotgauss2d %resultdir%/%dataset%-%j%-lda.roc 4
+    plotgauss2d %resultdir%/%dataset%-%j%-qda.roc 4
+    plotgauss2d %resultdir%/%dataset%-%j%-svm.roc 4
+    xlabel tpr
+    ylabel fpr
+    fontsize data 18
+    legendnames c45 knn lda qda svm
+    legendposition downright
+    exportimage ../results/multivariatetest/manova/%dataset%-%j%-roc.eps
+    writescreen %i%_%j%
+  endfor j
+endfor i

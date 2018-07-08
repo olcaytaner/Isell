@@ -1,0 +1,154 @@
+displaycode off
+integer i j
+string resultdir dataset alg st
+setprecision 2
+= resultdir ../results/bioinformatics
+for j 1 5
+  switch j
+    case 1
+      = alg knn
+    case 2
+      = alg svm
+    case 3
+      = alg ripper
+    case 4
+      = alg randomforest
+    case 5
+      = alg mlpgeneric
+  endswitch
+  output %alg%.txt
+  for i 1 11
+    switch i
+      case 1
+        = dataset 9tumors
+      case 2
+        = dataset 11tumors
+      case 3
+        = dataset 14tumors
+      case 4
+        = dataset braintumor1
+      case 5
+        = dataset braintumor2
+      case 6
+        = dataset dlbcl
+      case 7
+        = dataset leukemia1
+      case 8
+        = dataset leukemia2
+      case 9
+        = dataset lungtumor
+      case 10
+        = dataset prostatetumor
+      case 11
+        = dataset srbct
+    endswitch
+    meanvariance %resultdir%/%dataset%-%alg%.error
+    write %out1%
+  endfor i
+endfor j
+output table1.txt
+for i 1 11
+  switch i
+    case 1
+      = dataset 9tumors
+    case 2
+      = dataset 11tumors
+    case 3
+      = dataset 14tumors
+    case 4
+      = dataset braintumor1
+    case 5
+      = dataset braintumor2
+    case 6
+      = dataset dlbcl
+    case 7
+      = dataset leukemia1
+    case 8
+      = dataset leukemia2
+    case 9
+      = dataset lungtumor
+    case 10
+      = dataset prostatetumor
+    case 11
+      = dataset srbct
+  endswitch
+  = st %dataset%_
+  for j 1 5
+    switch j
+      case 1
+        = alg knn
+      case 2
+        = alg ripper
+      case 3
+        = alg randomforest
+      case 4
+        = alg svm
+      case 5
+        = alg mlpgeneric
+    endswitch
+    meanvariance %resultdir%/%dataset%-%alg%.error
+    = st %st%_&_%out1%$\pm$%out2%
+  endfor j
+  write %st%\\
+endfor i
+output stdout
+comparealgorithms knn.txt svm.txt ripper.txt randomforest.txt mlpgeneric.txt
+mv image.eps casestudy4b.eps
+writescreen Space_Complexity
+for i 1 11
+  switch i
+    case 1
+      = dataset 9tumors
+    case 2
+      = dataset 11tumors
+    case 3
+      = dataset 14tumors
+    case 4
+      = dataset braintumor1
+    case 5
+      = dataset braintumor2
+    case 6
+      = dataset dlbcl
+    case 7
+      = dataset leukemia1
+    case 8
+      = dataset leukemia2
+    case 9
+      = dataset lungtumor
+    case 10
+      = dataset prostatetumor
+    case 11
+      = dataset srbct
+  endswitch
+  multitest %resultdir%/%dataset%-ripper.error %resultdir%/%dataset%-mlpgeneric.error %resultdir%/%dataset%-randomforest.error %resultdir%/%dataset%-svm.error %resultdir%/%dataset%-knn.error 
+  writescreen %dataset%_%sout1%_%sout2%
+endfor i
+writescreen Time_Complexity
+for i 1 11
+  switch i
+    case 1
+      = dataset 9tumors
+    case 2
+      = dataset 11tumors
+    case 3
+      = dataset 14tumors
+    case 4
+      = dataset braintumor1
+    case 5
+      = dataset braintumor2
+    case 6
+      = dataset dlbcl
+    case 7
+      = dataset leukemia1
+    case 8
+      = dataset leukemia2
+    case 9
+      = dataset lungtumor
+    case 10
+      = dataset prostatetumor
+    case 11
+      = dataset srbct
+  endswitch
+  multitest %resultdir%/%dataset%-knn.error %resultdir%/%dataset%-ripper.error %resultdir%/%dataset%-randomforest.error %resultdir%/%dataset%-svm.error %resultdir%/%dataset%-mlpgeneric.error 
+  writescreen %dataset%_%sout1%_%sout2%
+endfor i

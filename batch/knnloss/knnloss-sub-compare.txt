@@ -1,0 +1,119 @@
+displaycode off
+displayresult off
+integer i j k res1 res2 a[11] res[4] type
+string resultdir dataset
+= resultdir ../results/metrics
+= type 1
+twotailed
+output sub%type%.tex
+write \documentstyle{article}
+write \begin{document}
+for i 1 5
+  switch i
+    case 1
+      = dataset optdigits
+      = a[1] 64
+      = a[2] 63
+      = a[3] 62
+      = a[4] 61
+      = a[5] 60
+      = a[6] 59
+      = a[7] 55
+      = a[8] 51
+      = a[9] 47
+      = a[10] 43
+      = a[11] 39
+    case 2
+      = dataset pendigits
+      = a[1] 16
+      = a[2] 15
+      = a[3] 14
+      = a[4] 13
+      = a[5] 12
+      = a[6] 11
+      = a[7] 10
+      = a[8] 9
+      = a[9] 8
+      = a[10] 7
+      = a[11] 6
+    case 3
+      = dataset segment
+      = a[1] 19
+      = a[2] 18
+      = a[3] 17
+      = a[4] 16
+      = a[5] 15
+      = a[6] 14
+      = a[7] 13
+      = a[8] 12
+      = a[9] 11
+      = a[10] 10
+      = a[11] 9
+    case 4
+      = dataset spambase
+      = a[1] 57
+      = a[2] 56
+      = a[3] 55
+      = a[4] 54
+      = a[5] 53
+      = a[6] 52
+      = a[7] 48
+      = a[8] 44
+      = a[9] 40
+      = a[10] 36
+      = a[11] 32
+    case 5
+      = dataset zipcodes
+      = a[1] 256
+      = a[2] 253
+      = a[3] 250
+      = a[4] 247
+      = a[5] 244
+      = a[6] 241
+      = a[7] 221
+      = a[8] 201
+      = a[9] 181
+      = a[10] 161
+      = a[11] 141
+  endswitch
+  write \begin{table}
+  write \begin{center}
+  write \caption{%dataset%}
+  write \begin{tabular}{|l|r|r|r|r|}
+  write \hline
+  write Dataset_Size&_\multicolumn{4}{c}{Error/KnnLoss%type%}\\
+  write \hline
+  write _&_Accept/Accept_&_Accept/Reject_&_Reject/Accept_&_Reject/Reject_\\
+  write \hline
+  for j 2 11
+    for k 1 4
+      = res[%k%] 0
+    endfor k
+    for k 1 100
+      pairedttest %resultdir%/%dataset%%a[1]%-%k%.error %resultdir%/%dataset%%a[j]%-%k%.error
+      = res1 %out1%
+      pairedttest %resultdir%/%dataset%%a[1]%-%k%.knnloss%type% %resultdir%/%dataset%%a[j]%-%k%.knnloss%type%
+      = res2 %out1%
+      if = res1 0
+        if = res2 0
+          ++ res[1]
+        else
+          ++ res[2]
+        endif
+      else
+        if = res2 0
+          ++ res[3]
+        else
+          ++ res[4]
+        endif
+      endif
+    endfor k    
+    write %a[j]%_&_%res[1]%_&_%res[2]%_&_%res[3]%_&_%res[4]%_\\
+  endfor j
+  write \hline
+  write \end{tabular}
+  write \end{center}
+  write \end{table}
+endfor i
+write \end{document}
+output stdout

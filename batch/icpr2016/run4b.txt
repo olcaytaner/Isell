@@ -1,0 +1,149 @@
+displaycode off
+displayresult off
+string dataset resultdir overalldir deleted bestaction added removed beststring
+= resultdir ../results/ensemble
+= overalldir ../results/ensembleresults
+integer i j k t s n nfact improved found bestcount iterationcount bestperformancecount
+real bestperformance performance
+file error ensemblesize spacesize
+= n 4
+= nfact 1
+for i 2 %n%
+  = nfact %nfact*i%
+endfor i
+string b[%nfact%]
+string c[%n-1%]
+stringpermutation %n% b
+string bestlist[100]
+string posteriorfiles[100]
+string donelist[500]
+string done
+integer donecount
+for i 1 4
+  switch i
+    case 1
+      = dataset car
+    case 2
+      = dataset srbct
+    case 3
+      = dataset vehicle
+    case 4
+      = dataset braintumor2
+  endswitch   
+  = error %overalldir%/%dataset%-b.error
+  = ensemblesize %overalldir%/%dataset%-b.ensemblesize
+  = spacesize %overalldir%/%dataset%-b.spacesize
+  openfile error w
+  openfile ensemblesize w
+  openfile spacesize w
+  for s 1 10
+    randomize %s%
+    = bestcount 1
+    = iterationcount 0
+    random 1 %nfact+1%
+    = added %b[out1]%
+    = bestlist[%bestcount%] %added%
+    = donecount 0
+    for t 1 %bestcount%
+      = posteriorfiles[t] %resultdir%/%dataset%-%bestlist[t]%.posterior
+    endfor t
+    sortarray posteriorfiles %bestcount%
+    concatarray posteriorfiles %bestcount%
+    = done %sout1%
+    += donecount 1
+    = donelist[%donecount%] %done%
+    ensemble posteriorfiles %bestcount%
+    = bestperformance %out1%
+    = bestperformancecount %bestcount%
+    concatarray bestlist %bestcount%
+    = beststring %sout1%
+    = improved 1
+    while = improved 1
+      = improved 0
+      for j 1 %bestcount%
+        neighborpermutations %bestlist[j]% c
+        for k 1 %n-1%
+          searcharray bestlist %bestcount% %c[k]%
+          = found %out1%
+          if = found -1
+            += bestcount 1
+            = bestlist[%bestcount%] %c[k]%
+            for t 1 %bestcount%
+              = posteriorfiles[t] %resultdir%/%dataset%-%bestlist[t]%.posterior
+            endfor t
+            sortarray posteriorfiles %bestcount%
+            concatarray posteriorfiles %bestcount%
+            = done %sout1%
+            searcharray donelist %donecount% %done%
+            = found %out1%
+            if = found -1
+              ensemble posteriorfiles %bestcount%
+              = performance %out1%
+              if < performance %bestperformance%
+                = bestperformance %performance%
+                = bestperformancecount %bestcount%
+                concatarray bestlist %bestcount%
+                = beststring %sout1%
+                = improved 1
+                = added %c[k]%
+                = bestaction add
+              endif 
+              += donecount 1
+              = donelist[%donecount%] %done%
+            endif         
+            -= bestcount 1
+          endif
+        endfor k
+      endfor j
+      if > bestcount 1
+        for j 1 %bestcount%
+          = deleted %bestlist[j]%
+          deletefromarray bestlist %bestcount% %j%
+          -= bestcount 1
+          for t 1 %bestcount%
+            = posteriorfiles[t] %resultdir%/%dataset%-%bestlist[t]%.posterior
+          endfor t
+          sortarray posteriorfiles %bestcount%      
+          concatarray posteriorfiles %bestcount%
+          = done %sout1%
+          searcharray donelist %donecount% %done%
+          = found %out1%
+          if = found -1
+            ensemble posteriorfiles %bestcount%
+            = performance %out1%
+            if < performance %bestperformance%
+              = bestperformance %performance%
+              = bestperformancecount %bestcount%
+              concatarray bestlist %bestcount%
+              = beststring %sout1%
+              = improved 1
+              = bestaction remove
+              = removed %deleted%
+            endif   
+            += donecount 1
+            = donelist[%donecount%] %done%
+          endif       
+          addtoarray bestlist %bestcount% %j% %deleted%
+          += bestcount 1
+        endfor j
+      endif
+      if = improved 1
+        += iterationcount 1
+        if = bestaction add
+          += bestcount 1
+          = bestlist[%bestcount%] %added%
+        else
+          searcharray bestlist %bestcount% %removed%
+          deletefromarray bestlist %bestcount% %out1%
+          -= bestcount 1      
+        endif
+      endif
+    endwhile
+    writefile error %bestperformance%
+    writefile ensemblesize %bestperformancecount%
+    writefile spacesize %donecount%
+  endfor s
+  closefile error
+  closefile ensemblesize
+  closefile spacesize
+endfor i

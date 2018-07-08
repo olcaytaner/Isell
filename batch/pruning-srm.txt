@@ -1,0 +1,56 @@
+string resultdir dataset model st
+integer i j k l t
+file outfile datasetfile
+displaycode off
+displayresult off
+os Linux
+setdatadir //home/olcay/data
+loaddef //home/olcay/runs/idtree-twoclass.ini
+runcount 5
+foldcount 2
+nodecount 1000
+prunetype validation
+partitioncount 20
+= resultdir //home/olcay/runs/results
+for i 1 1
+  switch i
+    case 1
+      modelselection univariate
+      = model univariate
+    case 2
+      modelselection linear
+      = model linear
+    case 3
+      modelselection quadratic
+      = model quadratic
+  endswitch
+  = datasetfile twoclass.txt
+  openfile datasetfile r
+  for j 1 1
+    readfile datasetfile dataset
+    output %resultdir%/%dataset%-%model%-srmpruning.error
+    nbtree %dataset% random 1    
+    = outfile %resultdir%/%dataset%-%model%-srmpruning.complexity
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout2[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%/%dataset%-%model%-a1a2.txt
+    openfile outfile w
+    = t 1
+    for k 1 20
+      = st %aout3[t]%
+      += t 1
+      for l 2 20
+        = st %st%_%aout3[t]%
+        += t 1
+      endfor l
+      writefile outfile %st%
+    endfor k
+    closefile outfile
+    writescreen %i%:%j%
+  endfor j
+  closefile datasetfile
+endfor i  
+output stdout

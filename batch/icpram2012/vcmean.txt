@@ -1,0 +1,43 @@
+displaycode off
+displayresult off
+string resultdir dataset prune type st
+setdatadir ../data
+loaddatasets rule.xml
+integer i j p total
+= resultdir ../results/vc/10x10
+= type error
+output table%type%.txt
+  for j 1 11
+    switch j
+      case 1
+        = dataset acceptors
+      case 2
+        = dataset artificial
+      case 3
+        = dataset donors
+      case 4
+        = dataset krvskp
+      case 5
+        = dataset monks
+      case 6
+        = dataset mushroom
+      case 7
+        = dataset promoters
+      case 8
+        = dataset spect
+      case 9
+        = dataset tictactoe
+      case 10
+        = dataset titanic
+      case 11
+        = dataset vote
+    endswitch
+    meanvariance %resultdir%/%dataset%-no.%type%
+    = st %dataset%_&_%out1%_$\pm$_%out2%
+    meanvariance %resultdir%/%dataset%-cv.%type%
+    = st %st%_&_%out1%_$\pm$_%out2%
+    meanvariance %resultdir%/%dataset%-srm-1-20.%type%
+    = st %st%_&_%out1%_$\pm$_%out2%\\
+    write %st%
+  endfor j
+output stdout

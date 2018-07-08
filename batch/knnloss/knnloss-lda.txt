@@ -1,0 +1,38 @@
+displaycode off
+integer i j k p add s
+string resultdir dataset classes
+= resultdir ../results/knnloss/metrics
+setdatadir .
+runcount 1
+foldcount 10
+nearcount 10
+dimensionreducetype variance
+for i 1 5
+  switch i
+    case 1
+      = dataset optdigits
+    case 2
+      = dataset pendigits
+    case 3
+      = dataset segment
+    case 4
+      = dataset spambase
+    case 5
+      = dataset zipcodes
+  endswitch
+  loaddatasets knnloss.xml
+  pca %dataset% %dataset%pca %dataset%pca.xml
+  loaddatasets %dataset%pca.xml
+  lda %dataset%pca %dataset%lda %dataset%lda.xml
+  loaddatasets %dataset%lda.xml
+  for k 1 1
+    output %resultdir%/%dataset%lda-%k%.error
+    knn %dataset%lda cv %k%
+    output %resultdir%/%dataset%lda-%k%.knnloss
+    for p 1 10
+      write %aout3[p]%
+    endfor p
+    output stdout
+    writescreen %i%_%k%
+  endfor k    
+endfor i

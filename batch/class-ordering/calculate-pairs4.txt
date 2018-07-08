@@ -1,0 +1,88 @@
+displaycode off
+integer i s j k t p pos1 pos2 dummy
+real table[24,16] index[4,4] counts[4,4] count
+file infile
+string dataset resultdir b[24] permutation st
+= resultdir ../results/perm
+stringpermutation 4 b
+setprecision 2
+output tablepairs4.txt
+for i 1 3
+  switch i
+    case 1
+      = dataset car
+    case 2
+      = dataset srbct
+    case 3
+      = dataset vehicle
+  endswitch
+  = table 0
+  for s 1 10
+    for j 1 24
+      = permutation %b[j]%
+      = infile %resultdir%/%dataset%-%permutation%-%s%-ripper.confusion
+      openfile infile r
+      = index 0
+      for k 1 3
+        charatindex permutation %k%
+        = pos1 %sout1%
+        ++ pos1
+        for t %k+1% 4
+          charatindex permutation %t%
+          = pos2 %sout1%
+          ++ pos2
+          = index[%pos1%,%pos2%] 1
+        endfor t
+      endfor k
+      for p 1 10
+        readfile infile dummy
+        readfile infile dummy
+        = count 0
+        for k 1 4
+          for t 1 4
+            readfile infile counts[%k%,%t%]
+            += count %counts[k,t]%            
+          endfor t
+        endfor k
+        for k 1 4
+          for t 1 4
+            += table[%j%,%4*(k-1)+t%] %(index[k,t]*(counts[k,t]+counts[t,k]))/count%
+          endfor t
+        endfor k        
+      endfor p
+      closefile infile
+    endfor j
+  endfor s
+  for j 1 24
+    = permutation _
+    for t 1 4
+      charatindex b[j] %t%
+      = pos1 %sout1%
+      ++ pos1
+      = permutation %permutation%%pos1%
+    endfor t  
+    if = j 1
+      = st \multirow{24}{*}{%dataset%}_&_%permutation%
+    else
+      = st _&_%permutation%
+    endif
+    for t 1 16
+      if != t 1
+        if != t 6
+          if != t 11
+            if != t 16
+              if > table[j,t] 0.0
+                = st %st%_&_%table[j,t]%_
+              else
+                = st %st%_&_
+              endif
+            endif
+          endif
+        endif
+      endif
+    endfor t
+    write %st%\\
+  endfor j
+  write \hline
+endfor i
+output stdout

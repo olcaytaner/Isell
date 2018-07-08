@@ -1,0 +1,39 @@
+displaycode off
+os Windows
+integer i c f n p
+string dataset
+real ce
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+output c:\users\olcay\isell\dataset.txt
+setprecision 6
+varianceexplained 0.9
+for i 1 6
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+    case 6
+      = dataset ecoli
+   endswitch   
+  classcount %dataset%
+  = c %out1%
+  featurecount %dataset%
+  = f %out2% 
+  samplecount %dataset%
+  = n %out1%
+  classentropy %dataset%
+  = ce %out1%
+  pcafeaturecount %dataset%
+  = p %out1%
+  write %dataset%_%f%_%c%_%n%_%ce%_%p%
+  writescreen %i%
+endfor i
+output stdout

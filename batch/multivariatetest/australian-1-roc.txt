@@ -1,0 +1,24 @@
+displaycode off
+string dataset alg1 alg2 resultdir
+integer i count j
+file infile
+= resultdir ../results/multivariatetest/10fold/measure/roc
+= dataset australian
+= j 1
+hold off
+fontsize legend 40
+    fontsize label 40
+    fontsize axis 40
+    axislimits x 1 1 1 1
+    axislimits y 0 0 1 1
+    hold on
+    plotgauss2d %resultdir%/%dataset%-%j%-c45.roc 4
+    plotgauss2d %resultdir%/%dataset%-%j%-knn.roc 4
+    plotgauss2d %resultdir%/%dataset%-%j%-lda.roc 4
+    plotgauss2d %resultdir%/%dataset%-%j%-qda.roc 4
+    xlabel tpr
+    ylabel fpr
+    fontsize data 24
+    legendnames c45 knn lda qda
+    legendposition upleft
+    exportimage australian-1-roc.eps

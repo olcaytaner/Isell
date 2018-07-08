@@ -1,0 +1,70 @@
+displaycode off
+displayresult off
+integer i j k p t
+string dataset method1 method2 resultdir file1 file2
+matrix m1 m2
+setprecision 3
+= resultdir ../results/mvartest2
+twotailed
+for i 1 6
+  switch i
+    case 1
+      = method1 c45
+    case 2
+      = method1 knn
+    case 3
+      = method1 lda
+    case 4
+      = method1 qda
+    case 5
+      = method1 svm1
+    case 6
+      = method1 svm2
+    case 7
+      = method1 randomforest
+  endswitch
+  for p %i+1% 7
+    switch p
+      case 1
+        = method2 c45
+      case 2
+        = method2 knn
+      case 3
+        = method2 lda
+      case 4
+        = method2 qda
+      case 5
+        = method2 svm1
+      case 6
+        = method2 svm2
+      case 7
+        = method2 randomforest
+    endswitch
+    for j 4 4
+      switch j
+        case 1
+          = dataset acceptors
+        case 2
+          = dataset donors
+        case 3
+          = dataset ads
+        case 4
+          = dataset polyadenylation
+      endswitch
+      for k 4 4
+        = file1 %resultdir%/measure/roc/%dataset%-%k%-%method1%.roc
+        = file2 %resultdir%/measure/roc/%dataset%-%k%-%method2%.roc
+        fileexists %resultdir%/measure/confusion/%dataset%-%k%-%method1%.confusion        
+        if = out1 1
+          fileexists %resultdir%/measure/confusion/%dataset%-%k%-%method2%.confusion        
+          if = out1 1          
+            hotellingt %file1% %file2%
+            if = out1 0
+              writescreen %method1%_%method2%
+            endif
+          endif
+        endif
+      endfor k
+    endfor j
+  endfor p  
+endfor i  

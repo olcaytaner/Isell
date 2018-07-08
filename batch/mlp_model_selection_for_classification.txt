@@ -1,0 +1,184 @@
+displaycode off
+integer i j k c
+string dataset dir model
+file outfile
+real rate
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+perceptronrun 50
+setprecision 4
+= dir c:\users\olcay\isell\mlp\cls\modelselection
+for i 1 44
+  switch i
+    case 1
+      = dataset haberman
+      = rate 1.0
+    case 2
+      = dataset iris
+      = rate 0.1
+    case 3
+      = dataset bupa
+      = rate 0.1
+    case 4
+      = dataset monks
+      = rate 0.5
+    case 5
+      = dataset pima
+      = rate 0.005
+    case 6
+      = dataset titanic
+      = rate 0.1
+    case 7
+      = dataset breast
+      = rate 0.5
+    case 8
+      = dataset artificial
+      = rate 0.01
+    case 9
+      = dataset ecoli
+      = rate 0.1
+    case 10
+      = dataset glass
+      = rate 0.5
+    case 11
+      = dataset heart
+      = rate 0.01
+    case 12
+      = dataset pageblock
+      = rate 0.05
+    case 13
+      = dataset wine
+      = rate 0.5
+    case 14
+      = dataset yeast
+      = rate 0.05
+    case 15
+      = dataset hepatitis
+      = rate 0.05
+    case 16
+      = dataset ringnorm
+      = rate 0.05
+    case 17
+      = dataset twonorm
+      = rate 0.005
+    case 18
+      = dataset zoo
+      = rate 0.5
+    case 19
+      = dataset balance
+      = rate 0.05
+    case 20
+      = dataset wave
+      = rate 0.005
+    case 21
+      = dataset car
+      = rate 0.1
+    case 22
+      = dataset flare
+      = rate 0.01
+    case 23
+      = dataset segment
+      = rate 0.1
+    case 24
+      = dataset fevzi
+      = rate 0.05
+    case 25
+      = dataset postoperative
+      = rate 0.01
+    case 26
+      = dataset cmc
+      = rate 0.05
+    case 27
+      = dataset tictactoe
+      = rate 0.05
+    case 28
+      = dataset nursery
+      = rate 0.1
+    case 29
+      = dataset vote
+      = rate 1.0
+    case 30
+      = dataset ironosphere
+      = rate 0.5
+    case 31
+      = dataset dermatology
+      = rate 0.5
+    case 32
+      = dataset letter
+      = rate 0.05
+    case 33
+      = dataset australian
+      = rate 0.01
+    case 34
+      = dataset credit
+      = rate 0.01
+    case 35
+      = dataset thyroid
+      = rate 0.1
+    case 36
+      = dataset spambase
+      = rate 0.1
+    case 37
+      = dataset tae
+      = rate 0.1
+    case 38
+      = dataset cylinder
+      = rate 0.1
+    case 39
+      = dataset cenk
+      = rate 0.05
+    case 40
+      = dataset horse
+      = rate 0.01
+    case 41
+      = dataset mushroom
+      = rate 0.05
+    case 42
+      = dataset flags
+      = rate 0.1
+    case 43
+      = dataset zipcodes
+      = rate 0.005
+    case 44
+      = dataset ocr
+      = rate 0.05
+   endswitch   
+   learningrate %rate%
+   for j 1 3
+     switch j
+       case 1
+         = model aic         
+       case 2
+         = model bic         
+       case 3
+         = model crossvalidation       
+     endswitch
+     modelselection %model%
+     mlpmodelselection %dataset% 20 1    
+     = outfile %dir%\%dataset%-complexity.%model%
+     openfile outfile w
+     = c %out1%
+     writefile outfile %c%
+     closefile outfile
+     = outfile %dir%\%dataset%-error.%model%
+     openfile outfile w
+     writefile outfile %out2%
+     closefile outfile
+     = outfile %dir%\%dataset%-alpha.%model%
+     openfile outfile w
+     writefile outfile %out3%
+     closefile outfile
+     = outfile %dir%\%dataset%-hiddens.%model%
+     openfile outfile w
+     for k 1 28
+       writefile outfile %aout1[k]%
+     endfor k
+     closefile outfile
+     = outfile %dir%\%dataset%-alphaerror.%model%
+     openfile outfile w
+     for k 1 28
+       writefile outfile %aout2[k]%
+     endfor k
+     closefile outfile
+   endfor j
+endfor i

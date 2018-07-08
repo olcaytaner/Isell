@@ -1,0 +1,70 @@
+displaycode off
+integer i k
+string dataset resultdir alg
+setdatadir ../data
+loaddatasets rule.xml
+runcount 5
+foldcount 2
+testpercentage 0.33333333333333
+setprecision 6
+= resultdir ../results/softtree
+for i 1 23
+  switch i
+    case 1
+      = dataset flare
+    case 2
+      = dataset tae
+    case 3
+      = dataset vehicle
+    case 4
+      = dataset dermatology
+    case 5
+      = dataset ecoli
+    case 6
+      = dataset glass
+    case 7
+      = dataset iris
+    case 8
+      = dataset ocr
+    case 9
+      = dataset optdigits
+    case 10
+      = dataset pageblock
+    case 11
+      = dataset pendigits
+    case 12
+      = dataset segment
+    case 13
+      = dataset wave
+    case 14
+      = dataset wine
+    case 15
+      = dataset yeast
+    case 16
+      = dataset zoo
+    case 17
+      = dataset winequality
+    case 18
+      = dataset splice
+    case 19
+      = dataset hayesroth
+    case 20
+      = dataset car
+    case 21
+      = dataset balance
+    case 22
+      = dataset cmc
+    case 23
+      = dataset nursery
+  endswitch
+  fileexists %resultdir%/%dataset%-c45.error
+  if = out1 0
+    output %resultdir%/%dataset%-c45.error
+    c45 %dataset% cv 1
+    output %resultdir%/%dataset%-c45.nodecount
+    for k 1 10
+      write %aout3[k]%
+    endfor k    
+  endif
+endfor i
+output stdout

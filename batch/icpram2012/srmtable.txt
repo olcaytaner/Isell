@@ -1,0 +1,98 @@
+displaycode off
+integer i p l
+string st dataset resultdir
+= resultdir ../results/vc
+for i 1 31
+  switch i
+    case 1
+      = dataset ringnorm
+    case 2
+      = dataset spambase
+    case 3
+      = dataset twonorm
+    case 4
+      = dataset german
+    case 5
+      = dataset magic
+    case 6
+      = dataset musk2
+    case 7
+      = dataset satellite47
+    case 8
+      = dataset polyadenylation
+    case 9
+      = dataset pima
+    case 10
+      = dataset breast
+    case 11
+      = dataset acceptors
+    case 12
+      = dataset artificial
+    case 13
+      = dataset donors
+    case 14
+      = dataset krvskp
+    case 15
+      = dataset monks
+    case 16
+      = dataset mushroom
+    case 17
+      = dataset promoters
+    case 18
+      = dataset spect
+    case 19
+      = dataset tictactoe
+    case 20
+      = dataset titanic
+    case 21
+      = dataset vote
+    case 22
+      = dataset bupa
+    case 23
+      = dataset hepatitis
+    case 24
+      = dataset haberman
+    case 25
+      = dataset heart
+    case 26
+      = dataset ironosphere
+    case 27
+      = dataset parkinsons
+    case 28
+      = dataset transfusion
+    case 29
+      = dataset ads
+    case 30
+      = dataset dlbcl
+    case 31
+      = dataset prostatetumor
+  endswitch
+  output %resultdir%/%dataset%-srm-all.bound
+  for p 1 10
+    = st _
+    for l 1 10
+      meanvariance %resultdir%/%dataset%-srm-%p%-%l%.bound
+      = st %st%_%out1%
+    endfor l
+    write %st%
+  endfor p
+  output %resultdir%/%dataset%-srm-all.error
+  for p 1 10
+    = st _
+    for l 1 10
+      meanvariance %resultdir%/%dataset%-srm-%p%-%l%.error
+      = st %st%_%out1%
+    endfor l
+    write %st%
+  endfor p
+  output %resultdir%/%dataset%-srm-all.nodecount
+  for p 1 10
+    = st _
+    for l 1 10
+      meanvariance %resultdir%/%dataset%-srm-%p%-%l%.nodecount
+      = st %st%_%out1%
+    endfor l
+    write %st%
+  endfor p
+endfor i
+output stdout

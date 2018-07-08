@@ -1,0 +1,20 @@
+displaycode off
+displayresult off
+printconfusion on
+integer i j
+setdatadir ../data
+runcount 5
+foldcount 2
+nearcount 1
+rm -rf ../results/graphtest/pendigits/*.*
+for i 0 10
+  loaddatasets pendigits%i%.xml
+  for j 1 100
+    fileexists ../results/graphtest/pendigits/pendigits%i%-%j%.confusion
+    if = out1 0
+      confusionfile ../results/graphtest/pendigits/pendigits%i%-%j%.confusion
+      knn pendigits%i% cv %j%
+    endif
+  endfor j
+  writescreen %i%
+endfor i

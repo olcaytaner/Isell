@@ -1,0 +1,38 @@
+displaycode off
+fontsize axis 12
+fontsize label 12
+string resultdir
+= resultdir ../results/moss
+boxplot %resultdir%/camel-knn-metric.error %resultdir%/camel-knn-kernel.error
+hold on
+boxplot %resultdir%/tomcat-knn-metric.error %resultdir%/tomcat-knn-kernel.error
+boxplot %resultdir%/poi-knn-metric.error %resultdir%/poi-knn-kernel.error
+boxplot %resultdir%/xalan-knn-metric.error %resultdir%/xalan-knn-kernel.error
+boxplot %resultdir%/jedit-knn-metric.error %resultdir%/jedit-knn-kernel.error
+boxplot %resultdir%/velocity-knn-metric.error %resultdir%/velocity-knn-kernel.error
+boxplot %resultdir%/ant-knn-metric.error %resultdir%/ant-knn-kernel.error
+boxplot %resultdir%/lucene-knn-metric.error %resultdir%/lucene-knn-kernel.error
+boxplot %resultdir%/synapse-knn-metric.error %resultdir%/synapse-knn-kernel.error
+boxplot %resultdir%/ivy-knn-metric.error %resultdir%/ivy-knn-kernel.error
+xaxisnames Camel Tomcat Poi Xalan JEdit Velocity Ant Lucene Synapse Ivy
+axislimits y 0 100 10 0
+xlabel Data_Set
+ylabel Error
+exportimage boxplot1.eps
+hold off
+boxplot %resultdir%/camel-svm-metric.error %resultdir%/camel-svm-kernel.error
+hold on
+boxplot %resultdir%/tomcat-svm-metric.error %resultdir%/tomcat-svm-kernel.error
+boxplot %resultdir%/poi-svm-metric.error %resultdir%/poi-svm-kernel.error
+boxplot %resultdir%/xalan-svm-metric.error %resultdir%/xalan-svm-kernel.error
+boxplot %resultdir%/jedit-svm-metric.error %resultdir%/jedit-svm-kernel.error
+boxplot %resultdir%/velocity-svm-metric.error %resultdir%/velocity-svm-kernel.error
+boxplot %resultdir%/ant-svm-metric.error %resultdir%/ant-svm-kernel.error
+boxplot %resultdir%/lucene-svm-metric.error %resultdir%/lucene-svm-kernel.error
+boxplot %resultdir%/synapse-svm-metric.error %resultdir%/synapse-svm-kernel.error
+boxplot %resultdir%/ivy-svm-metric.error %resultdir%/ivy-svm-kernel.error
+xaxisnames Camel Tomcat Poi Xalan JEdit Velocity Ant Lucene Synapse Ivy
+axislimits y 0 100 10 0
+xlabel Data_Set
+ylabel Error
+exportimage boxplot2.eps

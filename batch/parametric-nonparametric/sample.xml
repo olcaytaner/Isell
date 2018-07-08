@@ -1,0 +1,3046 @@
+<datasets>
+	<dataset name="ringnorm" task="classification" size="7400" directory="ringnorm" filetype="text" separator=" " filename="Dataset.data">
+		<classes>
+			<class value="0" size="3664"/>
+			<class value="1" size="3736"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="-6.880000" max="6.280000"/>
+			<attribute type="Real" available="True" min="-7.140000" max="6.920000"/>
+			<attribute type="Real" available="True" min="-7.730000" max="7.610000"/>
+			<attribute type="Real" available="True" min="-6.630000" max="7.150000"/>
+			<attribute type="Real" available="True" min="-7.180000" max="6.570000"/>
+			<attribute type="Real" available="True" min="-6.950000" max="6.740000"/>
+			<attribute type="Real" available="True" min="-7.780000" max="6.580000"/>
+			<attribute type="Real" available="True" min="-6.880000" max="6.360000"/>
+			<attribute type="Real" available="True" min="-7.180000" max="7.490000"/>
+			<attribute type="Real" available="True" min="-7.230000" max="7.270000"/>
+			<attribute type="Real" available="True" min="-7.800000" max="7.210000"/>
+			<attribute type="Real" available="True" min="-7.400000" max="6.790000"/>
+			<attribute type="Real" available="True" min="-7.100000" max="6.400000"/>
+			<attribute type="Real" available="True" min="-7.470000" max="7.260000"/>
+			<attribute type="Real" available="True" min="-7.340000" max="7.370000"/>
+			<attribute type="Real" available="True" min="-7.120000" max="6.910000"/>
+			<attribute type="Real" available="True" min="-7.640000" max="7.180000"/>
+			<attribute type="Real" available="True" min="-8.780000" max="6.900000"/>
+			<attribute type="Real" available="True" min="-7.550000" max="5.730000"/>
+			<attribute type="Real" available="True" min="-6.720000" max="7.630000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="spambase" task="classification" size="4601" directory="spambase" filetype="text" separator="," filename="spambase.data">
+		<classes>
+			<class value="1" size="1813"/>
+			<class value="0" size="2788"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="4.540000"/>
+			<attribute type="Real" available="True" min="0.000000" max="14.280000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="42.810000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.880000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.270000"/>
+			<attribute type="Real" available="True" min="0.000000" max="11.110000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.260000"/>
+			<attribute type="Real" available="True" min="0.000000" max="18.180000"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.610000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.670000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.550000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.410000"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.140000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.090000"/>
+			<attribute type="Real" available="True" min="0.000000" max="18.750000"/>
+			<attribute type="Real" available="True" min="0.000000" max="18.180000"/>
+			<attribute type="Real" available="True" min="0.000000" max="11.110000"/>
+			<attribute type="Real" available="True" min="0.000000" max="17.100000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.450000"/>
+			<attribute type="Real" available="True" min="0.000000" max="12.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.830000"/>
+			<attribute type="Real" available="True" min="0.000000" max="16.660000"/>
+			<attribute type="Real" available="True" min="0.000000" max="33.330000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.090000"/>
+			<attribute type="Real" available="True" min="0.000000" max="14.280000"/>
+			<attribute type="Real" available="True" min="0.000000" max="5.880000"/>
+			<attribute type="Real" available="True" min="0.000000" max="12.500000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.760000"/>
+			<attribute type="Real" available="True" min="0.000000" max="18.180000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.760000"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.690000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.890000"/>
+			<attribute type="Real" available="True" min="0.000000" max="8.330000"/>
+			<attribute type="Real" available="True" min="0.000000" max="11.110000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.760000"/>
+			<attribute type="Real" available="True" min="0.000000" max="7.140000"/>
+			<attribute type="Real" available="True" min="0.000000" max="14.280000"/>
+			<attribute type="Real" available="True" min="0.000000" max="3.570000"/>
+			<attribute type="Real" available="True" min="0.000000" max="20.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="21.420000"/>
+			<attribute type="Real" available="True" min="0.000000" max="22.050000"/>
+			<attribute type="Real" available="True" min="0.000000" max="2.170000"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.385000"/>
+			<attribute type="Real" available="True" min="0.000000" max="9.752000"/>
+			<attribute type="Real" available="True" min="0.000000" max="4.081000"/>
+			<attribute type="Real" available="True" min="0.000000" max="32.478000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.003000"/>
+			<attribute type="Real" available="True" min="0.000000" max="19.829000"/>
+			<attribute type="Real" available="True" min="1.000000" max="1102.500000"/>
+			<attribute type="Integer" available="True" min="1" max="9989"/>
+			<attribute type="Integer" available="True" min="1" max="15841"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="mushroom" task="classification" size="8124" directory="mushroom" filetype="text" separator="," filename="agaricus-lepiota.data">
+		<classes>
+			<class value="p" size="3916"/>
+			<class value="e" size="4208"/>
+		</classes>
+		<attributes>
+			<attribute type="Output" available="True">
+				<value>p</value>
+				<value>e</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>x</value>
+				<value>b</value>
+				<value>s</value>
+				<value>f</value>
+				<value>k</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>s</value>
+				<value>y</value>
+				<value>f</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>y</value>
+				<value>w</value>
+				<value>g</value>
+				<value>e</value>
+				<value>p</value>
+				<value>b</value>
+				<value>u</value>
+				<value>c</value>
+				<value>r</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>p</value>
+				<value>a</value>
+				<value>l</value>
+				<value>n</value>
+				<value>f</value>
+				<value>c</value>
+				<value>y</value>
+				<value>s</value>
+				<value>m</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>a</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>c</value>
+				<value>w</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>k</value>
+				<value>n</value>
+				<value>g</value>
+				<value>p</value>
+				<value>w</value>
+				<value>h</value>
+				<value>u</value>
+				<value>e</value>
+				<value>b</value>
+				<value>r</value>
+				<value>y</value>
+				<value>o</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>e</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>e</value>
+				<value>c</value>
+				<value>b</value>
+				<value>r</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>s</value>
+				<value>f</value>
+				<value>k</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>s</value>
+				<value>f</value>
+				<value>y</value>
+				<value>k</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>w</value>
+				<value>g</value>
+				<value>p</value>
+				<value>n</value>
+				<value>b</value>
+				<value>e</value>
+				<value>o</value>
+				<value>c</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>w</value>
+				<value>p</value>
+				<value>g</value>
+				<value>b</value>
+				<value>n</value>
+				<value>e</value>
+				<value>y</value>
+				<value>o</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>p</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>w</value>
+				<value>n</value>
+				<value>o</value>
+				<value>y</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>o</value>
+				<value>t</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>p</value>
+				<value>e</value>
+				<value>l</value>
+				<value>f</value>
+				<value>n</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>k</value>
+				<value>n</value>
+				<value>u</value>
+				<value>h</value>
+				<value>w</value>
+				<value>r</value>
+				<value>o</value>
+				<value>y</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>s</value>
+				<value>n</value>
+				<value>a</value>
+				<value>v</value>
+				<value>y</value>
+				<value>c</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>u</value>
+				<value>g</value>
+				<value>m</value>
+				<value>d</value>
+				<value>p</value>
+				<value>w</value>
+				<value>l</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="twonorm" task="classification" size="7400" directory="twonorm" filetype="text" separator=" " filename="Dataset.data">
+		<classes>
+			<class value="0" size="3703"/>
+			<class value="1" size="3697"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="-4.250000" max="3.580000"/>
+			<attribute type="Real" available="True" min="-3.960000" max="4.350000"/>
+			<attribute type="Real" available="True" min="-4.480000" max="4.400000"/>
+			<attribute type="Real" available="True" min="-3.890000" max="4.260000"/>
+			<attribute type="Real" available="True" min="-3.910000" max="5.640000"/>
+			<attribute type="Real" available="True" min="-4.010000" max="3.990000"/>
+			<attribute type="Real" available="True" min="-3.730000" max="4.450000"/>
+			<attribute type="Real" available="True" min="-4.570000" max="3.860000"/>
+			<attribute type="Real" available="True" min="-3.810000" max="4.250000"/>
+			<attribute type="Real" available="True" min="-4.200000" max="4.080000"/>
+			<attribute type="Real" available="True" min="-3.920000" max="4.100000"/>
+			<attribute type="Real" available="True" min="-3.830000" max="4.300000"/>
+			<attribute type="Real" available="True" min="-3.950000" max="3.780000"/>
+			<attribute type="Real" available="True" min="-3.850000" max="4.120000"/>
+			<attribute type="Real" available="True" min="-3.700000" max="3.550000"/>
+			<attribute type="Real" available="True" min="-3.700000" max="4.240000"/>
+			<attribute type="Real" available="True" min="-3.940000" max="3.720000"/>
+			<attribute type="Real" available="True" min="-4.070000" max="4.060000"/>
+			<attribute type="Real" available="True" min="-4.120000" max="4.320000"/>
+			<attribute type="Real" available="True" min="-3.780000" max="4.280000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="magic" task="classification" size="19020" directory="magic" filetype="text" separator="," filename="magic04.data" sigma="0.000000">
+		<classes>
+			<class value="g" size="12332"/>
+			<class value="h" size="6688"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="4.283500" max="334.177000"/>
+			<attribute type="Real" available="True" min="0.000000" max="256.382000"/>
+			<attribute type="Real" available="True" min="1.941300" max="5.323300"/>
+			<attribute type="Real" available="True" min="0.013100" max="0.893000"/>
+			<attribute type="Real" available="True" min="0.000300" max="0.675200"/>
+			<attribute type="Real" available="True" min="-457.916100" max="575.240700"/>
+			<attribute type="Real" available="True" min="-331.780000" max="238.321000"/>
+			<attribute type="Real" available="True" min="-205.894700" max="179.851000"/>
+			<attribute type="Real" available="True" min="0.000000" max="90.000000"/>
+			<attribute type="Real" available="True" min="1.282600" max="495.561000"/>
+			<attribute type="Output" available="True">
+				<value>g</value>
+				<value>h</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="ads" task="classification" size="3279" directory="ads" filetype="text" separator=" " filename="ad.data" sigma="0.000000">
+		<classes>
+			<class value="0" size="459"/>
+			<class value="1" size="2820"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="1" max="640"/>
+			<attribute type="Integer" available="True" min="1" max="640"/>
+			<attribute type="Real" available="True" min="0.001500" max="60.000000"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="musk2" task="classification" size="6598" directory="musk2" filetype="text" separator=" " filename="clean2.data" sigma="0.000000">
+		<classes>
+			<class value="0" size="5581"/>
+			<class value="1" size="1017"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="True" min="-31" max="292"/>
+			<attribute type="Integer" available="True" min="-199" max="95"/>
+			<attribute type="Integer" available="True" min="-167" max="81"/>
+			<attribute type="Integer" available="True" min="-114" max="161"/>
+			<attribute type="Integer" available="True" min="-118" max="325"/>
+			<attribute type="Integer" available="True" min="-183" max="200"/>
+			<attribute type="Integer" available="True" min="-171" max="220"/>
+			<attribute type="Integer" available="True" min="-225" max="320"/>
+			<attribute type="Integer" available="True" min="-245" max="147"/>
+			<attribute type="Integer" available="True" min="-286" max="231"/>
+			<attribute type="Integer" available="True" min="-328" max="176"/>
+			<attribute type="Integer" available="True" min="-321" max="184"/>
+			<attribute type="Integer" available="True" min="-305" max="195"/>
+			<attribute type="Integer" available="True" min="-342" max="158"/>
+			<attribute type="Integer" available="True" min="-294" max="172"/>
+			<attribute type="Integer" available="True" min="-327" max="80"/>
+			<attribute type="Integer" available="True" min="-224" max="138"/>
+			<attribute type="Integer" available="True" min="-308" max="189"/>
+			<attribute type="Integer" available="True" min="-286" max="225"/>
+			<attribute type="Integer" available="True" min="-252" max="227"/>
+			<attribute type="Integer" available="True" min="-295" max="194"/>
+			<attribute type="Integer" available="True" min="-185" max="190"/>
+			<attribute type="Integer" available="True" min="-253" max="213"/>
+			<attribute type="Integer" available="True" min="-76" max="317"/>
+			<attribute type="Integer" available="True" min="-100" max="277"/>
+			<attribute type="Integer" available="True" min="-242" max="183"/>
+			<attribute type="Integer" available="True" min="-205" max="164"/>
+			<attribute type="Integer" available="True" min="-166" max="145"/>
+			<attribute type="Integer" available="True" min="-142" max="174"/>
+			<attribute type="Integer" available="True" min="-162" max="266"/>
+			<attribute type="Integer" available="True" min="-117" max="309"/>
+			<attribute type="Integer" available="True" min="-143" max="310"/>
+			<attribute type="Integer" available="True" min="-139" max="207"/>
+			<attribute type="Integer" available="True" min="-279" max="160"/>
+			<attribute type="Integer" available="True" min="-160" max="220"/>
+			<attribute type="Integer" available="True" min="-7" max="324"/>
+			<attribute type="Integer" available="True" min="-175" max="147"/>
+			<attribute type="Integer" available="True" min="-190" max="187"/>
+			<attribute type="Integer" available="True" min="-148" max="107"/>
+			<attribute type="Integer" available="True" min="-180" max="194"/>
+			<attribute type="Integer" available="True" min="-188" max="90"/>
+			<attribute type="Integer" available="True" min="-150" max="367"/>
+			<attribute type="Integer" available="True" min="-295" max="225"/>
+			<attribute type="Integer" available="True" min="-343" max="198"/>
+			<attribute type="Integer" available="True" min="-310" max="147"/>
+			<attribute type="Integer" available="True" min="-340" max="161"/>
+			<attribute type="Integer" available="True" min="-159" max="110"/>
+			<attribute type="Integer" available="True" min="-290" max="179"/>
+			<attribute type="Integer" available="True" min="-265" max="273"/>
+			<attribute type="Integer" available="True" min="-279" max="215"/>
+			<attribute type="Integer" available="True" min="-326" max="172"/>
+			<attribute type="Integer" available="True" min="-206" max="177"/>
+			<attribute type="Integer" available="True" min="-206" max="169"/>
+			<attribute type="Integer" available="True" min="-147" max="335"/>
+			<attribute type="Integer" available="True" min="-112" max="269"/>
+			<attribute type="Integer" available="True" min="-279" max="214"/>
+			<attribute type="Integer" available="True" min="-170" max="229"/>
+			<attribute type="Integer" available="True" min="-178" max="113"/>
+			<attribute type="Integer" available="True" min="-172" max="200"/>
+			<attribute type="Integer" available="True" min="-250" max="200"/>
+			<attribute type="Integer" available="True" min="-102" max="254"/>
+			<attribute type="Integer" available="True" min="-196" max="180"/>
+			<attribute type="Integer" available="True" min="-100" max="284"/>
+			<attribute type="Integer" available="True" min="-195" max="225"/>
+			<attribute type="Integer" available="True" min="-165" max="112"/>
+			<attribute type="Integer" available="True" min="-9" max="315"/>
+			<attribute type="Integer" available="True" min="-167" max="234"/>
+			<attribute type="Integer" available="True" min="-195" max="149"/>
+			<attribute type="Integer" available="True" min="-134" max="232"/>
+			<attribute type="Integer" available="True" min="-191" max="158"/>
+			<attribute type="Integer" available="True" min="-174" max="86"/>
+			<attribute type="Integer" available="True" min="-152" max="99"/>
+			<attribute type="Integer" available="True" min="-324" max="181"/>
+			<attribute type="Integer" available="True" min="-333" max="172"/>
+			<attribute type="Integer" available="True" min="-274" max="203"/>
+			<attribute type="Integer" available="True" min="-195" max="21"/>
+			<attribute type="Integer" available="True" min="-259" max="156"/>
+			<attribute type="Integer" available="True" min="-313" max="235"/>
+			<attribute type="Integer" available="True" min="-306" max="193"/>
+			<attribute type="Integer" available="True" min="-202" max="309"/>
+			<attribute type="Integer" available="True" min="-255" max="198"/>
+			<attribute type="Integer" available="True" min="-175" max="201"/>
+			<attribute type="Integer" available="True" min="-299" max="175"/>
+			<attribute type="Integer" available="True" min="-98" max="273"/>
+			<attribute type="Integer" available="True" min="-220" max="193"/>
+			<attribute type="Integer" available="True" min="-203" max="194"/>
+			<attribute type="Integer" available="True" min="-207" max="109"/>
+			<attribute type="Integer" available="True" min="-213" max="172"/>
+			<attribute type="Integer" available="True" min="-111" max="152"/>
+			<attribute type="Integer" available="True" min="-157" max="269"/>
+			<attribute type="Integer" available="True" min="-202" max="235"/>
+			<attribute type="Integer" available="True" min="-16" max="306"/>
+			<attribute type="Integer" available="True" min="-125" max="223"/>
+			<attribute type="Integer" available="True" min="-328" max="184"/>
+			<attribute type="Integer" available="True" min="-119" max="238"/>
+			<attribute type="Integer" available="True" min="-69" max="347"/>
+			<attribute type="Integer" available="True" min="-191" max="165"/>
+			<attribute type="Integer" available="True" min="-190" max="203"/>
+			<attribute type="Integer" available="True" min="-157" max="40"/>
+			<attribute type="Integer" available="True" min="-156" max="237"/>
+			<attribute type="Integer" available="True" min="-209" max="91"/>
+			<attribute type="Integer" available="True" min="-33" max="348"/>
+			<attribute type="Integer" available="True" min="-299" max="173"/>
+			<attribute type="Integer" available="True" min="-324" max="191"/>
+			<attribute type="Integer" available="True" min="-319" max="154"/>
+			<attribute type="Integer" available="True" min="-284" max="212"/>
+			<attribute type="Integer" available="True" min="-200" max="159"/>
+			<attribute type="Integer" available="True" min="-292" max="167"/>
+			<attribute type="Integer" available="True" min="-249" max="200"/>
+			<attribute type="Integer" available="True" min="-291" max="141"/>
+			<attribute type="Integer" available="True" min="-250" max="209"/>
+			<attribute type="Integer" available="True" min="-266" max="214"/>
+			<attribute type="Integer" available="True" min="-224" max="194"/>
+			<attribute type="Integer" available="True" min="-204" max="180"/>
+			<attribute type="Integer" available="True" min="-250" max="216"/>
+			<attribute type="Integer" available="True" min="-257" max="253"/>
+			<attribute type="Integer" available="True" min="-103" max="315"/>
+			<attribute type="Integer" available="True" min="-212" max="156"/>
+			<attribute type="Integer" available="True" min="-196" max="209"/>
+			<attribute type="Integer" available="True" min="-201" max="152"/>
+			<attribute type="Integer" available="True" min="-121" max="267"/>
+			<attribute type="Integer" available="True" min="-117" max="258"/>
+			<attribute type="Integer" available="True" min="-129" max="276"/>
+			<attribute type="Integer" available="True" min="-127" max="227"/>
+			<attribute type="Integer" available="True" min="-144" max="299"/>
+			<attribute type="Integer" available="True" min="-69" max="308"/>
+			<attribute type="Integer" available="True" min="-286" max="219"/>
+			<attribute type="Integer" available="True" min="-221" max="241"/>
+			<attribute type="Integer" available="True" min="-307" max="206"/>
+			<attribute type="Integer" available="True" min="-189" max="122"/>
+			<attribute type="Integer" available="True" min="-123" max="281"/>
+			<attribute type="Integer" available="True" min="-140" max="255"/>
+			<attribute type="Integer" available="True" min="-319" max="176"/>
+			<attribute type="Integer" available="True" min="-338" max="169"/>
+			<attribute type="Integer" available="True" min="-336" max="219"/>
+			<attribute type="Integer" available="True" min="-196" max="125"/>
+			<attribute type="Integer" available="True" min="-197" max="186"/>
+			<attribute type="Integer" available="True" min="-199" max="130"/>
+			<attribute type="Integer" available="True" min="-243" max="202"/>
+			<attribute type="Integer" available="True" min="-283" max="203"/>
+			<attribute type="Integer" available="True" min="-290" max="188"/>
+			<attribute type="Integer" available="True" min="-185" max="184"/>
+			<attribute type="Integer" available="True" min="-157" max="239"/>
+			<attribute type="Integer" available="True" min="-171" max="208"/>
+			<attribute type="Integer" available="True" min="-179" max="213"/>
+			<attribute type="Integer" available="True" min="-106" max="261"/>
+			<attribute type="Integer" available="True" min="-136" max="172"/>
+			<attribute type="Integer" available="True" min="-200" max="130"/>
+			<attribute type="Integer" available="True" min="-213" max="117"/>
+			<attribute type="Integer" available="True" min="-190" max="185"/>
+			<attribute type="Integer" available="True" min="-140" max="244"/>
+			<attribute type="Integer" available="True" min="-128" max="153"/>
+			<attribute type="Integer" available="True" min="-114" max="211"/>
+			<attribute type="Integer" available="True" min="-173" max="120"/>
+			<attribute type="Integer" available="True" min="-143" max="379"/>
+			<attribute type="Integer" available="True" min="-198" max="153"/>
+			<attribute type="Integer" available="True" min="-257" max="145"/>
+			<attribute type="Integer" available="True" min="-328" max="94"/>
+			<attribute type="Integer" available="True" min="-219" max="179"/>
+			<attribute type="Integer" available="True" min="-136" max="192"/>
+			<attribute type="Integer" available="True" min="-120" max="411"/>
+			<attribute type="Integer" available="True" min="-69" max="355"/>
+			<attribute type="Integer" available="True" min="73" max="625"/>
+			<attribute type="Integer" available="True" min="-289" max="295"/>
+			<attribute type="Integer" available="True" min="-428" max="168"/>
+			<attribute type="Integer" available="True" min="-471" max="367"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="polyadenylation" task="classification" size="6371" directory="polyadenylation" filetype="text" separator=" " filename="polyadenylation.data" sigma="0.000000">
+		<classes>
+			<class value="1" size="3309"/>
+			<class value="2" size="3062"/>
+		</classes>
+		<attributes>
+			<attribute type="Integer" available="False" min="0" max="64"/>
+			<attribute type="Integer" available="True" min="0" max="64"/>
+			<attribute type="Integer" available="True" min="0" max="60"/>
+			<attribute type="Integer" available="True" min="0" max="53"/>
+			<attribute type="Integer" available="True" min="0" max="51"/>
+			<attribute type="Integer" available="True" min="0" max="49"/>
+			<attribute type="Integer" available="True" min="0" max="50"/>
+			<attribute type="Integer" available="True" min="0" max="57"/>
+			<attribute type="Integer" available="True" min="0" max="61"/>
+			<attribute type="Integer" available="True" min="0" max="43"/>
+			<attribute type="Integer" available="True" min="0" max="41"/>
+			<attribute type="Integer" available="True" min="0" max="19"/>
+			<attribute type="Integer" available="True" min="0" max="22"/>
+			<attribute type="Integer" available="True" min="0" max="22"/>
+			<attribute type="Integer" available="True" min="0" max="23"/>
+			<attribute type="Integer" available="True" min="0" max="26"/>
+			<attribute type="Integer" available="True" min="0" max="30"/>
+			<attribute type="Integer" available="True" min="0" max="23"/>
+			<attribute type="Integer" available="True" min="0" max="23"/>
+			<attribute type="Integer" available="True" min="0" max="30"/>
+			<attribute type="Integer" available="True" min="0" max="28"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="18"/>
+			<attribute type="Integer" available="True" min="0" max="20"/>
+			<attribute type="Integer" available="True" min="0" max="30"/>
+			<attribute type="Integer" available="True" min="0" max="20"/>
+			<attribute type="Integer" available="True" min="0" max="21"/>
+			<attribute type="Integer" available="True" min="0" max="19"/>
+			<attribute type="Integer" available="True" min="0" max="18"/>
+			<attribute type="Integer" available="True" min="0" max="29"/>
+			<attribute type="Integer" available="True" min="0" max="32"/>
+			<attribute type="Integer" available="True" min="0" max="23"/>
+			<attribute type="Integer" available="True" min="0" max="28"/>
+			<attribute type="Integer" available="True" min="0" max="24"/>
+			<attribute type="Integer" available="True" min="0" max="30"/>
+			<attribute type="Integer" available="True" min="0" max="20"/>
+			<attribute type="Integer" available="True" min="0" max="26"/>
+			<attribute type="Integer" available="True" min="0" max="26"/>
+			<attribute type="Integer" available="True" min="0" max="33"/>
+			<attribute type="Integer" available="True" min="0" max="39"/>
+			<attribute type="Integer" available="True" min="0" max="41"/>
+			<attribute type="Integer" available="True" min="0" max="34"/>
+			<attribute type="Integer" available="True" min="0" max="34"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="18"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="14"/>
+			<attribute type="Integer" available="True" min="0" max="14"/>
+			<attribute type="Integer" available="True" min="0" max="19"/>
+			<attribute type="Integer" available="True" min="0" max="20"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="5"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="15"/>
+			<attribute type="Integer" available="True" min="0" max="13"/>
+			<attribute type="Integer" available="True" min="0" max="13"/>
+			<attribute type="Integer" available="True" min="0" max="13"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="18"/>
+			<attribute type="Integer" available="True" min="0" max="27"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="17"/>
+			<attribute type="Integer" available="True" min="0" max="17"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="14"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="12"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="19"/>
+			<attribute type="Integer" available="True" min="0" max="16"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="13"/>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="24"/>
+			<attribute type="Integer" available="True" min="0" max="12"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="19"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="13"/>
+			<attribute type="Integer" available="True" min="0" max="12"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="18"/>
+			<attribute type="Integer" available="True" min="0" max="17"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="8"/>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="20"/>
+			<attribute type="Integer" available="True" min="0" max="24"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="14"/>
+			<attribute type="Integer" available="True" min="0" max="14"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="7"/>
+			<attribute type="Integer" available="True" min="0" max="18"/>
+			<attribute type="Integer" available="True" min="0" max="23"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="6"/>
+			<attribute type="Integer" available="True" min="0" max="5"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="23"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="12"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="22"/>
+			<attribute type="Integer" available="True" min="0" max="26"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="11"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="9"/>
+			<attribute type="Integer" available="True" min="0" max="10"/>
+			<attribute type="Integer" available="True" min="0" max="32"/>
+			<attribute type="Integer" available="True" min="0" max="28"/>
+			<attribute type="Integer" available="True" min="0" max="1"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="krvskp" task="classification" size="3196" directory="kr-vs-kp" filetype="text" separator="," filename="kr-vs-kp.data" sigma="0.000000">
+		<classes>
+			<class value="won" size="1669"/>
+			<class value="nowin" size="1527"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>l</value>
+				<value>g</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>w</value>
+				<value>b</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>t</value>
+				<value>f</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>n</value>
+				<value>t</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>won</value>
+				<value>nowin</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="donors" task="classification" size="6246" directory="donors" filetype="text" separator=" " filename="donors.txt" sigma="0.000000">
+		<classes>
+			<class value="1" size="1324"/>
+			<class value="2" size="4922"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="acceptors" task="classification" size="3889" directory="acceptors" filetype="text" separator=" " filename="acceptors.txt" sigma="0.000000">
+		<classes>
+			<class value="1" size="708"/>
+			<class value="2" size="3181"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>C</value>
+				<value>G</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>C</value>
+				<value>T</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>T</value>
+				<value>G</value>
+				<value>C</value>
+				<value>A</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>G</value>
+				<value>A</value>
+				<value>C</value>
+				<value>T</value>
+			</attribute>
+			<attribute type="String" available="True">
+				<value>A</value>
+				<value>T</value>
+				<value>C</value>
+				<value>G</value>
+			</attribute>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+			</attribute>
+		</attributes>
+	</dataset>
+</datasets>

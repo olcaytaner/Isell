@@ -1,0 +1,24 @@
+displaycode off
+os Linux
+integer i j k featurecount nodecount
+string st outdir
+= outdir //home/olcaytaner/isell/discrete
+= featurecount 6
+= nodecount 10
+experimentdesign uniform
+modelselection univariate
+for k 15 17
+  output %outdir%/value-%k%.txt
+  for i 6 %featurecount%
+    = st %k%
+    for j 2 %i%
+      = st %st%-%k%
+    endfor j
+    for j 1 %nodecount%
+      vcestimate %i% %j% 20 %st%
+      write %i%_%j%_%out1%
+      writescreen %k%_%i%_%j%
+    endfor j
+  endfor i
+endfor k
+output stdout

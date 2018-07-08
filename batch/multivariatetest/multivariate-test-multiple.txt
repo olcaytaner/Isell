@@ -1,0 +1,130 @@
+displaycode off
+string file1 file2 file3 file4 file5 resultdir outdir
+string dataset algorithm1 algorithm2 comptype st
+integer index p kw manova anova
+real x y minx maxx miny maxy gap
+file infile1 infile2 infile3 infile4 infile5
+= outdir ../results/graph/realfigures
+= resultdir ../results/multivariatetest/dt
+= dataset pima
+= index 1
+= comptype roc
+= file1 %resultdir%/%dataset%-%index%-c45-0.500.%comptype%
+= file2 %resultdir%/%dataset%-%index%-knn-0.500.%comptype%
+= file3 %resultdir%/%dataset%-%index%-lda-0.500.%comptype%
+= file4 %resultdir%/%dataset%-%index%-qda-0.500.%comptype%
+= file5 %resultdir%/%dataset%-%index%-svm-0.500.%comptype%
+= minx -0.05
+= maxx +0.85
+= miny -0.05
+= maxy +0.30
+= gap 0.015
+twotailed
+hold off
+axislimits x %minx% %maxx% 10 2
+axislimits y %miny% %maxy% 10 2
+hold on
+plotxy %file1%
+plotxy %file2%
+plotxy %file3%
+plotxy %file4%
+plotxy %file5%
+legendposition none
+kruskalwallismulti %file1% %file2% %file3% %file4% %file5%
+= kw %out1%
+for p 1 49
+  putline %aout1[p]% %aout2[p]% %aout3[p]% %aout4[p]%
+endfor p
+fontsize axis 24
+fontsize label 24
+fontsize data 18
+= infile1 %file1%
+openfile infile1 r
+for p 1 10
+  readfile infile1 x
+  readfile infile1 y
+  putstring %x+gap% %y+gap% %aout5[p]% black
+endfor p
+closefile infile1
+= infile2 %file2%
+openfile infile2 r
+for p 1 10
+   readfile infile2 x
+   readfile infile2 y
+   putstring %x+gap% %y+gap% %aout6[p]% red
+endfor p
+closefile infile2
+= infile3 %file3%
+openfile infile3 r
+for p 1 10
+  readfile infile3 x
+  readfile infile3 y
+  putstring %x+gap% %y+gap% %aout7[p]% green
+endfor p
+closefile infile3
+= infile4 %file4%
+openfile infile4 r
+for p 1 10
+  readfile infile4 x
+  readfile infile4 y
+  putstring %x+gap% %y+gap% %aout8[p]% blue
+endfor p
+closefile infile4
+= infile5 %file5%
+openfile infile5 r
+for p 1 10
+  readfile infile5 x
+  readfile infile5 y
+  putstring %x+gap% %y+gap% %aout9[p]% purple
+endfor p
+closefile infile5
+xlabel TPR
+ylabel FPR
+exportimage %outdir%/%dataset%-%index%-%comptype%-kruskalwallis.eps
+hold off
+fontsize label 24
+fontsize axis 24
+axislimits x %minx% %maxx% 10 2
+axislimits y %miny% %maxy% 10 2
+hold on
+plotgauss2d %file1% 4
+plotgauss2d %file2% 4
+plotgauss2d %file3% 4
+plotgauss2d %file4% 4
+plotgauss2d %file5% 4
+fontsize data 18
+legendposition none
+manova %file1% %file2% %file3% %file4% %file5%
+= manova %out1%
+xlabel TPR
+ylabel FPR
+exportimage %outdir%/%dataset%-%index%-%comptype%-manova.eps
+hold off
+anova %resultdir%/%dataset%-%index%-c45-0.500.error %resultdir%/%dataset%-%index%-knn-0.500.error %resultdir%/%dataset%-%index%-lda-0.500.error %resultdir%/%dataset%-%index%-qda-0.500.error %resultdir%/%dataset%-%index%-svm-0.500.error
+= anova %out1%
+fontsize label 24
+fontsize axis 24
+hold on
+errorhistogram %resultdir%/%dataset%-%index%-c45-0.500.error %resultdir%/%dataset%-%index%-knn-0.500.error %resultdir%/%dataset%-%index%-lda-0.500.error %resultdir%/%dataset%-%index%-qda-0.500.error %resultdir%/%dataset%-%index%-svm-0.500.error
+fontsize data 18
+legendposition none
+xaxisnames C45 KNN LDA QDA SVM
+exportimage %outdir%/%dataset%-%index%-%comptype%-anova.eps
+= st %dataset%_%index%_(in_terms_of_%comptype%)
+if = kw 0
+  = st %st%_KruskalWallis_accept,
+else
+  = st %st%_KruskalWallis_reject,
+endif
+if = manova 0
+  = st %st%_Manova_accept,
+else
+  = st %st%_Manova_reject,
+endif
+if = anova 0
+  = st %st%_Anova_accept
+else
+  = st %st%_Anova_reject
+endif
+writescreen %st%
+

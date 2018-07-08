@@ -1,0 +1,65 @@
+runcount 1
+foldcount 1
+string name
+integer i j
+for i 1 25
+  switch i
+    case 1
+      = name c45
+    case 2
+      = name knn10
+    case 3
+      = name knn20
+    case 4
+      = name knn30
+    case 5
+      = name ldaclass
+    case 6
+      = name ripper
+    case 7
+      = name part
+    case 8
+      = name logistic
+    case 9
+      = name ldt
+    case 10
+      = name multildt
+    case 11
+      = name naivebayes
+    case 12
+      = name gaussian
+    case 13
+      = name linearperceptron
+    case 14
+      = name mlp2
+    case 15
+      = name mlp4
+    case 16
+      = name mlp6
+    case 17
+      = name nearestmean
+    case 18
+      = name randomsubspace
+    case 19
+      = name randomforest
+    case 20
+      = name omnildt
+    case 21
+      = name svmlinear
+    case 22
+      = name svmquadratic
+    case 23
+      = name svmcubic
+    case 24
+      = name cart
+    case 25
+      = name c45rules
+  endswitch
+  writescreen %name%
+  output ../results/mitosis/%name%.confusion
+  for j 1 10
+    confusionanalysis ../results/mitosis/%name%-%j%.posterior 0.5
+    write %aout1[1]%_%aout2[1]%_%aout3[1]%_%aout4[1]%
+  endfor j
+endfor i
+output stdout

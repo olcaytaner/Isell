@@ -1,0 +1,84 @@
+displaycode off
+integer i j k m n p currentk
+real m1 m2 s1 s2
+string test dir dir2 alg1 alg2 dataset file1 file2 comptype
+setprecision 2
+= dir ../results/regtree
+= comptype complexity
+output %dir%/%comptype%.txt
+write Dataset_Regtree(Mean)_Svmregtree(Mean)_Regtree(Stdev)_Svmregtree(Stdev)
+for n 1 30
+  switch n
+    case 1
+      = dataset abalone
+    case 2
+      = dataset add10
+    case 3
+      = dataset boston
+    case 4
+      = dataset comp
+    case 5
+      = dataset sinus
+    case 6
+      = dataset bank8fh
+    case 7
+      = dataset bank8nh
+    case 8
+      = dataset bank8fm
+    case 9
+      = dataset bank8nm
+    case 10
+      = dataset bank32fh
+    case 11
+      = dataset bank32nh
+    case 12
+      = dataset bank32fm
+    case 13
+      = dataset bank32nm
+    case 14
+      = dataset kin8fh
+    case 15
+      = dataset kin8nh
+    case 16
+      = dataset kin8fm
+    case 17
+      = dataset kin8nm
+    case 18
+      = dataset kin32fh
+    case 19
+      = dataset kin32nh
+    case 20
+      = dataset kin32fm
+    case 21
+      = dataset kin32nm
+    case 22
+      = dataset puma8fh
+    case 23
+      = dataset puma8nh
+    case 24
+      = dataset puma8fm
+    case 25
+      = dataset puma8nm
+    case 26
+      = dataset puma32fh
+    case 27
+      = dataset puma32nh
+    case 28
+      = dataset puma32fm
+    case 29
+      = dataset puma32nm
+    case 30
+      = dataset california
+  endswitch
+  = file1 %dir%/%dataset%-regtree.%comptype%
+  meanvariance %file1%
+  = m1 %out1%
+  = s1 %out2%
+  = file2 %dir%/%dataset%-svmregtree.%comptype%
+  meanvariance %file2%
+  = m2 %out1%
+  = s2 %out2%
+  write %dataset%_%m1%_%m2%_%s1%_%s2%
+endfor n
+output stdout
+

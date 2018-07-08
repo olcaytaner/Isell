@@ -1,0 +1,46 @@
+displaycode off
+displayresult off
+file infile
+string dataset method resultdir
+real C
+integer j k total count
+= resultdir ../results/rule2
+= infile optimal.txt
+openfile infile r
+readfile infile count
+output finished2.txt
+for j 1 %count%
+  readfile infile dataset
+  readfile infile C
+  = total 1
+  for k 1 7
+    switch k
+      case 1
+        = method c45
+      case 2
+        = method cart
+      case 3
+        = method cn2
+      case 4
+        = method multiripper
+      case 5
+        = method part
+      case 6
+        = method ripper
+      case 7
+        = method multildt
+      case 8
+        = method hybridripper-combined5x2t
+      case 9
+        = method hybridripper-ftest
+    endswitch
+    fileexists %resultdir%/%dataset%-%method%.error
+    *= total %out1%
+  endfor k
+  if = total 1
+    write %dataset%
+  endif
+endfor j  
+closefile infile
+output stdout
+

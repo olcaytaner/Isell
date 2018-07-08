@@ -1,0 +1,33 @@
+displaycode off
+displayresult off
+string resultdir dataset method extension 
+integer i j k m numberofruns fold
+setdatadir ../data
+loaddatasets data.xml
+printposterior on
+= numberofruns 100
+= fold 10
+= resultdir ../results/multivariatetest/skewed/0.006
+for i 1 2
+  switch i
+    case 1
+      = method ldaclass
+      = extension lda
+    case 2
+      = method qdaclass
+      = extension qda
+  endswitch
+  for j 1 9
+    = dataset data%j%
+    for k 1 %numberofruns%
+      output %resultdir%/%dataset%/%k%-error.%extension%
+      for m 1 %fold%  
+        posteriorfile %resultdir%/%dataset%/%k%-%m%-posterior.%extension%
+        %method% %dataset% ../data/%dataset%/data%j%-%k%-%m%.tra ../data/%dataset%/data%j%-%k%-%m%.tes %k%
+      endfor m
+    endfor k
+    writescreen %i%_%j%
+  endfor j  
+endfor i  
+output stdout
+

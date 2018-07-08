@@ -1,0 +1,5 @@
+displaycode off
+displayresult off
+os Linux
+setdatadir //root/isell/data
+loaddef //root/isell/idtree-mlp-reg.ini

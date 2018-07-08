@@ -1,0 +1,34 @@
+displaycode off
+file infile
+integer i datasetcount
+string dataset st
+= infile datasets.txt
+openfile infile r
+readfile infile datasetcount
+setprecision 2
+output error.txt
+write \begin{table}
+write \begin{tabular}{|c|c|c|}
+write \hline
+write DataSet&NormalSvm&AutoKernel\\
+write \hline
+for i 1 %datasetcount%
+  readfile infile dataset
+  fileexists ../results/autokernel/%dataset%.error
+  = st %dataset%
+  if = out1 1
+    meanvariance ../results/autokernel/%dataset%.error
+    = st  %st%&%out1%$\pm$%out2%
+  endif
+  fileexists ../results/autokernel/kernel-%dataset%.error
+  if = out1 1 
+    meanvariance ../results/autokernel/kernel-%dataset%.error
+    = st %st%&%out1%$\pm$%out2%\\
+  endif
+  write %st%
+endfor i
+write \hline
+write \end{tabular}
+write \end{table}
+closefile infile
+output stdout

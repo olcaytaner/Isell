@@ -1,0 +1,42 @@
+displaycode off
+displayresult off
+integer i kernel k p kernelcount
+real precision recall denom fmeasure
+file infile outfile1
+string dataset resultdir
+setprecision 3
+= resultdir ../results/mvartest2
+for i 1 2
+  switch i
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for kernel 0 %kernelcount-1%
+    for k 1 10
+      fileexists %resultdir%/measure/pr/%dataset%-%kernel%-%k%.pr
+      if = out1 1
+        = infile %resultdir%/measure/pr/%dataset%-%kernel%-%k%.pr
+        openfile infile r
+        = outfile1 %resultdir%/measure/fmeasure/%dataset%-%kernel%-%k%.fmeasure
+        openfile outfile1 w
+        for p 1 10                    
+          readfile infile precision
+          readfile infile recall
+          = denom %precision+recall%
+          if = denom 0
+            = fmeasure 0
+          else
+            = fmeasure %(2*precision*recall)/(precision+recall)%
+          endif
+          writefile outfile1 %fmeasure%
+        endfor p
+        closefile infile
+        closefile outfile1
+      endif
+    endfor k
+  endfor kernel  
+endfor i  

@@ -1,0 +1,56 @@
+displaycode off
+string file1 file2 resultdir outdir
+string dataset algorithm1 algorithm2 comptype st
+integer index p smirnov wald hotelling kfold
+real x y minx maxx miny maxy gapx gapy
+file infile1 infile2
+= outdir ../results
+= comptype rp
+= resultdir ../results/multivariatetest/10fold/measure/%comptype%
+= dataset pima
+= algorithm1 c45
+= algorithm2 qda
+= index 1
+= file1 %resultdir%/%dataset%-%index%-%algorithm1%.%comptype%
+= file2 %resultdir%/%dataset%-%index%-%algorithm2%.%comptype%
+= minx 0.00
+= maxx +1.00
+= miny 0.00
+= maxy +1.00
+= gapx %(maxx-minx)/20.0%
+= gapy %(maxy-miny)/20.0%
+twotailed
+hold off
+axislimits x %minx% %maxx% 1 1
+axislimits y %miny% %maxy% 1 1
+hold on
+plotxy %file1%
+plotxy %file2%
+legendposition none
+smirnov %file1% %file2%
+= smirnov %out1%
+for p 1 19
+  putline %aout1[p]% %aout2[p]% %aout3[p]% %aout4[p]%
+endfor p
+fontsize axis 48
+fontsize label 48
+= infile1 %file1%
+openfile infile1 r
+for p 1 10
+  readfile infile1 x
+  readfile infile1 y
+  putstring %x+gapx% %y+gapy% %aout5[p]% black
+endfor p
+closefile infile1
+= infile2 %file2%
+openfile infile2 r
+for p 1 10
+   readfile infile2 x
+   readfile infile2 y
+   putstring %x+gapx% %y+gapy% %aout6[p]% red
+endfor p
+closefile infile2
+fontsize data 36
+xlabel Recall
+ylabel Precision
+exportimage %dataset%-%algorithm1%-%algorithm2%-%index%-%comptype%-smirnov.eps

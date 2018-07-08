@@ -1,0 +1,18 @@
+displaycode off
+integer i
+string test dir
+= dir c:\users\olcay\isell\comparetests\twotailedall
+axislimits x -3 3
+for i 1 4
+  switch i
+    case 1
+      = test ftest
+    case 2
+      = test tpaired5x2
+    case 3
+      = test combined5x2t
+    case 4
+      = test cvttest
+  endswitch
+  plotxy %dir%\%test%.eps %dir%\%test%.txt 
+endfor i

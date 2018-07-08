@@ -1,0 +1,13 @@
+displaycode off
+integer i j result
+string st
+for i 1 10
+  = st _
+  for j 1 10
+    = result %i%
+    *= result %j%
+    = st %st%%j%x%i%=%result%_
+  endfor j
+  write %st%
+endfor i
+

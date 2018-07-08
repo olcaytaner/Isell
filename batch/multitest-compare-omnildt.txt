@@ -1,0 +1,98 @@
+displaycode off
+integer j i k
+string dir file1 file2 file3 file4 file5 extension dataset endj endi endk result comptype
+= dir c:\users\olcay\isell\omnildt
+= endj 30
+= endk 5
+for i 1 3
+  switch i
+    case 1
+      = comptype error
+    case 2
+      = comptype count
+    case 3
+      = comptype time
+  endswitch
+  output %dir%\multitest-%comptype%.txt
+  for j 1 %endj%
+    switch j
+      case 1
+        = dataset balance    
+      case 2
+        = dataset breast
+      case 3
+        = dataset bupa
+      case 4
+        = dataset car
+      case 5
+        = dataset cmc
+      case 6
+        = dataset credit        
+      case 7
+        = dataset cylinder
+      case 8
+        = dataset dermatology
+      case 9
+        = dataset ecoli
+      case 10
+        = dataset flare
+      case 11
+        = dataset glass
+      case 12
+        = dataset haberman
+      case 13
+        = dataset hepatitis
+      case 14
+        = dataset horse
+      case 15
+        = dataset iris
+      case 16
+        = dataset ironosphere
+      case 17
+        = dataset monks
+      case 18
+        = dataset mushroom
+      case 19
+        = dataset nursery
+      case 20
+        = dataset cenk
+      case 21
+        = dataset fevzi
+      case 22
+        = dataset pima
+      case 23
+        = dataset segment
+      case 24
+        = dataset spambase
+      case 25
+        = dataset tictactoe
+      case 26
+        = dataset vote
+      case 27
+        = dataset wave
+      case 28
+        = dataset wine
+      case 29
+        = dataset yeast
+      case 30
+        = dataset zoo
+    endswitch
+    for k 1 %endk%
+      switch k
+        case 1
+          = extension aic
+        case 2
+          = extension bic
+        case 3
+          = extension mdl
+        case 4
+          = extension srm
+        case 5
+          = extension crossvalidation
+      endswitch
+      = file%k% %dir%\%dataset%-%extension%.%comptype%
+    endfor k
+    multitest %file1% %file2% %file3% %file4% %file5%
+    write %dataset%;%sout1%    
+  endfor j
+endfor i

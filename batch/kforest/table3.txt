@@ -1,0 +1,75 @@
+displaycode off
+displayresult off
+integer i j
+real mean1 variance1 mean2 variance2
+string dataset outdir type result
+= outdir ../results/forest/100
+= type error
+output comparison-%type%.txt
+onetailed
+setprecision 1
+for i 1 17
+  switch i
+    case 1
+      = dataset acceptors
+    case 2
+      = dataset artificial
+    case 3
+      = dataset balance
+    case 4
+      = dataset car
+    case 5
+      = dataset donors
+    case 6
+      = dataset flags
+    case 7
+      = dataset hayesroth
+    case 8
+      = dataset krvskp
+    case 9
+      = dataset monks
+    case 10
+      = dataset mushroom
+    case 11
+      = dataset nursery
+    case 12
+      = dataset postoperative
+    case 13
+      = dataset promoters
+    case 14
+      = dataset spect
+    case 15
+      = dataset splice
+    case 16
+      = dataset tictactoe
+    case 17
+      = dataset vote
+  endswitch
+  = result %dataset%_
+  for j 1 4
+    meanvariance %outdir%/%dataset%-kforest-%j%.%type%
+    = mean1 %out1%
+    = variance1 %out2%
+    fileexists %outdir%/%dataset%-ktree-%j%.%type%
+    if = out1 1
+      meanvariance %outdir%/%dataset%-ktree-%j%.%type%
+      = mean2 %out1%
+      = variance2 %out2%
+      pairedttest %outdir%/%dataset%-ktree-%j%.%type% %outdir%/%dataset%-kforest-%j%.%type%
+      if = out1 0
+        pairedttest %outdir%/%dataset%-kforest-%j%.%type% %outdir%/%dataset%-ktree.%type%
+        if = out1 0
+          = result %result%_&_%mean1%_$\pm$_%variance1%_&_%mean2%_$\pm$_%variance2%
+        else
+          = result %result%_&_%mean1%_$\pm$_%variance1%_&_{\bf_%mean2%_$\pm$_%variance2%}
+        endif
+      else
+        = result %result%_&_{\bf_%mean1%_$\pm$_%variance1%}_&_%mean2%_$\pm$_%variance2%
+      endif
+    else
+      = result %result%_&_%mean1%_$\pm$_%variance1%_&_N/A_
+    endif
+  endfor j
+  write %result%\\
+endfor i
+output stdout

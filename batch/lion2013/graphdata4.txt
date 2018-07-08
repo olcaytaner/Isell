@@ -1,0 +1,36 @@
+displaycode off
+displayresult off
+integer d i j k p
+real mean noise
+string st
+for i 0 10
+  for p 2 4
+    = d %p*5%
+    = noise 0.2
+    /= noise %d^0.5%
+    = mean %noise*i%
+    output %d%-%i%.txt
+    write %d%
+    write 1
+    write 1
+    write 0
+    = st %mean%
+    for j 2 %d%
+      = st %st%_%mean%
+    endfor j
+    write %st%
+    for j 1 %d%
+      = st _
+      for k 1 %d%
+        if = j %k%
+          = st %st%_1
+        else
+          = st %st%_0
+        endif
+      endfor k
+      write %st%
+    endfor j
+    output stdout
+  endfor p
+endfor i
+

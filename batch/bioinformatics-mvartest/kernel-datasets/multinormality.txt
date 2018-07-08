@@ -1,0 +1,39 @@
+displaycode off
+displayresult off
+integer i kernel1 kernelcount k
+real roccount prcount totalroccount totalprcount
+string dataset methodname resultdir
+setprecision 3
+= resultdir ../results/mvartest2
+= roccount 0
+= prcount 0
+= totalroccount 0
+= totalprcount 0
+for i 1 2
+  switch i
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for kernel1 0 %kernelcount-1%
+    for k 1 10
+      fileexists %resultdir%/measure/confusion/%dataset%-%kernel1%-%k%.confusion
+      if = out1 1
+        multinormalitytest %resultdir%/measure/roc/%dataset%-%kernel1%-%k%.roc
+        ++ totalroccount
+        if = out1 1
+          ++ roccount
+        endif
+        multinormalitytest %resultdir%/measure/pr/%dataset%-%kernel1%-%k%.pr
+        ++ totalprcount
+        if = out1 1
+          ++ prcount
+        endif
+      endif
+    endfor k
+  endfor kernel1  
+endfor i  
+write %100*roccount/totalroccount%_%100*prcount/totalprcount%

@@ -1,0 +1,9 @@
+'Sets the operating system to Windows
+os Windows
+'Sets the data directory to c:\programs\isell\datasets
+setdatadir c:\programs\isell\datasets
+'View the data directory. The program will write to screen c:\programs\isell\datasets
+datadir
+'Read the datasets defined in the c:\datasets\mydatasets.ini file to the memory of the program
+loaddatasets c:\datasets\mydatasets.xml
+

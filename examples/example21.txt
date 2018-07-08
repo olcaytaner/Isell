@@ -1,0 +1,9 @@
+'Calculates the sum 1 + 2 + 3 + ... + n
+integer i sum n
+= n 50
+= sum 0
+for i 1 %n%
+  += sum %i%
+endfor i
+writescreen %sum%
+

@@ -1,0 +1,65 @@
+displaycode off
+integer i j 
+string resultdir dataset
+real reject[8]
+= resultdir ../results/svmtest/epsilontest
+output normalityresult.txt
+write LinearError_LinearEpsilon_QuadraticError_QuadraticEpsilon_CubicError_CubicEpsilon_RbfError_RbfEpsilon
+for i 1 9
+  switch i
+    case 1
+      = dataset abalone
+    case 2
+      = dataset add10
+    case 3
+      = dataset boston
+    case 4
+      = dataset california
+    case 5
+      = dataset concrete
+    case 6
+      = dataset puma8fh
+    case 7
+      = dataset puma8fm
+    case 8
+      = dataset puma8nh
+    case 9
+      = dataset puma8nm
+  endswitch
+  for j 1 10
+    multinormalitytest %resultdir%/%dataset%-%j%-linear.error
+    if = out1 1
+      ++ reject[1]
+    endif
+    multinormalitytest %resultdir%/%dataset%-%j%-linear.epsilonloss
+    if = out1 1
+      ++ reject[2]
+    endif
+    multinormalitytest %resultdir%/%dataset%-%j%-quadratic.error
+    if = out1 1
+      ++ reject[3]
+    endif
+    multinormalitytest %resultdir%/%dataset%-%j%-quadratic.epsilonloss
+    if = out1 1
+      ++ reject[4]
+    endif
+    multinormalitytest %resultdir%/%dataset%-%j%-cubic.error
+    if = out1 1
+      ++ reject[5]
+    endif
+    multinormalitytest %resultdir%/%dataset%-%j%-cubic.epsilonloss
+    if = out1 1
+      ++ reject[6]
+    endif
+    multinormalitytest %resultdir%/%dataset%-%j%-rbf.error
+    if = out1 1
+      ++ reject[7]
+    endif
+    multinormalitytest %resultdir%/%dataset%-%j%-rbf.epsilonloss
+    if = out1 1
+      ++ reject[8]
+    endif
+  endfor j
+endfor i
+write %reject[1]/90%_%reject[2]/90%_%reject[3]/90%_%reject[4]/90%_%reject[5]/90%_%reject[6]/90%_%reject[7]/90%_%reject[8]/90%
+output stdout

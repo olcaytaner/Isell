@@ -1,0 +1,7 @@
+displaycode off
+displayresult off
+os Linux
+setdatadir //root/isell/data
+loaddef //root/isell/idtree-robot.ini
+runcount 1
+foldcount 2

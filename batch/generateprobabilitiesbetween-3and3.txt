@@ -1,0 +1,36 @@
+displaycode off
+string dir test
+integer i j prob
+real z t
+file infile
+= dir c:\users\olcay\isell\comparetestsregression\onetailedall
+for i 1 5
+  switch i
+    case 1
+      = test combined5x2t
+    case 2
+      = test cvttest
+    case 3
+      = test regressionf    
+    case 4
+      = test tpaired5x2
+    case 5
+      = test wilcoxon
+  endswitch
+  output %dir%\%test%-new.txt
+  = infile %dir%\%test%.txt
+  openfile infile r
+  for j 1 85
+    readfile infile z
+    readfile infile prob
+    if < z 3
+      if > z -3
+        = t %prob%
+        /= t 1000
+        write %z%;%t%
+      endif
+    endif
+  endfor j
+  closefile infile
+endfor i
+output stdout

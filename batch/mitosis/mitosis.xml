@@ -1,0 +1,73 @@
+<datasets>
+	<dataset name="mitosis" task="classification" size="5018" directory="mitosis" filetype="text" separator=" " filename="mitosis.txt" sigma="0.000000">
+		<classes>
+			<class value="0" size="2509"/>
+			<class value="1" size="2509"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="106.379808" max="240.589536"/>
+			<attribute type="Real" available="True" min="40.044974" max="239.217463"/>
+			<attribute type="Real" available="True" min="63.880503" max="238.560606"/>
+			<attribute type="Real" available="True" min="0.000000" max="89.601857"/>
+			<attribute type="Real" available="True" min="0.000000" max="90.618637"/>
+			<attribute type="Real" available="True" min="0.000000" max="80.690817"/>
+			<attribute type="Real" available="True" min="25.000000" max="255.000000"/>
+			<attribute type="Real" available="True" min="12.000000" max="245.000000"/>
+			<attribute type="Real" available="True" min="19.000000" max="255.000000"/>
+			<attribute type="Real" available="True" min="0.065964" max="0.935679"/>
+			<attribute type="Real" available="True" min="0.020119" max="0.946857"/>
+			<attribute type="Real" available="True" min="0.039622" max="0.939752"/>
+			<attribute type="Real" available="True" min="0.115580" max="0.976397"/>
+			<attribute type="Real" available="True" min="0.054968" max="0.965986"/>
+			<attribute type="Real" available="True" min="0.086687" max="0.966776"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.203019"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.109904"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.084583"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.073422"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.275697"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.624390"/>
+			<attribute type="Real" available="True" min="0.000000" max="27.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="51.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.148760"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.654799"/>
+			<attribute type="Real" available="True" min="0.000000" max="10.703704"/>
+			<attribute type="Real" available="True" min="0.000000" max="19.149229"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.544744"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.797184"/>
+			<attribute type="Real" available="True" min="-6.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.997429"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="13.955624"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.148760"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.061338"/>
+			<attribute type="Real" available="True" min="0.000000" max="72.333333"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.124002"/>
+			<attribute type="Real" available="True" min="0.000000" max="0.873249"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="3241.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="343769.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="194585.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="166105.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="94691.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="94784.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="89138.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="111027.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="119685.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="163657.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="154147.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="254409.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="241038.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="328847.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="541759.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="740610.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="689144.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="699499.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="826809.000000"/>
+			<attribute type="Real" available="True" min="0.000000" max="2025451.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+</datasets>

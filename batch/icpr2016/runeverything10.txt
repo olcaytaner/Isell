@@ -1,0 +1,52 @@
+displaycode off
+displayresult off
+string dataset resultdir overalldir
+= resultdir ../results/ensemble
+= overalldir ../results/ensembleresults
+integer i j k n nfact
+= n 10
+= nfact 1
+for i 2 %n%
+  = nfact %nfact*i%
+endfor i
+string b[%nfact%]
+string c[%nfact%]
+stringpermutation %n% b
+for i 1 11
+  switch i
+    case 1
+      = dataset ocr
+    case 2
+      = dataset optdigits
+    case 3
+      = dataset pendigits
+    case 4
+      = dataset yeast
+    case 5
+      = dataset mfeatfac
+    case 6
+      = dataset mfeatmor
+    case 7
+      = dataset mfeatpix
+    case 8
+      = dataset mfeatfou
+    case 9
+      = dataset mfeatzer
+    case 10
+      = dataset mfeatkar
+    case 11
+      = dataset led7
+  endswitch   
+  output %overalldir%/%dataset%-e.error
+  = k 0
+  for j 1 %nfact%
+    fileexists %resultdir%/%dataset%-%b[j]%.posterior
+    if = out1 1
+      += k 1
+      = c[k] %resultdir%/%dataset%-%b[j]%.posterior
+    endif
+  endfor j
+  ensemble c %k%
+  write %out1%
+endfor i
+output stdout

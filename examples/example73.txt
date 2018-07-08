@@ -1,0 +1,50 @@
+displaycode off
+string dir st fname alg1 alg2 dataset
+integer i j row k
+file file1 file2
+matrix m1 m2 c1 c2
+= dir /home/olcay/results/multivariatetest
+for i 1 4
+  switch i
+    case 1
+      = fname accept-accept.txt
+    case 2
+      = fname accept-reject.txt
+    case 3
+      = fname reject-accept.txt
+    case 4
+      = fname reject-reject.txt
+  endswitch
+  = file1 %dir%/%fname%
+  openfile file1 r
+  readfile file1 row
+  for j 1 %row%
+    readfile file1 alg1
+    readfile file1 alg2
+    readfile file1 dataset
+    loadmatrix %dir%/%alg1%/%dataset%posterior/confusion.txt m1
+    mcovariance m1 c1
+    loadmatrix %dir%/%alg2%/%dataset%posterior/confusion.txt m2
+    mcovariance m2 c2
+    += c1 c2
+    /= c1 2.0
+    mprint c1 %dir%/%alg1%-%alg2%-%dataset%.txt
+    = file2 %dir%/%alg1%-%alg2%-%dataset%.txt
+    openfile file2 a
+    maverage m1
+    = st %aout1[1]%
+    for k 2 4
+      = st %st%_%aout1[k]%
+    endfor k
+    writefile file2 %st%
+    maverage m2
+    = st %aout1[1]%
+    for k 2 4
+      = st %st%_%aout1[k]%
+    endfor k
+    writefile file2 %st%
+    closefile file2
+  endfor j
+  closefile file1
+endfor i
+

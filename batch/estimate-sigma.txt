@@ -1,0 +1,43 @@
+displaycode off
+displayresult off
+file outfile
+string dir extension algorithm resultdir dataset method modelselection leaftype
+integer i j k p starti endi startj endj startp endp
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+  for j 1 15
+    switch j
+      case 1
+        = dataset bank8fm
+      case 2
+        = dataset bank8nm
+      case 3
+        = dataset bank8fh
+      case 4
+        = dataset bank8nh
+      case 5
+        = dataset kin8fm
+      case 6
+        = dataset kin8nm
+      case 7
+        = dataset kin8fh
+      case 8
+        = dataset kin8nh
+      case 9
+        = dataset puma8fm
+      case 10
+        = dataset puma8nm
+      case 11
+        = dataset puma8fh
+      case 12
+        = dataset puma8nh
+      case 13
+        = dataset sinus
+      case 14
+        = dataset comp
+      case 15
+        = dataset add10
+    endswitch
+    estimatesigma %dataset%
+    write %dataset%
+  endfor j

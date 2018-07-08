@@ -1,0 +1,28 @@
+displaycode off
+string dataset file1 file2 alg1 alg2 resultdir
+integer index
+= resultdir ../results/multivariatetest
+fontsize legend 24
+fontsize label 24
+fontsize axis 24
+= dataset spect
+= alg1 c45
+= alg2 qda
+= index 4
+hold off
+axislimits y 0 1 1 1
+axislimits x 0 1 1 1
+hold on
+= file1 %resultdir%/dt/%dataset%-%index%-%alg1%-0.500
+= file2 %resultdir%/dt/%dataset%-%index%-%alg2%-0.500
+hold on
+plotgauss2d %file1%.rp 4
+hold on
+plotgauss2d %file2%.rp 4
+xlabel Recall
+ylabel Precision
+fontsize data 18
+legendnames %alg1% %alg2%
+legendposition downright
+exportimage %resultdir%/%dataset%-%alg1%-%alg2%-%index%-rp.eps
+

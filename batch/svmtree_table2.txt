@@ -1,0 +1,162 @@
+displaycode off
+displayresult off
+integer i j
+string dir method fname st filename subdir dataset
+= dir c:\users\olcay\isell\svm
+setprecision 1
+output %dir%\output2.tex
+write \documentstyle{article}
+write \begin{document}
+write \setlength{\hoffset}{-1in}
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|r|r|r|r|r|r|r|r|}
+write \hline
+write Dataset_&_\multicolumn{2}{|c|}{0.01}_&_\multicolumn{2}{|c|}{0.1}_&_\multicolumn{2}{|c|}{1}_&_\multicolumn{2}{|c|}{10}_\\
+write \hline
+write &_Orig_&_Outlier_&_Orig_&_Outlier_&_Orig_&_Outlier_&_Orig_&_Outlier_\\
+write \hline
+for i 1 15
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset cylinder
+    case 4
+      = dataset australian
+    case 5
+      = dataset pima
+    case 6
+      = dataset vote
+    case 7
+      = dataset credit
+    case 8
+      = dataset hepatitis
+    case 9
+      = dataset horse
+    case 10
+      = dataset heart
+    case 11
+      = dataset ironosphere
+    case 12
+      = dataset monks
+    case 13
+      = dataset haberman
+    case 14
+      = dataset tictactoe
+    case 15
+      = dataset titanic
+    case 16
+      = dataset mushroom
+    case 17
+      = dataset spambase
+    case 18
+      = dataset sentetik1
+    case 19
+      = dataset sentetik2
+    case 20
+      = dataset ringnorm
+    case 21
+      = dataset twonorm
+  endswitch
+  = st %dataset%_
+  for j 1 4
+    switch j
+      case 1
+        = subdir 0.01
+      case 2
+        = subdir 0.1
+      case 3
+        = subdir 1
+      case 4
+        = subdir 10
+    endswitch
+    = filename %dir%\%subdir%\%dataset%.svmtree
+    meanvariance %filename%
+    = st %st%&_%out1%$\pm$%out2%_
+    = filename %dir%\%subdir%\%dataset%-outlier.svmtree
+    meanvariance %filename%
+    = st %st%&_%out1%$\pm$%out2%_
+  endfor j
+  write %st%\\
+  write \hline
+endfor i
+write \end{tabular}
+write \end{center}
+write \end{table}
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|r|r|r|r|}
+write \hline
+write &_0.01_&_0.1_&_1_&_10_\\
+write \hline
+for i 1 15
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset cylinder
+    case 4
+      = dataset australian
+    case 5
+      = dataset pima
+    case 6
+      = dataset vote
+    case 7
+      = dataset credit
+    case 8
+      = dataset hepatitis
+    case 9
+      = dataset horse
+    case 10
+      = dataset heart
+    case 11
+      = dataset ironosphere
+    case 12
+      = dataset monks
+    case 13
+      = dataset haberman
+    case 14
+      = dataset tictactoe
+    case 15
+      = dataset titanic
+    case 16
+      = dataset mushroom
+    case 17
+      = dataset spambase
+    case 18
+      = dataset sentetik1
+    case 19
+      = dataset sentetik2
+    case 20
+      = dataset ringnorm
+    case 21
+      = dataset twonorm
+  endswitch
+  = st %dataset%_
+  for j 1 4
+    switch j
+      case 1
+        = subdir 0.01
+      case 2
+        = subdir 0.1
+      case 3
+        = subdir 1
+      case 4
+        = subdir 10
+    endswitch
+    = filename %dir%\%subdir%\%dataset%-node.svmtree
+    meanvariance %filename%
+    = st %st%&_%out1%$\pm$%out2%_
+  endfor j
+  write %st%\\
+  write \hline
+endfor i
+write \end{tabular}
+write \end{center}
+write \end{table}
+write \end{document}

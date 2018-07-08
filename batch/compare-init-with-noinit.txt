@@ -1,0 +1,34 @@
+os Linux
+displaycode off
+displayresult off
+integer a i j k init noinit
+string dataset resdir test
+file infile
+= infile //home/aranoya/neuralgraph/forwreg.txt
+output //home/aranoya/neuralgraph/forwresult.txt
+= resdir //home/aranoya/neuralgraph/resultsCls1x10
+onetailed
+= test cvttest
+confidencelevel 0.05
+openfile infile r
+for j 1 44
+  readfile infile dataset
+  readfile infile init
+  readfile infile noinit
+  %test% %resdir%/%dataset%-%init%.txt %resdir%/%dataset%-%noinit%.txt
+  writescreen %resdir%/%dataset%-%init%.txt
+  writescreen %resdir%/%dataset%-%noinit%.txt
+  if = out1 1
+    = a 2
+  else 
+    %test% %resdir%/%dataset%-%noinit%.txt %resdir%/%dataset%-%init%.txt
+    if = out1 1 
+      = a 1
+    else
+      = a 0
+    endif
+  endif
+write %a%
+endfor j
+closefile infile
+output stdout

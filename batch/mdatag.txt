@@ -1,0 +1,32 @@
+displaycode off
+integer i datasize
+string datasetdir
+= datasetdir ../data
+= datasize 200
+setdatadir %datasetdir%
+for i 0 10
+  rmdir -r ../results/multivariatetest/data%i%
+  rmdir -r %datasetdir%/data%i%
+endfor i
+for i 0 10
+  gaussmixturedata %i%.txt %datasize% data%i%.txt
+endfor i
+for i 0 10
+  mkdir %datasetdir%/data%i%
+  mv data%i%.txt %datasetdir%/data%i%
+endfor i
+for i 0 10
+  createdataset data%i% _ 2 0;1 data%i% data%i%.txt _
+  savedataset data%i% data%i%.xml
+  axislimits x 0 10 10 1
+  axislimits y 0 10 10 1
+  plotdata2d data%i% 1 2 data%i%.eps
+endfor i
+mergedefinitions data.xml data0.xml data1.xml data2.xml data3.xml data4.xml data5.xml data6.xml data7.xml data8.xml data9.xml data10.xml
+for i 0 10
+  rm data%i%.xml
+endfor i
+for i 0 10
+  mkdir ../results/multivariatetest/data%i%
+endfor i
+

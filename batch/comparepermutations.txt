@@ -1,0 +1,86 @@
+displaycode off
+displayresult off
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+integer i j k ccount fact lost
+string dataset resultdir b[6000]
+runcount 1
+foldcount 10
+onetailed
+= resultdir c:\users\olcay\isell\ruleinduction\permutation
+output %resultdir%\sonuc.txt
+for i 1 24
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset tae
+    case 6
+      = dataset flare
+    case 7
+      = dataset wave
+    case 8
+      = dataset mushroom
+    case 9
+      = dataset horse
+    case 10
+      = dataset iris
+    case 11
+      = dataset ironosphere
+    case 12
+      = dataset monks
+    case 13
+      = dataset vote
+    case 14
+      = dataset wine
+    case 15
+      = dataset hepatitis
+    case 16
+      = dataset balance
+    case 17
+      = dataset cmc
+    case 18
+      = dataset credit
+    case 19
+      = dataset haberman
+    case 20
+      = dataset pima
+    case 21
+      = dataset tictactoe
+    case 22
+      = dataset pekistirme
+    case 23
+      = dataset thyroid
+    case 24
+      = dataset dermatology
+  endswitch  
+  classcount %dataset%
+  = ccount %out1%
+  = fact 1
+  for j 2 %ccount%
+    *= fact %j%
+  endfor j
+  write %dataset%
+  stringpermutation %ccount% b
+  for j 1 %fact%
+    = lost 0
+    for k 1 %fact%
+      if != j %k%
+        cvttest %resultdir%\%dataset%-%b[j]%.txt %resultdir%\%dataset%-%b[k]%.txt
+        if != out1 0
+          += lost 1
+        endif
+      endif
+    endfor k
+    if = lost 0
+      write %b[j]%
+    endif
+  endfor j
+endfor i 
+output stdout

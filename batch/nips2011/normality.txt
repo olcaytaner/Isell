@@ -1,0 +1,61 @@
+displaycode off
+integer i j 
+string resultdir
+real reject[4]
+= resultdir ../results/svmtest/real
+output normalityresult.txt
+write LinearError_LinearHinge_RbfError_RbfHinge
+for i 1 15
+  switch i
+    case 1
+      = dataset transfusion
+    case 2
+      = dataset credit
+    case 3
+      = dataset australian
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset breast
+    case 6
+      = dataset pima
+    case 7
+      = dataset mammographic
+    case 8
+      = dataset tictactoe
+    case 9
+      = dataset german
+    case 10
+      = dataset satellite47
+    case 11
+      = dataset titanic
+    case 12
+      = dataset acceptors
+    case 13
+      = dataset donors
+    case 14
+      = dataset ringnorm
+    case 15
+      = dataset twonorm
+  endswitch
+  for j 1 10
+    multinormalitytest %resultdir%/%dataset%-%j%-linear.error
+    if = out1 1
+      ++ reject[1]
+    endif
+    multinormalitytest %resultdir%/%dataset%-%j%-linear.hinge
+    if = out1 1
+      ++ reject[2]
+    endif
+    multinormalitytest %resultdir%/%dataset%-%j%-rbf.error
+    if = out1 1
+      ++ reject[3]
+    endif
+    multinormalitytest %resultdir%/%dataset%-%j%-rbf.hinge
+    if = out1 1
+      ++ reject[4]
+    endif
+  endfor j
+endfor i
+write %reject[1]/150%_%reject[2]/150%_%reject[3]/150%_%reject[4]/150%
+output stdout

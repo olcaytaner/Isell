@@ -1,0 +1,90 @@
+displaycode off
+integer i j k m n p currenti currentk count1 count2
+string test dir alg1 alg2 dataset file1 file2
+real error1 variance1 error2 variance2 result
+file infile
+for i 1 5
+  switch i
+    case 1
+      = test tpaired5x2
+    case 2
+      = test combined5x2t
+    case 3
+      = test cvttest      
+    case 4
+      = test wilcoxon      
+    case 5
+      = test regressionf           
+  endswitch
+  = dir results
+  output c:\users\olcay\isell\comparetestsregression\onetailedall\%test%.txt  
+  for k 1 4
+    switch k
+      case 1
+        = alg1 average
+      case 2
+        = alg1 onefeature
+      case 3
+        = alg1 linear
+      case 4
+        = alg1 regtree
+    endswitch
+    = currentk %k%
+    ++ currentk
+    for m %currentk% 5
+      switch m
+        case 2
+          = alg2 onefeature
+        case 3
+          = alg2 linear
+        case 4
+          = alg2 regtree
+        case 5
+          = alg2 quantizereg
+      endswitch 
+      = infile c:\users\olcay\isell\comparetestsregression\onetailed\%alg1%-%alg2%-%test%.txt
+      openfile infile r
+      for n 3 3
+        switch n
+          case 1
+            = dataset abalone
+          case 2
+            = dataset add10
+          case 3
+            = dataset boston
+          case 4
+            = dataset comp
+          case 5
+            = dataset sinus
+          case 6
+            = dataset bank8nm
+          case 7
+            = dataset bank8fm
+          case 8
+            = dataset kin8nm
+          case 9
+            = dataset kin8fm
+          case 10
+            = dataset puma8nm
+          case 11
+            = dataset puma8fm
+        endswitch
+        readfile infile count1
+        = file1 c:\users\olcay\isell\%dir%\%dataset%\total.%alg1%
+        meanvariance %file1%
+        = error1 %out1%
+        = variance1 %out2%
+        = file2 c:\users\olcay\isell\%dir%\%dataset%\total.%alg2%
+        meanvariance %file2%
+        = error2 %out1%
+        = variance2 %out2%
+        = result %error1%
+        -= result %error2%        
+        /= result %variance2%
+        write %result%;%count1%
+      endfor n
+      closefile infile
+    endfor m
+  endfor k 
+endfor i
+output stdout

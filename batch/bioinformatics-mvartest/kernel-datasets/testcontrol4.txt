@@ -1,0 +1,59 @@
+displaycode off
+displayresult off
+integer i k kernel1 kernel2 kernelcount 
+file ar ra
+string dataset resultdir multifile1 multifile2
+real max res1 res2
+setprecision 6
+= resultdir ../results/mvartest2
+twotailed
+= ar values-ar2.txt
+openfile ar w
+= ra values-ra2.txt
+openfile ra w
+for i 1 2
+  switch i
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for kernel1 0 %kernelcount-1%
+    for kernel2 %kernel1+1% %kernelcount-1%
+      for k 1 10
+        = multifile1 %resultdir%/measure/roc/%dataset%-%kernel1%-%k%.roc
+        = multifile2 %resultdir%/measure/roc/%dataset%-%kernel2%-%k%.roc
+        fileexists %resultdir%/measure/confusion/%dataset%-%kernel1%-%k%.confusion        
+        if = out1 1
+          fileexists %resultdir%/measure/confusion/%dataset%-%kernel2%-%k%.confusion        
+          if = out1 1 
+            hotellingt %multifile1% %multifile2% 
+            = res1 %out1%
+            if > out4 %out5%
+              = max %out4%
+            else
+              = max %out5%
+            endif
+            smirnov %multifile1% %multifile2% 
+            = res2 %out1%
+            if = res1 0
+              if = res2 0
+              else
+                writefile ar %dataset%_%kernel1%_%kernel2%
+              endif 
+            else
+              if = res2 0
+                writefile ra %dataset%_%kernel1%_%kernel2%
+              else
+              endif 
+            endif
+          endif
+        endif
+      endfor k
+    endfor kernel2
+  endfor kernel1  
+endfor i  
+closefile ar
+closefile ra

@@ -1,0 +1,104 @@
+displaycode off
+displayresult off
+integer i j k results[4,4]
+string type dataset st algorithm1 algorithm2
+setprecision 2
+onetailed
+= type error
+for i 1 4
+  for j 1 4
+    = results[%i%,%j%] 0
+  endfor j
+endfor i
+for i 1 27
+  switch i
+    case 1
+      = dataset 9tumors
+    case 2
+      = dataset 11tumors
+    case 3
+      = dataset 14tumors
+    case 4
+      = dataset braintumor1
+    case 5
+      = dataset braintumor2
+    case 6
+      = dataset dermatology
+    case 7
+      = dataset ecoli
+    case 8
+      = dataset glass
+    case 9
+      = dataset iris
+    case 10
+      = dataset letter
+    case 11
+      = dataset leukemia1
+    case 12
+      = dataset leukemia2
+    case 13
+      = dataset lungtumor
+    case 14
+      = dataset ocr
+    case 15
+      = dataset optdigits
+    case 16
+      = dataset pageblock
+    case 17
+      = dataset pendigits
+    case 18
+      = dataset segment
+    case 19
+      = dataset shuttle
+    case 20
+      = dataset srbct
+    case 21
+      = dataset vehicle
+    case 22
+      = dataset wave
+    case 23
+      = dataset winequality
+    case 24
+      = dataset wine
+    case 25
+      = dataset yeast
+    case 26
+      = dataset zipcodes
+    case 27
+      = dataset zoo
+  endswitch
+  for j 1 4
+    switch j
+      case 1
+        = algorithm1 c45
+      case 2
+        = algorithm1 ldt
+      case 3
+        = algorithm1 svmtree-onevsone
+      case 4
+        = algorithm1 svmtree-onevsrest
+    endswitch
+    for k 1 4
+      switch k
+        case 1
+          = algorithm2 c45
+        case 2
+          = algorithm2 ldt
+        case 3
+          = algorithm2 svmtree-onevsone
+        case 4
+          = algorithm2 svmtree-onevsrest
+      endswitch
+      pairedttest ../results/svmtree/%dataset%-%algorithm1%.%type% ../results/svmtree/%dataset%-%algorithm2%.%type%
+      if = out1 1
+        ++ results[%k%,%j%]
+      endif
+    endfor k
+  endfor j
+endfor i
+output %type%.txt
+write %results[1,1]%_%results[1,2]%_%results[1,3]%_%results[1,4]%
+write %results[2,1]%_%results[2,2]%_%results[2,3]%_%results[2,4]%
+write %results[3,1]%_%results[3,2]%_%results[3,3]%_%results[3,4]%
+write %results[4,1]%_%results[4,2]%_%results[4,3]%_%results[4,4]%
+output stdout

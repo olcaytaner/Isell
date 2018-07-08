@@ -1,0 +1,116 @@
+displaycode off
+displayresult off
+integer j i k algcount count res1 count2 datasetcount
+string dir file extension dataset endj endi endk result what algname1 algname2 file1 file2 comparison test
+real value1 value2
+onetailed
+setprecision 2
+os Linux
+= dir /home/olcay/results/omnildt
+= algcount 4
+= datasetcount 17
+= comparison time
+string algorithms[%algcount%]
+for i 1 %algcount%
+  switch i
+    case 1
+      = algorithms[i] ldaclass
+    case 2
+      = algorithms[i] qdaclass
+    case 3
+      = algorithms[i] svmlinear
+    case 4
+      = algorithms[i] srm
+  endswitch
+endfor i
+string datasets[%datasetcount%]
+for i 1 %datasetcount%
+  switch i
+    case 1
+      = datasets[i] artificial
+    case 2
+      = datasets[i] breast
+    case 3
+      = datasets[i] bupa
+    case 4
+      = datasets[i] german
+    case 5
+      = datasets[i] haberman
+    case 6 
+      = datasets[i] heart
+    case 7
+      = datasets[i] hepatitis
+    case 8
+      = datasets[i] mammographic
+    case 9
+      = datasets[i] monks
+    case 10
+      = datasets[i] parkinsons
+    case 11
+      = datasets[i] pima
+    case 12
+      = datasets[i] ringnorm
+    case 13
+      = datasets[i] tictactoe
+    case 14
+      = datasets[i] titanic
+    case 15
+      = datasets[i] vote
+    case 16
+      = datasets[i] transfusion
+    case 17
+      = datasets[i] twonorm
+  endswitch
+endfor i
+integer totallost[10]
+output /home/olcay/results/tablo2-%comparison%.txt
+write \begin{table}[ht]
+write \caption{}
+write \label{}
+write \begin{center}
+write \begin{tabular}{|l|r|r|r|r|}
+write \hline
+write Dataset&LDA&QDA&SVM&SRM\\
+write \hline
+for j 1 %datasetcount%
+  = result %datasets[j]%
+  for k 1 %algcount%
+    = file1 %dir%/%datasets[j]%-%algorithms[k]%.%comparison%
+    meanvariance %file1%
+    = result %result%&%out1%$\pm$%out2%
+  endfor k
+  = result %result%\\
+  write %result%
+endfor j
+write \hline
+write \end{tabular}
+write \begin{tabular}{|l|r|r|r|r|}
+write \hline
+= result &LDA&QDA&SVM&SRM\\
+write %result%
+write \hline
+for i 1 %algcount%
+  = result %algorithms[i]%
+  for k 1 %algcount%
+    = count 0
+    for j 1 %datasetcount%
+      = file1 %dir%/%datasets[j]%-%algorithms[i]%.%comparison%
+      meanvariance %file1%
+      = value1 %out1%
+      = file2 %dir%/%datasets[j]%-%algorithms[k]%.%comparison%
+      meanvariance %file2%
+      = value2 %out1%
+      if < value1 %value2%
+        += count 1
+      endif
+    endfor j
+    = result %result%&%count%
+  endfor k
+  = result %result%\\
+  write %result%
+endfor i
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout

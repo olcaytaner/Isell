@@ -1,0 +1,12 @@
+string resultdir dataset model st
+integer i j k l t
+file outfile datasetfile
+displaycode off
+displayresult off
+os Linux
+setdatadir //root/isell/data
+loaddef //root/isell/idtree-twoclass.ini
+runcount 5
+foldcount 2
+prunetype nopruning
+modelselection srm

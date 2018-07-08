@@ -1,0 +1,34 @@
+displaycode off
+displayresult off
+string dataset resultdir overalldir
+= resultdir ../results/ensemble
+= overalldir ../results/ensembleresults
+integer i j k n nfact
+= n 7
+= nfact 1
+for i 2 %n%
+  = nfact %nfact*i%
+endfor i
+string b[%nfact%]
+string c[%nfact%]
+stringpermutation %n% b
+for i 1 2
+  switch i
+    case 1
+      = dataset segment
+    case 2
+      = dataset shuttle
+  endswitch   
+  output %overalldir%/%dataset%-e.error
+  = k 0
+  for j 1 %nfact%
+    fileexists %resultdir%/%dataset%-%b[j]%.posterior
+    if = out1 1
+      += k 1
+      = c[k] %resultdir%/%dataset%-%b[j]%.posterior
+    endif
+  endfor j
+  ensemble c %k%
+  write %out1%
+endfor i
+output stdout

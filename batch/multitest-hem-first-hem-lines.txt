@@ -1,0 +1,220 @@
+displaycode off
+displayresult off
+onetailed
+integer endi
+= endi 1000
+integer i j k m ordercount[5] l found counts1[1000] counts2[1000] counts3[1000] counts4[1000] counts5[1000] tmpi tmpi2 n p best
+string dir dataset file[5] method algorithm[5] orders1[%endi%] orders2[%endi%] orders3[%endi%] orders4[%endi%] orders5[%endi%] order tmps tmps2 tmps3 test fold
+= algorithm[1] max
+= algorithm[2] mean
+= algorithm[3] lda
+= algorithm[4] c45
+= algorithm[5] knn
+= method multitest
+testtype newmankeuls
+= test newmankeuls
+= dir c:\users\olcay\isell\results
+output %dir%\%method%-%test%.txt
+for k 19 19
+  switch k
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+    case 6
+      = dataset ecoli
+    case 7
+      = dataset flare
+    case 8
+      = dataset glass
+    case 9
+      = dataset hepatitis
+    case 10
+      = dataset horse
+    case 11
+      = dataset iris
+    case 12
+      = dataset ironosphere
+    case 13
+      = dataset monks
+    case 14
+      = dataset segment
+    case 15
+      = dataset vote
+    case 16
+      = dataset wine
+    case 17
+      = dataset zoo
+    case 18
+      = dataset balance
+    case 19
+      = dataset cmc
+    case 20
+      = dataset credit
+    case 21
+      = dataset haberman
+    case 22
+      = dataset pima
+    case 23
+      = dataset tictactoe
+    case 24
+      = dataset yeast
+    case 25
+      = dataset spambase
+    case 26
+      = dataset wave
+    case 27
+      = dataset mushroom
+    case 28
+      = dataset fevzi
+    case 29
+      = dataset cenk
+    case 30
+      = dataset nursery
+  endswitch
+  for i 1 5
+    = ordercount[i] 0
+  endfor i
+  for i 1 %endi%
+    = counts1[i] 0
+    = counts2[i] 0
+    = counts3[i] 0
+    = counts4[i] 0
+    = counts5[i] 0
+  endfor i
+  for i 1 %endi%
+    for j 1 5
+      = file[j] %dir%\%dataset%\%i%.%algorithm[j]%
+    endfor j
+    %method% %file[1]% %file[2]% %file[3]% %file[4]% %file[5]%
+    = best %out1%
+    if <> best -1
+      = order %sout1%
+      if = ordercount[best] 0
+        ++ ordercount[best]
+        = orders%best%[1] %order%
+        = counts%best%[1] 1
+      else
+        = found 0
+        for l 1 %ordercount[best]%
+          if = orders%best%[l] %order%
+            = found %l%
+            ++ counts%best%[l]
+          endif
+        endfor l
+        if = found 0
+          ++ ordercount[best]
+          = n %ordercount[best]%
+          = orders%best%[n] %order%
+          = counts%best%[n] 1
+        endif
+      endif
+    endif
+  endfor i
+  for p 1 5
+    = m %ordercount[p]%
+    -- m
+    for i 1 %m%
+      = l %i%
+      ++ l
+      for j %l% %ordercount[p]%
+        switch p
+          case 1
+            = n %counts1[j]%
+            = tmpi2 %counts1[i]%
+            = tmps2 %orders1[i]%
+            = tmps3 %orders1[j]%
+          case 2
+            = n %counts2[j]%
+            = tmpi2 %counts2[i]%
+            = tmps2 %orders2[i]%
+            = tmps3 %orders2[j]%
+          case 3
+            = n %counts3[j]%
+            = tmpi2 %counts3[i]%
+            = tmps2 %orders3[i]%
+            = tmps3 %orders3[j]%
+          case 4
+            = n %counts4[j]%
+            = tmpi2 %counts4[i]%
+            = tmps2 %orders4[i]%
+            = tmps3 %orders4[j]%
+          case 5
+            = n %counts5[j]%
+            = tmpi2 %counts5[i]%
+            = tmps2 %orders5[i]%
+            = tmps3 %orders5[j]%
+        endswitch 
+        if < counts%p%[i] %n%
+          = tmpi %tmpi2%
+          switch p
+            case 1
+              = counts1[i] %n%
+              = counts1[j] %tmpi%
+            case 2
+              = counts2[i] %n%
+              = counts2[j] %tmpi%
+            case 3
+              = counts3[i] %n%
+              = counts3[j] %tmpi%
+            case 4
+              = counts4[i] %n%
+              = counts4[j] %tmpi%
+            case 5
+              = counts5[i] %n%
+              = counts5[j] %tmpi%
+          endswitch
+          = tmps %tmps2%
+          switch p
+            case 1
+              = orders1[i] %tmps3%
+              = orders1[j] %tmps%            
+            case 2
+              = orders2[i] %tmps3%
+              = orders2[j] %tmps%            
+            case 3
+              = orders3[i] %tmps3%
+              = orders3[j] %tmps%            
+            case 4
+              = orders4[i] %tmps3%
+              = orders4[j] %tmps%            
+            case 5
+              = orders5[i] %tmps3%
+              = orders5[j] %tmps%            
+          endswitch
+        endif
+      endfor j
+    endfor i
+  endfor p
+  write %dataset%
+  for p 1 5
+    write %p%------------------%p%
+    for i 1 %ordercount[p]%
+      switch p
+        case 1
+          = tmps %orders1[i]%
+          = n %counts1[i]%
+        case 2
+          = tmps %orders2[i]%
+          = n %counts2[i]%
+        case 3
+          = tmps %orders3[i]%
+          = n %counts3[i]%
+        case 4
+          = tmps %orders4[i]%
+          = n %counts4[i]%
+        case 5
+          = tmps %orders5[i]%
+          = n %counts5[i]%
+      endswitch
+      write %tmps%:::%n%
+    endfor i
+  endfor p  
+endfor k
+output stdout

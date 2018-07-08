@@ -1,0 +1,101 @@
+displaycode off
+displayresult off
+integer i j k p
+file acceptfile1 rejectfile1 acceptfile2 rejectfile2
+string dataset method1 method2 resultdir multifile1 multifile2
+real max
+setprecision 6
+= resultdir ../results/mvartest2
+twotailed
+= acceptfile1 values-accept1.txt
+openfile acceptfile1 w
+= rejectfile1 values-reject1.txt
+openfile rejectfile1 w
+= acceptfile2 values-accept3.txt
+openfile acceptfile2 w
+= rejectfile2 values-reject3.txt
+openfile rejectfile2 w
+for i 1 6
+  switch i
+    case 1
+      = method1 c45
+    case 2
+      = method1 knn
+    case 3
+      = method1 lda
+    case 4
+      = method1 qda
+    case 5
+      = method1 svm1
+    case 6
+      = method1 svm2
+    case 7
+      = method1 randomforest
+  endswitch
+  for p %i+1% 7
+    switch p
+      case 1
+        = method2 c45
+      case 2
+        = method2 knn
+      case 3
+        = method2 lda
+      case 4
+        = method2 qda
+      case 5
+        = method2 svm1
+      case 6
+        = method2 svm2
+      case 7
+        = method2 randomforest
+    endswitch
+    for j 1 4
+      switch j
+        case 1
+          = dataset acceptors
+        case 2
+          = dataset donors
+        case 3
+          = dataset ads
+        case 4
+          = dataset polyadenylation
+      endswitch
+      for k 1 10
+        = multifile1 %resultdir%/measure/roc/%dataset%-%k%-%method1%.roc
+        = multifile2 %resultdir%/measure/roc/%dataset%-%k%-%method2%.roc
+        fileexists %resultdir%/measure/confusion/%dataset%-%k%-%method1%.confusion        
+        if = out1 1
+          fileexists %resultdir%/measure/confusion/%dataset%-%k%-%method2%.confusion        
+          if = out1 1   
+            hotellingt %multifile1% %multifile2% 
+            if > out4 %out5%
+              = max %out4%
+            else
+              = max %out5%
+            endif
+            if = out1 0 
+              writefile acceptfile1 %max%
+            else
+              writefile rejectfile1 %max%
+            endif
+            smirnov %multifile1% %multifile2% 
+            if > out4 %out5%
+              = max %out4%
+            else
+              = max %out5%
+            endif
+            if = out1 0 
+              writefile acceptfile2 %max%
+            else
+              writefile rejectfile2 %max%
+            endif
+          endif
+        endif
+      endfor k
+    endfor j
+  endfor p  
+endfor i  
+closefile acceptfile1
+closefile rejectfile1
+closefile acceptfile2
+closefile rejectfile2

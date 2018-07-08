@@ -1,0 +1,36 @@
+displaycode off
+displayresult off
+string method1 method2 dataset resultdir
+integer p
+displayequalloss on
+= resultdir ../results/tests
+= method1 lda
+= method2 qda
+= dataset donors
+= p 10
+errorhistogram %resultdir%/error/%dataset%-%p%-%method1%.error %resultdir%/error/%dataset%-%p%-%method2%.error
+hold on
+xlabel Classifier
+xaxisnames lda qda
+errorhistogram %resultdir%/roc/%dataset%-%p%-%method1%.roc %resultdir%/roc/%dataset%-%p%-%method2%.roc
+errorhistogram %resultdir%/pr/%dataset%-%p%-%method1%.pr %resultdir%/pr/%dataset%-%p%-%method2%.pr
+yaxisnames Error AucROC AucPR
+fontsize label 30
+fontsize axis 16
+exportimage %resultdir%/%method1%-%method2%-%dataset%-%p%-histogram.eps
+hold off
+rocplot %resultdir%/posterior/%dataset%-%p%-%method1%.posterior %resultdir%/posterior/%dataset%-%p%-%method2%.posterior
+xlabel False_Positive_Rate
+ylabel True_Positive_Rate
+fontsize label 30
+fontsize axis 24
+exportimage %resultdir%/%method1%-%method2%-%dataset%-%p%-roc.eps
+hold off
+precisionrecallplot %resultdir%/posterior/%dataset%-%p%-%method1%.posterior %resultdir%/posterior/%dataset%-%p%-%method2%.posterior
+xlabel Recall
+ylabel Precision
+fontsize label 30
+fontsize axis 24
+exportimage %resultdir%/%method1%-%method2%-%dataset%-%p%-pr.eps
+hold off
+

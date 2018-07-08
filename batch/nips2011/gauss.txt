@@ -1,0 +1,32 @@
+displaycode off
+integer i
+real factor ratio ratio1 ratio2
+file outfile
+= ratio 0.001
+setprecision 3
+for i 0 9
+  = outfile %i%.txt
+  = ratio1 %i*ratio%
+  = ratio2 %0.5-(2*ratio1)%
+  openfile outfile w
+  writefile outfile 2_4
+  writefile outfile 0.5_%ratio1%_%ratio1%_%ratio2%
+  writefile outfile 0
+  writefile outfile 5_5
+  writefile outfile 0.10_0
+  writefile outfile 0_0.10
+  writefile outfile 1
+  writefile outfile 5_3
+  writefile outfile 0.10_0
+  writefile outfile 0_0.10
+  writefile outfile 1
+  writefile outfile 5_7
+  writefile outfile 0.10_0
+  writefile outfile 0_0.10
+  writefile outfile 1
+  writefile outfile 7_5
+  writefile outfile 0.10_0
+  writefile outfile 0_0.10
+  closefile outfile
+endfor i
+

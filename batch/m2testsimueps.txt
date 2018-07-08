@@ -1,0 +1,20 @@
+displaycode off
+hold off
+axislimits x 0 10 10 0
+axislimits y 0 1000 10 0
+hold on
+plotxyline m2testresult1.txt black 1
+plotxyline m2testresult17.txt red 1
+plotxyline m2testresult18.txt green 1
+plotxyline m2testresult22.txt blue 1
+plotxyline m2testresult23.txt purple 1
+plotxyline m2testresult24.txt yellow 1
+legendnames 1-2-3-4 3-4-1-2 3-4-2-1 4-2-3-1 4-3-1-2 4-3-2-1
+xlabel Multiplier
+ylabel Probability_of_Accepting_the_Null_Hypothesis
+legendposition upright
+fontsize legend 20
+fontsize axis 24
+fontsize label 24
+exportimage multi2test.eps
+

@@ -1,0 +1,92 @@
+displaycode off
+displayresult off
+integer i j
+string dataset st algorithm
+setprecision 2
+output output.tex
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|r|r|r|r|}
+write \hline
+write {\bf_Dataset}_&_{\bf_C4.5}_&_{\bf_LDT}_&_{\bf_UMT(OVO)}_&_{\bf_UMT(OVR)}_\\
+write \hline
+for i 1 27
+  switch i
+    case 1
+      = dataset 9tumors
+    case 2
+      = dataset 11tumors
+    case 3
+      = dataset 14tumors
+    case 4
+      = dataset braintumor1
+    case 5
+      = dataset braintumor2
+    case 6
+      = dataset dermatology
+    case 7
+      = dataset ecoli
+    case 8
+      = dataset glass
+    case 9
+      = dataset iris
+    case 10
+      = dataset letter
+    case 11
+      = dataset leukemia1
+    case 12
+      = dataset leukemia2
+    case 13
+      = dataset lungtumor
+    case 14
+      = dataset ocr
+    case 15
+      = dataset optdigits
+    case 16
+      = dataset pageblock
+    case 17
+      = dataset pendigits
+    case 18
+      = dataset segment
+    case 19
+      = dataset shuttle
+    case 20
+      = dataset srbct
+    case 21
+      = dataset vehicle
+    case 22
+      = dataset wave
+    case 23
+      = dataset winequality
+    case 24
+      = dataset wine
+    case 25
+      = dataset yeast
+    case 26
+      = dataset zipcodes
+    case 27
+      = dataset zoo
+  endswitch
+  = st %dataset%_
+  for j 1 4
+    switch j
+      case 1
+        = algorithm c45
+      case 2
+        = algorithm ldt
+      case 3
+        = algorithm svmtree-onevsone
+      case 4
+        = algorithm svmtree-onevsrest
+    endswitch
+    meanvariance ../results/svmtree/%dataset%-%algorithm%.auc
+    = st %st%&_%out1%$\pm$%out2%_
+  endfor j
+  write %st%\\
+endfor i
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout
+

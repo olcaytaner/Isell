@@ -1,0 +1,99 @@
+displaycode off
+displayresult off
+file outfile
+string dir extension algorithm resultdir dataset method modelselection
+integer i j k starti endi startj endj
+real rate
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+runcount 5
+foldcount 2
+= resultdir c:\users\olcay\isell\logistic
+= starti 1
+= endi 5
+= startj 1
+= endj 30
+= method omnildt
+perceptronrun 50
+for i %starti% %endi%
+  switch i
+    case 1
+      = rate 1.0
+    case 2
+      = rate 0.1
+    case 3
+      = rate 0.01
+    case 4
+      = rate 0.001
+    case 5
+      = rate 0.0001
+  endswitch
+  learningrate %rate%
+  for j %startj% %endj%
+    switch j
+      case 1
+        = dataset breast
+      case 2
+        = dataset bupa
+      case 3
+        = dataset ecoli
+      case 4
+        = dataset glass
+      case 5
+        = dataset iris
+      case 6
+        = dataset monks
+      case 7
+        = dataset haberman
+      case 8
+        = dataset pima
+      case 9
+        = dataset yeast
+      case 10
+        = dataset hepatitis
+      case 11
+        = dataset fevzi
+      case 12
+        = dataset segment
+      case 13
+        = dataset wine
+      case 14
+        = dataset zoo
+      case 15
+        = dataset car
+      case 16
+        = dataset flare
+      case 17
+        = dataset balance
+      case 18
+        = dataset cmc
+      case 19
+        = dataset tictactoe
+      case 20
+        = dataset wave
+      case 21
+        = dataset nursery
+      case 22
+        = dataset dermatology
+      case 23
+        = dataset ironosphere
+      case 24
+        = dataset vote
+      case 25
+        = dataset credit
+      case 26
+        = dataset cylinder
+      case 27
+        = dataset mushroom
+      case 28
+        = dataset cenk
+      case 29
+        = dataset spambase
+      case 30
+        = dataset horse
+    endswitch
+    output %resultdir%\%dataset%-%i%.error
+    logistic %dataset% random 1    
+  endfor j  
+endfor i  
+output stdout

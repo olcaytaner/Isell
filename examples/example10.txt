@@ -1,0 +1,16 @@
+integer i
+os Linux
+file infile
+string dataset
+= infile /root/isell/twoclass.txt
+openfile infile r
+printconfusion on
+mkdir /root/isell/confusion
+loadfile testcls.txt
+for i 1 11
+  readfile infile dataset
+  confusionfile /root/isell/confusion/%dataset%.txt
+  ldaclass %dataset% random 1
+endfor i
+closefile infile
+

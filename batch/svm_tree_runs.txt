@@ -1,0 +1,102 @@
+displaycode off
+integer i j k p starti
+real c
+file outfile
+string method dataset dir subdir
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+= dir c:\users\olcay\isell\svm
+runcount 1
+foldcount 10
+kerneltype linear
+for p 5 5
+  switch p
+    case 1
+      = c 1
+      = subdir 1
+      = starti 1
+    case 2
+      = c 0.1
+      = subdir 0.1
+      = starti 1
+    case 3
+      = c 10
+      = subdir 0.01
+      = starti 4
+    case 4
+      = c 0.01
+      = subdir 10
+      = starti 1
+    case 5
+      = subdir modelselection
+      = starti 1
+      prunetype modelselection
+      = c 1
+  endswitch
+  svmC %c%
+  for j %starti% 15
+    switch j
+      case 1
+        = dataset breast
+      case 2
+        = dataset bupa
+      case 3
+        = dataset cylinder
+      case 4
+        = dataset australian
+      case 5
+        = dataset pima
+      case 6
+        = dataset vote
+      case 7
+        = dataset credit
+      case 8
+        = dataset hepatitis
+      case 9
+        = dataset horse
+      case 10
+        = dataset heart
+      case 11
+        = dataset ironosphere
+      case 12
+        = dataset monks
+      case 13
+        = dataset haberman
+      case 14
+        = dataset tictactoe
+      case 15
+        = dataset titanic
+      case 16
+        = dataset mushroom
+      case 17
+        = dataset spambase
+      case 18
+        = dataset sentetik1
+      case 19
+        = dataset sentetik2
+      case 20
+        = dataset ringnorm
+      case 21
+        = dataset twonorm
+    endswitch
+    for i 2 2
+      switch i
+        case 1
+          = method svm
+        case 2
+          = method svmtree
+      endswitch
+      output %dir%\%subdir%\%dataset%.%method%
+      %method% %dataset% random 1
+      if = i 2
+        = outfile %dir%\%subdir%\%dataset%-node.%method%
+        openfile outfile w
+        for k 1 10
+          writefile outfile %aout2[k]%
+        endfor k
+        closefile outfile
+      endif
+    endfor i
+  endfor j  
+endfor p
+output stdout

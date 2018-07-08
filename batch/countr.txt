@@ -1,0 +1,163 @@
+displaycode off
+integer i j k m n p currentk currenti
+integer aa ar ra rr t1 t2
+string test1 test2 dir dir2 alg1 alg2 dataset file1 file2
+twotailed
+= dir ../results/
+output %dir%/regression.txt
+for i 1 5
+  switch i
+    case 1
+      = test1 tpaired5x2
+    case 2
+      = test1 combined5x2t
+    case 3
+      = test1 cvttest      
+    case 4
+      = test1 wilcoxon
+    case 5
+      = test1 ftest
+  endswitch
+  = currenti %i%
+  ++ currenti
+  for j %currenti% 6
+  switch j
+    case 2
+      = test2 combined5x2t
+    case 3
+      = test2 cvttest      
+    case 4
+      = test2 wilcoxon
+    case 5
+      = test2 ftest
+    case 6
+      = test2 regressionf      
+  endswitch
+  = aa 0
+  = ar 0
+  = ra 0
+  = rr 0
+  for k 1 6
+    switch k
+      case 1
+        = alg1 average
+      case 2
+        = alg1 regstump
+      case 3
+        = alg1 linear
+      case 4
+        = alg1 regtree
+      case 5
+        = alg1 knnreg
+      case 6
+        = alg1 quantizereg
+    endswitch
+    = currentk %k%
+    ++ currentk
+    for m %currentk% 7
+      switch m
+        case 2
+          = alg2 regstump
+        case 3
+          = alg2 linear
+        case 4
+          = alg2 regtree
+        case 5
+          = alg2 knnreg
+        case 6
+          = alg2 quantizereg
+        case 7
+          = alg2 lp
+      endswitch 
+      for n 1 30
+        switch n
+    case 1
+      = dataset abalone
+    case 2
+      = dataset add10
+    case 3
+      = dataset boston
+    case 4
+      = dataset comp
+    case 5
+      = dataset sinus
+    case 6
+      = dataset bank8fh
+    case 7
+      = dataset bank8nh
+    case 8
+      = dataset bank8fm
+    case 9
+      = dataset bank8nm
+    case 10
+      = dataset bank32fh
+    case 11
+      = dataset bank32nh
+    case 12
+      = dataset bank32fm
+    case 13
+      = dataset bank32nm
+    case 14
+      = dataset kin8fh
+    case 15
+      = dataset kin8nh
+    case 16
+      = dataset kin8fm
+    case 17
+      = dataset kin8nm
+    case 18
+      = dataset kin32fh
+    case 19
+      = dataset kin32nh
+    case 20
+      = dataset kin32fm
+    case 21
+      = dataset kin32nm
+    case 22
+      = dataset puma8fh
+    case 23
+      = dataset puma8nh
+    case 24
+      = dataset puma8fm
+    case 25
+      = dataset puma8nm
+    case 26
+      = dataset puma32fh
+    case 27
+      = dataset puma32nh
+    case 28
+      = dataset puma32fm
+    case 29
+      = dataset puma32nm
+    case 30
+      = dataset california
+        endswitch
+        for p 1 1000
+          = file1 %dir%/regression/%dataset%/%p%.%alg1%
+          = file2 %dir%/regression/%dataset%/%p%.%alg2%   
+          %test1% %file1% %file2%
+          = t1 %out1%
+          %test2% %file1% %file2%
+          = t2 %out1%
+          if = t1 0
+            if = t2 0
+              ++ aa
+            else
+              ++ ar
+            endif
+          else
+            if = t2 0
+              ++ ra
+            else
+              ++ rr
+            endif
+          endif
+        endfor p
+      endfor n
+    endfor m
+  endfor k 
+  write %test1%_%test2%_%aa%_%ar%_%ra%_%rr%
+  endfor j
+endfor i
+output stdout
+

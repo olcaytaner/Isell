@@ -1,0 +1,68 @@
+displaycode off
+displayresult off
+twotailed
+integer numberofruns i j k t s p[5] count index
+string resultdir file1 file2 dataset method1 method2
+file infile
+= numberofruns 10
+= resultdir ../results/multivariatetest/dt
+= infile twoclasstime.txt
+openfile infile r
+readfile infile count
+setprecision 3
+for i 1 5
+  = p[%i%] 0
+endfor i
+for i 1 %count%
+  readfile infile dataset
+  for j 1 4
+    switch j
+      case 1
+        = method1 c45
+      case 2
+        = method1 knn
+      case 3
+        = method1 svm
+      case 4
+        = method1 lda
+    endswitch
+    for k %j+1% 5
+      switch k
+        case 2
+          = method2 knn
+        case 3
+          = method2 svm
+        case 4
+          = method2 lda
+        case 5
+          = method2 qda
+      endswitch
+      for t 5 5
+        = file1 %resultdir%/posterior/%dataset%-1-%method1%.posterior
+        fileexists %file1%
+        if = out1 1
+          = file2 %resultdir%/posterior/%dataset%-1-%method2%.posterior
+          fileexists %file2%
+          if = out1 1
+            for s 1 %numberofruns%
+              = file1 %resultdir%/%dataset%-%s%-%method1%-%0.1*t%.confusion
+              = file2 %resultdir%/%dataset%-%s%-%method2%-%0.1*t%.confusion
+              hotellingt %file1% %file2%
+              = index %out3%
+              if = index 4
+                writescreen 4_%dataset%_%method1%_%method2%_%s%
+              endif
+              if = index 0
+                writescreen 0_%dataset%_%method1%_%method2%_%s%
+              endif
+              += p[%index%] 1
+            endfor s
+          endif
+        endif
+      endfor t
+    endfor k
+  endfor j
+endfor i
+closefile infile
+writescreen %p[1]%_%p[2]%_%p[3]%_%p[4]%_%p[5]%
+

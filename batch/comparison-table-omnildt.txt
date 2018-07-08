@@ -1,0 +1,164 @@
+displaycode off
+onetailed
+confidencelevel 0.05
+integer j i k p res1 count endj endi endk
+string dir file1 file2 dataset result adddir1 adddir2 extension1 extension2 sets comptype
+= dir c:\users\olcay\isell\omnildt
+= endj 17
+= endk 5
+= endi 5
+integer count2[%endi%]
+integer lost[%endj%]
+integer win[%endj%]
+for p 1 3
+  switch p
+    case 1
+      = comptype error
+    case 2
+      = comptype count
+    case 3
+      = comptype time
+  endswitch
+  output %dir%\comparison-%comptype%.txt
+  write \begin{tabular}{|l|r|r|r|r|r|r|}
+  write \hline
+  write _&_AIC_&_BIC_&_MDL_&_SRM_&_MULTITESTCV_&_$\sum$_\\
+  write \hline           
+  for i 1 %endi%
+    switch i
+      case 1
+        = extension1 aic
+        = result AIC_
+      case 2
+        = extension1 bic
+        = result BIC_
+      case 3
+        = extension1 mdl
+        = result MDL_
+      case 4
+        = extension1 srm
+        = result SRM_
+      case 5
+        = extension1 crossvalidation
+        = result MULTITESTCV_
+    endswitch
+    for k 1 %endj%
+      = win[k] 0
+      = lost[k] 0    
+    endfor k
+    for k 1 %endk%
+      switch k
+        case 1
+          = extension2 aic
+        case 2
+          = extension2 bic
+        case 3
+          = extension2 mdl
+        case 4
+          = extension2 srm
+        case 5
+          = extension2 crossvalidation
+      endswitch  
+      = count 0    
+      = sets -
+      for j 1 %endj%
+        switch j
+          case 1
+            = dataset breast
+          case 2
+            = dataset bupa
+          case 3
+            = dataset ecoli
+          case 4
+            = dataset glass
+          case 5
+            = dataset haberman
+          case 6
+            = dataset hepatitis
+          case 7
+            = dataset iris
+          case 8
+            = dataset ironosphere
+          case 9
+            = dataset monks
+          case 10
+            = dataset pima
+          case 11
+            = dataset vote
+          case 12
+            = dataset wave
+          case 13
+            = dataset wine
+          case 14
+            = dataset yeast
+          case 15
+            = dataset zoo
+          case 16
+            = dataset balance
+          case 17
+            = dataset car
+          case 18
+            = dataset dermatology
+          case 19
+            = dataset flare
+          case 20
+            = dataset fevzi
+          case 21
+            = dataset segment
+          case 22
+            = dataset tictactoe
+          case 23
+            = dataset cmc
+          case 24
+            = dataset credit
+          case 25
+            = dataset cylinder
+          case 26
+            = dataset horse
+          case 27
+            = dataset mushroom
+          case 28
+            = dataset nursery
+          case 29
+            = dataset cenk
+          case 30
+            = dataset spambase
+        endswitch
+        = file1 %dir%\%dataset%-%extension1%.%comptype%
+        = file2 %dir%\%dataset%-%extension2%.%comptype%
+        combined5x2t %file2% %file1%
+        = res1 %out1%
+        if = res1 1
+          ++ count
+          = win[j] 1
+        endif
+        combined5x2t %file1% %file2%      
+        = res1 %out1%
+        if = res1 1
+          = lost[j] 1
+        endif
+      endfor j
+      = result %result%&_%count%_
+    endfor k
+    = count 0
+    = count2[%i%] 0
+    for k 1 %endj%
+      if = win[k] 1
+        ++ count
+      endif
+      if = lost[k] 1
+        ++ count2[%i%]
+      endif
+    endfor k
+    write %result%&_%count%_\\
+  endfor i
+  write \hline
+  = result $\sum$_
+  for i 1 %endi%
+    = result %result%&_%count2[i]%_
+  endfor i
+  = result %result%&_\\
+  write %result%
+  write \hline
+  write \end{tabular}
+endfor p

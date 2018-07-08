@@ -1,0 +1,51 @@
+displaycode off
+displayresult off
+string resultdir dataset method extension noiselevel
+integer i j k
+setdatadir ../data
+loaddatasets classification.xml
+foldcount 2
+runcount 5
+= resultdir ../results/noise
+= dataset segment
+runwithclassnoise on
+for i 1 5
+  switch i
+    case 1
+      = method nearestmean
+      = extension mean    
+    case 2
+      = method ldaclass
+      = extension lda
+    case 3
+      = method c45
+      = extension c45
+    case 4
+      = method ripper
+      = extension ripper
+    case 5
+      = method knn
+      = extension knn
+      nearcount 1
+  endswitch
+  for j 1 4
+    switch j
+      case 1
+        = noiselevel 0.003
+      case 2
+        = noiselevel 0.007
+      case 3
+        = noiselevel 0.03
+      case 4
+        = noiselevel 0.07
+    endswitch
+    noiselevel %noiselevel%
+    for k 1 1000
+      output %resultdir%/%noiselevel%/%dataset%/%k%.%extension%
+      %method% %dataset% cv %k%    
+    endfor k
+    writescreen %i%_%j%
+  endfor j  
+endfor i  
+output stdout
+

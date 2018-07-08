@@ -1,0 +1,58 @@
+displaycode off
+integer i endi j endj k
+string resultdir type alg dataset
+setprecision 6
+= resultdir ../results/discretetree
+= type error
+for j 1 4
+  switch j
+    case 1
+      = alg c45
+    case 2
+      = alg discrete-1
+    case 3
+      = alg discrete-2
+    case 4
+      = alg discrete-omni
+  endswitch
+  output %alg%.txt
+  for i 1 15
+    switch i
+      case 1
+        = dataset artificial
+      case 2
+        = dataset hayesroth
+      case 3
+        = dataset krvskp
+      case 4
+        = dataset discretemonks
+      case 5
+        = dataset spect
+      case 6
+        = dataset tictactoe
+      case 7
+        = dataset vote
+      case 8
+        = dataset car
+      case 9
+        = dataset nursery
+      case 10
+        = dataset titanic
+      case 11
+        = dataset acceptors
+      case 12
+        = dataset balance
+      case 13
+        = dataset donors
+      case 14
+        = dataset promoters
+      case 15
+        = dataset splice
+    endswitch
+    meanvariance %resultdir%/%dataset%-%alg%.%type%
+    write %out1%
+  endfor i
+  output stdout
+endfor j
+comparealgorithms c45.txt discrete-1.txt discrete-2.txt discrete-omni.txt
+mv image.eps discretetree-%type%.eps

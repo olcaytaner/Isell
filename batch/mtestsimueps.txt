@@ -1,0 +1,17 @@
+displaycode off
+axislimits x 0 10 10 0
+axislimits y 0 1000 10 0
+hold on
+plotxyline mtestresult1.txt black 1
+plotxyline mtestresult4.txt red 1
+plotxyline mtestresult5.txt green 1
+plotxyline mtestresult6.txt blue 1
+legendnames 1-2-3 2-3-1 3-1-2 3-2-1
+xlabel Multiplier
+ylabel Probability_of_Accepting_the_Null_Hypothesis
+legendposition upright
+fontsize legend 20
+fontsize axis 24
+fontsize label 24
+exportimage multitest.eps
+

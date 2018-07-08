@@ -1,0 +1,57 @@
+displaycode off
+displayresult off
+integer i j k 
+real roccount[7] prcount[7] totalroccount[7] totalprcount[7]
+string dataset methodname resultdir
+setprecision 3
+= resultdir ../results/mvartest2
+for i 1 7
+  = roccount[%i%] 0
+  = prcount[%i%] 0
+  = totalroccount[%i%] 0
+  = totalprcount[%i%] 0
+  switch i
+    case 1
+      = methodname c45
+    case 2
+      = methodname knn
+    case 3
+      = methodname lda
+    case 4
+      = methodname qda
+    case 5
+      = methodname svm1
+    case 6
+      = methodname svm2
+    case 7
+      = methodname randomforest
+  endswitch
+  for j 1 4
+    switch j
+      case 1
+        = dataset acceptors
+      case 2
+        = dataset donors
+      case 3
+        = dataset ads
+      case 4
+        = dataset polyadenylation
+    endswitch
+    for k 1 10
+      fileexists %resultdir%/measure/confusion/%dataset%-%k%-%methodname%.confusion
+      if = out1 1
+        multinormalitytest %resultdir%/measure/roc/%dataset%-%k%-%methodname%.roc
+        ++ totalroccount[%i%]
+        if = out1 1
+          ++ roccount[%i%]
+        endif
+        multinormalitytest %resultdir%/measure/pr/%dataset%-%k%-%methodname%.pr
+        ++ totalprcount[%i%]
+        if = out1 1
+          ++ prcount[%i%]
+        endif
+      endif
+    endfor k
+  endfor j  
+  write %methodname%_%100*roccount[i]/totalroccount[i]%_%100*prcount[i]/totalprcount[i]%
+endfor i  

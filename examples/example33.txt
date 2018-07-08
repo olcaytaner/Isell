@@ -1,0 +1,14 @@
+'Calculates sum 1^k + 2^k + 3^k + ... + n^k using while
+integer i n k sum added
+= i 1
+= n 20
+= k 3
+= sum 0
+while < i %n%
+  = added %i%
+  ^= added %k%
+  += sum %added%
+  ++ i
+endwhile
+writescreen %sum%
+

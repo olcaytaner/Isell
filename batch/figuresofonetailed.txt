@@ -1,0 +1,62 @@
+displaycode off
+integer i j k m currenti currentk
+string test1 test2 dir1 dir2 alg1 alg2 dataset file1 file2
+onetailed
+axislimits x 0 1000
+axislimits y 0 1000
+for i 1 2
+  switch i
+    case 1
+      = test1 tpaired5x2
+    case 2
+      = test1 combined5x2t
+  endswitch
+  = dir1 results
+  = currenti %i%
+  ++ currenti
+  for j %currenti% 3
+    switch j
+      case 2
+        = test2 combined5x2t
+      case 3
+        = test2 cvttest
+    endswitch
+    if < i 3
+      = dir2 results
+    else
+      = dir2 resultscv10
+    endif
+    for k 1 4
+      switch k
+        case 1
+          = alg1 max
+        case 2
+          = alg1 mean
+        case 3
+          = alg1 lda
+        case 4
+          = alg1 c45
+      endswitch
+      = currentk %k%
+      ++ currentk
+      for m %currentk% 5
+        switch m
+          case 2
+            = alg2 mean
+          case 3
+            = alg2 lda
+          case 4
+            = alg2 c45
+          case 5
+            = alg2 knn
+        endswitch 
+        = file1 c:\users\olcay\isell\comparetests\onetailed\%alg1%-%alg2%-%test1%-%test2%.txt
+        = file2 c:\users\olcay\isell\comparetests\onetailed\%alg1%-%alg2%-%test1%-%test2%.eps
+        xlabel %test1%
+        ylabel %test2%
+        plotxy %file2% %file1%
+      endfor m
+    endfor k 
+  endfor j
+endfor i
+output stdout

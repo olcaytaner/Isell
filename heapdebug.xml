@@ -1,0 +1,97 @@
+<datasets>
+	<dataset name="boston" task="regression" size="506" directory="boston" filetype="text" separator=" " filename="boston.dat">
+		<attributes>
+			<attribute type="Real" available="True" min="0.010000" max="88.980000"/>
+			<attribute type="Real" available="True" min="0.000000" max="100.000000"/>
+			<attribute type="Real" available="True" min="0.460000" max="27.740000"/>
+			<attribute type="Real" available="True" min="0.000000" max="1.000000"/>
+			<attribute type="Real" available="True" min="0.380000" max="0.870000"/>
+			<attribute type="Real" available="True" min="3.560000" max="8.780000"/>
+			<attribute type="Real" available="True" min="2.900000" max="100.000000"/>
+			<attribute type="Real" available="True" min="1.130000" max="12.130000"/>
+			<attribute type="Real" available="True" min="1.000000" max="24.000000"/>
+			<attribute type="Real" available="True" min="187.000000" max="711.000000"/>
+			<attribute type="Real" available="True" min="12.600000" max="22.000000"/>
+			<attribute type="Real" available="True" min="0.320000" max="396.900000"/>
+			<attribute type="Real" available="True" min="1.730000" max="37.970000"/>
+			<attribute type="Output" available="True" min="5.000000" max="50.000000"/>
+		</attributes>
+	</dataset>
+	<dataset name="breast" task="classification" size="699" directory="breast" filetype="text" separator="," filename="breast-cancer-wisconsin.data">
+		<classes>
+			<class value="2" size="458"/>
+			<class value="4" size="241"/>
+		</classes>
+		<attributes>
+			<attribute type="String" available="False"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Integer" available="True" min="1" max="10"/>
+			<attribute type="Output" available="True">
+				<value>2</value>
+				<value>4</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="iris" task="classification" size="150" directory="iris" filetype="text" separator="," filename="iris.data">
+		<classes>
+			<class value="iris-setosa" size="50"/>
+			<class value="iris-versicolor" size="50"/>
+			<class value="iris-virginica" size="50"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="4.300000" max="7.900000"/>
+			<attribute type="Real" available="True" min="2.000000" max="4.400000"/>
+			<attribute type="Real" available="True" min="1.000000" max="6.900000"/>
+			<attribute type="Real" available="True" min="0.100000" max="2.500000"/>
+			<attribute type="Output" available="True">
+				<value>iris-setosa</value>
+				<value>iris-versicolor</value>
+				<value>iris-virginica</value>
+			</attribute>
+		</attributes>
+	</dataset>
+ <dataset name="hayesroth" task="classification" size="160" directory="hayesroth" filetype="text" separator="," filename="hayes-roth.data" sigma="0.000000">
+  <classes>
+   <class value="1" size="65"/>
+   <class value="2" size="64"/>
+   <class value="3" size="31"/>
+  </classes>
+  <attributes>
+   <attribute type="String" available="True">
+    <value>2</value>
+    <value>3</value>
+    <value>1</value>
+   </attribute>
+   <attribute type="String" available="True">
+    <value>1</value>
+    <value>4</value>
+    <value>2</value>
+    <value>3</value>
+   </attribute>
+   <attribute type="String" available="True">
+    <value>1</value>
+    <value>3</value>
+    <value>4</value>
+    <value>2</value>
+   </attribute>
+   <attribute type="String" available="True">
+    <value>2</value>
+    <value>1</value>
+    <value>4</value>
+    <value>3</value>
+   </attribute>
+   <attribute type="Output" available="True">
+    <value>1</value>
+    <value>2</value>
+    <value>3</value>
+   </attribute>
+  </attributes>
+ </dataset>
+</datasets>

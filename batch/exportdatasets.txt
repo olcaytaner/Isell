@@ -1,0 +1,70 @@
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+integer j
+string dataset
+for j 1 30
+  switch j
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+    case 6
+      = dataset ecoli
+    case 7
+      = dataset flare
+    case 8
+      = dataset glass
+    case 9
+      = dataset hepatitis
+    case 10
+      = dataset horse
+    case 11
+      = dataset iris
+    case 12
+      = dataset ironosphere
+    case 13
+      = dataset monks
+    case 14
+      = dataset segment
+    case 15
+      = dataset vote
+    case 16
+      = dataset wine
+    case 17
+      = dataset zoo
+    case 18
+      = dataset balance
+    case 19
+      = dataset cmc
+    case 20
+      = dataset credit
+    case 21
+      = dataset haberman
+    case 22
+      = dataset pima
+    case 23
+      = dataset tictactoe
+    case 24
+      = dataset yeast
+    case 25
+      = dataset spambase
+    case 26
+      = dataset wave
+    case 27
+      = dataset mushroom
+    case 28
+      = dataset fevzi
+    case 29
+      = dataset cenk
+    case 30
+      = dataset nursery
+  endswitch
+  exportdataset %dataset% , c:\users\olcay\isell\export\%dataset%.data
+endfor j  
+output stdout

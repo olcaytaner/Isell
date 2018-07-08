@@ -1,0 +1,70 @@
+displaycode off
+file infile
+integer i j k datasetcount bestj bestk
+string dataset st
+real error
+= infile datasets.txt
+perceptronrun 50
+setdatadir ../data
+loaddatasets rule.xml
+openfile infile r
+readfile infile datasetcount
+for i 1 %datasetcount%
+  readfile infile dataset
+  = error 10000000000000
+  = bestj -1
+  = bestk -1
+  fileexists error-%dataset%.txt
+  if = out1 0
+    output error-%dataset%.txt
+    for j 1 6
+      = st _
+      switch j
+        case 1
+          learningrate 0.5
+        case 2
+          learningrate 0.1
+        case 3
+          learningrate 0.05
+        case 4
+          learningrate 0.01
+        case 5
+          learningrate 0.005
+        case 6
+          learningrate 0.001
+      endswitch
+      for k 1 50
+        hiddenlayers %k%
+        autokernel %dataset% 1 %dataset%class.txt %dataset%kernel.txt        
+        if < out1 %error%
+          = error %out1%
+          = bestj %j%
+          = bestk %k%
+        endif
+        rm -rf %dataset%class.txt
+        rm -rf %dataset%kernel.txt
+        = st %st%_%out1%
+      endfor k
+      write %st%
+    endfor j
+    writescreen %dataset%_%bestk%
+    switch bestj
+      case 1
+        learningrate 0.5
+      case 2
+        learningrate 0.1
+      case 3
+        learningrate 0.05
+      case 4
+        learningrate 0.01
+      case 5
+        learningrate 0.005
+      case 6
+        learningrate 0.001
+    endswitch
+    hiddenlayers %bestk%
+    autokernel %dataset% 1 %dataset%class.txt %dataset%kernel.txt
+  endif
+endfor i
+closefile infile
+output stdout

@@ -1,0 +1,161 @@
+displaycode off
+displayresult off
+integer i j k m p t res starthidden
+string dataset dir subdir cortype st algorithm
+os Linux
+setdatadir //home/olcaytaner/isell/data
+loaddef //home/olcaytaner/isell/src/idtree-mlp-cls.ini
+= dir //home/olcaytaner/isell
+onetailed
+setprecision 0
+testtype cvttest
+= t 50
+= subdir resultsCls1x10
+output %dir%/cls-%t%.txt
+for i 1 44
+  switch i
+    case 1
+      = dataset haberman
+      = starthidden 1
+    case 2
+      = dataset iris
+      = starthidden 0
+    case 3
+      = dataset bupa
+      = starthidden 28
+    case 4
+      = dataset monks
+      = starthidden 0
+    case 5
+      = dataset pima
+      = starthidden 0
+    case 6
+      = dataset titanic
+      = starthidden 1
+    case 7
+      = dataset breast
+      = starthidden 0
+    case 8
+      = dataset artificial
+      = starthidden 0
+    case 9
+      = dataset ecoli
+      = starthidden 0
+    case 10
+      = dataset glass
+      = starthidden 0
+    case 11
+      = dataset heart
+      = starthidden 0
+    case 12
+      = dataset pageblock
+      = starthidden 31
+    case 13
+      = dataset wine
+      = starthidden 0
+    case 14
+      = dataset yeast
+      = starthidden 47
+    case 15
+      = dataset hepatitis
+      = starthidden 1
+    case 16
+      = dataset ringnorm
+      = starthidden 3
+    case 17
+      = dataset twonorm
+      = starthidden 28
+    case 18
+      = dataset zoo
+      = starthidden 0
+    case 19
+      = dataset balance
+      = starthidden 0
+    case 20
+      = dataset wave
+      = starthidden 0
+    case 21
+      = dataset postoperative
+      = starthidden 0
+    case 22
+      = dataset flare
+      = starthidden 1
+    case 23
+      = dataset tae
+      = starthidden 6
+    case 24
+      = dataset ironosphere
+      = starthidden 0
+    case 25
+      = dataset dermatology
+      = starthidden 0
+    case 26
+      = dataset vote
+      = starthidden 0
+    case 27
+      = dataset flags
+      = starthidden 0
+    case 28
+      = dataset tictactoe
+      = starthidden 1
+    case 29
+      = dataset australian
+      = starthidden 0
+    case 30
+      = dataset credit
+      = starthidden 0
+    case 31
+      = dataset horse
+      = starthidden 0
+    case 32
+      = dataset cylinder
+      = starthidden 0
+    case 33
+      = dataset cmc
+      = starthidden 10
+    case 34
+      = dataset car
+      = starthidden 0
+    case 35
+      = dataset segment
+      = starthidden 0
+    case 36
+      = dataset thyroid
+      = starthidden 10
+    case 37
+      = dataset ocr
+      = starthidden 30
+    case 38
+      = dataset fevzi
+      = starthidden 16
+    case 39
+      = dataset spambase
+      = starthidden 0
+    case 40
+      = dataset cenk
+      = starthidden 31
+    case 41
+      = dataset nursery
+      = starthidden 20
+    case 42
+      = dataset mushroom
+      = starthidden 6
+    case 43 
+      = dataset letter
+      = starthidden 13
+    case 44
+      = dataset zipcodes
+      = starthidden 6
+  endswitch   
+  writescreen %i%
+  mlpmscomparison %dataset% %dir%/%subdir% 50 %starthidden%
+  = st %dataset%
+  for p 1 5
+    = st %st%_%aout1[p]%
+  endfor p
+  for p 1 5
+    = st %st%_%aout2[p]%
+  endfor p
+  write %st%
+endfor i
+output stdout

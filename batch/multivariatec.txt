@@ -1,0 +1,32 @@
+displaycode off
+displayresult off
+string resultdir dataset method extension 
+integer i j k numberofruns
+setdatadir ../data
+loaddatasets data.xml
+foldcount 2
+runcount 5
+printposterior on
+= numberofruns 100
+= resultdir ../results/multivariatetest
+for i 1 2
+  switch i
+    case 1
+      = method ldaclass
+      = extension lda
+    case 2
+      = method qdaclass
+      = extension qda
+  endswitch
+  for j 0 10
+    = dataset data%j%
+    for k 1 %numberofruns%
+      output %resultdir%/%dataset%/%k%-error.%extension%
+      posteriorfile %resultdir%/%dataset%/%k%-posterior.%extension%
+      %method% %dataset% cv %k%
+    endfor k
+    writescreen %i%_%j%
+  endfor j  
+endfor i  
+output stdout
+

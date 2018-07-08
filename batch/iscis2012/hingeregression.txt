@@ -1,0 +1,206 @@
+displaycode off
+integer i j k pos1 pos2
+string dataset
+setprecision 6
+setdatadir ../data
+string resultdir
+= resultdir ../results/hingetest/runs
+loaddatasets regression.xml
+runcount 1
+foldcount 10
+normalizeoutput on
+normalizekernel on
+real c[14] epsilon[10]
+= c[1] 0.015625
+= c[2] 0.03125
+= c[3] 0.0625
+= c[4] 0.125
+= c[5] 0.25
+= c[6] 0.5
+= c[7] 1
+= c[8] 2
+= c[9] 4
+= c[10] 8
+= c[11] 16
+= c[12] 32
+= c[13] 64
+= c[14] 128
+= epsilon[1] 0.015625
+= epsilon[2] 0.03125
+= epsilon[3] 0.0625
+= epsilon[4] 0.125
+= epsilon[5] 0.25
+= epsilon[6] 0.5
+= epsilon[7] 0.0078125
+= epsilon[8] 0.00390625
+= epsilon[9] 0.001953125
+= epsilon[10] 0.000976562
+svmcache 500
+for i 1 9
+  switch i
+    case 1
+      = dataset abalone
+      = pos1 11
+      = pos2 6
+    case 2
+      = dataset add10
+      = pos1 9
+      = pos2 6 
+    case 3
+      = dataset boston
+      = pos1 7
+      = pos2 6 
+    case 4
+      = dataset california
+      = pos1 9
+      = pos2 6 
+    case 5
+      = dataset concrete
+      = pos1 8
+      = pos2 10 
+    case 6
+      = dataset puma8fh
+      = pos1 6
+      = pos2 6 
+    case 7
+      = dataset puma8fm
+      = pos1 9
+      = pos2 7
+    case 8
+      = dataset puma8nh
+      = pos1 4
+      = pos2 2 
+    case 9
+      = dataset puma8nm
+      = pos1 7
+      = pos2 6 
+  endswitch
+  svmC %c[pos1]%
+  svmp %epsilon[pos2]%
+  for j 1 10
+    fileexists %resultdir%/%dataset%-%j%-linear.error
+    if = out1 0
+      kerneltype linear
+      output %resultdir%/%dataset%-%j%-linear.error
+      svmreg %dataset% cv %j%
+      output %resultdir%/%dataset%-%j%-linear.epsilonloss
+      for k 1 10
+        write %aout3[k]%
+      endfor k
+    endif
+  endfor j
+endfor i
+for i 1 9
+  switch i
+    case 1
+      = dataset abalone
+      = pos1 6
+      = pos2 6 
+    case 2
+      = dataset add10
+      = pos1 8
+      = pos2 4 
+    case 3
+      = dataset boston
+      = pos1 9
+      = pos2 5 
+    case 4
+      = dataset california
+      = pos1 9
+      = pos2 5 
+    case 5
+      = dataset concrete
+      = pos1 9
+      = pos2 5 
+    case 6
+      = dataset puma8fh
+      = pos1 7
+      = pos2 6 
+    case 7
+      = dataset puma8fm
+      = pos1 8
+      = pos2 5 
+    case 8
+      = dataset puma8nh
+      = pos1 7
+      = pos2 6 
+    case 9
+      = dataset puma8nm
+      = pos1 8
+      = pos2 6 
+  endswitch
+  svmC %c[pos1]%
+  svmp %epsilon[pos2]%
+  for j 1 10
+    fileexists %resultdir%/%dataset%-%j%-quadratic.error
+    if = out1 0
+      kerneltype polynom
+      svmdegree 2
+      svmcoef0 1.0
+      output %resultdir%/%dataset%-%j%-quadratic.error
+      svmreg %dataset% cv %j%
+      output %resultdir%/%dataset%-%j%-quadratic.epsilonloss
+      for k 1 10
+        write %aout3[k]%
+      endfor k
+    endif
+  endfor j
+endfor i
+for i 1 9
+  switch i
+    case 1
+      = dataset abalone
+      = pos1 8
+      = pos2 6 
+    case 2
+      = dataset add10
+      = pos1 8
+      = pos2 4 
+    case 3
+      = dataset boston
+      = pos1 10
+      = pos2 5 
+    case 9
+      = dataset california
+      = pos1 8
+      = pos2 5 
+    case 4
+      = dataset concrete
+      = pos1 9
+      = pos2 5 
+    case 5
+      = dataset puma8fh
+      = pos1 6
+      = pos2 5 
+    case 6
+      = dataset puma8fm
+      = pos1 7
+      = pos2 4 
+    case 7
+      = dataset puma8nh
+      = pos1 7
+      = pos2 6 
+    case 8
+      = dataset puma8nm
+      = pos1 9
+      = pos2 4 
+  endswitch
+  svmC %c[pos1]%
+  svmp %epsilon[pos2]%
+  for j 1 10
+    fileexists %resultdir%/%dataset%-%j%-cubic.error
+    if = out1 0
+      kerneltype polynom
+      svmdegree 3
+      svmcoef0 1.0
+      output %resultdir%/%dataset%-%j%-cubic.error
+      svmreg %dataset% cv %j%
+      output %resultdir%/%dataset%-%j%-cubic.epsilonloss
+      for k 1 10
+        write %aout3[k]%
+      endfor k
+    endif
+  endfor j
+endfor i
+output stdout
+

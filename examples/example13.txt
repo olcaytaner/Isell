@@ -1,0 +1,9 @@
+displaycode off
+integer j
+learningrate 1
+alpha 0.6
+perceptronrun 500
+etadecrease 0.999
+for j 1 10
+  polyfitcls %j% c:\users\olcay\isell\poly\data.txt
+endfor j

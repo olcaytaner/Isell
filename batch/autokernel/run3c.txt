@@ -1,0 +1,22 @@
+displaycode off
+file infile
+integer i datasetcount
+string dataset
+svmC 1
+= infile datasets2.txt
+runcount 1
+foldcount 10
+setdatadir ../data
+loaddatasets rule.xml
+openfile infile r
+readfile infile datasetcount
+for i 1 %datasetcount%
+  readfile infile dataset
+  fileexists ../results/autokernel/%dataset%.error
+  if = out1 0
+    output ../results/autokernel/%dataset%.error
+    svm %dataset% cv 1
+  endif
+endfor i
+closefile infile
+output stdout

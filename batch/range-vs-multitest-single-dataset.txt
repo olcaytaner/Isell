@@ -1,0 +1,33 @@
+displaycode off
+displayresult off
+onetailed
+integer endi
+= endi 1000
+integer i j k m ordercount l found counts[5] tmpi n p names[5]
+string dir dataset file[5] method algorithm[5] orders[%endi%] order tmps test fold res1 res2
+= algorithm[1] max
+= algorithm[2] mean
+= algorithm[3] lda
+= algorithm[4] c45
+= algorithm[5] knn
+= method multitest
+testtype tukey
+= test tukey
+= dataset ironosphere
+= dir c:\users\olcay\isell\resultscv10
+output %dir%\%method%-%dataset%.txt
+for i 1 %endi%
+  for j 1 5
+    = file[j] %dir%\%dataset%\%i%.%algorithm[j]%
+  endfor j
+  multitest %file[1]% %file[2]% %file[3]% %file[4]% %file[5]%
+  = k %out1%
+  = res1 %sout2%
+  newmankeuls %file[1]% %file[2]% %file[3]% %file[4]% %file[5]%
+  = m %out1%
+  = res2 %sout1%
+  if <> k %m%
+    write %k%:%m%:%res1%:%res2%:%i%
+  endif
+endfor i
+output stdout

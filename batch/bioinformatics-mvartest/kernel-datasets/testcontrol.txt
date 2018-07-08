@@ -1,0 +1,104 @@
+displaycode off
+displayresult off
+integer i k kernel1 kernel2 t kernelcount j p v
+file infile1 infile2 acceptfile1 rejectfile1 acceptfile2 rejectfile2
+string dataset resultdir multifile1 multifile2
+matrix m1 m2 s
+real sum mean1 mean2 x[10,2] sinverse[2,2] r mvalue dvalue pvalue x1 x2 y1 y2
+setprecision 6
+= resultdir ../results/mvartest2
+twotailed
+= acceptfile1 values-accept2.txt
+openfile acceptfile1 w
+= rejectfile1 values-reject2.txt
+openfile rejectfile1 w
+= acceptfile2 values-accept4.txt
+openfile acceptfile2 w
+= rejectfile2 values-reject4.txt
+openfile rejectfile2 w
+for i 1 2
+  switch i
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for kernel1 0 %kernelcount-1%
+    for kernel2 %kernel1+1% %kernelcount-1%
+      for k 1 10
+        = multifile1 %resultdir%/measure/roc/%dataset%-%kernel1%-%k%.roc
+        = multifile2 %resultdir%/measure/roc/%dataset%-%kernel2%-%k%.roc
+        fileexists %resultdir%/measure/confusion/%dataset%-%kernel1%-%k%.confusion        
+        if = out1 1
+          fileexists %resultdir%/measure/confusion/%dataset%-%kernel2%-%k%.confusion        
+          if = out1 1  
+            loadmatrix %multifile1% m1
+            loadmatrix %multifile2% m2  
+            -= m1 m2
+            mprint m1 1.txt
+            mcovariance m1 s
+            maverage m1
+            = mean1 %aout1[1]%
+            = mean2 %aout1[2]%
+            minverse s
+            mprint s 2.txt
+            = infile1 1.txt
+            openfile infile1 r
+            for t 1 10
+              readfile infile1 x[%t%,1]
+              readfile infile1 x[%t%,2]
+            endfor t     
+            closefile infile1
+            = infile2 2.txt
+            openfile infile2 r
+            for t 1 2
+              for v 1 2
+                readfile infile2 sinverse[%t%,%v%]
+              endfor v
+            endfor t
+            closefile infile2
+            = sum 0
+            for t 1 10
+              for v 1 10
+                = x1 %x[t,1]-mean1%
+                = x2 %x[t,2]-mean2%
+                = y1 %x[v,1]-mean1%
+                = y2 %x[v,2]-mean2%
+                = r %x1*sinverse[1,1]*y1+x2*sinverse[2,1]*y1+x1*sinverse[1,2]*y2+x2*sinverse[2,2]*y2%
+                += sum %r*r*r%
+              endfor v
+            endfor t
+            = mvalue %sum/60.0%
+            chi %mvalue% 4
+            = pvalue %out1% 
+            = dvalue 0
+            for t 1 10
+              = x1 %x[t,1]-mean1%
+              = x2 %x[t,2]-mean2%
+              = r %x1*sinverse[1,1]*x1+x2*sinverse[2,1]*x1+x1*sinverse[1,2]*x2+x2*sinverse[2,2]*x2%
+              += dvalue %r%
+            endfor t
+            hotellingt %multifile1% %multifile2%  
+            if = out1 0 
+              writefile acceptfile1 %mvalue%
+            else
+              writefile rejectfile1 %mvalue%
+            endif
+            smirnov %multifile1% %multifile2%  
+            if = out1 0 
+              writefile acceptfile2 %mvalue%
+            else
+              writefile rejectfile2 %mvalue%
+            endif
+          endif
+        endif
+      endfor k
+    endfor kernel2
+  endfor kernel1  
+endfor i  
+closefile acceptfile1
+closefile rejectfile1
+closefile acceptfile2
+closefile rejectfile2

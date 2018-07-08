@@ -1,0 +1,192 @@
+displaycode off
+integer i j k m n p currentk currenti
+integer aa ar ra rr t1 t2
+string test1 test2 dir dir2 alg1 alg2 dataset file1 file2
+onetailed
+= dir ../results/
+output %dir%/classification.txt
+for i 1 4
+  switch i
+    case 1
+      = test1 tpaired5x2
+    case 2
+      = test1 combined5x2t
+    case 3
+      = test1 cvttest      
+  endswitch
+  = currenti %i%
+  ++ currenti
+  for j %currenti% 4
+  switch j
+    case 2
+      = test2 combined5x2t
+    case 3
+      = test2 cvttest      
+    case 4
+      = test2 wilcoxon      
+  endswitch
+  = aa 0
+  = ar 0
+  = ra 0
+  = rr 0
+  for k 1 6
+    switch k
+      case 1
+        = alg1 max
+      case 2
+        = alg1 lda
+      case 3
+        = alg1 mean    
+      case 4
+        = alg1 lp
+      case 5
+        = alg1 c45
+      case 6
+        = alg1 knn
+    endswitch
+    = currentk %k%
+    ++ currentk
+    for m %currentk% 7
+      switch m
+        case 2
+          = alg2 lda
+        case 3
+          = alg2 mean    
+        case 4
+          = alg2 lp
+        case 5
+          = alg2 c45
+        case 6
+          = alg2 knn
+        case 7
+          = alg2 ripper
+      endswitch 
+      for n 1 40
+        switch n
+      case 1
+        = dataset balance
+      case 2
+        = dataset breast
+      case 3
+        = dataset bupa
+      case 4
+        = dataset car
+      case 5
+        = dataset cmc
+      case 6
+        = dataset credit
+      case 7
+        = dataset cylinder
+      case 8
+        = dataset dermatology
+      case 9
+        = dataset ecoli
+      case 10
+        = dataset flare
+      case 11
+        = dataset glass
+      case 12
+        = dataset haberman
+      case 13
+        = dataset hepatitis
+      case 14
+        = dataset horse
+      case 15
+        = dataset iris
+      case 16
+        = dataset ironosphere
+      case 17
+        = dataset monks
+      case 18
+        = dataset mushroom
+      case 19
+        = dataset nursery
+      case 20
+        = dataset optdigits
+      case 21
+        = dataset pendigits
+      case 22
+        = dataset pima
+      case 23
+        = dataset segment
+      case 24
+        = dataset spambase
+      case 25
+        = dataset tictactoe
+      case 26
+        = dataset vote
+      case 27
+        = dataset wave
+      case 28
+        = dataset wine
+      case 29
+        = dataset yeast
+      case 30
+        = dataset zoo
+      case 31
+        = dataset titanic
+      case 32
+        = dataset ringnorm
+      case 33
+        = dataset twonorm
+      case 34
+        = dataset vehicle
+      case 35
+        = dataset german
+      case 36
+        = dataset australian
+      case 37
+        = dataset tae
+      case 38
+        = dataset heart
+      case 39
+        = dataset pageblock
+      case 40
+        = dataset ocr
+        endswitch
+        for p 1 1000
+          = file1 %dir%/classification/%dataset%/%p%.%alg1%
+          = file2 %dir%/classification/%dataset%/%p%.%alg2%            
+          %test1% %file1% %file2%
+          = t1 %out1%
+          %test2% %file1% %file2%
+          = t2 %out1%
+          if = t1 0
+            if = t2 0
+              ++ aa
+            else
+              ++ ar
+            endif
+          else
+            if = t2 0
+              ++ ra
+            else
+              ++ rr
+            endif
+          endif
+          %test1% %file2% %file1%
+          = t1 %out1%
+          %test2% %file2% %file1%
+          = t2 %out1%
+          if = t1 0
+            if = t2 0
+              ++ aa
+            else
+              ++ ar
+            endif
+          else
+            if = t2 0
+              ++ ra
+            else
+              ++ rr
+            endif
+          endif
+        endfor p
+      endfor n
+    endfor m
+  endfor k 
+  write %test1%_%test2%_%aa%_%ar%_%ra%_%rr%
+  endfor j
+endfor i
+output stdout
+

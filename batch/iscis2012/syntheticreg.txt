@@ -1,0 +1,60 @@
+displaycode off
+displayresult off
+string dataset
+integer i j res1 res2 res3 res4 res5 res6
+= dataset sinus
+setdatadir ../data
+twotailed
+runcount 1
+foldcount 10
+setprecision 6
+normalizekernel on
+normalizeoutput on
+loaddatasets regression.xml
+svmp 0.25
+svmC 0.25
+kerneltype rbf
+output error1.txt
+svmreg %dataset% cv 1
+output epsilon1.txt
+for j 1 10
+  write %aout3[j]%
+endfor j
+output stdout
+svmC 1.0
+kerneltype polynom
+svmdegree 2
+svmcoef0 1.0
+output error2.txt
+svmreg %dataset% cv 1
+output epsilon2.txt
+for j 1 10
+  write %aout3[j]%
+endfor j
+output stdout
+svmC 1.0
+kerneltype polynom
+svmdegree 3
+svmcoef0 1.0
+output error3.txt
+svmreg %dataset% cv 1
+output epsilon3.txt
+for j 1 10
+  write %aout3[j]%
+endfor j
+output stdout
+pairedttest error1.txt error2.txt
+= res1 %out1%
+pairedttest error1.txt error3.txt
+= res2 %out1%
+pairedttest error2.txt error3.txt
+= res3 %out1%
+pairedttest epsilon1.txt epsilon2.txt
+= res4 %out1%
+pairedttest epsilon1.txt epsilon3.txt
+= res5 %out1%
+pairedttest epsilon2.txt epsilon3.txt
+= res6 %out1%
+writescreen %res1%_%res4%
+writescreen %res2%_%res5%
+writescreen %res3%_%res6%

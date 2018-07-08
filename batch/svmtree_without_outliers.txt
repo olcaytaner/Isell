@@ -1,0 +1,8 @@
+displaycode off
+displayresult off
+integer i j k m p t res
+string dataset dir subdir cortype st algorithm
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+runcount 1
+foldcount 10

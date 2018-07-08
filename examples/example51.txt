@@ -1,0 +1,61 @@
+displaycode off
+file infile outfile1 outfile2
+string read dataset result
+integer i j k m countsu[15] countsm[15] countm countu len
+= outfile1 c:\users\olcay\isell\ruleinduction\counts1.txt
+= outfile2 c:\users\olcay\isell\ruleinduction\counts2.txt
+openfile outfile1 w
+openfile outfile2 w
+for j 1 15
+  = countsu[j] 0
+  = countsm[j] 0  
+endfor j
+for j 1 5
+  = countm 0
+  = countu 0
+  switch j
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+  endswitch
+  = infile c:\users\olcay\isell\ruleinduction\hybridripper\2backup\%dataset%-nodetypes.hybridripper  
+  openfile infile r
+  write %dataset%
+  for i 1 10
+    readfile infile read
+    tokenize read ;
+    if > out1 0
+      for k 1 %out1%
+        countchar aout1[k] U
+        += countu %out1%
+        countchar aout1[k] M
+        += countm %out1%      
+        stringlength aout1[k]
+        = len %out1%
+        for m 1 %len%
+          charatindex aout1[k] %m%
+          = result %sout1%
+          if = result U
+            += countsu[m] 1
+          else
+            += countsm[m] 1
+          endif
+        endfor m
+      endfor k
+    endif
+  endfor i
+  closefile infile
+  writefile outfile1 %dataset%;%countu%;%countm%  
+endfor j
+for j 1 15
+  writefile outfile2 %j%;%countsu[j]%;%countsm[j]%
+endfor j
+closefile outfile1
+closefile outfile2

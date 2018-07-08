@@ -1,0 +1,113 @@
+displaycode off
+displayresult off
+file outfile
+string dir extension algorithm resultdir dataset method modelselection prunetype
+integer i j k starti endi startj endj p
+os Linux
+setdatadir ../data
+loaddatasets modelselection.xml
+runcount 5
+foldcount 2
+= resultdir ../results/omnildt
+= starti 1
+= endi 1
+= startj 1
+= endj 1
+= method omnildt
+for i %starti% %endi%
+  switch i
+    case 1
+      = modelselection aic
+      modelselection aic
+      prunetype modelselection
+    case 2
+      = modelselection bic
+      modelselection bic
+      prunetype modelselection
+    case 3
+      = modelselection crossvalidation      
+      modelselection crossvalidation      
+      prunetype modelselection
+    case 4
+      = modelselection srm
+      modelselection srm
+      prunetype prepruning
+  endswitch
+  for j %startj% %endj%
+    switch j
+        case 1
+          = dataset haberman
+        case 2
+          = dataset transfusion
+        case 3
+          = dataset mammographic
+        case 4
+          = dataset pima
+        case 5
+          = dataset breast
+        case 6
+          = dataset bupa
+        case 7
+          = dataset tictactoe
+        case 8 
+          = dataset heart
+        case 9 
+          = dataset ringnorm
+        case 10
+          = dataset twonorm
+        case 11
+          = dataset parkinsons
+        case 12
+          = dataset titanic
+        case 13
+          = dataset german
+        case 14
+          = dataset vote
+        case 15
+          = dataset hepatitis
+        case 16
+          = dataset monks
+        case 17
+          = dataset artificial
+    endswitch
+    output %resultdir%/%dataset%-%modelselection%.error
+    %method% %dataset% random 1    
+    = outfile %resultdir%/%dataset%-%modelselection%.time
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout1[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%/%dataset%-%modelselection%.univariate
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout2[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%/%dataset%-%modelselection%.linear
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout3[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%/%dataset%-%modelselection%.quadratic
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout4[k]%
+    endfor k
+    closefile outfile
+    = outfile %resultdir%/%dataset%-%modelselection%.count
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout5[k]%
+    endfor k
+    closefile outfile   
+    = outfile %resultdir%/%dataset%-%modelselection%.nodetype
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout8[k]%
+    endfor k
+    closefile outfile   
+  endfor j  
+endfor i
+output stdout

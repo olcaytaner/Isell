@@ -1,0 +1,25 @@
+displaycode off
+integer j i k
+string dir size file extension dataset endj endi endk result
+= size large
+= dir c:\users\olcay\isell\poly
+= endj 5
+output %dir%\meanvariance-%size%.txt
+for j 1 %endj%
+  switch j
+    case 1
+      = dataset AIC
+    case 2
+      = dataset BIC
+    case 3
+      = dataset MDL
+    case 4
+      = dataset SRM
+    case 5
+      = dataset CROSSVALIDATION
+  endswitch
+  = file %dir%\resultscls\%size%\%dataset%-error.txt
+  meanvariance %file%
+  write %dataset%;%out1%;%out2%
+endfor j
+output stdout

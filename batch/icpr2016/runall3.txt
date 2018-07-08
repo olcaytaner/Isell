@@ -1,0 +1,54 @@
+displaycode off
+displayresult off
+string datadir dataset resultdir
+= resultdir ../results/ensemble
+integer i j n nfact
+= n 3
+= nfact 1
+for i 2 %n%
+  = nfact %nfact*i%
+endfor i
+string b[%nfact%]
+stringpermutation %n% b
+= datadir ../data
+setdatadir %datadir%
+loaddatasets rule.xml
+runcount 5
+foldcount 2
+testpercentage 0.33333333333333
+printposterior on
+separatedataused off
+for i 1 10
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset cmc
+    case 3
+      = dataset hayesroth
+    case 4
+      = dataset iris
+    case 5
+      = dataset leukemia1
+    case 6
+      = dataset leukemia2
+    case 7
+      = dataset splice
+    case 8
+      = dataset tae
+    case 9
+      = dataset wave
+    case 10
+      = dataset wine
+  endswitch
+  for j 1 %nfact%
+    classpermutation %b[j]%
+    fileexists %resultdir%/%dataset%-%b[j]%.error
+    if = out1 0
+      output %resultdir%/%dataset%-%b[j]%.error
+      posteriorfile %resultdir%/%dataset%-%b[j]%.posterior
+      ripper %dataset% cv 1
+    endif
+  endfor j
+endfor i
+output stdout

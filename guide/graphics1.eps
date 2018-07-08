@@ -1,0 +1,209 @@
+%%Written by ISELL Environment
+%%BoundingBox: 0 0 600 100
+/Times findfont 10 scalefont setfont
+%%circle
+/circle{/y0 exch def /x0 exch def /r exch def
+x0 y0 r 0 360 arc
+stroke
+}bind def
+%%cshow
+/cshow{
+currentpoint /y0 exch def /x0 exch def 
+dup true charpath flattenpath pathbbox
+/y2 exch def /x2 exch def /y1 exch def /x1 exch def
+newpath 
+x1 x2 add 2 div x0 sub neg x0 add
+y1 y2 add 2 div y0 sub neg y0 add moveto show 
+} bind def
+%%crshow
+/crshow{
+currentpoint /y0 exch def /x0 exch def 
+dup true charpath flattenpath pathbbox
+/y2 exch def /x2 exch def /y1 exch def /x1 exch def
+newpath 
+x0 x2 sub x1 add
+y1 y2 add 2 div y0 sub neg y0 add moveto show 
+} bind def
+%%clshow
+/clshow{
+currentpoint /y0 exch def /x0 exch def 
+dup true charpath flattenpath pathbbox
+/y2 exch def /x2 exch def /y1 exch def /x1 exch def
+newpath 
+x0
+y1 y2 add 2 div y0 sub neg y0 add moveto show 
+} bind def
+%%fillrect
+/fillrect{
+/upperY exch def /upperX exch def
+/lowerY exch def /lowerX exch def /gray exch def
+lowerX lowerY moveto
+lowerX upperY lineto
+upperX upperY lineto
+upperX lowerY lineto closepath
+gray setgray
+fill
+0 setgray
+} bind def
+%%drawrect
+/drawrect{
+/upperY exch def /upperX exch def
+/lowerY exch def /lowerX exch def
+lowerX lowerY moveto
+lowerX upperY lineto
+upperX upperY lineto
+upperX lowerY lineto closepath
+stroke
+} bind def
+%%xaxis
+/xaxis{
+/sameY exch def /secondX exch def
+/firstX exch def /tickwidth exch def /tickcount exch def
+firstX sameY moveto
+secondX sameY lineto
+tickcount 0 ne {
+   /division secondX firstX sub tickcount div def
+   1 1 tickcount {
+     dup division mul firstX add /posX exch def
+     posX sameY moveto
+     0 tickwidth rlineto
+   }for
+}if
+}bind def
+%%yaxis
+/yaxis{
+/sameX exch def /secondY exch def
+/firstY exch def /tickwidth exch def /tickcount exch def
+sameX firstY moveto
+sameX secondY lineto
+tickcount 0 ne {
+   /division secondY firstY sub tickcount div def
+   1 1 tickcount {
+     dup division mul firstY add /posY exch def
+     sameX posY moveto
+     tickwidth 0 rlineto
+   }for
+}if
+}bind def
+%%verticalfill
+/verticalfill{
+/upperY exch def /upperX exch def
+/lowerY exch def /lowerX exch def /tickwidth exch def
+lowerX lowerY upperX upperY drawrect
+lowerX tickwidth upperX {
+   dup lowerY moveto
+   upperY lineto
+}for
+}bind def
+%%horizontalfill
+/horizontalfill{
+/upperY exch def /upperX exch def
+/lowerY exch def /lowerX exch def /tickwidth exch def
+lowerX lowerY upperX upperY drawrect
+lowerY tickwidth upperY {
+   dup lowerX exch moveto
+   upperX exch lineto
+}for
+}bind def
+%%squarefill
+/squarefill{
+/upperY exch def /upperX exch def
+/lowerY exch def /lowerX exch def /tickwidth exch def
+lowerX lowerY upperX upperY drawrect
+lowerX tickwidth upperX {
+   dup lowerY moveto
+   upperY lineto
+}for
+lowerY tickwidth upperY {
+   dup lowerX exch moveto
+   upperX exch lineto
+}for
+}bind def
+%%dashedline
+/dashedline{
+/secondY exch def /secondX exch def 
+/firstY exch def /firstX exch def
+/dashtype exch def
+dashtype 0 eq {[] 0 setdash}
+             {dashtype 1 eq {[4] 0 setdash}
+                            {dashtype 2 eq {[1 2] 0 setdash}
+                                          {dashtype 3 eq {[1 3 6 3] 0 setdash}
+                                                        {[12] 0 setdash}ifelse}ifelse}ifelse}ifelse
+firstX firstY moveto
+secondX secondY lineto
+stroke
+[] 0 setdash
+}bind def
+%%line
+/line{
+/secondY exch def /secondX exch def 
+/firstY exch def /firstX exch def
+firstX firstY moveto
+secondX secondY lineto
+stroke
+}bind def
+1.000 1.000 1.000 0.000 setcmykcolor
+6 6 50 550 50 xaxis
+stroke
+/Times findfont 10.000000 scalefont setfont
+1.000 1.000 1.000 0.000 setcmykcolor
+50 40 moveto
+(0) cshow
+133 40 moveto
+(10) cshow
+216 40 moveto
+(20) cshow
+300 40 moveto
+(30) cshow
+383 40 moveto
+(40) cshow
+466 40 moveto
+(50) cshow
+550 40 moveto
+(60) cshow
+1.000 1.000 1.000 0.000 setcmykcolor
+stroke
+/Times findfont 10.000000 scalefont setfont
+1.000 1.000 1.000 0.000 setcmykcolor
+376 50 moveto
+(x) cshow
+178 50 moveto
+(x) cshow
+487 50 moveto
+(x) cshow
+173 50 moveto
+(x) cshow
+331 50 moveto
+(x) cshow
+114 50 moveto
+(x) cshow
+228 50 moveto
+(x) cshow
+143 50 moveto
+(x) cshow
+106 50 moveto
+(x) cshow
+224 50 moveto
+(x) cshow
+233 50 moveto
+(x) cshow
+378 50 moveto
+(x) cshow
+98 50 moveto
+(x) cshow
+160 50 moveto
+(x) cshow
+170 50 moveto
+(x) cshow
+50 50 moveto
+(x) cshow
+104 50 moveto
+(x) cshow
+181 50 moveto
+(x) cshow
+272 50 moveto
+(x) cshow
+375 50 moveto
+(x) cshow
+stroke
+showpage

@@ -1,0 +1,29 @@
+displaycode off
+file outfile1 outfile2 outfile3
+integer i samplesize maxdegree
+string dir functionfile
+real e
+= functionfile c:\3.txt
+= dir c:\users\olcay\isell\poly
+= samplesize 25
+= maxdegree 7
+= outfile1 %dir%\bias.txt
+= outfile2 %dir%\variance.txt
+= outfile3 %dir%\error.txt
+openfile outfile1 w
+openfile outfile2 w
+openfile outfile3 w
+functionplot %functionfile% %dir%\function.eps
+biasvariance %functionfile% %maxdegree% 100 %samplesize%
+noiselevel 0.1
+for i 1 %maxdegree%
+  writefile outfile1 %i%_%aout1[i]%
+  writefile outfile2 %i%_%aout2[i]%
+  = e %aout1[i]%
+  += e %aout2[i]%
+  writefile outfile3 %i%_%e%
+endfor i
+closefile outfile1
+closefile outfile2
+closefile outfile3
+plotxyline %dir%\out.eps %dir%\bias.txt %dir%\variance.txt %dir%\error.txt

@@ -1,0 +1,21 @@
+displaycode off
+displayresult off
+file outfile
+string dir extension algorithm resultdir dataset method modelselection leaftype
+integer i j k p starti endi startj endj startp endp
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+for j 1 5
+  switch j    case 1
+      = dataset bank8fm
+    case 2
+      = dataset bank8nm
+    case 3
+      = dataset bank8fh
+    case 4
+      = dataset bank8nh
+    case 5
+      = dataset kin8fm
+  endswitch
+  estimatesigma %dataset%
+  write %dataset%endfor j

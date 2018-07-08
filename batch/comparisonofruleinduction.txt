@@ -1,0 +1,89 @@
+displaycode off
+onetailed
+integer j i k res1 res2 res3 res4 res5 res6
+string dir file1 file2 file3 extension dataset endj endi endk result
+= dir c:\users\olcay\isell\ruleinduction
+= endj 30
+= endk 3
+output %dir%\comparison-accuracy.txt
+for j 1 %endj%
+  switch j
+    case 1
+      = dataset balance
+    case 2
+      = dataset breast
+    case 3
+      = dataset bupa
+    case 4
+      = dataset car
+    case 5
+      = dataset cmc
+    case 6
+      = dataset credit
+    case 7
+      = dataset cylinder
+    case 8
+      = dataset dermatology
+    case 9
+      = dataset ecoli
+    case 10
+      = dataset flare
+    case 11
+      = dataset glass
+    case 12
+      = dataset haberman
+    case 13
+      = dataset hepatitis
+    case 14
+      = dataset horse
+    case 15
+      = dataset iris
+    case 16
+      = dataset ironosphere
+    case 17
+      = dataset monks
+    case 18
+      = dataset mushroom
+    case 19
+      = dataset nursery
+    case 20
+      = dataset cenk
+    case 21
+      = dataset fevzi
+    case 22
+      = dataset pima
+    case 23
+      = dataset segment
+    case 24
+      = dataset spambase
+    case 25
+      = dataset tictactoe
+    case 26
+      = dataset vote
+    case 27
+      = dataset wave
+    case 28
+      = dataset wine
+    case 29
+      = dataset yeast
+    case 30
+      = dataset zoo
+  endswitch
+  = result %dataset%
+  = file1 %dir%\c45\%dataset%.c45
+  = file2 %dir%\c45rules\%dataset%.c45rules
+  = file3 %dir%\ripper\%dataset%.ripper
+  cvttest %file1% %file2%
+  = res1 %out1%
+  cvttest %file2% %file1%
+  = res2 %out1%
+  cvttest %file1% %file3%
+  = res3 %out1%
+  cvttest %file3% %file1%
+  = res4 %out1%
+  cvttest %file2% %file3%
+  = res5 %out1%
+  cvttest %file3% %file2%
+  = res6 %out1%
+  write %res1%;%res2%;%res3%;%res4%;%res5%;%res6%
+endfor j

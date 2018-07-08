@@ -1,0 +1,67 @@
+displaycode off
+integer i j k c
+string dataset dir model
+file outfile
+real rate
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+perceptronrun 50
+setprecision 4
+= dir c:\users\olcay\isell\mlp\cls\modelselection
+for i 1 5
+  switch i
+    case 1
+      = dataset haberman
+      = rate 1.0
+    case 2
+      = dataset iris
+      = rate 0.1
+    case 3
+      = dataset bupa
+      = rate 0.1
+    case 4
+      = dataset monks
+      = rate 0.5
+    case 5
+      = dataset pima
+      = rate 0.005
+   endswitch   
+   learningrate %rate%
+   for j 1 3
+     switch j
+       case 1
+         = model aic         
+       case 2
+         = model bic         
+       case 3
+         = model crossvalidation       
+     endswitch
+     modelselection %model%
+     mlpmodelselection %dataset% 20 1    
+     = outfile %dir%\%dataset%-complexity.%model%
+     openfile outfile w
+     = c %out1%
+     writefile outfile %c%
+     closefile outfile
+     = outfile %dir%\%dataset%-error.%model%
+     openfile outfile w
+     writefile outfile %out2%
+     closefile outfile
+     = outfile %dir%\%dataset%-alpha.%model%
+     openfile outfile w
+     writefile outfile %out3%
+     closefile outfile
+     = outfile %dir%\%dataset%-hiddens.%model%
+     openfile outfile w
+     for k 1 28
+       writefile outfile %aout1[k]%
+     endfor k
+     closefile outfile
+     = outfile %dir%\%dataset%-alphaerror.%model%
+     openfile outfile w
+     for k 1 28
+       writefile outfile %aout2[k]%
+     endfor k
+     closefile outfile
+   endfor j
+endfor i

@@ -1,0 +1,130 @@
+displaycode off
+integer i j res1 res2
+string resultdir figuredir dataset
+matrix m1 m2
+twotailed
+= resultdir ../results/svmtest/real
+= figuredir ../results/svmtest/figures/parametric
+for i 1 15
+  switch i
+    case 1
+      = dataset transfusion
+    case 2
+      = dataset credit
+    case 3
+      = dataset australian
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset breast
+    case 6
+      = dataset pima
+    case 7
+      = dataset mammographic
+    case 8
+      = dataset tictactoe
+    case 9
+      = dataset german
+    case 10
+      = dataset satellite47
+    case 11
+      = dataset titanic
+    case 12
+      = dataset acceptors
+    case 13
+      = dataset donors
+    case 14
+      = dataset ringnorm
+    case 15
+      = dataset twonorm
+  endswitch
+  for j 1 10
+    pairedttest %resultdir%/%dataset%-%j%-linear.error %resultdir%/%dataset%-%j%-rbf.error
+    = res1 %out1%
+    pairedttest %resultdir%/%dataset%-%j%-linear.hinge %resultdir%/%dataset%-%j%-rbf.hinge
+    = res2 %out1%
+    if = res1 0
+      if != res2 0
+        hold off
+        errorhistogram %resultdir%/%dataset%-%j%-linear.error %resultdir%/%dataset%-%j%-rbf.error 
+        xaxisnames Linear Rbf
+        fontsize label 16
+        fontsize axis 16
+        ylabel Error
+        exportimage %figuredir%/ar/%dataset%-%j%-error.eps
+        hold off
+        loadmatrix %resultdir%/%dataset%-%j%-linear.error m1
+        loadmatrix %resultdir%/%dataset%-%j%-rbf.error m2
+        -= m1 m2
+        mprint m1 tmp.txt
+        errorhistogram tmp.txt
+        xaxisnames _
+        yaxisnames _
+        ylabel Error_Difference
+        fontsize axis 16
+        fontsize label 16
+        exportimage %figuredir%/ar/%dataset%-%j%-errordiff.eps        
+        hold off
+        errorhistogram %resultdir%/%dataset%-%j%-linear.hinge %resultdir%/%dataset%-%j%-rbf.hinge 
+        xaxisnames Linear Rbf
+        fontsize label 16
+        fontsize axis 16
+        ylabel Hinge_Loss
+        exportimage %figuredir%/ar/%dataset%-%j%-hinge.eps
+        hold off
+        loadmatrix %resultdir%/%dataset%-%j%-linear.hinge m1
+        loadmatrix %resultdir%/%dataset%-%j%-rbf.hinge m2
+        -= m1 m2
+        mprint m1 tmp.txt
+        errorhistogram tmp.txt
+        xaxisnames _
+        yaxisnames _
+        ylabel Hinge_Loss_Difference
+        fontsize axis 16
+        fontsize label 16
+        exportimage %figuredir%/ar/%dataset%-%j%-hingediff.eps        
+      endif
+    else
+      if = res2 0
+        hold off
+        errorhistogram %resultdir%/%dataset%-%j%-linear.error %resultdir%/%dataset%-%j%-rbf.error 
+        xaxisnames Linear Rbf
+        fontsize label 16
+        fontsize axis 16
+        ylabel Error
+        exportimage %figuredir%/ra/%dataset%-%j%-error.eps
+        hold off
+        loadmatrix %resultdir%/%dataset%-%j%-linear.error m1
+        loadmatrix %resultdir%/%dataset%-%j%-rbf.error m2
+        -= m1 m2
+        mprint m1 tmp.txt
+        errorhistogram tmp.txt
+        xaxisnames _
+        yaxisnames _
+        ylabel Error_Difference
+        fontsize label 16
+        fontsize axis 16
+        exportimage %figuredir%/ra/%dataset%-%j%-errordiff.eps        
+        hold off
+        errorhistogram %resultdir%/%dataset%-%j%-linear.hinge %resultdir%/%dataset%-%j%-rbf.hinge 
+        xaxisnames Linear Rbf
+        fontsize label 16
+        fontsize axis 16
+        ylabel Hinge_Loss
+        exportimage %figuredir%/ra/%dataset%-%j%-hinge.eps
+        hold off
+        loadmatrix %resultdir%/%dataset%-%j%-linear.hinge m1
+        loadmatrix %resultdir%/%dataset%-%j%-rbf.hinge m2
+        -= m1 m2
+        mprint m1 tmp.txt
+        errorhistogram tmp.txt
+        xaxisnames _
+        yaxisnames _
+        ylabel Hinge_Loss_Difference
+        fontsize label 16
+        fontsize axis 16
+        exportimage %figuredir%/ra/%dataset%-%j%-hingediff.eps                
+      endif
+    endif
+  endfor j
+endfor i

@@ -1,0 +1,133 @@
+displaycode off
+displayresult off
+integer i j k m p t res best[13] tries[13]
+string dataset dir subdir cortype st algorithm
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+= dir c:\users\olcay\isell\neuralnetwork-regression
+onetailed
+setprecision 0
+for p 1 5
+  switch p
+    case 1
+      = algorithm multitest
+    case 2
+      = algorithm forw1
+    case 3
+      = algorithm backw1
+    case 4
+      = algorithm forw
+    case 5
+      = algorithm backw
+  endswitch
+  output %dir%\%algorithm%.txt
+  for i 1 30
+    switch i
+      case 1
+        = dataset puma8fh
+      case 2
+        = dataset puma8nh
+      case 3
+        = dataset puma8fm
+      case 4
+        = dataset puma8nm
+      case 5
+        = dataset puma32fh
+      case 6
+        = dataset puma32nh
+      case 7
+        = dataset puma32fm
+      case 8
+        = dataset puma32nm      
+      case 9
+        = dataset kin8fh
+      case 10
+        = dataset kin8nh
+      case 11
+        = dataset kin8fm
+      case 12
+        = dataset kin8nm
+      case 13
+        = dataset kin32fh
+      case 14
+        = dataset kin32nh
+      case 15
+        = dataset kin32fm
+      case 16
+        = dataset kin32nm      
+      case 17
+        = dataset bank8fh
+      case 18
+        = dataset bank8nh
+      case 19
+        = dataset bank8fm
+      case 20
+        = dataset bank8nm
+      case 21
+        = dataset bank32fh
+      case 22
+        = dataset bank32nh
+      case 23
+        = dataset bank32fm
+      case 24
+        = dataset bank32nm      
+      case 25
+        = dataset abalone
+      case 26
+        = dataset add10
+      case 27
+        = dataset boston
+      case 28
+        = dataset california
+      case 29
+        = dataset comp
+      case 30
+        = dataset sinus
+    endswitch   
+    = st %dataset%
+    = t 0
+    for j 1 1
+      switch j
+        case 1
+          = subdir 5x2
+          testtype tpaired5x2
+      endswitch
+      for k 1 3
+        switch k
+          case 1
+            correction nocorrection
+          case 2
+            correction bonferroni
+          case 3
+            correction holm
+        endswitch
+        for m 1 4
+          switch m
+            case 1
+              confidencelevel 0.05             
+            case 2
+              confidencelevel 0.01
+            case 3
+              confidencelevel 0.005
+            case 4
+              confidencelevel 0.001
+          endswitch
+          writescreen %p%_%i%_%j%_%k%_%m%
+          mlpmodelsimulation %algorithm% %dataset% %dir%\%subdir% 50 0
+          += t 1
+          = best[t] %out1%
+          = tries[t] %out2%
+        endfor m
+      endfor k
+    endfor j
+    for t 1 12
+      = st %st%_%best[t]%
+    endfor t
+    for t 1 12
+      = st %st%_%tries[t]%
+    endfor t
+    write %st%
+  endfor i
+endfor p
+output stdout
+exit

@@ -1,0 +1,60 @@
+displaycode off
+displayresult off
+savemodel on
+integer i j res1 res2
+real p1 p2
+twotailed
+setdatadir ../data
+hingelosstype regular
+normalizekernel on
+loaddatasets data.xml
+for i 0 9
+  hold off
+  plotdata2d data%i% 1 2
+  hold on
+  modelfile tmp5.txt
+  runcount 1
+  foldcount 1
+  kerneltype linear
+  svm data%i% cv 1
+  writescreen Drawing_linear_%i%
+  plotmodel tmp5.txt
+  exportimage data%i%linear.eps
+  hold off
+  plotdata2d data%i% 1 2
+  hold on
+  modelfile tmp6.txt
+  runcount 1
+  foldcount 1
+  kerneltype rbf
+  svm data%i% cv 1
+  writescreen Drawing_rbf_%i%
+  plotmodel tmp6.txt
+  exportimage data%i%rbf.eps
+  hold off
+  plotdata2d data%i% 1 2
+  hold on
+  modelfile tmp7.txt
+  runcount 1
+  foldcount 1
+  kerneltype polynom
+  svmdegree 2
+  svmcoef0 1.0
+  svm data%i% cv 1
+  writescreen Drawing_quadratic_%i%
+  plotmodel tmp7.txt
+  exportimage data%i%quadratic.eps
+  hold off
+  plotdata2d data%i% 1 2
+  hold on
+  modelfile tmp8.txt
+  runcount 1
+  foldcount 1
+  kerneltype polynom
+  svmdegree 3
+  svmcoef0 1.0
+  svm data%i% cv 1
+  writescreen Drawing_cubic_%i%
+  plotmodel tmp8.txt
+  exportimage data%i%cubic.eps
+endfor i

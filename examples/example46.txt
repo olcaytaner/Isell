@@ -1,0 +1,94 @@
+displaycode off
+displayresult off
+displayclassresult on
+integer i
+string dir method fname
+setdatadir d:\data
+loaddatasets d:\data\example.xml
+= dir d:\data\results
+runcount 1
+foldcount 10
+perceptronrun 50
+learningrate 0.001
+for i 11 17
+  switch i
+    case 1
+      = method selectmax
+      = fname %method%
+    case 2
+      = method c45
+      = fname %method%
+    case 3
+      = method nearestmean
+      = fname %method%
+    case 4
+      = method ldaclass
+      = fname %method%
+    case 5
+      = method ldt
+      = fname %method%
+    case 6
+      = method irep
+      = fname %method%
+    case 7
+      = method irep2
+      = fname %method%
+    case 8
+      = method mlpgeneric
+      = fname %method%-linear
+    case 9
+      hiddenlayers 5
+      = method mlpgeneric
+      = fname %method%-nonlinear5
+    case 10
+      hiddenlayers 10
+      = method mlpgeneric
+      = fname %method%-nonlinear10
+    case 11
+      hiddenlayers 15
+      = method mlpgeneric
+      = fname %method%-nonlinear15
+    case 12
+      hiddenlayers 20
+      = method mlpgeneric
+      = fname %method%-nonlinear20
+    case 13
+      = method multildt
+      = fname %method%
+    case 14
+      = method logistic
+      = fname %method%
+    case 15
+      nearcount 1      
+      = method knn1
+      = fname %method%
+    case 16
+      = method multiripper
+      = fname %method%
+      multivariatealgorithm lda
+    case 17
+      = method ripper
+      = fname %method%
+    case 18
+      nearcount 3
+      = method knn
+      = fname %method%3
+    case 19
+      nearcount 5
+      = method knn
+      = fname %method%5
+    case 20
+      nearcount 7
+      = method knn
+      = fname %method%7
+    case 21
+      nearcount 9
+      = method knn
+      = fname %method%9
+    case 22
+      = method c45rules
+      = fname %method%
+  endswitch
+  output %dir%\%fname%.txt
+  %method% sample random 1
+endfor i

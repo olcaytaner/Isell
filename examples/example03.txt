@@ -1,0 +1,11 @@
+'Sets the operating system to Linux
+os Linux
+'Sets the data directory to /datasets directory
+setdatadir /datasets
+'View the data directory. The program will write to screen /datasets
+datadir
+'Read the datasets defined in the mydatasets.ini file to the memory of the program
+loaddatasets example.xml
+'View the properties of the iris dataset. Iris dataset must have been defined in the mydatasets.ini file and its definition file (data.def) must be present in its own data directory
+dataset iris
+

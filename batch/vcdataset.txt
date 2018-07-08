@@ -1,0 +1,15 @@
+displaycode off
+integer i j
+output vcunivariate.txt
+for i 1 80
+  for j 1 100
+    fileexists ../results/vcestimate/%i%-%j%.txt
+    if = out1 1
+      mean ../results/vcestimate/%i%-%j%.txt
+      write %i%_%j%_%out1%
+    endif
+  endfor j
+  writescreen %i%
+endfor i
+output stdout
+

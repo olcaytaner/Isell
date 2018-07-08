@@ -1,0 +1,68 @@
+displaycode off
+displayresult off
+integer i k count kernel1 kernel2 kernelcount
+string dataset method1 method2 resultdir unifile1 unifile2 multifile1 multifile2
+= resultdir ../results/mvartest2
+twotailed
+output univariate-multivariate4.tex
+= count 0
+write \documentclass{article}
+write \usepackage{graphicx}
+write \begin{document}
+for i 1 2
+  switch i
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for kernel1 0 %kernelcount-1%
+    for kernel2 %kernel1+1% %kernelcount-1%
+      for k 1 10
+        = unifile1 %resultdir%/measure/fmeasure/%dataset%-%kernel1%-%k%.fmeasure
+        = unifile2 %resultdir%/measure/fmeasure/%dataset%-%kernel2%-%k%.fmeasure
+        = multifile1 %resultdir%/measure/pr/%dataset%-%kernel1%-%k%.pr
+        = multifile2 %resultdir%/measure/pr/%dataset%-%kernel2%-%k%.pr
+        fileexists %resultdir%/measure/confusion/%dataset%-%kernel1%-%k%.confusion        
+        if = out1 1
+          fileexists %resultdir%/measure/confusion/%dataset%-%kernel2%-%k%.confusion        
+          if = out1 1          
+             pairedttest %unifile1% %unifile2%
+             if = out1 0
+               hotellingt %multifile1% %multifile2%
+               if != out1 0
+                 smirnov %multifile1% %multifile2%
+                 if != out1 0
+                   ++ count
+                   if = count 15
+                     write \clearpage
+                     = count 0
+                   endif
+                   write \begin{figure}[t!]
+                   write \begin{center}
+                   write \begin{tabular}{ccc}
+                   write (a)_&_(b)_&_(c)\\
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate-pr/%dataset%-%kernel1%-%kernel2%-%k%-hist.eps}_&
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate-pr/%dataset%-%kernel1%-%kernel2%-%k%-pr.eps}_&
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate-pr/%dataset%-%kernel1%-%kernel2%-%k%-tree.eps}_\\
+                   write (d)_&_(e)_&_(f)_\\
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate-pr/%dataset%-%kernel1%-%kernel2%-%k%-histdiff.eps}_&
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate-pr/%dataset%-%kernel1%-%kernel2%-%k%-prdiff.eps}_& 
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate-pr/%dataset%-%kernel1%-%kernel2%-%k%-rank.eps} 
+                   write \end{tabular}
+                   write \end{center}
+                   write \caption{%dataset%_%kernel1%_%kernel2%_%k%}
+                   write \end{figure}
+                 endif
+               endif
+             endif
+          endif
+        endif
+      endfor k
+    endfor kernel2
+  endfor kernel1  
+endfor i  
+write \end{document}
+output stdout

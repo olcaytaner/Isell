@@ -1,0 +1,10 @@
+comparealgorithms results-ripper.error results-multiripper.error results-hybridripper-ftest.error results-hybridripper-combined5x2t.error
+writescreen %aout3[1]%_%aout3[2]%_%aout3[3]%_%aout3[4]%
+writescreen %out1%
+comparealgorithms results-ripper.rulecount results-multiripper.rulecount results-hybridripper-ftest.rulecount results-hybridripper-combined5x2t.rulecount
+writescreen %aout3[1]%_%aout3[2]%_%aout3[3]%_%aout3[4]%
+writescreen %out1%
+comparealgorithms results-ripper.conditioncount results-multiripper.conditioncount results-hybridripper-ftest.conditioncount results-hybridripper-combined5x2t.conditioncount
+writescreen %aout3[1]%_%aout3[2]%_%aout3[3]%_%aout3[4]%
+writescreen %out1%
+

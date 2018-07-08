@@ -1,0 +1,164 @@
+displaycode off
+displayresult off
+integer i k t kernel1 kernel2 kernelcount res1 res2
+real tp fp tn fn tpr fpr pprime precision recall x y minx maxx miny maxy gapx gapy
+file infile1 infile2
+string dataset resultdir multifile1 multifile2
+matrix m1 m2
+setprecision 3
+= resultdir ../results/mvartest2
+twotailed
+for i 1 2
+  switch i
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for kernel1 0 %kernelcount-1%
+    for kernel2 %kernel1+1% %kernelcount-1%
+      for k 1 10
+        = multifile1 %resultdir%/measure/roc/%dataset%-%kernel1%-%k%.roc
+        = multifile2 %resultdir%/measure/roc/%dataset%-%kernel2%-%k%.roc
+        fileexists %resultdir%/measure/confusion/%dataset%-%kernel1%-%k%.confusion        
+        if = out1 1
+          fileexists %resultdir%/measure/confusion/%dataset%-%kernel2%-%k%.confusion        
+          if = out1 1      
+             smirnov %multifile1% %multifile2%
+             = res1 %out1%
+             hotellingt %multifile1% %multifile2%
+             = res2 %res1+out1%             
+             if = res2 3
+                   = infile1 %multifile1%
+                   openfile infile1 r
+                   = minx 1
+                   = miny 1
+                   = maxx 0
+                   = maxy 0
+                   for t 1 10
+                     readfile infile1 x
+                     readfile infile1 y
+                     if < x %minx%
+                       = minx %x%
+                     endif
+                     if < y %miny%
+                       = miny %y%
+                     endif
+                     if > x %maxx%
+                       = maxx %x%
+                     endif
+                     if > y %maxy%
+                       = maxy %y%
+                     endif
+                   endfor t
+                   closefile infile1
+                   = infile2 %multifile2%
+                   openfile infile2 r
+                   for t 1 10
+                     readfile infile2 x
+                     readfile infile2 y
+                     if < x %minx%
+                       = minx %x%
+                     endif
+                     if < y %miny%
+                       = miny %y%
+                     endif
+                     if > x %maxx%
+                       = maxx %x%
+                     endif
+                     if > y %maxy%
+                       = maxy %y%
+                     endif
+                   endfor t
+                   closefile infile2  
+                   smirnov %multifile1% %multifile2%
+                   = gapx %(maxx-minx)/20.0%
+                   = gapy %(maxy-miny)/20.0%
+                   hold off
+                   axislimits x %minx% %maxx% 1 1
+                   axislimits y %miny% %maxy% 1 1
+                   hold on
+                   plotxy %multifile1%
+                   plotxy %multifile2%
+                   legendposition none
+                   for t 1 19
+                     putline %aout1[t]% %aout2[t]% %aout3[t]% %aout4[t]%
+                   endfor t
+                   = infile1 %multifile1%
+                   openfile infile1 r
+                   for t 1 10
+                     readfile infile1 x
+                     readfile infile1 y
+                     putstring %x+gapx% %y+gapy% %aout5[t]% black 36
+                   endfor t
+                   closefile infile1
+                   = infile2 %multifile2%
+                   openfile infile2 r
+                   for t 1 10
+                     readfile infile2 x
+                     readfile infile2 y
+                     putstring %x+gapx% %y+gapy% %aout6[t]% red 36
+                   endfor t
+                   closefile infile2
+                   xlabel tpr
+                   ylabel fpr
+                   fontsize data 24
+                   fontsize legend 24
+                   fontsize axis 24
+                   fontsize label 24
+                   exportimage %resultdir%/image/parametric-nonparametric/%dataset%-%kernel1%-%kernel2%-%k%-tree.eps
+                   output deneme1.txt
+                   for t 1 10
+                     write %aout5[t]%
+                   endfor t
+                   output deneme2.txt
+                   for t 1 10
+                     write %aout6[t]%
+                   endfor t
+                   output stdout
+                   rankplot deneme1.txt deneme2.txt
+                   exportimage %resultdir%/image/parametric-nonparametric/%dataset%-%kernel1%-%kernel2%-%k%-rank.eps
+                   hold off
+                   axislimits x %minx% %maxx% 1 1
+                   axislimits y %miny% %maxy% 1 1
+                   hold on
+                   plotgauss2d %multifile1% 4
+                   hold on
+                   plotgauss2d %multifile2% 4
+                   xlabel tpr
+                   ylabel fpr
+                   legendnames %kernel1% %kernel2%
+                   legendposition downright
+                   fontsize data 18
+                   fontsize legend 24
+                   fontsize axis 24
+                   fontsize label 24
+                   exportimage %resultdir%/image/parametric-nonparametric/%dataset%-%kernel1%-%kernel2%-%k%-roc.eps
+                   hold off
+                   loadmatrix %multifile1% m1
+                   loadmatrix %multifile2% m2
+                   -= m1 m2
+                   mprint m1 deneme.txt
+                   hold off
+                   axislimits x 0.0 0.0 1 1
+                   axislimits y 0.0 0.0 1 1
+                   hold on
+                   plotgauss2d deneme.txt 4
+                   xlabel tpr_difference
+                   ylabel fpr_difference
+                   legendposition none
+                   fontsize data 18
+                   fontsize legend 24
+                   fontsize axis 24
+                   fontsize label 24
+                   exportimage %resultdir%/image/parametric-nonparametric/%dataset%-%kernel1%-%kernel2%-%k%-rocdiff.eps                   
+                   writescreen %dataset%_%kernel1%_%kernel2%_%k%
+             endif
+          endif
+        endif
+      endfor k
+    endfor kernel2
+  endfor kernel1
+endfor i  

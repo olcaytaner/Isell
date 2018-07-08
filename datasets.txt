@@ -1,0 +1,16 @@
+15
+vehicle
+dermatology
+balance
+breast
+iris
+monks
+tictactoe
+vote
+wine
+artificial
+car
+zoo
+pima
+spect
+credit

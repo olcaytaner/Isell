@@ -1,0 +1,23 @@
+displaycode off
+integer i j k datasize numberofruns fold
+string datasetdir
+= datasetdir ../data
+setdatadir %datasetdir%
+for i 0 9
+  rmdir -rf %datasetdir%/data%i%
+endfor i
+for i 0 9
+  gaussmixturedata %i%.txt 500 data%i%.txt
+endfor i
+for i 0 9
+  mkdir %datasetdir%/data%i%
+  mv data%i%.txt %datasetdir%/data%i%
+endfor i
+for i 0 9
+  createdataset data%i% _ 2 0;1 data%i% data%i%.txt _
+  savedataset data%i% data%i%.xml
+endfor i
+mergedefinitions data.xml data0.xml data1.xml data2.xml data3.xml data4.xml data5.xml data6.xml data7.xml data8.xml data9.xml
+for i 0 9
+  rm data%i%.xml
+endfor i

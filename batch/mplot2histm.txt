@@ -1,0 +1,30 @@
+displaycode off
+displayresult off
+string resultdir dataset plotdir noise
+integer j k t
+matrix avg cov
+= resultdir ../results/multivariatetest/synthetic
+= plotdir ../results/multivariatetest
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+= dataset data0
+= noise 0.0005
+hold off
+axislimits y -1 1 2 3
+hold on
+errorhistogram %resultdir%/%noise%-data0-metric-0.500.lda %resultdir%/%noise%-data2-metric-0.500.lda %resultdir%/%noise%-data4-metric-0.500.lda %resultdir%/%noise%-data6-metric-0.500.lda %resultdir%/%noise%-data8-metric-0.500.lda %resultdir%/%noise%-data10-metric-0.500.lda
+xaxisnames 0.000 0.001 0.002 0.003 0.004 0.005
+xlabel Noise_Level
+ylabel Error
+exportimage %plotdir%/data0-10-lda-histogram-metric.eps
+hold off
+axislimits y -1 1 2 3
+hold on
+errorhistogram %resultdir%/%noise%-data0-metric-0.500.qda %resultdir%/%noise%-data2-metric-0.500.qda %resultdir%/%noise%-data4-metric-0.500.qda %resultdir%/%noise%-data6-metric-0.500.qda %resultdir%/%noise%-data8-metric-0.500.qda %resultdir%/%noise%-data10-metric-0.500.qda
+xaxisnames 0.000 0.001 0.002 0.003 0.004 0.005
+xlabel Noise_Level
+ylabel Error
+exportimage %plotdir%/data0-10-qda-histogram-metric.eps
+

@@ -1,0 +1,138 @@
+displaycode off
+integer i j k m n p currentk
+real m1 m2 s1 s2
+string test dir dir2 alg1 alg2 dataset file1 file2
+onetailed
+setprecision 3
+= dir ../results/
+  for k 1 6
+    switch k
+      case 1
+        = alg1 max
+      case 2
+        = alg1 lda
+      case 3
+        = alg1 mean    
+      case 4
+        = alg1 lp
+      case 5
+        = alg1 c45
+      case 6
+        = alg1 knn
+    endswitch
+    = currentk %k%
+    ++ currentk
+    for m %currentk% 7
+      switch m
+        case 2
+          = alg2 lda
+        case 3
+          = alg2 mean    
+        case 4
+          = alg2 lp
+        case 5
+          = alg2 c45
+        case 6
+          = alg2 knn
+        case 7
+          = alg2 ripper
+      endswitch 
+      output %dir%/classification-compare/%alg1%-%alg2%.txt
+      for n 1 40
+        switch n
+      case 1
+        = dataset balance
+      case 2
+        = dataset breast
+      case 3
+        = dataset bupa
+      case 4
+        = dataset car
+      case 5
+        = dataset cmc
+      case 6
+        = dataset credit
+      case 7
+        = dataset cylinder
+      case 8
+        = dataset dermatology
+      case 9
+        = dataset ecoli
+      case 10
+        = dataset flare
+      case 11
+        = dataset glass
+      case 12
+        = dataset haberman
+      case 13
+        = dataset hepatitis
+      case 14
+        = dataset horse
+      case 15
+        = dataset iris
+      case 16
+        = dataset ironosphere
+      case 17
+        = dataset monks
+      case 18
+        = dataset mushroom
+      case 19
+        = dataset nursery
+      case 20
+        = dataset optdigits
+      case 21
+        = dataset pendigits
+      case 22
+        = dataset pima
+      case 23
+        = dataset segment
+      case 24
+        = dataset spambase
+      case 25
+        = dataset tictactoe
+      case 26
+        = dataset vote
+      case 27
+        = dataset wave
+      case 28
+        = dataset wine
+      case 29
+        = dataset yeast
+      case 30
+        = dataset zoo
+      case 31
+        = dataset titanic
+      case 32
+        = dataset ringnorm
+      case 33
+        = dataset twonorm
+      case 34
+        = dataset vehicle
+      case 35
+        = dataset german
+      case 36
+        = dataset australian
+      case 37
+        = dataset tae
+      case 38
+        = dataset heart
+      case 39
+        = dataset pageblock
+      case 40
+        = dataset ocr
+        endswitch
+        = file1 %dir%/classification/%dataset%/total.%alg1%
+        meanvariance %file1%
+        = m1 %out1%
+        = s1 %out2%
+        = file2 %dir%/classification/%dataset%/total.%alg2%            
+        meanvariance %file2%
+        = m2 %out1%
+        = s2 %out2%
+        write %m1%_%m2%_%s1%_%s2%
+        writescreen %k%_%m%_%n%
+      endfor n
+    endfor m
+  endfor k 
+output stdout
+

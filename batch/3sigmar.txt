@@ -1,0 +1,38 @@
+displaycode off
+integer i j k m n p currentk currenti
+real ratio prob
+string test dir dir2 alg1 alg2 dataset
+file file1
+twotailed
+= dir ../results/
+for i 1 6
+  switch i
+    case 1
+      = test tpaired5x2
+    case 2
+      = test combined5x2t
+    case 3
+      = test cvttest      
+    case 4
+      = test wilcoxon      
+    case 5
+      = test ftest
+    case 6
+      = test regressionf
+  endswitch
+  output %dir%/%test%.txt
+  = file1 %dir%/regression-compare/%test%.txt
+  openfile file1 r
+  for p 1 1260
+    readfile file1 ratio
+    readfile file1 prob
+    if > ratio -3.0
+      if < ratio 3.0
+        write %ratio%_%prob%
+      endif
+    endif
+   endfor p
+  closefile file1
+endfor i
+output stdout
+

@@ -1,0 +1,40 @@
+displaycode off
+displayresult off
+integer t p d n
+string testtype
+for t 1 2
+  switch t
+    case 1
+      = testtype waldwolfowitz
+    case 2
+      = testtype smirnov
+  endswitch
+  for p 1 3
+    switch p
+      case 1
+        = n 10
+      case 2
+        = n 30
+      case 3
+        = n 100
+    endswitch
+    hold off
+    plotxyline ../results/graphtest/resultsnormalized/%testtype%-%n%-2.txt black 1
+    axislimits x 0 10 10 0
+    axislimits y 0 1 10 1
+    xlabel Distance
+    ylabel Probability_of_Accept
+    fontsize axis 18
+    fontsize label 18
+    fontsize legend 18
+    hold on
+    plotxyline ../results/graphtest/resultsnormalized/%testtype%-%n%-3.txt red 1
+    plotxyline ../results/graphtest/resultsnormalized/%testtype%-%n%-4.txt green 1
+    plotxyline ../results/graphtest/resultsnormalized/%testtype%-%n%-5.txt blue 1
+    plotxyline ../results/graphtest/resultsnormalized/%testtype%-%n%-10.txt purple 1
+    plotxyline ../results/graphtest/resultsnormalized/%testtype%-%n%-15.txt yellow 1
+    plotxyline ../results/graphtest/resultsnormalized/%testtype%-%n%-20.txt cyan 1
+    legendnames d=2 d=3 d=4 d=5 d=10 d=15 d=20
+    exportimage ../results/graphtest/resultsnormalized/%testtype%-%n%.eps   
+  endfor p
+endfor t

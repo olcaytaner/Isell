@@ -1,0 +1,166 @@
+displaycode off
+integer i k win[5,5]
+string dataset resultdir st type
+= type error
+= resultdir ../results/softtree
+for i 1 5
+  for k 1 5
+    = win[%i%,%k%] 0
+  endfor k
+endfor i
+output table%type%.txt
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{rrrrrr}
+write \hline
+write _&_Hard_&_LDT_&_Soft_&_Soft(L1)_&_Soft(L2)_\\
+write \hline
+twotailed
+for i 1 27
+  switch i
+    case 1
+      = dataset ringnorm
+    case 2
+      = dataset spambase
+    case 3
+      = dataset twonorm
+    case 4
+      = dataset german
+    case 5
+      = dataset magic
+    case 6
+      = dataset musk2
+    case 7
+      = dataset satellite47
+    case 8
+      = dataset polyadenylation
+    case 9
+      = dataset pima
+    case 10
+      = dataset breast
+    case 11
+      = dataset acceptors
+    case 12
+      = dataset artificial
+    case 13
+      = dataset donors
+    case 14
+      = dataset krvskp
+    case 15
+      = dataset monks
+    case 16
+      = dataset mushroom
+    case 17
+      = dataset promoters
+    case 18
+      = dataset spect
+    case 19
+      = dataset tictactoe
+    case 20
+      = dataset titanic
+    case 21
+      = dataset vote
+    case 22
+      = dataset bupa
+    case 23
+      = dataset hepatitis
+    case 24
+      = dataset haberman
+    case 25
+      = dataset heart
+    case 26
+      = dataset ironosphere
+    case 27
+      = dataset parkinsons
+  endswitch
+  ftest5x2 %resultdir%/%dataset%-c45.%type% %resultdir%/%dataset%-multildt.%type%
+  if = out1 1
+    ++ win[1,2]
+  else
+    if = out1 2
+      ++ win[2,1]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-c45.%type% %resultdir%/%dataset%-softtree.%type%
+  if = out1 1
+    ++ win[1,3]
+  else
+    if = out1 2
+      ++ win[3,1]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-c45.%type% %resultdir%/%dataset%-softtree-l1.%type%
+  if = out1 1
+    ++ win[1,4]
+  else
+    if = out1 2
+      ++ win[4,1]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-c45.%type% %resultdir%/%dataset%-softtree-l2.%type%
+  if = out1 1
+    ++ win[1,5]
+  else
+    if = out1 2
+      ++ win[5,1]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-multildt.%type% %resultdir%/%dataset%-softtree.%type%
+  if = out1 1
+    ++ win[2,3]
+  else
+    if = out1 2
+      ++ win[3,2]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-multildt.%type% %resultdir%/%dataset%-softtree-l1.%type%
+  if = out1 1
+    ++ win[2,4]
+  else
+    if = out1 2
+      ++ win[4,2]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-multildt.%type% %resultdir%/%dataset%-softtree-l2.%type%
+  if = out1 1
+    ++ win[2,5]
+  else
+    if = out1 2
+      ++ win[5,2]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-softtree.%type% %resultdir%/%dataset%-softtree-l1.%type%
+  if = out1 1
+    ++ win[3,4]
+  else
+    if = out1 2
+      ++ win[4,3]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-softtree.%type% %resultdir%/%dataset%-softtree-l2.%type%
+  if = out1 1
+    ++ win[3,5]
+  else
+    if = out1 2
+      ++ win[5,3]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-softtree-l1.%type% %resultdir%/%dataset%-softtree-l2.%type%
+  if = out1 1
+    ++ win[4,5]
+  else
+    if = out1 2
+      ++ win[5,4]
+    endif
+  endif
+endfor i
+write Hard_&_&_%win[1,2]%_&_%win[1,3]%_&_%win[1,4]%_&_%win[1,5]%_\\
+write Ldt_&_%win[2,1]%_&_&_%win[2,3]%_&_%win[2,4]%_&_&_%win[2,5]%_\\
+write Soft_&_%win[3,1]%_&_%win[3,2]%_&_&_%win[3,4]%_&_%win[3,5]%\\
+write Soft(L1)_&_%win[4,1]%_&_%win[4,2]%_&_%win[4,3]%_&_&_%win[4,5]%_\\
+write Soft(L2)_&_%win[5,1]%_&_%win[5,2]%_&_%win[5,3]%_&_%win[5,4]%_&_\\
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout

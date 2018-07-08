@@ -1,0 +1,22 @@
+displaycode off
+os Linux
+integer i j k
+string st outdir
+= outdir ../results/vcdiscrete
+experimentdesign optimized
+modelselection univariate
+output %outdir%/vcdimension-optimized.txt
+write Node_Feature_VC
+for i 1 16
+  for j 1 10    
+    = st %2%
+    for k 2 %j%
+      = st %st%-%2%
+    endfor k
+    vcestimate %j% %i% 20 %st%
+    write %i%_%j%_%out1%
+    writescreen %i%_%j%
+  endfor j
+endfor i
+output stdout
+

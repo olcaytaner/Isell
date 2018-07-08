@@ -1,0 +1,119 @@
+displaycode off
+setdatadir ../data
+loaddatasets rule.xml
+integer i k t level feature j fcount len
+file infile
+string dataset resultdir st type alg subdir reg read ntypes[250] 
+real count[30] total[30]
+= reg l2
+= resultdir ../results
+for k 1 4
+  switch k
+    case 1
+      = alg softtree-%reg%
+      = subdir softtree-1
+    case 2
+      = alg softtree-%reg%
+      = subdir softtree-10
+    case 3
+      = alg softtree-%reg%
+      = subdir softtree-100
+    case 4
+      = alg softtree-%reg%
+      = subdir softtree-1000
+  endswitch
+  output %subdir%-cls-%reg%.txt
+for i 1 27
+  switch i
+    case 1
+      = dataset ringnorm
+    case 2
+      = dataset spambase
+    case 3
+      = dataset twonorm
+    case 4
+      = dataset german
+    case 5
+      = dataset magic
+    case 6
+      = dataset musk2
+    case 7
+      = dataset satellite47
+    case 8
+      = dataset polyadenylation
+    case 9
+      = dataset pima
+    case 10
+      = dataset breast
+    case 11
+      = dataset acceptors
+    case 12
+      = dataset artificial
+    case 13
+      = dataset donors
+    case 14
+      = dataset krvskp
+    case 15
+      = dataset monks
+    case 16
+      = dataset mushroom
+    case 17
+      = dataset promoters
+    case 18
+      = dataset spect
+    case 19
+      = dataset tictactoe
+    case 20
+      = dataset titanic
+    case 21
+      = dataset vote
+    case 22
+      = dataset bupa
+    case 23
+      = dataset hepatitis
+    case 24
+      = dataset haberman
+    case 25
+      = dataset heart
+    case 26
+      = dataset ironosphere
+    case 27
+      = dataset parkinsons
+  endswitch
+  featurecount %dataset%
+  = fcount %out2%
+  for t 1 30
+    = count[%t%] 0
+    = total[%t%] 0
+  endfor t
+  = infile %resultdir%/%subdir%/%dataset%-%alg%.featurecount
+    openfile infile r
+    for t 1 10
+      readfile infile read
+      tokenize read ;
+      = len %out1%
+      if > len 0
+        for j 1 %len%
+          = ntypes[j] %aout1[j]%
+        endfor j
+        for j 1 %len%
+          = st %ntypes[j]%
+          tokenize st -
+          = level %aout1[1]%
+          = feature %aout1[2]%
+          ++ count[%level%]
+          += total[%level%] %feature%
+        endfor j
+      endif
+    endfor t
+    closefile infile
+    = st %dataset%
+    for t 1 30
+      if > count[%t%] 0
+        = st %st%_(%t%)_%total[t]/(count[t]*(fcount+1))%
+      endif
+    endfor t
+    write %st%
+endfor i
+endfor k
+output stdout

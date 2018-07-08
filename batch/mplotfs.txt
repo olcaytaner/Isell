@@ -1,0 +1,32 @@
+displaycode off
+displayresult off
+string resultdir comptype color
+integer i j
+= resultdir ../results/multivariatetest/skewed/0.006
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+hold off
+groupcoloring groupsame
+for i 1 4
+  switch i
+    case 1
+      = comptype error
+    case 2
+      = comptype roc
+    case 3
+      = comptype pr
+    case 4
+      = comptype fpfn
+  endswitch
+  hold on
+  plotmv %resultdir%/%comptype%-1.f %resultdir%/%comptype%-2.f %resultdir%/%comptype%-3.f %resultdir%/%comptype%-4.f %resultdir%/%comptype%-5.f %resultdir%/%comptype%-6.f %resultdir%/%comptype%-7.f %resultdir%/%comptype%-8.f %resultdir%/%comptype%-9.f 
+endfor i
+xlabel k
+ylabel F
+putline 0 4 4 4
+exportimage %resultdir%/noisef.eps
+hold off
+groupcoloring individualsame
+

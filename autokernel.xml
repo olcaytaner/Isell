@@ -1,0 +1,274 @@
+<datasets>
+	<dataset name="kernel-vehicle" task="classification" size="846" directory="kernel-vehicle" filetype="kernel" separator=" " filename="vehicleclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="vehiclekernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="van" size="199"/>
+			<class value="saab" size="217"/>
+			<class value="bus" size="218"/>
+			<class value="opel" size="212"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="845.000000"/>
+			<attribute type="Output" available="True">
+				<value>van</value>
+				<value>saab</value>
+				<value>bus</value>
+				<value>opel</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-dermatology" task="classification" size="366" directory="kernel-dermatology" filetype="kernel" separator=" " filename="dermatologyclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="dermatologykernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="2" size="61"/>
+			<class value="1" size="112"/>
+			<class value="3" size="72"/>
+			<class value="5" size="52"/>
+			<class value="4" size="49"/>
+			<class value="6" size="20"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="365.000000"/>
+			<attribute type="Output" available="True">
+				<value>2</value>
+				<value>1</value>
+				<value>3</value>
+				<value>5</value>
+				<value>4</value>
+				<value>6</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-balance" task="classification" size="625" directory="kernel-balance" filetype="kernel" separator=" " filename="balanceclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="balancekernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="b" size="49"/>
+			<class value="r" size="288"/>
+			<class value="l" size="288"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="624.000000"/>
+			<attribute type="Output" available="True">
+				<value>b</value>
+				<value>r</value>
+				<value>l</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-breast" task="classification" size="699" directory="kernel-breast" filetype="kernel" separator=" " filename="breastclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="breastkernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="2" size="458"/>
+			<class value="4" size="241"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="698.000000"/>
+			<attribute type="Output" available="True">
+				<value>2</value>
+				<value>4</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-iris" task="classification" size="150" directory="kernel-iris" filetype="kernel" separator=" " filename="irisclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="iriskernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="iris-setosa" size="50"/>
+			<class value="iris-versicolor" size="50"/>
+			<class value="iris-virginica" size="50"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="149.000000"/>
+			<attribute type="Output" available="True">
+				<value>iris-setosa</value>
+				<value>iris-versicolor</value>
+				<value>iris-virginica</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-monks" task="classification" size="432" directory="kernel-monks" filetype="kernel" separator=" " filename="monksclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="monkskernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="1" size="216"/>
+			<class value="0" size="216"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="431.000000"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-tictactoe" task="classification" size="958" directory="kernel-tictactoe" filetype="kernel" separator=" " filename="tictactoeclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="tictactoekernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="positive" size="626"/>
+			<class value="negative" size="332"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="957.000000"/>
+			<attribute type="Output" available="True">
+				<value>positive</value>
+				<value>negative</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-vote" task="classification" size="435" directory="kernel-vote" filetype="kernel" separator=" " filename="voteclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="votekernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="republican" size="168"/>
+			<class value="democrat" size="267"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="434.000000"/>
+			<attribute type="Output" available="True">
+				<value>republican</value>
+				<value>democrat</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-wine" task="classification" size="178" directory="kernel-wine" filetype="kernel" separator=" " filename="wineclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="winekernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="1" size="59"/>
+			<class value="2" size="71"/>
+			<class value="3" size="48"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="177.000000"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-artificial" task="classification" size="320" directory="kernel-artificial" filetype="kernel" separator=" " filename="artificialclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="artificialkernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="f" size="190"/>
+			<class value="t" size="130"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="319.000000"/>
+			<attribute type="Output" available="True">
+				<value>f</value>
+				<value>t</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-car" task="classification" size="1728" directory="kernel-car" filetype="kernel" separator=" " filename="carclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="carkernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="unacc" size="1210"/>
+			<class value="acc" size="384"/>
+			<class value="vgood" size="65"/>
+			<class value="good" size="69"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="1727.000000"/>
+			<attribute type="Output" available="True">
+				<value>unacc</value>
+				<value>acc</value>
+				<value>vgood</value>
+				<value>good</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-zoo" task="classification" size="101" directory="kernel-zoo" filetype="kernel" separator=" " filename="zooclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="zookernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="1" size="41"/>
+			<class value="4" size="13"/>
+			<class value="2" size="20"/>
+			<class value="7" size="10"/>
+			<class value="6" size="8"/>
+			<class value="5" size="4"/>
+			<class value="3" size="5"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="100.000000"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>4</value>
+				<value>2</value>
+				<value>7</value>
+				<value>6</value>
+				<value>5</value>
+				<value>3</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-pima" task="classification" size="768" directory="kernel-pima" filetype="kernel" separator=" " filename="pimaclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="pimakernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="1" size="268"/>
+			<class value="0" size="500"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="767.000000"/>
+			<attribute type="Output" available="True">
+				<value>1</value>
+				<value>0</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-spect" task="classification" size="267" directory="kernel-spect" filetype="kernel" separator=" " filename="spectclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="spectkernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="0" size="55"/>
+			<class value="1" size="212"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="266.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="kernel-credit" task="classification" size="690" directory="kernel-credit" filetype="kernel" separator=" " filename="creditclass.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="creditkernel.txt"/>
+		</kernels>
+		<classes>
+			<class value="+" size="307"/>
+			<class value="-" size="383"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="689.000000"/>
+			<attribute type="Output" available="True">
+				<value>+</value>
+				<value>-</value>
+			</attribute>
+		</attributes>
+	</dataset>
+</datasets>

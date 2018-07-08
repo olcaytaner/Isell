@@ -1,0 +1,34 @@
+displaycode off
+displayresult off
+string resultdir comptype color
+integer i t j
+= resultdir ../results/multivariatetest/synthetic/0.002
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+hold off
+groupcoloring groupsame
+for t 0 10
+  for i 1 4
+    switch i
+      case 1
+        = comptype error
+      case 2
+        = comptype roc
+      case 3
+        = comptype pr
+      case 4
+        = comptype fpfn
+    endswitch
+    hold on
+    plotmv %resultdir%/%comptype%-%t%-1.f %resultdir%/%comptype%-%t%-2.f %resultdir%/%comptype%-%t%-3.f %resultdir%/%comptype%-%t%-4.f %resultdir%/%comptype%-%t%-5.f %resultdir%/%comptype%-%t%-6.f %resultdir%/%comptype%-%t%-7.f %resultdir%/%comptype%-%t%-8.f %resultdir%/%comptype%-%t%-9.f 
+  endfor i
+  xlabel k
+  ylabel F
+  putline 0 4 10 4
+  exportimage %resultdir%/noisef-%t%.eps
+  hold off
+  groupcoloring groupsame
+endfor t
+

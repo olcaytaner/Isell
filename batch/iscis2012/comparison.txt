@@ -1,0 +1,140 @@
+displaycode off
+integer i j res1 res2
+string resultdir dataset
+real aa ar ra rr
+twotailed
+= aa 0
+= ar 0
+= ra 0
+= rr 0
+= resultdir ../results/svmtest/epsilontest/real
+output comparisonresult.txt
+for i 1 9
+  switch i
+    case 1
+      = dataset abalone
+    case 2
+      = dataset add10
+    case 3
+      = dataset boston
+    case 4
+      = dataset california
+    case 5
+      = dataset concrete
+    case 6
+      = dataset puma8fh
+    case 7
+      = dataset puma8fm
+    case 8
+      = dataset puma8nh
+    case 9
+      = dataset puma8nm
+  endswitch
+  for j 1 10
+    pairedttest %resultdir%/%dataset%-%j%-linear.error %resultdir%/%dataset%-%j%-quadratic.error
+    = res1 %out1%
+    pairedttest %resultdir%/%dataset%-%j%-linear.epsilonloss %resultdir%/%dataset%-%j%-quadratic.epsilonloss
+    = res2 %out1%
+    if = res1 0
+      if = res2 0
+        ++ aa
+      else
+        ++ ar
+      endif
+    else
+      if = res2 0
+        ++ ra
+      else
+        ++ rr
+      endif
+    endif
+    pairedttest %resultdir%/%dataset%-%j%-linear.error %resultdir%/%dataset%-%j%-cubic.error
+    = res1 %out1%
+    pairedttest %resultdir%/%dataset%-%j%-linear.epsilonloss %resultdir%/%dataset%-%j%-cubic.epsilonloss
+    = res2 %out1%
+    if = res1 0
+      if = res2 0
+        ++ aa
+      else
+        ++ ar
+      endif
+    else
+      if = res2 0
+        ++ ra
+      else
+        ++ rr
+      endif
+    endif
+    pairedttest %resultdir%/%dataset%-%j%-quadratic.error %resultdir%/%dataset%-%j%-cubic.error
+    = res1 %out1%
+    pairedttest %resultdir%/%dataset%-%j%-quadratic.epsilonloss %resultdir%/%dataset%-%j%-cubic.epsilonloss
+    = res2 %out1%
+    if = res1 0
+      if = res2 0
+        ++ aa
+      else
+        ++ ar
+      endif
+    else
+      if = res2 0
+        ++ ra
+      else
+        ++ rr
+      endif
+    endif
+    pairedttest %resultdir%/%dataset%-%j%-rbf.error %resultdir%/%dataset%-%j%-quadratic.error
+    = res1 %out1%
+    pairedttest %resultdir%/%dataset%-%j%-rbf.epsilonloss %resultdir%/%dataset%-%j%-quadratic.epsilonloss
+    = res2 %out1%
+    if = res1 0
+      if = res2 0
+        ++ aa
+      else
+        ++ ar
+      endif
+    else
+      if = res2 0
+        ++ ra
+      else
+        ++ rr
+      endif
+    endif
+    pairedttest %resultdir%/%dataset%-%j%-linear.error %resultdir%/%dataset%-%j%-rbf.error
+    = res1 %out1%
+    pairedttest %resultdir%/%dataset%-%j%-linear.epsilonloss %resultdir%/%dataset%-%j%-rbf.epsilonloss
+    = res2 %out1%
+    if = res1 0
+      if = res2 0
+        ++ aa
+      else
+        ++ ar
+      endif
+    else
+      if = res2 0
+        ++ ra
+      else
+        ++ rr
+      endif
+    endif
+    pairedttest %resultdir%/%dataset%-%j%-rbf.error %resultdir%/%dataset%-%j%-cubic.error
+    = res1 %out1%
+    pairedttest %resultdir%/%dataset%-%j%-rbf.epsilonloss %resultdir%/%dataset%-%j%-cubic.epsilonloss
+    = res2 %out1%
+    if = res1 0
+      if = res2 0
+        ++ aa
+      else
+        ++ ar
+      endif
+    else
+      if = res2 0
+        ++ ra
+      else
+        ++ rr
+      endif
+    endif
+  endfor j
+endfor i
+write %aa/540%_%ar/540%_%ra/540%_%rr/540%
+output stdout
+

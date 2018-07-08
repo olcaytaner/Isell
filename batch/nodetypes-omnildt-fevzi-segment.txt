@@ -1,0 +1,86 @@
+displaycode off
+file infile outfile1
+string read nodetype type dataset result dir modelselection ntypes[250] prunetype
+integer depth
+= depth 30
+integer i j k m p t v countsu[%depth%] countsm[%depth%] countsq[%depth%] len level
+= dir c:\users\olcay\isell\omnildt
+for p 1 3
+  switch p
+    case 1
+      = prunetype prepruning
+    case 2
+      = prunetype validation
+    case 3
+      = prunetype modelselection
+  endswitch
+  for t 1 3
+    switch t
+      case 1
+        = modelselection aic
+      case 2
+        = modelselection bic
+      case 3
+        = modelselection crossvalidation
+    endswitch
+    for v 1 8
+      switch v
+        case 1
+          = dataset segment25
+        case 2
+          = dataset segment50
+        case 3
+          = dataset segment75
+        case 4
+          = dataset segment
+        case 5
+          = dataset fevzi25
+        case 6
+          = dataset fevzi50        
+        case 7
+          = dataset fevzi75        
+        case 8
+          = dataset fevzi        
+      endswitch
+      = outfile1 %dir%\%prunetype%\%dataset%-%modelselection%.level
+      openfile outfile1 w
+      for j 1 %depth%
+        = countsu[j] 0
+        = countsm[j] 0  
+        = countsq[j] 0  
+      endfor j
+      = infile %dir%\%prunetype%\%dataset%-%modelselection%.nodetype  
+      openfile infile r
+      for i 1 10
+        readfile infile read
+        tokenize read ;
+        = len %out1%
+        if > len 0
+          for k 1 %len%
+            = ntypes[k] %aout1[k]%
+          endfor k
+          for k 1 %len%
+            = nodetype %ntypes[k]%
+            tokenize nodetype -
+            = level %aout1[1]%
+            = type %aout1[2]%
+            if = type U
+              ++ countsu[%level%]
+            endif
+            if = type L
+              ++ countsm[%level%]
+            endif
+            if = type Q
+              ++ countsq[%level%]
+            endif
+          endfor k
+        endif
+      endfor i
+      closefile infile
+      for j 1 %depth%
+        writefile outfile1 %j%_%countsu[j]%_%countsm[j]%_%countsq[j]%
+      endfor j
+      closefile outfile1
+    endfor v
+  endfor t
+endfor p

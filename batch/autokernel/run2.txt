@@ -1,0 +1,23 @@
+displaycode off
+file infile
+integer i datasetcount
+string dataset
+= infile datasets.txt
+setdatadir ../data
+loaddatasets rule.xml
+openfile infile r
+readfile infile datasetcount
+for i 1 %datasetcount%
+  readfile infile dataset
+  mkdir ../data/kernel-%dataset%
+  move %dataset%class.txt ../data/kernel-%dataset%/%dataset%class.txt
+  move %dataset%kernel.txt ../data/kernel-%dataset%/%dataset%kernel.txt
+  classes %dataset%
+  createkerneldataset kernel-%dataset% %sout1% kernel-%dataset% %dataset%class.txt %dataset%kernel.txt
+  savedataset kernel-%dataset% %i%.xml
+endfor i
+mergedefinitions autokernel.xml 1.xml 2.xml 3.xml 4.xml 5.xml 6.xml 7.xml 8.xml 9.xml 10.xml 11.xml 12.xml 13.xml 14.xml 15.xml
+for i 1 %datasetcount%
+  rm %i%.xml
+endfor i
+closefile infile

@@ -1,0 +1,83 @@
+displaycode off
+displayresult off
+string function model datadir resultdir
+integer i howmany j maxdegree max2 t
+file errorfile
+= maxdegree 15
+= max2 %maxdegree%
+++ max2
+integer aic[%max2%] bic[%max2%] srm[%max2%] mdl[%max2%] cro[%max2%] mode
+= datadir c:\users\olcay\isell\poly\datareg\small
+= resultdir c:\users\olcay\isell\poly\resultsreg\small
+= howmany 1000
+setprecision 5
+for i 1 %max2%
+  = aic[i] 0
+  = bic[i] 0
+  = srm[i] 0
+  = mdl[i] 0
+  = cro[i] 0
+endfor i
+for i 1 5
+  switch i
+    case 1
+      modelselection aic
+      = model AIC
+    case 2
+      modelselection bic
+      = model BIC
+    case 3
+      modelselection srm
+      = model SRM
+    case 4
+      modelselection mdl1
+      = model MDL
+    case 5
+      modelselection crossvalidation
+      = model CROSSVALIDATION
+  endswitch
+  = errorfile %resultdir%\%model%-error.txt
+  openfile errorfile w
+  for j 1 %howmany%
+    polylearn %datadir%\%j%.tra 15 %datadir%\%j%.tes
+    writefile errorfile %out3%
+    = mode %out1%
+    ++ mode
+    switch i
+      case 1
+        ++ aic[%mode%] 
+      case 2
+        ++ bic[%mode%]
+      case 3
+        ++ srm[%mode%]
+      case 4
+        ++ mdl[%mode%]
+      case 5
+        ++ cro[%mode%]
+    endswitch
+  endfor j
+  closefile errorfile
+  output %resultdir%\%model%.txt
+  for j 1 %max2%
+    = t %j%
+    -= t 1
+    switch i
+      case 1
+        write %t%_%aic[j]%
+      case 2
+        write %t%_%bic[j]%
+      case 3
+        write %t%_%srm[j]%
+      case 4
+        write %t%_%mdl[j]%
+      case 5
+        write %t%_%cro[j]%
+    endswitch
+  endfor j
+  output stdout
+  plotay %resultdir%\%model%.txt
+  xlabel Degree_of_Polynom_(%model%)
+  ylabel Count
+  axislimits y 0 1000 10
+  export %resultdir%\%model%.eps 
+endfor i

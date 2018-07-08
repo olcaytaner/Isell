@@ -1,0 +1,41 @@
+displaycode off
+integer j i k
+string dir file1 extension file2 dataset endj endi endk
+= dir d:\users\olcay\isell\results
+= endj 5
+= endk 1
+= endi 1000
+for j 1 %endj%
+  switch j
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+  endswitch
+  for k 1 %endk%
+    switch k
+      case 1
+        = extension lgc
+      case 2
+        = extension mean
+      case 3
+        = extension lda
+      case 4
+        = extension c45
+      case 5
+        = extension knn
+    endswitch
+    = file1 %dir%\%dataset%\total.%extension%
+    for i 1 %endi%
+      = file2 %dir%\%dataset%\%i%.%extension%
+      fconcat %file1% %file2%
+    endfor i
+    write %j%.%k%
+  endfor k
+endfor j

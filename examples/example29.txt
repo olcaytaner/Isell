@@ -1,0 +1,51 @@
+displaycode off
+displayresult off
+integer i j
+string dir method fname st filename subdir dataset
+= dir c:\users\olcay\isell\svm
+setprecision 1
+output %dir%\output.tex
+write \documentstyle{article}
+write \begin{document}
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|r|r|r|r|}
+write \hline
+write Dataset_&_0.01_&_0.1_&_1_&_10_\\
+write \hline
+for i 1 5
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset cylinder
+    case 4
+      = dataset australian
+    case 5
+      = dataset pima
+  endswitch
+  = st %dataset%_
+  for j 1 4
+    switch j
+      case 1
+        = subdir 0.01
+      case 2
+        = subdir 0.1
+      case 3
+        = subdir 1
+      case 4
+        = subdir 10
+    endswitch
+    = filename %dir%\%subdir%\%dataset%.svm
+    meanvariance %filename%
+    = st %st%&_%out1%$\pm$%out2%_
+  endfor j
+  write %st%\\
+  write \hline
+endfor i
+write \end{tabular}
+write \end{center}
+write \end{table}
+write \end{document}

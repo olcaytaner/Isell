@@ -1,0 +1,119 @@
+displaycode off
+displayresult off
+file outfile
+string dir extension algorithm resultdir dataset method modelselection prunetype
+integer i j k starti endi startj endj p
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+runcount 5
+foldcount 2
+= resultdir c:\users\olcay\isell\omnildt
+= startj 1
+= endj 1
+= method omnildt
+for p 1 3
+  switch p
+    case 1
+      prunetype prepruning
+      = prunetype prepruning
+      = starti 1
+      = endi 8
+    case 2
+      prunetype validation
+      = prunetype validation
+      = starti 1
+      = endi 5
+    case 3
+      prunetype modelselection
+      = prunetype modelselection  
+      = starti 4
+      = endi 6
+  endswitch
+  for i %starti% %endi%
+    switch i
+      case 1
+        = modelselection univariate      
+        modelselection univariate      
+      case 2
+        = modelselection linear      
+        modelselection linear      
+      case 3
+        = modelselection quadratic      
+        modelselection quadratic              
+      case 4
+        = modelselection aic
+        modelselection aic
+      case 5
+        = modelselection bic
+        modelselection bic
+      case 6
+        = modelselection mdl
+        modelselection mdl
+      case 7
+        = modelselection srm
+        modelselection srm
+      case 8
+        = modelselection crossvalidation      
+        modelselection crossvalidation      
+    endswitch
+    for j %startj% %endj%
+      switch j
+        case 1
+          = dataset segment25
+        case 2
+          = dataset segment50
+        case 3
+          = dataset segment75
+        case 4
+          = dataset segment
+        case 5
+          = dataset fevzi25
+        case 6
+          = dataset fevzi50
+        case 7
+          = dataset fevzi75
+        case 8
+          = dataset fevzi
+      endswitch
+      output %resultdir%\%prunetype%\%dataset%-%modelselection%.error
+      %method% %dataset% random 1    
+      = outfile %resultdir%\%prunetype%\%dataset%-%modelselection%.time
+      openfile outfile w
+      for k 1 10
+        writefile outfile %aout1[k]%
+      endfor k
+      closefile outfile
+      = outfile %resultdir%\%prunetype%\%dataset%-%modelselection%.univariate
+      openfile outfile w
+      for k 1 10
+        writefile outfile %aout2[k]%
+      endfor k
+      closefile outfile
+      = outfile %resultdir%\%prunetype%\%dataset%-%modelselection%.linear
+      openfile outfile w
+      for k 1 10
+        writefile outfile %aout3[k]%
+      endfor k
+      closefile outfile
+      = outfile %resultdir%\%prunetype%\%dataset%-%modelselection%.quadratic
+      openfile outfile w
+      for k 1 10
+        writefile outfile %aout4[k]%
+      endfor k
+      closefile outfile
+      = outfile %resultdir%\%prunetype%\%dataset%-%modelselection%.count
+      openfile outfile w
+      for k 1 10
+        writefile outfile %aout5[k]%
+      endfor k
+      closefile outfile   
+      = outfile %resultdir%\%prunetype%\%dataset%-%modelselection%.nodetype
+      openfile outfile w
+      for k 1 10
+        writefile outfile %aout8[k]%
+      endfor k
+      closefile outfile   
+    endfor j  
+  endfor i
+endfor p  
+output stdout

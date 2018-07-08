@@ -1,0 +1,62 @@
+displaycode off
+integer i j fact pos1 cno
+string dataset b[4000000] st
+setdatadir ../data
+loaddatasets rule.xml
+output random.txt
+for i 1 13
+  switch i
+    case 1
+      = dataset winequality
+    case 2
+      = dataset zipcodes
+    case 3
+      = dataset yeast
+    case 4
+      = dataset segment
+    case 5
+      = dataset pendigits
+    case 6
+      = dataset optdigits
+    case 7
+      = dataset ocr
+    case 8
+      = dataset glass
+    case 9
+      = dataset ecoli
+    case 10
+      = dataset dermatology
+    case 11
+      = dataset shuttle
+    case 12
+      = dataset flags
+    case 13
+      = dataset zoo
+  endswitch
+  classcount %dataset%
+  = cno %out1%
+  stringpermutation %cno% b
+  write %dataset%
+  = fact 1
+  for j 2 %cno%
+    *= fact %j% 
+  endfor j
+  if < cno 9
+    for j 1 %fact%
+      random %j% %fact%
+      = pos1 %out1%
+      = st %b[j]%
+      = b[%j%] %b[pos1]%
+      = b[%pos1%] %st%   
+    endfor j
+    for j 1 50
+      write %b[j]%
+    endfor j
+  else
+    for j 1 50
+      random 1 %fact%
+      write %b[out1]%
+    endfor j
+  endif
+endfor i
+output stdout

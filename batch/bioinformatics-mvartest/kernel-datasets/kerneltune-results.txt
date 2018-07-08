@@ -1,0 +1,24 @@
+displaycode off
+displayresult off
+integer j k p kernelcount
+string dataset resultdir
+= resultdir ../results/mvartest2
+setprecision 3
+output tune.txt
+for j 1 2
+  switch j
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for p 0 %kernelcount-1%
+    for k 1 13
+      meanvariance %resultdir%/measure/svmtune/%dataset%-%p%-%k%.error
+      write %dataset%_%p%_%k%_%out1%
+    endfor k
+  endfor p
+endfor j  
+output stdout

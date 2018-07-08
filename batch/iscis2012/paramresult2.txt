@@ -1,0 +1,56 @@
+displaycode off
+displayresult off
+integer i j k t bestj bestk bestt
+string dataset
+setprecision 6
+string resultdir
+real average bestaverage
+= resultdir ../results/hingetest/parameterrbf
+output bestrbf.txt
+for i 1 9
+  switch i
+    case 1
+      = dataset abalone
+    case 2
+      = dataset add10
+    case 3
+      = dataset boston
+    case 4
+      = dataset california
+    case 5
+      = dataset concrete
+    case 6
+      = dataset puma8fh
+    case 7
+      = dataset puma8fm
+    case 8
+      = dataset puma8nh
+    case 9
+      = dataset puma8nm
+  endswitch
+  = bestaverage 1
+  = bestj 0
+  = bestk 0
+  = bestt 0
+  for j 1 14
+    for k 1 10
+      for t 1 10
+        fileexists %resultdir%/%dataset%-%j%-%k%-%t%-rbf.error
+        if = out1 1
+          meanvariance %resultdir%/%dataset%-%j%-%k%-%t%-rbf.error
+          = average %out1%
+          if < average %bestaverage%
+            = bestaverage %average%
+            = bestj %j%
+            = bestk %k%
+            = bestt %t%
+            writescreen %bestj%_%bestk%_%bestt%_%bestaverage%
+          endif
+        endif
+      endfor t
+    endfor k
+  endfor j
+  write %dataset%_%bestj%_%bestk%_%bestt%_%bestaverage%
+endfor i
+output stdout
+

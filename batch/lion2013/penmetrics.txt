@@ -1,0 +1,44 @@
+displaycode off
+displayresult off
+integer i j dummy k
+file infile outfile1 outfile2 outfile3
+real tp fp fn tn tpr fpr precision recall pprime
+setdatadir ../data
+setprecision 6
+for i 0 10
+  for j 1 100
+      = infile ../results/graphtest/pendigits/pendigits%i%-%j%.confusion
+      = outfile1 ../results/graphtest/pendigits/pendigits%i%-%j%.all
+      = outfile2 ../results/graphtest/pendigits/pendigits%i%-%j%.roc
+      = outfile3 ../results/graphtest/pendigits/pendigits%i%-%j%.pr
+      openfile infile r
+      openfile outfile1 w
+      openfile outfile2 w
+      openfile outfile3 w
+      for k 1 10
+        readfile infile dummy
+        readfile infile dummy
+        readfile infile tp
+        readfile infile fp
+        readfile infile fn
+        readfile infile tn
+        = tpr %tp/(tp+fn)%
+        = fpr %fp/(fp+tn)%
+        = pprime %tp+fp%
+        if = pprime 0
+          = precision 0
+        else
+          = precision %tp/(tp+fp)%
+        endif
+        = recall %tp/(tp+fn)%
+        writefile outfile1 %tp%_%fp%_%tn%_%fn%
+        writefile outfile2 %tpr%_%fpr%
+        writefile outfile3 %precision%_%recall%
+      endfor k
+      closefile infile
+      closefile outfile1
+      closefile outfile2
+      closefile outfile3
+  endfor j
+  writescreen %i%
+endfor i

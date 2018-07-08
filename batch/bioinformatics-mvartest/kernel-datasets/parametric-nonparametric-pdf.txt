@@ -1,0 +1,62 @@
+displaycode off
+displayresult off
+integer i k kernel1 kernel2 kernelcount res1 res2 count
+string dataset resultdir multifile1 multifile2
+setprecision 3
+= resultdir ../results/mvartest2
+twotailed
+output parametric-nonparametric2.tex
+= count 0
+write \documentclass{article}
+write \usepackage{graphicx}
+write \begin{document}
+for i 1 2
+  switch i
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for kernel1 0 %kernelcount-1%
+    for kernel2 %kernel1+1% %kernelcount-1%
+      for k 1 10
+        = multifile1 %resultdir%/measure/roc/%dataset%-%kernel1%-%k%.roc
+        = multifile2 %resultdir%/measure/roc/%dataset%-%kernel2%-%k%.roc
+        fileexists %resultdir%/measure/confusion/%dataset%-%kernel1%-%k%.confusion        
+        if = out1 1
+          fileexists %resultdir%/measure/confusion/%dataset%-%kernel2%-%k%.confusion        
+          if = out1 1      
+             smirnov %multifile1% %multifile2%
+             = res1 %out1%
+             hotellingt %multifile1% %multifile2%
+             = res2 %res1+out1%             
+             if = res2 3
+               ++ count
+               if = count 15
+                 write \clearpage
+                 = count 0
+               endif
+               write \begin{figure}[t!]
+               write \begin{center}
+               write \begin{tabular}{cc}
+               write (a)_&_(b)_\\
+               write \includegraphics[width=0.43\linewidth]{%resultdir%/image/parametric-nonparametric/%dataset%-%kernel1%-%kernel2%-%k%-roc.eps}_& 
+               write \includegraphics[width=0.43\linewidth]{%resultdir%/image/parametric-nonparametric/%dataset%-%kernel1%-%kernel2%-%k%-tree.eps}_\\
+               write (c)_&_(d)_\\
+               write \includegraphics[width=0.43\linewidth]{%resultdir%/image/parametric-nonparametric/%dataset%-%kernel1%-%kernel2%-%k%-rocdiff.eps}_&
+               write \includegraphics[width=0.43\linewidth]{%resultdir%/image/parametric-nonparametric/%dataset%-%kernel1%-%kernel2%-%k%-rank.eps}_\\
+               write \end{tabular}
+               write \end{center}
+               write \caption{%dataset%_%kernel1%_%kernel2%_%k%}
+               write \end{figure}
+             endif
+          endif
+        endif
+      endfor k
+    endfor kernel2
+  endfor kernel1 
+endfor i  
+write \end{document}
+output stdout

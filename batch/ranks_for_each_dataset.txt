@@ -1,0 +1,90 @@
+displaycode off
+displayresult off
+file infile infile2
+real forw1[44] backw1[44] multitest[44] forwmost[44] backwmost[44] tmpr
+string dir tmp st
+integer i j k optimal[44] tmpi m
+= dir c:\users\olcay\isell\neuralnetwork-regression
+setprecision 3
+output %dir%\datasets.txt
+= infile %dir%\optimal.txt
+for i 1 24
+  openfile infile r
+  for j 1 44
+    readfile infile tmp
+    for k 1 24
+      readfile infile tmpi
+      if = k %i%
+        = optimal[j] %tmpi%
+      endif
+    endfor k    
+  endfor j
+  closefile infile
+  = infile2 %dir%\%i%.txt
+  openfile infile2 r
+  for j 1 44
+    readfile infile2 tmp
+    readfile infile2 multitest[j]
+    readfile infile2 forw1[j]
+    readfile infile2 backw1[j]
+    readfile infile2 forwmost[j]
+    readfile infile2 backwmost[j]
+    for k 1 5
+      readfile infile2 tmpr
+    endfor k
+  endfor j
+  closefile infile2
+  for j 1 43
+    = m %j%
+    += m 1
+    for k %m% 44
+      if > optimal[j] %optimal[k]%
+        = tmpi %optimal[j]%
+        = optimal[j] %optimal[k]%
+        = optimal[k] %tmpi%
+        = tmpr %forw1[j]%
+        = forw1[j] %forw1[k]%
+        = forw1[k] %tmpr%
+        = tmpr %backw1[j]%
+        = backw1[j] %backw1[k]%
+        = backw1[k] %tmpr%
+        = tmpr %multitest[j]%
+        = multitest[j] %multitest[k]%
+        = multitest[k] %tmpr%
+        = tmpr %forwmost[j]%
+        = forwmost[j] %forwmost[k]%
+        = forwmost[k] %tmpr%
+        = tmpr %backwmost[j]%
+        = backwmost[j] %backwmost[k]%
+        = backwmost[k] %tmpr%
+      endif
+    endfor k
+  endfor j
+  = st %multitest[1]%
+  for j 2 44
+    = st %st%_%multitest[j]%
+  endfor j
+  write %st%
+  = st %forw1[1]%
+  for j 2 44
+    = st %st%_%forw1[j]%
+  endfor j
+  write %st%
+  = st %backw1[1]%
+  for j 2 44
+    = st %st%_%backw1[j]%
+  endfor j
+  write %st%
+  = st %forwmost[1]%
+  for j 2 44
+    = st %st%_%forwmost[j]%
+  endfor j
+  write %st%
+  = st %backwmost[1]%
+  for j 2 44
+    = st %st%_%backwmost[j]%
+  endfor j
+  write %st%
+endfor i
+output stdout
+exit

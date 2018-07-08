@@ -1,0 +1,33 @@
+displaycode off
+displayresult off
+setdatadir ../data
+loaddatasets rule.xml
+integer d i N K count
+file results infile
+string dataset st
+= results properties.txt
+openfile results w
+= infile optimal.txt
+openfile infile r
+readfile infile count
+for i 1 %count/2%
+  readfile infile dataset
+  featurecount %dataset%
+  = d %out1%
+  samplecount %dataset%
+  = N %out1%
+  classcount %dataset%
+  = K %out1%
+  = st %dataset%_&_%d%_&_%K%_&_%N%_&_
+  readfile infile dataset
+  featurecount %dataset%
+  = d %out1%
+  samplecount %dataset%
+  = N %out1%
+  classcount %dataset%
+  = K %out1%
+  = st %st%_%dataset%_&_%d%_&_%K%_&_%N%_\\
+  writefile results %st%
+endfor i
+closefile results
+closefile infile

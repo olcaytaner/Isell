@@ -1,0 +1,140 @@
+displaycode off
+displayresult off
+integer i j k m res
+string dataset dir subdir cortype st
+= dir c:\users\olcay\isell\neuralnetwork
+onetailed
+output %dir%\optimal.txt
+for i 1 44
+  switch i
+    case 1
+      = dataset haberman
+    case 2
+      = dataset iris
+    case 3
+      = dataset bupa
+    case 4
+      = dataset monks
+    case 5
+      = dataset pima
+    case 6
+      = dataset titanic
+    case 7
+      = dataset breast
+    case 8
+      = dataset artificial
+    case 9
+      = dataset ecoli
+    case 10
+      = dataset glass
+    case 11
+      = dataset heart
+    case 12
+      = dataset pageblock
+    case 13
+      = dataset wine
+    case 14
+      = dataset yeast
+    case 15
+      = dataset hepatitis
+    case 16
+      = dataset ringnorm
+    case 17
+      = dataset twonorm
+    case 18
+      = dataset zoo
+    case 19
+      = dataset balance
+    case 20
+      = dataset wave
+    case 21
+      = dataset postoperative
+    case 22
+      = dataset flare
+    case 23
+      = dataset tae
+    case 24
+      = dataset ironosphere
+    case 25
+      = dataset dermatology
+    case 26
+      = dataset vote
+    case 27
+      = dataset flags
+    case 28
+      = dataset tictactoe
+    case 29
+      = dataset australian
+    case 30
+      = dataset credit
+    case 31
+      = dataset horse
+    case 32
+      = dataset cylinder
+    case 33
+      = dataset cmc
+    case 34
+      = dataset car
+    case 35
+      = dataset segment
+    case 36
+      = dataset thyroid
+    case 37
+      = dataset ocr
+    case 38
+      = dataset fevzi
+    case 39
+      = dataset spambase
+    case 40
+      = dataset cenk
+    case 41
+      = dataset nursery
+    case 42
+      = dataset mushroom
+    case 43 
+      = dataset letter
+    case 44
+      = dataset zipcodes
+   endswitch   
+   = st %dataset%
+   for j 1 2
+     switch j
+       case 1
+         = subdir 5x2
+         testtype tpaired5x2
+       case 2
+         = subdir 1x10
+         testtype cvttest
+     endswitch
+     for k 1 3
+       switch k
+         case 1
+           correction nocorrection
+         case 2
+           correction bonferroni
+         case 3
+           correction holm
+       endswitch
+       for m 1 4
+         switch m
+           case 1
+             confidencelevel 0.05             
+           case 2
+             confidencelevel 0.01
+           case 3
+             confidencelevel 0.005
+           case 4
+             confidencelevel 0.001
+         endswitch
+         writescreen %i%_%j%_%k%_%m%
+         multitest %dir%\%subdir%\%dataset%-0.txt %dir%\%subdir%\%dataset%-1.txt %dir%\%subdir%\%dataset%-2.txt %dir%\%subdir%\%dataset%-3.txt %dir%\%subdir%\%dataset%-4.txt %dir%\%subdir%\%dataset%-5.txt %dir%\%subdir%\%dataset%-6.txt %dir%\%subdir%\%dataset%-7.txt %dir%\%subdir%\%dataset%-8.txt %dir%\%subdir%\%dataset%-9.txt %dir%\%subdir%\%dataset%-10.txt %dir%\%subdir%\%dataset%-11.txt %dir%\%subdir%\%dataset%-12.txt %dir%\%subdir%\%dataset%-13.txt %dir%\%subdir%\%dataset%-14.txt %dir%\%subdir%\%dataset%-15.txt %dir%\%subdir%\%dataset%-16.txt %dir%\%subdir%\%dataset%-17.txt %dir%\%subdir%\%dataset%-18.txt %dir%\%subdir%\%dataset%-19.txt %dir%\%subdir%\%dataset%-20.txt %dir%\%subdir%\%dataset%-21.txt %dir%\%subdir%\%dataset%-22.txt %dir%\%subdir%\%dataset%-23.txt %dir%\%subdir%\%dataset%-24.txt %dir%\%subdir%\%dataset%-25.txt %dir%\%subdir%\%dataset%-26.txt %dir%\%subdir%\%dataset%-27.txt %dir%\%subdir%\%dataset%-28.txt %dir%\%subdir%\%dataset%-29.txt %dir%\%subdir%\%dataset%-30.txt %dir%\%subdir%\%dataset%-31.txt %dir%\%subdir%\%dataset%-32.txt %dir%\%subdir%\%dataset%-33.txt %dir%\%subdir%\%dataset%-34.txt %dir%\%subdir%\%dataset%-35.txt %dir%\%subdir%\%dataset%-36.txt %dir%\%subdir%\%dataset%-37.txt %dir%\%subdir%\%dataset%-38.txt %dir%\%subdir%\%dataset%-39.txt %dir%\%subdir%\%dataset%-40.txt %dir%\%subdir%\%dataset%-41.txt %dir%\%subdir%\%dataset%-42.txt %dir%\%subdir%\%dataset%-43.txt %dir%\%subdir%\%dataset%-44.txt %dir%\%subdir%\%dataset%-45.txt %dir%\%subdir%\%dataset%-46.txt %dir%\%subdir%\%dataset%-47.txt %dir%\%subdir%\%dataset%-48.txt %dir%\%subdir%\%dataset%-49.txt %dir%\%subdir%\%dataset%-50.txt
+         = res %out1%
+         -- res
+         = st %st%_%res%
+       endfor m
+     endfor k
+   endfor j
+   write %st%
+endfor i
+output stdout
+exit

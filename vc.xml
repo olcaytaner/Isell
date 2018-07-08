@@ -1,0 +1,14 @@
+<datasets>
+	<dataset name="vcunivariate" task="regression" size="7100" directory="vcunivariate" filetype="text" separator=" " filename="vcunivariate.txt" sigma="0.000000">
+		<attributes>
+			<attribute type="Integer" available="True" min="1" max="76"/>
+			<attribute type="Integer" available="True" min="1" max="100"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.248000"/>
+			<attribute type="Real" available="True" min="0.000000" max="6.644000"/>
+			<attribute type="Real" available="True" min="0.000000" max="622.900000"/>
+			<attribute type="Real" available="True" min="0.000000" max="498.300000"/>
+			<attribute type="Real" available="True" min="0.000000" max="41.385000"/>
+			<attribute type="Output" available="True" min="2.107000" max="1786.494000"/>
+		</attributes>
+	</dataset>
+</datasets>

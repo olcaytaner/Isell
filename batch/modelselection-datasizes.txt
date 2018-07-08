@@ -1,0 +1,100 @@
+displaycode off
+file infile outfile1
+string read dataset result rules[200]
+integer i j k m rulecount conditioncount tmp
+= outfile1 c:\users\olcay\isell\ruleinduction\datasizes.txt
+openfile outfile1 w
+for j 1 25
+  = countm 0
+  = countu 0
+  switch j
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+    case 6
+      = dataset ecoli
+    case 7
+      = dataset flare
+    case 8
+      = dataset glass
+    case 9
+      = dataset hepatitis
+    case 10
+      = dataset horse
+    case 11
+      = dataset iris
+    case 12
+      = dataset ironosphere
+    case 13
+      = dataset monks
+    case 14
+      = dataset segment
+    case 15
+      = dataset vote
+    case 16
+      = dataset wine
+    case 17
+      = dataset zoo
+    case 18
+      = dataset balance
+    case 19
+      = dataset cmc
+    case 20
+      = dataset credit
+    case 21
+      = dataset haberman
+    case 22
+      = dataset pima
+    case 23
+      = dataset tictactoe
+    case 24
+      = dataset yeast
+    case 25
+      = dataset wave
+    case 26
+      = dataset fevzi
+    case 27
+      = dataset mushroom
+    case 28
+      = dataset spambase
+    case 29
+      = dataset cenk
+    case 30
+      = dataset nursery
+  endswitch
+  = infile c:\users\olcay\isell\ruleinduction\hybridripper\2backup\%dataset%-datasizes.hybridripper  
+  openfile infile r
+  write %dataset%
+  for i 1 10
+    readfile infile read
+    tokenize read ;
+    = rulecount %out1%
+    if > rulecount 0
+      for k 1 %rulecount%
+        = rules[k] %aout1[k]%
+      endfor k
+      for k 1 %rulecount%
+        tokenize rules[k] -,
+        = conditioncount %out1%
+        for m 1 %conditioncount%
+          = tmp %m%
+          @= tmp 2
+          if = tmp 0
+            = tmp %m%
+            -= tmp 1
+            writefile outfile1 %aout1[tmp]%;%aout1[m]% 
+          endif
+        endfor m
+      endfor k
+    endif
+  endfor i
+  closefile infile
+endfor j
+closefile outfile1

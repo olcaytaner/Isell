@@ -1,0 +1,84 @@
+displaycode off
+integer i j k p t u v d S
+file complexity
+string dataset rho ptype outdir
+= outdir ../results/binary4
+setdatadir ../data
+loaddatasets binarydata.xml
+separatedataused off
+runcount 5
+foldcount 2
+srma1 0.4
+srma2 1.4
+= i 0
+for t 1 3
+  for u 1 2
+    switch u
+      case 1
+        = d 8
+      case 2
+        = d 12
+    endswitch
+    for v 1 5
+      switch v
+        case 1
+          = rho 0.0
+        case 2
+          = rho 0.01
+        case 3
+          = rho 0.05
+        case 4
+          = rho 0.1
+        case 5
+          = rho 0.2
+      endswitch
+      ++ i
+      = dataset binarydata%i%
+      writescreen %i%_%dataset%
+      for j 1 4
+        switch j
+          case 1
+            testpercentage 0.9
+            = S 10
+          case 2
+            testpercentage 0.75
+            = S 25
+          case 3
+            testpercentage 0.5
+            = S 50
+          case 4
+            testpercentage 0.0
+            = S 100
+        endswitch
+        for k 1 4
+          switch k
+            case 1
+              prunetype nopruning
+              = ptype no
+            case 2
+              prunetype validation
+              = ptype cv
+            case 3
+              prunetype srmpruning
+              vcformula 0
+              = ptype srmex
+            case 4
+              prunetype srmpruning
+              vcformula 1
+              = ptype srmes
+          endswitch
+          output %outdir%/F%t%-%d%-%rho%-%S%-%ptype%.error
+          c45 %dataset% cv 1
+          = complexity %outdir%/F%t%-%d%-%rho%-%S%-%ptype%.node
+          openfile complexity w
+          for p 1 10
+            writefile complexity %aout3[p]%
+          endfor p
+          closefile complexity      
+        endfor k
+      endfor j
+    endfor v
+  endfor u
+endfor t
+output stdout
+

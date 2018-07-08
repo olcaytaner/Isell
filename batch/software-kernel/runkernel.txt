@@ -1,0 +1,63 @@
+displaycode off
+string resultdir dataset algorithm
+= resultdir ../results/moss
+setdatadir ../data
+loaddatasets kernel.xml
+printposterior on
+integer i j kernelindex
+runcount 10
+foldcount 10
+for j 1 6
+  switch j
+    case 1
+      = algorithm knn
+      = kernelindex 0
+    case 2
+      = algorithm knn
+      = kernelindex 1
+    case 3
+      = algorithm knn
+      = kernelindex 2
+    case 4
+      = algorithm svm
+      = kernelindex 0
+    case 5
+      = algorithm svm
+      = kernelindex 1
+    case 6
+      = algorithm svm
+      = kernelindex 2
+  endswitch
+  for i 1 10
+    switch i
+       case 1
+         = dataset ant
+       case 2
+         = dataset camel
+       case 3
+         = dataset ivy
+       case 4
+         = dataset jedit
+       case 5
+         = dataset lucene
+       case 6
+         = dataset poi
+       case 7
+         = dataset synapse
+       case 8
+         = dataset tomcat
+       case 9
+         = dataset velocity
+       case 10
+         = dataset xalan
+    endswitch
+    fileexists %resultdir%/%dataset%-%algorithm%-kernel-%kernelindex%.posterior
+    if = out1 0
+      posteriorfile %resultdir%/%dataset%-%algorithm%-kernel-%kernelindex%.posterior
+      output %resultdir%/%dataset%-%algorithm%-kernel-%kernelindex%.error
+      kernelindex %kernelindex%
+      %algorithm% %dataset% cv 1
+    endif
+  endfor i
+endfor j
+output stdout

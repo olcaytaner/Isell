@@ -1,0 +1,21 @@
+displaycode off
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+runcount 1
+foldcount 10
+runtofold 1
+drawmodel on
+plotclasses + all
+imagefile c:\tree-uni-1.eps
+ldt deneme2 random 1
+imagefile c:\tree-multi-1.eps
+multildt deneme2 random 1
+imagefile c:\tree-omni-1.eps
+omnildt deneme2 random 1
+imagefile c:\rule-uni-1.eps
+ripper deneme2 random 1
+imagefile c:\rule-multi-1.eps
+multiripper deneme2 random 1
+imagefile c:\rule-omni-1.eps
+hybridripper deneme2 random 1
+

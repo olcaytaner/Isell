@@ -1,0 +1,85 @@
+displaycode off
+integer i k
+string dataset resultdir st type alg
+= type error
+= resultdir ../results/softtree
+for k 1 4
+  switch k
+    case 1
+      = alg regtree
+    case 2
+      = alg softregtree
+    case 3
+      = alg softregtree-l1
+    case 4
+      = alg softregtree-l2
+  endswitch
+  output %alg%-%type%.txt
+for i 1 29
+  switch i
+    case 1
+      = dataset abalone
+    case 2
+      = dataset add10
+    case 3
+      = dataset boston
+    case 4
+      = dataset comp
+    case 5
+      = dataset concrete
+    case 6
+      = dataset bank32fh
+    case 7
+      = dataset bank32fm
+    case 8
+      = dataset bank32nh
+    case 9
+      = dataset bank32nm
+    case 10
+      = dataset bank8fh
+    case 11
+      = dataset bank8fm
+    case 12
+      = dataset bank8nh
+    case 13
+      = dataset bank8nm
+    case 14
+      = dataset kin32fh
+    case 15
+      = dataset kin32fm
+    case 16
+      = dataset kin32nh
+    case 17
+      = dataset kin32nm
+    case 18
+      = dataset kin8fh
+    case 19
+      = dataset kin8fm
+    case 20
+      = dataset kin8nh
+    case 21
+      = dataset kin8nm
+    case 22
+      = dataset puma8fh
+    case 23
+      = dataset puma8nh
+    case 24
+      = dataset puma8fm
+    case 25
+      = dataset puma8nm
+    case 26
+      = dataset puma32fh
+    case 27
+      = dataset puma32fm
+    case 28
+      = dataset puma32nh
+    case 29
+      = dataset puma32nm
+  endswitch
+  meanvariance %resultdir%/%dataset%-%alg%.%type%
+  write %out1%
+endfor i
+endfor k
+output stdout
+comparealgorithms regtree-%type%.txt softregtree-%type%.txt softregtree-l1-%type%.txt softregtree-l2-%type%.txt
+exportimage reg-%type%.eps

@@ -1,0 +1,50 @@
+displaycode off
+string outdir st dataset
+integer i
+= outdir ../results/svmtree
+output twoclass.txt
+for i 1 15
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset haberman
+    case 4
+      = dataset heart
+    case 5
+      = dataset ironosphere
+    case 6
+      = dataset monks
+    case 7
+      = dataset pima
+    case 8
+      = dataset ringnorm
+    case 9
+      = dataset spambase
+    case 10
+      = dataset twonorm
+    case 11
+      = dataset german
+    case 12
+      = dataset hepatitis
+    case 13
+      = dataset parkinsons
+    case 14
+      = dataset polyadenylation
+    case 15
+      = dataset satellite47
+  endswitch
+  = st %dataset%
+  meanvariance %outdir%/%dataset%-c45.error
+  = st %st%_%out1%_%out2%
+  meanvariance %outdir%/%dataset%-svmtree.error
+  = st %st%_%out1%_%out2%
+  meanvariance %outdir%/%dataset%-c45.complexity
+  = st %st%_%out1%_%out2%
+  meanvariance %outdir%/%dataset%-svmtree.complexity
+  = st %st%_%out1%_%out2%
+  write %st%
+endfor i
+output stdout

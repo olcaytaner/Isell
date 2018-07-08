@@ -1,0 +1,91 @@
+displaycode off
+displayresult off
+integer numberofruns fold i j k p roc pr error count
+string resultdir method1 method2 file1 file2 dataset
+file infile outfile[8]
+real rocp prp errorp
+= numberofruns 10
+= fold 10
+= resultdir ../results/tests
+= infile twoclass-large.txt
+openfile infile r
+readfile infile count
+for i 1 %count%
+  readfile infile dataset
+  for j 1 8
+    switch j
+      case 1
+        = method1 c45
+      case 2
+        = method1 knn
+      case 3
+        = method1 svm
+      case 4
+        = method1 lda
+      case 5
+        = method1 qda
+      case 6
+        = method1 randomforest
+      case 7
+        = method1 logistic
+      case 8
+        = method1 naivebayes
+    endswitch
+    for k %j+1% 9
+      switch k
+        case 2
+          = method2 knn
+        case 3
+          = method2 svm
+        case 4
+          = method2 lda
+        case 5
+          = method2 qda
+        case 6
+          = method2 randomforest
+        case 7
+          = method2 logistic
+        case 8
+          = method2 naivebayes
+        case 9
+          = method2 ripper
+      endswitch
+      for p 1 %numberofruns%
+        = file1 %resultdir%/posterior/%dataset%-%p%-%method1%.posterior
+        fileexists %file1%
+        if = out1 1
+          = file1 %resultdir%/posterior/%dataset%-%p%-%method2%.posterior
+          fileexists %file1%
+          if = out1 1
+            errorhistogram %resultdir%/error/%dataset%-%p%-%method1%.error %resultdir%/error/%dataset%-%p%-%method2%.error
+            hold on
+            xlabel Algorithms
+            ylabel Performance
+            xaxisnames randomforest naivebayes
+            fontsize label 16
+            fontsize axis 16
+            errorhistogram %resultdir%/roc/%dataset%-%p%-%method1%.roc %resultdir%/roc/%dataset%-%p%-%method2%.roc
+            errorhistogram %resultdir%/pr/%dataset%-%p%-%method1%.pr %resultdir%/pr/%dataset%-%p%-%method2%.pr
+            exportimage %resultdir%/images/%method1%-%method2%-%dataset%-%p%-histogram.eps
+            hold off
+            rocplot %resultdir%/posterior/%dataset%-%p%-%method1%.posterior %resultdir%/posterior/%dataset%-%p%-%method2%.posterior
+            xlabel True_Positive_Rate
+            ylabel False_Positive_Rate
+            fontsize label 16
+            exportimage %resultdir%/images/%method1%-%method2%-%dataset%-%p%-roc.eps
+            hold off
+            precisionrecallplot %resultdir%/posterior/%dataset%-%p%-%method1%.posterior %resultdir%/posterior/%dataset%-%p%-%method2%.posterior
+            xlabel Recall
+            ylabel Precision
+            fontsize label 16
+            exportimage %resultdir%/images/%method1%-%method2%-%dataset%-%p%-pr.eps
+            hold off
+          endif
+        endif
+      endfor p
+      writescreen %i%_%j%_%k%
+    endfor k
+  endfor j  
+endfor i  
+closefile infile
+

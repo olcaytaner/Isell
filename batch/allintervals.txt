@@ -1,0 +1,20 @@
+displaycode off
+string method1 dataset
+integer p
+= method1 c45
+= dataset musk2
+= p 78
+loadfile intervals.txt
+= method1 knn
+= dataset musk2
+= p 78
+loadfile intervals.txt
+= method1 lda
+= dataset donors
+= p 10
+loadfile intervals.txt
+= method1 qda
+= dataset donors
+= p 10
+loadfile intervals.txt
+

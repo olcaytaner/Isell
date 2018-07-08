@@ -1,0 +1,51 @@
+displaycode off
+displayresult off
+integer i j k m p t res starthidden
+string dataset dir subdir cortype st algorithm
+os Linux
+setdatadir //home/olcaytaner/isell/data
+loaddatasets //home/olcaytaner/isell/src/mlp-cls.xml
+= dir //home/olcaytaner/isell
+onetailed
+setprecision 0
+testtype cvttest
+for p 1 5
+  switch p
+    case 1
+      = algorithm multitest
+    case 2
+      = algorithm forw1
+    case 3
+      = algorithm backw1
+    case 4
+      = algorithm forw
+    case 5
+      = algorithm backw
+  endswitch
+  output %dir%/%algorithm%-cls.txt
+  for i 1 5
+    switch i
+    case 1
+      = dataset haberman
+      = starthidden 1
+    case 2
+      = dataset iris
+      = starthidden 0
+    case 3
+      = dataset bupa
+      = starthidden 28
+    case 4
+      = dataset monks
+      = starthidden 0
+    case 5
+      = dataset pima
+      = starthidden 0
+    endswitch   
+    = subdir resultsCls1x10
+    writescreen %p%_%i%
+    mlpmodelsimulation %algorithm% %dataset% %dir%/%subdir% 50 %starthidden%
+    write %dataset%_%out1%_%out2%
+  endfor i
+endfor p
+output stdout
+

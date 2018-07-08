@@ -1,0 +1,109 @@
+displaycode off
+displayresult off
+integer i j k m starti endi startj endj endk endm startk startm
+string resultdir dataset
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+= resultdir c:\users\olcay\isell\resultsneural
+runcount 1
+foldcount 10
+alpha 0.6
+perceptronrun 50
+= starti 2
+= endi 2
+= startj 3
+= endj 3
+= startk 3
+= endk 20
+= startm 1
+= endm 20
+for i %starti% %endi%
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+    case 6
+      = dataset ecoli
+    case 7
+      = dataset flare
+    case 8
+      = dataset glass
+    case 9
+      = dataset hepatitis
+    case 10
+      = dataset horse
+    case 11
+      = dataset iris
+    case 12
+      = dataset ironosphere
+    case 13
+      = dataset monks
+    case 14
+      = dataset segment
+    case 15
+      = dataset vote
+    case 16
+      = dataset wine
+    case 17
+      = dataset zoo
+    case 18
+      = dataset balance
+    case 19
+      = dataset cmc
+    case 20
+      = dataset credit
+    case 21
+      = dataset haberman
+    case 22
+      = dataset pima
+    case 23
+      = dataset tictactoe
+    case 24
+      = dataset yeast
+    case 25
+      = dataset spambase
+    case 26
+      = dataset wave
+    case 27
+      = dataset mushroom
+    case 28
+      = dataset fevzi
+    case 29
+      = dataset cenk
+    case 30
+      = dataset nursery
+  endswitch  
+  for j %startj% %endj%
+    switch j
+      case 1
+        learningrate 0.01
+        output %resultdir%\%dataset%-0-0.txt
+        hiddenlayers 0
+        mlpgeneric %dataset% random 1
+      case 2
+        learningrate 0.1
+        for k %startk% %endk%
+          output %resultdir%\%dataset%-%k%-0.txt
+          hiddenlayers %k%
+          mlpgeneric %dataset% random 1
+        endfor k
+      case 3
+        learningrate 0.1
+        for k %startk% %endk%
+          for m %startm% %endm%
+            output %resultdir%\%dataset%-%k%-%m%.txt
+            hiddenlayers %k% %m%
+            mlpgeneric %dataset% random 1
+          endfor m
+        endfor k
+    endswitch
+  endfor j
+endfor i 
+output stdout

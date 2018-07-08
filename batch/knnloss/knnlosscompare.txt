@@ -1,0 +1,136 @@
+displaycode off
+displayresult off
+integer i j k d p res1 res2 res3 accept[2,2,2] acceptdetailed[10,2,2,2]
+string resultdir figuredir
+matrix m1 m2 l1 l2
+file outfile1 outfile2 outfile3 outfile4
+= resultdir ../results/knnloss/metrics
+= figuredir ../results/knnloss/figure
+twotailed
+= outfile1 knnloss1-accept-reject.txt
+= outfile2 knnloss2-accept-reject.txt
+= outfile3 knnloss1-reject-accept.txt
+= outfile4 knnloss2-reject-accept.txt
+openfile outfile1 w
+openfile outfile2 w
+openfile outfile3 w
+openfile outfile4 w
+for i 1 10
+  = d %64-4*i%
+  for j 1 5
+    for k 1 10
+      pairedttest %resultdir%/optdigits64-%j%-%k%.error %resultdir%/optdigits%d%-%j%-%k%.error
+      = res1 %out1%
+      pairedttest %resultdir%/optdigits64-%j%-%k%.knnloss1 %resultdir%/optdigits%d%-%j%-%k%.knnloss1
+      = res2 %out1%
+      if = res1 0
+        if = res2 0
+          ++ accept[1,1,1]
+          ++ acceptdetailed[%i%,1,1,1]
+        else
+          writefile outfile1 optdigits%d%-%j%-%k%
+          loadmatrix %resultdir%/optdigits64-%j%-%k%.error m1
+          loadmatrix %resultdir%/optdigits%d%-%j%-%k%.error m2
+          -= m1 m2
+          mprint m1 1.txt
+          errorhistogram 1.txt
+          exportimage %figuredir%/knnloss1/optdigits%d%-%j%-%k%-error.eps
+          loadmatrix %resultdir%/optdigits64-%j%-%k%.knnloss1 l1
+          loadmatrix %resultdir%/optdigits%d%-%j%-%k%.knnloss1 l2
+          -= l1 l2
+          mprint l1 2.txt
+          errorhistogram 2.txt
+          exportimage %figuredir%/knnloss1/optdigits%d%-%j%-%k%-knnloss1.eps
+          ++ accept[1,1,2]
+          ++ acceptdetailed[%i%,1,1,2]
+        endif
+      else
+        if = res2 0
+          writefile outfile3 optdigits%d%-%j%-%k%
+          loadmatrix %resultdir%/optdigits64-%j%-%k%.error m1
+          loadmatrix %resultdir%/optdigits%d%-%j%-%k%.error m2
+          -= m1 m2
+          mprint m1 1.txt
+          errorhistogram 1.txt
+          exportimage %figuredir%/knnloss1/optdigits%d%-%j%-%k%-error.eps
+          loadmatrix %resultdir%/optdigits64-%j%-%k%.knnloss1 l1
+          loadmatrix %resultdir%/optdigits%d%-%j%-%k%.knnloss1 l2
+          -= l1 l2
+          mprint l1 2.txt
+          errorhistogram 2.txt
+          exportimage %figuredir%/knnloss1/optdigits%d%-%j%-%k%-knnloss1.eps
+          ++ accept[1,2,1]
+          ++ acceptdetailed[%i%,1,2,1]
+        else
+          ++ accept[1,2,2]
+          ++ acceptdetailed[%i%,1,2,2]
+        endif
+      endif
+      pairedttest %resultdir%/optdigits64-%j%-%k%.knnloss2 %resultdir%/optdigits%d%-%j%-%k%.knnloss2
+      = res3 %out1%
+      if = res1 0
+        if = res3 0
+          ++ accept[2,1,1]
+          ++ acceptdetailed[%i%,2,1,1]
+        else
+          writefile outfile2 optdigits%d%-%j%-%k%
+          loadmatrix %resultdir%/optdigits64-%j%-%k%.error m1
+          loadmatrix %resultdir%/optdigits%d%-%j%-%k%.error m2
+          -= m1 m2
+          mprint m1 1.txt
+          errorhistogram 1.txt
+          exportimage %figuredir%/knnloss2/optdigits%d%-%j%-%k%-error.eps
+          loadmatrix %resultdir%/optdigits64-%j%-%k%.knnloss2 l1
+          loadmatrix %resultdir%/optdigits%d%-%j%-%k%.knnloss2 l2
+          -= l1 l2
+          mprint l1 2.txt
+          errorhistogram 2.txt
+          exportimage %figuredir%/knnloss2/optdigits%d%-%j%-%k%-knnloss2.eps
+          ++ accept[2,1,2]
+          ++ acceptdetailed[%i%,2,1,2]
+        endif
+      else
+        if = res3 0
+          writefile outfile4 optdigits%d%-%j%-%k%
+          loadmatrix %resultdir%/optdigits64-%j%-%k%.error m1
+          loadmatrix %resultdir%/optdigits%d%-%j%-%k%.error m2
+          -= m1 m2
+          mprint m1 1.txt
+          errorhistogram 1.txt
+          exportimage %figuredir%/knnloss2/optdigits%d%-%j%-%k%-error.eps
+          loadmatrix %resultdir%/optdigits64-%j%-%k%.knnloss2 l1
+          loadmatrix %resultdir%/optdigits%d%-%j%-%k%.knnloss2 l2
+          -= l1 l2
+          mprint l1 2.txt
+          errorhistogram 2.txt
+          exportimage %figuredir%/knnloss2/optdigits%d%-%j%-%k%-knnloss2.eps
+          ++ accept[2,2,1]
+          ++ acceptdetailed[%i%,2,2,1]
+        else
+          ++ accept[2,2,2]
+          ++ acceptdetailed[%i%,2,2,2]
+        endif
+      endif
+    endfor k
+  endfor j
+endfor i
+closefile outfile1
+closefile outfile2
+closefile outfile3
+closefile outfile4
+output knnloss-comparison.txt
+write *******
+write %accept[1,1,1]%_%accept[1,1,2]%
+write %accept[1,2,1]%_%accept[1,2,2]%
+write -------
+write %accept[2,1,1]%_%accept[2,1,2]%
+write %accept[2,2,1]%_%accept[2,2,2]%
+for i 1 10
+  write ***%i%***
+  write %acceptdetailed[i,1,1,1]%_%acceptdetailed[i,1,1,2]%
+  write %acceptdetailed[i,1,2,1]%_%acceptdetailed[i,1,2,2]%
+  write -------
+  write %acceptdetailed[i,2,1,1]%_%acceptdetailed[i,2,1,2]%
+  write %acceptdetailed[i,2,2,1]%_%acceptdetailed[i,2,2,2]%  
+endfor i
+output stdout

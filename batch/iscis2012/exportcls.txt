@@ -1,0 +1,41 @@
+displaycode off
+integer i
+string dataset exportdir
+setdatadir ../data
+loaddatasets rule.xml
+= exportdir ../exported
+namestype Classatend
+runcount 5
+foldcount 2
+testpercentage 0.33333333333333
+setprecision 6
+for i 1 10
+  switch i
+    case 1
+      = dataset ringnorm
+    case 2
+      = dataset spambase
+    case 3
+      = dataset twonorm
+    case 4
+      = dataset german
+    case 5
+      = dataset magic
+    case 6
+      = dataset musk2
+    case 7
+      = dataset satellite47
+    case 8
+      = dataset polyadenylation
+    case 9
+      = dataset pima
+    case 10
+      = dataset breast
+  endswitch
+  exportfilename validation %exportdir%/%dataset%/D-test.txt
+  exportfilename train %exportdir%/%dataset%/D-train-R-F.txt
+  exportfilename test %exportdir%/%dataset%/D-validation-R-F.txt        
+  exportdatafolds %dataset% _ 1 on
+  exportvaldata %dataset% _ 1 on
+  writescreen %dataset%_done
+endfor i

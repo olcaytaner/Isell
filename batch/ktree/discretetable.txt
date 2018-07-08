@@ -1,0 +1,68 @@
+displaycode off
+displayresult off
+integer i j
+real mean variance
+string dataset outdir type result
+= outdir ../results/discretetree
+= type node
+output comparison-%type%.txt
+onetailed
+setprecision 1
+for i 1 15
+  switch i
+    case 1
+      = dataset acceptors
+    case 2
+      = dataset artificial
+    case 3
+      = dataset balance
+    case 4
+      = dataset car
+    case 5
+      = dataset donors
+    case 6
+      = dataset hayesroth
+    case 7
+      = dataset krvskp
+    case 8
+      = dataset discretemonks
+    case 9
+      = dataset nursery
+    case 10
+      = dataset promoters
+    case 11
+      = dataset spect
+    case 12
+      = dataset splice
+    case 13
+      = dataset tictactoe
+    case 14
+      = dataset titanic
+    case 15
+      = dataset vote
+  endswitch
+  meanvariance %outdir%/%dataset%-c45.%type%
+  = result %dataset%_&_%out1%_$\pm$_%out2%
+  for j 1 2
+    meanvariance %outdir%/%dataset%-discrete-%j%.%type%
+    = mean %out1%
+    = variance %out2%
+    pairedttest %outdir%/%dataset%-c45.%type% %outdir%/%dataset%-discrete-%j%.%type%
+    if = out1 0
+      = result %result%_&_%mean%_$\pm$_%variance%
+    else
+      = result %result%_&_{\bf_%mean%_$\pm$_%variance%}
+    endif
+  endfor j
+  meanvariance %outdir%/%dataset%-discrete-omni.%type%
+  = mean %out1%
+  = variance %out2%
+  pairedttest %outdir%/%dataset%-c45.%type% %outdir%/%dataset%-discrete-omni.%type%
+  if = out1 0
+    = result %result%_&_%mean%_$\pm$_%variance%
+  else
+    = result %result%_&_{\bf_%mean%_$\pm$_%variance%}
+  endif
+  write %result%\\
+endfor i
+output stdout

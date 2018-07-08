@@ -1,0 +1,9 @@
+'Calculates n!
+integer i sum n
+= n 10
+= sum 1
+for i 1 %n%
+  *= sum %i%
+endfor i
+writescreen %sum%
+

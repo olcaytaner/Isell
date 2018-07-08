@@ -1,0 +1,50 @@
+displaycode off
+displayresult off
+string resultdir dataset plotdir noise
+integer j k t
+matrix avg cov
+= resultdir ../results/multivariatetest/synthetic
+= plotdir ../results/multivariatetest
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+hold off
+= dataset data10
+= noise 0.0005
+for t 1 3
+  switch t
+    case 1
+      = k 1
+    case 2
+      = k 5
+    case 3
+      = k 9
+  endswitch
+  axislimits x -10 10 10 0
+  axislimits y -10 10 10 0
+  hold on
+  loadmatrix %resultdir%/%noise%-%dataset%-fpfn-%0.1*k%-diff.mean avg
+  loadmatrix %resultdir%/%noise%-%dataset%-fpfn-%0.1*k%-diff.cov cov
+  plotcovariance avg cov 4
+  exportimage %plotdir%/%dataset%-fpfn-%0.1*k%-diff.eps
+  hold off
+  axislimits x 0 40 10 0
+  axislimits y 0 40 10 0
+  hold on
+  loadmatrix %resultdir%/%noise%-%dataset%-fpfn-%0.1*k%-lda.mean avg
+  loadmatrix %resultdir%/%noise%-%dataset%-fpfn-%0.1*k%-lda.cov cov
+  plotcovariance avg cov 4
+  exportimage %plotdir%/%dataset%-fpfn-%0.1*k%-lda.eps
+  hold off
+  axislimits x 0 40 10 0
+  axislimits y 0 40 10 0
+  hold on
+  loadmatrix %resultdir%/%noise%-%dataset%-fpfn-%0.1*k%-qda.mean avg
+  loadmatrix %resultdir%/%noise%-%dataset%-fpfn-%0.1*k%-qda.cov cov
+  plotcovariance avg cov 4
+  exportimage %plotdir%/%dataset%-fpfn-%0.1*k%-qda.eps
+  hold off
+  writescreen %t%
+endfor t
+

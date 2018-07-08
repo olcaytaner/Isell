@@ -1,0 +1,81 @@
+displaycode off
+integer i j k m n p currentk count0 count1 count2
+string test dir dir2 alg1 alg2 dataset
+file file1 file2
+real m1 m2 s1 s2 dummy reject1 reject2
+onetailed
+= dir ../results/
+setprecision 3
+for i 1 4
+  switch i
+    case 1
+      = test tpaired5x2
+    case 2
+      = test combined5x2t
+    case 3
+      = test cvttest      
+    case 4
+      = test wilcoxon      
+  endswitch
+  output %dir%/classification-compare/%test%.txt
+  for k 1 6
+    switch k
+      case 1
+        = alg1 max
+      case 2
+        = alg1 lda
+      case 3
+        = alg1 mean    
+      case 4
+        = alg1 lp
+      case 5
+        = alg1 c45
+      case 6
+        = alg1 knn
+    endswitch
+    = currentk %k%
+    ++ currentk
+    for m %currentk% 7
+      switch m
+        case 2
+          = alg2 lda
+        case 3
+          = alg2 mean    
+        case 4
+          = alg2 lp
+        case 5
+          = alg2 c45
+        case 6
+          = alg2 knn
+        case 7
+          = alg2 ripper
+      endswitch 
+      = file1 %dir%/classification-compare/%alg1%-%alg2%.txt
+      openfile file1 r
+      = file2 %dir%/classification-compare/%alg1%-%alg2%-%test%.txt
+      openfile file2 r
+      for n 1 40
+        readfile file1 m1
+        readfile file1 m2
+        -= m1 %m2%
+        readfile file1 s1
+        readfile file1 s2
+        += s1 %s2%
+        /= s1 2.0
+        /= m1 %s1%
+        readfile file2 dummy
+        readfile file2 reject1
+        /= reject1 1000.0
+        write %m1%_%reject1%
+        *= m1 -1.0
+        readfile file2 reject2
+        /= reject2 1000.0
+        write %m1%_%reject2%
+      endfor n
+      closefile file1
+      closefile file2
+    endfor m
+  endfor k 
+endfor i
+output stdout
+

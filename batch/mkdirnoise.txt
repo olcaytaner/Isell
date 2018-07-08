@@ -1,0 +1,10 @@
+displaycode off
+displayresult off
+string dataset dir
+= dataset segment
+= dir ../results/noise
+mkdir %dir%/0.003/%dataset%
+mkdir %dir%/0.03/%dataset%
+mkdir %dir%/0.007/%dataset%
+mkdir %dir%/0.07/%dataset%
+

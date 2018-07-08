@@ -1,0 +1,117 @@
+displaycode off
+integer i j k t n p samplesize numberofruns fold featurecount
+string dataset classes resultdir alg
+real ratio1 ratio2
+= ratio1 1.0
+= ratio2 1.0
+printconfusion on
+= numberofruns 100
+= resultdir ../results/parametric-nonparametric
+runcount 1
+for i 3 11
+  switch i
+    case 1
+      = dataset spambase
+    case 2
+      = dataset ringnorm
+    case 3
+      = dataset mushroom
+    case 4
+      = dataset twonorm
+    case 5
+      = dataset ads
+    case 6
+      = dataset magic
+    case 7
+      = dataset musk2
+    case 8
+      = dataset polyadenylation
+    case 9
+      = dataset krvskp
+    case 10
+      = dataset donors
+    case 11
+      = dataset acceptors
+  endswitch
+  for p 1 3
+    switch p
+      case 1
+        = alg knn
+        nearcount 5
+      case 2
+        = alg c45
+      case 3
+        = alg naivebayes
+      case 4
+        = alg svm
+    endswitch  
+    for j 1 5
+      switch j
+        case 1
+          = fold 3
+        case 2
+          = fold 5
+        case 3
+          = fold 10
+        case 4
+          = fold 20
+        case 5
+          = fold 30
+      endswitch
+      foldcount %fold%
+      for k 1 4
+        switch k
+          case 1
+            = n 10
+          case 2
+            = n 25
+          case 3
+            = n 50
+          case 4
+            = n 100
+        endswitch
+        = samplesize %fold*n%
+        setdatadir ../data
+        loaddatasets sample.xml
+        for t 1 %numberofruns%
+          subsample %dataset% %dataset%-%t%.txt %samplesize% %ratio1% %ratio2%
+        endfor t
+        unloaddatasets
+        setdatadir .
+        for t 1 %numberofruns%
+          switch i
+            case 1
+              createdataset %dataset%-%t% , 57 1;0 . %dataset%-%t%.txt _
+            case 2
+              createdataset %dataset%-%t% _ 20 0;1 . %dataset%-%t%.txt _
+            case 3
+              createdataset %dataset%-%t% , 0 p;e . %dataset%-%t%.txt 1-22
+            case 4
+              createdataset %dataset%-%t% _ 20 0;1 . %dataset%-%t%.txt _
+            case 5
+              createdataset %dataset%-%t% _ 1558 0;1 . %dataset%-%t%.txt _
+            case 6
+              createdataset %dataset%-%t% , 10 g;h . %dataset%-%t%.txt _
+            case 7
+              createdataset %dataset%-%t% _ 166 0;1 . %dataset%-%t%.txt _
+            case 8
+              createdataset %dataset%-%t% _ 169 1;2 . %dataset%-%t%.txt _
+            case 9
+              createdataset %dataset%-%t% , 36 won;nowin . %dataset%-%t%.txt 0-35
+            case 10
+              createdataset %dataset%-%t% _ 13 1;2 . %dataset%-%t%.txt 0-12
+            case 11
+              createdataset %dataset%-%t% _ 88 1;2 . %dataset%-%t%.txt 0-87
+          endswitch
+          savedataset %dataset%-%t% %dataset%-%t%.xml
+        endfor t
+        for t 1 %numberofruns%
+          confusionfile %resultdir%/%fold%-%n%/%dataset%-%alg%-%fold%-%n%-%t%.confusion
+          unloaddatasets
+          loaddatasets %dataset%-%t%.xml
+          %alg% %dataset%-%t% cv 1
+        endfor t
+      endfor k
+    endfor j
+  endfor p
+endfor i

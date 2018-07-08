@@ -1,0 +1,105 @@
+displaycode off
+integer i j k t p q s cno variables constraints pos1 pos2 N Nj runcount c d
+real priors[50] Q[90,90] err objectives[90]
+file randomfile
+string dataset st permutation index[10,10]
+setdatadir ../data
+loaddatasets rule.xml
+= runcount 50
+= randomfile random.txt
+for s 1 10
+  openfile randomfile r
+  for i 1 13
+    readfile randomfile dataset
+    output %dataset%-%s%.qp
+    samplecount %dataset%
+    = N %out1%
+    classcount %dataset%
+    = cno %out1%
+    classcounts %dataset%
+    for j 1 %cno%
+      = Nj %aout1[j]%
+      = priors[%j%] %(100.0*Nj)/N%
+    endfor j
+    = variables %cno*(cno-1)%
+    = constraints %(cno*(cno-1))/2%
+    write %variables%_%constraints%
+    = objectives 0
+    = Q 0
+    for j 1 %runcount%
+      readfile randomfile permutation
+      meanvariance ../results/perm/%dataset%-%permutation%-%s%-ripper.error
+      = err %out1%
+      = index 0
+      for k 1 %cno-1%
+        charatindex permutation %k%
+        = pos1 %sout1%
+        ++ pos1
+        for t %k+1% %cno%
+          charatindex permutation %t%
+          = pos2 %sout1%
+          ++ pos2
+          = index[%pos1%,%pos2%] 1
+        endfor t
+      endfor k
+      = c 0
+      for k 1 %cno%
+        for t 1 %cno%
+          if != k %t%
+            ++ c
+            if > index[%k%,%t%] 0
+              -= objectives[%c%] %2*err%
+              += Q[%c%,%c%] 2
+            endif
+            = d 0
+            for p 1 %cno%
+              for q 1 %cno%
+                if != p %q%
+                  ++ d
+                  if > index[%k%,%t%] 0
+                    if > index[%p%,%q%] 0
+                      if != c %d%
+                        += Q[%c%,%d%] 2
+                      endif
+                    endif
+                  endif
+                endif
+              endfor q
+            endfor p
+          endif
+        endfor t
+      endfor k
+    endfor j
+    = st _
+    for k 1 %cno*(cno-1)%
+      = st %st%_%objectives[k]%
+    endfor k  
+    write %st%
+    for k 1 %cno*(cno-1)%
+      = st _
+      for t 1 %cno*(cno-1)%
+        = st %st%_%Q[k,t]%
+      endfor t
+      write %st%
+    endfor k  
+    for k 1 %cno-1%
+      for t %k+1% %cno%
+        = st _
+        = index 0
+        = index[%k%,%t%] 1
+        = index[%t%,%k%] 1
+        for p 1 %cno%
+          for q 1 %cno%
+            if != p %q%
+              = st %st%_%index[p,q]%
+            endif
+          endfor q
+        endfor p    
+        = st %st%_%priors[k]+priors[t]%
+        write %st%
+      endfor t
+    endfor k
+  endfor i
+  closefile randomfile
+endfor s
+output stdout

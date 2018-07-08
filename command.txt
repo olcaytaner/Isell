@@ -1,0 +1,4710 @@
+1. COMMAND
+exit
+GENERAL
+GENERAL
+
+
+exit
+exit
+you can exit from the machine learning environment
+example01.txt
+2. COMMAND
+setdatadir
+DATASET
+SET
+
+
+setdatadir <stringval>
+setdatadir <directory>
+you can set the data directory. Data directory is the directory where each dataset is placed in its own directory
+example01.txt;example02.txt
+3. COMMAND
+datadir
+DATASET
+DISPLAY
+
+
+datadir
+datadir
+you can view the data directory. Data directory is the directory where each dataset is placed inits own directory
+example01.txt;example02.txt
+4. COMMAND
+loaddatasets
+DATASET
+LOAD
+
+
+loaddatasets <stringval>
+loaddatasets <filename>
+you can load the definitions of the datasets. These include the data file, the attributes properties, the properties of classes etc
+example01.txt;example02.txt
+5. COMMAND
+os
+OPERATINGSYSTEM
+COMMAND
+
+
+os <stringval>
+os <operating system>
+you can change the active operating system.
+example01.txt;example02.txt
+6. COMMAND
+dataset
+DATASET
+DISPLAY
+
+
+dataset <stringval>
+dataset <dataset name>
+you can view the dataset properties
+example03.txt
+7. COMMAND
+testpercentage
+PARAMETER
+RUN
+
+
+testpercentage <realval>
+testpercentage <number between 0 and 1>
+you can give the test ratio. The test ratio is the ratio used while random learning. For example if it is 0.5 half of the data is used for train and half of it for testing purposes
+example04.txt;example09.txt;example12.txt
+8. COMMAND
+cvratio
+PARAMETER
+RUN
+
+
+cvratio <realval>
+cvratio <number between 0 and 1>
+you can set the percent of the cross-validation data
+example04.txt
+9. COMMAND
+exportvaldata
+DATASET
+EXPORT
+
+
+exportvaldata <stringval> <stringval> <integerval> <onoff>
+exportvaldata <dataset name> <separator> <seed number> <realization is done?>
+you can export validation data
+example05.txt;example09.txt
+10. COMMAND
+selectmax
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+selectmax <stringval> <stringval> <stringval>
+selectmax <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+you can make selectmax classification. Selectmax give each instance the maximum occuring class
+example06.txt;example19.txt
+11. COMMAND
+separatedataused
+PARAMETER
+RUN
+
+
+separatedataused <onoff>
+separatedataused <on or off>
+If separatedataused is on, separate test data is used for testing, otherwise separated data is not used totally.
+
+12. COMMAND
+precisionrecallplot
+GRAPHICS
+PLOT
+
+
+precisionrecallplot <stringvaln>
+precisionrecallplot <posterior file name1> <posterior file name2> ... <posterior file namen>
+Makes precision recall plot of the posteriors
+
+13. COMMAND
+exportfilename
+DATASET
+EXPORT
+
+
+exportfilename <stringval> <stringval>
+exportfilename <train, test, validation, whole or partition> <filename>
+you can save the data. This command is mainly used when you randomly divide the data into train and test set and you want to save the sets for using later
+example05.txt;example09.txt
+14. COMMAND
+loadfile
+LANGUAGE
+FILE
+
+
+loadfile <stringvaln>
+loadfile <filename> <parameters>
+you can load a batch file of commands for ISELL machine learning environment
+example07.txt;example10.txt
+15. COMMAND
+errorthreshold
+PARAMETER
+GRADIENT
+
+
+errorthreshold <realval>
+errorthreshold <error threshold>
+You can set the error threshold parameter. If the error drops lower than this threshold, the process is completed.
+example08.txt
+16. COMMAND
+learningrate
+PARAMETER
+GRADIENT
+
+
+learningrate <realval>
+learningrate <number between 0 and 1>
+Set the learning rate of a gradient learning algorithm
+example08.txt;example38.txt;example43.txt
+17. COMMAND
+perceptronrun
+PARAMETER
+GRADIENT
+
+
+perceptronrun <integerval>
+perceptronrun <number of epochs in perceptron>
+Sets the number of runs of a gradient learning algorithm
+example08.txt;example13.txt;example43.txt
+18. COMMAND
+varianceexplained
+PARAMETER
+LDA
+
+
+varianceexplained <realval>
+varianceexplained <number between 0 and 1>
+
+example11.txt
+19. COMMAND
+reducedfeaturecount
+PARAMETER
+PCA
+
+
+reducedfeaturecount <integerval>
+reducedfeaturecount <number of features in the reduced dataset>
+
+
+20. COMMAND
+dimensionreducetype
+PARAMETER
+PREPROCESSING
+
+
+dimensionreducetype <stringval>
+dimensionreducetype <feature to reduce to a specific number of features, variance to reduce a given variance explained>
+
+
+21. COMMAND
+printposterior
+PARAMETER
+RUN
+
+
+printposterior <onoff>
+printposterior <on or off>
+If printposterior is on, the posterior probabilities will be printed into the posterior file.
+example12.txt
+22. COMMAND
+loadnet
+STRUCTURE
+BAYESIAN
+
+
+loadnet <stringval>
+
+
+
+23. COMMAND
+createdata
+DATASET
+GENERATE
+
+
+createdata <stringval> <integerval> <stringval>
+
+
+
+24. COMMAND
+learnnetsimu
+ALGORITHM
+BAYESIAN
+
+
+learnnetsimu <stringval> <stringval> stringval> <stringval>
+
+
+
+25. COMMAND
+graphinfo
+DISPLAY
+BAYESIAN
+
+
+graphinfo <stringval>
+
+
+
+26. COMMAND
+nodeinfo
+DISPLAY
+BAYESIAN
+
+
+nodeinfo <stringval> <stringval>
+
+
+
+27. COMMAND
+alpha
+PARAMETER
+GRADIENT-NN
+
+
+alpha <realval>
+
+
+example13.txt
+28. COMMAND
+infthreshold
+PARAMETER
+BAYESIAN
+
+
+infthreshold <realval>
+
+
+
+29. COMMAND
+savegraph
+STRUCTURE
+BAYESIAN
+
+
+savegraph <stringval> <stringval>
+
+
+
+30. COMMAND
+ordering
+PARAMETER
+BAYESIAN
+
+
+ordering <stringval>
+
+
+
+31. COMMAND
+producedist
+STATISTICS
+DISTRIBUTION
+
+
+producedist <stringval> <realval> <integerval> <integerval>
+producedist <filename> <probability> <# of observations> <sample size to create each observation>
+Produces results data with a given probability and the number of observations must be given also
+
+32. COMMAND
+anova
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if they have not the same mean  out2:confidence level of the test result
+out1 out2
+anova <stringvaln>
+anova <filename1> <filename2> ... <filename n>
+Compares two or more data according to anova test.
+example14.txt;example15.txt
+33. COMMAND
+bonferroni
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result
+out1 out2
+bonferroni <stringval> <stringval>
+bonferroni <filename1> <filename2>
+Compares two data according to the parametric bonferroni test. 
+example16.txt;example17.txt
+34. COMMAND
+scheffe
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result
+out1 out2
+scheffe <stringval> <stringval>
+scheffe <filename1> <filename2>
+Compares two data according to the parametric scheffe test. 
+example17.txt
+35. COMMAND
+tukey
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result
+out1 out2
+tukey <stringval> <stringval>
+tukey <filename1> <filename2>
+Compares two data according to the parametric tukey test. 
+example16.txt;example17.txt
+36. COMMAND
+printzero
+DISPLAY
+BAYESIAN
+
+
+printzero <stringval>
+
+
+
+37. COMMAND
+printone
+DISPLAY
+BAYESIAN
+
+
+printone <stringval>
+
+
+
+38. COMMAND
+graphs
+DISPLAY
+BAYESIAN
+
+
+graphs
+
+
+
+39. COMMAND
+output
+LANGUAGE
+FILE
+
+
+output <stringval>
+
+
+example11.txt;example13.txt;example16.txt;example19.txt
+40. COMMAND
+ftest5x2
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result aout1:differences between the performance of the algorithms
+out1 out2 aout1
+ftest5x2 <stringval> <stringval>
+ftest5x2 <filename1> <filename2>
+Compares two data according to the parametric 5x2 f test. Sets first output variable 0 if both datasets have the same mean, 1 otherwise. Sets second output variable to the confidence level of the test result.
+example17.txt
+41. COMMAND
+multitest
+STATISTICS
+TESTS
+out1:index number of the best algorithm  sout1:order of the algorithms displayed with index numbers  sout2:the algorithm's index numbers which are compared by the pairwise statistical tests that returns a significant difference
+out1 out2 out3 out4 sout1 sout2
+multitest <stringvaln>
+multitest <filename1> <filename2> ... <filename n>
+Compares two or more data according to the given test with the testtype command. Sets first output variable 0 if both datasets have the same mean, 1 otherwise. Sets second output variable to the confidence level of the test result.
+example16.txt;example18.txt
+42. COMMAND
+testtype
+PARAMETER
+MULTITEST
+
+
+testtype <stringval>
+testtype <testname>
+Changes the active test type
+example16.txt;example18.txt;example58.txt
+43. COMMAND
+generatetests
+STATISTICS
+DISTRIBUTION
+
+
+generatetests <stringvaln2>
+
+
+
+44. COMMAND
+learnnetk2
+ALGORITHM
+BAYESIAN
+
+
+learnnetk2 <stringval> <stringval> stringval> <stringval>
+
+
+
+45. COMMAND
+knn
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+knn <stringval> <stringval> <stringval>
+knn <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Train k nearest neighbor algorithm for classification
+example12.txt;example19.txt;example46.txt
+46. COMMAND
+time
+GENERAL
+PARAMETER
+
+
+time <onoff>
+
+
+
+47. COMMAND
+c45
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+c45 <stringval> <stringval> <stringval>
+c45 <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Trains C4.5 decision tree learning algorithm (Quinlan, 93)
+example12.txt;example19.txt
+48. COMMAND
+regstump
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+regstump <stringval> <stringval> <stringval>
+regstump <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Single node regression tree learning algorithm
+example20.txt
+49. COMMAND
+help
+HELP
+DISPLAY
+
+
+help <stringval>
+help | help <command name>
+Displays all commands available in the ISELL environment. Displays help for the given command
+
+50. COMMAND
+datasets
+DATASET
+DISPLAY
+
+
+datasets <stringval>
+datasets <all, classification, regression, twoclass, kclass, discrete, continuous, mixed>
+Displays all of the available datasets
+
+51. COMMAND
+normal
+STATISTICS
+DISTRIBUTION
+out1: confidence level of the given critical value
+out1
+normal <realval>
+normal <critical value>
+Displays probability for a given critical value for normal distribution
+
+52. COMMAND
+normalinv
+STATISTICS
+DISTRIBUTION
+out1: critical value of the given confidence level
+out1
+normalinv <realval>
+normalinv <probability>
+Displays critical value for a given probability value for normal distribution
+
+53. COMMAND
+ranksumtest
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result
+out1 out2
+ranksumtest <stringval> <stringval>
+ranksumtest <filename1> <filename2>
+Compares two data according to the mannwhitney-wilcoxon rank sum nonparametric binary test. Sets first output variable 0 if both datasets have the same mean, 1 otherwise. Sets second output variable to the confidence level of the test result.
+example16.txt;example17.txt
+54. COMMAND
+kruskalwallis
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if they have not the same mean  out2:confidence level of the test result
+out1 out2
+kruskalwallis <stringvaln>
+kruskalwallis <filename1> <filename2> ... <filename n>
+Compares two or more data according to kruskalwallis test
+example14.txt;example15.txt
+55. COMMAND
+view
+LANGUAGE
+FILE
+
+
+view <stringval>
+view <filename>
+Prints the given file to screen
+
+56. COMMAND
+srange
+STATISTICS
+DISTRIBUTION
+out1: confidence level of the given critical value
+out1
+srange <realval> <realval> <realval>
+srange <critical value> <v> <r>
+Displays probability for a given critical value for studentized range distribution
+
+57. COMMAND
+srangeinv
+STATISTICS
+DISTRIBUTION
+out1: critical value of the given confidence level
+out1
+srangeinv <realval> <realval> <realval>
+srangeinv <probability> <v> <r>
+Displays critical value for a given probability value for studentized range distribution
+
+58. COMMAND
+chi
+STATISTICS
+DISTRIBUTION
+out1: confidence level of the given critical value
+out1
+chi <realval> <integerval>
+chi <critical value> <freedom>
+Displays probability for a given critical value for chisquare distribution
+
+59. COMMAND
+chiinv
+STATISTICS
+DISTRIBUTION
+out1: critical value of the given confidence level
+out1
+chiinv <realval> <integerval>
+chiinv <probability> <freedom>
+Displays critical value for a given probability value for chi-square distribution
+
+60. COMMAND
+f
+STATISTICS
+DISTRIBUTION
+out1: confidence level of the given critical value
+out1
+f <realval> <integerval> <integerval>
+f <critical value> <freedom1> <freedom2>
+Displays probability for a given critical value for f distribution
+
+61. COMMAND
+finv
+STATISTICS
+DISTRIBUTION
+out1: critical value of the given confidence level
+out1
+finv <realval> <integerval> <integerval>
+finv <probability> <freedom1> <freedom2>
+Displays critical value for a given probability value for f distribution
+
+62. COMMAND
+t
+STATISTICS
+DISTRIBUTION
+out1: confidence level of the given critical value
+out1
+t <realval> <integerval>
+t <critical value> <freedom>
+Displays probability for a given critical value for t distribution
+
+63. COMMAND
+tinv
+STATISTICS
+DISTRIBUTION
+out1: critical value of the given confidence level
+out1
+tinv <realval> <integerval>
+tinv <probability> <freedom>
+Displays critical value for a given probability value for t distribution
+
+64. COMMAND
+unpairedttest
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result
+out1 out2
+unpairedttest <stringval> <stringval>
+unpairedttest <filename1> <filename2>
+Compares two data according to the unpaired parametric t test. Sets first output variable 0 if both datasets have the same mean, 1 otherwise. Sets second output variable to the confidence level of the test result.
+example17.txt
+65. COMMAND
+vanderwaerdan
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if they have not the same mean  out2:confidence level of the test result
+out1 out2
+vanderwaerdan <stringvaln>
+vanderwaerdan <filename1> <filename2> ... <filename n>
+Compares two or more data according to vanderwaerdan test
+example14.txt;example15.txt
+66. COMMAND
+edit
+LANGUAGE
+FILE
+
+
+edit <stringval>
+edit <filename>
+Opens the file and user edits the file
+
+67. COMMAND
+nearestmean
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+nearestmean <stringval> <stringval> <stringval>
+nearestmean <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+You can make nearest mean classification
+example12.txt;example19.txt;example46.txt
+68. COMMAND
+ldaclass
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+ldaclass <stringval> <stringval> <stringval>
+ldaclass <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+You can make classification using Fisher's linear discriminant analysis with equal covariance matrices
+example10.txt;example19.txt;example46.txt
+69. COMMAND
+legendposition
+GRAPHICS
+PROPERTIES
+
+
+legendposition <stringval>
+legendposition <downright, downleft, upright, upleft, none>
+You can set the position of the legend
+
+70. COMMAND
+=
+LANGUAGE
+OPERATOR
+
+
+= <anyvar> <stringval>
+= <variable name> <value>
+Sets a value for a new or an old variable
+example06.txt;example21.txt
+71. COMMAND
+integer
+LANGUAGE
+VARIABLETYPE
+
+
+integer <stringval>
+integer <variable name>
+Declares a variable of type integer
+example21.txt;example13.txt;example24.txt
+72. COMMAND
+real
+LANGUAGE
+VARIABLETYPE
+
+
+real <stringval>
+real <variable name>
+Declares a variable of type real
+example22.txt;example25.txt
+73. COMMAND
+string
+LANGUAGE
+VARIABLETYPE
+
+
+string <stringval>
+string <variable name>
+Declares a variable of type string
+example9.txt;example15.txt
+74. COMMAND
+variables
+DISPLAY
+LANGUAGE
+
+
+variables
+variables
+Displays all variables information
+
+75. COMMAND
+for
+LANGUAGE
+CONSTRUCT
+
+
+for <integervar> <integerval> <integerval>
+for <variable name> <start> <end> <step>
+Starts a for loop with the given variable with the given starting, ending and step value
+example21.txt;example22.txt;example24.txt;example26.txt
+76. COMMAND
+endfor
+LANGUAGE
+CONSTRUCT
+
+
+endfor <integervar>
+endfor <variable name>
+End a for loop with the given variable name
+example21.txt;example22.txt;example24.txt;example26.txt
+77. COMMAND
+switch
+LANGUAGE
+CONSTRUCT
+
+
+switch <anyvar>
+switch <variable name>
+Starts a switch statement
+example19.txt;example20.txt;example23.txt
+78. COMMAND
+endswitch
+LANGUAGE
+CONSTRUCT
+
+
+endswitch
+endswitch
+Ends a switch statement
+example19.txt;example20.txt;example23.txt
+79. COMMAND
+case
+LANGUAGE
+CONSTRUCT
+
+
+case <integerval>
+case <value>
+Starts a case of the switch
+example19.txt;example20.txt;example23.txt
+80. COMMAND
+++
+LANGUAGE
+OPERATOR
+
+
+++ <integerrealvar>
+++ <variable name>
+Increments variable by one
+example14.txt;example16.txt;example17.txt
+81. COMMAND
+inc
+LANGUAGE
+OPERATOR
+
+
+inc <integerrealvar>
+inc <variable name>
+Increments variable by one
+
+82. COMMAND
+--
+LANGUAGE
+OPERATOR
+
+
+-- <integerrealvar>
+-- <variable name>
+Decrements variable by one
+
+83. COMMAND
+dec
+LANGUAGE
+OPERATOR
+
+
+dec <integerrealvar>
+dec <variable name>
+Decrements variable by one
+
+84. COMMAND
++=
+LANGUAGE
+OPERATOR
+
+
++= <integerrealvar> <stringval>
++= <variable name> <value>
+Increments variable by a given value
+example15.txt;example21.txt;example22.txt
+85. COMMAND
+-=
+LANGUAGE
+OPERATOR
+
+
+-= <integerrealvar> <stringval>
+-= <variable name> <value>
+Decrements variable by a given value
+example27.txt
+86. COMMAND
+*=
+LANGUAGE
+OPERATOR
+
+
+*= <integerrealvar> <stringval>
+*= <variable name> <value>
+Multiplies variable by a given value
+example26.txt;example28.txt
+87. COMMAND
+/=
+LANGUAGE
+OPERATOR
+
+
+/= <integerrealvar> <stringval>
+/= <variable name> <value>
+Divides variable by a given value
+example22.txt
+88. COMMAND
+^=
+LANGUAGE
+OPERATOR
+
+
+^= <integerrealvar> <stringval>
+^= <variable name> <value>
+Takes power of the variable by a given value
+example33.txt
+89. COMMAND
+$=
+LANGUAGE
+OPERATOR
+
+
+$= <realvar> <realval>
+$= <variable name> <value>
+Takes $n$'th root of the variable where n is given in the second parameter
+
+90. COMMAND
+@=
+LANGUAGE
+OPERATOR
+
+
+@= <integerrealvar> <realval>
+@= <variable name> <value>
+Takes mod of the variable by a given value
+example27.txt
+91. COMMAND
+write
+LANGUAGE
+DISPLAY
+
+
+write <stringval>
+write <value>
+Displays a value in the screen
+example11;example16.txt;example24.txt
+92. COMMAND
+displaycode
+PARAMETER
+LANGUAGE
+
+
+displaycode <onoff>
+displaycode <on or off>
+If displaycode is on, the codes in the loaded file will be displayed otherwise they will not be displayed
+example08.txt;example09.txt;example12.txt
+93. COMMAND
+mean
+STATISTICS
+FILE
+out1: mean of the files
+out1
+mean <stringvaln>
+mean <filename1> <filename2> ... <filename n>
+Finds the mean of a given file of data with one dimension of values. Mean value is saved in out1
+example29.txt;example30.txt
+94. COMMAND
+variance
+STATISTICS
+FILE
+out1: variance of the files
+out1
+variance <stringvaln>
+variance <filename1> <filename2> ... <filename n>
+Finds the variance of a given file of data with one dimension of values. Variance value is saved in out1
+example29.txt;example30.txt
+95. COMMAND
+meanvariance
+STATISTICS
+FILE
+out1: mean of the files  out2: variance of the files
+out1 out2
+meanvariance <stringvaln>
+meanvariance <filename1> <filename2> ... <filename n>
+Finds the mean and variance of a given file of data with one dimension of values. Mean value is saved in out1, variance value is saved in out2
+example29.txt;example30.txt
+96. COMMAND
+fconcat
+LANGUAGE
+FILE
+
+
+fconcat <stringval> <stringval>
+fconcat <filename1> <filename2>
+Concatenates two files. First file is the destination file second file is the source file
+example31.txt
+97. COMMAND
+displayresult
+PARAMETER
+RUN
+
+
+displayresult <onoff>
+displayresult <on or off>
+If displayresult is on, the results of the operation will be displayed on the screen otherwise they are not displayed
+example29.txt;example30.txt
+98. COMMAND
+if
+LANGUAGE
+CONSTRUCT
+
+
+if <compoperator> <anyvar> <stringval>
+if <comparison operand as one of < > = != <> == <= >= > <operator> <value>
+Starts an if statement
+example14.txt;example16.txt;example27.txt
+99. COMMAND
+else
+LANGUAGE
+CONSTRUCT
+
+
+else
+else
+Starts else part of an if statement
+example16.txt
+100. COMMAND
+endif
+LANGUAGE
+CONSTRUCT
+
+
+endif
+endif
+Ends an if statement
+example14.txt;example16.txt;example27.txt
+101. COMMAND
+while
+LANGUAGE
+CONSTRUCT
+
+
+while <compoperator> <anyvar> <stringval>
+while <comparison operand as one of < > = != <> == <= >= > <operator> <value>
+Starts a while statement
+example32.txt;example33.txt
+102. COMMAND
+endwhile
+LANGUAGE
+CONSTRUCT
+
+
+endwhile
+endwhile
+Ends a while statement
+example32.txt;example33.txt
+103. COMMAND
+newmankeuls
+STATISTICS
+TESTS
+out1: index number of the best algorithm  sout1: the order that the range test has given
+out1 sout1
+newmankeuls <stringvaln>
+newmankeuls <filename1> <filename2> ... <filename n>
+Sorts two or more data according to the newman-keuls test
+example18.txt
+104. COMMAND
+duncan
+STATISTICS
+TESTS
+out1: index number of the best algorithm  sout1: the order that the range test has given
+out1 sout1
+duncan <stringvaln>
+duncan <filename1> <filename2> ... <filename n>
+Sorts two or more data according to the duncan test
+
+105. COMMAND
+pairedttest
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result aout1:differences between the performance of the algorithms
+out1 out2 aout1
+pairedttest <stringval> <stringval>
+pairedttest <filename1> <filename2>
+Compares two data according to the k fold cv paired t test. Sets first output variable 0 if both datasets have the same mean, 1 otherwise. Sets second output variable to the confidence level of the test result.
+example16.txt;example17.txt
+106. COMMAND
+twotailed
+PARAMETER
+TESTS
+
+
+twotailed
+twotailed
+Sets two data comparison tests like ttest, bonferroni, ctttest etc. according to two tailed test
+example16.txt;example17.txt
+107. COMMAND
+onetailed
+PARAMETER
+TESTS
+
+
+onetailed
+onetailed
+Sets two data comparison tests like ttest, bonferroni, ctttest etc. according to one tailed test
+example18.txt;example54.txt
+108. COMMAND
+tpaired5x2
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result aout1:differences between the performance of the algorithms
+out1 out2 aout1
+tpaired5x2 <stringval> <stringval>
+tpaired5x2 <filename1> <filename2>
+Compares two data according to the 5x2 cv paired t test. Sets first output variable 0 if both datasets have the same mean, 1 otherwise. Sets second output variable to the confidence level of the test result.
+example16.txt;example17.txt
+109. COMMAND
+btestcompare
+DISPLAY
+TESTS
+
+
+btestcompare <stringvaln2>
+btestcompare <dataset> <algorithm1> .. <algorithmn>
+Compares binary statistical tests according to the given results
+
+110. COMMAND
+plotx
+GRAPHICS
+PLOT
+
+
+plotx <stringval>
+plotx <filename>
+Plots one dimensional data in an eps file
+example34.txt;example63.txt
+111. COMMAND
+plotxy
+GRAPHICS
+PLOT
+
+
+plotxy <stringval>
+plotxy <filename>
+Plots two dimensional data in an eps file
+example35.txt
+112. COMMAND
+xlabel
+GRAPHICS
+PROPERTIES
+
+
+xlabel <stringval>
+xlabel x_axis_caption
+Sets x axis label of a one dimensional or two dimensional plot
+example36.txt
+113. COMMAND
+ylabel
+GRAPHICS
+PROPERTIES
+
+
+ylabel <stringval>
+ylabel y_axis_caption
+Sets y axis label of two dimensional plot
+example36.txt
+114. COMMAND
+plotay
+GRAPHICS
+PLOT
+
+
+plotay <stringval>
+plotay <filename>
+Plots dataset and accuracy information
+example36.txt
+115. COMMAND
+randomize
+GENERAL
+RANDOM
+
+
+randomize <integerval>
+randomize <new seed>
+Sets the random number generator's seed
+
+116. COMMAND
+mincounts
+STATISTICS
+FILE
+aout1:minimum number in each file. aout1[i] is the minimum number in the i'th file
+aout1
+mincounts <stringvaln>
+mincounts <filename1> ... <filenamen>
+Finds the minimum number in each file and returns in the aout1 array
+example37.txt
+117. COMMAND
+plotxyline
+GRAPHICS
+PLOT
+
+
+plotxyline <stringval> <stringval> <realval>
+plotxyline <filename> <linecolor> <line width>
+Plots one or more, two dimensional data in an eps file with connecting the points
+example38.txt;example39.txt
+118. COMMAND
+legendnames
+GRAPHICS
+PROPERTIES
+
+
+legendnames <stringvaln>
+legendnames <name1> <name2> ... <name n>
+Sets the legend names
+example34.txt
+119. COMMAND
+btestequal
+DISPLAY
+TESTS
+
+
+btestequal <stringvaln2>
+btestequal <dataset> <algorithm1> .. <algorithmn>
+Find the equality probability of binary statistical tests according to the given results
+
+120. COMMAND
+polyfit
+ALGORITHM
+POLYNOM
+out1: train error of the polynom learned. out2: test error of the polynom learned
+out1 out2
+polyfit <integerval> <stringval> <stringval>
+polyfit <degree of polynomial> <train filename> <test filename>
+Fits a given degree of polynomial using least squares regression technique
+
+121. COMMAND
+plotgauss
+GRAPHICS
+PLOT
+
+
+plotgauss <stringval>
+plotgauss <filename>
+Plots gaussian fits for the data in each file
+
+122. COMMAND
+polydata
+DATASET
+EXPORT
+
+
+polydata <stringval> <integerval> <realval> <realval> <stringval>
+polydata <outputfile> <datasize> <start> <end> <polynomial>
+Generates random data from a polynomial
+example23.txt
+123. COMMAND
+polydatanoisy
+DATASET
+EXPORT
+
+
+polydatanoisy <stringval> <integerval> <realval> <realval> <stringval>
+polydatanoisy <outputfile> <datasize> <start> <end> <polynomial>
+Generates random noisy data from a polynomial
+example23.txt
+124. COMMAND
+polyplot
+GRAPHICS
+PLOT
+
+
+polyplot <realval> <realval> <stringval> <stringval>
+polyplot <start> <end> <polynomial> <stringval>
+Plots a given polynomial between two values
+example39.txt;example63.txt
+125. COMMAND
+dividefile
+LANGUAGE
+FILE
+
+
+dividefile <stringval> <realval> <integerval> <stringval>
+dividefile <inputfile> <ratio> <howmany> <output directory>
+Divides a data set file into two parts according to the given ratio. The new train and test files will be saved in the output directory
+
+126. COMMAND
+polylearn
+ALGORITHM
+POLYNOM
+out1: degree of the polynom  out2: error of the polynom over the train set out3: error of the polynom over the test set
+out1 out2 out3
+polylearn <stringval> <integerval> <stringval>
+polylearn <trainfile> <maxdegree> <testfile>
+Learns the coefficients and the degree of the polynomial from a given data file, confidence is the confidence level which is used for statistical test to check different degrees of the polynomials
+example40.txt
+127. COMMAND
+linecount
+LANGUAGE
+FILE
+
+
+linecount <stringval>
+linecount <filename>
+Returns number of lines in the file with name filename
+
+128. COMMAND
+usediscrete
+PARAMETER
+NBTREE
+
+
+usediscrete <onoff>
+usediscrete <on or off>
+If use discrete is on, discrete features are used as they are, they will not be converted to real features for univariate splits, otherwise they will be converted to real features for univariate splits also.
+
+129. COMMAND
+modoffile
+STATISTICS
+FILE
+out1: the number that occurs most in the file  out2: how many times the number occurs (that occurs most)
+out1 out2
+modoffile <stringval>
+modoffile <filename>
+Finds the mod of the numbers in the file
+example41.txt
+130. COMMAND
+polylearnval
+ALGORITHM
+POLYNOM
+out1: degree of the polynom  out2: error of the polynom over the test set  out3: 0 if there is no statistically significant difference between the learned polynomial and the original polynomial 1 otherwise
+out1 out2 out3
+polylearnval <stringval> <integerval>
+polylearnval <file containing function definition> <maximum degree>
+Learns the coefficients and the degree of the polynomial from a given data file, confidence is the confidence level which is used for statistical test to check different degrees of the polynomials, degree is the degree of the artificial polynomial data
+example42.txt
+131. COMMAND
+stattestdata
+DATASET
+EXPORT
+
+
+stattestdata <stringval> <integerval> <integerval> <realval>
+stattestdata <datafile> <datacount> <01count> <error rate>
+Generates data for statistical test comparisons. Generated data is stored in datafile. The number of data is datacount. 
+example44.txt
+132. COMMAND
+foldcount
+PARAMETER
+RUN
+
+
+foldcount <integerval>
+foldcount <number of folds>
+Sets number of folds in training. For example if you want to make 5 times 2 crossvalidation set foldcount to 2, if you want to make 10 fold crossvalidation set foldcount to 10.
+example12.txt;example19.txt;example20.txt
+133. COMMAND
+runcount
+PARAMETER
+RUN
+
+
+runcount <integerval>
+runcount <number of runs>
+Sets number of runs in training. For example if you want to make 5 times 2 crossvalidation set runcount to 5, if you want to make 10 fold crossvalidation set runcount to 1.
+example12.txt;example19.txt;example20.txt
+134. COMMAND
+ldt
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+ldt <stringval> <stringval> <stringval>
+ldt <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+You can make univariate linear discriminant tree classification.
+example12.txt;example45.txt;example46.txt;example57.txt
+135. COMMAND
+parallel
+PARAMETER
+PARALLEL
+
+
+parallel <onoff>
+parallel <on or off>
+Sets or resets parallel processing mode
+example45.txt
+136. COMMAND
+fileexists
+LANGUAGE
+FILE
+
+
+fileexists <stringval>
+fileexists <file name>
+Checks if a file with the name filename exists
+
+137. COMMAND
+paralleltype
+PARAMETER
+PARALLEL
+
+
+paralleltype <integerval>
+paralleltype <integer>
+Sets type of parallelization of the algorithm
+example45.txt
+138. COMMAND
+runtofold
+PARAMETER
+RUN
+
+
+runtofold <integerval>
+runtofold <integer>
+Sets the end of the run
+example45.txt
+139. COMMAND
+printbinary
+PARAMETER
+RUN
+
+
+printbinary <onoff>
+printbinary <on or off>
+Will print 1 for true classification and 0 for misclassification as output
+
+140. COMMAND
+displayruntime
+PARAMETER
+RUN
+
+
+displayruntime <onoff>
+displayruntime <on or off>
+Will print also runtime to the output file if it is on
+
+141. COMMAND
+processorcount
+PARAMETER
+PARALLEL
+
+
+processorcount <integerval>
+processorcount <integer>
+Sets available processor count to the given value
+example45.txt
+142. COMMAND
+irep
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array  aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+irep <stringval> <stringval> <stringval>
+irep <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a rule set according to the IREP algorithm
+example46.txt
+143. COMMAND
+irep2
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array  aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+irep2 <stringval> <stringval> <stringval>
+irep2 <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a rule set according to the Modified IREP algorithm
+example46.txt
+144. COMMAND
+ripper
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+ripper <stringval> <stringval> <stringval>
+ripper <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a rule set according to the RIPPER algorithm
+example46.txt;example53.txt;example57.txt
+145. COMMAND
+optimizecount
+PARAMETER
+RIPPER
+
+
+optimizecount <integerval>
+optimizecount <integer>
+Sets number of optimizations in Rule induction algorithms
+
+146. COMMAND
+setprecision
+GENERAL
+PARAMETER
+
+
+setprecision <integerval>
+setprecision <integer>
+Sets the precision of the variables with double type in writing
+example11.txt;example29.txt;example30.txt
+147. COMMAND
+texoutput
+GENERAL
+PARAMETER
+
+
+texoutput <onoff>
+texoutput <on or off>
+Prints the output in TEX format
+
+148. COMMAND
+accuracy
+PARAMETER
+RUN
+
+
+accuracy <onoff>
+accuracy <on or off>
+If accuracy is on, displays the accuracy results of the algorithms otherwise displays error rates of the algorithms
+
+149. COMMAND
+c45rules
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+c45rules <stringval> <stringval> <stringval>
+c45rules <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a rule set according to the C4.5Rules algorithm
+example46.txt
+150. COMMAND
+savenamesfile
+DATASET
+EXPORT
+
+
+savenamesfile <stringval> <stringval>
+savenamesfile <dataset name> <filename>
+Save names file of the dataset. Names file of a dataset is usually required from external programs such as RIPPER
+example47.txt
+151. COMMAND
+exportdatafile
+DATASET
+EXPORT
+
+
+exportdatafile <stringval> <stringval> <stringval> <stringval> <onoff>
+exportdatafile <dataset name> <separator> <infile> <outfile> <realization is done?>
+Export a data file of a dataset. Since each dataset has different separator characters, using this function you can have datafiles separated by a given character
+
+152. COMMAND
+exportdataset
+DATASET
+EXPORT
+
+
+exportdataset <stringval> <stringval> <stringval> <onoff>
+exportdataset <dataset name> <separator> <outfile> <realization is done?>
+Exports data file of the given dataset. Since each dataset has different separator characters, using this function you can have datafiles separated by a given character
+example48.txt
+153. COMMAND
+file
+LANGUAGE
+VARIABLETYPE
+
+
+file <stringval>
+file <variable name>
+Declares a variable of type file
+example10.txt;example27.txt;example38.txt
+154. COMMAND
+openfile
+LANGUAGE
+FILE
+
+
+openfile <filevar> <stringval>
+openfile <variable name> <filetype must be w for writing to file or r for reading from file>
+Opens the user file with the given variable name. Before opening the file, the name of the file must be given by using = operator
+example08.txt;example10.txt;example27.txt
+155. COMMAND
+closefile
+LANGUAGE
+FILE
+
+
+closefile <filevar>
+closefile <variable name>
+Closes the user file with the given variable name
+example08.txt;example10.txt;example27.txt
+156. COMMAND
+writefile
+LANGUAGE
+FILE
+
+
+writefile <filevar> <stringval>
+writefile <variable name> <value>
+Write a value to the given user file
+example08.txt;example38.txt;example42.txt
+157. COMMAND
+exportdatafolds
+DATASET
+EXPORT
+
+
+exportdatafolds <stringval> <stringval> <integerval> <onoff>
+exportdatafolds <dataset name> <separator> <seed number> <realization is done?>
+Export a data file of a dataset as k folds. Since each dataset has different separator characters, using this function you can have datafiles separated by a given character
+example09.txt
+158. COMMAND
+posteriorfile
+PARAMETER
+RUN
+
+
+posteriorfile <stringval>
+posteriorfile <file name>
+Sets the posterior file name
+example12.txt
+159. COMMAND
+usefisherinripper
+PARAMETER
+RIPPER
+
+
+usefisherinripper <onoff>
+usefisherinripper <on or off>
+If usefisherinripper is on Fisher's discriminant criteria is used to find best split point instead of exhaustive search
+
+160. COMMAND
+smallset
+PARAMETER
+RIPPER
+
+
+smallset <onoff>
+smallset <on or off>
+If smallset is on, Fisher's discriminant criteria is used only if the number of examples in the current situation is less than smallsetsize
+
+161. COMMAND
+withoutoutliers
+PARAMETER
+RIPPER
+
+
+withoutoutliers <onoff>
+withoutoutliers <on or off>
+If withoutoutliers is on, when using Fisher's disciminant criteria, according to the variance range some of the examples are not considered in finding the split point
+
+162. COMMAND
+smallsetsize
+PARAMETER
+RIPPER
+
+
+smallsetsize <integerval>
+smallsetsize <integer>
+Sets the smallsetsize property
+
+163. COMMAND
+variancerange
+PARAMETER
+RIPPER
+
+
+variancerange <realval>
+variancerange <value>
+Sets the variance range property
+
+164. COMMAND
+multiripper
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+multiripper <stringval> <stringval> <stringval>
+multiripper <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a rule set according to the Multiripper algorithm with combination coefficients are found by LDA, LP or SVM linear
+example46.txt;example57.txt
+165. COMMAND
+hybridripper
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array  aout5: condition types of the learned rules. Stored as an array  aout6: number of data in each condition and the selected condition type. Stored as an array
+aout1 aout2 aout3 aout4 aout5 aout6
+hybridripper <stringval> <stringval> <stringval>
+hybridripper <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a rule set according to the Hybridripper algorithm
+example49.txt;example57.txt
+166. COMMAND
+readfile
+LANGUAGE
+FILE
+
+
+readfile <filevar> <anyvar>
+readfile <variable name> <any variable>
+Reads one line from the userfile and puts it in the string variable
+example10.txt;example27.txt
+167. COMMAND
+tokenize
+LANGUAGE
+STRING
+out1: number of tokens  aout1: Tokens in the string. Stored as an array
+out1 aout1
+tokenize <stringvar> <stringval>
+tokenize <string variable> <separator characters>
+Returns tokens in the aout1 array and number of tokens in the out1 variable
+example27.txt;example50.txt
+168. COMMAND
+countchar
+LANGUAGE
+STRING
+out1: number of occurences of the char
+out1
+countchar <stringvar> <stringval>
+countchar <string variable> <char>
+Counts number of occurances of char in the string variable and returns the count in out1 variable
+example50.txt;example51.txt
+169. COMMAND
+stringlength
+LANGUAGE
+STRING
+out1: length of the string
+out1
+stringlength <stringvar>
+stringlength <string variable>
+Returns the length of the string variable to out1 default variable
+example50.txt;example51.txt
+170. COMMAND
+charatindex
+LANGUAGE
+STRING
+sout1: char at the given position
+sout1
+charatindex <stringvar> <integerval>
+charatindex <string variable> <integer>
+Returns the char in the index position in the string variable
+example50.txt;example51.txt
+171. COMMAND
+createdataset
+DATASET
+CREATE
+
+
+createdataset <stringval> <stringval> <integerval> <stringval> <stringval> <stringval> <stringval>
+createdataset <dataset name> <separator characters> <featureno of class> <classes> <directory name> <file name> <discrete features>
+Creates a new dataset named with the given name
+
+172. COMMAND
+savedataset
+DATASET
+CREATE
+
+
+savedataset <stringval> <stringval>
+savedataset <dataset name> <dataset definition filename>
+Saves the dataset with the given name by saving definition file in its directory and its feature information to the given file
+
+173. COMMAND
+search
+HELP
+SEARCH
+
+
+search <stringval>
+search <stringval>
+Searches give string value in the help list
+
+174. COMMAND
+mlpgeneric
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+mlpgeneric <stringval> <stringval> <stringval>
+mlpgeneric <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Learns using generic MLP algorithm
+example12.txt;example46.txt
+175. COMMAND
+hiddenlayers
+PARAMETER
+NEURALNETWORK
+
+
+hiddenlayers <integervaln>
+hiddenlayers <number of hidden nodes in hidden layer 1> ... hiddenlayers <number of hidden nodes in hidden layer k>
+Sets number of nodes in the hidden layers
+example12.txt;example52.txt
+176. COMMAND
+namestype
+PARAMETER
+EXPORT
+
+
+namestype <stringval>
+namestype <C5.0 or Ripper or Classic>
+Sets type of names file
+example09.txt
+177. COMMAND
+knnreg
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+knnreg <stringval> <stringval> <stringval>
+knnreg <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs knn algorithm for regression
+
+178. COMMAND
+nearcount
+PARAMETER
+KNN
+
+
+nearcount <integerval>
+nearcount <integer>
+Sets number of nearest neighbors
+example12.txt
+179. COMMAND
+regtree
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:node types learned. Stored as an array
+aout1 aout2 aout3
+regtree <stringval> <stringval> <stringval>
+regtree <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates univariate regression tree
+example20.txt;example66.txt
+180. COMMAND
+mlpgenericreg
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array 
+aout1 aout2
+mlpgenericreg <stringval> <stringval> <stringval>
+mlpgenericreg <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Learns using generic regression MLP algorithm
+example52.txt
+181. COMMAND
+writerules
+PARAMETER
+DISPLAY
+
+
+writerules <onoff>
+writerules <on or off>
+If on write rules when the rules are learned, if off do not write rules
+
+182. COMMAND
+classcount
+DATASET
+FEATURES
+out1: number of classes
+out1
+classcount <stringval>
+classcount <dataset name>
+Returns number of classes in the dataset
+example11.txt;example53.txt;example74.txt
+183. COMMAND
+samplecount
+DATASET
+FEATURES
+out1: number of instances
+out1
+samplecount <stringval>
+samplecount <dataset name>
+Returns number of instances in the dataset
+example11.txt
+184. COMMAND
+featurecount
+DATASET
+FEATURES
+out1: number of features
+out1
+featurecount <stringval>
+featurecount <dataset name>
+Returns number of features in the dataset
+example11.txt;example74.txt
+185. COMMAND
+symbolicfeatures
+DATASET
+FEATURES
+out1: number of symbolic features
+out1
+symbolicfeatures <stringval>
+symbolicfeatures <dataset name>
+Returns number of symbolic features in the dataset
+
+186. COMMAND
+numericfeatures
+DATASET
+FEATURES
+out1: number of numeric features
+out1
+numericfeatures <stringval>
+numericfeatures <dataset name>
+Returns number of numeric features in the dataset
+
+187. COMMAND
+classentropy
+DATASET
+FEATURES
+out1: class entropy
+out1
+classentropy <stringval>
+classentropy <dataset name>
+Returns class entropy for a dataset
+example11.txt
+188. COMMAND
+producenormaldist
+STATISTICS
+DISTRIBUTION
+
+
+producenormaldist <stringval> <integerval> <realval> <realval>
+producenormaldist <file name> <number of instances> <mean of population> <standard deviation of population>
+Produces a normal distribution with the given mean and standard deviation
+
+189. COMMAND
+bootstrap
+DATASET
+EXPORT
+
+
+bootstrap <stringval> <stringval>
+bootstrap <input file> <output file>
+Creates a bootstrap sample from the input file
+
+190. COMMAND
+convertdatasets
+DATASET
+EXPORT
+
+
+convertdatasets <stringval> <stringval> <stringval>
+convertdatasets <separator character> <new data directory> <new dataset definition file>
+Converts all datasets to the new format
+
+191. COMMAND
+savetestfiles
+PARAMETER
+EXPORT
+
+
+savetestfiles <onoff>
+savetestfiles <on or off>
+If on test files are saved, if off they are not saved
+
+192. COMMAND
+stringpermutation
+LANGUAGE
+STRING
+
+
+stringpermutation <integerval> <stringvarn>
+stringpermutation <n> <name of the string variable array>
+Creates all possible permutations of n < 11 to the string array variable
+example53.txt
+193. COMMAND
+classpermutation
+PARAMETER
+RIPPER
+
+
+classpermutation <stringval>
+classpermutation <a permutation of class order>
+Sets class permutation for algorithms that use class orderings
+example53.txt
+194. COMMAND
+rulesordered
+PARAMETER
+RULE LEARNING
+
+
+rulesordered <onoff>
+rulesordered <on or off>
+If rulesordered is on then rule learner tries to separate class c1 from c2, c3, ... cn; class c2 from c3, c4, ..., cn; ...; class cn-1 from clsas cn. If rulesordered is off rule learner tries to separate class c1 from c2, c3, ... cn; class c2 from c1, c3, ... cn; ... class cn from c1, c2, ... cn-1.
+
+195. COMMAND
+anovanway
+STATISTICS
+TESTS
+
+
+anovanway <stringval> <integervaln2>
+anovanway <dataset> <dependent feature no> <independent feature no 1> ...
+Makes a k>2-way Anova
+
+196. COMMAND
+rexripper
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array  aout5: Number of train instances those are put aside as exceptions. Stored as an array  aout6: Number of test instances those are evaluated as exceptions. Stored as an array  aout7: Performance of exceptions. Stored as an array
+aout1 aout2 aout3 aout4 aout5 aout6 aout7
+rexripper <stringval> <stringval> <stringval>
+rexripper <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a ruleset according to unordered ripper algorithm and stores also exceptions
+
+197. COMMAND
+multivariatealgorithm
+PARAMETER
+CLASSIFICATION
+
+
+multivariatealgorithm <stringval>
+multivariatealgorithm <lda, lp or svm>
+Sets the multivariate algorithm parameter in multiripper and hybridripper algorithm
+example46.txt
+198. COMMAND
+mlpmodelsimulation
+ALGORITHM
+MODEL SELECTION
+out1: number of hidden units found out2: number of different models tried
+out1 out2
+mlpmodelsimulation <stringval> <stringval> <stringval> <integerval> <integerval>
+mlpmodelsimulation <simulation type as multitest or forw1 or backw1 or forw or backw> <dataset name> <directory name> <maximum number of hidden units> <starting number of hidden units>
+Finds best multilayer perceptron structure
+example54.txt
+199. COMMAND
+confidencelevel
+PARAMETER
+MULTITEST
+
+
+confidencelevel <realval>
+confidencelevel <confidence level such as 0.05>
+Sets the confidence level for statistical tests
+example55.txt
+200. COMMAND
+plotdata2d
+GRAPHICS
+PLOT
+
+
+plotdata2d <stringval> <integerval> <integerval>
+plotdata2d <dataset name> <feature in the x axis> <feature in the y axis>
+Displays the dataset in the given two feature's dimensions
+example56.txt
+201. COMMAND
+saveimage
+GRAPHICS
+SAVE
+
+
+saveimage <stringval>
+saveimage <output file name>
+Saves the image with the given file name
+
+202. COMMAND
+loadimage
+GRAPHICS
+LOAD
+
+
+loadimage <stringval>
+loadimage <output file name>
+Loads the image with the given file name
+
+203. COMMAND
+mergedefinitions
+DATASET
+SET
+
+
+mergedefinitions <stringval> <stringvaln>
+mergedefinitions <output xml file name> <definition file name1> ...
+Merges the definition file names to a given file
+
+204. COMMAND
+fontname
+GRAPHICS
+PROPERTIES
+
+
+fontname <stringval> <stringval>
+fontname <font of what (data, legend, axis, label)> <font name>
+Sets the name of the font of different parts of the eps files
+
+205. COMMAND
+fontsize
+GRAPHICS
+PROPERTIES
+
+
+fontsize <stringval> <integerval>
+fontsize <font of what (data, legend, axis, label)> <font size>
+Sets the size of the font of different parts of the eps files
+
+206. COMMAND
+multildt
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+multildt <stringval> <stringval> <stringval>
+multildt <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a multivariate Linear Discriminant Tree
+example12.txt;example46.txt;example57.txt
+207. COMMAND
+omnildt
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+omnildt <stringval> <stringval> <stringval>
+omnildt <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates an Omnivariate Linear Discriminant Tree
+example57.txt
+208. COMMAND
+pca
+ALGORITHM
+DIMENSION REDUCTION
+
+
+pca <stringval> <stringval> <stringval>
+pca <dataset name> <output dataset name> <dataset definition file name>
+Makes PCA on the dataset. 
+
+209. COMMAND
+plotclasses
+PARAMETER
+PLOT
+
+
+plotclasses <integervaln>
+plotclasses <class no 1> ... <class no n>
+Enables or disables classes to be plot
+example56.txt;example57.txt
+210. COMMAND
+exportclasses
+PARAMETER
+EXPORT
+
+
+exportclasses <integervaln>
+exportclasses <class no 1> ... <class no n>
+Enables or disables classes to be exported
+
+211. COMMAND
+combined5x2t
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result aout1:differences between the performance of the algorithms
+out1 out2 aout1
+combined5x2t <stringval> <stringval>
+combined5x2t <filename1> <filename2>
+Compares two data according to the parametric combined 5x2 t test test. Sets first output variable 0 if both datasets have the same mean, 1 otherwise. Sets second output variable to the confidence level of the test result.
+example35.txt
+212. COMMAND
+axislimits
+GRAPHICS
+PROPERTIES
+
+
+axislimits <xy> <realval> <realval> <integerval> <integerval>
+axislimits <x or y> <minimum limit> <maximum limit> <number of partitions> <precision>
+Using this command you can set x or y axis limits
+example35.txt;example36.txt
+213. COMMAND
+compile
+LANGUAGE
+FILE
+
+
+compile <stringval>
+compile <file name>
+You can compile and check for warnings or errors of any ISELL file
+
+214. COMMAND
+noisydata
+DATASET
+EXPORT
+
+
+noisydata <stringval> <stringval> <realval> <realval>
+noisydata <dataset> <output file> <standard deviation> <noise percentage between 0 and 1>
+Creates noisy data from a given dataset
+
+215. COMMAND
+findbest
+STATISTICS
+TESTS
+out1:index number of the best algorithm
+out1
+findbest <stringvaln>
+findbest <filename1> <filename2> ... <filename n>
+Finds the best algorithm using findbest algorithm
+example58.txt
+216. COMMAND
+plotinvgauss
+GRAPHICS
+PLOT
+
+
+plotinvgauss <stringval>
+plotinvgauss <filename>
+Plots inverse gaussian functions
+
+217. COMMAND
+plotsigmoid
+GRAPHICS
+PLOT
+
+
+plotsigmoid <stringval>
+plotsigmoid <filename>
+Plots sigmoid functions
+example59.txt
+218. COMMAND
+correction
+PARAMETER
+MULTITEST
+
+
+correction <stringval>
+correction <correctiontype>
+Sets the correction type to holm correction or bonferroni correction
+example55.txt
+219. COMMAND
+modelselection
+PARAMETER
+MODEL SELECTION
+
+
+modelselection <stringval>
+modelselection <modelselectiontype>
+Sets the model selection algorithm
+example36.txt;example40.txt;example49.txt;example50.txt
+220. COMMAND
+selectaverage
+ALGORITHM
+REGRESSION
+
+
+selectaverage <stringval> <stringval> <stringval>
+selectaverage <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs the selectaverage algorithm. The algorithm only takes the average of the training instances
+example20.txt
+221. COMMAND
+linearregression
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+linearregression <stringval> <stringval> <stringval>
+linearregression <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Makes linear regression
+example20.txt
+222. COMMAND
+regressionf
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result
+out1 out2
+regressionf <stringval> <stringval>
+regressionf <filename1> <filename2>
+Compares two data according to the F test for regression. Sets first output variable 0 if both datasets have the same mean, 1 otherwise. Sets second output variable to the confidence level of the test result.
+
+223. COMMAND
+readarrayfile
+LANGUAGE
+ARRAY
+
+
+readarrayfile <filevar> <anyvar> <integerval>
+readarrayfile <variable name> <string variable> <array size>
+Reads an array from file
+
+224. COMMAND
+findmsesse
+STATISTICS
+FILE
+
+
+findmsesse <stringval> <stringval> <stringval>
+findmsesse <infile name> <mse file name> <sse file name>
+Find mean square and standard error
+example60.txt
+225. COMMAND
+quantizereg
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+quantizereg <stringval> <stringval> <stringval>
+quantizereg <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Makes quantized knn regression. First makes PCA and makes dimensionality reduction to two features. Then it divides each features into 10 equal parts. For each part it finds the regression value.
+example20.txt
+226. COMMAND
+partitioncount
+PARAMETER
+QUANTIZEREG
+
+
+partitioncount <integerval>
+partitioncount <number of partitions>
+Sets the number of partitions for quantized regression algorithm
+example72.txt
+227. COMMAND
+biasvariance
+ALGORITHM
+POLYNOM
+out1: best order, aout1: bias values for each polynom degree, aout2: variance values for each polynom degree, aout3: fitted polynomial for each polynom degree
+out1 out2
+biasvariance <stringval> <integerval> <integerval> <integerval>
+biasvariance <file name containing function definition> <max degree of the polynom to fit> <number of samples> <number of data points in each sample>
+Displays the bias-variance dilemma for the given function
+example39.txt
+228. COMMAND
+functiondata
+DATASET
+EXPORT
+
+
+functiondata <stringval> <integerval> <stringval>
+functiondata <file name containing function definition> <datasize> <outputfile>
+Generates random data from a function
+
+229. COMMAND
+functiondatanoisy
+DATASET
+EXPORT
+
+
+functiondatanoisy <stringval> <integerval> <stringval>
+functiondatanoisy <file name containing function definition> <datasize> <outputfile>
+Generates random noisy data from a function
+example61.txt
+230. COMMAND
+noiselevel
+PARAMETER
+EXPORT
+
+
+noiselevel <realval>
+noiselevel <level of noise>
+Sets the noise level
+example39.txt
+231. COMMAND
+functionplot
+GRAPHICS
+PLOT
+
+
+functionplot <stringval> <stringval>
+functionplot <file name containing function definition> <color>
+Plots a given function
+example39.txt
+232. COMMAND
+exportimage
+GRAPHICS
+SAVE
+
+
+exportimage <stringval>
+exportimage <output file name>
+Saves the image with the given file name
+example34.txt;example35.txt;example39.txt
+233. COMMAND
+hold
+PARAMETER
+PLOT
+
+
+hold <onoff>
+hold <on or off>
+If hold on then all plots will be done on the same file otherwise every plot is done on a new file
+example34.txt;example39.txt
+234. COMMAND
+mixturedata
+DATASET
+EXPORT
+
+
+mixturedata <stringval> <integerval> <stringval>
+mixturedata <file name containing the mixture model definition> <datasize> <outputfile>
+Generates random classification data from a gaussian mixture model
+example38.txt;example63.txt
+235. COMMAND
+xaxisnames
+GRAPHICS
+PROPERTIES
+
+
+xaxisnames <stringvaln>
+xaxisnames <name1> <name2> ... <name n>
+Sets the xaxis names
+example62.txt
+236. COMMAND
+polylearncls
+ALGORITHM
+POLYNOM
+out1: degree of the polynom  out2: error of the polynom over the train set out3: error of the polynom over the test set
+out1 out2 out3
+polylearncls <stringval> <integerval> <stringval>
+polylearncls <trainfile> <maxdegree> <testfile>
+Learns the polynomial that best separates two classes
+
+237. COMMAND
+etadecrease
+PARAMETER
+GRADIENT
+
+
+etadecrease <realval>
+etadecrease <number between 0 and 1>
+Sets the eta multiplier value
+example13.txt;example38.txt;example43.txt
+238. COMMAND
+biasvariancecls
+ALGORITHM
+POLYNOM
+out1: best order, aout1: bias values for each polynom degree, aout2: variance values for each polynom degree, aout3: fitted polynomial for each polynom degree
+out1 aout1 aout2
+biasvariancecls <stringval> <integerval> <integerval> <integerval>
+biasvariancecls <file name containing mixture definition> <max degree of the polynom to fit> <number of samples> <number of data points in each sample>
+Displays the bias-variance dilemma for the given mixture model
+example38.txt;example63.txt
+239. COMMAND
+polylearnvalcls
+ALGORITHM
+POLYNOM
+out1:best order
+out1
+polylearnvalcls <stringval> <integerval>
+polylearnvalcls <file name containing mixture definition> <maximum degree>
+Finds the best degree for polynomial fit for a classification problem
+example43.txt
+240. COMMAND
+polyfitcls
+ALGORITHM
+POLYNOM
+
+
+polyfitcls <integerval> <stringval>
+polyfitcls <degree of polynomial> <input filename>
+Fits a polynomial with the given degree to the given classification data
+example13.txt
+241. COMMAND
+polysigmoidplot
+GRAPHICS
+PLOT
+
+
+polysigmoidplot <realval> <realval> <stringval> <stringval>
+polysigmoidplot <start> <end> <polynomial> <stringval>
+Plots a polynomial but the outputs of the polynomial are put into a sigmoid
+example63.txt
+242. COMMAND
+signtest
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result
+out1 out2
+signtest <stringval> <stringval>
+signtest <filename1> <filename2>
+Makes sign test
+
+243. COMMAND
+testcode
+GENERAL
+GENERAL
+
+
+testcode
+testcode
+You can test your code by calling this function (Written in the testcode() function).
+
+244. COMMAND
+sum
+STATISTICS
+FILE
+out1:sum of the file contents
+out1
+sum <stringval>
+sum <filename>
+Sums up all the file contents and return
+example64.txt
+245. COMMAND
+sigma
+PARAMETER
+REGTREE-REGRULE
+
+
+sigma <stringval>
+sigma <real value greater than or equal to 0>
+Sets the sigma square value for model selection in polynomial regression
+
+246. COMMAND
+prunetype
+PARAMETER
+TREE
+
+
+prunetype <stringval>
+prunetype <prepruning, validation, modelselection>
+Sets the pruning type in the decision tree algorithms
+example66.txt;example72.txt
+247. COMMAND
+pruningthreshold
+PARAMETER
+TREE
+
+
+pruningthreshold <realval>
+pruningthreshold <real value between 0 and 1>
+Sets the pruning threshold for prepruning
+
+248. COMMAND
+leaftype
+PARAMETER
+TREE
+
+
+leaftype <stringval>
+leaftype <constant or linear>
+Sets the type of regressor at the leaves of the regression tree
+
+249. COMMAND
+regrule
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array  aout5: condition types of the learned rules. Stored as an array  aout6: number of data in each condition and the selected condition type. Stored as an array
+aout1 aout2 aout3 aout4 aout5 aout6
+regrule <stringval> <stringval> <stringval>
+regrule <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Generates regression rules
+example66.txt
+250. COMMAND
+estimatesigma
+DATASET
+NOISE
+out1:sigma estimate
+out1
+sigmaestimate <stringval>
+sigmaestimate <dataset name>
+Estimates noise variance sigma
+example65.txt
+251. COMMAND
+multimodeldata
+DATASET
+EXPORT
+
+
+multimodeldata <stringval> <stringval>
+multimodeldata <multiple model definition file> <output filename>
+Generates random data from the multiple model
+
+252. COMMAND
+mmelin
+ALGORITHM
+MULTIPLEMODEL
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+mmelin <stringval>
+mmelin <dataset name>
+Finds the multiple linear models that explains the regression dataset best
+
+253. COMMAND
+logistic
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+logistic <stringval> <stringval> <stringval>
+logistic <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Logistic discrimination algorithm
+example12.txt;example46.txt
+254. COMMAND
+kerneltype
+PARAMETER
+SVM
+
+
+kerneltype <stringval>
+kerneltype <linear, polynom, rbf or sigmoid>
+Sets the kernel type of SVM
+example67.txt;example68.txt
+255. COMMAND
+svmdegree
+PARAMETER
+SVM
+
+
+svmdegree <integerval>
+svmdegree <degree of the polynom kernel for SVM>
+Sets the degree of the polynomial kernel in SVM
+
+256. COMMAND
+svmgamma
+PARAMETER
+SVM
+
+
+svmgamma <realval>
+svmgamma <gamma parameter for polynomial kernel in SVM>
+Sets the gamma parameter of the polynomial kernel in SVM
+example67.txt
+257. COMMAND
+svmcoef0
+PARAMETER
+SVM
+
+
+svmcoef0 <realval>
+svmcoef0 <coef0 parameter for polynomial kernel in SVM>
+Sets the coef0 parameter of the polynomial kernel in SVM
+
+258. COMMAND
+svmC
+PARAMETER
+SVM
+
+
+svmC <realval>
+svmC <C parameter in C-SVM>
+Sets the C parameter in C-SVM
+example67.txt
+259. COMMAND
+svmnu
+PARAMETER
+SVM
+
+
+svmnu <realval>
+svmnu <nu parameter in nu-SVM>
+Sets the nu parameter in nu-SVM
+
+260. COMMAND
+svmepsilon
+PARAMETER
+SVM
+
+
+svmepsilon <realval>
+svmepsilon <epsilon parameter in SVM regression>
+Sets the epsilon parameter in SVM regression
+
+261. COMMAND
+svm
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:Average hinge loss
+aout1 aout2 aout3
+svm <stringval> <stringval> <stringval>
+svm <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs the C-SVM algorithm
+example67.txt
+262. COMMAND
+simplexsvm
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:Average hinge loss
+aout1 aout2 aout3
+simplexsvm <stringval> <stringval> <stringval>
+simplexsvm <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs the Simple-SVM algorithm
+
+263. COMMAND
+svmreg
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+svmreg <stringval> <stringval> <stringval>
+svmreg <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs the C-SVM algorithm for regression
+
+264. COMMAND
+simplexsvmreg
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+simplexsvmreg <stringval> <stringval> <stringval>
+simplexsvmreg <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs the Simple-SVM algorithm for regression
+
+265. COMMAND
+svmcweights
+PARAMETER
+SVM
+
+
+svmcweights <realvaln>
+svmcweights <C for class 1> <...> <C for class n>
+You can set C values for each class
+
+266. COMMAND
+convertbyteformat
+DATASET
+EXPORT
+
+
+convertbyteformat <stringval> <stringval> <stringval> <stringval> <stringval> <stringval>
+convertbyteformat <input file> <separator character> <feature types> <feature sizes> <useful features> <output file>
+Converts file stored in byte format into char separated format
+
+267. COMMAND
+subsample
+DATASET
+EXPORT
+
+
+subsample <stringval> <stringval> <integerval> <integervaln>
+subsample <dataset name> <output filename> <data count> <ratio of 1. class> <...> <ratio of n. class>
+Generates a subsample of the data with the given ratios of the classes
+
+268. COMMAND
+displayclassresult
+PARAMETER
+RUN
+
+
+displayclassresult <onoff>
+displayclassresult <on or off>
+If on the class error rates will also be displayed. Otherwise only total error rates will be displayed
+example46.txt
+269. COMMAND
+svmtree
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+svmtree <stringval> <stringval> <stringval>
+svmtree <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs SvmTree algorithm
+example68.txt
+270. COMMAND
+mlpmodelselection
+ALGORITHM
+MODEL SELECTION
+out1:best model number of hidden nodes  out2:error rate of the model on the test set  out3:best weight decay parameter  aout1:number of best hidden units for each alpha. Stored as an array
+out1 out2 out3 aout1
+mlpmodelselection <stringval> <integerval> <integerval>
+mlpmodelselection <dataset name> <maximum hidden node count> <seed of the randomizer>
+Using the given model selection algorithm selects best model for multilayer perceptron
+example69.txt
+271. COMMAND
+writescreen
+LANGUAGE
+DISPLAY
+
+
+writescreen <stringval>
+writescreen <anything to be written to the screen>
+You can write anyting to the screen
+example32.txt;example52.txt
+272. COMMAND
+plotmv
+GRAPHICS
+PLOT
+
+
+plotmv <stringvaln>
+plotmv <filename1> <filename2> ... <filenamen>
+Plot the mean and standard deviation of the file(s)
+
+273. COMMAND
+percentile
+PARAMETER
+PLOT
+out1: value of the percentile
+out1
+percentile <stringval> <realval>
+percentile <filename> <number between 0 and 100>
+Returns the given percentile of a give file
+
+274. COMMAND
+boxplot
+GRAPHICS
+PLOT
+
+
+boxplot <stringvaln>
+boxplot <filename1> <filename2> ... <filenamen>
+Boxplots of the given file
+example70.txt
+275. COMMAND
+pcafeaturecount
+DATASET
+FEATURES
+out1: number of features after pca with alpha level of confidence
+out1
+pcafeaturecount <stringval>
+pcafeaturecount <datasetname>
+Finds the number of features after pca with alpha level of confidence
+example11.txt
+276. COMMAND
+mlpmscomparison
+ALGORITHM
+MODEL SELECTION
+aout1: order indexes of the mlp model selection techniques  aout2: the index of the selected model in the ordered list of models out1:best mlp model
+aout1 aout2
+mlpmscomparison <stringval> <stringval> <integerval> <integerval>
+mlpmscomparison <datasetname> <directory> <maximum number of hidden units> <starting number of hidden units>
+Compares mlp model selection techniques based on an exhaustive search
+example55.txt
+277. COMMAND
+gaussian
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+gaussian <stringval> <stringval> <stringval>
+gaussian <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Makes classification using by first putting one gaussian on each class and then classify using posterior probabilites generated from those gaussians
+
+278. COMMAND
+savemodel
+ALGORITHM
+MODEL
+
+
+savemodel <onoff>
+savemodel <on or off>
+If savemodel is on, the model of the algorithm is saved to the model file; otherwise no save is done
+
+279. COMMAND
+modelfile
+ALGORITHM
+MODEL
+
+
+modelfile <stringval>
+modelfile <name of the model file>
+You can set model file name using this command
+
+280. COMMAND
+testmodel
+ALGORITHM
+MODEL
+
+
+testmodel <stringval> <stringval>
+testmodel <model file name> <test file name or seed number>
+You can test a model which is saved in a separate file using savemodel option
+
+281. COMMAND
+normalizeoutput
+GENERAL
+PARAMETERS
+
+
+normalizeoutput <onoff>
+normalizeoutput <on or off>
+You can z normalize the regression output values using this option
+
+282. COMMAND
+weightdecay
+PARAMETER
+GRADIENT-NN
+
+
+weightdecay <onoff>
+weightdecay <on or off>
+If weightdecay is on, weight decay is done
+
+283. COMMAND
+decayalpha
+PARAMETER
+GRADIENT-NN
+
+
+decayalpha <realval>
+decayalpha <alpha value for weight decay in neural networks>
+You can set the weight decay parameter using this option
+
+284. COMMAND
+unloaddatasets
+DATASET
+LOAD
+
+
+unloaddatasets
+unloaddatasets
+You are able to free all datasets that has been loaded
+
+285. COMMAND
+subsamplereg
+DATASET
+EXPORT
+
+
+subsamplereg <stringval> <stringval> <integerval>
+subsamplereg <dataset name> <output filename> <data count>
+Generates a subsample of the regression data
+
+286. COMMAND
+laplaceestimate
+PARAMETER
+RUN
+
+
+laplaceestimate <onoff>
+laplaceestimate <on or off>
+If laplaceestimate is on, the probability estimate in decision trees and rule induction algorithms are done via laplace estimate.
+
+287. COMMAND
+vcestimate
+ESTIMATION
+VC
+out1: vc-dimension of decision tree
+out1
+vcestimate <integerval> <integerval> <integerval> <stringval>
+vcestimate <featurecount> <nodecount> <experimentcount> <featuretype string consisting of digits where if digit is 1, the feature is real otherwise the feature is string with digit number of different values>
+You can estimate vc dimension of the decision tree algorithm
+example71.txt
+288. COMMAND
+nbtree
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:cv accuracy results for run 1 and fold 1
+aout1 aout2 aout3
+nbtree <stringval> <stringval> <stringval>
+nbtree <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+you can generate node bounded decision trees. First set the nodecount parameter and according to the nodecount this algorithm generates decision trees with nodecount nodes.
+example72.txt
+289. COMMAND
+nodecount
+PARAMETER
+TREE
+
+
+nodecount <integerval>
+nodecount <maximum number of nodes>
+you can set maximum number of nodes for the node bounded decision tree algorithm bush.
+example72.txt
+290. COMMAND
+combinetype
+PARAMETER
+COMBINE
+
+
+combinetype <stringval>
+combinetype <vote, mean, max, product, median>
+You can set the combination type of the combination algorithms
+
+291. COMMAND
+svmcache
+PARAMETER
+SVM
+
+
+svmcache <integerval>
+svmcache <cache size in LIBSVM>
+Sets the cache size in LIBSVM
+
+292. COMMAND
+experimentdesign
+PARAMETER
+EXPERIMENT
+
+
+experimentdesign <stringval>
+experimentdesign <uniform or optimized>
+You can set the experiment design for running experiments
+example71.txt
+293. COMMAND
+notest
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result
+out1 out2
+notest <stringval> <stringval>
+notest <filename1> <filename2>
+Compares two files only by looking how many times the first file has better error rate compared to the second file
+
+294. COMMAND
+fisherdratio
+DATASET
+FEATURES
+
+
+fisherdratio <stringval>
+fisherdratio <dataset name>
+Returns fisher ratio of the dataset
+
+295. COMMAND
+overlapregion
+DATASET
+FEATURES
+
+
+overlapregion <stringval>
+overlapregion <dataset name>
+Returns volume of overlap region of the features of the dataset
+
+296. COMMAND
+featureefficiency
+DATASET
+FEATURES
+
+
+featureefficiency <stringval>
+featureefficiency <dataset name>
+Returns feature efficiency of the dataset
+
+297. COMMAND
+mstratio
+DATASET
+FEATURES
+
+
+mstratio <stringval>
+mstratio <dataset name>
+Returns mst ratio of the dataset
+
+298. COMMAND
+nnratio
+DATASET
+FEATURES
+
+
+nnratio <stringval>
+nnratio <dataset name>
+Returns 1nn ratio of the dataset
+
+299. COMMAND
+nonlinearitymeasure
+DATASET
+FEATURES
+
+
+nonlinearitymeasure <stringval>
+nonlinearitymeasure <dataset name>
+Returns nonlinearitymeasure of the dataset for NN and LP
+
+300. COMMAND
+adherentsubsets
+DATASET
+FEATURES
+
+
+adherentsubsets <stringval>
+adherentsubsets <dataset name>
+Returns number of adherent subsets of the dataset
+
+301. COMMAND
+lpseparability
+DATASET
+FEATURES
+
+
+lpseparability <stringval>
+lpseparability <dataset name>
+Returns LP separability of the dataset
+
+302. COMMAND
+savetestcode
+ALGORITHM
+MODEL
+
+
+savetestcode <onoff>
+savetestcode <on or off>
+If savetestcode is on, the test code of the algorithm is saved to the test code file; otherwise no saving is done.
+
+303. COMMAND
+testcodefile
+ALGORITHM
+MODEL
+
+
+testcodefile <stringval>
+testcodefile <name of the test code file>
+You can set test code file name using this command
+
+304. COMMAND
+proglanguage
+PARAMETER
+GENERAL
+
+
+proglanguage <stringval>
+proglanguage <c, cpp or pascal>
+You can set the programming language for saving purposes.
+
+305. COMMAND
+modelperlevel
+PARAMETER
+NODEBOUNDEDTREE
+
+
+modelperlevel <stringval>
+modelperlevel <a string containing U for univariate, L for linear, Q for quadratic models>
+You can set the models for each level of the decision tree.
+
+306. COMMAND
+leafdist
+ESTIMATION
+TREE
+aout1: the distribution of leaves
+aout1
+leafdist <stringval>
+leafdist <a string describing the tree>
+You can obtain the leaf distribution of the tree.
+
+307. COMMAND
+dividedatafile
+DATASET
+EXPORT
+
+
+dividedatafile <stringval> <stringval> <stringval> <integerval>
+dividedatafile <dataset name> <separator> <infile> <number of partitions>
+Divides a data file of a dataset into equal parts. Since each dataset has different separator characters, using this function you can have datafiles separated by a given character
+
+308. COMMAND
+showticks
+GRAPHICS
+PROPERTIES
+
+
+showticks <onoff>
+showticks <on or off>
+If showticks on, the ticks of the x-axis are shown otherwise they are not shown
+example62.txt
+309. COMMAND
+vccalculation
+PARAMETER
+RUN
+
+
+vccalculation <stringval>
+vccalculation <general or indepth>
+If vccalculation is general, for decision tree only the nodecount is important, for rule induction only number of rules is important. If vccalculation is indepth, for decision tree the tree structure is important, for rule induction how many conditions the rule have is important
+
+310. COMMAND
+matrix
+LANGUAGE
+VARIABLETYPE
+
+
+matrix <stringval>
+matrix <variable name>
+Declares a variable of type matrix
+example73.txt;example74.txt
+311. COMMAND
+readposterior
+RESULT
+RUN
+
+
+readposterior <stringval> <matrixvar>
+readposterior <posterior file name> <matrix variable>
+Reads the posterior file into the matrix variable
+example74.txt
+312. COMMAND
+mresize
+LANGUAGE
+MATRIX
+
+
+mresize <matrixvar> <stringval>
+mresize <matrix variable> <indices of the matrix columns given in an interval format>
+Resizes the matrix variable
+example74.txt
+313. COMMAND
+mcovariance
+LANGUAGE
+MATRIX
+
+
+mcovariance <matrixvar> <matrixvar>
+mcovariance <matrix variable> <matrix variable>
+Takes the covariance of the first matrix and returns it as the second matrix
+example73.txt
+314. COMMAND
+mcorrelation
+LANGUAGE
+MATRIX
+
+
+mcorrelation <matrixvar> <matrixvar>
+mcorrelation <matrix variable> <matrix variable>
+Takes the correlation of the first matrix and returns it as the second matrix
+example74.txt
+315. COMMAND
+meigenvectors
+LANGUAGE
+MATRIX
+aout1: eigenvalues of the first matrix
+aout1
+meigenvectors <matrixvar> <matrixvar>
+meigenvectors <matrix variable> <matrix variable>
+Finds the eigenvectors of the first matrix and return as the rows of the second matrix in the order of increasing eigenvalues
+example74.txt
+316. COMMAND
+mtranspose
+LANGUAGE
+MATRIX
+
+
+mtranspose <matrixvar>
+mtranspose <matrix variable>
+Takes the transpose of the given matrix
+
+317. COMMAND
+readcposterior
+RESULT
+RUN
+
+
+readcposterior <stringval> <matrixvar>
+readcposterior <posterior file name> <matrix variable>
+Reads the posteriors of the correct class into the matrix variable
+
+318. COMMAND
+msum
+LANGUAGE
+MATRIX
+out1: sum of the elements of the matrix
+out1
+msum <matrixvar>
+msum <matrix variable>
+Returns the sum of the elements of the matrix
+
+319. COMMAND
+mtrace
+LANGUAGE
+MATRIX
+out1: trace of the matrix
+out1
+mtrace <matrixvar>
+mtrace <matrix variable>
+Returns the trace of a square matrix
+
+320. COMMAND
+mprint
+LANGUAGE
+MATRIX
+
+
+mprint <matrixvar> <stringval>
+mprint <matrix variable> <file name>
+Prints the given matrix to the given file
+example73.txt;example74.txt
+321. COMMAND
+featuresubset
+DATASET
+EXPORT
+
+
+featuresubset <stringval> <integerval> <stringval> <stringval>
+featuresubset <dataset name> <number of features> <input file name> <output file name>
+Exports only randomly selected features from the data file
+
+322. COMMAND
+hmmmodel
+PARAMETER
+HMM
+
+
+hmmmodel <stringval>
+hmmmodel <full, leftright or leftrightloop>
+Sets the connection model of the Hidden Markov Model
+
+323. COMMAND
+hmmstatetype
+PARAMETER
+HMM
+
+
+hmmstatetype <stringval>
+hmmstatetype <discrete, gaussian, gaussianmixture, dirichlet, dirichletmixture>
+Sets the type of each state of the Hidden Markov Model
+
+324. COMMAND
+hmm
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+hmm <stringval> <stringval> <stringval>
+hmm <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Makes classification using Hidden Markov Models
+
+325. COMMAND
+weightfreezing
+PARAMETER
+HMM
+
+
+weightfreezing <onoff>
+weightfreezing <on or off>
+If weightfreezing on, the weights are freezed or not initialized again during training.
+
+326. COMMAND
+hmmlearningtype
+PARAMETER
+HMM
+
+
+hmmlearningtype <stringval>
+hmmlearningtype <separate, together or fixed>
+If hmmlearningtype is separate HMM models for classes are trained separately, otherwise HMM models for classes are trained together.
+
+327. COMMAND
+dnc
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of hidden nodes selected. Stored as an array aout4:last train error attained. Stored as an array
+aout1 aout2 aout3 aout4
+dnc <stringval> <stringval> <stringval>
+dnc <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Learns using Dynamic Node Creation algorithm.
+example08.txt
+328. COMMAND
+dncreg
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of hidden nodes selected. Stored as an array aout4:last train error attained. Stored as an array
+aout1 aout2 aout3 aout4
+dncreg <stringval> <stringval> <stringval>
+dncreg <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Learns using Dynamic Node Creation algorithm for regression.
+
+329. COMMAND
+windowsize
+PARAMETER
+GRADIENT-NN
+
+
+windowsize <integerval>
+windowsize <size of the sliding window>
+You can set the window size parameter for any algorithm that uses a sliding window.
+example08.txt
+330. COMMAND
+errordropratio
+PARAMETER
+GRADIENT-NN
+
+
+errordropratio <realval>
+errordropratio <number between 0 and 1>
+You can set the error drop ratio parameter.
+
+331. COMMAND
+maxhidden
+PARAMETER
+GRADIENT-NN
+
+
+maxhidden <integerval>
+maxhidden <number of maximum hidden nodes>
+You can set the maximum number of hidden nodes for MLP / DNC algorithm.
+example08.txt
+332. COMMAND
+exec
+OPERATINGSYSTEM
+COMMAND
+
+
+exec <stringvaln>
+exec <os command> <os command parameter1> <os command parameter2> ...
+You can execute any program from inside the ISELL machine learning system
+
+333. COMMAND
+cls
+OPERATINGSYSTEM
+COMMAND
+
+
+cls
+cls
+You clear the screen with this command
+
+334. COMMAND
+reset
+OPERATINGSYSTEM
+COMMAND
+
+
+reset
+reset
+You clear the screen with this command
+
+335. COMMAND
+copy
+OPERATINGSYSTEM
+COMMAND
+
+
+copy <stringval> <stringval>
+copy <from file> <to file>
+Copy one file to another
+
+336. COMMAND
+cp
+OPERATINGSYSTEM
+COMMAND
+
+
+cp <stringval> <stringval>
+cp <from file> <to file>
+Copy one file to another
+
+337. COMMAND
+cd
+OPERATINGSYSTEM
+COMMAND
+
+
+cd <stringval>
+cp <directory name>
+Changes directory to given directory
+
+338. COMMAND
+del
+OPERATINGSYSTEM
+COMMAND
+
+
+del <stringval>
+del <file name>
+Deletes one or more file(s)
+
+339. COMMAND
+rm
+OPERATINGSYSTEM
+COMMAND
+
+
+rm <stringval>
+rm <file name>
+Deletes one or more file(s)
+
+340. COMMAND
+dir
+OPERATINGSYSTEM
+COMMAND
+
+
+dir
+dir
+Lists the contents of the current directory
+
+341. COMMAND
+ls
+OPERATINGSYSTEM
+COMMAND
+
+
+ls
+ls
+Lists the contents of the current directory
+
+342. COMMAND
+move
+OPERATINGSYSTEM
+COMMAND
+
+
+move <stringval> <stringval>
+move <from file> <to file>
+Moves one file to another position
+
+343. COMMAND
+mv
+OPERATINGSYSTEM
+COMMAND
+
+
+mv <stringval> <stringval>
+mv <from file> <to file>
+Moves one file to another position
+
+344. COMMAND
+mkdir
+OPERATINGSYSTEM
+COMMAND
+
+
+mkdir <stringval>
+mkdir <directory name>
+Creates new directory under current directory
+example10.txt
+345. COMMAND
+rename
+OPERATINGSYSTEM
+COMMAND
+
+
+rename <stringval> <stringval>
+rename <filename1> <filename2>
+Renames file with filename1 to filename2
+
+346. COMMAND
+rmdir
+OPERATINGSYSTEM
+COMMAND
+
+
+rmdir <stringval>
+rmdir <directory name>
+Removes directory with directory name under current directory
+
+347. COMMAND
+gaussmixturedata
+DATASET
+EXPORT
+
+
+gaussmixturedata <stringval> <integerval> <stringval>
+gaussmixturedata <file name containing gaussian mixture definition> <datasize> <outputfile>
+Generates random data from a gaussian mixture
+
+348. COMMAND
+confusionfile
+PARAMETER
+RUN
+
+
+confusionfile <stringval>
+confusionfile <file name>
+Sets the confusion matrix file name
+example10.txt
+349. COMMAND
+printconfusion
+PARAMETER
+RUN
+
+
+printconfusion <onoff>
+printconfusion <on or off>
+If printconfusion is on, the confusion matrix(ces) will be printed into the confusion file.
+example10.txt
+350. COMMAND
+qdaclass
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+qdaclass <stringval> <stringval> <stringval>
+qdaclass <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Learns using Quadratic Discriminant Analysis algorithm.
+
+351. COMMAND
+naivebayes
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+naivebayes <stringval> <stringval> <stringval>
+naivebayes <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Learns using standard Naive Bayes algorithm.
+
+352. COMMAND
+statecounts
+PARAMETER
+HMM
+
+
+statecounts <integervaln>
+statecounts <state count of class 1> ... <state count of class n>
+Sets state counts of classes for fixed HMM learning
+
+353. COMMAND
+componentcounts
+PARAMETER
+HMM
+
+
+componentcounts <integervaln>
+componentcounts <component count of class 1> ... <component count of class n>
+Sets componentcounts of classes for fixed HMM learning
+
+354. COMMAND
+rbf
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+rbf <stringval> <stringval> <stringval>
+rbf <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Learns using standard Radial Basis Functions algorithm.
+
+355. COMMAND
+rbfreg
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+rbfreg <stringval> <stringval> <stringval>
+rbfreg <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Learns using Radial Basis Functions algorithm for regression.
+
+356. COMMAND
+srma1
+PARAMETER
+SRM
+
+
+srma1 <realval>
+srma1 <number more than or equal to 0>
+You can set the a1 parameter in the structural risk minimization generalization error calculation formulae.
+
+357. COMMAND
+srma2
+PARAMETER
+SRM
+
+
+srma2 <realval>
+srma2 <number more than or equal to 0>
+You can set the a2 parameter in the structural risk minimization generalization error calculation formulae.
+
+358. COMMAND
+errorhistogram
+GRAPHICS
+PLOT
+
+
+errorhistogram <stringvaln>
+errorhistogram <filename1> <filename2> ... <filenamen>
+Plots the histogram of the errors given in the file(s)
+example62.txt
+359. COMMAND
+yaxisnames
+GRAPHICS
+PROPERTIES
+
+
+yaxisnames <stringvaln>
+yaxisnames <name1> <name2> ... <name n>
+Sets the yaxis names
+example62.txt
+360. COMMAND
+lda
+ALGORITHM
+DIMENSION REDUCTION
+
+
+lda <stringval> <stringval> <stringval>
+lda <dataset name> <output dataset name> <dataset definition file name>
+Makes LDA on the dataset. 
+
+361. COMMAND
+mds
+ALGORITHM
+DIMENSION REDUCTION
+
+
+mds <stringval> <stringval> <stringval>
+mds <dataset name> <output dataset name> <dataset definition file name>
+Makes Multidimensional Scaling on the dataset. 
+
+362. COMMAND
+isomap
+ALGORITHM
+DIMENSION REDUCTION
+
+
+isomap <stringval> <stringval> <stringval>
+isomap <dataset name> <output dataset name> <dataset definition file name>
+Runs ISOMAP dimension reduction algorithm on the dataset. 
+
+363. COMMAND
+epsilon
+PARAMETER
+ISOMAP
+
+
+epsilon <realval>
+epsilon <minimum distance for distance based algorithms>
+You can set the epsilon parameter for distance based algorithms.
+
+364. COMMAND
+lle
+ALGORITHM
+DIMENSION REDUCTION
+
+
+lle <stringval> <stringval> <stringval>
+lle <dataset name> <output dataset name> <dataset definition file name>
+Runs LLE dimension reduction algorithm on the dataset. 
+
+365. COMMAND
+plotxynames
+GRAPHICS
+PLOT
+
+
+plotxynames <stringval>
+plotxynames <filename>
+Plots two dimensional data with names in an eps file
+
+366. COMMAND
+vcofruleset
+ESTIMATION
+VC
+out1: vc-dimension of ruleset
+out1
+vcofruleset <integerval> <stringval>
+vcofruleset <dimension count> <number of conditions in the first rule, second rule, third rule, etc.>
+You can calculate vc dimension of a ruleset
+
+367. COMMAND
+neighborhoodtype
+PARAMETER
+PREPROCESSING
+
+
+neighborhoodtype <stringval>
+neighborhoodtype <k for k-neighborhood, epsilon for epsilon-neighborhood>
+You can set the neighborhood type parameter for isomap and lle
+
+368. COMMAND
+minkneighborhood
+ESTIMATION
+PREPROCESSING
+out1: minimum possible k parameter to be graph connected
+out1
+minkneighborhood <stringval>
+minkneighborhood <dataset name>
+Finds the minimum value for the k parameter in Isomap
+
+369. COMMAND
+minepsilonneighborhood
+ESTIMATION
+PREPROCESSING
+out1: minimum possible epsilon parameter to be graph connected
+out1
+minepsilonneighborhood <stringval>
+minepsilonneighborhood <dataset name>
+Finds the minimum value for the k parameter in Isomap
+
+370. COMMAND
+binarydata
+DATASET
+EXPORT
+
+
+binarydata <stringval> <integerval> <stringval>
+binarydata <binary function> <number of dimensions> <outputfile>
+Generates random data for a binary function with d dimensions
+
+371. COMMAND
+prunemodel
+PARAMETER
+TREE
+
+
+prunemodel <stringval>
+prunemodel <local or global>
+Sets the pruning model in the decision tree algorithms
+
+372. COMMAND
+binarydatanoisy
+DATASET
+EXPORT
+
+
+binarydatanoisy <stringval> <integerval> <realval> <stringval>
+binarydatanoisy <binary function> <number of dimensions> <noise percentage> <outputfile>
+Generates random noisy data for a binary function with d dimensions
+
+373. COMMAND
+createsequentialdataset
+DATASET
+CREATE
+
+
+createsequentialdataset <stringval> <stringval> <integerval> <stringval> <stringval> <stringval> <stringval>
+createsequentialdataset <dataset name> <separator characters> <number of features> <classes> <directory name> <file name> <discrete features>
+Creates a new sequential dataset named with the given name
+
+374. COMMAND
+plotgauss2d
+GRAPHICS
+PLOT
+
+
+plotgauss2d <stringval> <integerval>
+plotgauss2d <filename> <number of contours>
+Plots 2d gaussian fits for the data in each file
+
+375. COMMAND
+rocplot
+GRAPHICS
+PLOT
+
+
+rocplot <stringvaln>
+rocplot <posterior file name1> <posterior file name2> ... <posterior file namen>
+Makes ROC plot of the posteriors
+
+376. COMMAND
+twoclassproblems
+DATASET
+EXPORT
+
+
+twoclassproblems <stringval> <stringval>
+twoclassproblems <dataset name> <name of the definition file of the generated datasets>
+All two class subdatasets of the corresponding dataset are created and saved
+
+377. COMMAND
+hotellingt
+STATISTICS
+TESTS
+out1:0 if they have the same mean 3 if not out2:confidence level of the test result
+out1 out2
+hotellingt <stringval> <stringval>
+hotellingt <filename1> <filename2>
+Compares two data according to the Hotelling t parametric binary test. Sets first output variable 0 if both datasets have the same mean, 3 otherwise. Sets second output variable to the confidence level of the test result.
+
+378. COMMAND
+aucposterior
+RESULT
+RUN
+aout1: area under the roc curve aout2: area under the pr curve
+aout1 aout2
+aucposterior <stringval>
+aucposterior <filename1>
+Calculates area under the roc and pr curves constructed using the posterior file. The results are stored aout1 for roc curve and aout2 for the pr curve.
+
+379. COMMAND
+gprocessreg
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+gprocessreg <stringval> <stringval> <stringval>
+gprocessreg <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs gaussian process algorithm for regression
+
+380. COMMAND
+confusionanalysis
+RESULT
+RUN
+aout1:true positives, aout2:false positives, aout3:true negatives, aout4:false negatives
+aout1 aout2 aout3 aout4
+confusionanalysis <stringval> <realval>
+confusionanalysis <posterior file name> <decisionthreshold>
+Finds the true, false positives and true, false negatives from the posterior file according to the decision threshold
+
+381. COMMAND
+loadmatrix
+LANGUAGE
+MATRIX
+
+
+loadmatrix <stringval> <matrixvar>
+loadmatrix <matrix file name> <matrix variable>
+Reads the file into the matrix variable
+example73.txt
+382. COMMAND
+maverage
+LANGUAGE
+MATRIX
+aout1: column averages of the matrix, out1:number of columns in the matrix
+aout1 out1
+maverage <matrixvar>
+maverage <matrix variable>
+Finds the column averages of the matrix
+example73.txt
+383. COMMAND
+mstdev
+LANGUAGE
+MATRIX
+aout1: column averages of the matrix, out1:number of columns in the matrix
+aout1 out1
+mstdev <matrixvar>
+mstdev <matrix variable>
+Finds the column standard deviations of the matrix
+example73.txt
+384. COMMAND
+hyperparametertune
+PARAMETER
+RUN
+
+
+hyperparametertune <onoff>
+hyperparametertune <on or off>
+If hyperparametertune is on, the hyperparameters of the learning algorithm will be tuned using a part of the training data as validation data.
+
+385. COMMAND
+putline
+GRAPHICS
+PLOT
+
+
+putline <realval> <realval> <realval> <realval>
+putline <x axis value of the first point> <y axis value of the first point> <x axis value of the second point> <y axis value of the second point>
+Puts a line to the image between two given points
+
+386. COMMAND
+putstring
+GRAPHICS
+PLOT
+
+
+putstring <realval> <realval> <stringval> <stringval> <integerval>
+putstring <x axis value of the point> <y axis value of the point> <string value> <color> <size>
+Puts a string to the image on the given point
+
+387. COMMAND
+hmmmodelsimulation
+ALGORITHM
+MODEL SELECTION
+out1: number of hidden states found out2: number of mixtures found out3: number of different models tried
+out1 out2 out3
+hmmmodelsimulation <stringval> <stringval> <integerval> <integerval>
+hmmmodelsimulation <simulation type as multitest or forw1 or backw1 or forw or backw> <directory name> <maximum number of hidden states> <maximum number of mixtures>
+Finds best HMM structures
+example75.txt
+388. COMMAND
+hmmmscomparison
+ALGORITHM
+MODEL SELECTION
+out1: number of hidden states found out2: number of mixtures found aout1: order indexes of the hmm model selection techniques  aout2: the index of the selected model in the ordered list of models
+out1 out2 aout1 aout2
+hmmmscomparison <stringval> <integerval> <integerval>
+hmmmscomparison <directory> <maximum number of states> <maximum number of mixtures>
+Compares hmm model selection techniques based on an exhaustive search
+
+389. COMMAND
+runwithclassnoise
+PARAMETER
+RUN
+
+
+runwithclassnoise <onoff>
+runwithclassnoise <on or off>
+If runwithclassnoise is on, class labels are flipped with a probability p before any training or testing.
+
+390. COMMAND
+plotmodel
+MODEL
+GRAPHICS
+
+
+plotmodel <stringval>
+plotmodel <model file name>
+You can plot a model which is saved in a separate file using savemodel option
+
+391. COMMAND
+settmpdir
+DATASET
+SET
+
+
+settmpdir <stringval>
+settmpdir <directory>
+you can set the temporary files directory. 
+
+392. COMMAND
+multiclasstype
+PARAMETER
+SVMTREE
+
+
+multiclasstype <stringval>
+multiclasstype <onevsone or onevsrest>
+You can set the algorithm type to convert multiclass problems into multiple two class problems.
+
+393. COMMAND
+svmregtree
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:node types learned. Stored as an array
+aout1 aout2 aout3
+svmregtree <stringval> <stringval> <stringval>
+svmregtree <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs SvmRegTree algorithm
+
+394. COMMAND
+discretize
+DATASET
+EXPORT
+
+
+discretize <stringval> <integerval> <stringval>
+discretize <dataset name> <number of values of each new feature> <definition file name>
+You can generate a discrete version of a dataset where each continuous feature is converted to a discrete feature with m different values.
+
+395. COMMAND
+putcircle
+GRAPHICS
+PLOT
+
+
+putcircle <realval> <realval> <realval>
+putline <x axis value of the center> <y axis value of the center> <radius of the circle>
+Puts a circle on the image
+
+396. COMMAND
+groupcoloring
+GRAPHICS
+PROPERTIES
+
+
+groupcoloring <stringval>
+groupcoloring <allsame, groupsame, individualsame>
+You can set the coloring type of all group plots
+
+397. COMMAND
+featuresize
+PARAMETER
+DECISIONFOREST
+
+
+featuresize <integerval>
+featuresize <number of features>
+Sets the number of random features in the random forest and random subspace algorithms
+
+398. COMMAND
+forestsize
+PARAMETER
+DECISIONFOREST
+
+
+forestsize <integerval>
+forestsize <number of decision trees>
+Sets the number of decision trees in the random forest algorithm
+
+399. COMMAND
+randomforest
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+randomforest <stringval> <stringval> <stringval>
+randomforest <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Trains Random Forest learning algorithm
+
+400. COMMAND
+ktree
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+ktree <stringval> <stringval> <stringval>
+ktree <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Trains K-tree learning algorithm
+
+401. COMMAND
+decisionthreshold
+PARAMETER
+RUN
+
+
+decisionthreshold <realval>
+decisionthreshold <decisionthreshold parameter in two-class classification problems>
+Sets the decision threshold in two-class classification problems. It works only for two class datasets.
+
+402. COMMAND
+changedecisionthreshold
+PARAMETER
+RUN
+
+
+changedecisionthreshold <onoff>
+changedecisionthreshold <on or off>
+If changedecisionthreshold on, one can use different decision thresholds other than 0.5. It works only for two class datasets. One can set the decision threshold using decisionthreshold command.
+
+403. COMMAND
+plotcovariance
+GRAPHICS
+PLOT
+
+
+plotcovariance <matrixvar> <matrixvar> <integerval>
+plotcovariance <mean row matrix> <covariance matrix> <number of contours>
+Plots covariance matrix
+
+404. COMMAND
+comparealgorithms
+STATISTICS
+TESTS
+out1: number of different pairs of algorithms aout1, aout2: indexes of different pairs of algorithms aout3:average ranks of the algorithms
+out1 aout1 aout2 aout3
+comparealgorithms <stringvaln>
+comparealgorithms <filename1> <filename2> ... <filename n>
+Compares two or more algorithms based on the error rates of those algorithms using first Friedman test than the post-hoc Nemenyi test
+
+405. COMMAND
+random
+GENERAL
+RANDOM
+out1: a random number
+out1
+random <realval> <realval>
+random <lower bound> <upper bound>
+Returns a random number between lower bound and upper bound
+
+406. COMMAND
+manova
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if they have not the same mean  out2:confidence level of the test result
+out1 out2
+manova <stringvaln>
+manova <filename1> <filename2> ... <filename n>
+Compares two or more data according to manova test.
+
+407. COMMAND
+displayequalloss
+PARAMETER
+PLOT
+
+
+displayequalloss <onoff>
+displayequalloss <on or off>
+If displayequalloss is on, the 0.5 loss points will be displayed in the Roc and Pr plots
+
+408. COMMAND
+binomial
+LANGUAGE
+MATH
+out1
+out1:binomial(m,n)
+binomial <integerval> <integerval>
+binomial m n
+Calculates binomial(m,n)
+
+409. COMMAND
+waldwolfowitz
+STATISTICS
+TESTS
+out1:0 if they have the same mean 3 if not out2:confidence level of the test result
+out1 out2
+waldwolfowitz <stringval> <stringval>
+waldwolfowitz <filename1> <filename2>
+Compares two samples according to the Wald Wolfowitz nonparametric binary test. Sets first output variable 0 if both datasets have the same mean, 3 otherwise. Sets second output variable to the confidence level of the test result.
+
+410. COMMAND
+smirnov
+STATISTICS
+TESTS
+out1:0 if they have the same mean 3 if not out2:confidence level of the test result aout5: ranks of the first algorithm aout6: ranks of the second algorithm
+out1 out2 aout5 aout6
+smirnov <stringval> <stringval>
+smirnov <filename1> <filename2>
+Compares two samples according to the Smirnov nonparametric binary test. Sets first output variable 0 if both datasets have the same mean, 3 otherwise. Sets second output variable to the confidence level of the test result.
+
+411. COMMAND
+histogram
+GRAPHICS
+PLOT
+
+
+histogram <stringval> <integerval>
+histogram <filename> <number of bins>
+Plots the histogram of the given file
+
+412. COMMAND
+rise
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+rise <stringval> <stringval> <stringval>
+rise <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a rule set according to the RISE rule learning algorithm
+
+413. COMMAND
+divs
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+divs <stringval> <stringval> <stringval>
+divs <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a rule set according to the DIVS rule learning algorithm
+
+414. COMMAND
+beamsize
+PARAMETER
+BEAMSEARCH
+
+
+beamsize <integerval>
+beamsize <number of alternatives stored in the beam search>
+You can set the beam size for CN2 algorithm.
+
+415. COMMAND
+cn2
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+cn2 <stringval> <stringval> <stringval>
+cn2 <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a rule set according to the CN2 rule learning algorithm
+
+416. COMMAND
+lerils
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+lerils <stringval> <stringval> <stringval>
+lerils <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a rule set according to the LERILS rule learning algorithm
+
+417. COMMAND
+mutationprobability
+PARAMETER
+GENETIC ALGORITHM
+
+
+mutationprobability <realval>
+mutationprobability <mutation probability in the genetic algorithms>
+You can set the probability of flipping in the LERILS algorithm.
+
+418. COMMAND
+populationsize
+PARAMETER
+GENETIC ALGORITHM
+
+
+populationsize <integerval>
+populationsize <number of individuals in the population>
+You can set the pool size in the LERILS algorithm.
+
+419. COMMAND
+restarts
+PARAMETER
+HILL CLIMBING
+
+
+restarts <integerval>
+restarts <number of restarts in an hill climbing type algorithm>
+You can set number of restarts in the LERILS algorithm.
+
+420. COMMAND
+kruskalwallismulti
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if they have not the same mean  out2:confidence level of the test result
+out1 out2
+kruskalwallismulti <stringvaln>
+kruskalwallismulti <filename1> <filename2> ... <filename n>
+Compares two or more multivariate data according to kruskalwallis test
+
+421. COMMAND
+multinormalitytest
+STATISTICS
+TESTS
+out1:0 if the distribution is multivariate normal, 1 if not
+out1
+multinormalitytest <stringval>
+multinormalitytest <filename1>
+Checks if a multivariate distribution is normal or not
+
+422. COMMAND
+part
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+part <stringval> <stringval> <stringval>
+part <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a rule set according to the PART rule learning algorithm
+
+423. COMMAND
+solvelp
+OPTIMIZATION
+LINEAR PROGRAMMING
+out1: optimal value out2: 0 if single optimal solution, 1 if no solution, 2 if unbounded solution, 3 if the number of solutions is infinite. aout1: values of the basic variables for the optimal solution
+out1 out2 aout1
+solvelp <stringval>
+solvelp <file name> 
+Solves linear programming problem using simplex algorithm
+
+424. COMMAND
+neighborpermutations
+LANGUAGE
+STRING
+
+
+neighborpermutations <stringval> <stringvarn>
+neighborpermutations <original permutation> <name of the string variable array>
+Creates all possible neighbor permutations of the given permutation. For example if the original permutation is 1023 the neighbor permutations are 0123, 1203, and 1032.
+
+425. COMMAND
+rankplot
+GRAPHICS
+PLOT
+
+
+rankplot <stringvaln>
+rankplot <filename1> <filename2> ... <filenamen>
+Plots the ranks of the classifiers given in the file(s)
+
+426. COMMAND
+testcliques
+STATISTICS
+TESTS
+out1:number of cliques  aout1:cliques
+out1 aout1
+testcliques <stringvaln>
+testcliques <filename1> <filename2> ... <filename n>
+Finds cliques - a clique is a set of comparable algorithms, i.e., the pairwise test does not reject between any two of its elements. Cliques need not be disjoint.
+
+427. COMMAND
+normalization
+PARAMETER
+RUN
+
+
+normalization <stringval>
+normalization <normalizationtype>
+Sets the normalization type to z normalization or standard normalization (between 0 and 1)
+
+428. COMMAND
+hingelosstype
+PARAMETER
+RUN
+
+
+hingelosstype <stringval>
+hingelosstype <hingelosstype>
+Sets the hinge loss type 
+
+429. COMMAND
+normalizekernel
+PARAMETER
+SVM
+
+
+normalizekernel <onoff>
+normalizekernel <on or off>
+If on normalizes the kernel in SVM
+
+430. COMMAND
+signedranktest
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result
+out1 out2
+signedranktest <stringval> <stringval>
+signedranktest <filename1> <filename2>
+Compares two data according to the wilcoxon signed rank nonparametric binary test. Sets first output variable 0 if both datasets have the same mean, 1 otherwise. Sets second output variable to the confidence level of the test result.
+
+431. COMMAND
+softregtree
+ALGORITHM
+REGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+softregtree <stringval> <stringval> <stringval>
+softregtree <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates univariate soft regression tree
+
+432. COMMAND
+plottree
+MODEL
+GRAPHICS
+
+
+plottree <stringval>
+plottree <model file name>
+You can plot the decision or regression tree model which is saved in a separate file using savemodel option
+
+433. COMMAND
+plotmodeltree
+MODEL
+GRAPHICS
+
+
+plotmodeltree <stringval>
+plotmodeltree <model file name>
+You can plot the decision or regression tree where the regression or the classification model at each node is displayed
+
+434. COMMAND
+softtree
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+softtree <stringval> <stringval> <stringval>
+softtree <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates univariate soft tree
+
+435. COMMAND
+discretization
+DATASET
+EXPORT
+
+
+discretization <stringval>
+discretization <discretization type name>
+You can set the discretization type to one of the following: equalwidth, bestgain.
+
+436. COMMAND
+cart
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array aout3:number of rules learned. Stored as an array  aout4:number of conditions in the learned rules. Stored as an array
+aout1 aout2 aout3 aout4
+cart <stringval> <stringval> <stringval>
+cart <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Creates a Classification and Regression Tree (CART)
+
+437. COMMAND
+hybridspace
+PARAMETER
+RUN
+
+
+hybridspace <integerval>
+hybridspace <number of distinct models>
+Sets number of distinct models in omnivariate type training. 
+
+438. COMMAND
+differenceplot
+GRAPHICS
+PLOT
+
+
+differenceplot <stringval> <stringval>
+differenceplot <filename1> <filename2> 
+Plots the performance difference of two classifiers
+
+439. COMMAND
+showrundetails
+PARAMETER
+RUN
+
+
+showrundetails <onoff>
+showrundetails <on or off>
+If showrundetails is on, after each fold the time required to run that fold is displayed.
+
+440. COMMAND
+featuresuperset
+DATASET
+EXPORT
+
+
+featuresuperset <stringval> <integerval> <stringval> <stringval>
+featuresuperset <dataset name> <number of added features> <input file name> <output file name>
+Exports with randomly added features with the data file.
+
+441. COMMAND
+regularization
+PARAMETER
+GRADIENT
+
+
+regularization <stringval>
+regularization <None, L1, L2>
+Sets the regularization type of the gradient descent type algorithm.
+
+442. COMMAND
+exportkernel
+DATASET
+EXPORT
+
+
+exportkernel <stringval> <stringval> <stringval>
+exportkernel <dataset name> <output data file name> <output kernel file name>
+Exports whole dataset as a kernel matrix to an output file and the class information into a separate file. 
+
+443. COMMAND
+createkerneldataset
+DATASET
+CREATE
+
+
+createkerneldataset <stringval> <stringval> <stringval> <stringval>  <stringval>
+createkerneldataset <dataset name> <classes> <directory name> <file name> <kernel file name>
+Creates a new kernel dataset named with the given name
+
+444. COMMAND
+permutationtest
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result
+out1 out2
+permutationtest <stringval> <stringval>
+permutationtest <filename1> <filename2>
+Compares two data according to the nonparametric permutation test. 
+
+445. COMMAND
+pairedpermutationtest
+STATISTICS
+TESTS
+out1:0 if they have the same mean  1 if the first algorithm has better score  2 if the second algorithm has better score  out2:confidence level of the test result
+out1 out2
+pairedpermutationtest <stringval> <stringval>
+pairedpermutationtest <filename1> <filename2>
+Compares two data according to the nonparametric permutation test. 
+
+446. COMMAND
+kforest
+ALGORITHM
+CLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+kforest <stringval> <stringval> <stringval>
+kforest <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Trains Random Forest with K-trees as weak learner
+
+447. COMMAND
+imagetype
+GRAPHICS
+PARAMETER
+
+
+imagetype <stringval>
+imagetype <eps or pstricks>
+you can change the active image type.
+
+448. COMMAND
+classcounts
+DATASET
+FEATURES
+aout1: number of instances in class i
+aout1
+classcounts <stringval>
+classcounts <dataset name>
+Returns number of instances in each class in the dataset
+
+449. COMMAND
+solveqp
+OPTIMIZATION
+QUADRATIC PROGRAMMING
+out1: optimal value out2: 0 if single optimal solution, 1 if no solution, 2 if unbounded solution, 3 if the number of solutions is infinite. aout1: values of the basic variables for the optimal solution
+out1 out2 aout1
+solveqp <stringval>
+solveqp <file name> 
+Solves convex quadratic programming problem using simplex algorithm
+
+450. COMMAND
+kernelindex
+PARAMETER
+SVM
+
+
+kernelindex <integerval>
+kernelindex <integer>
+Sets the index of the kernel to be used for a dataset.
+
+451. COMMAND
+minverse
+LANGUAGE
+MATRIX
+
+
+minverse <matrixvar>
+minverse <matrix variable>
+Calculates the inverse of the matrix
+
+452. COMMAND
+createmultilabeldataset
+DATASET
+CREATE
+
+
+createmultilabeldataset <stringval> <stringval> <integerval> <stringval> <stringval> <stringval>
+createmultilabeldataset <dataset name> <separator characters> <start featureno of class> <directory name> <file name> <discrete features>
+Creates a new multilabel dataset named with the given name
+
+453. COMMAND
+onevsone
+ALGORITHM
+METACLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+onevsone <stringval> <stringval> <stringval>
+onevsone <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs one vs one meta classification algorithm based on the given classification algorithm
+
+454. COMMAND
+onevsrest
+ALGORITHM
+METACLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+onevsrest <stringval> <stringval> <stringval>
+onevsrest <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs one vs rest meta classification algorithm based on the given classification algorithm
+
+455. COMMAND
+baseclassificationalgorithm
+PARAMETER
+METACLASSIFICATION
+
+
+baseclassificationalgorithm <stringval>
+baseclassificationalgorithm <algorithm name>
+Sets the base algorithm for the meta classification algorithms
+
+456. COMMAND
+weaklearnercount
+PARAMETER
+METACLASSIFICATION
+
+
+weaklearnercount <integerval>
+weaklearnercount <number of weak lerners>
+Sets the number of weak lerarners in a an ensemble algorithm
+
+457. COMMAND
+baggingcls
+ALGORITHM
+METACLASSIFICATION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+baggingcls <stringval> <stringval> <stringval>
+baggingcls <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs bagging meta classification algorithm based on the given classification algorithm
+
+458. COMMAND
+baggingreg
+ALGORITHM
+METAREGRESSION
+aout1: training time of the algorithm. Stored as an array aout2:complexity of the algorithm. Stored as an array
+aout1 aout2
+baggingreg <stringval> <stringval> <stringval>
+baggingreg <dataset name> <cv, bootstrap or training file name> <if cv or bootstrap then seed value, otherwise testing file name>
+Runs bagging meta regression algorithm based on the given classification algorithm
+
+459. COMMAND
+baseregressionalgorithm
+PARAMETER
+METAREGRESSION
+
+
+baseregressionalgorithm <stringval>
+baseregressionalgorithm <algorithm name>
+Sets the base algorithm for the meta regression algorithms
+
+460. COMMAND
+autokernel
+ALGORITHM
+AUTOENCODER
+
+
+autokernel <stringval> <stringval> <stringval> <stringval>
+autokernel <dataset name> <seed value> <class file> <kernel file>
+Learns using autoencoder trained kernel construction algorithm
+
+461. COMMAND
+classes
+DATASET
+FEATURES
+sout1: classes separated with ;
+sout1
+classes <stringval>
+classes <dataset name>
+Returns classes in the dataset as a string
+
+462. COMMAND
+runfromfold
+PARAMETER
+RUN
+
+
+runfromfold <integerval>
+runfromfold <integer>
+Sets the start of the run
+
+463. COMMAND
+mmax
+LANGUAGE
+MATRIX
+
+
+mmax <matrixvar> <matrixvar>
+mmax <matrix variable> <matrix variable>
+Finds the indexes of the maximum value of each row of the matrix
+
+464. COMMAND
+mcompare
+LANGUAGE
+MATRIX
+out1: number of equal elements in both matrices
+out1
+mcompare <matrixvar> <matrixvar>
+mcompare <matrix variable> <matrix variable>
+Returns number of equal elements in both matrices
+
+465. COMMAND
+searcharray
+LANGUAGE
+ARRAY
+out1: index of the item, if the item does not exists returns -1
+out1
+searcharray <stringvarn> <integerval> <stringval>
+searcharray <array variable name> <array size> <item>
+Checks if the array contains that item
+
+466. COMMAND
+deletefromarray
+LANGUAGE
+ARRAY
+
+
+deletefromarray <stringvarn> <integerval> <integerval>
+deletefromarray <array variable name> <array size before removal> <item index>
+Removes an item from the array
+
+467. COMMAND
+addtoarray
+LANGUAGE
+ARRAY
+
+
+addtoarray <stringvarn> <integerval> <integerval> <stringval>
+deletefromarray <array variable name> <array size before insert> <item index> <new item>
+Inserts an item to a given index in the array
+
+468. COMMAND
+ensemble
+ALGORITHM
+METACLASSIFICATION
+out1: average error of the algorithm.
+out1
+ensemble <stringvarn> <integerval>
+ensemble <array containing names of the posterior files to combine> <size of the array>
+Combines a group of algorithms posterior to generate the ensemble result
+
+469. COMMAND
+sortarray
+LANGUAGE
+ARRAY
+
+
+sortarray <stringvarn> <integerval>
+sortarray <array variable name> <array size>
+Sorts the array
+
+470. COMMAND
+concatarray
+LANGUAGE
+ARRAY
+sout1: concated elements of the array
+sout1
+concatarray <stringvarn> <integerval>
+concatarray <array variable name> <array size>
+Concats the strings in the array and returns in sout1
+
+471. COMMAND
+prefixmatchcount
+LANGUAGE
+STRING
+out1: number of prefix matches between two strings
+out1
+prefixmatchcount <stringval> <stringval>
+prefixmatchcount <string value> <string value>
+Counts number of matches of characters between two strings
+

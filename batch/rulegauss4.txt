@@ -1,0 +1,39 @@
+displaycode off
+displayresult off
+file outfile
+string resultdir dataset method
+integer j k count
+setdatadir ../data
+loaddatasets gauss4.xml
+testpercentage 0.33333333333
+runcount 2
+foldcount 5
+runtofold 5
+hyperparametertune on
+= resultdir ../results/rule
+multivariatealgorithm svm
+= dataset gauss4
+kerneltype linear
+for j 1 4
+  switch j
+    case 1
+      = method ripper
+    case 2
+      = method multiripper
+    case 3
+      = method hybridripper
+    case 4
+      = method svm
+  endswitch
+  output %resultdir%/%dataset%-%method%.error
+  %method% %dataset% cv 1
+  if < j 4    
+    = outfile %resultdir%/%dataset%-%method%.conditiontypes
+    openfile outfile w
+    for k 1 10
+      writefile outfile %aout5[k]%
+    endfor k
+    closefile outfile
+  endif
+endfor j  
+output stdout

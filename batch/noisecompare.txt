@@ -1,0 +1,97 @@
+displayresult off
+displaycode off
+string dataset algorithm noiselevel test file1 file2 resultdir
+integer i j k count p q
+real prob noise
+= resultdir ../results
+twotailed
+for p 1 8
+  switch p
+    case 1
+      = dataset iris
+    case 2
+      = dataset breast
+    case 3
+      = dataset balance
+    case 4
+      = dataset dermatology
+    case 5
+      = dataset segment
+    case 6
+      = dataset optdigits
+    case 7
+      = dataset pendigits
+    case 8
+      = dataset ringnorm
+  endswitch
+  for q 1 5
+    switch q
+      case 1
+        = algorithm mean
+      case 2
+        = algorithm lda
+      case 3
+        = algorithm c45
+      case 4
+        = algorithm ripper
+      case 5
+        = algorithm knn
+    endswitch
+    for i 1 5
+      switch i
+        case 1
+          = test wilcoxon
+        case 2
+          = test tpaired5x2
+        case 3
+          = test cvttest
+        case 4
+          = test combined5x2t
+        case 5
+          = test ftest
+      endswitch
+      output %resultdir%/noise-compare/%dataset%-%algorithm%-%test%.txt
+      for j 1 10
+        switch j
+          case 1
+            = noiselevel 0.001
+          case 2
+            = noiselevel 0.003
+          case 3
+            = noiselevel 0.005
+          case 4
+            = noiselevel 0.007
+          case 5
+            = noiselevel 0.01
+          case 6
+            = noiselevel 0.03
+          case 7
+            = noiselevel 0.05
+          case 8
+            = noiselevel 0.07
+          case 9
+            = noiselevel 0.1
+          case 10
+            = noiselevel 0.5
+        endswitch
+        = count 0
+        for k 1 1000
+          = file1 %resultdir%/classification/%dataset%/%k%.%algorithm%
+          = file2 %resultdir%/noise/%noiselevel%/%dataset%/%k%.%algorithm%
+          %test% %file1% %file2%
+          if = out1 0
+            ++ count
+          endif
+        endfor k
+        = prob %count%
+        /= prob 1000.0
+        = noise %noiselevel%
+        $= noise 10
+        writescreen %p%_%q%_%i%_%j%
+        write %noise%_%prob%
+      endfor j
+    endfor i
+  endfor q
+endfor p
+output stdout
+

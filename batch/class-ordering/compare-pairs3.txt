@@ -1,0 +1,107 @@
+displaycode off
+displayresult off
+string dataset resultdir
+integer i j count
+twotailed
+= resultdir ../results/perm
+for i 1 10
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset cmc
+    case 3
+      = dataset hayesroth
+    case 4
+      = dataset iris
+    case 5
+      = dataset leukemia1
+    case 6
+      = dataset leukemia2
+    case 7
+      = dataset splice
+    case 8
+      = dataset tae
+    case 9
+      = dataset wave
+    case 10
+      = dataset wine
+  endswitch
+  = count 0
+  for j 1 10
+    pairedttest %resultdir%/%dataset%-201-1-%j%-ripper.pairwise %resultdir%/%dataset%-021-1-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-201-1-%j%-ripper.pairwise %resultdir%/%dataset%-012-1-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-012-1-%j%-ripper.pairwise %resultdir%/%dataset%-021-1-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-021-2-%j%-ripper.pairwise %resultdir%/%dataset%-102-2-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-021-2-%j%-ripper.pairwise %resultdir%/%dataset%-012-2-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-102-2-%j%-ripper.pairwise %resultdir%/%dataset%-012-2-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-210-3-%j%-ripper.pairwise %resultdir%/%dataset%-120-3-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-210-3-%j%-ripper.pairwise %resultdir%/%dataset%-102-3-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-120-3-%j%-ripper.pairwise %resultdir%/%dataset%-102-3-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-120-4-%j%-ripper.pairwise %resultdir%/%dataset%-102-4-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-120-4-%j%-ripper.pairwise %resultdir%/%dataset%-012-4-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-102-4-%j%-ripper.pairwise %resultdir%/%dataset%-012-4-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-210-5-%j%-ripper.pairwise %resultdir%/%dataset%-201-5-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-210-5-%j%-ripper.pairwise %resultdir%/%dataset%-120-5-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-201-5-%j%-ripper.pairwise %resultdir%/%dataset%-120-5-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-210-6-%j%-ripper.pairwise %resultdir%/%dataset%-201-6-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-210-6-%j%-ripper.pairwise %resultdir%/%dataset%-021-6-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+    pairedttest %resultdir%/%dataset%-201-6-%j%-ripper.pairwise %resultdir%/%dataset%-021-6-%j%-ripper.pairwise
+    if = out1 0
+      ++ count
+    endif
+  endfor j
+  writescreen %dataset%_%count/180.0%
+endfor i
+output stdout

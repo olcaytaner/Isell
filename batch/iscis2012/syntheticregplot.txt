@@ -1,0 +1,49 @@
+displaycode off
+displayresult off
+savemodel on
+string dataset
+= dataset sinus
+setdatadir ../data
+normalizekernel on
+loaddatasets regression.xml
+svmp 0.25
+svmC 0.25
+hold off
+plotdata2d %dataset% 1 2
+hold on
+modelfile tmp2.txt
+runcount 1
+foldcount 1
+kerneltype rbf
+svmreg %dataset% cv 1
+writescreen Drawing_rbf
+plotmodel tmp2.txt
+exportimage %dataset%rbf.eps
+svmC 1.0
+hold off
+plotdata2d %dataset% 1 2
+hold on
+modelfile tmp3.txt
+runcount 1
+foldcount 1
+kerneltype polynom
+svmdegree 2
+svmcoef0 1.0
+svmreg %dataset% cv 1
+writescreen Drawing_quadratic
+plotmodel tmp3.txt
+exportimage %dataset%quadratic.eps
+svmC 1.0
+hold off
+plotdata2d %dataset% 1 2
+hold on
+modelfile tmp4.txt
+runcount 1
+foldcount 1
+kerneltype polynom
+svmdegree 3
+svmcoef0 1.0
+svmreg %dataset% cv 1
+writescreen Drawing_cubic
+plotmodel tmp4.txt
+exportimage %dataset%cubic.eps

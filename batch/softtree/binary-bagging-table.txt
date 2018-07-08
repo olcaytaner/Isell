@@ -1,0 +1,90 @@
+displaycode off
+integer i k
+string dataset resultdir st type
+= type error
+= resultdir ../results/softtree
+setprecision 1
+output cls-bagging-table-error.txt
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|rrrrrr|}
+write \hline
+write Dataset_&_Hard_&_LDT_&_Soft_&_Hard(Bagged)_&_LDT(Bagged)_&_Soft(Bagged)_\\
+write \hline
+for i 1 27
+  switch i
+    case 1
+      = dataset acceptors
+    case 2
+      = dataset artificial
+    case 3
+      = dataset breast
+    case 4
+      = dataset bupa
+    case 5
+      = dataset donors
+    case 6
+      = dataset german
+    case 7
+      = dataset haberman
+    case 8
+      = dataset heart
+    case 9
+      = dataset hepatitis
+    case 10
+      = dataset ironosphere
+    case 11
+      = dataset krvskp
+    case 12
+      = dataset magic
+    case 13
+      = dataset monks
+    case 14
+      = dataset mushroom
+    case 15
+      = dataset musk2
+    case 16
+      = dataset parkinsons
+    case 17
+      = dataset pima
+    case 18
+      = dataset polyadenylation
+    case 19
+      = dataset promoters
+    case 20
+      = dataset ringnorm
+    case 21
+      = dataset satellite47
+    case 22
+      = dataset spambase
+    case 23
+      = dataset spect
+    case 24
+      = dataset tictactoe
+    case 25
+      = dataset titanic
+    case 26
+      = dataset twonorm
+    case 27
+      = dataset vote
+  endswitch
+  = st %dataset%
+  meanvariance %resultdir%/%dataset%-c45.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/%dataset%-multildt.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/%dataset%-softtree.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/%dataset%-bagging-c45.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/%dataset%-bagging-multildt.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%
+  meanvariance %resultdir%/%dataset%-bagging-softtree.%type%
+  = st %st%_&_%out1%_$\pm$_%out2%\\
+  write %st%
+endfor i
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout

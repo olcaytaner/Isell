@@ -1,0 +1,33 @@
+displaycode off
+string file1 file2 file3 file4 file5 resultdir outdir
+string dataset algorithm1 algorithm2 comptype st
+integer index p kw manova anova
+real x y minx maxx miny maxy gap
+matrix f1 f2 f3 f4 f5 eigenvec
+file infile1 infile2 infile3 infile4 infile5
+= comptype roc
+= resultdir ../results/multivariatetest/10fold/measure/%comptype%
+= dataset spect
+= index 4
+= file3 %resultdir%/%dataset%-%index%-lda.%comptype%
+= file4 %resultdir%/%dataset%-%index%-qda.%comptype%
+= file5 %resultdir%/%dataset%-%index%-svm.%comptype%
+manova %file3% %file4% %file5%
+writescreen %aout1[1]%_%aout1[2]%
+output eigenvectors.txt
+write %aout2[1]%
+write %aout2[2]%
+output stdout
+loadmatrix eigenvectors.txt eigenvec
+loadmatrix %file3% f3
+loadmatrix %file4% f4
+loadmatrix %file5% f5
+*= f3 eigenvec
+mprint f3 lda.txt
+*= f4 eigenvec
+mprint f4 qda.txt
+*= f5 eigenvec
+mprint f5 svm.txt
+errorhistogram lda.txt qda.txt svm.txt
+exportimage eigenvectors-hist-roc.eps
+

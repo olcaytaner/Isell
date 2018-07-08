@@ -1,0 +1,102 @@
+displaycode off
+displayresult off
+integer i j k p t count
+string dataset method1 method2 resultdir unifile1 unifile2 multifile1 multifile2
+= resultdir ../results/mvartest2
+twotailed
+output univariate-multivariate.tex
+= count 0
+write \documentclass{article}
+write \usepackage{graphicx}
+write \begin{document}
+for i 1 6
+  switch i
+    case 1
+      = method1 c45
+    case 2
+      = method1 knn
+    case 3
+      = method1 lda
+    case 4
+      = method1 qda
+    case 5
+      = method1 svm1
+    case 6
+      = method1 svm2
+    case 7
+      = method1 randomforest
+  endswitch
+  for p %i+1% 7
+    switch p
+      case 1
+        = method2 c45
+      case 2
+        = method2 knn
+      case 3
+        = method2 lda
+      case 4
+        = method2 qda
+      case 5
+        = method2 svm1
+      case 6
+        = method2 svm2
+      case 7
+        = method2 randomforest
+    endswitch
+    for j 1 4
+      switch j
+        case 1
+          = dataset acceptors
+        case 2
+          = dataset donors
+        case 3
+          = dataset ads
+        case 4
+          = dataset polyadenylation
+      endswitch
+      for k 1 10
+        = unifile1 %resultdir%/measure/error/%dataset%-%k%-%method1%.error
+        = unifile2 %resultdir%/measure/error/%dataset%-%k%-%method2%.error
+        = multifile1 %resultdir%/measure/roc/%dataset%-%k%-%method1%.roc
+        = multifile2 %resultdir%/measure/roc/%dataset%-%k%-%method2%.roc
+        fileexists %resultdir%/measure/confusion/%dataset%-%k%-%method1%.confusion        
+        if = out1 1
+          fileexists %resultdir%/measure/confusion/%dataset%-%k%-%method2%.confusion        
+          if = out1 1          
+             pairedttest %unifile1% %unifile2%
+             if = out1 0
+               hotellingt %multifile1% %multifile2%
+               if != out1 0
+                 smirnov %multifile1% %multifile2%
+                 if != out1 0
+                   ++ count
+                   if = count 15
+                     write \clearpage
+                     = count 0
+                   endif
+                   write \begin{figure}[t!]
+                   write \begin{center}
+                   write \begin{tabular}{ccc}
+                   write (a)_&_(b)_&_(c)\\
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate/%dataset%-%method1%-%method2%-%k%-hist.eps}_&
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate/%dataset%-%method1%-%method2%-%k%-roc.eps}_&
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate/%dataset%-%method1%-%method2%-%k%-tree.eps}_\\
+                   write (d)_&_(e)_&_(f)_\\
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate/%dataset%-%method1%-%method2%-%k%-histdiff.eps}_&
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate/%dataset%-%method1%-%method2%-%k%-rocdiff.eps}_& 
+                   write \includegraphics[width=0.32\linewidth]{%resultdir%/image/univariate-multivariate/%dataset%-%method1%-%method2%-%k%-rank.eps} 
+                   write \end{tabular}
+                   write \end{center}
+                   write \caption{%dataset%_%method1%_%method2%_%k%}
+                   write \end{figure}
+                 endif
+               endif
+             endif
+          endif
+        endif
+      endfor k
+    endfor j
+  endfor p  
+endfor i  
+write \end{document}
+output stdout

@@ -1,0 +1,77 @@
+displaycode off
+setdatadir ../data
+loaddatasets svmtree.xml
+integer i j
+string dataset outdir
+file complexity
+= outdir ../results
+testpercentage 0.333333333
+runcount 2
+foldcount 5
+runtofold 5
+for i 15 17
+  switch i
+    case 1
+      = dataset optdigits
+    case 2
+      = dataset dermatology
+    case 3
+      = dataset pendigits
+    case 4
+      = dataset iris
+    case 5
+      = dataset letter
+    case 6
+      = dataset ocr
+    case 7
+      = dataset pageblock
+    case 8
+      = dataset segment
+    case 9
+      = dataset shuttle
+    case 10
+      = dataset vehicle
+    case 11
+      = dataset wave
+    case 12
+      = dataset wine
+    case 13
+      = dataset yeast
+    case 14
+      = dataset zipcodes
+    case 15
+      = dataset ecoli
+    case 16
+      = dataset glass
+    case 17
+      = dataset zoo
+  endswitch
+  output %outdir%/%dataset%-c45.error
+  c45 %dataset% cv 1
+  = complexity %outdir%/%dataset%-c45.complexity
+  openfile complexity w
+  for j 1 10
+    writefile complexity %aout2[j]%
+  endfor j
+  closefile complexity
+  multiclasstype onevsone
+  output %outdir%/%dataset%-svmtree-onevsone.error
+  svmtree %dataset% cv 1
+  = complexity %outdir%/%dataset%-svmtree-onevsone.complexity
+  openfile complexity w
+  for j 1 10
+    writefile complexity %aout2[j]%
+  endfor j
+  closefile complexity
+  multiclasstype onevsrest
+  output %outdir%/%dataset%-svmtree-onevsrest.error
+  svmtree %dataset% cv 1
+  = complexity %outdir%/%dataset%-svmtree-onevsrest.complexity
+  openfile complexity w
+  for j 1 10
+    writefile complexity %aout2[j]%
+  endfor j
+  closefile complexity
+endfor i
+output stdout
+

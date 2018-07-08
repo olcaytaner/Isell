@@ -1,0 +1,45 @@
+displaycode off
+integer i j
+string dataset dir
+real rate
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+runcount 1
+foldcount 10
+perceptronrun 50
+hiddenlayers 10
+setprecision 4
+= dir c:\users\olcay\isell\mlp\reg\learningrate
+for i 1 30
+  switch i
+    case 1
+      = dataset puma8fh
+    case 2
+      = dataset puma8nh
+    case 3
+      = dataset puma8fm
+    case 4
+      = dataset puma8nm
+    case 5
+      = dataset puma32fh
+   endswitch
+   for j 1 5
+     switch j
+       case 1
+         = rate 0.001
+       case 2
+         = rate 0.005
+       case 3
+         = rate 0.01
+       case 4
+         = rate 0.05
+       case 5
+         = rate 0.1
+     endswitch
+     learningrate %rate%
+     output %dir%\%dataset%-%j%.txt
+     mlpgenericreg %dataset% random 1
+     writescreen %i%_%j%
+   endfor j
+endfor i
+output stdout

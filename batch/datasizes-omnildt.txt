@@ -1,0 +1,122 @@
+displaycode off
+file infile outfile1 outfile2 outfile3
+string read nodetype type dataset result dir modelselection ntypes[250]
+integer datasize
+integer i j k m p len level
+= dir c:\users\olcay\isell\omnildt
+for p 1 5
+  switch p
+    case 1
+      = modelselection aic
+    case 2
+      = modelselection bic
+    case 3
+      = modelselection mdl
+    case 4
+      = modelselection srm
+    case 5
+      = modelselection crossvalidation
+  endswitch
+  = outfile1 %dir%\univariate-%modelselection%.txt
+  = outfile2 %dir%\linear-%modelselection%.txt
+  = outfile3 %dir%\quadratic-%modelselection%.txt
+  openfile outfile1 w
+  openfile outfile2 w
+  openfile outfile3 w
+  for j 1 30
+    switch j
+      case 1
+        = dataset breast
+      case 2
+        = dataset bupa
+      case 3
+        = dataset car
+      case 4
+        = dataset cylinder
+      case 5
+        = dataset dermatology
+      case 6
+        = dataset ecoli
+      case 7
+        = dataset flare
+      case 8
+        = dataset glass
+      case 9
+        = dataset hepatitis
+      case 10
+        = dataset horse
+      case 11
+        = dataset iris
+      case 12
+        = dataset ironosphere
+      case 13
+        = dataset monks
+      case 14
+        = dataset segment
+      case 15
+        = dataset vote
+      case 16
+        = dataset wine
+      case 17
+        = dataset zoo
+      case 18
+        = dataset balance
+      case 19
+        = dataset cmc
+      case 20
+        = dataset credit
+      case 21
+        = dataset haberman
+      case 22
+        = dataset pima
+      case 23
+        = dataset tictactoe
+      case 24
+        = dataset yeast
+      case 25
+        = dataset wave
+      case 26
+        = dataset fevzi
+      case 27
+        = dataset mushroom
+      case 28
+        = dataset spambase
+      case 29
+        = dataset cenk
+      case 30
+        = dataset nursery
+    endswitch
+    write %modelselection%-%dataset%
+    = infile %dir%\%dataset%-%modelselection%.nodetype  
+    openfile infile r
+    for i 1 10
+      readfile infile read
+      tokenize read ;
+      = len %out1%
+      if > len 0
+        for k 1 %len%
+          = ntypes[k] %aout1[k]%
+        endfor k
+        for k 1 %len%
+          = nodetype %ntypes[k]%
+          tokenize nodetype -
+          = datasize %aout1[3]%
+          = type %aout1[2]%
+          if = type U
+            writefile outfile1 %datasize%
+          endif
+          if = type L
+            writefile outfile2 %datasize%
+          endif
+          if = type Q
+            writefile outfile3 %datasize%
+          endif
+        endfor k
+      endif
+    endfor i
+    closefile infile
+  endfor j
+  closefile outfile1
+  closefile outfile2
+  closefile outfile3
+endfor p

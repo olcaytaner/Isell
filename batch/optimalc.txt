@@ -1,0 +1,201 @@
+displaycode off
+displayresult off
+file outfile
+string resultdir dataset C bestC
+integer i j
+real besterror
+= resultdir ../results/rule
+output optimal.txt
+write 75
+setprecision 2
+for j 1 75
+  switch j
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset cylinder
+    case 4
+      = dataset flags
+    case 5
+      = dataset postoperative
+    case 6
+      = dataset flare
+    case 7
+      = dataset haberman
+    case 8
+      = dataset tae
+    case 9
+      = dataset heart
+    case 10
+      = dataset ironosphere
+    case 11
+      = dataset pima
+    case 12
+      = dataset ringnorm
+    case 13
+      = dataset spambase
+    case 14
+      = dataset twonorm
+    case 15
+      = dataset german
+    case 16
+      = dataset hepatitis
+    case 17
+      = dataset mammographic
+    case 18
+      = dataset chess
+    case 19
+      = dataset parkinsons
+    case 20
+      = dataset transfusion
+    case 21
+      = dataset vehicle
+    case 22
+      = dataset shuttle
+    case 23
+      = dataset dermatology
+    case 24
+      = dataset ecoli
+    case 25
+      = dataset horse
+    case 26
+      = dataset glass
+    case 27
+      = dataset iris
+    case 28
+      = dataset letter
+    case 29
+      = dataset ocr
+    case 30
+      = dataset optdigits
+    case 31
+      = dataset pageblock
+    case 32
+      = dataset pendigits
+    case 33
+      = dataset segment
+    case 34
+      = dataset wave
+    case 35
+      = dataset wine
+    case 36
+      = dataset yeast
+    case 37
+      = dataset zipcodes
+    case 38
+      = dataset zoo
+    case 39
+      = dataset magic
+    case 40
+      = dataset winequality
+    case 41
+      = dataset ads
+    case 42
+      = dataset musk2
+    case 43
+      = dataset polyadenylation
+    case 44
+      = dataset satellite47
+    case 45
+      = dataset spect
+    case 46
+      = dataset splice
+    case 47
+      = dataset promoters
+    case 48
+      = dataset hayesroth
+    case 49
+      = dataset krvskp
+    case 50
+      = dataset donors
+    case 51
+      = dataset connect4
+    case 52
+      = dataset acceptors
+    case 53
+      = dataset car
+    case 54
+      = dataset vote
+    case 55
+      = dataset balance
+    case 56
+      = dataset nursery
+    case 57
+      = dataset tictactoe
+    case 58
+      = dataset monks
+    case 59
+      = dataset artificial
+    case 60
+      = dataset titanic
+    case 61
+      = dataset mushroom
+    case 62
+      = dataset cmc
+    case 63
+      = dataset credit
+    case 64
+      = dataset australian
+    case 65
+      = dataset 9tumors
+    case 66
+      = dataset 11tumors
+    case 67
+      = dataset 14tumors
+    case 68
+      = dataset braintumor1
+    case 69
+      = dataset braintumor2
+    case 70
+      = dataset dlbcl
+    case 71
+      = dataset leukemia1
+    case 72
+      = dataset leukemia2
+    case 73
+      = dataset lungtumor
+    case 74
+      = dataset prostatetumor
+    case 75
+      = dataset srbct
+  endswitch
+  = besterror 100
+  for i 1 8
+    switch i
+      case 1
+        = C 0.0001
+      case 2
+        = C 0.001
+      case 3
+        = C 0.01
+      case 4
+        = C 0.1
+      case 5
+        = C 1
+      case 6
+        = C 10
+      case 7
+        = C 100
+      case 8
+        = C 1000
+    endswitch
+    fileexists %resultdir%/%dataset%-multiripper-%C%.error
+    if = out1 1
+      meanvariance %resultdir%/%dataset%-multiripper-%C%.error
+      if > besterror %out1%
+        = besterror %out1%
+        = bestC %C%
+      endif
+    endif
+  endfor i
+  write %dataset%_%bestC%
+  mv %resultdir%/%dataset%-multiripper-%bestC%.error %resultdir%/%dataset%-multiripper.error
+  mv %resultdir%/%dataset%-multiripper-%bestC%.time %resultdir%/%dataset%-multiripper.time
+  mv %resultdir%/%dataset%-multiripper-%bestC%.rulecount %resultdir%/%dataset%-multiripper.rulecount
+  mv %resultdir%/%dataset%-multiripper-%bestC%.complexity %resultdir%/%dataset%-multiripper.complexity
+  mv %resultdir%/%dataset%-multiripper-%bestC%.conditioncount %resultdir%/%dataset%-multiripper.conditioncount
+endfor j
+output stdout
+

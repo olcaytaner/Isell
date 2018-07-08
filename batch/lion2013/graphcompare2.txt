@@ -1,0 +1,34 @@
+displaycode off
+displayresult off
+integer d i j k t count fold p
+string testtype
+twotailed
+= fold 100
+for t 1 2
+  switch t
+    case 1
+      = testtype waldwolfowitz
+    case 2
+      = testtype smirnov
+  endswitch
+  for p 2 4
+    = d %5*p%
+    output %testtype%-%fold%-%d%.txt
+    for i 0 10
+      = count 0
+      for k 1 1000
+        gaussmixturedata %d%-%i%.txt %fold% ../data/graph/%d%-%i%.txt
+        if = i 0
+          gaussmixturedata %d%-%i%.txt %fold% ../data/graph/%d%-noisefree.txt
+        endif
+        %testtype% ../data/graph/%d%-noisefree.txt ../data/graph/%d%-%i%.txt
+        if = out1 0
+          ++ count 
+        endif 
+      endfor k
+      write %i%_%count%
+    endfor i
+    writescreen %t%_%d%
+  endfor p
+endfor t
+output stdout

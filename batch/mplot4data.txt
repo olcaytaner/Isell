@@ -1,0 +1,70 @@
+displaycode off
+displayresult off
+string dataset plotdir
+integer j k t indexofrun indexoffold
+setdatadir ../data
+= plotdir ../results/multivariatetest/synthetic
+loaddatasets data.xml
+fontsize legend 28
+fontsize label 28
+fontsize axis 28
+setprecision 3
+hold off
+= indexofrun 1
+= indexoffold 1
+= dataset data10
+savemodel on
+modelfile lda.txt
+ldaclass %dataset% ../data/%dataset%/%dataset%-%indexofrun%-%indexoffold%.tra ../data/%dataset%/%dataset%-%indexofrun%-%indexoffold%.tes 1
+axislimits x 0 10 10 0
+axislimits y 0 10 10 0
+hold on
+putcircle 4 5 0.7
+putcircle 5 3 0.35
+putcircle 5 7 0.35
+putcircle 7 5 0.7
+changedecisionthreshold on
+for t 1 3
+  switch t
+    case 1
+      = k 1
+    case 2
+      = k 5
+    case 3
+      = k 9
+  endswitch
+  decisionthreshold %k*0.1%
+  hold on
+  plotmodel lda.txt
+  writescreen %t%
+endfor t
+changedecisionthreshold off
+exportimage %plotdir%/%dataset%-%indexofrun%-%indexoffold%-lda.eps
+hold off
+modelfile qda.txt
+qdaclass %dataset% ../data/%dataset%/%dataset%-%indexofrun%-%indexoffold%.tra ../data/%dataset%/%dataset%-%indexofrun%-%indexoffold%.tes 1
+axislimits x 0 10 10 0
+axislimits y 0 10 10 0
+hold on
+putcircle 4 5 0.7
+putcircle 5 3 0.35
+putcircle 5 7 0.35
+putcircle 7 5 0.7
+changedecisionthreshold on
+for t 1 3
+  switch t
+    case 1
+      = k 1
+    case 2
+      = k 5
+    case 3
+      = k 9
+  endswitch
+  decisionthreshold %k*0.1%
+  hold on
+  plotmodel qda.txt
+  writescreen %t%
+endfor t
+changedecisionthreshold off
+exportimage %plotdir%/%dataset%-%indexofrun%-%indexoffold%-qda.eps
+

@@ -1,0 +1,34 @@
+displaycode off
+displayresult off
+string function model datadir resultdir
+integer i howmany j maxdegree
+= datadir c:\users\olcay\isell\poly\data
+= resultdir c:\users\olcay\isell\poly\results
+= howmany 10
+= maxdegree 15
+setprecision 5
+for i 1 5
+  switch i
+    case 1
+      modelselection aic
+      = model aic
+    case 2
+      modelselection bic
+      = model bic
+    case 3
+      modelselection srm
+      = model srm
+    case 4
+      modelselection mdl1
+      = model mdl
+    case 5
+      modelselection crossvalidation
+      = model crossvalidation
+  endswitch
+  output %resultdir%\%model%.txt
+  for j 1 %howmany%
+    polylearn %datadir%\%j%.tra 15 %datadir%\%j%.tes
+    write %out3%
+  endfor j
+endfor i
+output stdout

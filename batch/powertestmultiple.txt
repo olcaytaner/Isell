@@ -1,0 +1,74 @@
+twotailed
+displaycode off
+displayresult off
+string dir file1 file2 file3 method
+integer i k m p1 p2 p3 count count1
+real prob1 prob2 prob3
+= dir c:\users\olcay\isell\powertest
+for k 1 3
+  switch k
+    case 1
+      = method anova
+    case 2
+      = method kruskalwallis
+    case 3
+      = method vanderwaerdan
+  endswitch
+  output %dir%\%method%.txt
+  for i 1 3  
+    switch i
+      case 1
+        = count 100
+      case 2
+        = count 1000
+      case 3
+        = count 10000
+    endswitch
+    for p1 1 3
+      switch p1
+        case 1
+          = prob1 0.050
+        case 2
+          = prob1 0.100
+        case 3
+          = prob1 0.150
+      endswitch
+      for p2 1 3
+        switch p2
+          case 1
+            = prob2 0.050
+          case 2
+            = prob2 0.100
+          case 3
+            = prob2 0.150
+        endswitch
+        for p3 1 3
+          switch p3
+            case 1
+              = prob3 0.050
+            case 2
+              = prob3 0.100
+            case 3
+              = prob3 0.150
+          endswitch
+          if <= p1 %p2%
+            if <= p2 %p3%
+              = count1 0
+              for m 1 1000
+                = file1 %dir%\%count%\%prob1%\1\%m%.txt
+                = file2 %dir%\%count%\%prob2%\2\%m%.txt
+                = file3 %dir%\%count%\%prob3%\3\%m%.txt                
+                %method% %file1% %file2% %file3%
+                if = out1 0
+                  ++ count1
+                endif
+              endfor m
+              write %count1%...%count%-%prob1%-%prob2%-%prob3%            
+            endif
+          endif
+        endfor p3
+      endfor p2    
+    endfor p1
+  endfor i
+endfor k
+output stdout

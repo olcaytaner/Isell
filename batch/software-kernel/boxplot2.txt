@@ -1,0 +1,18 @@
+displaycode off
+fontsize axis 12
+fontsize label 12
+boxplot Camel1.txt Camel2.txt Camel3.txt Camel4.txt Camel5.txt
+hold on
+boxplot Tomcat1.txt Tomcat2.txt Tomcat3.txt Tomcat4.txt Tomcat5.txt
+boxplot Poi1.txt Poi2.txt Poi3.txt Poi4.txt Poi5.txt
+boxplot Xalan1.txt Xalan2.txt Xalan3.txt Xalan4.txt Xalan5.txt
+boxplot JEdit1.txt JEdit2.txt JEdit3.txt JEdit4.txt JEdit5.txt
+boxplot Velocity1.txt Velocity2.txt Velocity3.txt Velocity4.txt Velocity5.txt
+boxplot Ant1.txt Ant2.txt Ant3.txt Ant4.txt Ant5.txt
+boxplot Lucene1.txt Lucene2.txt Lucene3.txt Lucene4.txt Lucene5.txt
+boxplot Synapse1.txt Synapse2.txt Synapse3.txt Synapse4.txt Synapse5.txt
+boxplot Ivy1.txt Ivy2.txt Ivy3.txt Ivy4.txt Ivy5.txt
+xaxisnames Camel Tomcat Poi Xalan JEdit Velocity Ant Lucene Synapse Ivy
+axislimits y 0 6 6 1
+ylabel Root_Mean_Square_Error
+exportimage boxplot.eps

@@ -1,0 +1,73 @@
+onetailed
+displaycode off
+displayresult off
+integer i max[5]
+real conf1 conf2 maxconf[5]
+string alg1 alg2 dataset dir
+= alg1 mean
+= alg2 c45
+= dataset balance
+= dir d:\users\olcay\isell\results\%dataset%
+for i 1 5
+  = maxconf[i] -100
+endfor i
+for i 1 1000
+  bonferroni %dir%\%i%.%alg1% %dir%\%i%.%alg2%
+  = conf1 %out2%
+  ftest %dir%\%i%.%alg1% %dir%\%i%.%alg2%
+  = conf2 %out2%
+  -= conf1 %conf2%
+  if > conf1 %maxconf[1]%
+    = maxconf[5] %maxconf[4]%
+    = maxconf[4] %maxconf[3]%
+    = maxconf[3] %maxconf[2]%
+    = maxconf[2] %maxconf[1]%
+    = maxconf[1] %conf1%
+    = max[5] %max[4]%
+    = max[4] %max[3]%
+    = max[3] %max[2]%
+    = max[2] %max[1]%
+    = max[1] %i%
+  else
+    if > conf1 %maxconf[2]% 
+      = maxconf[5] %maxconf[4]%
+      = maxconf[4] %maxconf[3]%
+      = maxconf[3] %maxconf[2]%
+      = maxconf[2] %conf1%
+      = max[5] %max[4]%
+      = max[4] %max[3]%
+      = max[3] %max[2]%
+      = max[2] %i%
+    else
+      if > conf1 %maxconf[3]%  
+        = maxconf[5] %maxconf[4]%
+        = maxconf[4] %maxconf[3]%
+        = maxconf[3] %conf1%
+        = max[5] %max[4]%
+        = max[4] %max[3]%
+        = max[3] %i%
+      else
+        if > conf1 %maxconf[4]%          
+          = maxconf[5] %maxconf[4]%
+          = maxconf[4] %conf1%
+          = max[5] %max[4]%
+          = max[4] %i%
+        else
+          if > conf1 %maxconf[5]%          
+            = maxconf[5] %conf1%
+            = max[5] %i%
+          endif
+        endif 
+      endif
+    endif 
+  endif
+  write %i%
+endfor i
+legendnames %alg1% %alg2%
+for i 1 5
+  hold off
+  plotx %dir%\%max[i]%.%alg1% 
+  hold on
+  plotx %dir%\%max[i]%.%alg2%
+  exportimage c:\%i%.eps  
+endfor i

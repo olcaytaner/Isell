@@ -1,0 +1,26 @@
+displaycode off
+displayresult off
+integer i j k l m veri kactane startj startk startl startm 
+string dir fname
+real confidence
+= dir c:\users\olcay\isell\poly
+= kactane 100
+= derece 1
+= noisy 0
+= startj 1
+= startk 1
+= startl 1
+= startm 1
+output %dir%\sonuc.txt
+for j %startj% 4
+  for k %startk% 5
+    for l %startl% 10
+      for m %startm% 2 
+        = fname %dir%\%j%-%k%-%l%-%m%.txt        
+        modoffile %fname%
+        write %j%;%k%;%l%;%m%;%out1%;%out2% 
+      endfor m
+    endfor l
+  endfor k
+endfor j
+output stdout

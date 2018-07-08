@@ -1,0 +1,38 @@
+displaycode off
+file outfile1 outfile2 outfile3 outfile4
+integer i samplesize maxdegree samplecount j index added
+string dir functionfile
+real e
+= functionfile c:\mixed6.txt
+= dir c:\users\olcay\isell\poly
+= samplesize 50
+= maxdegree 10
+= samplecount 5
+learningrate 10
+perceptronrun 5000
+etadecrease 0.999
+= outfile1 %dir%\bias.txt
+= outfile2 %dir%\variance.txt
+= outfile3 %dir%\error.txt
+openfile outfile1 w
+openfile outfile2 w
+openfile outfile3 w
+mixturedata %functionfile% 25 %dir%\data.txt
+biasvariancecls %functionfile% %maxdegree% %samplecount% %samplesize%
+for i 1 %maxdegree%
+  writefile outfile1 %i%_%aout1[i]%
+  writefile outfile2 %i%_%aout2[i]%
+  = e %aout1[i]%
+  += e %aout2[i]%
+  writefile outfile3 %i%_%e%
+endfor i
+closefile outfile1
+closefile outfile2
+closefile outfile3
+plotxyline %dir%\bias.txt black 1
+hold on
+plotxyline %dir%\variance.txt black 1
+plotxyline %dir%\error.txt black 1
+axislimits x 1 10 9
+axislimits y 0 1 1
+exportimage %dir%\bias-variance.eps

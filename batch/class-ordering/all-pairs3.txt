@@ -1,0 +1,86 @@
+displaycode off
+integer i s j k t p q pos1 pos2 dummy
+real table[6,9] index[3,3] counts[3,3] count
+file infile outfile[6,10]
+string dataset resultdir b[6] permutation st
+= resultdir ../results/perm
+stringpermutation 3 b
+for i 1 10
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset cmc
+    case 3
+      = dataset hayesroth
+    case 4
+      = dataset iris
+    case 5
+      = dataset leukemia1
+    case 6
+      = dataset leukemia2
+    case 7
+      = dataset splice
+    case 8
+      = dataset tae
+    case 9
+      = dataset wave
+    case 10
+      = dataset wine
+  endswitch
+  = table 0
+  for j 1 6
+    = permutation %b[j]%
+    for s 1 6
+      for k 1 10
+        = outfile[%s%,%k%] %resultdir%/%dataset%-%permutation%-%s%-%k%-ripper.pairwise
+        openfile outfile[%s%,%k%] w
+      endfor k
+    endfor s
+    for s 1 10
+      = infile %resultdir%/%dataset%-%permutation%-%s%-ripper.confusion
+      openfile infile r
+      = index 0
+      for k 1 2
+        charatindex permutation %k%
+        = pos1 %sout1%
+        ++ pos1
+        for t %k+1% 3
+          charatindex permutation %t%
+          = pos2 %sout1%
+          ++ pos2
+          = index[%pos1%,%pos2%] 1
+        endfor t
+      endfor k
+      for p 1 10
+        readfile infile dummy
+        readfile infile dummy
+        = count 0
+        for k 1 3
+          for t 1 3
+            readfile infile counts[%k%,%t%]
+            += count %counts[k,t]%            
+          endfor t
+        endfor k
+        = q 0
+        for k 1 3
+          for t 1 3
+            if != k %t%
+              ++ q
+              if = index[%k%,%t%] 1
+                writefile outfile[%q%,%s%] %(100*(counts[k,t]+counts[t,k]))/count%
+              endif 
+            endif
+          endfor t
+        endfor k        
+      endfor p
+      closefile infile
+    endfor s
+    for s 1 6
+      for k 1 10
+        closefile outfile[%s%,%k%]
+      endfor k
+    endfor s
+  endfor j
+endfor i
+output stdout

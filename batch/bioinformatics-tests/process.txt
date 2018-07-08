@@ -1,0 +1,79 @@
+displaycode off
+string dir dataset type
+= dir ../results/bioinformatics
+integer i j k endk p
+real perf
+file infile outfile[5]
+setprecision 5
+for i 1 5
+  switch i
+    case 1
+      = dataset acceptors
+      = endk 5
+    case 2
+      = dataset dlbcl
+      = endk 4
+    case 3
+      = dataset donors
+      = endk 5
+    case 4
+      = dataset polyadenylation
+      = endk 4
+    case 5
+      = dataset prostatetumor
+      = endk 4
+  endswitch
+  for j 1 3
+    switch j
+      case 1
+        = type err
+      case 2
+        = type roc
+      case 3
+        = type pr
+    endswitch
+    = infile %dir%/%dataset%/%type%.txt
+    openfile infile r
+    for k 1 %endk%
+      switch k
+        case 1
+          = outfile[1] %dir%/%dataset%-knn.%type%
+          openfile outfile[1] w
+        case 2
+          = outfile[2] %dir%/%dataset%-mlp.%type%
+          openfile outfile[2] w
+        case 3
+          if = i 4
+            = outfile[3] %dir%/%dataset%-mdt.%type%
+          else
+            = outfile[3] %dir%/%dataset%-svm.%type%
+          endif
+          openfile outfile[3] w
+        case 4
+          if = i 1
+            = outfile[4] %dir%/%dataset%-mdt.%type%
+          else
+            if = i 3
+              = outfile[4] %dir%/%dataset%-mdt.%type%
+            else
+              = outfile[4] %dir%/%dataset%-ripper.%type%
+            endif
+          endif
+          openfile outfile[4] w
+        case 5
+          = outfile[5] %dir%/%dataset%-ripper.%type%
+          openfile outfile[5] w
+      endswitch
+    endfor k
+    for p 1 10
+      for k 1 %endk%
+        readfile infile perf
+        writefile outfile[%k%] %perf%
+      endfor k
+    endfor p
+    closefile infile
+    for k 1 %endk%
+      closefile outfile[%k%]
+    endfor k
+  endfor j
+endfor i

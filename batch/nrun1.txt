@@ -1,0 +1,22 @@
+displaycode off
+displayresult off
+string resultdir dataset 
+integer k numberofruns
+setdatadir ../data
+printposterior on
+= numberofruns 100
+= resultdir ../results/multivariatetest/real
+= dataset spambase
+loaddatasets %dataset%0.xml
+svmC 10
+kerneltype linear
+runcount 1
+foldcount 10
+for k 1 %numberofruns%
+  output %resultdir%/%dataset%/%k%-error.txt
+  posteriorfile %resultdir%/%dataset%/%k%-posterior.txt
+  svm %dataset% cv %k%
+  writescreen %k%
+endfor k
+output stdout
+

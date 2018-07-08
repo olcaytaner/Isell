@@ -1,0 +1,33 @@
+displaycode off
+displayresult off
+file infile
+real orders[5] tmpr
+string dir tmp
+integer i j k
+= dir c:\users\olcay\isell\neuralnetwork
+setprecision 3
+output %dir%\averageorders.txt
+for i 1 5
+  = orders[i] 0
+endfor i
+for i 1 24
+  = infile %dir%\%i%.txt
+  openfile infile r
+  for j 1 44
+    readfile infile tmp
+    for k 1 5
+      readfile infile tmpr
+    endfor k
+    for k 1 5
+      readfile infile tmpr
+      += orders[k] %tmpr%
+    endfor k
+  endfor j
+  closefile infile
+  for k 1 5
+    /= orders[k] 44
+  endfor k
+  write %orders[1]%_%orders[2]%_%orders[3]%_%orders[4]%_%orders[5]%
+endfor i
+output stdout
+exit

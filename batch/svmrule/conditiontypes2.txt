@@ -1,0 +1,67 @@
+displaycode off
+file infile outfile2 infile2
+string read dataset result test
+integer depth
+= depth 10
+integer count p i j k m  countm countu len 
+real averageu[%depth%] averagem[%depth%] countsu[%depth%] countsm[%depth%] countst[%depth%]
+= infile2 finished.txt
+for p 1 2
+  switch p
+    case 1
+      = test combined5x2t
+    case 2
+      = test ftest
+  endswitch
+  = outfile2 %test%-counts3.txt
+  openfile outfile2 w
+  openfile infile2 r
+  readfile infile2 count
+  for j 1 %depth%
+    = averageu[j] 0
+    = averagem[j] 0  
+  endfor j
+  for j 1 %count%
+    readfile infile2 dataset
+    = infile ../results/rule2/%dataset%-hybridripper-%test%.conditiontypes  
+    openfile infile r
+    write %dataset%
+    for i 1 %depth%
+      = countsu[i] 0
+      = countsm[i] 0  
+      = countst[i] 0  
+    endfor i
+    for i 1 10
+      readfile infile read      
+      tokenize read ;
+      if > out1 0
+        for k 1 %out1%
+          stringlength aout1[%k%]
+          = len %out1%
+          for m 1 %len%
+            charatindex aout1[%k%] %m%
+            = result %sout1%
+            if = result U
+              += countsu[%m%] 1
+            else
+              += countsm[%m%] 1
+            endif
+            += countst[%m%] 1
+          endfor m
+        endfor k
+      endif
+    endfor i
+    closefile infile
+    for i 1 %depth%
+      if != countst[%i%] 0
+        += averageu[%i%] %countsu[i]/countst[i]%
+        += averagem[%i%] %countsm[i]/countst[i]%
+      endif
+    endfor i
+  endfor j
+  closefile infile2
+  for j 1 %depth%
+    writefile outfile2 %j%_%averageu[j]/(averageu[j]+averagem[j])%_%averagem[j]/(averageu[j]+averagem[j])%
+  endfor j
+  closefile outfile2
+endfor p

@@ -1,0 +1,182 @@
+<datasets>
+	<dataset name="ant" task="classification" size="730" directory="ant" filetype="kernel" separator=" " filename="class.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="kernel1.txt"/>
+			<kernel value="kernel2.txt"/>
+			<kernel value="kernel3.txt"/>
+		</kernels>
+		<classes>
+			<class value="0" size="564"/>
+			<class value="1" size="166"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="729.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="camel" task="classification" size="195" directory="camel" filetype="kernel" separator=" " filename="class.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="kernel1.txt"/>
+			<kernel value="kernel2.txt"/>
+			<kernel value="kernel3.txt"/>
+		</kernels>
+		<classes>
+			<class value="0" size="182"/>
+			<class value="1" size="13"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="194.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="ivy" task="classification" size="352" directory="ivy" filetype="kernel" separator=" " filename="class.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="kernel1.txt"/>
+			<kernel value="kernel2.txt"/>
+			<kernel value="kernel3.txt"/>
+		</kernels>
+		<classes>
+			<class value="0" size="312"/>
+			<class value="1" size="40"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="351.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="jedit" task="classification" size="292" directory="jedit" filetype="kernel" separator=" " filename="class.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="kernel1.txt"/>
+			<kernel value="kernel2.txt"/>
+			<kernel value="kernel3.txt"/>
+		</kernels>
+		<classes>
+			<class value="0" size="217"/>
+			<class value="1" size="75"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="291.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="lucene" task="classification" size="329" directory="lucene" filetype="kernel" separator=" " filename="class.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="kernel1.txt"/>
+			<kernel value="kernel2.txt"/>
+			<kernel value="kernel3.txt"/>
+		</kernels>
+		<classes>
+			<class value="0" size="127"/>
+			<class value="1" size="202"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="328.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="poi" task="classification" size="437" directory="poi" filetype="kernel" separator=" " filename="class.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="kernel1.txt"/>
+			<kernel value="kernel2.txt"/>
+			<kernel value="kernel3.txt"/>
+		</kernels>
+		<classes>
+			<class value="0" size="157"/>
+			<class value="1" size="280"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="436.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="synapse" task="classification" size="255" directory="synapse" filetype="kernel" separator=" " filename="class.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="kernel1.txt"/>
+			<kernel value="kernel2.txt"/>
+			<kernel value="kernel3.txt"/>
+		</kernels>
+		<classes>
+			<class value="0" size="169"/>
+			<class value="1" size="86"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="254.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="tomcat" task="classification" size="769" directory="tomcat" filetype="kernel" separator=" " filename="class.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="kernel1.txt"/>
+			<kernel value="kernel2.txt"/>
+			<kernel value="kernel3.txt"/>
+		</kernels>
+		<classes>
+			<class value="0" size="694"/>
+			<class value="1" size="75"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="768.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="velocity" task="classification" size="213" directory="velocity" filetype="kernel" separator=" " filename="class.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="kernel1.txt"/>
+			<kernel value="kernel2.txt"/>
+			<kernel value="kernel3.txt"/>
+		</kernels>
+		<classes>
+			<class value="0" size="71"/>
+			<class value="1" size="142"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="212.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+	<dataset name="xalan" task="classification" size="789" directory="xalan" filetype="kernel" separator=" " filename="class.txt" kernelcount="1" sigma="0.000000">
+		<kernels>
+			<kernel value="kernel1.txt"/>
+			<kernel value="kernel2.txt"/>
+			<kernel value="kernel3.txt"/>
+		</kernels>
+		<classes>
+			<class value="0" size="403"/>
+			<class value="1" size="386"/>
+		</classes>
+		<attributes>
+			<attribute type="Real" available="True" min="0.000000" max="788.000000"/>
+			<attribute type="Output" available="True">
+				<value>0</value>
+				<value>1</value>
+			</attribute>
+		</attributes>
+	</dataset>
+</datasets>

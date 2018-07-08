@@ -1,0 +1,68 @@
+displaycode off
+displayresult off
+string resultdir dataset method file1
+file infile outfile1 outfile2 outfile3 outfile4 outfile5
+integer i j k count numberofruns p fold t pprime
+real tp fp tn fn tpr fpr precision recall error
+setprecision 3
+= numberofruns 10
+= fold 10
+= resultdir ../results/multivariatetest/dt
+= infile optimal.txt
+openfile infile r
+readfile infile count
+runcount 1
+foldcount 10
+setprecision 3
+for i 1 %count%
+  readfile infile dataset
+  for j 1 5
+    switch j
+      case 1
+        = method c45
+      case 2
+        = method knn
+      case 3
+        = method svm
+      case 4
+        = method lda
+      case 5
+        = method qda
+    endswitch
+    for k 1 %numberofruns%
+      = file1 %resultdir%/posterior/%dataset%-%k%-%method%.posterior
+      fileexists %file1%
+      if = out1 1
+        for t 5 5
+          = outfile1 %resultdir%/%dataset%-%k%-%method%-%0.1*t%.fnfp
+          openfile outfile1 w
+          = outfile4 %resultdir%/%dataset%-%k%-%method%-%0.1*t%.rp
+          openfile outfile4 w
+          confusionanalysis %file1% %0.1*t%
+          for p 1 %fold%                    
+            = tp %aout1[p]%
+            = fp %aout2[p]%
+            = tn %aout3[p]%
+            = fn %aout4[p]%
+            = tpr %tp/(tp+fn)%
+            = fpr %fp/(fp+tn)%
+            = pprime %tp+fp%
+            if = pprime 0
+              = precision 0
+            else
+              = precision %tp/(tp+fp)%
+            endif
+            = recall %tp/(tp+fn)%
+            = error %(100*(fp+fn))/(tp+tn+fp+fn)%
+            writefile outfile1 %fn%_%fp%
+            writefile outfile4 %recall%_%precision%
+          endfor p
+          closefile outfile1
+          closefile outfile4
+        endfor t
+      endif
+      writescreen %i%_%j%_%k%
+    endfor k
+  endfor j  
+endfor i  
+closefile infile

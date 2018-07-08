@@ -1,0 +1,60 @@
+displaycode off
+displayresult off
+integer i j k p
+real precision recall denom fmeasure
+file infile outfile1
+string dataset methodname resultdir
+setprecision 3
+= resultdir ../results/mvartest2
+for i 1 7
+  switch i
+    case 1
+      = methodname c45
+    case 2
+      = methodname knn
+    case 3
+      = methodname lda
+    case 4
+      = methodname qda
+    case 5
+      = methodname svm1
+    case 6
+      = methodname svm2
+    case 7
+      = methodname randomforest
+  endswitch
+  for j 1 4
+    switch j
+      case 1
+        = dataset acceptors
+      case 2
+        = dataset donors
+      case 3
+        = dataset ads
+      case 4
+        = dataset polyadenylation
+    endswitch
+    for k 1 10
+      fileexists %resultdir%/measure/pr/%dataset%-%k%-%methodname%.pr
+      if = out1 1
+        = infile %resultdir%/measure/pr/%dataset%-%k%-%methodname%.pr
+        openfile infile r
+        = outfile1 %resultdir%/measure/fmeasure/%dataset%-%k%-%methodname%.fmeasure
+        openfile outfile1 w
+        for p 1 10                    
+          readfile infile precision
+          readfile infile recall
+          = denom %precision+recall%
+          if = denom 0
+            = fmeasure 0
+          else
+            = fmeasure %(2*precision*recall)/(precision+recall)%
+          endif
+          writefile outfile1 %fmeasure%
+        endfor p
+        closefile infile
+        closefile outfile1
+      endif
+    endfor k
+  endfor j  
+endfor i  

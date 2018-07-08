@@ -1,0 +1,113 @@
+displaycode off
+file infile outfile1 outfile2
+string read dataset result modelselection
+integer p i j k m countsu[15] countsm[15] countsq[15] countm countu countq len
+for p 1 3
+  switch p
+    case 1
+      = modelselection aic
+    case 2
+      = modelselection bic
+    case 3
+      = modelselection crossvalidation
+  endswitch
+  = outfile1 c:\users\olcay\isell\hybridripper\%modelselection%-counts1.txt
+  = outfile2 c:\users\olcay\isell\hybridripper\%modelselection%-counts2.txt
+  openfile outfile1 w
+  openfile outfile2 w
+  for j 1 15
+    = countsu[j] 0
+    = countsm[j] 0  
+    = countsq[j] 0  
+  endfor j
+  for j 1 22
+    = countm 0
+    = countu 0
+    = countq 0
+    switch j
+      case 1
+        = dataset breast
+      case 2
+        = dataset bupa
+      case 3
+        = dataset ecoli
+      case 4
+        = dataset glass
+      case 5
+        = dataset haberman
+      case 6
+        = dataset iris
+      case 7
+        = dataset monks
+      case 8 
+        = dataset pima
+      case 9 
+        = dataset wine
+      case 10
+        = dataset hepatitis
+      case 11
+        = dataset yeast
+      case 12
+        = dataset zoo
+      case 13
+        = dataset balance
+      case 14
+        = dataset flare
+      case 15
+        = dataset vote
+      case 16
+        = dataset ironosphere
+      case 17
+        = dataset wave
+      case 18
+        = dataset car
+      case 19
+        = dataset tictactoe
+      case 20
+        = dataset dermatology          
+      case 21
+        = dataset fevzi
+      case 22
+        = dataset segment
+    endswitch
+    = infile c:\users\olcay\isell\hybridripper\%dataset%-%modelselection%.nodetypes  
+    openfile infile r
+    write %dataset%
+    for i 1 10
+      readfile infile read      
+      tokenize read ;
+      if > out1 0
+        for k 1 %out1%
+          countchar aout1[%k%] U
+          += countu %out1%
+          countchar aout1[%k%] L
+          += countm %out1%      
+          countchar aout1[%k%] Q
+          += countq %out1%      
+          stringlength aout1[%k%]
+          = len %out1%
+          for m 1 %len%
+            charatindex aout1[%k%] %m%
+            = result %sout1%
+            if = result U
+              += countsu[m] 1
+            else
+              if = result L
+                += countsm[m] 1
+              else
+                += countsq[m] 1
+              endif
+            endif
+          endfor m
+        endfor k
+      endif
+    endfor i
+    closefile infile
+    writefile outfile1 %dataset%;%countu%;%countm%;%countq%
+  endfor j
+  for j 1 15
+    writefile outfile2 %j%_%countsu[j]%_%countsm[j]%_%countsq[j]%
+  endfor j
+  closefile outfile1
+  closefile outfile2
+endfor p

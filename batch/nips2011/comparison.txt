@@ -1,0 +1,69 @@
+displaycode off
+integer i j res1 res2
+string resultdir dataset
+real aa ar ra rr
+twotailed
+= aa 0
+= ar 0
+= ra 0
+= rr 0
+= resultdir ../results/svmtest/real
+output comparisonresult.txt
+for i 1 15
+  switch i
+    case 1
+      = dataset transfusion
+    case 2
+      = dataset credit
+    case 3
+      = dataset australian
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset breast
+    case 6
+      = dataset pima
+    case 7
+      = dataset mammographic
+    case 8
+      = dataset tictactoe
+    case 9
+      = dataset german
+    case 10
+      = dataset satellite47
+    case 11
+      = dataset titanic
+    case 12
+      = dataset acceptors
+    case 13
+      = dataset donors
+    case 14
+      = dataset ringnorm
+    case 15
+      = dataset twonorm
+  endswitch
+  for j 1 10
+    pairedttest %resultdir%/%dataset%-%j%-linear.error %resultdir%/%dataset%-%j%-rbf.error
+    = res1 %out1%
+    write error_%dataset%_%j%_%res1%_%1-out2%
+    pairedttest %resultdir%/%dataset%-%j%-linear.hinge %resultdir%/%dataset%-%j%-rbf.hinge
+    = res2 %out1%
+    write hinge_%dataset%_%j%_%res2%_%1-out2%
+    if = res1 0
+      if = res2 0
+        ++ aa
+      else
+        ++ ar
+      endif
+    else
+      if = res2 0
+        ++ ra
+      else
+        ++ rr
+      endif
+    endif
+  endfor j
+endfor i
+write %aa/150%_%ar/150%_%ra/150%_%rr/150%
+output stdout
+

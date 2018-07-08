@@ -1,0 +1,78 @@
+displaycode off
+integer i j k t s cno fact pos1 pos2
+string dataset st b[120] permutation 
+real error[5,5] sum
+setdatadir ../data
+loaddatasets rule.xml
+for i 1 14
+  switch i
+    case 1
+      = dataset balance
+    case 2
+      = dataset car
+    case 3
+      = dataset cmc
+    case 4
+      = dataset hayesroth
+    case 5
+      = dataset iris
+    case 6
+      = dataset leukemia1
+    case 7
+      = dataset leukemia2
+    case 8
+      = dataset nursery
+    case 9
+      = dataset splice
+    case 10
+      = dataset srbct
+    case 11
+      = dataset tae
+    case 12
+      = dataset vehicle
+    case 13
+      = dataset wave
+    case 14
+      = dataset wine
+  endswitch
+  for s 1 10
+    output %dataset%-%s%-qp.diff
+    classcount %dataset%
+    = cno %out1%
+    solveqp %dataset%-%s%.qp
+    = t 1
+    for j 1 %cno%
+      for k 1 %cno%
+        if != j %k%
+          write %j-1%_%k-1%_%aout1[t]%
+          = error[%j%,%k%] %aout1[t]%
+          ++ t
+        endif
+      endfor k
+    endfor j    
+    = fact 1
+    output %dataset%-%s%-qp.error
+    for j 2 %cno%
+      *= fact %j%
+    endfor j
+    stringpermutation %cno% b
+    for j 1 %fact%
+      = permutation %b[j]%
+      = sum 0.0
+      for k 1 %cno-1%
+        charatindex permutation %k%
+        = pos1 %sout1%
+        ++ pos1
+        for t %k+1% %cno%
+          charatindex permutation %t%
+          = pos2 %sout1%
+          ++ pos2
+          += sum %error[pos1,pos2]%
+        endfor t
+      endfor k
+      meanvariance ../results/perm/%dataset%-%b[j]%-%s%-ripper.error
+      write %b[j]%_%sum%_%out1%
+    endfor j
+  endfor s
+endfor i
+output stdout

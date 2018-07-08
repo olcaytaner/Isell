@@ -1,0 +1,62 @@
+displaycode off
+displayresult off
+string dataset resultdir overalldir deleted bestaction added removed beststring
+= resultdir ../results/ensemble
+= overalldir ../results/ensembleresults
+integer i j k t n s nfact improved found bestcount iterationcount bestperformancecount
+real bestperformance performance
+file error
+= n 6
+= nfact 1
+for i 2 %n%
+  = nfact %nfact*i%
+endfor i
+string b[%nfact%]
+string c[%n-1%]
+stringpermutation %n% b
+string bestlist[100]
+string posteriorfiles[100]
+string donelist[500]
+string done
+integer donecount
+for i 1 2
+  switch i
+    case 1
+      = dataset dermatology
+    case 2
+      = dataset glass
+  endswitch   
+  = error %overalldir%/%dataset%-r.error
+  openfile error w
+  for s 1 10
+    randomize %10+s%   
+    = bestcount 0
+    = iterationcount 0
+    while < bestcount %n%
+      random 1 %nfact+1%
+      = added %b[out1]%
+      searcharray bestlist %bestcount% %added%
+      = found %out1%
+      if = found -1
+        += bestcount 1
+        = bestlist[%bestcount%] %added%
+      endif
+    endwhile
+    = donecount 0
+    for t 1 %bestcount%
+      = posteriorfiles[t] %resultdir%/%dataset%-%bestlist[t]%.posterior
+    endfor t
+    sortarray posteriorfiles %bestcount%
+    concatarray posteriorfiles %bestcount%
+    = done %sout1%
+    += donecount 1
+    = donelist[%donecount%] %done%
+    ensemble posteriorfiles %bestcount%
+    = bestperformance %out1%
+    = bestperformancecount %bestcount%
+    concatarray bestlist %bestcount%
+    = beststring %sout1%
+    writefile error %bestperformance%
+  endfor s
+  closefile error
+endfor i

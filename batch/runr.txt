@@ -1,0 +1,112 @@
+displaycode off
+displayresult off
+string resultdir dataset method extension
+integer i j k starti endi startj endj startk endk
+setdatadir ../data
+loaddatasets regression.xml
+foldcount 2
+runcount 5
+= resultdir ../results/regression
+normalizeoutput on
+for j 1 30
+  switch j
+    case 1
+      = dataset abalone
+    case 2
+      = dataset add10
+    case 3
+      = dataset boston
+    case 4
+      = dataset comp
+    case 5
+      = dataset sinus
+    case 6
+      = dataset bank8fh
+    case 7
+      = dataset bank8nh
+    case 8
+      = dataset bank8fm
+    case 9
+      = dataset bank8nm
+    case 10
+      = dataset bank32fh
+    case 11
+      = dataset bank32nh
+    case 12
+      = dataset bank32fm
+    case 13
+      = dataset bank32nm
+    case 14
+      = dataset kin8fh
+    case 15
+      = dataset kin8nh
+    case 16
+      = dataset kin8fm
+    case 17
+      = dataset kin8nm
+    case 18
+      = dataset kin32fh
+    case 19
+      = dataset kin32nh
+    case 20
+      = dataset kin32fm
+    case 21
+      = dataset kin32nm
+    case 22
+      = dataset puma8fh
+    case 23
+      = dataset puma8nh
+    case 24
+      = dataset puma8fm
+    case 25
+      = dataset puma8nm
+    case 26
+      = dataset puma32fh
+    case 27
+      = dataset puma32nh
+    case 28
+      = dataset puma32fm
+    case 29
+      = dataset puma32nm
+    case 30
+      = dataset california
+  endswitch
+  for k 1 1
+    switch k
+      case 1
+        = extension average
+        = method selectaverage
+      case 2
+        = extension regstump
+        = method regstump
+      case 3
+        = extension linear
+        = method linearregression
+      case 4
+        = extension regtree
+        = method regtree
+      case 5
+        = extension knnreg
+        = method knnreg
+        nearcount 1
+      case 6
+        = extension svmreg
+        = method svmreg
+        kerneltype linear
+        svmC 1
+      case 7
+        = extension gprocessreg
+        = method gprocessreg
+      case 8
+        = extension lp
+        = method mlpgenericreg
+        hiddenlayers 0
+        learningrate 0.1
+    endswitch
+    for i 1 1000
+      output %dir%/%dataset%/%i%.%extension%
+      %method% %dataset% cv %i%
+    endfor i
+  endfor k
+endfor j
+

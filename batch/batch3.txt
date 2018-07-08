@@ -1,0 +1,30 @@
+displaycode off
+displayresult off
+file infile
+real ranks[5] tmpr
+string dir tmp
+integer i j k
+= dir //home/olcaytaner/isell
+setprecision 3
+output %dir%/cls-averageranks.txt
+for i 1 5
+  = ranks[i] 0
+endfor i
+= infile %dir%/cls-50.txt
+openfile infile r
+for j 1 44
+  readfile infile tmp
+  for k 1 5
+    readfile infile tmpr
+    += ranks[k] %tmpr%
+  endfor k
+  for k 1 5
+    readfile infile tmpr
+  endfor k
+endfor j
+closefile infile
+for k 1 5
+  /= ranks[k] 44
+endfor k
+write %ranks[1]%_%ranks[2]%_%ranks[3]%_%ranks[4]%_%ranks[5]%
+output stdout

@@ -1,0 +1,17 @@
+displaycode off
+hold off
+axislimits x 1 10 9 0
+axislimits y 1 3000 3 0
+hold on
+plotxyline ftest-uni.txt black 3
+plotxyline ftest-multi.txt red 3
+plotxyline combined5x2t-uni.txt green 3
+plotxyline combined5x2t-multi.txt blue 3
+legendnames Uni(F) Multi(F) Uni(t) Multi(t)
+legendposition upright
+fontsize axis 24
+fontsize legend 24
+fontsize label 24
+xlabel Level
+ylabel Times_selected
+exportimage condition.eps

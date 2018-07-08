@@ -1,0 +1,3 @@
+setdatadir ../data
+createdataset mitosis _ 59 0;1 mitosis mitosis.txt _
+savedataset mitosis mitosis.xml

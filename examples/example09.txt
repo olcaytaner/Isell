@@ -1,0 +1,54 @@
+displaycode off
+displayresult off
+os Windows
+string datadir realized ntype rtype dataset
+integer i j k
+= datadir c:\users\olcay\thesis\data
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+runcount 5
+foldcount 2
+testpercentage 0.33333333333333
+setprecision 1
+for i 1 6
+  switch i
+    case 1
+      = dataset iris
+    case 2
+      = dataset haberman
+    case 3
+      = dataset monks
+    case 4
+      = dataset artificial
+    case 5
+      = dataset letter
+    case 6
+      = dataset zipcodes
+  endswitch   
+  for j 1 2
+    switch j
+      case 1
+        namestype Classatend
+        = ntype normal
+      case 2
+        namestype Aydin
+        = ntype aydin
+    endswitch
+    for k 1 2
+      switch k
+        case 1
+          = realized on
+          = rtype realized
+        case 2
+          = realized off
+          = rtype discrete
+      endswitch
+      exportfilename validation %datadir%\%dataset%\%rtype%-%ntype%\D#validation.txt
+      exportfilename whole %datadir%\%dataset%\%rtype%-%ntype%\D#whole.txt
+      exportfilename train %datadir%\%dataset%\%rtype%-%ntype%\D#R#F#train.txt
+      exportfilename test %datadir%\%dataset%\%rtype%-%ntype%\D#R#F#test.txt        
+      exportdatafolds %dataset% _ 1 %realized%
+      exportvaldata %dataset% _ 1 %realized%
+    endfor k
+  endfor j
+endfor i

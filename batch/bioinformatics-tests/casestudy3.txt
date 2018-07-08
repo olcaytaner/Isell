@@ -1,0 +1,49 @@
+displaycode off
+integer i j
+string resultdir dataset alg1 alg2 alg
+setprecision 6
+= resultdir ../results/bioinformatics
+onetailed
+for j 1 2
+  switch j
+    case 1
+      = alg mlpgeneric
+      = alg1 %alg%
+    case 2
+      = alg randomforest
+      = alg2 %alg%
+  endswitch
+  output %alg%.txt
+  for i 1 11
+    switch i
+      case 1
+        = dataset 9tumors
+      case 2
+        = dataset 11tumors
+      case 3
+        = dataset 14tumors
+      case 4
+        = dataset braintumor1
+      case 5
+        = dataset braintumor2
+      case 6
+        = dataset dlbcl
+      case 7
+        = dataset leukemia1
+      case 8
+        = dataset leukemia2
+      case 9
+        = dataset lungtumor
+      case 10
+        = dataset prostatetumor
+      case 11
+        = dataset srbct
+    endswitch
+    meanvariance %resultdir%/%dataset%-%alg%.error
+    write %out1%
+  endfor i
+endfor j
+output stdout
+wilcoxon %alg1%.txt %alg2%.txt
+differenceplot %alg1%.txt %alg2%.txt
+exportimage casestudy3.eps

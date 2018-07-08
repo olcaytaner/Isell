@@ -1,0 +1,207 @@
+displaycode off
+integer i k win[6,6]
+string dataset resultdir st type
+= type error
+= resultdir ../results/softtree
+for i 1 6
+  for k 1 6
+    = win[%i%,%k%] 0
+  endfor k
+endfor i
+output cls-stump-bagging-comparison-error.txt
+write \begin{table}
+write \begin{center}
+write \begin{tabular}{|l|rrrrrr|}
+write \hline
+write _&_Hard(Stump)_&_LDT(Stump)_&_Soft(Stump)_&_Hard(Bagged)_&_LDT(Bagged)_&_Soft(Bagged)_\\
+write \hline
+twotailed
+for i 1 27
+  switch i
+    case 1
+      = dataset acceptors
+    case 2
+      = dataset artificial
+    case 3
+      = dataset breast
+    case 4
+      = dataset bupa
+    case 5
+      = dataset donors
+    case 6
+      = dataset german
+    case 7
+      = dataset haberman
+    case 8
+      = dataset heart
+    case 9
+      = dataset hepatitis
+    case 10
+      = dataset ironosphere
+    case 11
+      = dataset krvskp
+    case 12
+      = dataset magic
+    case 13
+      = dataset monks
+    case 14
+      = dataset mushroom
+    case 15
+      = dataset musk2
+    case 16
+      = dataset parkinsons
+    case 17
+      = dataset pima
+    case 18
+      = dataset polyadenylation
+    case 19
+      = dataset promoters
+    case 20
+      = dataset ringnorm
+    case 21
+      = dataset satellite47
+    case 22
+      = dataset spambase
+    case 23
+      = dataset spect
+    case 24
+      = dataset tictactoe
+    case 25
+      = dataset titanic
+    case 26
+      = dataset twonorm
+    case 27
+      = dataset vote
+  endswitch
+  ftest5x2 %resultdir%/%dataset%-bagging-c45stump.%type% %resultdir%/%dataset%-bagging-multildtstump.%type%
+  if = out1 1
+    ++ win[1,2]
+  else
+    if = out1 2
+      ++ win[2,1]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-c45stump.%type% %resultdir%/%dataset%-bagging-softstump.%type%
+  if = out1 1
+    ++ win[1,3]
+  else
+    if = out1 2
+      ++ win[3,1]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-c45stump.%type% %resultdir%/%dataset%-bagging-c45.%type%
+  if = out1 1
+    ++ win[1,4]
+  else
+    if = out1 2
+      ++ win[4,1]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-c45stump.%type% %resultdir%/%dataset%-bagging-multildt.%type%
+  if = out1 1
+    ++ win[1,5]
+  else
+    if = out1 2
+      ++ win[5,1]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-c45stump.%type% %resultdir%/%dataset%-bagging-softtree.%type%
+  if = out1 1
+    ++ win[1,6]
+  else
+    if = out1 2
+      ++ win[6,1]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-multildtstump.%type% %resultdir%/%dataset%-bagging-softstump.%type%
+  if = out1 1
+    ++ win[2,3]
+  else
+    if = out1 2
+      ++ win[3,2]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-multildtstump.%type% %resultdir%/%dataset%-bagging-c45.%type%
+  if = out1 1
+    ++ win[2,4]
+  else
+    if = out1 2
+      ++ win[4,2]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-multildtstump.%type% %resultdir%/%dataset%-bagging-multildt.%type%
+  if = out1 1
+    ++ win[2,5]
+  else
+    if = out1 2
+      ++ win[5,2]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-multildtstump.%type% %resultdir%/%dataset%-bagging-softtree.%type%
+  if = out1 1
+    ++ win[2,6]
+  else
+    if = out1 2
+      ++ win[6,2]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-softstump.%type% %resultdir%/%dataset%-bagging-c45.%type%
+  if = out1 1
+    ++ win[3,4]
+  else
+    if = out1 2
+      ++ win[4,3]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-softstump.%type% %resultdir%/%dataset%-bagging-multildt.%type%
+  if = out1 1
+    ++ win[3,5]
+  else
+    if = out1 2
+      ++ win[5,3]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-softstump.%type% %resultdir%/%dataset%-bagging-softtree.%type%
+  if = out1 1
+    ++ win[3,6]
+  else
+    if = out1 2
+      ++ win[6,3]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-c45.%type% %resultdir%/%dataset%-bagging-multildt.%type%
+  if = out1 1
+    ++ win[4,5]
+  else
+    if = out1 2
+      ++ win[5,4]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-c45.%type% %resultdir%/%dataset%-bagging-softtree.%type%
+  if = out1 1
+    ++ win[4,6]
+  else
+    if = out1 2
+      ++ win[6,4]
+    endif
+  endif
+  ftest5x2 %resultdir%/%dataset%-bagging-multildt.%type% %resultdir%/%dataset%-bagging-softtree.%type%
+  if = out1 1
+    ++ win[5,6]
+  else
+    if = out1 2
+      ++ win[6,5]
+    endif
+  endif
+endfor i
+write Hard(Stump)_&_&_%win[1,2]%_&_%win[1,3]%_&_%win[1,4]%_&_%win[1,5]%_&_%win[1,6]%_\\
+write Ldt(Stump)_&_%win[2,1]%_&_&_%win[2,3]%_&_%win[2,4]%_&_%win[2,5]%_&_%win[2,6]%_\\
+write Soft(Stump)_&_%win[3,1]%_&_%win[3,2]%_&_&_%win[3,4]%_&_%win[3,5]%_&_%win[3,6]%_\\
+write Hard(Bagged)_&_%win[4,1]%_&_%win[4,2]%_&_%win[4,3]%_&_&_%win[4,5]%_&_%win[4,6]%_\\
+write Ldt(Bagged)_&_%win[5,1]%_&_%win[5,2]%_&_%win[5,3]%_&_%win[5,4]%_&_&_%win[5,6]%_\\
+write Soft(Bagged)_&_%win[6,1]%_&_%win[6,2]%_&_%win[6,3]%_&_%win[6,4]%_&_%win[6,5]%_&_\\
+write \hline
+write \end{tabular}
+write \end{center}
+write \end{table}
+output stdout

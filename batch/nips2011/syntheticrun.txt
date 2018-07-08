@@ -1,0 +1,35 @@
+displaycode off
+displayresult off
+integer i j res1 res2
+real p1 p2
+twotailed
+setdatadir ../data
+hingelosstype regular
+normalizekernel on
+loaddatasets data.xml
+for i 0 9
+  runcount 1
+  foldcount 10
+  kerneltype linear
+  output tmp1.txt
+  svm data%i% cv 1
+  output tmp3.txt
+  for j 1 10
+    write %aout3[j]%
+  endfor j
+  kerneltype rbf
+  output tmp2.txt
+  svm data%i% cv 1
+  output tmp4.txt
+  for j 1 10
+    write %aout3[j]%
+  endfor j
+  output stdout
+  pairedttest tmp1.txt tmp2.txt
+  = res1 %out1%
+  = p1 %out2%
+  pairedttest tmp3.txt tmp4.txt
+  = res2 %out1%
+  = p2 %out2%
+  writescreen %res1%_%res2%_%1-p1%_%1-p2%
+endfor i

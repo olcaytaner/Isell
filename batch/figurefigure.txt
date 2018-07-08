@@ -1,0 +1,56 @@
+displaycode off
+setdatadir c:\users\olcay\thesis\data
+loaddef c:\users\olcay\isell\code\idtree.ini
+runcount 1
+foldcount 10
+runtofold 1
+drawmodel on
+plotclasses + all
+imagefile c:\tree-uni-1.eps
+ldt deneme2 random 1
+imagefile c:\tree-multi-1.eps
+multildt deneme2 random 1
+imagefile c:\tree-omni-1.eps
+omnildt deneme2 random 1
+imagefile c:\rule-uni-1.eps
+ripper deneme2 random 1
+imagefile c:\rule-multi-1.eps
+multiripperlda deneme2 random 1
+imagefile c:\rule-omni-1.eps
+hybridripper deneme2 random 1
+imagefile c:\tree-uni-2.eps
+ldt deneme4 random 1
+imagefile c:\tree-multi-2.eps
+multildt deneme4 random 1
+imagefile c:\tree-omni-2.eps
+omnildt deneme4 random 1
+imagefile c:\rule-uni-2.eps
+ripper deneme4 random 1
+imagefile c:\rule-multi-2.eps
+multiripperlda deneme4 random 1
+imagefile c:\rule-omni-2.eps
+hybridripper deneme4 random 1
+imagefile c:\tree-uni-3.eps
+ldt deneme5 random 1
+imagefile c:\tree-multi-3.eps
+multildt deneme5 random 1
+imagefile c:\tree-omni-3.eps
+omnildt deneme5 random 1
+imagefile c:\rule-uni-3.eps
+ripper deneme5 random 1
+imagefile c:\rule-multi-3.eps
+multiripperlda deneme5 random 1
+imagefile c:\rule-omni-3.eps
+hybridripper deneme5 random 1
+imagefile c:\tree-uni-4.eps
+ldt deneme6 random 1
+imagefile c:\tree-multi-4.eps
+multildt deneme6 random 1
+imagefile c:\tree-omni-4.eps
+omnildt deneme6 random 1
+imagefile c:\rule-uni-4.eps
+ripper deneme6 random 1
+imagefile c:\rule-multi-4.eps
+multiripperlda deneme6 random 1
+imagefile c:\rule-omni-4.eps
+hybridripper deneme6 random 1

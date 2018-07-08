@@ -1,0 +1,176 @@
+displaycode off
+displayresult off
+integer case
+= case 2
+integer i k j run[%case%] t
+real minx miny maxx maxy x y
+matrix eigenvec[2] f[4]
+string resultdir method[%case%,4] dataset[%case%] file[4] type
+setprecision 3
+file infile
+= resultdir ../results/mvartest2
+= dataset[1] ec-kernel
+= method[1,1] 0
+= method[1,2] 2
+= method[1,3] 4
+= method[1,4] 5
+= run[1] 3
+= dataset[2] ec-kernel
+= method[2,1] 0
+= method[2,2] 2
+= method[2,3] 3
+= method[2,4] 4
+= run[2] 9
+for t 1 %case%
+  for i 1 4
+    = file[%i%] %resultdir%/measure/confusion/%dataset[t]%-%method[t,i]%-%run[t]%.confusion
+  endfor i
+  manova %file[1]% %file[2]% %file[3]% %file[4]%
+  output eigenvectors2.txt
+  write %aout2[1]%_%aout3[1]%
+  write %aout2[2]%_%aout3[2]%
+  write %aout2[3]%_%aout3[3]%
+  write %aout2[4]%_%aout3[4]%
+  output stdout
+  loadmatrix eigenvectors2.txt eigenvec[2]
+  output eigenvectors1.txt
+  write %aout2[1]%
+  write %aout2[2]%
+  write %aout2[3]%
+  write %aout2[4]%
+  output stdout
+  loadmatrix eigenvectors1.txt eigenvec[1]
+  for i 1 4
+    loadmatrix %file[i]% f[%i%]
+    *= f[%i%] eigenvec[2]
+    mprint f[%i%] %i%.txt
+  endfor i
+  = minx 100000
+  = maxx -100000
+  = miny 100000
+  = maxy -100000
+  for i 1 4
+    = infile %i%.txt
+    openfile infile r
+    for k 1 10
+      readfile infile x
+      if < x %minx% 
+        = minx %x%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      readfile infile y
+      if < y %miny% 
+        = miny %y%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor k
+    closefile infile
+  endfor i
+  hold off
+  fontsize legend 24
+  fontsize label 24
+  fontsize axis 24
+  axislimits x %minx% %maxx% 1 0
+  axislimits y %miny% %maxy% 1 0
+  hold on
+  for i 1 4
+    plotgauss2d %i%.txt 4
+  endfor i
+  fontsize data 18
+  exportimage %resultdir%/image/eigenvectors/%dataset[t]%-%run[t]%-%method[t,1]%-%method[t,2]%-%method[t,3]%-%method[t,4]%-2d.eps
+  hold off
+  for i 1 4
+    loadmatrix %file[i]% f[%i%]
+    *= f[%i%] eigenvec[1]
+    mprint f[%i%] %i%.txt
+  endfor i
+  hold off
+  errorhistogram 1.txt 2.txt 3.txt 4.txt
+  exportimage %resultdir%/image/eigenvectors/%dataset[t]%-%run[t]%-%method[t,1]%-%method[t,2]%-%method[t,3]%-%method[t,4]%-1d.eps
+  hold off
+endfor t
+for t 1 %case%
+  hold off
+  = minx 100000
+  = maxx -100000
+  = miny 100000
+  = maxy -100000
+  for i 1 4
+    = infile %resultdir%/measure/roc/%dataset[t]%-%method[t,i]%-%run[t]%.roc
+    openfile infile r
+    for k 1 10
+      readfile infile x
+      if < x %minx% 
+        = minx %x%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      readfile infile y
+      if < y %miny% 
+        = miny %y%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor k
+    closefile infile
+  endfor i
+  hold off
+  fontsize legend 24
+  fontsize label 24
+  fontsize axis 24
+  axislimits x %minx% %maxx% 1 0
+  axislimits y %miny% %maxy% 1 0
+  hold on
+  for i 1 4
+    plotgauss2d %resultdir%/measure/roc/%dataset[t]%-%method[t,i]%-%run[t]%.roc 4
+  endfor i
+  fontsize data 18
+  exportimage %resultdir%/image/eigenvectors/%dataset[t]%-%run[t]%-%method[t,1]%-%method[t,2]%-%method[t,3]%-%method[t,4]%-roc.eps
+  hold off
+  = minx 100000
+  = maxx -100000
+  = miny 100000
+  = maxy -100000
+  for i 1 4
+    = infile %resultdir%/measure/pr/%dataset[t]%-%method[t,i]%-%run[t]%.pr
+    openfile infile r
+    for k 1 10
+      readfile infile x
+      if < x %minx% 
+        = minx %x%
+      endif
+      if > x %maxx%
+        = maxx %x%
+      endif
+      readfile infile y
+      if < y %miny% 
+        = miny %y%
+      endif
+      if > y %maxy%
+        = maxy %y%
+      endif
+    endfor k
+    closefile infile
+  endfor i
+  hold off
+  fontsize legend 24
+  fontsize label 24
+  fontsize axis 24
+  axislimits x %minx% %maxx% 1 0
+  axislimits y %miny% %maxy% 1 0
+  hold on
+  for i 1 4
+    plotgauss2d %resultdir%/measure/pr/%dataset[t]%-%method[t,i]%-%run[t]%.pr 4
+  endfor i
+  fontsize data 18
+  exportimage %resultdir%/image/eigenvectors/%dataset[t]%-%run[t]%-%method[t,1]%-%method[t,2]%-%method[t,3]%-%method[t,4]%-pr.eps
+  hold off
+  errorhistogram %resultdir%/measure/error/%dataset[t]%-%method[t,1]%-%run[t]%.error %resultdir%/measure/error/%dataset[t]%-%method[t,2]%-%run[t]%.error %resultdir%/measure/error/%dataset[t]%-%method[t,3]%-%run[t]%.error %resultdir%/measure/error/%dataset[t]%-%method[t,4]%-%run[t]%.error
+  exportimage %resultdir%/image/eigenvectors/%dataset[t]%-%run[t]%-%method[t,1]%-%method[t,2]%-%method[t,3]%-%method[t,4]%-hist.eps
+endfor t

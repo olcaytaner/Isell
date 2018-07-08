@@ -1,0 +1,12 @@
+plotsigmoid combined5x2t.txt
+hold on
+plotsigmoid cvttest.txt
+plotsigmoid tpaired5x2.txt
+plotsigmoid wilcoxon.txt
+axislimits y 0 1 10 1
+legendposition upleft
+legendnames Combined_5x2_cv_t_test k-fold_paired_t_test 5x2_cv_t_test Wilcoxon_sign_rank_test
+axislimits x -3 3 10 1
+xlabel z
+ylabel Probability_of_rejecting_null_hypothesis
+

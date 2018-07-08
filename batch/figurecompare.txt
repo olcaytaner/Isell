@@ -1,0 +1,24 @@
+displaycode off
+displayresult off
+integer t f d fold
+string testtype
+for t 1 2
+  switch t
+    case 1
+      = testtype waldwolfowitz
+    case 2
+      = testtype smirnov
+  endswitch
+    for d 1 4
+      hold off
+      = fold 10
+      plotmv ../results/graph/power/%testtype%-%fold%-%d%-0.txt ../results/graph/power/%testtype%-%fold%-%d%-1.txt ../results/graph/power/%testtype%-%fold%-%d%-2.txt ../results/graph/power/%testtype%-%fold%-%d%-3.txt ../results/graph/power/%testtype%-%fold%-%d%-4.txt ../results/graph/power/%testtype%-%fold%-%d%-5.txt ../results/graph/power/%testtype%-%fold%-%d%-6.txt ../results/graph/power/%testtype%-%fold%-%d%-7.txt ../results/graph/power/%testtype%-%fold%-%d%-8.txt ../results/graph/power/%testtype%-%fold%-%d%-9.txt ../results/graph/power/%testtype%-%fold%-%d%-10.txt
+      hold on
+      = fold 30
+      plotmv ../results/graph/power/%testtype%-%fold%-%d%-0.txt ../results/graph/power/%testtype%-%fold%-%d%-1.txt ../results/graph/power/%testtype%-%fold%-%d%-2.txt ../results/graph/power/%testtype%-%fold%-%d%-3.txt ../results/graph/power/%testtype%-%fold%-%d%-4.txt ../results/graph/power/%testtype%-%fold%-%d%-5.txt ../results/graph/power/%testtype%-%fold%-%d%-6.txt ../results/graph/power/%testtype%-%fold%-%d%-7.txt ../results/graph/power/%testtype%-%fold%-%d%-8.txt ../results/graph/power/%testtype%-%fold%-%d%-9.txt ../results/graph/power/%testtype%-%fold%-%d%-10.txt
+      = fold 50
+      plotmv ../results/graph/power/%testtype%-%fold%-%d%-0.txt ../results/graph/power/%testtype%-%fold%-%d%-1.txt ../results/graph/power/%testtype%-%fold%-%d%-2.txt ../results/graph/power/%testtype%-%fold%-%d%-3.txt ../results/graph/power/%testtype%-%fold%-%d%-4.txt ../results/graph/power/%testtype%-%fold%-%d%-5.txt ../results/graph/power/%testtype%-%fold%-%d%-6.txt ../results/graph/power/%testtype%-%fold%-%d%-7.txt ../results/graph/power/%testtype%-%fold%-%d%-8.txt ../results/graph/power/%testtype%-%fold%-%d%-9.txt ../results/graph/power/%testtype%-%fold%-%d%-10.txt
+      xaxisnames 10 30 50
+      exportimage %testtype%-%d%.eps
+    endfor d
+endfor t

@@ -1,0 +1,336 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2009.7.28)  12 OCT 2009 09:51
+entering extended mode
+ %&-line parsing enabled.
+**user.tex
+(./user.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(/usr/share/texmf/tex/latex/base/book.cls
+Document Class: book 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/bk12.clo
+File: bk12.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (./user.aux)
+\openout1 = `user.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 41.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 41.
+ [1
+
+
+] [2
+
+]
+(./user.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+ [3] [4])
+\tf@toc=\write3
+\openout3 = `user.toc'.
+
+ [5] [6
+
+]
+Chapter 1.
+
+Overfull \hbox (14.0862pt too wide) in paragraph at lines 59--60
+\OT1/cmr/m/n/12 will run ISELL pro-gram, com-piles and in-ter-prets the com-man
+ds in the script.txt. 
+ []
+
+[7] [8
+
+]
+Chapter 2.
+[9] [10] [11] [12]
+Overfull \hbox (37.61072pt too wide) in paragraph at lines 110--111
+\OT1/cmr/m/n/12 (them). Two main func-tions ex-ist for this course namely \OT1/
+cmr/bx/n/12 set[]default[]variable
+ []
+
+[13]
+Overfull \hbox (2.8987pt too wide) in paragraph at lines 140--141
+[]\OT1/cmr/m/n/12 Add pos-si-ble val-ues of the new hy-per-pa-ram-e-ter to hy-p
+er-pa-ram-e-ters.xml. 
+ []
+
+
+Overfull \hbox (6.33237pt too wide) in paragraph at lines 141--142
+[]\OT1/cmr/m/n/12 Modify \OT1/cmr/bx/n/12 tune[]hyperparameters[]of[]the[]super
+vised[]algorithm \OT1/cmr/m/n/12 func-
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 156.
+
+(/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 156.
+ [14]
+Overfull \hbox (21.45285pt too wide) in paragraph at lines 163--164
+[]\OT1/cmr/m/n/12 The pa-ram-e-ter can take in-te-ger val-ues. Ex-am-ple pa-ram
+-e-ters are: $\OML/cmm/m/it/12 nearcount$
+ []
+
+
+Overfull \hbox (3.69987pt too wide) in paragraph at lines 167--167
+ []\OT1/cmtt/m/n/12 <parameter name="perceptronrun" type="INTEGER" value="10"/>
+[] 
+ []
+
+
+Overfull \hbox (3.69987pt too wide) in paragraph at lines 172--172
+ []\OT1/cmtt/m/n/12 <parameter name="learning_rate" type="FLOAT" value="0.10"/>
+[] 
+ []
+
+
+Overfull \hbox (34.57489pt too wide) in paragraph at lines 172--172
+ []\OT1/cmtt/m/n/12 <parameter name="variance_explained" type="FLOAT" value="0.
+99"/>[] 
+ []
+
+
+Overfull \hbox (15.31853pt too wide) in paragraph at lines 173--174
+[]\OT1/cmr/m/n/12 The pa-ram-e-ter can take string val-ues. Ex-am-ple pa-ram-e-
+ters are: $\OML/cmm/m/it/12 imagefile$
+ []
+
+
+Overfull \hbox (19.89104pt too wide) in paragraph at lines 173--174
+\OT1/cmr/m/n/12 when cur-rent fig-ure will be saved this file name will be used
+, $\OML/cmm/m/it/12 modelfilename$
+ []
+
+
+Overfull \hbox (3.69987pt too wide) in paragraph at lines 177--177
+ []\OT1/cmtt/m/n/12 <parameter name="testcodefilename" type="STRING" value=""/>
+[] 
+ []
+
+
+Overfull \hbox (9.87488pt too wide) in paragraph at lines 177--177
+ []\OT1/cmtt/m/n/12 <parameter name="posteriorfilename" type="STRING" value=""/
+>[] 
+ []
+
+[15]
+Overfull \hbox (34.57489pt too wide) in paragraph at lines 196--196
+ []\OT1/cmtt/m/n/12 <parameter name="correctiontype" type="LIST" value="bonferr
+oni">[] 
+ []
+
+
+Overfull \hbox (139.54994pt too wide) in paragraph at lines 201--201
+ []\OT1/cmtt/m/n/12 <parameter name="hiddennodes" type="ARRAY" subtype="INTEGER
+" size="3" value="1"/>[] 
+ []
+
+
+Overfull \hbox (145.72495pt too wide) in paragraph at lines 201--201
+ []\OT1/cmtt/m/n/12 <parameter name="svmcweights" type="ARRAY" subtype="FLOAT" 
+size="50" value="1.0"/>[] 
+ []
+
+[16] [17] [18
+
+]
+Chapter 3.
+
+Overfull \hbox (23.7252pt too wide) in paragraph at lines 247--247
+[]      \OT1/cmtt/m/n/12 <attribute type="Real" available="True" min="4.3" max=
+"7.9"/>[] 
+ []
+
+
+Overfull \hbox (23.7252pt too wide) in paragraph at lines 247--247
+[]      \OT1/cmtt/m/n/12 <attribute type="Real" available="True" min="2.0" max=
+"4.4"/>[] 
+ []
+
+
+Overfull \hbox (23.7252pt too wide) in paragraph at lines 247--247
+[]      \OT1/cmtt/m/n/12 <attribute type="Real" available="True" min="1.0" max=
+"6.9"/>[] 
+ []
+
+
+Overfull \hbox (23.7252pt too wide) in paragraph at lines 247--247
+[]      \OT1/cmtt/m/n/12 <attribute type="Real" available="True" min="0.1" max=
+"2.5"/>[] 
+ []
+
+[19] [20]
+Chapter 4.
+[21
+
+] [22] [23]
+Overfull \hbox (6.95866pt too wide) in paragraph at lines 418--444
+ [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24] [25] [26] [27] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
+
+ []
+
+[29] [30] [31]
+Missing character: There is no Â in font cmr12!
+Missing character: There is no   in font cmr12!
+Missing character: There is no Â in font cmr12!
+Missing character: There is no   in font cmr12!
+Missing character: There is no Â in font cmr12!
+Missing character: There is no   in font cmr12!
+ [32] [33] [34] [35] [36] [37] [38
+
+]
+Chapter 5.
+[39] [40
+
+]
+Chapter 6.
+[41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55]
+[56
+
+]
+Chapter 7.
+[57] [58] [59] [60] [61] [62] [63] [64] [65]
+Overfull \hbox (6.77753pt too wide) in paragraph at lines 1714--1715
+\OT1/cmr/m/n/12 GPROCESSREG does Gaus-sian pro-cess re-gres-sion as de-scribed 
+in [[]]. Sigma,
+ []
+
+
+Overfull \hbox (1.09886pt too wide) in paragraph at lines 1720--1721
+\OT1/cmr/m/n/12 MLPGENERIC is the well-known mul-ti-layer per-cep-tron re-gres-
+sion al-go-rithm,
+ []
+
+[66] [67] [68
+
+]
+Chapter 8.
+File: graphics1.eps Graphic file (type eps)
+<graphics1.eps>
+File: graphics2.eps Graphic file (type eps)
+ <graphics2.eps>
+File: graphics3.eps Graphic file (type eps)
+ <graphics3.eps> [69]
+File: graphics4.eps Graphic file (type eps)
+ <graphics4.eps>
+File: graphics5.eps Graphic file (type eps)
+
+<graphics5.eps> [70]
+File: graphics6.eps Graphic file (type eps)
+ <graphics6.eps>
+File: graphics16.eps Graphic file (type eps)
+ <graphics16.eps> [71]
+File: graphics7.eps Graphic file (type eps)
+ <graphics7.eps>
+File: graphics8.eps Graphic file (type eps)
+
+<graphics8.eps> [72]
+File: graphics9.eps Graphic file (type eps)
+ <graphics9.eps>
+File: graphics10.eps Graphic file (type eps)
+ <graphics10.eps>
+Underfull \vbox (badness 1688) has occurred while \output is active []
+
+ [73]
+File: graphics11.eps Graphic file (type eps)
+
+<graphics11.eps>
+File: graphics12.eps Graphic file (type eps)
+ <graphics12.eps> [74]
+File: graphics13.eps Graphic file (type eps)
+ <graphics13.eps>
+File: graphics14.eps Graphic file (type eps)
+ <graphics14.eps>
+[75]
+File: graphics15.eps Graphic file (type eps)
+ <graphics15.eps> [76]
+File: graphics17.eps Graphic file (type eps)
+ <graphics17.eps> (./user.bbl [77] [78
+
+] [79])
+[80] (./user.aux) ) 
+Here is how much of TeX's memory you used:
+ 708 strings out of 256217
+ 8221 string characters out of 1917095
+ 60357 words of memory out of 1500000
+ 4013 multiletter control sequences out of 10000+200000
+ 12744 words of font info for 44 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 25i,10n,19p,1207b,343s stack positions out of 5000i,500n,6000p,200000b,15000s
+
+Output written on user.dvi (80 pages, 157784 bytes).

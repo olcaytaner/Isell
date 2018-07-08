@@ -1,0 +1,35 @@
+displaycode off
+displayresult off
+setdatadir c:\users\olcay\thesis\data
+loaddatasets c:\users\olcay\isell\code\example.xml
+integer i j ccount fact
+string dataset resultdir b[6000]
+= resultdir c:\users\olcay\isell\ruleinduction\permutation
+for i 1 8
+  switch i
+    case 1
+      = dataset breast
+    case 2
+      = dataset bupa
+    case 3
+      = dataset car
+    case 4
+      = dataset cylinder
+    case 5
+      = dataset dermatology
+  endswitch  
+  classcount %dataset%
+  = ccount %out1%
+  = fact 1
+  for j 2 %ccount%
+    *= fact %j%
+  endfor j
+  stringpermutation %ccount% b
+  for j 1 %fact%
+    output %resultdir%\%dataset%-%b[j]%.txt
+    classpermutation %b[j]%
+    ripper %dataset% random 1
+  endfor j
+endfor i 
+output stdout
+

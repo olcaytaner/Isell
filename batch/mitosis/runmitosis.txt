@@ -1,0 +1,107 @@
+displaycode off
+integer i j
+string alg name
+setdatadir ../data
+loaddatasets mitosis.xml
+printposterior on
+for i 1 25
+  switch i
+    case 1
+      = alg c45
+      = name c45
+    case 2
+      = alg knn
+      nearcount 10
+      = name knn10
+    case 3
+      = alg knn
+      nearcount 20
+      = name knn20
+    case 4
+      = alg knn
+      nearcount 30
+      = name knn30
+    case 5
+      = alg ldaclass
+      = name ldaclass
+    case 6
+      = alg ripper
+      = name ripper
+    case 7
+      = alg part
+      = name part
+    case 8
+      = alg logistic
+      = name logistic
+    case 9
+      = alg ldt
+      = name ldt
+    case 10
+      = alg multildt
+      = name multildt
+    case 11
+      = alg naivebayes
+      = name naivebayes
+    case 12
+      = alg gaussian
+      = name gaussian
+    case 13
+      = alg mlpgeneric
+      = name linearperceptron
+    case 14
+      = alg mlpgeneric
+      hiddenlayers 2
+      = name mlp2
+    case 15
+      = alg mlpgeneric
+      hiddenlayers 4
+      = name mlp4
+    case 16
+      = alg mlpgeneric
+      hiddenlayers 6
+      = name mlp6
+    case 17
+      = alg nearestmean
+      = name nearestmean
+    case 18
+      = alg randomsubspace
+      = name randomsubspace
+    case 19
+      = alg randomforest
+      = name randomforest
+    case 20
+      = alg omnildt
+      = name omnildt
+    case 21
+      = alg svm
+      = name svmlinear
+      svmC 1
+    case 22
+      = alg svm
+      kerneltype polynom
+      svmdegree 2
+      svmcoef0 1.0
+      = name svmquadratic
+      svmC 1
+    case 23
+      = alg svm
+      kerneltype polynom
+      svmdegree 3
+      svmcoef0 1.0
+      = name svmcubic
+      svmC 1
+    case 24
+      = alg cart
+      = name cart
+    case 25
+      = alg c45rules
+      = name c45rules
+  endswitch
+  writescreen %name%
+  output ../results/mitosis/%name%.error
+  for j 1 10
+    posteriorfile ../results/mitosis/%name%-%j%.posterior
+    %alg% mitosis ../data/mitosis/train-3-%j%.txt ../data/mitosis/test-3-%j%.txt 1
+  endfor j
+endfor i
+output stdout

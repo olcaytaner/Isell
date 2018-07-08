@@ -1,0 +1,25 @@
+displaycode off
+string file1 file2 resultdir outdir
+string dataset algorithm1 algorithm2 comptype
+integer index p
+= outdir ../results
+= comptype rp
+= resultdir ../results/multivariatetest/10fold/measure/%comptype%
+= dataset pima
+= algorithm1 c45
+= algorithm2 qda
+= index 1
+= file1 %resultdir%/%dataset%-%index%-%algorithm1%.%comptype%
+= file2 %resultdir%/%dataset%-%index%-%algorithm2%.%comptype%
+smirnov %file1% %file2%
+output %outdir%/%dataset%-%index%-%algorithm1%.txt
+for p 1 10
+  write %aout5[p]%
+endfor p
+output %outdir%/%dataset%-%index%-%algorithm2%.txt
+for p 1 10
+  write %aout6[p]%
+endfor p
+output stdout
+rankplot %outdir%/%dataset%-%index%-%algorithm1%.txt %outdir%/%dataset%-%index%-%algorithm2%.txt
+exportimage %dataset%-%algorithm1%-%algorithm2%-%index%-%comptype%-rank.eps

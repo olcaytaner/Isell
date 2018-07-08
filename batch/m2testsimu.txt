@@ -1,0 +1,231 @@
+displaycode off
+displayresult off
+integer simulationcount i j k p foldcount datasetcount counts[11,24]
+real theta ranks[3]
+string orders[24]
+correction nocorrection
+nearcount 4
+onetailed
+file outfile1 outfile2 outfile3 outfile4
+= outfile1 1ranks.txt
+= outfile2 2ranks.txt
+= outfile3 3ranks.txt
+= outfile4 4ranks.txt
+= simulationcount 1000
+= datasetcount 30
+real means[%datasetcount%]
+= foldcount 10
+= orders[1] 1234
+= orders[2] 1324
+= orders[3] 2134
+= orders[4] 2314
+= orders[5] 3124
+= orders[6] 3214
+= orders[7] 1243
+= orders[8] 1342
+= orders[9] 2143
+= orders[10] 2341
+= orders[11] 3142
+= orders[12] 3241
+= orders[13] 1423
+= orders[14] 1432
+= orders[15] 2413
+= orders[16] 2431
+= orders[17] 3412
+= orders[18] 3421
+= orders[19] 4123
+= orders[20] 4132
+= orders[21] 4213
+= orders[22] 4231
+= orders[23] 4312
+= orders[24] 4321
+output m2testresult.txt
+for p 1 %datasetcount%
+  random 0.45 0.55
+  = means[p] %out1%
+  writescreen %means[p]%
+endfor p
+for i 0 10
+  = theta %0.04*i%
+  for j 1 24
+    = counts[i+1,j] 0
+  endfor j
+  for j 1 %simulationcount%
+    openfile outfile1 w
+    openfile outfile2 w
+    openfile outfile3 w
+    openfile outfile4 w
+    for p 1 %datasetcount%
+      producedist 1.txt %means[p]+0.75*theta% %foldcount% 50
+      producedist 2.txt %means[p]+0.25*theta% %foldcount% 50
+      producedist 3.txt %means[p]-0.25*theta% %foldcount% 50
+      producedist 4.txt %means[p]-0.75*theta% %foldcount% 50
+      testtype pairedttest
+      multitest 1.txt 2.txt 3.txt 4.txt
+      for k 1 24
+        if = sout1 %orders[k]%
+          switch k
+            case 1
+              writefile outfile1 1
+              writefile outfile2 2
+              writefile outfile3 3
+              writefile outfile4 4
+            case 2
+              writefile outfile1 1
+              writefile outfile3 2
+              writefile outfile2 3
+              writefile outfile4 4
+            case 3
+              writefile outfile2 1
+              writefile outfile1 2
+              writefile outfile3 3
+              writefile outfile4 4
+            case 4
+              writefile outfile2 1
+              writefile outfile3 2
+              writefile outfile1 3
+              writefile outfile4 4
+            case 5
+              writefile outfile3 1
+              writefile outfile1 2
+              writefile outfile2 3
+              writefile outfile4 4
+            case 6
+              writefile outfile3 1
+              writefile outfile2 2
+              writefile outfile1 3
+              writefile outfile4 4
+            case 7
+              writefile outfile1 1
+              writefile outfile2 2
+              writefile outfile4 3
+              writefile outfile3 4
+            case 8
+              writefile outfile1 1
+              writefile outfile3 2
+              writefile outfile4 3
+              writefile outfile2 4
+            case 9
+              writefile outfile2 1
+              writefile outfile1 2
+              writefile outfile4 3
+              writefile outfile3 4
+            case 10
+              writefile outfile2 1
+              writefile outfile3 2
+              writefile outfile4 3
+              writefile outfile1 4
+            case 11
+              writefile outfile3 1
+              writefile outfile1 2
+              writefile outfile4 3
+              writefile outfile2 4
+            case 12
+              writefile outfile3 1
+              writefile outfile2 2
+              writefile outfile4 3
+              writefile outfile1 4
+            case 13
+              writefile outfile1 1
+              writefile outfile4 2
+              writefile outfile2 3
+              writefile outfile3 4
+            case 14
+              writefile outfile1 1
+              writefile outfile4 2
+              writefile outfile3 3
+              writefile outfile2 4
+            case 15
+              writefile outfile2 1
+              writefile outfile4 2
+              writefile outfile1 3
+              writefile outfile3 4
+            case 16
+              writefile outfile2 1
+              writefile outfile4 2
+              writefile outfile3 3
+              writefile outfile1 4
+            case 17
+              writefile outfile3 1
+              writefile outfile4 2
+              writefile outfile1 3
+              writefile outfile2 4
+            case 18
+              writefile outfile3 1
+              writefile outfile4 2
+              writefile outfile2 3
+              writefile outfile1 4
+            case 19
+              writefile outfile4 1
+              writefile outfile1 2
+              writefile outfile2 3
+              writefile outfile3 4
+            case 20
+              writefile outfile4 1
+              writefile outfile1 2
+              writefile outfile3 3
+              writefile outfile2 4
+            case 21
+              writefile outfile4 1
+              writefile outfile2 2
+              writefile outfile1 3
+              writefile outfile3 4
+            case 22
+              writefile outfile4 1
+              writefile outfile2 2
+              writefile outfile3 3
+              writefile outfile1 4
+            case 23
+              writefile outfile4 1
+              writefile outfile3 2
+              writefile outfile1 3
+              writefile outfile2 4
+            case 24
+              writefile outfile4 1
+              writefile outfile3 2
+              writefile outfile2 3
+              writefile outfile1 4
+          endswitch
+        endif
+      endfor k
+    endfor p
+    closefile outfile1
+    closefile outfile2
+    closefile outfile3
+    closefile outfile4
+    testtype nemenyi
+    multitest 1ranks.txt 2ranks.txt 3ranks.txt 4ranks.txt
+    for k 1 24
+      if = sout1 %orders[k]%
+        ++ counts[i+1,k]
+      endif
+    endfor k
+  endfor j
+  writescreen %i%
+endfor i
+for i 1 24
+  output m2testresult%i%.txt
+  for j 1 11
+    write %j-1%_%counts[j,i]%
+  endfor j
+endfor i
+output stdout
+hold off
+axislimits x 0 10 10 0
+axislimits y 0 %simulationcount% 10 0
+hold on
+plotxyline m2testresult1.txt black 1
+plotxyline m2testresult17.txt red 1
+plotxyline m2testresult18.txt green 1
+plotxyline m2testresult22.txt blue 1
+plotxyline m2testresult23.txt purple 1
+plotxyline m2testresult24.txt yellow 1
+legendnames 1-2-3-4 3-4-1-2 3-4-2-1 4-2-3-1 4-3-1-2 4-3-2-1
+xlabel Multiplier
+ylabel Probability_of_Accepting_the_Null_Hypothesis
+legendposition upright
+fontsize legend 20
+fontsize axis 24
+fontsize label 24
+exportimage multi2test.eps
+

@@ -1,0 +1,46 @@
+displaycode off
+integer i s
+file outfile
+string dataset
+setprecision 6
+output heuristic-error-average-all.txt
+for i 1 13
+  switch i
+    case 1
+      = dataset winequality
+    case 2
+      = dataset zipcodes
+    case 3
+      = dataset yeast
+    case 4
+      = dataset segment
+    case 5
+      = dataset pendigits
+    case 6
+      = dataset optdigits
+    case 7
+      = dataset ocr
+    case 8
+      = dataset glass
+    case 9
+      = dataset ecoli
+    case 10
+      = dataset dermatology
+    case 11
+      = dataset shuttle
+    case 12
+      = dataset flags
+    case 13
+      = dataset zoo
+  endswitch
+  = outfile %dataset%.error
+  openfile outfile w
+  for s 1 10
+    meanvariance ../results/perm/%dataset%-%s%-ripper.error
+    writefile outfile %out1%
+  endfor s
+  closefile outfile
+  meanvariance %dataset%.error
+  write %dataset%_%out1%_%out2%
+endfor i
+output stdout

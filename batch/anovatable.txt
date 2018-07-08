@@ -1,0 +1,52 @@
+displaycode off
+displayresult off
+integer numberofruns fold i j k p roc pr error count
+string resultdir method1 method2 file1 file2 dataset comptype result
+file infile outfile[8]
+real rocp prp errorp
+= fold 10
+= resultdir ../results/tests
+= dataset tictactoe
+= p 1
+= comptype pr
+twotailed
+output %resultdir%/%comptype%.txt
+  for j 1 6
+    switch j
+      case 1
+        = method1 c45
+      case 2
+        = method1 randomforest
+      case 3
+        = method1 naivebayes
+      case 4
+        = method1 ripper
+      case 5
+        = method1 lda
+      case 6
+        = method1 qda
+    endswitch
+    = result %method1%
+    for k %j+1% 7
+      switch k
+        case 2
+          = method2 randomforest
+        case 3
+          = method2 naivebayes
+        case 4
+          = method2 ripper
+        case 5
+          = method2 lda
+        case 6
+          = method2 qda
+        case 7
+          = method2 svm
+      endswitch
+      = file1 %resultdir%/%comptype%/%dataset%-%p%-%method1%.%comptype%
+      = file2 %resultdir%/%comptype%/%dataset%-%p%-%method2%.%comptype%
+      pairedttest %file1% %file2%
+      = result %result%_&_%out1%      
+    endfor k
+    write %result%
+  endfor j  
+output stdout

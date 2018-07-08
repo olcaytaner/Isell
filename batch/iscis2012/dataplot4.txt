@@ -1,0 +1,17 @@
+displaycode off
+axislimits x 0 10 10 0
+axislimits y 0 10 10 0
+putline 2 0 8 10
+putline 3 0 9 10
+putstring 1.1 6.8 x black 36
+putstring 3.1 6.9 x black 36
+putstring 2.2 8.2 x black 36
+putstring 8.6 2.1 x black 36
+putstring 1.6 5.9 x black 36
+putstring 1.7 7.8 x black 36
+putstring 3.7 8.9 x black 36
+putstring 2.6 8.8 x black 36
+putstring 0.8 8.7 x black 36
+putstring 1.4 6.8 x black 36
+fontsize axis 36
+exportimage plot4.eps

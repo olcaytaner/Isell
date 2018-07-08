@@ -1,0 +1,225 @@
+displaycode off
+displayresult off
+integer i j k p t res1 res2 kernel1 kernel2 kernelcount
+real tp fp tn fn tpr fpr pprime precision recall x y minx maxx miny maxy gapx gapy
+file infile1 infile2
+string dataset method1 method2 resultdir unifile1 unifile2 multifile1 multifile2 multifile3 multifile4
+matrix m1 m2
+setprecision 3
+= resultdir ../results/mvartest2
+twotailed
+for i 1 2
+  switch i
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for kernel1 0 %kernelcount-1%
+    for kernel2 %kernel1+1% %kernelcount-1%
+      for k 1 10
+        = unifile1 %resultdir%/measure/error/%dataset%-%kernel1%-%k%.error
+        = unifile2 %resultdir%/measure/error/%dataset%-%kernel2%-%k%.error
+        = multifile1 %resultdir%/measure/roc/%dataset%-%kernel1%-%k%.roc
+        = multifile2 %resultdir%/measure/roc/%dataset%-%kernel2%-%k%.roc
+        = multifile3 %resultdir%/measure/pr/%dataset%-%kernel1%-%k%.pr
+        = multifile4 %resultdir%/measure/pr/%dataset%-%kernel2%-%k%.pr
+        fileexists %resultdir%/measure/confusion/%dataset%-%kernel1%-%k%.confusion        
+        if = out1 1
+          fileexists %resultdir%/measure/confusion/%dataset%-%kernel2%-%k%.confusion        
+          if = out1 1      
+             hotellingt %multifile1% %multifile2%
+             = res1 %out1%
+             hotellingt %multifile3% %multifile4%
+             = res2 %res1+out1%             
+             if = res2 3
+                   hold off
+                   axislimits y 0 20 10 1
+                   hold on
+                   errorhistogram %unifile1% %unifile2%
+                   xaxisnames %method1% %method2%
+                   xlabel %dataset%
+                   ylabel error
+                   fontsize data 18
+                   fontsize legend 24
+                   fontsize axis 24
+                   fontsize label 24
+                   exportimage %resultdir%/image/roc-pr-parametric/%dataset%-%kernel1%-%kernel2%-%k%-hist.eps
+                   loadmatrix %unifile1% m1
+                   loadmatrix %unifile2% m2
+                   -= m1 m2
+                   mprint m1 deneme.txt
+                   hold off
+                   axislimits y 0 20 10 1
+                   hold on
+                   errorhistogram deneme.txt
+                   xaxisnames error_difference
+                   yaxisnames _
+                   ylabel _
+                   fontsize data 18
+                   fontsize legend 24
+                   fontsize axis 24
+                   fontsize label 24
+                   exportimage %resultdir%/image/roc-pr-parametric/%dataset%-%kernel1%-%kernel2%-%k%-histdiff.eps
+                   hold off
+                   = infile1 %multifile1%
+                   openfile infile1 r
+                   = minx 1
+                   = miny 1
+                   = maxx 0
+                   = maxy 0
+                   for t 1 10
+                     readfile infile1 x
+                     readfile infile1 y
+                     if < x %minx%
+                       = minx %x%
+                     endif
+                     if < y %miny%
+                       = miny %y%
+                     endif
+                     if > x %maxx%
+                       = maxx %x%
+                     endif
+                     if > y %maxy%
+                       = maxy %y%
+                     endif
+                   endfor t
+                   closefile infile1
+                   = infile2 %multifile2%
+                   openfile infile2 r
+                   for t 1 10
+                     readfile infile2 x
+                     readfile infile2 y
+                     if < x %minx%
+                       = minx %x%
+                     endif
+                     if < y %miny%
+                       = miny %y%
+                     endif
+                     if > x %maxx%
+                       = maxx %x%
+                     endif
+                     if > y %maxy%
+                       = maxy %y%
+                     endif
+                   endfor t
+                   closefile infile2                   
+                   axislimits x %minx% %maxx% 1 1
+                   axislimits y %miny% %maxy% 1 1
+                   hold on
+                   plotgauss2d %multifile1% 4
+                   hold on
+                   plotgauss2d %multifile2% 4
+                   xlabel tpr
+                   ylabel fpr
+                   legendnames %method1% %method2%
+                   legendposition downright
+                   fontsize data 18
+                   fontsize legend 24
+                   fontsize axis 24
+                   fontsize label 24
+                   exportimage %resultdir%/image/roc-pr-parametric/%dataset%-%kernel1%-%kernel2%-%k%-roc.eps
+                   hold off
+                   loadmatrix %multifile1% m1
+                   loadmatrix %multifile2% m2
+                   -= m1 m2
+                   mprint m1 deneme.txt
+                   hold off
+                   axislimits x 0.0 0.0 1 1
+                   axislimits y 0.0 0.0 1 1
+                   hold on
+                   plotgauss2d deneme.txt 4
+                   xlabel tpr_difference
+                   ylabel fpr_difference
+                   legendposition none
+                   fontsize data 18
+                   fontsize legend 24
+                   fontsize axis 24
+                   fontsize label 24
+                   exportimage %resultdir%/image/roc-pr-parametric/%dataset%-%kernel1%-%kernel2%-%k%-rocdiff.eps                   
+                   hold off
+                   = infile1 %multifile3%
+                   openfile infile1 r
+                   = minx 1
+                   = miny 1
+                   = maxx 0
+                   = maxy 0
+                   for t 1 10
+                     readfile infile1 x
+                     readfile infile1 y
+                     if < x %minx%
+                       = minx %x%
+                     endif
+                     if < y %miny%
+                       = miny %y%
+                     endif
+                     if > x %maxx%
+                       = maxx %x%
+                     endif
+                     if > y %maxy%
+                       = maxy %y%
+                     endif
+                   endfor t
+                   closefile infile1
+                   = infile2 %multifile4%
+                   openfile infile2 r
+                   for t 1 10
+                     readfile infile2 x
+                     readfile infile2 y
+                     if < x %minx%
+                       = minx %x%
+                     endif
+                     if < y %miny%
+                       = miny %y%
+                     endif
+                     if > x %maxx%
+                       = maxx %x%
+                     endif
+                     if > y %maxy%
+                       = maxy %y%
+                     endif
+                   endfor t
+                   closefile infile2                   
+                   axislimits x %minx% %maxx% 1 1
+                   axislimits y %miny% %maxy% 1 1
+                   hold on
+                   plotgauss2d %multifile3% 4
+                   hold on
+                   plotgauss2d %multifile4% 4
+                   xlabel precision
+                   ylabel recall
+                   legendnames %method1% %method2%
+                   legendposition downright
+                   fontsize data 18
+                   fontsize legend 24
+                   fontsize axis 24
+                   fontsize label 24
+                   exportimage %resultdir%/image/roc-pr-parametric/%dataset%-%kernel1%-%kernel2%-%k%-pr.eps
+                   hold off
+                   loadmatrix %multifile3% m1
+                   loadmatrix %multifile4% m2
+                   -= m1 m2
+                   mprint m1 deneme.txt
+                   hold off
+                   axislimits x 0.0 0.0 1 1
+                   axislimits y 0.0 0.0 1 1
+                   hold on
+                   plotgauss2d deneme.txt 4
+                   xlabel precision_difference
+                   ylabel recall_difference
+                   legendposition none
+                   fontsize data 18
+                   fontsize legend 24
+                   fontsize axis 24
+                   fontsize label 24
+                   exportimage %resultdir%/image/roc-pr-parametric/%dataset%-%kernel1%-%kernel2%-%k%-prdiff.eps                   
+                   writescreen %dataset%_%kernel1%_%kernel2%_%k%
+             endif
+          endif
+        endif
+      endfor k
+    endfor kernel2
+  endfor kernel1 
+endfor i  

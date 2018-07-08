@@ -1,0 +1,64 @@
+displaycode off
+displayresult off
+integer i p j
+file infile
+real minx miny maxx maxy x y
+string resultdir method
+setprecision 3
+= resultdir ../results/mvartest2
+output multiple.tex
+write \documentclass{article}
+write \usepackage{graphicx}
+write \begin{document}
+for i 1 5
+  write \begin{figure}[t!]
+  write \begin{tabular}{ccc}
+  write (a)_&_(b)_&_(c)\\
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/acceptors-%i%-hist.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/acceptors-%i%-roc.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/acceptors-%i%-pr.eps}_\\
+  write &_(d)_&_(e)_\\
+  write &_\includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/acceptors-%i%-rank-roc.eps} &
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/acceptors-%i%-rank-pr.eps} 
+  write \end{tabular}
+  write \caption{acceptors_%i%}
+  write \end{figure}  
+  write \begin{figure}[t!]
+  write \begin{tabular}{ccc}
+  write (a)_&_(b)_&_(c)\\
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/ads-%i%-hist.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/ads-%i%-roc.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/ads-%i%-pr.eps}_\\
+  write &_(d)_&_(e)_\\
+  write &_\includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/ads-%i%-rank-roc.eps} &
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/ads-%i%-rank-pr.eps} 
+  write \end{tabular}
+  write \caption{ads_%i%}
+  write \end{figure}  
+  write \begin{figure}[t!]
+  write \begin{tabular}{ccc}
+  write (a)_&_(b)_&_(c)\\
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/donors-%i%-hist.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/donors-%i%-roc.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/donors-%i%-pr.eps}_\\
+  write &_(d)_&_(e)_\\
+  write &_\includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/donors-%i%-rank-roc.eps} &
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/donors-%i%-rank-pr.eps} 
+  write \end{tabular}
+  write \caption{donors_%i%}
+  write \end{figure}  
+  write \begin{figure}[t!]
+  write \begin{tabular}{ccc}
+  write (a)_&_(b)_&_(c)\\
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/polyadenylation-%i%-hist.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/polyadenylation-%i%-roc.eps}_& 
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/polyadenylation-%i%-pr.eps}_\\
+  write &_(d)_&_(e)_\\
+  write &_\includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/polyadenylation-%i%-rank-roc.eps} &
+  write \includegraphics[width=0.32\linewidth]{%resultdir%/image/multiple/polyadenylation-%i%-rank-pr.eps} 
+  write \end{tabular}
+  write \caption{polyadenylation_%i%}
+  write \end{figure}  
+endfor i  
+write \end{document}
+output stdout

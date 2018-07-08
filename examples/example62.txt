@@ -1,0 +1,53 @@
+displaycode off
+displayresult off
+file infile
+string dataset dir
+integer i
+os Linux
+= infile twoclass.txt
+= dir /root/results/omnildt
+openfile infile r
+for i 1 7
+  readfile infile dataset
+  histplot %dir%/%dataset%-aic.error %dir%/%dataset%-bic.error %dir%/%dataset%-crossvalidation.error %dir%/%dataset%-srm.error
+  hold on
+endfor i
+xaxisnames AIC BIC CV SRM
+yaxisnames breast pima titanic pageblock letter pendigits segment
+showticks off
+exportimage /root/1.eps
+hold off
+for i 1 7
+  readfile infile dataset
+  histplot %dir%/%dataset%-aic.error %dir%/%dataset%-bic.error %dir%/%dataset%-crossvalidation.error %dir%/%dataset%-srm.error
+  hold on
+endfor i
+xaxisnames AIC BIC CV SRM
+yaxisnames ringnorm twonorm car wave cmc nursery tictactoe
+showticks off
+exportimage /root/2.eps
+hold off
+closefile infile
+openfile infile r
+for i 1 7
+  readfile infile dataset
+  histplot %dir%/%dataset%-aic.count %dir%/%dataset%-bic.count %dir%/%dataset%-crossvalidation.count %dir%/%dataset%-srm.count
+  hold on
+endfor i
+xaxisnames AIC BIC CV SRM
+yaxisnames breast pima titanic pageblock letter pendigits segment
+showticks off
+exportimage /root/3.eps
+hold off
+for i 1 7
+  readfile infile dataset
+  histplot %dir%/%dataset%-aic.count %dir%/%dataset%-bic.count %dir%/%dataset%-crossvalidation.count %dir%/%dataset%-srm.count
+  hold on
+endfor i
+xaxisnames AIC BIC CV SRM
+yaxisnames ringnorm twonorm car wave cmc nursery tictactoe
+showticks off
+exportimage /root/4.eps
+hold off
+closefile infile
+

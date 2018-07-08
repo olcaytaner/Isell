@@ -1,0 +1,54 @@
+displaycode off
+displayresult off
+integer case
+= case 5
+integer i k j run[%case%] t
+real minx miny maxx maxy x y
+string resultdir method[%case%,3] dataset[%case%] type
+setprecision 3
+file infile
+= resultdir ../results/mvartest2
+= dataset[1] ec-kernel
+= method[1,1] 0
+= method[1,2] 2
+= method[1,3] 3
+= run[1] 5
+= dataset[2] ec-kernel
+= method[2,1] 0
+= method[2,2] 2
+= method[2,3] 3
+= run[2] 9
+= dataset[3] yeast-kernel
+= method[3,1] 0
+= method[3,2] 3
+= method[3,3] 7
+= run[3] 3
+= dataset[4] yeast-kernel
+= method[4,1] 0
+= method[4,2] 3
+= method[4,3] 7
+= run[4] 4
+= dataset[5] yeast-kernel
+= method[5,1] 0
+= method[5,2] 3
+= method[5,3] 7
+= run[5] 10
+output eigenvectors-2-3.tex
+write \documentclass{article}
+write \usepackage{graphicx}
+write \begin{document}
+for t 1 %case%
+  write \begin{figure}[t!]
+  write \begin{tabular}{cc}
+  write \includegraphics[width=0.42\linewidth]{%resultdir%/image/eigenvectors/%dataset[t]%-%run[t]%-%method[t,1]%-%method[t,2]%-%method[t,3]%-roc.eps}_& 
+  write \includegraphics[width=0.42\linewidth]{%resultdir%/image/eigenvectors/%dataset[t]%-%run[t]%-%method[t,1]%-%method[t,2]%-%method[t,3]%-pr.eps}_\\ 
+  write \includegraphics[width=0.42\linewidth]{%resultdir%/image/eigenvectors/%dataset[t]%-%run[t]%-%method[t,1]%-%method[t,2]%-%method[t,3]%-2d.eps}_&
+  write \\
+  write \includegraphics[width=0.42\linewidth]{%resultdir%/image/eigenvectors/%dataset[t]%-%run[t]%-%method[t,1]%-%method[t,2]%-%method[t,3]%-hist.eps}_&
+  write \includegraphics[width=0.42\linewidth]{%resultdir%/image/eigenvectors/%dataset[t]%-%run[t]%-%method[t,1]%-%method[t,2]%-%method[t,3]%-1d.eps}_\\ 
+  write \end{tabular}
+  write \caption{%dataset[t]%-%run[t]%-%method[t,1]%-%method[t,2]%-%method[t,3]%}
+  write \end{figure}  
+endfor t
+write \end{document}
+output stdout

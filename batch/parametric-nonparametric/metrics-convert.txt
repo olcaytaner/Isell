@@ -1,0 +1,101 @@
+displaycode off
+integer i j k t n p s numberofruns fold
+file infile outfile1 outfile2 
+real tp fp tn fn tpr fpr pprime precision recall
+string dataset resultdir alg
+= numberofruns 100
+= resultdir ../results/parametric-nonparametric
+for i 3 11
+  switch i
+    case 1
+      = dataset spambase
+    case 2
+      = dataset ringnorm
+    case 3
+      = dataset mushroom
+    case 4
+      = dataset twonorm
+    case 5
+      = dataset ads
+    case 6
+      = dataset magic
+    case 7
+      = dataset musk2
+    case 8
+      = dataset polyadenylation
+    case 9
+      = dataset krvskp
+    case 10
+      = dataset donors
+    case 11
+      = dataset acceptors
+  endswitch
+  for p 1 3
+    switch p
+      case 1
+        = alg knn
+        nearcount 5
+      case 2
+        = alg c45
+      case 3
+        = alg naivebayes
+      case 4
+        = alg svm
+    endswitch  
+    for j 1 5
+      switch j
+        case 1
+          = fold 3
+        case 2
+          = fold 5
+        case 3
+          = fold 10
+        case 4
+          = fold 20
+        case 5
+          = fold 30
+      endswitch
+      foldcount %fold%
+      for k 1 4
+        switch k
+          case 1
+            = n 10
+          case 2
+            = n 25
+          case 3
+            = n 50
+          case 4
+            = n 100
+        endswitch
+        for t 1 %numberofruns%
+          = infile %resultdir%/%fold%-%n%/%dataset%-%alg%-%fold%-%n%-%t%.confusion
+          openfile infile r
+          = outfile1 %resultdir%/%fold%-%n%/%dataset%-%alg%-%fold%-%n%-%t%.roc
+          openfile outfile1 w
+          = outfile2 %resultdir%/%fold%-%n%/%dataset%-%alg%-%fold%-%n%-%t%.pr
+          openfile outfile2 w
+          for s 1 %fold%
+            readfile infile tp
+            readfile infile fn 
+            readfile infile tn
+            readfile infile fp
+            = tpr %tp/(tp+fn)%
+            = fpr %fp/(fp+tn)%
+            = pprime %tp+fp%
+            if = pprime 0
+              = precision 0
+            else
+              = precision %tp/(tp+fp)%
+            endif
+            = recall %tp/(tp+fn)%
+            writefile outfile1 %tpr%_%fpr%
+            writefile outfile2 %precision%_%recall%            
+          endfor s
+          closefile infile
+          closefile outfile1
+          closefile outfile2
+        endfor t
+      endfor k
+    endfor j
+  endfor p
+endfor i

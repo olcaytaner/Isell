@@ -1,0 +1,32 @@
+displaycode off
+string dataset alg1 alg2 resultdir
+integer i count j
+file infile
+= resultdir ../results/multivariatetest
+= infile manova.txt
+openfile infile r
+readfile infile count
+for i 1 %count%
+  readfile infile dataset
+  for j 1 10
+    hold off
+    fontsize legend 24
+    fontsize label 24
+    fontsize axis 24
+    axislimits x 0 0 1 0
+    axislimits y 0 0 1 0
+    hold on
+    plotgauss2d %resultdir%/dt/%dataset%-%j%-c45-0.500.fpfn 4
+    plotgauss2d %resultdir%/dt/%dataset%-%j%-knn-0.500.fpfn 4
+    plotgauss2d %resultdir%/dt/%dataset%-%j%-lda-0.500.fpfn 4
+    plotgauss2d %resultdir%/dt/%dataset%-%j%-qda-0.500.fpfn 4
+    plotgauss2d %resultdir%/dt/%dataset%-%j%-svm-0.500.fpfn 4
+    xlabel False_Positives
+    ylabel False_Negatives
+    fontsize data 18
+    legendnames C45 KNN LDA QDA SVM
+    legendposition downright
+    exportimage %resultdir%/manova/%dataset%-%j%-fpfn.eps
+  endfor j
+endfor i
+

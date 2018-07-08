@@ -1,0 +1,95 @@
+displaycode off
+displayresult off
+integer i j
+file infile1 outfile1 outfile2 outfile3
+string dir method fname st
+= dir d:\data\results
+for i 1 21
+  switch i
+    case 1
+      = method selectmax
+      = fname %method%
+    case 2
+      = method c45
+      = fname %method%
+    case 3
+      = method nearestmean
+      = fname %method%
+    case 4
+      = method ldaclass
+      = fname %method%
+    case 5
+      = method ldt
+      = fname %method%
+    case 6
+      = method irep
+      = fname %method%
+    case 7
+      = method irep2
+      = fname %method%
+    case 8
+      = method mlpgeneric
+      = fname %method%-linear
+    case 9
+      = method mlpgeneric
+      = fname %method%-nonlinear5
+    case 10
+      = method mlpgeneric
+      = fname %method%-nonlinear10
+    case 11
+      = method mlpgeneric
+      = fname %method%-nonlinear15
+    case 12
+      = method mlpgeneric
+      = fname %method%-nonlinear20
+    case 13
+      = method multildt
+      = fname %method%
+    case 14
+      = method logistic
+      = fname %method%
+    case 15
+      = method knn
+      = fname %method%1
+    case 16
+      = method multiripperlda
+      = fname %method%
+    case 17
+      = method ripper
+      = fname %method%
+    case 18
+      = method knn
+      = fname %method%3
+    case 19
+      = method knn
+      = fname %method%5
+    case 20
+      = method knn
+      = fname %method%7
+    case 21
+      = method knn
+      = fname %method%9
+  endswitch
+  = infile1 %dir%\%fname%.txt
+  openfile infile1 r
+  = outfile1 %dir%\%fname%-all.txt
+  openfile outfile1 w
+  = outfile2 %dir%\%fname%-1.txt
+  openfile outfile2 w
+  = outfile3 %dir%\%fname%-2.txt
+  openfile outfile3 w
+  for j 1 10
+    readfile infile1 st
+    writefile outfile1 %st%
+    readfile infile1 st
+    readfile infile1 st
+    writefile outfile2 %st%
+    readfile infile1 st
+    writefile outfile3 %st%
+    readfile infile1 st
+  endfor j
+  closefile infile1
+  closefile outfile1
+  closefile outfile2
+  closefile outfile3  
+endfor i

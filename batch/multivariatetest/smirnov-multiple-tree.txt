@@ -1,0 +1,83 @@
+displaycode off
+string file1 file2 file3 file4 file5 resultdir outdir
+string dataset algorithm1 algorithm2 comptype st
+integer index p
+real x y minx maxx miny maxy gapx gapy
+file infile1 infile2 infile3 infile4 infile5
+= outdir ../results
+= comptype pr
+= resultdir ../results/multivariatetest/10fold/measure/%comptype%
+= dataset spect
+= index 4
+= file1 %resultdir%/%dataset%-%index%-c45.%comptype%
+= file2 %resultdir%/%dataset%-%index%-knn.%comptype%
+= file3 %resultdir%/%dataset%-%index%-lda.%comptype%
+= file4 %resultdir%/%dataset%-%index%-qda.%comptype%
+= file5 %resultdir%/%dataset%-%index%-svm.%comptype%
+= minx 0.00
+= maxx +1.00
+= miny 0.00
+= maxy +1.00
+= gapx %(maxx-minx)/20.0%
+= gapy %(maxy-miny)/20.0%
+twotailed
+hold off
+axislimits x %minx% %maxx% 1 1
+axislimits y %miny% %maxy% 1 1
+hold on
+plotxy %file1%
+plotxy %file2%
+plotxy %file3%
+plotxy %file4%
+plotxy %file5%
+legendposition none
+kruskalwallismulti %file1% %file2% %file3% %file4% %file5%
+for p 1 49
+  putline %aout1[p]% %aout2[p]% %aout3[p]% %aout4[p]%
+endfor p
+fontsize axis 48
+fontsize label 48
+= infile1 %file1%
+openfile infile1 r
+for p 1 10
+  readfile infile1 x
+  readfile infile1 y
+  putstring %x+gapx% %y+gapy% %aout5[p]% black
+endfor p
+closefile infile1
+= infile2 %file2%
+openfile infile2 r
+for p 1 10
+   readfile infile2 x
+   readfile infile2 y
+   putstring %x+gapx% %y+gapy% %aout6[p]% red
+endfor p
+closefile infile2
+= infile3 %file3%
+openfile infile3 r
+for p 1 10
+  readfile infile3 x
+  readfile infile3 y
+  putstring %x+gapx% %y+gapy% %aout7[p]% green
+endfor p
+closefile infile3
+= infile4 %file4%
+openfile infile4 r
+for p 1 10
+  readfile infile4 x
+  readfile infile4 y
+  putstring %x+gapx% %y+gapy% %aout8[p]% blue
+endfor p
+closefile infile4
+= infile5 %file5%
+openfile infile5 r
+for p 1 10
+  readfile infile5 x
+  readfile infile5 y
+  putstring %x+gapx% %y+gapy% %aout9[p]% purple
+endfor p
+fontsize data 36
+closefile infile5
+xlabel Precision
+ylabel Recall
+exportimage %dataset%-%index%-%comptype%-kruskalwallis.eps

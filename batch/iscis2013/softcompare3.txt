@@ -1,0 +1,89 @@
+displaycode off
+integer i k
+string dataset resultdir st type alg subdir reg
+= type error
+= reg l1
+= resultdir ../results
+for k 1 5
+  switch k
+    case 1
+      = alg softtree
+      = subdir softtree
+    case 2
+      = alg softtree-%reg%
+      = subdir softtree-1
+    case 3
+      = alg softtree-%reg%
+      = subdir softtree-10
+    case 4
+      = alg softtree-%reg%
+      = subdir softtree-100
+    case 5
+      = alg softtree-%reg%
+      = subdir softtree-1000
+  endswitch
+  output %subdir%-%type%.txt
+for i 1 27
+  switch i
+    case 1
+      = dataset ringnorm
+    case 2
+      = dataset spambase
+    case 3
+      = dataset twonorm
+    case 4
+      = dataset german
+    case 5
+      = dataset magic
+    case 6
+      = dataset musk2
+    case 7
+      = dataset satellite47
+    case 8
+      = dataset polyadenylation
+    case 9
+      = dataset pima
+    case 10
+      = dataset breast
+    case 11
+      = dataset acceptors
+    case 12
+      = dataset artificial
+    case 13
+      = dataset donors
+    case 14
+      = dataset krvskp
+    case 15
+      = dataset monks
+    case 16
+      = dataset mushroom
+    case 17
+      = dataset promoters
+    case 18
+      = dataset spect
+    case 19
+      = dataset tictactoe
+    case 20
+      = dataset titanic
+    case 21
+      = dataset vote
+    case 22
+      = dataset bupa
+    case 23
+      = dataset hepatitis
+    case 24
+      = dataset haberman
+    case 25
+      = dataset heart
+    case 26
+      = dataset ironosphere
+    case 27
+      = dataset parkinsons
+  endswitch
+  meanvariance %resultdir%/%subdir%/%dataset%-%alg%.%type%
+  write %out1%
+endfor i
+endfor k
+output stdout
+comparealgorithms softtree-%type%.txt softtree-1-%type%.txt softtree-10-%type%.txt softtree-100-%type%.txt softtree-1000-%type%.txt
+exportimage cls-%reg%-%type%.eps

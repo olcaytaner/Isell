@@ -1,0 +1,55 @@
+displaycode off
+displayresult off
+integer j k p kernelcount
+string dataset method methodname resultdir
+setprecision 3
+= resultdir ../results/mvartest2
+runcount 1
+foldcount 10
+runtofold 5
+setprecision 3
+setdatadir ../data
+normalizekernel on
+loaddatasets biokernel.xml
+for j 1 2
+  switch j
+    case 1
+      = dataset ec-kernel
+      = kernelcount 6
+    case 2
+      = dataset yeast-kernel
+      = kernelcount 8
+  endswitch
+  for p 1 %kernelcount%
+    kernelindex %p%
+    for k 1 9
+      switch k
+        case 1
+          svmC 1
+        case 2
+          svmC 0.5
+        case 3
+          svmC 0.1
+        case 4
+          svmC 0.05
+        case 5
+          svmC 0.01
+        case 6
+          svmC 0.005
+        case 7
+          svmC 0.001
+        case 8
+          svmC 0.0005
+        case 9
+          svmC 0.0001
+      endswitch
+      fileexists %resultdir%/measure/svmtune/%dataset%-%p%-%k%.error
+      if = out1 0
+        output %resultdir%/measure/svmtune/%dataset%-%p%-%k%.error
+        svm %dataset% cv 11
+      endif
+      writescreen %dataset%_%p%_%k%
+    endfor k
+  endfor p
+endfor j  
+output stdout

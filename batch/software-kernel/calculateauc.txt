@@ -1,0 +1,62 @@
+displaycode off
+string resultdir dataset algorithm
+= resultdir ../results/moss
+integer i j k
+runcount 10
+foldcount 10
+for i 1 10
+  switch i
+     case 1
+       = dataset ant
+     case 2
+       = dataset camel
+     case 3
+       = dataset ivy
+     case 4
+       = dataset jedit
+     case 5
+       = dataset lucene
+     case 6
+       = dataset poi
+     case 7
+       = dataset synapse
+     case 8
+       = dataset tomcat
+     case 9
+       = dataset velocity
+     case 10
+       = dataset xalan
+  endswitch
+  for j 1 11
+    switch j
+      case 1
+        = algorithm svm-kernel-0
+      case 2
+        = algorithm knn-kernel-0
+      case 3
+        = algorithm svm-kernel-1
+      case 4
+        = algorithm knn-kernel-1
+      case 5
+        = algorithm svm-kernel-2
+      case 6
+        = algorithm knn-kernel-2
+      case 7
+        = algorithm knn-metric
+      case 8
+        = algorithm c45-metric
+      case 9
+        = algorithm naivebayes-metric
+      case 10
+        = algorithm randomforest-metric
+      case 11
+        = algorithm svm-metric
+    endswitch
+    aucposterior %resultdir%/%dataset%-%algorithm%.posterior
+    output %resultdir%/%dataset%-%algorithm%.auc
+    for k 1 100
+      write %aout1[k]%
+    endfor k
+  endfor j
+endfor i
+output stdout

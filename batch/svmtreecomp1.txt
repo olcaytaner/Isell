@@ -1,0 +1,85 @@
+displaycode off
+displayresult off
+integer i j k results[3,3]
+string dataset st algorithm1 algorithm2 type
+setprecision 3
+onetailed
+= type complexity
+for i 1 3
+  for j 1 3
+    = results[%i%,%j%] 0
+  endfor j
+endfor i
+for i 1 20
+  switch i
+    case 1
+      = dataset ads
+    case 2
+      = dataset breast
+    case 3
+      = dataset bupa
+    case 4
+      = dataset dlbcl
+    case 5
+      = dataset german
+    case 6
+      = dataset haberman
+    case 7
+      = dataset heart
+    case 8
+      = dataset hepatitis
+    case 9
+      = dataset ironosphere
+    case 10
+      = dataset magic
+    case 11
+      = dataset musk2
+    case 12
+      = dataset parkinsons
+    case 13
+      = dataset pima
+    case 14
+      = dataset polyadenylation
+    case 15
+      = dataset prostatetumor
+    case 16
+      = dataset ringnorm
+    case 17
+      = dataset satellite47
+    case 18
+      = dataset spambase
+    case 19
+      = dataset transfusion
+    case 20
+      = dataset twonorm
+  endswitch
+  for j 1 3
+    switch j
+      case 1
+        = algorithm1 c45
+      case 2
+        = algorithm1 ldt
+      case 3
+        = algorithm1 svmtree
+    endswitch
+    for k 1 3
+      switch k
+        case 1
+          = algorithm2 c45
+        case 2
+          = algorithm2 ldt
+        case 3
+          = algorithm2 svmtree
+      endswitch
+      pairedttest ../results/svmtree/%dataset%-%algorithm1%.%type% ../results/svmtree/%dataset%-%algorithm2%.%type%
+      if = out1 1
+        ++ results[%k%,%j%]
+      endif
+    endfor k
+  endfor j
+endfor i
+output %type%.txt
+write %results[1,1]%_%results[1,2]%_%results[1,3]%
+write %results[2,1]%_%results[2,2]%_%results[2,3]%
+write %results[3,1]%_%results[3,2]%_%results[3,3]%
+output stdout

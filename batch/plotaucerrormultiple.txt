@@ -1,0 +1,39 @@
+displaycode off
+displayresult off
+string dataset resultdir
+integer i p count
+file infile
+= resultdir ../results/tests
+= p 1
+= infile twoclass-large.txt
+openfile infile r
+readfile infile count
+for i 1 %count%
+  readfile infile dataset
+  errorhistogram %resultdir%/error/%dataset%-%p%-c45.error %resultdir%/error/%dataset%-%p%-randomforest.error %resultdir%/error/%dataset%-%p%-naivebayes.error %resultdir%/error/%dataset%-%p%-ripper.error %resultdir%/error/%dataset%-%p%-lda.error %resultdir%/error/%dataset%-%p%-qda.error %resultdir%/error/%dataset%-%p%-svm.error
+  hold on
+  xlabel Classifier
+  xaxisnames c45 randomforest naivebayes ripper lda qda svm
+  fontsize label 30
+  fontsize axis 16
+  errorhistogram %resultdir%/roc/%dataset%-%p%-c45.roc %resultdir%/roc/%dataset%-%p%-randomforest.roc %resultdir%/roc/%dataset%-%p%-naivebayes.roc %resultdir%/roc/%dataset%-%p%-ripper.roc %resultdir%/roc/%dataset%-%p%-lda.roc %resultdir%/roc/%dataset%-%p%-qda.roc %resultdir%/roc/%dataset%-%p%-svm.roc
+  errorhistogram %resultdir%/pr/%dataset%-%p%-c45.pr %resultdir%/pr/%dataset%-%p%-randomforest.pr %resultdir%/pr/%dataset%-%p%-naivebayes.pr %resultdir%/pr/%dataset%-%p%-ripper.pr %resultdir%/pr/%dataset%-%p%-lda.pr %resultdir%/pr/%dataset%-%p%-qda.pr %resultdir%/pr/%dataset%-%p%-svm.pr
+  yaxisnames Error AucROC AucPR
+  exportimage %resultdir%/%dataset%-%p%-histogram.eps
+  hold off
+  rocplot %resultdir%/posterior/%dataset%-%p%-c45.posterior %resultdir%/posterior/%dataset%-%p%-randomforest.posterior %resultdir%/posterior/%dataset%-%p%-naivebayes.posterior %resultdir%/posterior/%dataset%-%p%-ripper.posterior %resultdir%/posterior/%dataset%-%p%-lda.posterior %resultdir%/posterior/%dataset%-%p%-qda.posterior %resultdir%/posterior/%dataset%-%p%-svm.posterior
+  xlabel False_Positive_Rate
+  ylabel True_Positive_Rate
+  fontsize label 30
+  fontsize axis 24
+  exportimage %resultdir%/%dataset%-%p%-roc.eps
+  hold off
+  precisionrecallplot %resultdir%/posterior/%dataset%-%p%-c45.posterior %resultdir%/posterior/%dataset%-%p%-randomforest.posterior %resultdir%/posterior/%dataset%-%p%-naivebayes.posterior %resultdir%/posterior/%dataset%-%p%-ripper.posterior %resultdir%/posterior/%dataset%-%p%-lda.posterior %resultdir%/posterior/%dataset%-%p%-qda.posterior %resultdir%/posterior/%dataset%-%p%-svm.posterior
+  xlabel Recall
+  ylabel Precision
+  fontsize label 30
+  fontsize axis 24
+  exportimage %resultdir%/%dataset%-%p%-pr.eps
+  hold off
+endfor i
+closefile infile
